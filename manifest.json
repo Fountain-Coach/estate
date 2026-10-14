@@ -56,11 +56,33 @@
     {
       "id": "teatro",
       "name": "Teatro",
-      "role": "performance-score-and-listening",
+      "role": "book-first-performance-and-listening",
       "rank": 3,
       "url": "https://teatro.fountain.coach/",
       "sourceRepo": "Fountain-Coach/teatro.fountain.coach",
-      "entryEditionUrl": "https://teatro.fountain.coach/"
+      "entryEditionUrl": "https://teatro.fountain.coach/editions/first-hearing/",
+      "landing": {
+        "url": "https://teatro.fountain.coach/",
+        "path": "/editions/first-hearing/",
+        "kind": "linotype-book"
+      },
+      "sourceCommit": "564be196ed4c23713e35c7d5123af7e6da410252",
+      "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
+      "firstHearing": {
+        "hearingSystem": "Fountain-Coach/Satzfunk",
+        "adapterCommit": "fad70097c08a0b610af87d5e5a6fc1057f6adf3d",
+        "spokenRecording": "not-released",
+        "linkingRule": "Any published hearing must prove exact source SHA, chapter transcript, same-origin media and author approval"
+      },
+      "subEditions": [
+        {
+          "id": "stage",
+          "path": "/editions/stage/",
+          "role": "existing-interactive-browser-csound-stage",
+          "audioClaim": "existing engine; requires visitor activation; not literary narration"
+        }
+      ],
+      "sourcePublicationState": "GitHub owner + WLAN stage v4; production host unchanged"
     }
   ],
   "supportingDomains": [
@@ -125,7 +147,9 @@
     "archives": "preserve hosted historical references; private archive unserved Tennis",
     "ci": "no GitHub Actions/workflows",
     "rail": "A front-door rail points into that domain’s edition, not into the editions catalogue; the root / is the catalogue, not the Essays cover.",
-    "subEditions": "Every nested edition has its own canonical source-backed URL, full manuscript, Linotype pagination, and independent reading position; original essays remain intact."
+    "subEditions": "Every nested edition has its own canonical source-backed URL, full manuscript, Linotype pagination, and independent reading position; original essays remain intact.",
+    "teatroEntry": "Teatro and its global rail MUST enter an authored Linotype book. The existing Csound stage is a secondary, user-activated Stage sub-edition.",
+    "satzfunkFirstHearing": "The Hear rail is source-bound and nonmodal; no approval, no narration release. A compiled Csound scene cannot substitute for source-matched recorded speech."
   },
   "gitMigration": {
     "monorepo": "reconcile Hetzner and GitHub history without force-push",

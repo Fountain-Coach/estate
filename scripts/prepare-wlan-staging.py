@@ -23,7 +23,7 @@ IP = "192.168.8.249"
 DEST = {
     "estate": f"http://{IP}:8180/editions/essays/",
     "first-reading": f"http://{IP}:8181/editions/first-reading/",
-    "teatro": f"http://{IP}:8182/",
+    "teatro": f"http://{IP}:8182/editions/first-hearing/",
 }
 
 def rewrite(content: str):

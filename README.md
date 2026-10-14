@@ -41,3 +41,27 @@ Current accepted WLAN release: `20261014-editions-hierarchy-three-front-v3` on
 Run `npm run staging:verify` for real stage routes, nested readers, estate
 rail and legal footer checks; the Git-owning source additionally runs
 actual simulated browser tests for each sub-edition.
+
+
+## Teatro First Hearing — book first, Stage as a sub-edition
+
+The Teatro estate rail and the canonical Teatro homepage now land in the
+complete source-bound Linotype manuscript **Teatro — An Unfinished
+Composition**. Its source prose and single original score plate are pinned
+to the separately owned Fountain Coach essay. Teatro's book and runtime
+are owned by Fountain-Coach/teatro.fountain.coach at 564be196; the actual
+stage remains accessible at /editions/stage/.
+
+The first Satzfunk integration appears here as a **Hear** action inside
+the real book. Its source-admitted module is Fountain-Coach/Satzfunk at
+fad7009. Without an author-reviewed exact-source recording, it explicitly
+reports that no narrated edition is released. The original browser-Csound
+Stage remains interactive on demand but cannot be mislabeled as a narrated
+book or native MIDI2 execution.
+
+The accepted Ubuntu WLAN stage is
+http://192.168.8.249:8182/ with a second stable book path at
+http://192.168.8.249:8182/editions/first-hearing/ and original Stage at
+http://192.168.8.249:8182/editions/stage/.
+The source-lock and HTTPS publishing gates remain separate: Git push
+and WLAN proof are **not** a public production release.

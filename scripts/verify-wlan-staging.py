@@ -11,7 +11,7 @@ EDNAV=re.compile(r'<nav\b[^>]*class="[^"]*\bedition-rail\b[^"]*"[^>]*>.*?</nav>'
 IDS=["estate","first-reading","teatro"]
 HREFS=[ROOTS["fountain"]+"editions/essays/",
        ROOTS["solstice"]+"editions/first-reading/",
-       ROOTS["teatro"]]
+       ROOTS["teatro"]+"editions/first-hearing/"]
 SLUGS=[
  ("teatro-an-unfinished-composition",1),
  ("semantic-compilation-the-archive-is-not-the-edition",1),
@@ -74,11 +74,33 @@ def test():
  source=fetch(ROOTS["fountain"]+"essays/")[0].decode()
  check_rail(source,"original essay directory",NAV)
  assert 'data-legal-role="company-status"' in source
- for host in ("solstice","teatro"):
-  body=fetch(ROOTS[host])[0].decode()
-  check_rail(body,host,NAV)
-  assert 'data-legal-role="company-status"' in body
-  print("PASS",host,"front-door rail and footer")
+ body=fetch(ROOTS["solstice"])[0].decode()
+ check_rail(body,"solstice",NAV)
+ assert 'data-legal-role="company-status"' in body
+ print("PASS","solstice","First Reading edition rail and footer")
+ teatro=fetch(ROOTS["teatro"])[0].decode()
+ assert teatro==fetch(ROOTS["teatro"]+"editions/first-hearing/")[0].decode()
+ assert 'id="book-viewport"' in teatro and 'id="book-flow"' in teatro
+ assert teatro.count('data-book-chapter=')==1
+ assert teatro.count('src="/assets/edition/')==1
+ assert 'id="satzfunk-hear"' in teatro and 'id="satzfunk-hearing-rail"' in teatro
+ assert 'data-legal-role="company-status"' in teatro
+ check_rail(teatro,"teatro first hearing",EDNAV)
+ stage=fetch(ROOTS["teatro"]+"editions/stage/")[0].decode()
+ assert 'data-teatro-stage-return' in stage
+ assert 'href="/editions/first-hearing/"' in stage
+ assert 'src="/assets/index-CY5_5ULO.js"' in stage
+ assert 'id="root"' in stage
+ check_rail(stage,"teatro stage",NAV)
+ assert 'data-legal-role="company-status"' in stage
+ print("PASS","teatro","book first, Satzfunk Hear present, original stage retained")
+ status=__import__("urllib.error",fromlist=["HTTPError"])
+ try:
+  fetch(ROOTS["teatro"]+"editions/first-hearing/hearings.json")
+ except status.HTTPError as e:
+  assert e.code==404,("Undisclosed published hearing?",e.code)
+ else:
+  raise AssertionError("No released, author-approved narrated Teatro hearing is admitted")
  first=fetch(ROOTS["solstice"]+"editions/first-reading/")[0]
  assert b'id="book-viewport"' in first and b'id="book-next"' in first
  assets={
@@ -87,7 +109,10 @@ def test():
               "assets/linotype/mobile-page-navigation.js","assets/linotype/essays.css"],
   "solstice":["assets/book.css","assets/book.js","assets/linotype-engine.js",
               "assets/mobile-page-navigation.js","assets/mobile-page-navigation.css"],
-  "teatro":["assets/estate-core.css","assets/estate-core.js","assets/index-CY5_5ULO.js"]
+  "teatro":["assets/estate-core.css","assets/estate-core.js","assets/index-CY5_5ULO.js",
+             "assets/linotype/book.css","assets/linotype/book.js",
+             "assets/linotype/linotype-engine.js","assets/linotype/mobile-page-navigation.js",
+             "assets/satzfunk/satzfunk-book.mjs","assets/edition/teatro-score-memory-vector-human-condition.svg"]
  }
  for host,files in assets.items():
   for path in files:

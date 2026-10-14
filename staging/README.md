@@ -108,3 +108,26 @@ stage verify all three nested editions on iPad portrait, iPad landscape, and
 phone portrait, and the omnibus on iPad and phone in both orientations.
 Earlier v1/v2 releases remain available for rollback. No DNS or Caddy
 production mutation is performed.
+
+
+## Teatro book-first WLAN release v4
+
+Active GitHub-sourced WLAN stage:
+20261014-teatro-first-hearing-satzfunk-v4.
+
+Teatro now opens at http://192.168.8.249:8182/ as a complete measured
+Linotype book. The exact edition is also addressed at
+/editions/first-hearing/. The old, working Csound stage is preserved
+as the secondary interactive /editions/stage/ edition, with a return to
+the manuscript. The estate rail of Fountain Coach and First Reading
+now points directly into this Teatro book.
+
+The source owner Fountain-Coach/teatro.fountain.coach at 564be196,
+Fountain Coach original authored essay and original image, and the
+Satzfunk cross-edition adapter at fad7009 are independently pinned.
+The three-front staging server has verified source-byte inventories
+and source-only stage navigation projection. Independent browser checks
+on the real Ubuntu service pass the book on iPad portrait/landscape,
+phone and desktop; the Stage mount is present. No recorded narration
+was released, and actual audio output was not independently witnessed.
+Prior stage v3 is retained for rollback.

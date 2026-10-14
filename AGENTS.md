@@ -22,3 +22,16 @@
 - Other portfolio domains remain governed references or legal/technical
   destinations, not fabricated chapters.
 - The staged three-front release v3 is not a public production deployment.
+
+
+## Teatro source-book audio boundary
+
+- Teatro's root and estate rail enter /editions/first-hearing/, not Stage.
+- Source text: Fountain-Coach/fountain.coach, complete verified 22-paragraph
+  essay and original plate; do not create synthetic filler.
+- Soundstage: /editions/stage/ retains compiled browser-Csound runtime and
+  returns to the book.
+- Satzfunk Hear: author-approved released recording only; absent media is
+  explicitly reported, not silently generated from text.
+- Stage playback is user-activated, not proof of a spoken edition or
+  a Reframe/MIDI2/Ear performance witness.
