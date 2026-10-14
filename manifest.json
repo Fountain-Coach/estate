@@ -66,7 +66,7 @@
         "path": "/editions/first-hearing/",
         "kind": "linotype-book"
       },
-      "sourceCommit": "7063ae35a25577ab051027220b15902a7878b5ab",
+      "sourceCommit": "17c76b19af0fd00771f1d8580b03da8bb393eeb4",
       "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
       "firstHearing": {
         "hearingSystem": "Fountain-Coach/Satzfunk",
@@ -82,7 +82,7 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub owner 7063ae35a; WLAN v6 embeds live Teatro stage as a paginated book plate; public HTTPS unchanged"
+      "sourcePublicationState": "GitHub owner 17c76b19a; WLAN v7 Reframe R12 anchored-media candidate; public HTTPS unchanged"
     }
   ],
   "supportingDomains": [

@@ -139,3 +139,7 @@ Active WLAN release 20261014-teatro-book-first-hearing-v5 tracks the GitHub owne
 ## Teatro executable plate v6
 
 Active Ubuntu staging: 20261014-teatro-live-webgl-book-plate-v6, pinned to owner 7063ae3; the animated scene is a full book leaf, not a link to a separate app. Automated Chrome used animated SVG fallback because WebGL creation was unavailable. On-device WebGL requires iPad verification.
+
+## Teatro source-addressed mixed-media v7
+
+Active WLAN release: 20261014-teatro-r12-anchored-mixed-media-v7. Git owner Fountain-Coach/teatro.fountain.coach 17c76b1, Press 7f8411e. Full authored 22-paragraph essay unchanged, source-anchored spatial scene on the same page as its prose and edition-specific running imprint. Browser verification passed in Chrome-emulated iPad portrait/landscape, phone and desktop. Actual iPad Safari GPU and author acceptance remain pending.
