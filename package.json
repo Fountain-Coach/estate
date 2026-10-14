@@ -10,6 +10,7 @@
   },
   "scripts": {
     "check": "node scripts/verify-estate.mjs",
-    "test": "node scripts/verify-estate.mjs"
+    "test": "node scripts/verify-estate.mjs",
+    "staging:verify": "python3 scripts/verify-wlan-staging.py"
   }
 }

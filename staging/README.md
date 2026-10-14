@@ -1,75 +1,69 @@
-# Three-front Fountain Coach WLAN staging
+# Fountain Coach: Three-front WLAN staging
 
-This staging is intentionally **not** a public HTTPS deployment. It serves
-the three GitHub-owned editorial front doors from a verified, explicitly
-pinned, copied release on the Ubuntu Mac mini connected to the home WLAN.
+The Ubuntu Intel Mac mini, `benedikt-Macmini.local` / `192.168.8.249`, serves the
+**current GitHub-owned editorial estate** from a separate staging release.
+This is NOT the public DNS or Caddy publisher and requires no Hetzner Git.
 
-## Staging addresses
+Publicly usable only **within the WLAN**:
 
-- Fountain Coach: http://192.168.8.249:8180/
-- First Reading: http://192.168.8.249:8181/editions/first-reading/
-- Teatro: http://192.168.8.249:8182/
-- Read-only health/status: http://192.168.8.249:8180/__stage/health
+1. **Fountain Coach**: http://192.168.8.249:8180/
+2. **First Reading**: http://192.168.8.249:8181/editions/first-reading/
+3. **Teatro**: http://192.168.8.249:8182/
 
-Ubuntu host: `MacMiniDocker` (SSH), `benedikt-Macmini.local`,
-WLAN address `192.168.8.249`.
-Do not confuse with the development Mac `192.168.8.12`.
-The iPad must be on the same WLAN; no public DNS or port forwarding is needed.
+All three header rail links are rewritten in the **disposable staging copy only**
+to these three exact URLs. First Reading retains its author-owned original
+Linotype reader, not a synthetic new shell. `status.fountain.coach` is still
+footer/legal material and is not admitted as a fourth publication.
 
-## Source admission and reproducibility
+## Original sources
 
-The release holds exact source file trees from the following GitHub repos:
+- `Fountain-Coach/fountain.coach` — `site/`
+- `Fountain-Coach/solstice.fountain.coach` — `site/`; active authorial page
+  `editions/first-reading/` (future `solstice.fountain.coach` DNS not assumed)
+- `Fountain-Coach/teatro.fountain.coach` — `site/`
+- `Fountain-Coach/estate` — `manifest.json` and these staging scripts.
 
-- `Fountain-Coach/fountain.coach`, site/
-- `Fountain-Coach/solstice.fountain.coach`, site/
-- `Fountain-Coach/teatro.fountain.coach`, site/
+The staging release on Ubuntu is:
+`/home/benedikt/estate-three-front-staging/releases/20261014-three-front-github-v1/`.
+The stable symlink is `/home/benedikt/estate-three-front-staging/current`.
+Source commits and file counts are in `current/source-lock.json`; the SHA-256
+inventories are in `current/manifests/`. The complete source inventories were
+checked before the stage-only link rewrite.
 
-Their 40-character Git revisions are captured in
-`releases/<release>/source-lock.json` on Ubuntu, and each pre-transformation
-SHA-256 source inventory is under `releases/<release>/manifests/`.
-All three inventories passed `sha256sum -c` before staging projection.
-The only staging transformation is replacing exactly the three editorial
-navigation destinations with the adjacent staging ports on complete HTML
-pages. The authored book itself has no site-wide estate rail and retains
-its separate Linotype reading controls. Content and typesetting must not
-be rewritten to implement a staging shell.
+`staging/fountain-three-front-stage.service` is installed under the Ubuntu
+user's `~/.config/systemd/user/` and enabled. It serves three independent
+site roots from a *single* Python process, bound only to WLAN address
+`192.168.8.249`, on ports `8180/8181/8182`. Old estate staging ports
+`8089` through `8096` are left untouched. Check using
+`systemctl --user status fountain-three-front-stage.service` over SSH.
 
-Ubuntu release root:
-`/home/benedikt/estate-three-front-staging/releases/20261014-three-front-github-v1`.
+## Repeatable refresh
 
-Current release symlink:
-`/home/benedikt/estate-three-front-staging/current`.
+1. Update and review each owning GitHub repository independently; ensure
+   `site/` and `publication-files.sha256` agree at a pinned 40-character SHA.
+2. Create a **new** release directory under Ubuntu `releases/`; `rsync`
+   each owner's `site/` to its `fountain/`, `solstice/`, or `teatro/` root.
+   Preserve older releases and source repos. Do not synchronize `proof/`/
+   `candidates/` into source; these are generated print artifacts.
+3. Copy SHA-256 inventories, verify with `sha256sum -c --status` from each
+   site root, and create `source-lock.json` with the three GitHub SHAs.
+4. Run `python3 prepare-wlan-staging.py --release /absolute/new-release` on
+   Ubuntu. It rewrites **only three nav links**, leaving original source
+   and book content unchanged. A repeat run should change zero HTML pages.
+5. Atomically advance the `current` symlink and restart the user service if
+   needed. Roll back by repointing `current` to the previous release.
+6. Run `npm run staging:verify` from this repository on the Mac while the
+   Ubuntu target is on the same WLAN. Verify the real iPad Safari experience.
 
-Service:
-`systemctl --user status fountain-three-front-stage.service`.
-Source:
-`scripts/serve-wlan-staging.py` and `scripts/prepare-wlan-staging.py`,
-deployed to `/home/benedikt/estate-three-front-staging/`.
-The persistent per-user service unit is
-`staging/fountain-three-front-stage.service`.
+The service uses a `systemd --user` unit. The Ubuntu user currently has
+`Linger=no`, so automatic startup after a reboot with nobody logged in is **not
+guaranteed**. The user session's `default.target` does enable the service.
+For round-the-clock boot-time availability, enroll user linger via a separately
+authorized system-admin operation; do not bypass the password/polkit boundary.
 
-After a new source revision, create a **new release directory** and
-repeat exact-source copying, SHA-256 verification, the preparation
-step and the smoke checks. Only then move the `current` symlink.
-Do not edit GitHub content in the derived staging files and do not change
-the real domain/Caddy/Hetzner estate.
+## Scope and prohibitions
 
-## Verification record (14 October 2026)
-
-All three main staging pages independently returned HTTP 200 from the
-Mac at `192.168.8.12`. Their CSS/JS images and bundle assets
-returned HTTP 200. The book contained real original edition images and
-Linotype scripts. The health endpoint returned `ready` with the three
-canonical Git source revisions and `productionPublished: false`.
-
-The existing browser automation against the staging book URL passed:
-phone portrait, iPad portrait, compact iPad landscape, iPad landscape,
-laptop and desktop. **Phone landscape failed** a sheet-fit geometry
-assertion: sheet top at 49px vs viewport top at 54px; the sheet bottom
-was also approximately 5px past viewport. This is a **source layout
-issue**, not a missing HTTP file, and must be fixed in the owning
-Linotype source rather than patched in staging. iPad device-specific
-Safari proof remains a separate human visual acceptance task.
-
-Do not claim production publication or that a live iPad was tested from
-Mac-host browser emulation.
+This preview performs no public Caddy/DNS write, no EstatePublisher operation,
+no GitHub Actions, no new Git clone on Ubuntu, and no machine-wide service
+installation. It is not a production release. All routes send
+`X-Robots-Tag: noindex, nofollow` and `Cache-Control: no-store`.
