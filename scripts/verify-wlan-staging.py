@@ -99,7 +99,7 @@ def test():
  player_script=fetch(ROOTS["teatro"]+"assets/linotype/book-player.mjs")[0].decode()
  assert 'fountain:book:play-request' in player_script
  assert 'fountain:book:transport' in player_script
- assert 'earIcon' in player_script and 'source==='teatro-web-audio-preview'?0.30:0.025' in player_script
+ assert "earIcon" in player_script and "source==='teatro-web-audio-preview'?0.30:0.025" in player_script
  assert 'id="book-media-settings"' in teatro
  assert teatro.count('data-book-sound-parameter=')==4
  assert 'id="satzfunk-hear"' not in teatro and 'id="satzfunk-hearing-rail"' not in teatro
