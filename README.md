@@ -65,3 +65,5 @@ http://192.168.8.249:8182/editions/first-hearing/ and original Stage at
 http://192.168.8.249:8182/editions/stage/.
 The source-lock and HTTPS publishing gates remain separate: Git push
 and WLAN proof are **not** a public production release.
+
+Teatro root edition latest source owner: Fountain-Coach/teatro.fountain.coach at 205a7c8; active Ubuntu WLAN release v5. The Teatro editions catalogue legal footer now groups Company Status with legal notices.
