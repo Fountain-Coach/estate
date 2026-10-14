@@ -92,3 +92,30 @@ Teatro WebGL book-page source: Fountain-Coach/teatro.fountain.coach at 7063ae3, 
 Teatro Reframe R12 Slice A, source owner 17c76b1, is the verified WLAN v7 candidate. The scene is now source-pinned inside the essay, composed by Fountain Press 7f8411e; this is an unaccepted author UX trial, not a public production release.
 
 Teatro R12 v8 is the GitHub-owned WLAN candidate: e7b1d70, original WebGL stage preserved, canonical moving puppet fallback source midi2-gpu-fabric branch codex/teatro-r12-moving-puppet-fallback-20261014 commit 30565d1. Author iPad acceptance pending.
+
+## R17 — Linotype Bookshelf is now the Teatro landing candidate
+
+The Teatro WLAN domain root `/` and `/editions/` use the
+reusable **Fountain Press Bookshelf state**, not a direct full-book
+page or a separate brochure. The single real book,
+*Teatro — An Unfinished Composition*, has both a small paper
+thumbnail and a large cover containing its original source-authorized
+Teatro Memory Vector plate. A touch/click enters the preserved,
+author-acknowledged v16 book at `/editions/first-hearing/`.
+The original Stage is secondary, **not** another book.
+
+Source owners: Press `6131c16`, Teatro `d415c39`,
+Reframe R17 `900ad35`. Active Ubuntu WLAN v17 is
+`20261014-teatro-r17-bookshelf-landing-v17` on port 8182;
+the v16 beta remains independently pinned and available
+for rollback. Estate's Teatro landing path and edition entry now
+address `/editions/`, while `firstHearing.readerPath`
+preserves the actual author-approved book. Other estate/front-door
+rails still linking directly to the book are **not** claimed
+to have been republished.
+
+Five live responsive browser profiles, original book/source SHA
+and unchanged reader controls were verified. The bookshelf is a
+new author-approval candidate, and public HTTPS remains
+unpublished. See
+[Reframe scenario R17](https://github.com/Fountain-Coach/Reframe/blob/main/scenarios/017-linotype-bookshelf-landing.md).

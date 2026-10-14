@@ -60,19 +60,20 @@
       "rank": 3,
       "url": "https://teatro.fountain.coach/",
       "sourceRepo": "Fountain-Coach/teatro.fountain.coach",
-      "entryEditionUrl": "https://teatro.fountain.coach/editions/first-hearing/",
+      "entryEditionUrl": "https://teatro.fountain.coach/editions/",
       "landing": {
         "url": "https://teatro.fountain.coach/",
-        "path": "/editions/first-hearing/",
-        "kind": "linotype-book"
+        "path": "/editions/",
+        "kind": "linotype-bookshelf"
       },
-      "sourceCommit": "69656eb5934bc076fd589391ed7061c37287e194",
+      "sourceCommit": "d415c393a4b23681ba903e091c8b7ccf523a1edc",
       "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
       "firstHearing": {
         "hearingSystem": "Fountain-Coach/Satzfunk",
         "adapterCommit": "fad70097c08a0b610af87d5e5a6fc1057f6adf3d",
         "spokenRecording": "not-released",
-        "linkingRule": "Any published hearing must prove exact source SHA, chapter transcript, same-origin media and author approval"
+        "linkingRule": "Any published hearing must prove exact source SHA, chapter transcript, same-origin media and author approval",
+        "readerPath": "/editions/first-hearing/"
       },
       "subEditions": [
         {
@@ -82,7 +83,7 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub owner 69656eb; Ubuntu WLAN v16 measured Play color halo, Ear identity inside parameters, actual audio synchronized; public HTTPS unchanged",
+      "sourcePublicationState": "GitHub owner d415c39; Ubuntu WLAN v17 Linotype Bookshelf landing, original v16 First Hearing book preserved; public HTTPS unchanged",
       "betaMilestone": {
         "state": "author-acknowledged-reading-listening-beta",
         "date": "2026-10-14",
@@ -96,6 +97,28 @@
         "nativeMidi2HostAccepted": false,
         "trustedIPadCsoundAccepted": false,
         "reframeDecisionCommit": "a2226608d1333b8f1ff7b1daf03d366fabe5ca58"
+      },
+      "bookshelfMilestone": {
+        "status": "staging-candidate",
+        "date": "2026-10-14",
+        "schema": "fountain.press.bookshelf-state.v1",
+        "root": "/",
+        "index": "/editions/",
+        "books": [
+          {
+            "id": "teatro-first-hearing",
+            "reader": "/editions/first-hearing/",
+            "coverImage": "/assets/edition/teatro-score-memory-vector-human-condition.svg",
+            "sourceRepository": "Fountain-Coach/fountain.coach",
+            "sourceArtworkVerified": true
+          }
+        ],
+        "fountainPressSourceCommit": "6131c16a843ef658a0c27da2baaae838420675f8",
+        "teatroSourceCommit": "d415c393a4b23681ba903e091c8b7ccf523a1edc",
+        "wlanRelease": "20261014-teatro-r17-bookshelf-landing-v17",
+        "publicPublished": false,
+        "authorAccepted": false,
+        "preservedV16Beta": true
       }
     }
   ],

@@ -26,13 +26,22 @@ assert(m.frontDoors.every(x=>typeof x.entryEditionUrl==='string'&&x.entryEdition
 assert(m.rules.rail.includes('rail points into'));
 assert(m.rules.subEditions.includes('independent reading position'));
 const teatro=m.frontDoors.find(x=>x.id==='teatro');
-assert.equal(teatro.landing.path,'/editions/first-hearing/');
-assert.equal(teatro.entryEditionUrl,'https://teatro.fountain.coach/editions/first-hearing/');
+assert.equal(teatro.landing.path,'/editions/');
+assert.equal(teatro.entryEditionUrl,'https://teatro.fountain.coach/editions/');
+assert.equal(teatro.firstHearing.readerPath,'/editions/first-hearing/');
 assert.equal(teatro.subEditions[0].path,'/editions/stage/');
 assert.equal(teatro.firstHearing.spokenRecording,'not-released');
 assert.equal(teatro.betaMilestone.state,'author-acknowledged-reading-listening-beta');
 assert.equal(teatro.betaMilestone.wlanRelease,'20261014-teatro-r16-play-ring-calibrated-v16');
-assert.equal(teatro.betaMilestone.sourceCommit,teatro.sourceCommit);
+// The v16 beta source is intentionally frozen while v17 changes only landing state.
+assert.equal(teatro.betaMilestone.sourceCommit,'69656eb5934bc076fd589391ed7061c37287e194');
+assert.equal(teatro.bookshelfMilestone.teatroSourceCommit,teatro.sourceCommit);
+assert.equal(teatro.bookshelfMilestone.wlanRelease,'20261014-teatro-r17-bookshelf-landing-v17');
+assert.equal(teatro.bookshelfMilestone.books.length,1);
+assert.equal(teatro.bookshelfMilestone.books[0].reader,'/editions/first-hearing/');
+assert.equal(teatro.bookshelfMilestone.publicPublished,false);
+assert.equal(teatro.bookshelfMilestone.authorAccepted,false);
+assert.equal(teatro.bookshelfMilestone.preservedV16Beta,true);
 assert.equal(teatro.betaMilestone.fullReframeAccepted,false);
 assert.equal(teatro.betaMilestone.publicHTTPSPublished,false);
 assert.equal(teatro.betaMilestone.nativeMidi2HostAccepted,false);

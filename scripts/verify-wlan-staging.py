@@ -78,8 +78,19 @@ def test():
  check_rail(body,"solstice",NAV)
  assert 'data-legal-role="company-status"' in body
  print("PASS","solstice","First Reading edition rail and footer")
- teatro=fetch(ROOTS["teatro"])[0].decode()
- assert teatro==fetch(ROOTS["teatro"]+"editions/first-hearing/")[0].decode()
+ shelf=fetch(ROOTS["teatro"])[0].decode()
+ assert shelf==fetch(ROOTS["teatro"]+"editions/")[0].decode()
+ assert 'data-linotype-state="bookshelf"' in shelf
+ assert 'data-book-count="1"' in shelf
+ assert shelf.count('class="shelf-book"')==1
+ assert 'href="/editions/first-hearing/"' in shelf
+ assert 'class="shelf-miniature"' in shelf and 'class="shelf-cover"' in shelf
+ assert shelf.count('src="/assets/edition/teatro-score-memory-vector-human-condition.svg"')==2
+ assert 'id="book-flow"' not in shelf
+ assert 'governance-constitution' not in shelf and 'book-of-reframe' not in shelf
+ assert len(fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0])>1500
+ teatro=fetch(ROOTS["teatro"]+"editions/first-hearing/")[0].decode()
+ assert shelf!=teatro
  assert 'id="book-viewport"' in teatro and 'id="book-flow"' in teatro
  assert teatro.count('data-book-chapter=')==1
  assert teatro.count('src="/assets/edition/')==1
@@ -152,7 +163,7 @@ def test():
  assert 'id="root"' in stage
  check_rail(stage,"teatro stage",NAV)
  assert 'data-legal-role="company-status"' in stage
- print("PASS","teatro","standalone reader controls/side rail, MIDI2 Ear, old site header/footer absent; stage retained")
+ print("PASS","teatro","source-pinned Bookshelf landing plus independent v16 reader, MIDI2 Ear and Stage")
  status=__import__("urllib.error",fromlist=["HTTPError"])
  try:
   fetch(ROOTS["teatro"]+"editions/first-hearing/hearings.json")

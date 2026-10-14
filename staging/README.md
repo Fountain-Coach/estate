@@ -271,3 +271,28 @@ operations and spoken media release are still open.
 
 Treat this as a positive **beta design milestone and regression anchor**,
 not permission to deploy to production or bypass source authority.
+
+## R17 — Teatro Bookshelf landing, v16 reader preserved
+
+The stage preview now serves a source-bound Linotype Bookshelf at both
+`http://192.168.8.249:8182/` and `/editions/`, using the Press
+`6131c16` template. It contains exactly one authorized book
+with the real Teatro source plate as miniature **and** cover; the
+whole object enters `/editions/first-hearing/` at the unchanged
+author-acknowledged beta reader. Teatro owner `d415c39`,
+Ubuntu release `20261014-teatro-r17-bookshelf-landing-v17`.
+The original v16 release stays on the host for rollback.
+
+Source SHA inventory passed before estate projection.
+The staging preparation modifies precisely the existing managed
+`editions/stage/index.html` navigation shell, which means that
+prepared file is a declared estate projection rather than a raw
+byte-equivalent copy of the Git owner file. The untouched bookshelf,
+original 22 paragraphs/score, direct reading URL and browser
+audio/MIDI2 experience passed five live layout checks.
+Original Stage remains independently accessible and is not a book.
+
+**Only WLAN staged.** No public HTTPS, no native MIDI2, no
+newly admitted books and no full Reframe writer acceptance.
+The author has approved the earlier v16 book as beta, while the
+new Bookshelf entrance still needs their UX verdict.
