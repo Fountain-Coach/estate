@@ -2,6 +2,25 @@
 
 This registry owns public editorial roles and GitHub ownership references, not the content of other repositories or deployment credentials.
 
+## Current milestone: Teatro / Linotype v16 beta acknowledged
+
+**On 14 October 2026 the author expressly recognized the current
+Teatro book-first reader/listening experience as “a great beta state”.**
+This is an accepted *beta UX reference*, not full Reframe acceptance or
+permission to publish the Teatro domain. The canonical author decision
+and frozen revision evidence are documented in
+[Reframe — Teatro Linotype beta v16](https://github.com/Fountain-Coach/Reframe/blob/main/docs/milestones/2026-10-14-teatro-linotype-beta-v16.md).
+
+The benchmark implementation is owned by Teatro `69656eb` and Fountain
+Press `45e28c7`, staged as Ubuntu WLAN release
+`20261014-teatro-r16-play-ring-calibrated-v16` on port 8182. The estate
+manifest records a separate `betaMilestone` with explicit false
+values for **public HTTPS publication**, **full Reframe writer
+acceptance**, **native MIDI2 host transport** and **trusted iPad Csound
+acceptance**. Earlier sections below describe the development path;
+their outdated Hear/rail candidate wording is historical, **not**
+the current v16 interface.
+
 ## Exactly three front doors
 
 1. Fountain Coach: https://fountain.coach/ — editorial identity and publisher.

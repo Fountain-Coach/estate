@@ -82,7 +82,21 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub owner 69656eb; Ubuntu WLAN v16 measured Play color halo, Ear identity inside parameters, actual audio synchronized; public HTTPS unchanged"
+      "sourcePublicationState": "GitHub owner 69656eb; Ubuntu WLAN v16 measured Play color halo, Ear identity inside parameters, actual audio synchronized; public HTTPS unchanged",
+      "betaMilestone": {
+        "state": "author-acknowledged-reading-listening-beta",
+        "date": "2026-10-14",
+        "reference": "Fountain-Coach/Reframe/docs/milestones/2026-10-14-teatro-linotype-beta-v16.md",
+        "authorDecision": "great beta state",
+        "wlanRelease": "20261014-teatro-r16-play-ring-calibrated-v16",
+        "fountainPressCommit": "45e28c7f2d235147aa1c21623083e6e89b3bee2a",
+        "sourceCommit": "69656eb5934bc076fd589391ed7061c37287e194",
+        "fullReframeAccepted": false,
+        "publicHTTPSPublished": false,
+        "nativeMidi2HostAccepted": false,
+        "trustedIPadCsoundAccepted": false,
+        "reframeDecisionCommit": "a2226608d1333b8f1ff7b1daf03d366fabe5ca58"
+      }
     }
   ],
   "supportingDomains": [

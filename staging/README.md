@@ -247,3 +247,27 @@ and MIDI2 UMP parameter/observation plane are preserved. WLAN HTTP
 continues to use the disclosed Web Audio preview. Physical iPad Safari
 approval, secure-origin Csound in Safari, native hardware MIDI2 and
 durable Reframe editorial persistence remain unaccepted.
+
+## Author acknowledged Teatro / Linotype v16 as a beta state
+
+On 14 October 2026 the author, after repeated visual iPad review of
+the running WLAN book, said “okay ! this is a great beta state !
+please document accordingly”. The approved reference concerns the
+**book-first reader/listening UX**, not the complete Reframe editor or
+a public Teatro publication. Reframe records the exact decision in
+`docs/milestones/2026-10-14-teatro-linotype-beta-v16.md` in its own
+GitHub repository.
+
+The active Ubuntu WLAN release remains
+`20261014-teatro-r16-play-ring-calibrated-v16`, Teatro source
+`69656eb`, Fountain Press `45e28c7`, with v15 available for rollback.
+The original literary text/plate and the five-layout browser,
+RMS-driven Play-circle, side Contents, synchronized score/audio,
+secure-loopback Csound/Ear and browser-local MIDI2 UMP evidence
+remain the technical witnesses. The HTTP WLAN uses a clearly
+identified Web Audio preview. **No public HTTPS deployment was made**;
+Safari Csound on trusted HTTPS, native MIDI2, durable Reframe writer
+operations and spoken media release are still open.
+
+Treat this as a positive **beta design milestone and regression anchor**,
+not permission to deploy to production or bypass source authority.
