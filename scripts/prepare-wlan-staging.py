@@ -21,7 +21,7 @@ LINK = re.compile(
 )
 IP = "192.168.8.249"
 DEST = {
-    "estate": f"http://{IP}:8180/",
+    "estate": f"http://{IP}:8180/editions/essays/",
     "first-reading": f"http://{IP}:8181/editions/first-reading/",
     "teatro": f"http://{IP}:8182/",
 }
@@ -74,7 +74,24 @@ def rewrite(content: str):
             raise ValueError("Expected First Reading + Teatro on essay cover: "+str(seen))
         return match.group(1)+rebuilt+match.group(3)
     updated, cover_count = cover.subn(update_cover, updated)
-    return updated, count+cover_count
+    # Nested Linotype essay readers use a deliberately restrained edition rail.
+    # Its addresses are staged independently of the published Git source.
+    edition_nav = re.compile(r'(<nav\b[^>]*class="[^"]*\bedition-rail\b[^"]*"[^>]*>)(.*?)(</nav>)',re.S)
+    def update_edition_rail(match):
+        seen=set()
+        def replace_link(link):
+            identity=link.group("id")
+            seen.add(identity)
+            fragment=link.group(1)
+            fragment,n=re.subn(r'href="[^"]+"','href="'+DEST[identity]+'"',fragment,count=1)
+            if n!=1:raise ValueError("Edition rail missing href: "+identity)
+            return fragment
+        new=LINK.sub(replace_link,match.group(2))
+        if seen!={"estate","first-reading","teatro"}:
+            raise ValueError("Incomplete edition rail: "+str(seen))
+        return match.group(1)+new+match.group(3)
+    updated, edition_count=edition_nav.subn(update_edition_rail,updated)
+    return updated, count+cover_count+edition_count
 
 def main():
     parser = argparse.ArgumentParser()

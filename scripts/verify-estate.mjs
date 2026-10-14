@@ -13,4 +13,16 @@ assert.equal(new Set(repos).size,repos.length);
 assert.equal(m.supportingDomains.find(x=>x.host==='status.fountain.coach').role,'mandatory-legal-footer-and-transparency');
 assert.equal(m.supportingDomains.find(x=>x.host==='book.fountain.coach').status,'live-receded');
 assert(m.rules.publishing.includes('HTTPS readback'));
+const fc=m.frontDoors.find(x=>x.id==='fountain-coach');
+assert.equal(fc.landing.path,'/editions/');
+assert.equal(fc.entryEditionPath,'/editions/essays/');
+assert.equal(fc.nestedEditions.length,3);
+for(const edition of fc.nestedEditions){
+ assert(edition.url.startsWith('https://fountain.coach/editions/essays/'));
+ assert(edition.url.endsWith('/'));
+}
+assert.equal(fc.sourceCommit,'e8d34eb0e6317586a293052d46fcbc005efc7fd7');
+assert(m.frontDoors.every(x=>typeof x.entryEditionUrl==='string'&&x.entryEditionUrl.startsWith('https://')));
+assert(m.rules.rail.includes('rail points into'));
+assert(m.rules.subEditions.includes('independent reading position'));
 console.log('ESTATE_VERIFIED',m.frontDoors.map(x=>x.name).join(', '),'Git owners',repos.length);

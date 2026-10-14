@@ -19,3 +19,25 @@ See manifest.json for each domain's actual GitHub source owner and its admission
 GitHub becomes the canonical home of content and estate composition. The old Hetzner Git remote is deprecated only after Git history and package consumers are reconciled. Hetzner Caddy can continue hosting HTTPS. Source commit, exact-site materialization, typed EstatePublisher release and public readback are separate operations.
 
 Run npm run check for the machine-readable role and ownership contract. No GitHub Actions/CI, Git submodules, fictional books, automatic DNS mutation or force pushes.
+
+
+## Editions hierarchy (October 2026, staging admitted)
+
+The domain `fountain.coach/` now **lands in the editions catalogue**
+(mirrored at `/editions/`). It no longer drops a reader straight onto the
+Essays cover. The Fountain Coach estate rail points directly to its
+**`/editions/essays/`** volume, while First Reading and Teatro point into
+their independently owned edition surfaces.
+
+The Essays volume has three complete nested sub-editions, each with a stable
+`/editions/essays/<source-slug>/` address, its own cover, contents, and
+independent Linotype reading position. The original complete authorial pages
+in `/essays/` remain source material, byte-for-byte intact. This is a
+published-hierarchy **candidate**, not an automatic claim of production HTTPS.
+
+Current source: `Fountain-Coach/fountain.coach` at `e8d34eb`.
+Current accepted WLAN release: `20261014-editions-hierarchy-three-front-v3` on
+`192.168.8.249:8180`; First Reading remains on 8181, Teatro on 8182.
+Run `npm run staging:verify` for real stage routes, nested readers, estate
+rail and legal footer checks; the Git-owning source additionally runs
+actual simulated browser tests for each sub-edition.

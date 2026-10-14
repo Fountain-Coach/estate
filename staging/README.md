@@ -86,3 +86,25 @@ Real Ubuntu-hosted browser QA passes for iPad portrait, iPad landscape
 spread, desktop, phone portrait, and phone landscape. The whole authorial
 essay content is preserved verbatim: 77 paragraphs and five original plates.
 No source essays have been rewritten.
+
+
+## New staging hierarchy: v3
+
+The active release `20261014-editions-hierarchy-three-front-v3` makes
+`http://192.168.8.249:8180/` and `/editions/` the **editions catalogue**.
+The Fountain Coach estate rail points to
+`http://192.168.8.249:8180/editions/essays/`; the Essays edition contains
+three separately typeset sub-editions at `/editions/essays/<slug>/`.
+The original source essay directory `/essays/` remains an archive of the
+unchanged published essays. Stage-only rail rewriting is done on disposable
+Ubuntu release copies, not in the Git owner, including on standalone books
+and original source pages. First Reading and Teatro now also link directly
+into the essay edition from their estate rails.
+
+The source inventory was independently SHA-256 verified before link rewriting
+and the complete WLAN release checked for every edition route, legal footer,
+original assets and nested reader. Browser checks against the live Ubuntu
+stage verify all three nested editions on iPad portrait, iPad landscape, and
+phone portrait, and the omnibus on iPad and phone in both orientations.
+Earlier v1/v2 releases remain available for rollback. No DNS or Caddy
+production mutation is performed.

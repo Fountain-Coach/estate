@@ -8,15 +8,36 @@
       "rank": 1,
       "url": "https://fountain.coach/",
       "sourceRepo": "Fountain-Coach/fountain.coach",
-      "editorialEdition": "source-bound-linotype-essays",
+      "editorialEdition": "catalogue-with-source-bound-nested-essays",
       "editorialOrder": [
         "teatro-an-unfinished-composition",
         "semantic-compilation-the-archive-is-not-the-edition",
         "reframe-and-the-business-value-of-the-estate"
       ],
       "authorialContent": "Three complete published essays, 77 paragraphs, five original plates",
-      "sourceCommit": "49a35bf14adfa818d3b01f5eb7bdc5915657a5b4",
-      "sourcePublicationState": "Git source candidate; staged on WLAN, not publicly deployed"
+      "sourceCommit": "e8d34eb0e6317586a293052d46fcbc005efc7fd7",
+      "sourcePublicationState": "Git owner main; WLAN release v3; public production not deployed",
+      "landing": {
+        "url": "https://fountain.coach/",
+        "path": "/editions/",
+        "kind": "edition-catalogue"
+      },
+      "entryEditionUrl": "https://fountain.coach/editions/essays/",
+      "entryEditionPath": "/editions/essays/",
+      "nestedEditions": [
+        {
+          "slug": "teatro-an-unfinished-composition",
+          "url": "https://fountain.coach/editions/essays/teatro-an-unfinished-composition/"
+        },
+        {
+          "slug": "semantic-compilation-the-archive-is-not-the-edition",
+          "url": "https://fountain.coach/editions/essays/semantic-compilation-the-archive-is-not-the-edition/"
+        },
+        {
+          "slug": "reframe-and-the-business-value-of-the-estate",
+          "url": "https://fountain.coach/editions/essays/reframe-and-the-business-value-of-the-estate/"
+        }
+      ]
     },
     {
       "id": "first-reading",
@@ -29,7 +50,8 @@
       "futureHost": "solstice.fountain.coach",
       "engineRepo": "Fountain-Coach/fountain-press",
       "audioRepo": "Fountain-Coach/Satzfunk",
-      "status": "published-under-works; solstice-DNS-unresolved"
+      "status": "published-under-works; solstice-DNS-unresolved",
+      "entryEditionUrl": "https://works.benedikt-eickhoff.de/solstice/editions/first-reading/"
     },
     {
       "id": "teatro",
@@ -37,7 +59,8 @@
       "role": "performance-score-and-listening",
       "rank": 3,
       "url": "https://teatro.fountain.coach/",
-      "sourceRepo": "Fountain-Coach/teatro.fountain.coach"
+      "sourceRepo": "Fountain-Coach/teatro.fountain.coach",
+      "entryEditionUrl": "https://teatro.fountain.coach/"
     }
   ],
   "supportingDomains": [
@@ -93,14 +116,16 @@
   "legacyGitRemote": "git@65.109.14.71:/mnt/HC_Volume_106773053/git/repos/",
   "publisherSourceRepo": "Fountain-Coach/midi2-gpu-fabric",
   "staticServing": "Hetzner Caddy remains supported independently of retiring Hetzner Git",
-  "publicationState": "admitted-editorial-roles; not-yet-publicly-promoted",
+  "publicationState": "source-admitted-and-wlan-staged-not-publicly-promoted",
   "rules": {
-    "bookshop": "First Reading only; do not relabel Reframe or Governance as books",
+    "bookshop": "Edition identity and free reading are independent from OPDS/bookshop admission and checkout; no products or sales are implied.",
     "status": "status.fountain.coach legal footer only",
     "source": "one GitHub owner per domain; downstream estate never edits source",
     "publishing": "typed-authorized EstatePublisher and independent live HTTPS readback; Git pushes alone cannot publish",
     "archives": "preserve hosted historical references; private archive unserved Tennis",
-    "ci": "no GitHub Actions/workflows"
+    "ci": "no GitHub Actions/workflows",
+    "rail": "A front-door rail points into that domain’s edition, not into the editions catalogue; the root / is the catalogue, not the Essays cover.",
+    "subEditions": "Every nested edition has its own canonical source-backed URL, full manuscript, Linotype pagination, and independent reading position; original essays remain intact."
   },
   "gitMigration": {
     "monorepo": "reconcile Hetzner and GitHub history without force-push",
