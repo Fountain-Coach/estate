@@ -66,7 +66,7 @@
         "path": "/editions/first-hearing/",
         "kind": "linotype-book"
       },
-      "sourceCommit": "eb7910e2217680e490e6cc25867a0b373904a12b",
+      "sourceCommit": "6b43f79be9c3771906c26ebe023b4073d5fc6288",
       "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
       "firstHearing": {
         "hearingSystem": "Fountain-Coach/Satzfunk",
@@ -82,7 +82,7 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub owner eb7910e; Ubuntu WLAN v11 corrected phone atlas identity and Play scene affordance; secure-local Csound/Ear verified; public HTTPS unchanged"
+      "sourcePublicationState": "GitHub owner 6b43f79; Ubuntu WLAN v12 book-only centered controls, fixed type, adjacent Contents, proportionate Play; Csound/Ear and MIDI2 retained; public HTTPS unchanged"
     }
   ],
   "supportingDomains": [

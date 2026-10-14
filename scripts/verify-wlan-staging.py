@@ -100,8 +100,28 @@ def test():
                'assets/linotype/book-player.css','assets/book-csound-host.js'):
   payload=fetch(ROOTS["teatro"]+asset)[0]
   assert len(payload)>200,("Missing MIDI2 player asset",asset)
- assert 'data-legal-role="company-status"' in teatro
- check_rail(teatro,"teatro first hearing",EDNAV)
+ # The book is a reading instrument, not another estate website.
+ assert 'class="book-toolbar book-reading-controls"' in teatro
+ assert 'class="book-pagination book-reading-pagination"' in teatro
+ assert 'class="book-back"' not in teatro
+ assert 'class="edition-rail"' not in teatro
+ assert 'class="book-legal"' not in teatro
+ assert 'data-legal-role="company-status"' not in teatro
+ assert 'aria-haspopup="dialog">Contents</button>' not in teatro
+ assert 'id="book-toc-button"' in teatro
+ assert '<svg viewBox="0 0 24 24"' in teatro
+ assert 'id="book-type-button"' not in teatro
+ assert 'id="book-appearance"' not in teatro
+ assert 'id="book-font-smaller"' not in teatro
+ assert 'id="book-font-larger"' not in teatro
+ assert 'src="/assets/teatro-play.svg"' in teatro
+ assert '<a href="/editions/">' not in teatro
+ assert 'PUBLISHED SOURCE · FOUNTAIN.COACH / TEATRO' in teatro
+ book_js=fetch(ROOTS["teatro"]+"assets/linotype/book.js")[0].decode()
+ assert 'book-reading-shell' in book_js and 'setContentsOpen(' in book_js
+ assert 'engine.compose(1)' in book_js
+ assert 'fontSize=clamp(' not in book_js
+
  stage=fetch(ROOTS["teatro"]+"editions/stage/")[0].decode()
  assert 'data-teatro-stage-return' in stage
  assert 'href="/editions/first-hearing/"' in stage
@@ -109,7 +129,7 @@ def test():
  assert 'id="root"' in stage
  check_rail(stage,"teatro stage",NAV)
  assert 'data-legal-role="company-status"' in stage
- print("PASS","teatro","book-first MIDI2 player and Ear present, old Hear rail gone, stage retained")
+ print("PASS","teatro","standalone reader controls/side rail, MIDI2 Ear, old site header/footer absent; stage retained")
  status=__import__("urllib.error",fromlist=["HTTPError"])
  try:
   fetch(ROOTS["teatro"]+"editions/first-hearing/hearings.json")

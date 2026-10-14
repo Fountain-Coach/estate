@@ -181,3 +181,26 @@ Actual source inventory SHA-256 and full live WLAN book tests pass on
 phone portrait and landscape plus iPad portrait/landscape and desktop.
 This is a candidate for writer acceptance; Csound HTTPS and native MIDI2
 are separate R12 gates and public HTTPS remains unchanged.
+
+
+## R14 — centered Linotype controls; no website furniture — v12
+
+Active Ubuntu staging:
+`20261014-teatro-r14-centered-book-rail-v12`.
+Source Teatro GitHub owner `6b43f79`, Fountain Press `4012388`.
+The original authorial paragraphs and score have not changed.
+The book does not present website-like estate/edition links at its top
+or company/legal links in the bottom pagination. Previous, progress and
+next form a compact centered book footer; sound/Ear and an icon-driven
+Contents affordance form the centered header. Opening Contents creates
+a **true adjacent reflowing rail**, not a modal overlay. No Aa/font-size
+percentage selector remains; authored typography stays at one editorial
+scale. The idle scene Play affordance is held at a small, paper-proportional
+size rather than a full-size poster.
+
+Source SHA-256 and five live WLAN browser profiles passed, including
+phone/iPad portrait and landscape. The secure localhost Csound/Ear
+worklet regression also passes, but native MIDI2, secure iPad Safari
+Csound/HTTPS, durable editing and author acceptance remain pending.
+The book is still a staging candidate; the production/public Teatro
+route was not changed.
