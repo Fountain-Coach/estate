@@ -1,0 +1,15 @@
+[Unit]
+Description=Fountain Coach Three-Front WLAN Staging
+Documentation=https://github.com/Fountain-Coach/estate
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/benedikt/estate-three-front-staging
+ExecStart=/usr/bin/python3 /home/benedikt/estate-three-front-staging/serve-wlan-staging.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target
