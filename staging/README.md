@@ -143,3 +143,7 @@ Active Ubuntu staging: 20261014-teatro-live-webgl-book-plate-v6, pinned to owner
 ## Teatro source-addressed mixed-media v7
 
 Active WLAN release: 20261014-teatro-r12-anchored-mixed-media-v7. Git owner Fountain-Coach/teatro.fountain.coach 17c76b1, Press 7f8411e. Full authored 22-paragraph essay unchanged, source-anchored spatial scene on the same page as its prose and edition-specific running imprint. Browser verification passed in Chrome-emulated iPad portrait/landscape, phone and desktop. Actual iPad Safari GPU and author acceptance remain pending.
+
+## Teatro puppetry v8
+
+Active WLAN release: 20261014-teatro-r12-moving-puppet-v8, owner e7b1d70. On WebGL failure the book loads a canonical StageEngine/StageView SVG puppet with bar, strings, torso and limbs. All four actual WLAN browser profiles witnessed motion and book page-exit cleanup. Original WebGL/Csound bundle remains unchanged, no spoken edition released; actual iPad Safari author acceptance pending.

@@ -66,7 +66,7 @@
         "path": "/editions/first-hearing/",
         "kind": "linotype-book"
       },
-      "sourceCommit": "17c76b19af0fd00771f1d8580b03da8bb393eeb4",
+      "sourceCommit": "e7b1d70206eb53a7709f6c15fffc85fba5fcbb11",
       "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
       "firstHearing": {
         "hearingSystem": "Fountain-Coach/Satzfunk",
@@ -82,7 +82,7 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub owner 17c76b19a; WLAN v7 Reframe R12 anchored-media candidate; public HTTPS unchanged"
+      "sourcePublicationState": "GitHub owner e7b1d70; WLAN v8 animates canonical puppet on WebGL fallback, R12 candidate only; public HTTPS unchanged"
     }
   ],
   "supportingDomains": [
