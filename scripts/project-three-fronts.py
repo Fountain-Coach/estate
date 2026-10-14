@@ -26,8 +26,8 @@ def rewrite(raw,host):
         link=re.sub(r'\s+aria-current="page"','',links[ident])
         if ident=='solstice':
             link=re.sub(r'data-estate-id="solstice"','data-estate-id="first-reading"',link)
-            link=re.sub(r'href="https://solstice\.fountain\.coach/"',f'href="{FR}"',link)
-            link=re.sub(r'aria-label="Solstice"','aria-label="First Reading"',link)
+            link=re.sub(r'href="https://(?:solstice\.fountain\.coach|works\.benedikt-eickhoff\.de/solstice)(?:/editions/first-reading)?/"',f'href="{FR}"',link)
+            link=re.sub(r'aria-label="Solstice[^"]*"','aria-label="First Reading"',link)
             link=link.replace('<span>Solstice</span>','<span>First Reading</span>')
         active={'fountain.coach':'estate','teatro.fountain.coach':'teatro','solstice.fountain.coach':'solstice'}[host]
         if ident==active:link=link.replace('<a ', '<a aria-current="page" ',1)
