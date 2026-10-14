@@ -204,3 +204,26 @@ worklet regression also passes, but native MIDI2, secure iPad Safari
 Csound/HTTPS, durable editing and author acceptance remain pending.
 The book is still a staging candidate; the production/public Teatro
 route was not changed.
+
+## R15: reciprocal Teatro/book Play, measured Ear — WLAN v14
+
+Active Ubuntu WLAN release `20261014-teatro-r15-calibrated-ear-v14`;
+GitHub Teatro owner `775d11d`, Press owner `dd72832`.
+The player and its disclosure are at the **top-left**, accompanied by
+the proportional Ear logo; the Contents rail icon is **right-aligned**.
+The previous visual equalizer bars are removed. Touching the Play
+affordance inside an authored Teatro score starts the same book-audio
+transport and mounts the original animated puppet. Vice versa, starting
+global book audio while the score leaf is visible enters the scene.
+The top Pause stops actual audio and releases scene resources. Ear
+scales over a bounded 0.84–1.22 range from real, source-calibrated
+RMS—not a looped decorative animation—and continues publishing
+typed MIDI2 UMP observations.
+
+Source SHA and five **live WLAN** browser layouts passed, including real
+pointer activation, reciprocal transport, measured HTTP-preview Ear,
+parameter-panel clipping checks, source paragraphs/score and page-turn
+cleanup. Secure localhost Csound AudioWorklet/Ear worklet regression
+also passed, but HTTP WLAN on iPad still only provides the separately
+labeled Web Audio preview. Physical iPad Safari acceptance, public HTTPS
+and native MIDI2 host bridge are independent unaccepted R12/R15 gates.

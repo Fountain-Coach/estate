@@ -84,6 +84,22 @@ def test():
  assert teatro.count('data-book-chapter=')==1
  assert teatro.count('src="/assets/edition/')==1
  assert 'id="book-media-toggle"' in teatro and 'id="book-ear-status"' in teatro
+ assert 'class="book-ear-icon"' in teatro
+ assert 'class="book-ear-meter"' not in teatro
+ assert teatro.index('id="book-media-toggle"')<teatro.index('id="book-media-settings"')<teatro.index('class="book-ear-icon"')
+ css=fetch(ROOTS["teatro"]+"assets/linotype/book.css")[0].decode()
+ assert 'justify-content:space-between' in css
+ assert '.book-reading-controls .book-media-control{margin-right:auto}' in css
+ assert '.book-reading-controls #book-toc-button{margin-left:auto' in css
+ control_css=fetch(ROOTS["teatro"]+"assets/linotype/book-player.css")[0].decode()
+ assert '--ear-scale' in control_css and '.book-ear-meter' not in control_css
+ assert 'left:0;right:auto' in control_css
+ scene_script=fetch(ROOTS["teatro"]+"assets/linotype/teatro-stage-page.js")[0].decode()
+ assert 'fountain:book:play-request' in scene_script and 'fountain:book:transport' in scene_script
+ player_script=fetch(ROOTS["teatro"]+"assets/linotype/book-player.mjs")[0].decode()
+ assert 'fountain:book:play-request' in player_script
+ assert 'fountain:book:transport' in player_script
+ assert 'earIcon' in player_script and 'source==='teatro-web-audio-preview'?0.30:0.025' in player_script
  assert 'id="book-media-settings"' in teatro
  assert teatro.count('data-book-sound-parameter=')==4
  assert 'id="satzfunk-hear"' not in teatro and 'id="satzfunk-hearing-rail"' not in teatro
