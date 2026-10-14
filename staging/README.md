@@ -135,3 +135,7 @@ Prior stage v3 is retained for rollback.
 ## Final Teatro source v5
 
 Active WLAN release 20261014-teatro-book-first-hearing-v5 tracks the GitHub owner 205a7c8 and has exact source-byte SHA verification. Only the Teatro Git owner changed; Fountain Coach and First Reading still match their prior pinned revisions. No new sound take was authorized or published.
+
+## Teatro executable plate v6
+
+Active Ubuntu staging: 20261014-teatro-live-webgl-book-plate-v6, pinned to owner 7063ae3; the animated scene is a full book leaf, not a link to a separate app. Automated Chrome used animated SVG fallback because WebGL creation was unavailable. On-device WebGL requires iPad verification.
