@@ -66,7 +66,7 @@
         "path": "/editions/",
         "kind": "linotype-bookshelf"
       },
-      "sourceCommit": "d415c393a4b23681ba903e091c8b7ccf523a1edc",
+      "sourceCommit": "3113d46285fb19963b3d59b429760ef98b73ee19",
       "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
       "firstHearing": {
         "hearingSystem": "Fountain-Coach/Satzfunk",
@@ -83,7 +83,7 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub owner d415c39; Ubuntu WLAN v17 Linotype Bookshelf landing, original v16 First Hearing book preserved; public HTTPS unchanged",
+      "sourcePublicationState": "GitHub owner 3113d46; Ubuntu WLAN v18 all six source-backed proofreading edition covers, no tilted miniature; public HTTPS unchanged",
       "betaMilestone": {
         "state": "author-acknowledged-reading-listening-beta",
         "date": "2026-10-14",
@@ -119,6 +119,31 @@
         "publicPublished": false,
         "authorAccepted": false,
         "preservedV16Beta": true
+      },
+      "proofreadingMilestone": {
+        "date": "2026-10-14",
+        "state": "WLAN-staging-candidate",
+        "userRequest": "all currently published books for proofreading; remove the off-axis thumbnail",
+        "bookObjects": 6,
+        "distinctSourceBodies": 4,
+        "sourceCommit": "3113d46285fb19963b3d59b429760ef98b73ee19",
+        "fountainPressCommit": "d85e49f11501f79e6f65a1a5926891fa0f9ae94b",
+        "wlanRelease": "20261014-teatro-r18-six-book-proofreading-v18",
+        "covers": "six upright source-admitted covers; no thumbnail duplicate",
+        "publicLive": [
+          "first-reading"
+        ],
+        "wlanProof": [
+          "teatro-first-hearing",
+          "essays-collection",
+          "essay-teatro-an-unfinished-composition",
+          "essay-semantic-compilation-the-archive-is-not-the-edition",
+          "essay-reframe-and-the-business-value-of-the-estate"
+        ],
+        "crossDomainProofing": "exact source reader routes on ports 8180 and 8181; Teatro on 8182",
+        "publicHTTPSPublished": false,
+        "authorAccepted": false,
+        "previousV16BetaPreserved": true
       }
     }
   ],

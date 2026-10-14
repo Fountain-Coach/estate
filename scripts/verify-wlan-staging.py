@@ -81,11 +81,32 @@ def test():
  shelf=fetch(ROOTS["teatro"])[0].decode()
  assert shelf==fetch(ROOTS["teatro"]+"editions/")[0].decode()
  assert 'data-linotype-state="bookshelf"' in shelf
- assert 'data-book-count="1"' in shelf
- assert shelf.count('class="shelf-book"')==1
+ assert 'data-book-count="6"' in shelf
+ assert shelf.count('class="shelf-book"')==6
  assert 'href="/editions/first-hearing/"' in shelf
- assert 'class="shelf-miniature"' in shelf and 'class="shelf-cover"' in shelf
+ assert 'class="shelf-miniature"' not in shelf and shelf.count('class="shelf-cover"')==6
  assert shelf.count('src="/assets/edition/teatro-score-memory-vector-human-condition.svg"')==2
+ assert shelf.count('PUBLIC READING')==1 and shelf.count('WLAN PROOF')==5
+ assert shelf.count('data-preview-host="fountain"')==4
+ assert shelf.count('data-preview-host="solstice"')==1
+ assert shelf.count('data-preview-host="teatro"')==1
+ assert 'rotate(-3deg)' not in fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
+ for path in (
+  "editions/essays/",
+  "editions/essays/teatro-an-unfinished-composition/",
+  "editions/essays/semantic-compilation-the-archive-is-not-the-edition/",
+  "editions/essays/reframe-and-the-business-value-of-the-estate/"):
+  assert 'href="'+ROOTS["fountain"]+path+'"' in shelf
+  assert 'id="book-flow"' in fetch(ROOTS["fountain"]+path)[0].decode()
+ assert 'href="'+ROOTS["solstice"]+'editions/first-reading/"' in shelf
+ assert 'id="book-flow"' in fetch(ROOTS["solstice"]+'editions/first-reading/')[0].decode()
+ for image in (
+   "/assets/bookshelf/first-reading.jpg",
+   "/assets/edition/teatro-score-memory-vector-human-condition.svg",
+   "/assets/bookshelf/teatro-an-unfinished-composition.svg",
+   "/assets/bookshelf/semantic-compilation-the-archive-is-not-the-edition.svg",
+   "/assets/bookshelf/reframe-and-the-business-value-of-the-estate.png"):
+  assert len(fetch(ROOTS["teatro"]+image.lstrip("/"))[0])>1000, image
  assert 'id="book-flow"' not in shelf
  assert 'governance-constitution' not in shelf and 'book-of-reframe' not in shelf
  assert len(fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0])>1500

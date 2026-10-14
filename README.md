@@ -119,3 +119,34 @@ and unchanged reader controls were verified. The bookshelf is a
 new author-approval candidate, and public HTTPS remains
 unpublished. See
 [Reframe scenario R17](https://github.com/Fountain-Coach/Reframe/blob/main/scenarios/017-linotype-bookshelf-landing.md).
+
+## R18 — full source-admitted proofreading shelf, not a public claim
+
+The Teatro WLAN root is now a **six-edition proofreading shelf**,
+not the earlier one-book R17 placeholder. The author requested all
+currently available books for comparative proofreading and explicitly
+rejected the tilted/off-axis thumbnail. Each edition now displays
+one upright cover made from its original source-authorized art.
+
+Inventory: public First Reading (30 works), Teatro First Hearing
+(the preserved v16 interactive book), the complete Fountain Coach
+Essays collection, and its three separately addressable essay
+sub-editions. These are **six edition objects, not six unrelated
+literary manuscripts**. First Reading is the only edition among
+these found reachable at its public URL on 14 October 2026;
+the other five are staging proofs, not silently launched public
+books. The Governance normative domain and Teatro Stage remain
+separate resources rather than fake book catalogue entries.
+
+Fountain Press `d85e49f`, Teatro `3113d46`, Reframe R18
+`0c390ce`; Ubuntu WLAN staging release
+`20261014-teatro-r18-six-book-proofreading-v18`.
+The read-only estate verifier checks 6 covers and the real exact
+reader routes. The disposable WLAN preparation projects five
+cross-domain bookshelf links to existing stage ports 8180/8181,
+retaining the internal Teatro route on port 8182. Git-owned
+source metadata remains canonical HTTPS, with original image
+SHA receipts preserved. No public HTTPS publication, native
+MIDI2, approved narration or full Reframe writer release was
+performed. The author's accepted v16 *book* stays intact; the
+new cover arrangement awaits their assessment.

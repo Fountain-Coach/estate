@@ -296,3 +296,25 @@ Original Stage remains independently accessible and is not a book.
 newly admitted books and no full Reframe writer acceptance.
 The author has approved the earlier v16 book as beta, while the
 new Bookshelf entrance still needs their UX verdict.
+
+## R18 — full edition proofreading gallery
+
+Active Teatro staging release
+`20261014-teatro-r18-six-book-proofreading-v18`:
+six actual edition covers, one upright cover per book, no tilted
+thumbnail, no invented books. First Reading has a public HTTPS
+reader; the rest are visible, functioning WLAN proofs. The six
+cards resolve on the WLAN to First Reading port 8181, Fountain
+Coach essays port 8180 and Teatro's preserved First Hearing port
+8182. The release projection rewrites the **exact six source-owned
+bookshelf hrefs** as disposable staging navigation; it does not
+rewrite the GitHub-owned canonical addresses. Source SHA was
+verified before projection. The original stage-return rail
+also has its existing separate managed staging change.
+
+Five live responsive browser suites passed source cover loading,
+no horizontal overflow, page-entry, all v16 Teatro audio/MIDI2
+and original source-anchored stage behavior. The estate verifier
+independently fetched the five cross-domain book destinations
+and source artwork. The new R18 author's approval is pending;
+there is no production deployment.

@@ -35,13 +35,20 @@ assert.equal(teatro.betaMilestone.state,'author-acknowledged-reading-listening-b
 assert.equal(teatro.betaMilestone.wlanRelease,'20261014-teatro-r16-play-ring-calibrated-v16');
 // The v16 beta source is intentionally frozen while v17 changes only landing state.
 assert.equal(teatro.betaMilestone.sourceCommit,'69656eb5934bc076fd589391ed7061c37287e194');
-assert.equal(teatro.bookshelfMilestone.teatroSourceCommit,teatro.sourceCommit);
+// R17 is a frozen previous staging milestone, not the current R18 source.
+assert.equal(teatro.bookshelfMilestone.teatroSourceCommit,'d415c393a4b23681ba903e091c8b7ccf523a1edc');
 assert.equal(teatro.bookshelfMilestone.wlanRelease,'20261014-teatro-r17-bookshelf-landing-v17');
 assert.equal(teatro.bookshelfMilestone.books.length,1);
 assert.equal(teatro.bookshelfMilestone.books[0].reader,'/editions/first-hearing/');
 assert.equal(teatro.bookshelfMilestone.publicPublished,false);
 assert.equal(teatro.bookshelfMilestone.authorAccepted,false);
 assert.equal(teatro.bookshelfMilestone.preservedV16Beta,true);
+assert.equal(teatro.proofreadingMilestone.bookObjects,6);
+assert.equal(teatro.proofreadingMilestone.publicLive.length,1);
+assert.equal(teatro.proofreadingMilestone.wlanProof.length,5);
+assert.equal(teatro.proofreadingMilestone.sourceCommit,teatro.sourceCommit);
+assert.equal(teatro.proofreadingMilestone.publicHTTPSPublished,false);
+assert.equal(teatro.proofreadingMilestone.previousV16BetaPreserved,true);
 assert.equal(teatro.betaMilestone.fullReframeAccepted,false);
 assert.equal(teatro.betaMilestone.publicHTTPSPublished,false);
 assert.equal(teatro.betaMilestone.nativeMidi2HostAccepted,false);

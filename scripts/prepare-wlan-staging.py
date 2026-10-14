@@ -91,7 +91,35 @@ def rewrite(content: str):
             raise ValueError("Incomplete edition rail: "+str(seen))
         return match.group(1)+new+match.group(3)
     updated, edition_count=edition_nav.subn(update_edition_rail,updated)
-    return updated, count+cover_count+edition_count
+    # Source owners retain canonical HTTPS reader URLs. The disposable WLAN
+    # release translates only admitted bookshelf links (identified by
+    # data-preview-host) into the three neighboring staging origins. It
+    # never rewrites text, plates, the book renderer, or arbitrary anchors.
+    if 'data-linotype-state="bookshelf"' in updated:
+        shelf_link=re.compile(
+            r'(<a class="shelf-book" href=")(?P<href>[^"]+)'
+            r'(" data-preview-host="(?P<host>fountain|solstice|teatro)")')
+        def staging_reader(match):
+            href=match.group("href")
+            host=match.group("host")
+            if host=="fountain":
+                prefix="https://fountain.coach/"
+                if not href.startswith(prefix+"editions/"):raise ValueError("Unapproved Fountain book URL "+href)
+                stage_href=f"http://{IP}:8180/"+href[len(prefix):]
+            elif host=="solstice":
+                prefix="https://works.benedikt-eickhoff.de/solstice/"
+                if not href.startswith(prefix+"editions/first-reading/"):raise ValueError("Unapproved First Reading URL "+href)
+                stage_href=f"http://{IP}:8181/"+href[len(prefix):]
+            else:
+                if href!="/editions/first-hearing/":raise ValueError("Unapproved Teatro URL "+href)
+                stage_href=href
+            return match.group(1)+stage_href+match.group(3)
+        updated, shelf_count=shelf_link.subn(staging_reader,updated)
+        count_expected=int(re.search(r'data-book-count="([0-9]+)"',updated).group(1))
+        if shelf_count!=count_expected:raise ValueError("Incomplete source-backed bookshelf navigation")
+    else:
+        shelf_count=0
+    return updated, count+cover_count+edition_count+shelf_count
 
 def main():
     parser = argparse.ArgumentParser()
@@ -118,7 +146,7 @@ def main():
                 page.write_text(projected, encoding="utf-8")
                 changed += 1
         stats[site] = dict(navPages=counted, changed=changed)
-    metadata["stageOnlyTransform"] = "exactly three editorial navigation hrefs to adjacent WLAN ports"
+    metadata["stageOnlyTransform"] = "governed estate links and exact source-admitted bookshelf reader hrefs to adjacent WLAN ports"
     metadata["navigationProjection"] = stats
     source_lock.write_text(json.dumps(metadata, indent=2) + "\n")
     print(json.dumps({"release": str(release), "projection": stats}, indent=2))
