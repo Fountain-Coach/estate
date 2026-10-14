@@ -86,7 +86,13 @@ def test():
  assert 'href="/editions/first-hearing/"' in shelf
  assert 'class="shelf-miniature"' not in shelf and shelf.count('class="shelf-cover"')==6
  assert shelf.count('src="/assets/edition/teatro-score-memory-vector-human-condition.svg"')==2
- assert shelf.count('PUBLIC READING')==1 and shelf.count('WLAN PROOF')==5
+ assert shelf.count('data-release-status="public-live"')==1
+ assert shelf.count('data-release-status="wlan-proof"')==5
+ assert 'class="shelf-item-caption"' not in shelf
+ assert 'class="shelf-item-revision"' not in shelf
+ assert 'class="shelf-item-detail"' not in shelf
+ assert 'class="bookshelf-intro"' not in shelf
+ assert shelf.count('class="shelf-cover"')==shelf.count('class="shelf-book"')==6
  assert shelf.count('data-preview-host="fountain"')==4
  assert shelf.count('data-preview-host="solstice"')==1
  assert shelf.count('data-preview-host="teatro"')==1

@@ -318,3 +318,18 @@ and original source-anchored stage behavior. The estate verifier
 independently fetched the five cross-domain book destinations
 and source artwork. The new R18 author's approval is pending;
 there is no production deployment.
+
+## R19 cover-thumbnail table — live v19
+
+Active release `20261014-teatro-r19-cover-grid-v19`,
+with exactly six cover thumbnails, zero extra links/labels
+under the covers, no off-axis decorative miniatures and a
+responsive 3×2 iPad / two-column phone grid. All six
+source-admitted book destinations and original artworks
+are preserved, with a true cover-click opening the existing
+reader. The bounded cross-domain WLAN link projection
+to ports 8180/8181 remains intact; Teatro's v16 First
+Hearing remains on 8182. Five live responsive browser
+profiles, the source-manifest checks, and estate route
+checks pass. Public HTTPS was not modified. Author
+acceptance of this corrected landing remains pending.

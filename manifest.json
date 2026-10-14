@@ -66,7 +66,7 @@
         "path": "/editions/",
         "kind": "linotype-bookshelf"
       },
-      "sourceCommit": "3113d46285fb19963b3d59b429760ef98b73ee19",
+      "sourceCommit": "16df41cfb5a7a45b6ec833a01b491efe6ab8541a",
       "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
       "firstHearing": {
         "hearingSystem": "Fountain-Coach/Satzfunk",
@@ -83,7 +83,7 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub owner 3113d46; Ubuntu WLAN v18 all six source-backed proofreading edition covers, no tilted miniature; public HTTPS unchanged",
+      "sourcePublicationState": "GitHub owner 16df41c; Ubuntu WLAN v19 six-cover thumbnail grid with no links or metadata below covers; v16 reader preserved; public HTTPS unchanged",
       "betaMilestone": {
         "state": "author-acknowledged-reading-listening-beta",
         "date": "2026-10-14",
@@ -144,6 +144,22 @@
         "publicHTTPSPublished": false,
         "authorAccepted": false,
         "previousV16BetaPreserved": true
+      },
+      "gridMilestone": {
+        "date": "2026-10-14",
+        "state": "WLAN-staging-candidate",
+        "authorRequest": "Bookshelf must be a table/grid of cover thumbnails, not card images followed by more links",
+        "layout": "compact cover-only grid: 3 columns on iPad, 2 columns on phone",
+        "books": 6,
+        "visibleSecondaryMetadata": false,
+        "coverIsLink": true,
+        "originalArtworkPreserved": true,
+        "sourceCommit": "16df41cfb5a7a45b6ec833a01b491efe6ab8541a",
+        "fountainPressCommit": "29fb26db6ebd0aa3efb86fdfcc519f1fcb1e2b82",
+        "wlanRelease": "20261014-teatro-r19-cover-grid-v19",
+        "preservedV16Beta": true,
+        "publicHTTPSPublished": false,
+        "authorAccepted": false
       }
     }
   ],

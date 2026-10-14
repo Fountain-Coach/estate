@@ -150,3 +150,21 @@ SHA receipts preserved. No public HTTPS publication, native
 MIDI2, approved narration or full Reframe writer release was
 performed. The author's accepted v16 *book* stays intact; the
 new cover arrangement awaits their assessment.
+
+## R19 — correction: covers-only Bookshelf table
+
+After reviewing the R18 six-edition shelf, the author rejected
+the *additional links and labels underneath each cover*. The
+Teatro landing is now a **compact 3×2 cover-thumbnail grid** on
+iPad and **two columns on phone**, with no duplicate captions,
+source tags or read links. Every cover is the single direct
+link to its actual edition. All six original book identities,
+source-authorized artwork, exact staging/owner destinations and
+separate publication states remain in typed release metadata,
+not visually repeated below book covers.
+
+Fountain Press source `29fb26d`, Teatro `16df41c`, Reframe
+`scenarios/019-cover-only-bookshelf-table.md`. Ubuntu WLAN
+`20261014-teatro-r19-cover-grid-v19` replaces v18, which remains
+available for rollback. The author's accepted v16 First Hearing
+reader is untouched; public HTTPS remains unchanged.
