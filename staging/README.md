@@ -369,3 +369,16 @@ portrait browser test witnessed a fully transparent panel,
 no shadow and the unchanged book entry/audio controls. The
 estate staging verifier passed all three real edition routes.
 Public HTTPS remains unchanged.
+
+## R22 — left-aligned publisher signature
+
+The Fountain Coach hand/spring image is paired with the discreet
+`FOUNTAIN COACH` wordmark and aligned with the left edge of the
+first cover. The three-cover row, source artwork, continuous background,
+and accepted v16 reader remain unchanged. The iPad live browser
+check measured identical x positions for branding and first cover.
+
+Source: Fountain Press `cd1cb6f882c7f46b37ce65d9935887d8cbf6ba50`,
+Teatro `2c328c284cdd15176e41d2ce13a98a0279f19a90`.
+Current WLAN release: `20261014-teatro-r22-left-brand-signature-v22`.
+No public HTTPS deployment was made; v21 remains available for rollback.

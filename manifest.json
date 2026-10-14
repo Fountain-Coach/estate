@@ -66,7 +66,7 @@
         "path": "/editions/",
         "kind": "linotype-bookshelf"
       },
-      "sourceCommit": "7aeb45ed947711d17e521d1d48c7fd29d8fc4bd9",
+      "sourceCommit": "2c328c284cdd15176e41d2ce13a98a0279f19a90",
       "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
       "firstHearing": {
         "hearingSystem": "Fountain-Coach/Satzfunk",
@@ -83,7 +83,7 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub Teatro 7aeb45e and Press 9479d27; WLAN v21 removes inset cream shelf paper/shadow; original logo, three main editions, v16 reader unchanged; public HTTPS unchanged",
+      "sourcePublicationState": "GitHub Teatro 2c328c2 and Press cd1cb6f; WLAN v22 open-hand logo with discreet Fountain Coach wordmark left-aligned to the first of three unchanged covers; continuous background and v16 reader preserved; public HTTPS unchanged",
       "betaMilestone": {
         "state": "author-acknowledged-reading-listening-beta",
         "date": "2026-10-14",
@@ -197,6 +197,21 @@
         "teatroCommit": "7aeb45ed947711d17e521d1d48c7fd29d8fc4bd9",
         "fountainPressCommit": "9479d27f1637cca4f974752f821c26d5be44de97",
         "wlanRelease": "20261014-teatro-r21-continuous-background-v21",
+        "publicHTTPSPublished": false
+      },
+      "brandSignatureMilestone": {
+        "date": "2026-10-14",
+        "state": "WLAN-staging-verified",
+        "authorDecision": "Position Fountain Coach symbol and wordmark together, left-aligned to the first cover, not centered above all covers",
+        "wordmark": "FOUNTAIN COACH",
+        "logo": "source-owned hand and spring",
+        "alignment": "brand left edge matches first cover left edge",
+        "threeMainEditionsPreserved": true,
+        "continuousBackgroundPreserved": true,
+        "approvedV16ReaderPreserved": true,
+        "fountainPressCommit": "cd1cb6f882c7f46b37ce65d9935887d8cbf6ba50",
+        "teatroCommit": "2c328c284cdd15176e41d2ce13a98a0279f19a90",
+        "wlanRelease": "20261014-teatro-r22-left-brand-signature-v22",
         "publicHTTPSPublished": false
       }
     }

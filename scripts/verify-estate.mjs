@@ -54,7 +54,12 @@ assert.deepEqual(teatro.mainEditionMilestone.topLevelEditionIds,
   ['fountain-coach','first-reading','teatro-first-hearing']);
 // R20 is a frozen taxonomy milestone. v21 changes only its paper treatment.
 assert.equal(teatro.mainEditionMilestone.teatroCommit,'ff0d6f4e3a8408269b9954a457cdd0961ea8bef6');
-assert.equal(teatro.backgroundMilestone.teatroCommit,teatro.sourceCommit);
+assert.equal(teatro.backgroundMilestone.teatroCommit,'7aeb45ed947711d17e521d1d48c7fd29d8fc4bd9');
+assert.equal(teatro.brandSignatureMilestone.teatroCommit,teatro.sourceCommit);
+assert.equal(teatro.brandSignatureMilestone.wordmark,'FOUNTAIN COACH');
+assert.equal(teatro.brandSignatureMilestone.threeMainEditionsPreserved,true);
+assert.equal(teatro.brandSignatureMilestone.approvedV16ReaderPreserved,true);
+assert.equal(teatro.brandSignatureMilestone.publicHTTPSPublished,false);
 assert.equal(teatro.backgroundMilestone.paperBackground,'transparent');
 assert.equal(teatro.backgroundMilestone.paperBoxShadow,'none');
 assert.equal(teatro.backgroundMilestone.threeMainEditionsPreserved,true);

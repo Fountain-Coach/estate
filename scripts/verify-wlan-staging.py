@@ -100,6 +100,8 @@ def test():
  assert 'class="bookshelf-intro"' not in shelf
  assert '<h1' not in shelf
  assert shelf.count('class="bookshelf-brand"')==1
+ assert shelf.count('class="bookshelf-wordmark"')==1
+ assert 'FOUNTAIN COACH</span>' in shelf
  assert 'src="/assets/bookshelf/fountain-coach-logo-transparent.png"' in shelf
  logo=fetch(ROOTS["teatro"]+"assets/bookshelf/fountain-coach-logo-transparent.png")[0]
  import hashlib
@@ -122,6 +124,7 @@ def test():
  assert 'rotate(-3deg)' not in fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
  shelf_css=fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
  assert 'background:transparent;' in shelf_css
+ assert '.bookshelf-brand{display:flex;flex-direction:column;align-items:flex-start;' in shelf_css
  assert 'box-shadow:none;' in shelf_css
  assert 'background:var(--paper);box-shadow:' not in shelf_css
  assert 'id="book-flow"' not in shelf
