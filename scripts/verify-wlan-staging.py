@@ -81,38 +81,45 @@ def test():
  shelf=fetch(ROOTS["teatro"])[0].decode()
  assert shelf==fetch(ROOTS["teatro"]+"editions/")[0].decode()
  assert 'data-linotype-state="bookshelf"' in shelf
- assert 'data-book-count="6"' in shelf
- assert shelf.count('class="shelf-book"')==6
- assert 'href="/editions/first-hearing/"' in shelf
- assert 'class="shelf-miniature"' not in shelf and shelf.count('class="shelf-cover"')==6
- assert shelf.count('src="/assets/edition/teatro-score-memory-vector-human-condition.svg"')==2
- assert shelf.count('data-release-status="public-live"')==1
- assert shelf.count('data-release-status="wlan-proof"')==5
- assert 'class="shelf-item-caption"' not in shelf
- assert 'class="shelf-item-revision"' not in shelf
- assert 'class="shelf-item-detail"' not in shelf
- assert 'class="bookshelf-intro"' not in shelf
- assert shelf.count('class="shelf-cover"')==shelf.count('class="shelf-book"')==6
- assert shelf.count('data-preview-host="fountain"')==4
+ assert 'data-book-count="3"' in shelf
+ assert shelf.count('class="shelf-book"')==3
+ assert shelf.count('class="shelf-cover"')==3
+ assert shelf.count('data-preview-host="fountain"')==1
  assert shelf.count('data-preview-host="solstice"')==1
  assert shelf.count('data-preview-host="teatro"')==1
- assert 'rotate(-3deg)' not in fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
+ assert shelf.count('data-release-status="public-live"')==1
+ assert shelf.count('data-release-status="wlan-proof"')==2
+ assert 'class="shelf-miniature"' not in shelf
+ assert 'class="shelf-cover-title"' not in shelf
+ assert 'class="shelf-cover-kicker"' not in shelf
+ assert 'class="shelf-cover-author"' not in shelf
+ assert 'class="bookshelf-toolbar"' not in shelf
+ assert 'class="bookshelf-pagination"' not in shelf
+ assert 'class="bookshelf-paper-head"' not in shelf
+ assert 'class="bookshelf-paper-foot"' not in shelf
+ assert 'class="bookshelf-intro"' not in shelf
+ assert '<h1' not in shelf
+ assert shelf.count('class="bookshelf-brand"')==1
+ assert 'src="/assets/bookshelf/fountain-coach-logo-transparent.png"' in shelf
+ logo=fetch(ROOTS["teatro"]+"assets/bookshelf/fountain-coach-logo-transparent.png")[0]
+ import hashlib
+ assert hashlib.sha256(logo).hexdigest()=="8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+ assert 'href="'+ROOTS["fountain"]+'editions/essays/"' in shelf
+ assert 'href="'+ROOTS["solstice"]+'editions/first-reading/"' in shelf
+ assert 'href="/editions/first-hearing/"' in shelf
+ for root, path in [(ROOTS["fountain"],"editions/essays/"), (ROOTS["solstice"],"editions/first-reading/")]:
+  assert 'id="book-flow"' in fetch(root+path)[0].decode()
  for path in (
-  "editions/essays/",
   "editions/essays/teatro-an-unfinished-composition/",
   "editions/essays/semantic-compilation-the-archive-is-not-the-edition/",
   "editions/essays/reframe-and-the-business-value-of-the-estate/"):
-  assert 'href="'+ROOTS["fountain"]+path+'"' in shelf
   assert 'id="book-flow"' in fetch(ROOTS["fountain"]+path)[0].decode()
- assert 'href="'+ROOTS["solstice"]+'editions/first-reading/"' in shelf
- assert 'id="book-flow"' in fetch(ROOTS["solstice"]+'editions/first-reading/')[0].decode()
  for image in (
-   "/assets/bookshelf/first-reading.jpg",
-   "/assets/edition/teatro-score-memory-vector-human-condition.svg",
-   "/assets/bookshelf/teatro-an-unfinished-composition.svg",
-   "/assets/bookshelf/semantic-compilation-the-archive-is-not-the-edition.svg",
-   "/assets/bookshelf/reframe-and-the-business-value-of-the-estate.png"):
-  assert len(fetch(ROOTS["teatro"]+image.lstrip("/"))[0])>1000, image
+  "/assets/bookshelf/fountain-coach-edition.png",
+  "/assets/bookshelf/first-reading.jpg",
+  "/assets/edition/teatro-score-memory-vector-human-condition.svg"):
+  assert len(fetch(ROOTS["teatro"]+image.lstrip("/"))[0])>1000,image
+ assert 'rotate(-3deg)' not in fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
  assert 'id="book-flow"' not in shelf
  assert 'governance-constitution' not in shelf and 'book-of-reframe' not in shelf
  assert len(fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0])>1500

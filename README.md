@@ -168,3 +168,24 @@ Fountain Press source `29fb26d`, Teatro `16df41c`, Reframe
 `20261014-teatro-r19-cover-grid-v19` replaces v18, which remains
 available for rollback. The author's accepted v16 First Hearing
 reader is untouched; public HTTPS remains unchanged.
+
+## R20 — agreed three main editions, logo-only landing
+
+The author corrected the earlier six-essay proofreading shelf:
+the top-level editions are **Fountain Coach, First Reading and
+Teatro**. The Linotype landing has one original open hand and
+spring mark matching the online fountain.coach PNG SHA-256
+`8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729`.
+No visible titles, counters, numbers, folio labels, duplicated
+brand copy, website rail or footer remain. Three original-art
+images function as the only edition links. Fountain Coach's
+individual essays are nested *within* its collected Essays book,
+not incorrectly promoted to parent editions. Likewise First
+Reading retains its chapters and Teatro its separate Stage.
+
+Active Ubuntu WLAN is `20261014-teatro-r20-three-editions-logo-v20`;
+Teatro source `ff0d6f4`, Fountain Press `2caacf1`, Reframe
+scenario R20. Existing 8180/8181 reader routes and the approved
+v16 Teatro book on 8182 are preserved. The R17–R19 layouts are
+historical candidates; none changes the established three-edition
+estate taxonomy. No public HTTPS mutation was requested or made.

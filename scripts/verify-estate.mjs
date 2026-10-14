@@ -47,7 +47,18 @@ assert.equal(teatro.proofreadingMilestone.bookObjects,6);
 assert.equal(teatro.proofreadingMilestone.publicLive.length,1);
 assert.equal(teatro.proofreadingMilestone.wlanProof.length,5);
 assert.equal(teatro.proofreadingMilestone.sourceCommit,'3113d46285fb19963b3d59b429760ef98b73ee19');
-assert.equal(teatro.gridMilestone.sourceCommit,teatro.sourceCommit);
+// R19's six-cover grid remains an archival milestone. Current R20
+// returns to the three agreed parent editions without promoting essays.
+assert.equal(teatro.gridMilestone.sourceCommit,'16df41cfb5a7a45b6ec833a01b491efe6ab8541a');
+assert.deepEqual(teatro.mainEditionMilestone.topLevelEditionIds,
+  ['fountain-coach','first-reading','teatro-first-hearing']);
+assert.equal(teatro.mainEditionMilestone.teatroCommit,teatro.sourceCommit);
+assert.equal(teatro.mainEditionMilestone.bookCovers,3);
+assert.equal(teatro.mainEditionMilestone.visibleTitles,0);
+assert.equal(teatro.mainEditionMilestone.visibleCounters,0);
+assert.equal(teatro.mainEditionMilestone.visibleLogos,1);
+assert.equal(teatro.mainEditionMilestone.nestedEssaysNotPromoted,true);
+assert.equal(teatro.mainEditionMilestone.publicHTTPSPublished,false);
 assert.equal(teatro.gridMilestone.visibleSecondaryMetadata,false);
 assert.equal(teatro.gridMilestone.coverIsLink,true);
 assert.equal(teatro.gridMilestone.books,6);

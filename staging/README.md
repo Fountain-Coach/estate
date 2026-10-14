@@ -333,3 +333,18 @@ Hearing remains on 8182. Five live responsive browser
 profiles, the source-manifest checks, and estate route
 checks pass. Public HTTPS was not modified. Author
 acceptance of this corrected landing remains pending.
+
+## R20 — original brand mark and three root editions
+
+The active three-domain WLAN projection presents a logo-only
+Fountain Press shelf at 192.168.8.249:8182. Its mark was copied
+unchanged from the live fountain.coach original and hash-verified.
+Three source-image cover links route to Fountain Coach Essays
+(8180), First Reading (8181) and the author-approved Teatro
+First Hearing (8182). All individual essays stay nested in
+Fountain Coach; no invented top-level books, counters, headings,
+titles, labels, additional links or site furniture appear in
+the landing. The estate verifier checks the 3:1 edition-to-logo
+projection, original asset SHA and actual reader routes.
+Previous releases remain available for rollback; the public
+HTTPS estate is unchanged.

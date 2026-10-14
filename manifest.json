@@ -66,7 +66,7 @@
         "path": "/editions/",
         "kind": "linotype-bookshelf"
       },
-      "sourceCommit": "16df41cfb5a7a45b6ec833a01b491efe6ab8541a",
+      "sourceCommit": "ff0d6f4e3a8408269b9954a457cdd0961ea8bef6",
       "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
       "firstHearing": {
         "hearingSystem": "Fountain-Coach/Satzfunk",
@@ -83,7 +83,7 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub owner 16df41c; Ubuntu WLAN v19 six-cover thumbnail grid with no links or metadata below covers; v16 reader preserved; public HTTPS unchanged",
+      "sourcePublicationState": "GitHub owner ff0d6f4; Ubuntu WLAN v20 logo-only Linotype Bookshelf with three parent editions, original v16 First Hearing preserved; public HTTPS unchanged",
       "betaMilestone": {
         "state": "author-acknowledged-reading-listening-beta",
         "date": "2026-10-14",
@@ -160,6 +160,28 @@
         "preservedV16Beta": true,
         "publicHTTPSPublished": false,
         "authorAccepted": false
+      },
+      "mainEditionMilestone": {
+        "date": "2026-10-14",
+        "state": "WLAN-staging-candidate",
+        "authorDecision": "Three agreed main editions: fountain.coach, First Reading, Teatro; remove all visible titles/counts/numbering; sole branding the original hand/spring logo",
+        "topLevelEditionIds": [
+          "fountain-coach",
+          "first-reading",
+          "teatro-first-hearing"
+        ],
+        "nestedEssaysNotPromoted": true,
+        "logoSource": "Fountain-Coach/fountain.coach/site/assets/fountain-coach-logo-transparent.png",
+        "logoSHA256": "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729",
+        "visibleTitles": 0,
+        "visibleCounters": 0,
+        "visibleLogos": 1,
+        "bookCovers": 3,
+        "preservesV16BookBeta": true,
+        "fountainPressCommit": "2caacf16238735f80a00c241f9db8cd527508fdc",
+        "teatroCommit": "ff0d6f4e3a8408269b9954a457cdd0961ea8bef6",
+        "wlanRelease": "20261014-teatro-r20-three-editions-logo-v20",
+        "publicHTTPSPublished": false
       }
     }
   ],
