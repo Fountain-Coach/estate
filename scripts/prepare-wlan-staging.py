@@ -51,7 +51,30 @@ def rewrite(content: str):
             raise ValueError(f"Expected three editorial front doors; found {count}")
         return match.group(1) + new + match.group(3)
     updated, count = NAV.subn(update_nav, content)
-    return updated, count
+    # The primary Fountain Coach entrance is now a real Linotype volume,
+    # not an estate header rail. Its cover links to the other two editorial
+    # fronts; stage them alongside the reader without changing Git source.
+    cover = re.compile(r'(<section\b[^>]*class="[^"]*book-cover[^"]*"[^>]*>)(.*?)(</section>)',re.S)
+    def update_cover(match):
+        section = match.group(2)
+        # First Reading and other independent books can also have a cover;
+        # their original text is not the Fountain Coach editorial rail.
+        if not LINK.search(section):
+            return match.group()
+        seen = set()
+        def replace_link(m):
+            identity = m.group("id")
+            seen.add(identity)
+            value = m.group(1)
+            value, n = re.subn(r'href="[^"]+"', 'href="' + DEST[identity] + '"', value, count=1)
+            if n != 1:raise ValueError("Essay cover navigation missing href: "+identity)
+            return value
+        rebuilt = LINK.sub(replace_link, section)
+        if seen != {"first-reading", "teatro"}:
+            raise ValueError("Expected First Reading + Teatro on essay cover: "+str(seen))
+        return match.group(1)+rebuilt+match.group(3)
+    updated, cover_count = cover.subn(update_cover, updated)
+    return updated, count+cover_count
 
 def main():
     parser = argparse.ArgumentParser()

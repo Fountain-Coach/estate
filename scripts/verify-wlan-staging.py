@@ -45,21 +45,34 @@ def test():
         }[host]
         assert re.fullmatch(r"[a-f0-9]{40}",state["sites"][host]["commit"])
         html, _ = fetch(root)
-        nav = NAV.search(html.decode("utf-8")).group()
+        document = html.decode("utf-8")
+        if host == "fountain":
+            assert document.count('data-book-chapter=')==3, "Fountain must open the complete essays Linotype reader"
+            assert 'id="book-viewport"' in document and 'id="book-contents"' in document
+            cover=re.search(r'<section\b[^>]*class="[^"]*book-cover[^"]*"[^>]*>.*?</section>',document,re.S)
+            assert cover is not None, "Missing reader cover"
+            for ident,target in (("first-reading",HREFS[1]),("teatro",HREFS[2])):
+                anchor=re.search(r'<a\b[^>]*data-estate-id="'+ident+r'"[^>]*>',cover.group())
+                assert anchor is not None and 'href="'+target+'"' in anchor.group(),ident
+            essays,_=fetch(root+"essays/")
+            nav=NAV.search(essays.decode()).group()
+        else:
+            nav=NAV.search(document).group()
         assert re.findall(r'data-estate-id="([^"]+)"', nav) == IDS, host
-        for ident, target in zip(IDS, HREFS):
-            anchor = re.search(r'<a\b[^>]*data-estate-id="'+ident+r'"[^>]*>',nav)
-            assert anchor is not None, (host, ident)
-            assert 'href="'+target+'"' in anchor.group(), (host, ident)
+        for ident,target in zip(IDS,HREFS):
+            anchor=re.search(r'<a\b[^>]*data-estate-id="'+ident+r'"[^>]*>',nav)
+            assert anchor is not None and 'href="'+target+'"' in anchor.group(),(host,ident)
         assert 'data-estate-id="status"' not in nav
-        assert 'data-legal-role="company-status"' in html.decode("utf-8"), host
-        print("PASS",host,"3-stage-navigation","company-status-in-footer")
+        assert 'data-legal-role="company-status"' in document,host
+        print("PASS",host,"three-front-links","company-status-footer")
     book, _ = fetch(ROOTS["solstice"]+"editions/first-reading/")
     for token in (b'id="book-viewport"',b'id="book-next"',b'id="book-page-count"',
                   b'mobile-page-navigation.js',b'linotype-engine.js',b'assets/book.js'):
         assert token in book, token
     assets = {
-        "fountain": ["assets/site.css","assets/site.js","assets/estate-core.js"],
+        "fountain": ["assets/linotype/book.css","assets/linotype/book.js",
+                     "assets/linotype/linotype-engine.js","assets/linotype/mobile-page-navigation.js",
+                     "assets/linotype/essays.css"],
         "solstice": ["assets/book.css","assets/book.js","assets/linotype-engine.js",
                      "assets/mobile-page-navigation.js","assets/mobile-page-navigation.css"],
         "teatro": ["assets/estate-core.css","assets/estate-core.js","assets/index-CY5_5ULO.js"],

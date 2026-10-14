@@ -7,7 +7,16 @@
       "role": "editorial-identity",
       "rank": 1,
       "url": "https://fountain.coach/",
-      "sourceRepo": "Fountain-Coach/fountain.coach"
+      "sourceRepo": "Fountain-Coach/fountain.coach",
+      "editorialEdition": "source-bound-linotype-essays",
+      "editorialOrder": [
+        "teatro-an-unfinished-composition",
+        "semantic-compilation-the-archive-is-not-the-edition",
+        "reframe-and-the-business-value-of-the-estate"
+      ],
+      "authorialContent": "Three complete published essays, 77 paragraphs, five original plates",
+      "sourceCommit": "49a35bf14adfa818d3b01f5eb7bdc5915657a5b4",
+      "sourcePublicationState": "Git source candidate; staged on WLAN, not publicly deployed"
     },
     {
       "id": "first-reading",

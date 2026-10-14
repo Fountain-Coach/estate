@@ -67,3 +67,22 @@ This preview performs no public Caddy/DNS write, no EstatePublisher operation,
 no GitHub Actions, no new Git clone on Ubuntu, and no machine-wide service
 installation. It is not a production release. All routes send
 `X-Robots-Tag: noindex, nofollow` and `Cache-Control: no-store`.
+
+## 14 October: Fountain Coach is an essay-first Linotype volume
+
+The staged http://192.168.8.249:8180/ now shows the full three-essay
+book, built from Fountain-Coach/fountain.coach at commit 49a35bf14.
+The old promotional homepage recedes into Git history. Complete source
+essay routes, figures and metadata remain with the owning repository.
+
+Staging release: 20261014-essays-linotype-three-front-v2. Original source
+SHA-256 inventories were checked on Ubuntu before stage-only link rewrites.
+Because the Fountain entrance is now a book, it has two related edition
+links on its cover instead of an old three-link header rail. Existing
+source essay pages under /essays/ retain locally rewritten three-link rails.
+First Reading and Teatro remain on ports 8181 and 8182.
+
+Real Ubuntu-hosted browser QA passes for iPad portrait, iPad landscape
+spread, desktop, phone portrait, and phone landscape. The whole authorial
+essay content is preserved verbatim: 77 paragraphs and five original plates.
+No source essays have been rewritten.
