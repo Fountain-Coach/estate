@@ -227,3 +227,23 @@ cleanup. Secure localhost Csound AudioWorklet/Ear worklet regression
 also passed, but HTTP WLAN on iPad still only provides the separately
 labeled Web Audio preview. Physical iPad Safari acceptance, public HTTPS
 and native MIDI2 host bridge are independent unaccepted R12/R15 gates.
+
+## R16: measured Play color, Ear in the parameter panel — WLAN v16
+
+Active Ubuntu WLAN staging release
+`20261014-teatro-r16-play-ring-calibrated-v16` pins Teatro
+`69656eb` and Fountain Press `45e28c7`; v15 remains available for
+rollback. There is no top-row Ear anymore. Play/Pause and disclosure
+stay left, Contents stays right; the transport circle receives a
+restrained output-RMS-dependent tint and narrow halo (both reset
+on Stop, with zero transition duration for reduced motion).
+The actual Ear SVG is inside the progressive sound-parameter
+panel, next to the measured status text, replacing the redundant
+literal word label.
+
+The official original Teatro score, 22 original essay paragraphs,
+shared audio transport, Csound/Ear AudioWorklet on secure localhost,
+and MIDI2 UMP parameter/observation plane are preserved. WLAN HTTP
+continues to use the disclosed Web Audio preview. Physical iPad Safari
+approval, secure-origin Csound in Safari, native hardware MIDI2 and
+durable Reframe editorial persistence remain unaccepted.
