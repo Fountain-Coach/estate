@@ -165,3 +165,19 @@ registered and rendered RMS 0.00235, the actual Ear AudioWorklet reported
 verified, and user-stop shut down playback. The official Csound host
 remains upstream branch code; hardware MIDI2 and trusted iPad HTTPS are
 unverified. No public HTTPS site was changed.
+
+## R13 mobile thumbnail identity and canonical Play — WLAN v11
+
+Active Ubuntu staging: `20261014-teatro-r13-mobile-atlas-play-v11`,
+source GitHub owner `Fountain-Coach/teatro.fountain.coach@eb7910e`,
+Fountain Press `1c03e6b` (code `bbff388`).
+Phone thumbnails are no longer oversized chapter-title overlays on
+duplicated page DOM. They use source-derived page mark / authored plate /
+interactive-score triangle, stable folio, full accessibility title.
+The score's idle visual is now an actionable right-facing Play triangle,
+not a random stage-room poster. It loads the original moving puppet
+on activation and releases it on page exit.
+Actual source inventory SHA-256 and full live WLAN book tests pass on
+phone portrait and landscape plus iPad portrait/landscape and desktop.
+This is a candidate for writer acceptance; Csound HTTPS and native MIDI2
+are separate R12 gates and public HTTPS remains unchanged.

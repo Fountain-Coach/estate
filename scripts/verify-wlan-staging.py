@@ -89,6 +89,13 @@ def test():
  assert 'id="satzfunk-hear"' not in teatro and 'id="satzfunk-hearing-rail"' not in teatro
  assert '>Scene ↓<' not in teatro
  assert 'src="/assets/linotype/book-player.mjs"' in teatro
+ assert 'data-teatro-scene-play' in teatro
+ assert 'src="/assets/teatro-play.svg"' in teatro
+ assert 'src="/assets/teatro-stage-poster.svg"' not in teatro
+ atlas_script=fetch(ROOTS["teatro"]+"assets/linotype/mobile-page-navigation.js")[0].decode()
+ assert 'book-atlas-identity' in atlas_script
+ assert 'book-atlas-title' not in atlas_script
+ assert 'cloneNode(true)' not in atlas_script
  for asset in ('assets/linotype/book-player.mjs','assets/linotype/book-midi2.mjs',
                'assets/linotype/book-player.css','assets/book-csound-host.js'):
   payload=fetch(ROOTS["teatro"]+asset)[0]
