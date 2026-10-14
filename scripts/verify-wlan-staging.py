@@ -120,6 +120,10 @@ def test():
   "/assets/edition/teatro-score-memory-vector-human-condition.svg"):
   assert len(fetch(ROOTS["teatro"]+image.lstrip("/"))[0])>1000,image
  assert 'rotate(-3deg)' not in fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
+ shelf_css=fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
+ assert 'background:transparent;' in shelf_css
+ assert 'box-shadow:none;' in shelf_css
+ assert 'background:var(--paper);box-shadow:' not in shelf_css
  assert 'id="book-flow"' not in shelf
  assert 'governance-constitution' not in shelf and 'book-of-reframe' not in shelf
  assert len(fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0])>1500

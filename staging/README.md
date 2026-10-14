@@ -348,3 +348,24 @@ the landing. The estate verifier checks the 3:1 edition-to-logo
 projection, original asset SHA and actual reader routes.
 Previous releases remain available for rollback; the public
 HTTPS estate is unchanged.
+
+## R21 — continuous background, no inset paper
+
+The author approved the simplification path and requested removal of
+the remaining lighter cream background block on the three-edition
+Linotype Bookshelf. The owning Fountain Press stylesheet now renders
+the shelf container with `background:transparent` and
+`box-shadow:none`, showing the existing outer `#dfd9ce` field
+continuously behind the original hand-and-spring logo and three
+source-art covers. The book covers retain their own fine paper
+surfaces and shadows; this is not a redesign of the accepted reader.
+
+Source: Fountain Press `9479d27f1637cca4f974752f821c26d5be44de97`,
+Teatro `7aeb45ed947711d17e521d1d48c7fd29d8fc4bd9`.
+Active WLAN release
+`20261014-teatro-r21-continuous-background-v21`; v20 and the
+accepted v16 book releases remain available for rollback. iPad
+portrait browser test witnessed a fully transparent panel,
+no shadow and the unchanged book entry/audio controls. The
+estate staging verifier passed all three real edition routes.
+Public HTTPS remains unchanged.

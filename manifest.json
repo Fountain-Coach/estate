@@ -66,7 +66,7 @@
         "path": "/editions/",
         "kind": "linotype-bookshelf"
       },
-      "sourceCommit": "ff0d6f4e3a8408269b9954a457cdd0961ea8bef6",
+      "sourceCommit": "7aeb45ed947711d17e521d1d48c7fd29d8fc4bd9",
       "authorialTextOrigin": "Fountain-Coach/fountain.coach (22 paragraphs and one original Teatro Score)",
       "firstHearing": {
         "hearingSystem": "Fountain-Coach/Satzfunk",
@@ -83,7 +83,7 @@
           "audioClaim": "existing engine; requires visitor activation; not literary narration"
         }
       ],
-      "sourcePublicationState": "GitHub owner ff0d6f4; Ubuntu WLAN v20 logo-only Linotype Bookshelf with three parent editions, original v16 First Hearing preserved; public HTTPS unchanged",
+      "sourcePublicationState": "GitHub Teatro 7aeb45e and Press 9479d27; WLAN v21 removes inset cream shelf paper/shadow; original logo, three main editions, v16 reader unchanged; public HTTPS unchanged",
       "betaMilestone": {
         "state": "author-acknowledged-reading-listening-beta",
         "date": "2026-10-14",
@@ -181,6 +181,22 @@
         "fountainPressCommit": "2caacf16238735f80a00c241f9db8cd527508fdc",
         "teatroCommit": "ff0d6f4e3a8408269b9954a457cdd0961ea8bef6",
         "wlanRelease": "20261014-teatro-r20-three-editions-logo-v20",
+        "publicHTTPSPublished": false
+      },
+      "backgroundMilestone": {
+        "date": "2026-10-14",
+        "state": "WLAN-staging-candidate",
+        "authorRequest": "Remove the lighter cream Bookshelf background, leaving a continuous outer color",
+        "scope": "bookshelf background and shadow only",
+        "paperBackground": "transparent",
+        "paperBoxShadow": "none",
+        "originalBackground": "#dfd9ce",
+        "threeMainEditionsPreserved": true,
+        "originalFountainCoachLogoPreserved": true,
+        "approvedV16ReaderPreserved": true,
+        "teatroCommit": "7aeb45ed947711d17e521d1d48c7fd29d8fc4bd9",
+        "fountainPressCommit": "9479d27f1637cca4f974752f821c26d5be44de97",
+        "wlanRelease": "20261014-teatro-r21-continuous-background-v21",
         "publicHTTPSPublished": false
       }
     }

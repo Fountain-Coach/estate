@@ -52,7 +52,14 @@ assert.equal(teatro.proofreadingMilestone.sourceCommit,'3113d46285fb19963b3d59b4
 assert.equal(teatro.gridMilestone.sourceCommit,'16df41cfb5a7a45b6ec833a01b491efe6ab8541a');
 assert.deepEqual(teatro.mainEditionMilestone.topLevelEditionIds,
   ['fountain-coach','first-reading','teatro-first-hearing']);
-assert.equal(teatro.mainEditionMilestone.teatroCommit,teatro.sourceCommit);
+// R20 is a frozen taxonomy milestone. v21 changes only its paper treatment.
+assert.equal(teatro.mainEditionMilestone.teatroCommit,'ff0d6f4e3a8408269b9954a457cdd0961ea8bef6');
+assert.equal(teatro.backgroundMilestone.teatroCommit,teatro.sourceCommit);
+assert.equal(teatro.backgroundMilestone.paperBackground,'transparent');
+assert.equal(teatro.backgroundMilestone.paperBoxShadow,'none');
+assert.equal(teatro.backgroundMilestone.threeMainEditionsPreserved,true);
+assert.equal(teatro.backgroundMilestone.approvedV16ReaderPreserved,true);
+assert.equal(teatro.backgroundMilestone.publicHTTPSPublished,false);
 assert.equal(teatro.mainEditionMilestone.bookCovers,3);
 assert.equal(teatro.mainEditionMilestone.visibleTitles,0);
 assert.equal(teatro.mainEditionMilestone.visibleCounters,0);
