@@ -1,0 +1,100 @@
+{
+  "schema": "fountain.estate.domain-ownership.v2",
+  "frontDoors": [
+    {
+      "id": "fountain-coach",
+      "name": "Fountain Coach",
+      "role": "editorial-identity",
+      "rank": 1,
+      "url": "https://fountain.coach/",
+      "sourceRepo": "Fountain-Coach/fountain.coach"
+    },
+    {
+      "id": "first-reading",
+      "name": "First Reading",
+      "role": "authored-literary-edition",
+      "rank": 2,
+      "url": "https://works.benedikt-eickhoff.de/solstice/editions/first-reading/",
+      "sourceRepo": "Fountain-Coach/solstice.fountain.coach",
+      "publicationHost": "works.benedikt-eickhoff.de",
+      "futureHost": "solstice.fountain.coach",
+      "engineRepo": "Fountain-Coach/fountain-press",
+      "audioRepo": "Fountain-Coach/Satzfunk",
+      "status": "published-under-works; solstice-DNS-unresolved"
+    },
+    {
+      "id": "teatro",
+      "name": "Teatro",
+      "role": "performance-score-and-listening",
+      "rank": 3,
+      "url": "https://teatro.fountain.coach/",
+      "sourceRepo": "Fountain-Coach/teatro.fountain.coach"
+    }
+  ],
+  "supportingDomains": [
+    {
+      "host": "governance.fountain.coach",
+      "role": "normative-reference",
+      "sourceRepo": "Fountain-Coach/governance.fountain.coach",
+      "status": "live"
+    },
+    {
+      "host": "midi2.fountain.coach",
+      "role": "technical-evidence",
+      "sourceRepo": "Fountain-Coach/midi2",
+      "status": "live"
+    },
+    {
+      "host": "instruments.fountain.coach",
+      "role": "technical-catalogue",
+      "sourceRepo": "Fountain-Coach/instruments.fountain.coach",
+      "status": "live"
+    },
+    {
+      "host": "status.fountain.coach",
+      "role": "mandatory-legal-footer-and-transparency",
+      "sourceRepo": "Fountain-Coach/status.fountain.coach",
+      "status": "live"
+    },
+    {
+      "host": "book.fountain.coach",
+      "role": "reframe-historical-reference-not-linotype",
+      "sourceRepo": "Fountain-Coach/book-of-reframe",
+      "status": "live-receded"
+    },
+    {
+      "host": "benedikt-eickhoff.de",
+      "role": "adjacent-founder-pointer",
+      "sourceRepo": "Fountain-Coach/benedikt-eickhoff.de",
+      "status": "live-adjacent"
+    },
+    {
+      "host": "tennis.fountain.coach",
+      "role": "retired-technical-experiment",
+      "sourceRepo": "Fountain-Coach/tennis.fountain.coach",
+      "status": "github-private-archived"
+    }
+  ],
+  "primaryNavigationIds": [
+    "fountain-coach",
+    "first-reading",
+    "teatro"
+  ],
+  "gitProvider": "GitHub",
+  "legacyGitRemote": "git@65.109.14.71:/mnt/HC_Volume_106773053/git/repos/",
+  "publisherSourceRepo": "Fountain-Coach/midi2-gpu-fabric",
+  "staticServing": "Hetzner Caddy remains supported independently of retiring Hetzner Git",
+  "publicationState": "admitted-editorial-roles; not-yet-publicly-promoted",
+  "rules": {
+    "bookshop": "First Reading only; do not relabel Reframe or Governance as books",
+    "status": "status.fountain.coach legal footer only",
+    "source": "one GitHub owner per domain; downstream estate never edits source",
+    "publishing": "typed-authorized EstatePublisher and independent live HTTPS readback; Git pushes alone cannot publish",
+    "archives": "preserve hosted historical references; private archive unserved Tennis",
+    "ci": "no GitHub Actions/workflows"
+  },
+  "gitMigration": {
+    "monorepo": "reconcile Hetzner and GitHub history without force-push",
+    "hosting": "do not migrate DNS or Caddy as part of Git transport change"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@fountain-coach/estate",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Three-front GitHub-owned Fountain Coach estate registry",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fountain-Coach/estate.git"
+  },
+  "scripts": {
+    "check": "node scripts/verify-estate.mjs",
+    "test": "node scripts/verify-estate.mjs"
+  }
+}
