@@ -83,7 +83,16 @@ def test():
  assert 'id="book-viewport"' in teatro and 'id="book-flow"' in teatro
  assert teatro.count('data-book-chapter=')==1
  assert teatro.count('src="/assets/edition/')==1
- assert 'id="satzfunk-hear"' in teatro and 'id="satzfunk-hearing-rail"' in teatro
+ assert 'id="book-media-toggle"' in teatro and 'id="book-ear-status"' in teatro
+ assert 'id="book-media-settings"' in teatro
+ assert teatro.count('data-book-sound-parameter=')==4
+ assert 'id="satzfunk-hear"' not in teatro and 'id="satzfunk-hearing-rail"' not in teatro
+ assert '>Scene ↓<' not in teatro
+ assert 'src="/assets/linotype/book-player.mjs"' in teatro
+ for asset in ('assets/linotype/book-player.mjs','assets/linotype/book-midi2.mjs',
+               'assets/linotype/book-player.css','assets/book-csound-host.js'):
+  payload=fetch(ROOTS["teatro"]+asset)[0]
+  assert len(payload)>200,("Missing MIDI2 player asset",asset)
  assert 'data-legal-role="company-status"' in teatro
  check_rail(teatro,"teatro first hearing",EDNAV)
  stage=fetch(ROOTS["teatro"]+"editions/stage/")[0].decode()
@@ -93,7 +102,7 @@ def test():
  assert 'id="root"' in stage
  check_rail(stage,"teatro stage",NAV)
  assert 'data-legal-role="company-status"' in stage
- print("PASS","teatro","book first, Satzfunk Hear present, original stage retained")
+ print("PASS","teatro","book-first MIDI2 player and Ear present, old Hear rail gone, stage retained")
  status=__import__("urllib.error",fromlist=["HTTPError"])
  try:
   fetch(ROOTS["teatro"]+"editions/first-hearing/hearings.json")

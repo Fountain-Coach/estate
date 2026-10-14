@@ -147,3 +147,21 @@ Active WLAN release: 20261014-teatro-r12-anchored-mixed-media-v7. Git owner Foun
 ## Teatro puppetry v8
 
 Active WLAN release: 20261014-teatro-r12-moving-puppet-v8, owner e7b1d70. On WebGL failure the book loads a canonical StageEngine/StageView SVG puppet with bar, strings, torso and limbs. All four actual WLAN browser profiles witnessed motion and book page-exit cleanup. Original WebGL/Csound bundle remains unchanged, no spoken edition released; actual iPad Safari author acceptance pending.
+
+## Teatro MIDI2 player, Ear and Csound candidate v9
+
+Active WLAN release: 20261014-teatro-r12-midi2-player-ear-v9. GitHub-owned Teatro source 3e42a98; Fountain Press UMP player 476ab2b. Old Scene/Hear header links and empty narration rail removed. Compact player exposes four Csound channels, Web Audio preview on HTTP, and measured Ear activity. Native MIDI2 host transport and HTTPS Csound Safari witness are not yet accepted.
+
+## Teatro MIDI2 player and Ear v10 — active
+
+WLAN release `20261014-teatro-r12-csound-ear-midi2-v10`, source
+`Fountain-Coach/teatro.fountain.coach@1ea0bc2`, verified source SHA,
+prepared/activated on Ubuntu. Estate verification passes. Four layout
+profiles pass browser checks, including real puppet motion and MIDI2
+UMP controls. On live HTTP WLAN, a clicked Web Audio preview rendered
+witnessed RMS 0.0038. On secure localhost, the real Csound AudioWorklet
+registered and rendered RMS 0.00235, the actual Ear AudioWorklet reported
+55+ analysis observations, a 64-bit MIDI2 UMP parameter event was
+verified, and user-stop shut down playback. The official Csound host
+remains upstream branch code; hardware MIDI2 and trusted iPad HTTPS are
+unverified. No public HTTPS site was changed.
