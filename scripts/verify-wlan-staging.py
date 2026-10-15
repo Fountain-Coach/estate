@@ -50,7 +50,7 @@ def test():
  assert 'data-linotype-state="bookshelf"' in catalogue
  assert catalogue.count('class="shelf-book"')==3
  assert catalogue.count('class="shelf-item"')==3
- assert catalogue.count('class="bookshelf-brand"')==1
+ assert catalogue.count('class="bookshelf-brand fc-identity-circle"')==1
  assert catalogue.count('class="shelf-cover"')==3
  assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
  assert 'instrument-slot' not in catalogue
@@ -62,6 +62,10 @@ def test():
  press_css=fetch(ROOTS['fountain']+'assets/linotype/bookshelf.css')[0]
  teatro_css=fetch(ROOTS['teatro']+'assets/linotype/bookshelf.css')[0]
  assert press_css==teatro_css and b'background:transparent;box-shadow:none;' in press_css
+ identity=fetch(ROOTS['fountain']+'assets/linotype/identity-circle.css')[0]
+ assert identity==fetch(ROOTS['teatro']+'assets/linotype/identity-circle.css')[0]
+ assert b'--fc-identity-circle-radius:50%' in identity and b'--fc-identity-circle-stroke:1px' in identity
+ assert b'@import url("./identity-circle.css")' in press_css
  detailed=fetch(ROOTS['fountain']+'editions/catalogue/')[0].decode()
  assert 'class="edition-list"' in detailed
  assert 'data-legal-role="company-status"' in detailed
@@ -113,7 +117,7 @@ def test():
  assert 'class="bookshelf-paper-foot"' not in shelf
  assert 'class="bookshelf-intro"' not in shelf
  assert '<h1' not in shelf
- assert shelf.count('class="bookshelf-brand"')==1
+ assert shelf.count('class="bookshelf-brand fc-identity-circle"')==1
  assert shelf.count('class="bookshelf-wordmark"')==0  # authentic mark alone (R24)
  assert 'FOUNTAIN COACH</span>' not in shelf
  assert 'src="/assets/bookshelf/fountain-coach-logo-transparent.png"' in shelf
@@ -151,7 +155,7 @@ def test():
  assert 'id="book-viewport"' in teatro and 'id="book-flow"' in teatro
  assert teatro.count('data-book-chapter=')==1
  assert teatro.count('src="/assets/edition/')==1
- assert 'id="book-media-toggle"' in teatro and 'id="book-ear-status"' in teatro
+ assert 'class="fc-identity-circle" id="book-media-toggle"' in teatro and 'id="book-ear-status"' in teatro
  assert 'class="book-ear-icon"' in teatro
  assert 'class="book-player-status book-ear-status" id="book-ear-status"' in teatro
  assert 'id="book-ear-reading"' in teatro
@@ -164,6 +168,8 @@ def test():
  assert '.book-reading-controls #book-toc-button{margin-left:auto' in css
  control_css=fetch(ROOTS["teatro"]+"assets/linotype/book-player.css")[0].decode()
  assert '--play-fill' in control_css and '--play-halo' in control_css
+ assert '@import url("./identity-circle.css")' in control_css
+ assert '--fc-identity-circle-radius' in control_css and '--fc-identity-circle-stroke' in control_css
  assert 'prefers-reduced-motion:reduce' in control_css
  assert '.book-ear-status' in control_css and '.book-ear-meter' not in control_css
  assert 'left:0;right:auto' in control_css

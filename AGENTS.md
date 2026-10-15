@@ -47,3 +47,12 @@
 - The estate's WLAN-only renderer remaps the three root cover links to
   neighboring preview ports, never claiming public availability.
 - Production remains a separate explicitly governed deployment operation.
+
+## Circular identity inheritance
+
+Fountain Press `identity-circle.css` is the single source of the circle
+shape/stroke shared between the Fountain Coach hand-and-spring logo cell and
+Teatro's actual Play/Stop button. Owner sites copy it at source build time.
+The staging release must serve identical bytes from Fountain Coach and Teatro;
+verify it alongside the unchanged three canonical cover navigation targets.
+This identity does not introduce an extra link, player, status or audio claim.

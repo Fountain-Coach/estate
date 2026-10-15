@@ -436,3 +436,25 @@ bounded staging-only navigation remap. The shared Press CSS digest is identical
 for Fountain Coach and Teatro. Responsive browser, Linotype pagination,
 Teatro First Hearing/audio/Stage, and full WLAN estate checks pass.
 Public DNS/HTTPS were not changed. iPad Safari author acceptance remains open.
+
+## 15 October 2026 — circular identity v29
+
+Active WLAN preview: `http://192.168.8.249:8180/`; release
+`20261015-fountain-identity-circle-v29`. The Fountain Coach hand-and-spring
+logo now occupies a delicate, true circular border in its grid cell, sharing
+Fountain Press's `identity-circle.css` radius/stroke rule with Teatro's single
+Play/Stop button. The logo is inert and never animates. The Play/Stop circle
+retains its genuine measured-volume color/halo and unchanged media behavior.
+Grid structure (four occupied positions plus 20 inactive dashed slots), three
+original covers, edition routing, and reader typography remain unchanged.
+
+Source commits: Fountain Press `96f865e`, Fountain Coach `8ce1d83`, Teatro
+`aa29e86` (includes implementation `da4b124`), First Reading `bb365cae`.
+The pinned release source lock includes complete repository commit IDs.
+Source inventory SHA-256 checks passed: 80 Fountain Coach, 101 First Reading,
+60 Teatro files. The shared identity stylesheet has the same checksum on
+both owner origins. Browser tests passed responsive grids and Teatro's Play,
+Stop, Ear, Stage and pagination. The three-port live WLAN verification also
+passed. Previous v28 release remains on host for rollback. Public DNS,
+production HTTPS and Caddy were not modified. Author iPad visual acceptance
+is still required.
