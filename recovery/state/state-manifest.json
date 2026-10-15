@@ -1,0 +1,343 @@
+{
+  "schema": "fountain.estate.recovery-state-manifest.v1",
+  "asOf": "2026-10-15",
+  "ownerDecision": "docs/decisions/003-owner-continuity-golden-key-recovery.md",
+  "purpose": "public metadata-only recovery capability inventory; not a private backup, credential list or declaration of live restore",
+  "authority": "Fountain-Coach/estate",
+  "operationalInstancesFullyInventoried": false,
+  "privateStoresInspected": false,
+  "privateBackupsVerified": false,
+  "goldenKeyLostRootRecoveryAccepted": false,
+  "cleanRoomPrivateRestoreAccepted": false,
+  "productionPromotionAuthorized": false,
+  "credentialsIncluded": false,
+  "publicStaticEvidence": {
+    "publicGETResponsesVerified": 600,
+    "publicHostnames": 9,
+    "scope": "bounded public static published files only",
+    "evidence": "recovery/ubuntu-cold-restore-witness-20261015.md"
+  },
+  "entries": [
+    {
+      "id": "public-estate-static-artifacts",
+      "classification": "institutional-knowledge",
+      "authority": "Fountain Coach domain owners; Estate recovery ledger",
+      "ownerRepo": "Fountain-Coach/estate",
+      "backupPolicy": "public-digest-pinned",
+      "discoveryState": "verified-observed-static-only",
+      "restoreMethod": "restore-pinned-github-release",
+      "distribution": "public",
+      "readiness": "STATIC_600_BYTES_VERIFIED",
+      "risk": "Only 600 observed HTTPS 200 resources; full route and release admission unproved",
+      "evidenceRefs": [
+        "recovery/ubuntu-cold-restore-witness-20261015.md",
+        "https://github.com/Fountain-Coach/estate"
+      ],
+      "requiredFor": "static-estate",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "estate-owned-source-and-manifests",
+      "classification": "institutional-knowledge",
+      "authority": "Owning GitHub domain repositories and Estate registry",
+      "ownerRepo": "Fountain-Coach/estate",
+      "backupPolicy": "git-history-and-pinned-release",
+      "discoveryState": "source-identities-declared-only",
+      "restoreMethod": "git-checkout-at-admitted-commit",
+      "distribution": "public",
+      "readiness": "UNVERIFIED",
+      "risk": "Full live source-to-public release atomic provenance not established",
+      "evidenceRefs": [
+        "https://github.com/Fountain-Coach/estate",
+        "docs/decisions/002-canonical-domain-provider-loss-failover.md"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "fountainstore-durable-institutional-records",
+      "classification": "institutional-knowledge",
+      "authority": "FountainStore instance authority",
+      "ownerRepo": "Fountain-Coach/Fountain-Store",
+      "backupPolicy": "typed-private-snapshot-offsite",
+      "discoveryState": "source-component-known-instance-unknown",
+      "restoreMethod": "typed-store-export-restore",
+      "distribution": "protected",
+      "readiness": "UNVERIFIED",
+      "risk": "No authenticated production Store snapshot, source sequence or off-host restore receipt",
+      "evidenceRefs": [
+        "https://github.com/Fountain-Coach/Fountain-Store",
+        "https://governance.fountain.coach/chapters/117-fountainstore-snapshot-export-and-git-recovery-projection/"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "store-publication-and-scenario-receipts",
+      "classification": "institutional-knowledge",
+      "authority": "FountainStore and EstatePublisher publication authority",
+      "ownerRepo": "Fountain-Coach/Fountain-Store",
+      "backupPolicy": "typed-private-snapshot-offsite",
+      "discoveryState": "source-component-known-instance-unknown",
+      "restoreMethod": "typed-receipt-and-sequence-restore",
+      "distribution": "protected",
+      "readiness": "UNVERIFIED",
+      "risk": "Publication, scenario, activation and host admission receipts lack full proven recovery",
+      "evidenceRefs": [
+        "https://github.com/Fountain-Coach/Fountain-Store",
+        "https://governance.fountain.coach/chapters/117-fountainstore-snapshot-export-and-git-recovery-projection/"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "store-unpublished-personal-context",
+      "classification": "personal-context",
+      "authority": "Writer/source-domain owner through FountainStore",
+      "ownerRepo": "Fountain-Coach/Fountain-Store",
+      "backupPolicy": "purpose-limited-encrypted-offsite-or-omit",
+      "discoveryState": "source-component-known-instance-unknown",
+      "restoreMethod": "explicit-consent-restoration-or-erasure",
+      "distribution": "protected",
+      "readiness": "UNVERIFIED",
+      "risk": "Private context must not become open institutional material or revive erased data",
+      "evidenceRefs": [
+        "https://governance.fountain.coach/chapters/118-european-cybersecurity-profile/",
+        "https://github.com/Fountain-Coach/Fountain-Store"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "unpublished-manuscripts-and-editorial-drafts",
+      "classification": "personal-context",
+      "authority": "Author/writer domain and local Reframe custody",
+      "ownerRepo": "Fountain-Coach/estate",
+      "backupPolicy": "purpose-limited-encrypted-offsite-or-omit",
+      "discoveryState": "instance-and-scope-unverified",
+      "restoreMethod": "owner-authorized-project-reconstitution",
+      "distribution": "protected",
+      "readiness": "UNVERIFIED",
+      "risk": "Unpublished creative works and local-only editing state are not covered by static Git release",
+      "evidenceRefs": [
+        "https://governance.fountain.coach/chapters/118-european-cybersecurity-profile/",
+        "docs/decisions/003-owner-continuity-golden-key-recovery.md"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "media-attachment-payloads-and-digests",
+      "classification": "institutional-knowledge",
+      "authority": "Media/source-domain owner and content-addressed attachment store",
+      "ownerRepo": "Fountain-Coach/estate",
+      "backupPolicy": "rights-classified-private-asset-backup",
+      "discoveryState": "instance-and-scope-unverified",
+      "restoreMethod": "attachment-digest-and-policy-restore",
+      "distribution": "mixed",
+      "readiness": "UNVERIFIED",
+      "risk": "Public media verified only where observed; all other assets require eligibility and digest census",
+      "evidenceRefs": [
+        "https://governance.fountain.coach/chapters/117-fountainstore-snapshot-export-and-git-recovery-projection/",
+        "https://governance.fountain.coach/chapters/118-european-cybersecurity-profile/"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "owner-signing-root-and-golden-key",
+      "classification": "authority-capability",
+      "authority": "Owner trust-root custody in SecretStore; FountainStore active trust set",
+      "ownerRepo": "Fountain-Coach/swift-secretstore",
+      "backupPolicy": "never-open-native-custody",
+      "discoveryState": "deployment-model-documented-recovery-not-proved",
+      "restoreMethod": "governed-lost-root-procedure-not-established",
+      "distribution": "custodial",
+      "readiness": "BLOCKED_NO_ACCEPTED_LOST_ROOT_PROTOCOL",
+      "risk": "Chapter 139 explicitly says no accepted break-glass lost-root recovery operation",
+      "evidenceRefs": [
+        "https://governance.fountain.coach/chapters/139-owner-trust-root-secretstore-custody-and-recovery/",
+        "https://governance.fountain.coach/chapters/143-simplicity-is-key-one-bootstrap-one-trusted-session/",
+        "https://github.com/Fountain-Coach/swift-secretstore"
+      ],
+      "requiredFor": "succession",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "host-and-device-enrollment-authority",
+      "classification": "authority-capability",
+      "authority": "Enrolled host/device authority and FountainStore trust controls",
+      "ownerRepo": "Fountain-Coach/Fountain-Store",
+      "backupPolicy": "never-open-native-custody",
+      "discoveryState": "operational-identity-unverified",
+      "restoreMethod": "owner-approved-target-bound-reenrollment",
+      "distribution": "custodial",
+      "readiness": "UNVERIFIED",
+      "risk": "Device/host identity and enrollment may not be inferred from SSH/root access",
+      "evidenceRefs": [
+        "https://governance.fountain.coach/chapters/139-owner-trust-root-secretstore-custody-and-recovery/",
+        "https://github.com/Fountain-Coach/Fountain-Store"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "secretstore-backend-protected-values",
+      "classification": "authority-capability",
+      "authority": "Native SecretStore/host custody",
+      "ownerRepo": "Fountain-Coach/swift-secretstore",
+      "backupPolicy": "never-open-native-custody",
+      "discoveryState": "library-present-live-host-custody-unverified",
+      "restoreMethod": "governed-native-secret-recovery",
+      "distribution": "custodial",
+      "readiness": "UNVERIFIED",
+      "risk": "SecretStore implementation is not proof that usable host-side credentials are independently recoverable",
+      "evidenceRefs": [
+        "https://github.com/Fountain-Coach/swift-secretstore",
+        "https://governance.fountain.coach/chapters/139-owner-trust-root-secretstore-custody-and-recovery/"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "fountainauthkit-domain-grants-and-state",
+      "classification": "personal-context",
+      "authority": "FountainAuthKit owning writing-domain authorization state",
+      "ownerRepo": "Fountain-Coach/FountainAuthKit",
+      "backupPolicy": "encrypted-partitioned-state-backup",
+      "discoveryState": "library-present-service-deployment-unverified",
+      "restoreMethod": "typed-domain-partitioned-restoration",
+      "distribution": "protected",
+      "readiness": "UNVERIFIED",
+      "risk": "Package tests do not establish live service or continuity of grants, revocations and keys",
+      "evidenceRefs": [
+        "https://github.com/Fountain-Coach/FountainAuthKit",
+        "https://governance.fountain.coach/chapters/118-european-cybersecurity-profile/"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "oauth-signing-keys-and-external-tokens",
+      "classification": "authority-capability",
+      "authority": "Domain signing-key custody and external identity/provider boundaries",
+      "ownerRepo": "Fountain-Coach/FountainAuthKit",
+      "backupPolicy": "never-open-native-custody",
+      "discoveryState": "service-instance-unverified",
+      "restoreMethod": "owner-authorized-rotation-and-provider-reauthorization",
+      "distribution": "custodial",
+      "readiness": "UNVERIFIED",
+      "risk": "Missing OAuth signing keys require governed replacement; external account grants may be provider-controlled",
+      "evidenceRefs": [
+        "https://github.com/Fountain-Coach/FountainAuthKit",
+        "https://github.com/Fountain-Coach/swift-secretstore"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "registrar-dns-and-provider-account-control",
+      "classification": "authority-capability",
+      "authority": "Registered domain owner, registrar and independent DNS operator",
+      "ownerRepo": "Fountain-Coach/estate",
+      "backupPolicy": "never-open-native-custody",
+      "discoveryState": "public-ns-observed-owner-login-unverified",
+      "restoreMethod": "registrar-recovery-and-dns-redelegation",
+      "distribution": "custodial",
+      "readiness": "UNVERIFIED",
+      "risk": "Registrar control and complete DNS zone snapshots not verified; defer public failover",
+      "evidenceRefs": [
+        "docs/decisions/002-canonical-domain-provider-loss-failover.md",
+        "https://github.com/Fountain-Coach/estate"
+      ],
+      "requiredFor": "external-failover",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "github-organization-owner-and-release-custody",
+      "classification": "authority-capability",
+      "authority": "GitHub organization owner and verified recovery release custody",
+      "ownerRepo": "Fountain-Coach/estate",
+      "backupPolicy": "never-open-native-custody",
+      "discoveryState": "public-release-retrieval-verified-org-account-unknown",
+      "restoreMethod": "provider-account-owner-recovery",
+      "distribution": "custodial",
+      "readiness": "UNVERIFIED",
+      "risk": "Public artifact retrieval does not prove access to org administration or succession",
+      "evidenceRefs": [
+        "https://github.com/Fountain-Coach/estate",
+        "recovery/ubuntu-cold-restore-witness-20261015.md"
+      ],
+      "requiredFor": "succession",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "successor-transfer-and-legal-owner-intent",
+      "classification": "institutional-knowledge",
+      "authority": "Current legitimate organizational owner and separately governed successor authority",
+      "ownerRepo": "Fountain-Coach/estate",
+      "backupPolicy": "restricted-succession-record-offsite",
+      "discoveryState": "succession-procedure-unverified",
+      "restoreMethod": "legal-and-technical-succession-admission",
+      "distribution": "protected",
+      "readiness": "UNVERIFIED",
+      "risk": "Never manufacture successor authority from possession of server or GitHub credentials",
+      "evidenceRefs": [
+        "https://governance.fountain.coach/chapters/139-owner-trust-root-secretstore-custody-and-recovery/",
+        "docs/decisions/003-owner-continuity-golden-key-recovery.md"
+      ],
+      "requiredFor": "succession",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    },
+    {
+      "id": "operational-client-runtime-and-integrations",
+      "classification": "institutional-knowledge",
+      "authority": "Runtime/service owners: Reframe, BotCast, Csound, MIDI2, external integrations",
+      "ownerRepo": "Fountain-Coach/estate",
+      "backupPolicy": "per-service-classification-needed",
+      "discoveryState": "static-code-signals-only",
+      "restoreMethod": "approved-runtime-and-client-reinstatement",
+      "distribution": "undetermined",
+      "readiness": "UNVERIFIED",
+      "risk": "Interactive operation, API availability, client permissions and external integrations not proven by static files",
+      "evidenceRefs": [
+        "docs/decisions/002-canonical-domain-provider-loss-failover.md",
+        "recovery/runtime-boundary-witness.md"
+      ],
+      "requiredFor": "operational-continuity",
+      "liveInstanceReceipt": null,
+      "independentBackupReceipt": null,
+      "cleanRoomRestoreReceipt": null
+    }
+  ]
+}

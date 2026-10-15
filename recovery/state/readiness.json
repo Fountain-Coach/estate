@@ -1,0 +1,57 @@
+{
+  "acceptance": [
+    {
+      "id": "complete-operational-state-inventory",
+      "reason": "No independent inventory of all actual production instances",
+      "state": "BLOCKED"
+    },
+    {
+      "id": "independent-private-backup-custody",
+      "reason": "No verified encrypted off-host backup, retrieval and integrity receipt",
+      "state": "BLOCKED"
+    },
+    {
+      "id": "golden-key-and-successor-authority",
+      "reason": "FCIS 139 lacks accepted lost-root recovery; successor authority unproved",
+      "state": "BLOCKED"
+    },
+    {
+      "id": "clean-room-private-store-restoration",
+      "reason": "No authenticated restore of actual protected Store state and media",
+      "state": "BLOCKED"
+    },
+    {
+      "id": "authorized-publication-continuity",
+      "reason": "No authorized new publication from restored private authority with independent readback",
+      "state": "BLOCKED"
+    },
+    {
+      "id": "repeatable-timed-owner-accepted-proof",
+      "reason": "No two accepted cold drills, measured RTO/RPO, rollback and owner receipt",
+      "state": "BLOCKED"
+    }
+  ],
+  "classes": {
+    "authority-capability": 6,
+    "institutional-knowledge": 7,
+    "personal-context": 3
+  },
+  "cleanRoomPrivateRestoreReceiptCount": 0,
+  "evidenceStates": {
+    "BLOCKED_NO_ACCEPTED_LOST_ROOT_PROTOCOL": 1,
+    "STATIC_600_BYTES_VERIFIED": 1,
+    "UNVERIFIED": 14
+  },
+  "independentPrivateBackupReceiptCount": 0,
+  "lostOwnerKeyRecoveryAccepted": false,
+  "manifestSHA256": "6232b7ebf2a07e6c867af1be5acb25766987b9da4f99ebd8807fd98c21dde89f",
+  "operationalInstanceReceiptCount": 0,
+  "overall": "NOT_READY_FOR_PRIVATE_OWNER_CONTINUITY",
+  "privateStoreRecoveryAccepted": false,
+  "productionPromotionAuthorized": false,
+  "publicObservedStaticByteRecovery": "PASS_BOUNDED",
+  "schema": "fountain.estate.recovery-continuity-readiness.v1",
+  "stage": "STATE_MANIFEST_METADATA_ONLY",
+  "stateClassCount": 16,
+  "successorAuthorityAccepted": false
+}
