@@ -116,3 +116,9 @@ A pass does not mean production was updated or every remote URL was crawled.
 No GitHub Actions, no automated push, no DNS/Caddy changes are authorized by
 these operations. Record source versus public mismatches before any publishing
 promotion or UI taxonomy changes.
+
+## ADR 001 — Local Ubuntu disaster-recovery rehearsal
+
+Consult [ADR 001](docs/decisions/001-local-ubuntu-off-provider-tunnel-recovery.md) before cold-restore, DNS migration, tunnel creation or recovery-host work. The existing WLAN Ubuntu machine is the planned isolated recovery origin; a temporary outbound tunnel is the proposed external witness. The ADR does not authorize mutation of live DNS, Caddy, Cloudflare accounts, existing WLAN staging, credentials or published routes.
+
+Restore exact last-published revisions and complete content/assets from owner repositories, never default to Git main or an incomplete Bookshelf. Protect every domain, including delegated Solstice, Teatro the tool and technical/governance material. Keep private Store recovery independent. Fail closed if sources, full release identities or security authority are absent. Canonical failover requires a separate owner-approved, verified and reversible operation.

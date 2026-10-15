@@ -221,3 +221,9 @@ complete remote crawl coverage.
 - `npm run check` enforces the owner graph and anti-omission contract.
 
 No hosting, Caddy, DNS, GitHub CI or public content is modified by inventory commands.
+
+## Disaster recovery: local Ubuntu as an independent recovery origin
+
+[ADR 001 — Local Ubuntu emergency origin through an outbound tunnel](docs/decisions/001-local-ubuntu-off-provider-tunnel-recovery.md) records the Hetzner provider-loss rationale. The first planned test reconstructs exact published GitHub source on the existing WLAN Ubuntu machine, runs isolated Caddy and exposes it via a temporary outbound tunnel. Permanent DNS and named tunnel routing are later, owner-authorized decisions.
+
+The ADR is an architectural decision only. No live DNS, Cloudflare configuration, current Caddy site, SSH credentials or published material are changed by this record. See [the complete estate inventory](inventory/CONTRACT.md) for the source ownership and public-versus-Git discrepancies that recovery must resolve.

@@ -197,7 +197,7 @@
     "provenance": "git-tracked-source",
     "route": "/",
     "sourceFile": "site/index.html",
-    "sourceSHA256": "aeb3c22469b1db4c8917e04d14cf1fb3335c44dc7c1a40d7c6fc5a08feb7b7c6"
+    "sourceSHA256": "c33a6606a595b7401619e311de8c5ec3c2f8b80239515db923b343444ed73290"
   },
   {
     "host": "fountain.coach",
@@ -213,7 +213,7 @@
     "provenance": "git-tracked-source",
     "route": "/editions/",
     "sourceFile": "site/editions/index.html",
-    "sourceSHA256": "aeb3c22469b1db4c8917e04d14cf1fb3335c44dc7c1a40d7c6fc5a08feb7b7c6"
+    "sourceSHA256": "c33a6606a595b7401619e311de8c5ec3c2f8b80239515db923b343444ed73290"
   },
   {
     "host": "fountain.coach",
@@ -229,7 +229,7 @@
     "provenance": "git-tracked-source",
     "route": "/editions/essays/",
     "sourceFile": "site/editions/essays/index.html",
-    "sourceSHA256": "4cf8622a4e9c95f67d740cf9eecc38f8627b23bb69de5b72a857c2980a712a36"
+    "sourceSHA256": "a84814c5d479c9f7f13ca2ecad3e02592ef5b0942a9474612ecf05544dbb2ed5"
   },
   {
     "host": "fountain.coach",
@@ -237,7 +237,7 @@
     "provenance": "git-tracked-source",
     "route": "/editions/essays/reframe-and-the-business-value-of-the-estate/",
     "sourceFile": "site/editions/essays/reframe-and-the-business-value-of-the-estate/index.html",
-    "sourceSHA256": "fde9eee8763f65975f8385a4655f2eaed1c2e3cbd59cbcf5c34e0da02f9f806b"
+    "sourceSHA256": "40956d4ccd35124cbe3d89cd9666eaf05a71b980f53de1e8bbdfa4c4cf7ebe22"
   },
   {
     "host": "fountain.coach",
@@ -245,7 +245,7 @@
     "provenance": "git-tracked-source",
     "route": "/editions/essays/semantic-compilation-the-archive-is-not-the-edition/",
     "sourceFile": "site/editions/essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
-    "sourceSHA256": "d52c2a8926e0ec224d24364fbbda0fe9f9e4577b42ded089ce0a93c48bd7648a"
+    "sourceSHA256": "f481b18337dd3e0901ee3d8ba550b3dcc0f9b8f9128bc893e26cf39aa80313c3"
   },
   {
     "host": "fountain.coach",
@@ -253,7 +253,7 @@
     "provenance": "git-tracked-source",
     "route": "/editions/essays/teatro-an-unfinished-composition/",
     "sourceFile": "site/editions/essays/teatro-an-unfinished-composition/index.html",
-    "sourceSHA256": "74c99ea70bdd6efe3914d04f1edfa3a240639226f3c74c17d67c078318ae7c76"
+    "sourceSHA256": "a30fd54a36966f1b9644a62f946df4fc31b916ead096dde73291260eb09b681e"
   },
   {
     "host": "fountain.coach",
@@ -286,6 +286,62 @@
     "route": "/essays/teatro-an-unfinished-composition/",
     "sourceFile": "site/essays/teatro-an-unfinished-composition/index.html",
     "sourceSHA256": "5f77e58bbb59d0802d5b8b0ee48ecea1bbea7d44ebf4b73e3107363b7b95bad8"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/fixtures/semantic-visual-bookshelf/",
+    "sourceFile": "site/fixtures/semantic-visual-bookshelf/index.html",
+    "sourceSHA256": "1dfb22c4a7adc02a66be6c92b2143194c897ce05770f87c8e1f0b3b473c703b2"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/fixtures/semantic-visual-bookshelf/collections/essays/",
+    "sourceFile": "site/fixtures/semantic-visual-bookshelf/collections/essays/index.html",
+    "sourceSHA256": "05731667dbf4be36c5e1d16d225fb465f2e3c60d3d581cc4429d4fb5701304e6"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/fixtures/semantic-visual-bookshelf/collections/essays/works/reframe-and-the-business-value-of-the-estate/",
+    "sourceFile": "site/fixtures/semantic-visual-bookshelf/collections/essays/works/reframe-and-the-business-value-of-the-estate/index.html",
+    "sourceSHA256": "6242fb36a4323d20b13c24e65e8b0c06f84f8f1a61d5ca9af90049e9061db008"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/fixtures/semantic-visual-bookshelf/collections/essays/works/semantic-compilation-the-archive-is-not-the-edition/",
+    "sourceFile": "site/fixtures/semantic-visual-bookshelf/collections/essays/works/semantic-compilation-the-archive-is-not-the-edition/index.html",
+    "sourceSHA256": "d9e06aaaed03397eeefaa7954ce04d0acad2dab55e50818fb211dfbe241d5f9b"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/fixtures/semantic-visual-bookshelf/collections/essays/works/teatro-an-unfinished-composition/",
+    "sourceFile": "site/fixtures/semantic-visual-bookshelf/collections/essays/works/teatro-an-unfinished-composition/index.html",
+    "sourceSHA256": "41e482b2d60a881a92da18c2e588ddbb4e47b9e6f971f3c32f4a6ee3a59ca52c"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/fixtures/semantic-visual-bookshelf/collections/first-readings/",
+    "sourceFile": "site/fixtures/semantic-visual-bookshelf/collections/first-readings/index.html",
+    "sourceSHA256": "e3af527d0890ff3bb3ce66a99818849369c4c85ad6a3331ddbf1905aaa510a5b"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/fixtures/semantic-visual-bookshelf/collections/first-readings/works/teatro-an-unfinished-composition/",
+    "sourceFile": "site/fixtures/semantic-visual-bookshelf/collections/first-readings/works/teatro-an-unfinished-composition/index.html",
+    "sourceSHA256": "192d57211a0c6fee87188cd68b7a6156722df9724c7abb0cc8de94b01e3c626c"
   },
   {
     "host": "fountain.coach",

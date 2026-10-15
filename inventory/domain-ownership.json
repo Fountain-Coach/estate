@@ -1,7 +1,7 @@
 {
   "counts": {
-    "gitHTMLRoutes": 318,
-    "gitNavigationEdges": 32572,
+    "gitHTMLRoutes": 325,
+    "gitNavigationEdges": 32599,
     "hosts": 11,
     "riskFindings": 4,
     "sourceRepositories": 11
@@ -30,8 +30,8 @@
       "host": "fountain.coach",
       "lifecycle": "active",
       "role": "editorial-identity",
-      "sourceCommit": "d1d86be9741c57d0c4cf8467edbc7c2a8d221cc1",
-      "sourceHTMLRoutes": 15,
+      "sourceCommit": "b4b1d3fbd9cc9f76fb810345aff22ec07cf19a0b",
+      "sourceHTMLRoutes": 22,
       "sourceRepo": "Fountain-Coach/fountain.coach"
     },
     {
@@ -183,20 +183,20 @@
       "clean": false,
       "editionState": "source-candidate-editions-hierarchy-not-publicly-deployed",
       "github": "https://github.com/Fountain-Coach/fountain.coach",
-      "head": "d1d86be9741c57d0c4cf8467edbc7c2a8d221cc1",
+      "head": "b4b1d3fbd9cc9f76fb810345aff22ec07cf19a0b",
       "headMatchesLocalOriginMain": true,
       "hosts": [
         "fountain.coach"
       ],
       "localCheckout": "estate-domain-owners/fountain.coach",
-      "localOriginMain": "d1d86be9741c57d0c4cf8467edbc7c2a8d221cc1",
+      "localOriginMain": "b4b1d3fbd9cc9f76fb810345aff22ec07cf19a0b",
       "repository": "Fountain-Coach/fountain.coach",
       "sourceInventoryStatus": "verified",
       "sourceRoot": "site",
-      "trackedContentSHA256": "7de5feee5e0b709796fd9a4cae4603006ef29df26e5d7dc9338a9dac1f6d3ddc",
-      "trackedDocuments": 3,
-      "trackedFiles": 104,
-      "trackedHTML": 15
+      "trackedContentSHA256": "9828422c744c20dbe17fd7af74d4ffd516fde2545e94b4a1ded07ee5f7540b38",
+      "trackedDocuments": 6,
+      "trackedFiles": 153,
+      "trackedHTML": 22
     },
     {
       "clean": true,

@@ -7,7 +7,7 @@ No publishing, DNS, Caddy or Git mutation. Source ownership is not proof of depl
 |---|---|---|---:|---|---|
 | benedikt-eickhoff.de | Fountain-Coach/benedikt-eickhoff.de | adjacent-founder-pointer | 7 | 200 | yes |
 | book.fountain.coach | Fountain-Coach/book-of-reframe | reframe-historical-reference-not-linotype | 17 | 200 | no |
-| fountain.coach | Fountain-Coach/fountain.coach | editorial-identity | 15 | 200 | no |
+| fountain.coach | Fountain-Coach/fountain.coach | editorial-identity | 22 | 200 | no |
 | governance.fountain.coach | Fountain-Coach/governance.fountain.coach | normative-reference | 165 | 200 | no |
 | instruments.fountain.coach | Fountain-Coach/instruments.fountain.coach | technical-catalogue | 4 | 200 | yes |
 | midi2.fountain.coach | Fountain-Coach/midi2 | technical-evidence | 0 | 200 | unverified |
