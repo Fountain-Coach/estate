@@ -47,17 +47,21 @@ def test():
   assert re.fullmatch(r"[a-f0-9]{40}",health["sites"][host]["commit"])
  catalogue=fetch(ROOTS["fountain"])[0].decode()
  assert catalogue==fetch(ROOTS["fountain"]+"editions/")[0].decode()
- assert 'class="shelf-grid"' in catalogue
- assert catalogue.count('class="shelf-entry"')==3
- assert catalogue.count('class="shelf-brand"')==1
+ assert 'data-linotype-state="bookshelf"' in catalogue
+ assert catalogue.count('class="shelf-book"')==3
+ assert catalogue.count('class="shelf-item"')==3
+ assert catalogue.count('class="bookshelf-brand"')==1
  assert catalogue.count('class="shelf-cover"')==3
  assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
  assert 'instrument-slot' not in catalogue
  for href in HREFS:
-  assert 'href="'+href+'"' in catalogue
+  assert 'href="'+href+'"' in catalogue,href
  for asset in ('fountain-coach-edition.png','first-reading-ink.png',
                'teatro-score-memory-vector-human-condition.svg'):
   assert len(fetch(ROOTS['fountain']+'assets/estate-bookshelf/'+asset)[0])>1000
+ press_css=fetch(ROOTS['fountain']+'assets/linotype/bookshelf.css')[0]
+ teatro_css=fetch(ROOTS['teatro']+'assets/linotype/bookshelf.css')[0]
+ assert press_css==teatro_css and b'background:transparent;box-shadow:none;' in press_css
  detailed=fetch(ROOTS['fountain']+'editions/catalogue/')[0].decode()
  assert 'class="edition-list"' in detailed
  assert 'data-legal-role="company-status"' in detailed
@@ -134,7 +138,7 @@ def test():
  assert 'rotate(-3deg)' not in fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
  shelf_css=fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
  assert 'background:transparent;' in shelf_css
- assert '.bookshelf-brand{display:flex;flex-direction:column;align-items:flex-start;' in shelf_css
+ assert '.bookshelf-brand{display:grid;place-items:start center;' in shelf_css
  assert 'box-shadow:none;' in shelf_css
  assert 'background:var(--paper);box-shadow:' not in shelf_css
  assert 'id="book-flow"' not in shelf

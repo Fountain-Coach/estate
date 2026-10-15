@@ -91,21 +91,6 @@ def rewrite(content: str):
             raise ValueError("Incomplete edition rail: "+str(seen))
         return match.group(1)+new+match.group(3)
     updated, edition_count=edition_nav.subn(update_edition_rail,updated)
-    # Edition grid uses real thumbnails, not the previous descriptive rail.
-    # Only the three authoritative book links are substituted in disposable
-    # WLAN proof releases; GitHub source keeps canonical HTTPS identities.
-    if 'class="shelf-grid"' in updated:
-        expected={
-            '/editions/essays/':DEST['estate'],
-            'https://works.benedikt-eickhoff.de/solstice/editions/first-reading/':DEST['first-reading'],
-            'https://teatro.fountain.coach/':DEST['teatro'],
-        }
-        assert updated.count('class="shelf-entry"')==3
-        for old,new in expected.items():
-            pattern='href="'+old+'"'
-            if updated.count(pattern)!=1:raise ValueError('Invalid edition grid destination '+old)
-            updated=updated.replace(pattern,'href="'+new+'"',1)
-        count+=3
     # Source owners retain canonical HTTPS reader URLs. The disposable WLAN
     # release translates only admitted bookshelf links (identified by
     # data-preview-host) into the three neighboring staging origins. It
@@ -132,8 +117,14 @@ def rewrite(content: str):
                     if not href.startswith(prefix+"editions/first-reading/"):raise ValueError("Unapproved First Reading URL "+href)
                     stage_href=f"http://{IP}:8181/"+href[len(prefix):]
             else:
-                if href!="/editions/first-hearing/":raise ValueError("Unapproved Teatro URL "+href)
-                stage_href=href
+                if href=="/editions/first-hearing/":
+                    stage_href=href  # Teatro's own same-origin shelf
+                elif href=="https://teatro.fountain.coach/editions/first-hearing/":
+                    stage_href=DEST["teatro"]
+                elif href==DEST["teatro"]:
+                    stage_href=href  # previously projected disposable release
+                else:
+                    raise ValueError("Unapproved Teatro URL "+href)
             return match.group(1)+stage_href+match.group(3)
         updated, shelf_count=shelf_link.subn(staging_reader,updated)
         count_expected=int(re.search(r'data-book-count="([0-9]+)"',updated).group(1))
