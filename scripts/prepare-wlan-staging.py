@@ -107,7 +107,7 @@ def rewrite(content: str):
                 if href==DEST["estate"]:
                     stage_href=href  # idempotent already-projected staging release
                 else:
-                    if not href.startswith(prefix+"editions/"):raise ValueError("Unapproved Fountain book URL "+href)
+                    if not (href.startswith(prefix+'editions/') or href.startswith(prefix+'collections/first-readings/')):raise ValueError('Unapproved Fountain publication URL '+href)
                     stage_href=f"http://{IP}:8180/"+href[len(prefix):]
             elif host=="solstice":
                 prefix="https://works.benedikt-eickhoff.de/solstice/"

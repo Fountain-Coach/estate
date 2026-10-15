@@ -51,12 +51,18 @@
       "engineRepo": "Fountain-Coach/fountain-press",
       "audioRepo": "Fountain-Coach/Satzfunk",
       "status": "published-under-works; solstice-DNS-unresolved",
-      "entryEditionUrl": "https://works.benedikt-eickhoff.de/solstice/editions/first-reading/"
+      "entryEditionUrl": "https://works.benedikt-eickhoff.de/solstice/editions/first-reading/",
+      "collectionName": "First Readings",
+      "collectionUrl": "https://fountain.coach/collections/first-readings/",
+      "collectionSourceRepo": "Fountain-Coach/fountain.coach",
+      "collectionStatus": "wlan-proof-pending-editorial-acceptance",
+      "collectionScope": "One source-admitted work: An Unfinished Composition; existing singular First Reading remains at its canonical URL",
+      "legacyTitle": "First Reading"
     },
     {
       "id": "teatro",
       "name": "Teatro",
-      "role": "book-first-performance-and-listening",
+      "role": "authoring-and-performance-instrument-not-publication",
       "rank": 3,
       "url": "https://teatro.fountain.coach/",
       "sourceRepo": "Fountain-Coach/teatro.fountain.coach",
@@ -213,7 +219,10 @@
         "teatroCommit": "2c328c284cdd15176e41d2ce13a98a0279f19a90",
         "wlanRelease": "20261014-teatro-r22-left-brand-signature-v22",
         "publicHTTPSPublished": false
-      }
+      },
+      "publishingShelfVisible": false,
+      "legacyEditorialRoutePreserved": true,
+      "toolNotEdition": true
     }
   ],
   "supportingDomains": [
@@ -285,5 +294,19 @@
   "gitMigration": {
     "monorepo": "reconcile Hetzner and GitHub history without force-push",
     "hosting": "do not migrate DNS or Caddy as part of Git transport change"
+  },
+  "publishingShelves": {
+    "topLevelCollectionIds": [
+      "fountain-coach",
+      "first-reading"
+    ],
+    "reservedWithoutPublication": [
+      "first-hearings"
+    ],
+    "toolDomainsNotBooks": [
+      "teatro.fountain.coach"
+    ],
+    "firstReadings": "https://fountain.coach/collections/first-readings/",
+    "firstHearingsPublicationState": "no admitted hearing, no cover, no issued spoken recording"
   }
 }

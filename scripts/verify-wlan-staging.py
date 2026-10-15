@@ -48,17 +48,32 @@ def test():
  catalogue=fetch(ROOTS["fountain"])[0].decode()
  assert catalogue==fetch(ROOTS["fountain"]+"editions/")[0].decode()
  assert 'data-linotype-state="bookshelf"' in catalogue
- assert catalogue.count('class="shelf-book"')==3
- assert catalogue.count('class="shelf-item"')==3
+ assert catalogue.count('class="shelf-book"')==2
+ assert catalogue.count('class="shelf-item"')==2
  assert catalogue.count('class="bookshelf-brand fc-identity-circle"')==1
- assert catalogue.count('class="shelf-cover"')==3
+ assert catalogue.count('class="shelf-cover"')==2
+ assert catalogue.count('data-preview-host="fountain"')==2
+ assert catalogue.count('data-preview-host="teatro"')==0
  assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
  assert 'instrument-slot' not in catalogue
- for href in HREFS:
+ for href in (HREFS[0],ROOTS['fountain']+'collections/first-readings/'):
   assert 'href="'+href+'"' in catalogue,href
  for asset in ('fountain-coach-edition.png','first-reading-ink.png',
                'teatro-score-memory-vector-human-condition.svg'):
   assert len(fetch(ROOTS['fountain']+'assets/estate-bookshelf/'+asset)[0])>1000
+ collection=fetch(ROOTS['fountain']+'collections/first-readings/')[0].decode()
+ assert 'data-collection-id="first-readings"' in collection
+ assert '<h1>First Readings</h1>' in collection
+ assert collection.count('class="shelf-cover"')==1
+ assert 'href="'+ROOTS['fountain']+'editions/essays/teatro-an-unfinished-composition/"' in collection
+ assert collection.count('class="bookshelf-empty" aria-hidden="true"')==20
+ collection_info=json.loads(fetch(ROOTS['fountain']+'collections/first-readings/collection.json')[0])
+ assert collection_info['workCount']==1
+ assert collection_info['singularFirstReadingPreserved']=='https://works.benedikt-eickhoff.de/solstice/editions/first-reading/'
+ work=fetch(ROOTS['fountain']+'editions/essays/teatro-an-unfinished-composition/')[0].decode()
+ assert 'class="book-cover work-identity-cover"' in work
+ assert work.count('src="'+collection_info['works'][0]['coverArtwork']+'"')==2
+ assert 'href="/collections/first-readings/#work-teatro-an-unfinished-composition"' in work
  press_css=fetch(ROOTS['fountain']+'assets/linotype/bookshelf.css')[0]
  teatro_css=fetch(ROOTS['teatro']+'assets/linotype/bookshelf.css')[0]
  assert press_css==teatro_css and b'background:transparent;box-shadow:none;' in press_css
