@@ -159,6 +159,23 @@ def test():
  assert 'id="book-viewport"' in teatro and 'id="book-flow"' in teatro
  assert teatro.count('data-book-chapter=')==1
  assert teatro.count('src="/assets/edition/')==1
+ assert teatro.split('<div id="book-flow" class="book-flow">',1)[1].lstrip().startswith('<section class="book-score" id="teatro-score"')
+ assert teatro.count('class="book-cover"')==0 and teatro.count('class="book-score"')==1
+ assert teatro.count('data-edition-entry-anchor="teatro-score"')==1
+ trace='teatro:unfinished-composition:empty-chair-attention'
+ assert teatro.count('data-score-trace-id="'+trace+'"')==1
+ assert teatro.count('data-score-trace-link')==2
+ assert teatro.count('data-score-return')==1
+ assert 'data-book-toc-target="score"' in teatro
+ assert 'id="book-navigation-status" role="status"' in teatro
+ trace_manifest=json.loads(fetch(ROOTS['teatro']+'editions/first-hearing/edition.json')[0])
+ assert trace_manifest['openingIdentity']=='teatro-score'
+ assert len(trace_manifest['scoreNavigation']['traces'])==1
+ assert trace_manifest['scoreNavigation']['traces'][0]['id']==trace
+ assert sorted(trace_manifest['scoreNavigation']['unmappedMovements'])==['01','02','03','04','05','07']
+ assert 'data-score-trace-id' in fetch(ROOTS['teatro']+'assets/linotype/linotype-engine.js')[0].decode()
+ assert 'data-score-trace-link' in fetch(ROOTS['teatro']+'assets/linotype/book.js')[0].decode()
+ assert 'teatro-score' in fetch(ROOTS['teatro']+'assets/linotype/mobile-page-navigation.js')[0].decode()
  assert 'class="fc-identity-circle" id="book-media-toggle"' in teatro and 'id="book-ear-status"' in teatro
  assert 'class="book-ear-icon"' in teatro
  assert 'class="book-player-status book-ear-status" id="book-ear-status"' in teatro
