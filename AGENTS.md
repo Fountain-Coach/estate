@@ -82,3 +82,17 @@ pagination and unknown-address refusal are verified in Teatro's
 a finished seven-movement navigable Score. The source manifests and public
 site ownership remain unchanged. Public DNS/Caddy/HTTPS release requires a
 separate authorized operation; WLAN staging is not production.
+
+## v33 final technical verification — score identity and source-first reading
+
+The v31 author rejection identified a missing visual contract: source-first
+Score rendered as a habitual Linotype folio. The corrected R32/R33 proof
+uses the original Score as an independent editorial entrance, not a page.
+DoD requires visual geometry + full navigation + audio and mixed-media
+composition. Chrome CDP at iPad and phone sizes is not native Safari.
+Original Bookshelf, rounded-square thumbnails, circle logo and publisher
+identities remain unchanged. Only one admitted Score movement is navigable;
+the remaining movements cannot acquire invented authorial meaning. R33
+adjusts compact media height/positioned return so strict existing page
+measure and source-preservation tests pass on phone portrait/landscape as
+well as desktop and iPad. WLAN author acceptance remains pending.

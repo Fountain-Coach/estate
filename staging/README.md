@@ -514,3 +514,41 @@ not merely the local workstation preview. Live three-port
 No public DNS, Caddy or HTTPS deployment was attempted. iPad Safari human
 visual/editorial acceptance is still a distinct action, not an automated
 claim.
+
+## 15 October 2026 — v33 Score-identity visual and E2E correction
+
+**Currently active WLAN:** `20261015-score-identity-v33` at
+`http://192.168.8.249:8180/` (Teatro:
+`http://192.168.8.249:8182/editions/first-hearing/`).
+Previous v31/v32 releases remain stored and are **not** accepted baselines.
+
+Reason for correction: v31's original Score still appeared inside a generated
+portrait Linotype paper leaf. That failed visual acceptance despite passing
+structural source-order navigation tests. A new end-to-end test reproduces
+this failure. V33's genuine unchanged source Score is shown directly in its
+own editorial field, outside the `book-flow`; no inherited sheet, folio,
+cover or duplicate score is visible. Entering admitted movement 06 starts
+the source-bound Linotype reading, with reciprocal Score return, browser Back,
+keyboard focus/activation, deep-link resolution and explicit refusal of stale
+or missing destinations. Other six movements remain nonnavigable.
+
+Verified evidence: [Teatro screenshots, rejected v31 comparison and provisional
+R32 technical VRT baseline](https://github.com/Fountain-Coach/teatro.fountain.coach/tree/main/docs/qa/r32).
+The live v33 iPad portrait capture and provisional baseline at 820x1180 have
+**normalized pixel RMSE 0.000000**; v31 versus candidate RMSE was 0.071286.
+Chrome emulation tested iPad portrait/landscape, desktop and phone layout.
+Full Play/Stop, Ear, mixed-media animated stage and source-preserving
+pagination tests passed **against live WLAN addresses** on iPad
+portrait/landscape, phone portrait/landscape, desktop and Bookshelf entry.
+A provisional v32 preview failed strict mobile media composition and was
+superseded by v33, which fixes both compact orientations without loosening
+the previous size limit. Full Estate staging verification also passed.
+
+Source commits are pinned in `source-lock.json`: Fountain Press `04bf973`,
+Teatro `37c0caf`, Fountain Coach `8d79039`, First Reading `bb365cae`,
+Estate verifier `9dfef75`. SHA-256 inventories of 80, 101, 60 source
+files verified before immutable WLAN staging-only link remap. The previous
+releases remain available on disk for rollback. Public production, DNS,
+Caddy and HTTPS were untouched. Native iPad Safari and author/editorial
+acceptance are **not yet demonstrated**; do not call the full user-facing
+Definition of Done complete until those are reviewed.
