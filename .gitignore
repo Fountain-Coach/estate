@@ -5,3 +5,6 @@ out/
 
 __pycache__/
 *.pyc
+
+# Large immutable public recovery snapshot stored as a GitHub Release asset.
+recovery/bundles/*.tar.gz

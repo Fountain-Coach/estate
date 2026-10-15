@@ -243,3 +243,7 @@ The [bounded public estate census](recovery/public-route-census.md) lists 621 ch
 ## Existing Ubuntu recovery host: read-only preflight
 
 The [Ubuntu recovery-origin preflight](recovery/ubuntu-origin-preflight-20261015.txt) establishes that the WLAN machine is reachable and has Git/Docker, but currently lacks Caddy and cloudflared and cannot retrieve the private historical Git projection. Its default GitHub URL lookup is redirected toward a legacy Git host; an isolated Git configuration successfully reaches public GitHub. No installed service, credentials, DNS or live site was changed. The next phase must make the static release independently retrievable from GitHub and test an isolated Caddy origin before starting a tunnel.
+
+## Reproducible public static cold-restore artifact
+
+The [candidate bundle contract](recovery/bundles/CONTRACT.md) and [complete file-level manifest](recovery/bundles/estate-public-observed-20261015.manifest.json) describe a SHA-256-verified, immutable archive of the nine-domain observed public estate. The archive is intentionally delivered as a separate GitHub Release asset rather than embedding ~80 MB of public binary content in Git history. This is a recovery candidate, not authority to publish, change DNS, or modify existing Ubuntu services.
