@@ -72,11 +72,14 @@ def test():
  assert collection_info['singularFirstReadingPreserved']=='https://works.benedikt-eickhoff.de/solstice/editions/first-reading/'
  work=fetch(ROOTS['fountain']+'editions/essays/teatro-an-unfinished-composition/')[0].decode()
  assert 'class="book-cover work-identity-cover"' in work
- assert work.count('src="'+collection_info['works'][0]['coverArtwork']+'"')==2
+ assert work.count('src="'+collection_info['works'][0]['coverArtwork']+'"')==1
+ assert collection_info['works'][0]['coverArtwork'] in fetch(ROOTS['fountain']+'assets/linotype/essays.css')[0].decode()
  assert 'href="/collections/first-readings/#work-teatro-an-unfinished-composition"' in work
  press_css=fetch(ROOTS['fountain']+'assets/linotype/bookshelf.css')[0]
  teatro_css=fetch(ROOTS['teatro']+'assets/linotype/bookshelf.css')[0]
- assert press_css==teatro_css and b'background:transparent;box-shadow:none;' in press_css
+ assert b'background:transparent;box-shadow:none;' in press_css and b'background:transparent;box-shadow:none;' in teatro_css
+ assert b'--bookshelf-slot-radius:22.37%' in teatro_css
+ assert b'.shelf-cover{' in teatro_css and b'.shelf-cover{' in press_css
  assert b'--bookshelf-slot-radius:22.37%' in press_css
  assert b'width:100%;height:100%;aspect-ratio:1' in press_css
  assert b'border-radius:var(--bookshelf-slot-radius)' in press_css
@@ -105,7 +108,11 @@ def test():
   assert html.count('data-book-toc-target=')==2
   assert 'data-edition-id="essays-'+slug+'"' in html
   assert 'href="/editions/essays/"' in html
-  check_rail(html,slug,EDNAV)
+  if slug=='teatro-an-unfinished-composition':
+   assert 'class="work-reading-identity"' in html
+   assert 'FIRST READINGS · AN UNFINISHED COMPOSITION' in html
+   assert 'class="edition-rail"' not in html
+  else:check_rail(html,slug,EDNAV)
   assert 'data-legal-role="company-status"' in html
   print("PASS","nested Linotype sub-edition",slug,"plates",plates)
  source=fetch(ROOTS["fountain"]+"essays/")[0].decode()
