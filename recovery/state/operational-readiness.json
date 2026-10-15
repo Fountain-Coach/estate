@@ -1,0 +1,19 @@
+{
+  "authenticatedNativeInventoryReceipts": 0,
+  "candidateOperationalTargets": 7,
+  "discoveredSourceContractSHA256": "e35c66115cbec25a9b7a8357f3e16a0217f67be2e1f3c12df713c6f467796e2f",
+  "inspectedSourceRevision": "aed7843e4f7780074885eb4e496939428013cd17",
+  "nextBoundary": "Owner-enrolled read-only native inventory with independently verifiable redacted terminal receipt",
+  "ownerTrustRecoveryAccepted": false,
+  "productionDataInspected": false,
+  "schema": "fountain.estate.operational-readiness.v1",
+  "secretStoreAccessed": false,
+  "sourceAPIsConfirmed": 2,
+  "sourceComponent": "Fountain-Coach/Fountain-Store",
+  "stage": "SOURCE_API_DISCOVERY_ONLY",
+  "stateManifestSHA256": "6232b7ebf2a07e6c867af1be5acb25766987b9da4f99ebd8807fd98c21dde89f",
+  "status": "BLOCKED_NO_NATIVE_OWNER_AUTHORITY",
+  "unverifiedClaimsAreOperationalProof": false,
+  "verifiedIndependentPrivateBackups": 0,
+  "verifiedLiveStoreInstances": 0
+}

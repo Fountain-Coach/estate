@@ -1,0 +1,110 @@
+{
+  "schema": "fountain.estate.operational-discovery.v1",
+  "observedAt": "2026-10-15",
+  "status": "DECLARED_SOURCE_CAPABILITIES_ONLY",
+  "scope": "Read-only source/contract discovery without live Store access or native owner authorization",
+  "ownerDecision": "docs/decisions/003-owner-continuity-golden-key-recovery.md",
+  "stateManifest": "recovery/state/state-manifest.json",
+  "productionInstanceInventoryAccepted": false,
+  "liveSourceAuthorityVerified": false,
+  "secretStoreAccessed": false,
+  "privateRecordsRead": false,
+  "privateFilePathsRecorded": false,
+  "hostRuntimeProbeAdmitted": false,
+  "discoveryAuthorityStatus": "NATIVE_OWNER_SESSION_NOT_ESTABLISHED",
+  "sourceInspection": {
+    "component": "Fountain-Coach/Fountain-Store",
+    "sourceRevision": "aed7843e4f7780074885eb4e496939428013cd17",
+    "revisionContext": "locally available feature branch; not evidence of currently running production revision",
+    "declarations": [
+      {
+        "kind": "store-backup-api",
+        "relativePath": "Sources/FountainStore/Store.swift",
+        "symbols": [
+          "createBackup",
+          "listBackups",
+          "restoreBackup"
+        ],
+        "observedImplementation": "Backup directory is nested under the store's own options.path; local backup is not off-host custody",
+        "offHostBackupProven": false
+      },
+      {
+        "kind": "recovery-projection-kernel",
+        "relativePath": "Sources/FountainStoreRecoveryKit/FountainStoreRecoveryKit.swift",
+        "symbols": [
+          "FountainStoreRecoveryProjector",
+          "RecoveryClassification",
+          "RecoveryManifest"
+        ],
+        "observedImplementation": "Pure projection kernel receives authority-supplied records; does not discover Store, transmit backups, or authorize restore",
+        "offHostBackupProven": false
+      }
+    ]
+  },
+  "sourceCandidateClasses": [
+    {
+      "id": "authoritative-fountainstore-instance",
+      "component": "Fountain-Coach/Fountain-Store",
+      "requiredNativeCapability": "typed enrolled read-only Store instance identity and source watermark",
+      "operationalDiscoveryStatus": "NOT_OBSERVED",
+      "redactedReceipt": null
+    },
+    {
+      "id": "store-receipts-and-publication-state",
+      "component": "Fountain-Coach/Fountain-Store",
+      "requiredNativeCapability": "typed receipt inventory with manifest identities and sequence watermark",
+      "operationalDiscoveryStatus": "NOT_OBSERVED",
+      "redactedReceipt": null
+    },
+    {
+      "id": "private-media-and-attachment-custody",
+      "component": "Fountain-Coach/Fountain-Store",
+      "requiredNativeCapability": "classified attachment inventory with digests and omission counts",
+      "operationalDiscoveryStatus": "NOT_OBSERVED",
+      "redactedReceipt": null
+    },
+    {
+      "id": "reframe-private-project-and-personal-state",
+      "component": "Fountain-Coach/Fountain-Store",
+      "requiredNativeCapability": "purpose-authorized classified inventory, redacted counts and erasure status",
+      "operationalDiscoveryStatus": "NOT_OBSERVED",
+      "redactedReceipt": null
+    },
+    {
+      "id": "owner-native-secret-custody",
+      "component": "Fountain-Coach/swift-secretstore",
+      "requiredNativeCapability": "redacted host-side custody/owner trust status, no secret read",
+      "operationalDiscoveryStatus": "NOT_OBSERVED",
+      "redactedReceipt": null
+    },
+    {
+      "id": "writing-domain-authorization-runtime",
+      "component": "Fountain-Coach/FountainAuthKit",
+      "requiredNativeCapability": "deployed service identity and partitioned grant state inventory",
+      "operationalDiscoveryStatus": "NOT_OBSERVED",
+      "redactedReceipt": null
+    },
+    {
+      "id": "independent-backup-destination",
+      "component": "Fountain-Coach/estate",
+      "requiredNativeCapability": "independently retrieved encrypted backup receipt and owner approval",
+      "operationalDiscoveryStatus": "NOT_OBSERVED",
+      "redactedReceipt": null
+    }
+  ],
+  "nativeInventoryReceipt": null,
+  "verifiedLiveInstanceCount": 0,
+  "verifiedIndependentPrivateBackupCount": 0,
+  "stage2Gate": "BLOCKED_NO_NATIVE_AUTHORITY_ATTESTATION",
+  "nextPermittedOperation": "Request bounded owner approval and an enrolled native read-only Store metadata adapter; record only a signed redacted receipt after independent verification",
+  "prohibitedActions": [
+    "read-secretstore-values",
+    "read-private-store-records",
+    "export-personal-context",
+    "copy-private-store-directory",
+    "rotate-owner-key",
+    "invent-live-instance-evidence",
+    "write-public-credential-or-private-path",
+    "activate-production-release"
+  ]
+}

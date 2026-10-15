@@ -53,3 +53,11 @@ All six criteria in ADR 003 must pass: complete actual inventory; independently 
 Cloudflare named tunnel/DNS management is explicitly deferred to the final availability milestone in ADR 002. The objective of the present programme is trustworthy private continuity, not rapidly switching production DNS.
 
 No GitHub Actions or CI workflow is added. This contract belongs to Fountain-Coach/estate; actual source-specific implementation remains the responsibility of FountainStore, SecretStore, FountainAuthKit and enrolled host services.
+
+## Stage 2 read-only source discovery, 15 October 2026
+
+The [operational discovery source ledger](operational-discovery.json), [derived readiness](operational-readiness.json), and [human audit](OPERATIONAL-DISCOVERY.md) are pinned to the FountainStore Git source revision `aed7843e4f7780074885eb4e496939428013cd17` found in the available local feature checkout. They do **not** establish the revision of a deployed production instance. The source confirms `createBackup`, `listBackups`, `restoreBackup` and the RecoveryKit projection kernel. `createBackup` writes beneath the current Store directory, which is not an independent backup failure domain.
+
+Seven candidate authority/service classes are recorded for a later enrolled native host adapter. The attempted protected machine-level service inspection was not admitted; no alternate privileged enumeration was performed. Verified live Store identities: **zero**. Independently proven off-host encrypted Store backups: **zero**. A typed, redacted, independently verifiable *native authority receipt* is required before updating these conclusions. An arbitrary shell observation, screenshot, assistant statement, or forged receipt is not admissible.
+
+Run `npm run recovery:operational:verify` and `npm run recovery:operational:test` for offline enforcement; `npm run recovery:operational:build` is a read-only Git-source inspection plus report refresh. The source probe never opens Store directories, credentials, remote hosts, or owner keys. All six owner-continuity DoD criteria remain BLOCKED pending actual independent operational evidence.
