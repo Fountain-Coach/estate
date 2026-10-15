@@ -159,7 +159,12 @@ def test():
  assert 'id="book-viewport"' in teatro and 'id="book-flow"' in teatro
  assert teatro.count('data-book-chapter=')==1
  assert teatro.count('src="/assets/edition/')==1
- assert teatro.split('<div id="book-flow" class="book-flow">',1)[1].lstrip().startswith('<section class="book-score" id="teatro-score"')
+ portal=teatro.split('<main id="book-pages"',1)[1].split('<div id="book-flow"',1)[0]
+ assert '<section class="book-score" id="teatro-score"' in portal
+ assert 'src="/assets/edition/teatro-score-memory-vector-human-condition.svg"' in portal
+ assert teatro.split('<div id="book-flow" class="book-flow">',1)[1].lstrip().startswith('<section class="book-chapter"')
+ assert 'class="book-score"' not in teatro.split('<div id="book-flow" class="book-flow">',1)[1]
+ assert 'body[data-editorial-state="score"]' in fetch(ROOTS['teatro']+'assets/linotype/teatro.css')[0].decode()
  assert teatro.count('class="book-cover"')==0 and teatro.count('class="book-score"')==1
  assert teatro.count('data-edition-entry-anchor="teatro-score"')==1
  trace='teatro:unfinished-composition:empty-chair-attention'
@@ -247,7 +252,7 @@ def test():
  assert 'id="root"' in stage
  check_rail(stage,"teatro stage",NAV)
  assert 'data-legal-role="company-status"' in stage
- print("PASS","teatro","source-pinned Bookshelf landing plus independent v16 reader, MIDI2 Ear and Stage")
+ print("PASS","teatro","score identity entrance and source-pinned reader, MIDI2 Ear and Stage")
  status=__import__("urllib.error",fromlist=["HTTPError"])
  try:
   fetch(ROOTS["teatro"]+"editions/first-hearing/hearings.json")
