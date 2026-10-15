@@ -66,7 +66,7 @@ def test():
  assert 'class="edition-list"' in detailed
  assert 'data-legal-role="company-status"' in detailed
  check_rail(detailed,'preserved detailed catalogue',NAV)
- print("PASS","fountain","four-position thumbnail grid","three existing cover routes and retained detailed catalogue")
+ print("PASS","fountain","four occupied cells plus twenty visible vacant slots","three canonical cover routes and retained detailed catalogue")
  essay_book=fetch(ROOTS["fountain"]+"editions/essays/")[0].decode()
  assert 'id="book-viewport"' in essay_book
  assert essay_book.count('data-book-chapter=')==3
@@ -138,7 +138,9 @@ def test():
  assert 'rotate(-3deg)' not in fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
  shelf_css=fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
  assert 'background:transparent;' in shelf_css
- assert '.bookshelf-brand{display:grid;place-items:start center;' in shelf_css
+ assert '.bookshelf-brand{aspect-ratio:1;display:grid;place-items:center;' in shelf_css
+ assert shelf.count('class="bookshelf-empty" aria-hidden="true"')==20
+ assert catalogue.count('class="bookshelf-empty" aria-hidden="true"')==20
  assert 'box-shadow:none;' in shelf_css
  assert 'background:var(--paper);box-shadow:' not in shelf_css
  assert 'id="book-flow"' not in shelf

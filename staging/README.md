@@ -411,3 +411,28 @@ Teatro First Hearing/Ear/Stage boundary. The beta v16 reader and its media
 assets were not modified. Actual human iPad Safari visual acceptance remains
 an editorial review, not an automated claim. Previous v26 release is retained
 for rollback. No public HTTPS, DNS or Caddy production release was performed.
+
+## 15 October 2026 — actual grid of empties, WLAN v28
+
+The author rejected the previous four-object horizontal strip and supplied
+`instruments.fountain.coach` as the concrete grid reference. **The missing
+feature was visible, repeated vacant slots, not different cover artwork.**
+Shared Fountain Press now projects four occupied first-row cells (one genuine
+logo plus three unchanged source covers), followed by 20 explicit non-clickable,
+aria-hidden empty slots with restrained dashed borders. The cell lattice
+responds at six desktop, four iPad and two narrow-phone columns. Tall covers
+remain within square cells, without stretching the empty-slot rhythm.
+The common warm background and transparent, shadowless paper container remain.
+No further text, navigation, cards, fictitious books or extra cover copies
+appear. Each actual cover links directly to its existing Linotype edition.
+
+New three-port release: `20261015-bookshelf-vacant-grid-v28`, active at
+`http://192.168.8.249:8180/`. Previous v27 remains for rollback.
+Source owners: Fountain Press `f7e7dee`, Fountain Coach `099da69`,
+Teatro `4cabb35` and the previously deployed First Reading source
+`bb365cae`. Exact source SHAs and original file inventories are locked into
+the release; all 79/101/59 source files were checksum verified before the
+bounded staging-only navigation remap. The shared Press CSS digest is identical
+for Fountain Coach and Teatro. Responsive browser, Linotype pagination,
+Teatro First Hearing/audio/Stage, and full WLAN estate checks pass.
+Public DNS/HTTPS were not changed. iPad Safari author acceptance remains open.

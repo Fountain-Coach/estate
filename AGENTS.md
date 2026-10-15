@@ -38,8 +38,10 @@
 
 ## Estate grid invariant
 
-- Fountain Coach root and `/editions/` display four first-row positions:
-  the authentic logo plus three real source-owned edition thumbnails.
+- Fountain Coach root and `/editions/` display an **actual repeating grid**
+  with four occupied cells (one authentic logo and three source-owned covers)
+  plus visibly empty, dashed slots. Empty cells are inert and aria-hidden,
+  never fabricated publications or unassigned clickable links.
 - Preserve the formerly detailed catalogue at `/editions/catalogue/` and
   every full essay manuscript/nested route; MIDI2 Instruments stays intact.
 - The estate's WLAN-only renderer remaps the three root cover links to
