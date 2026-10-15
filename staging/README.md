@@ -382,3 +382,32 @@ Source: Fountain Press `cd1cb6f882c7f46b37ce65d9935887d8cbf6ba50`,
 Teatro `2c328c284cdd15176e41d2ce13a98a0279f19a90`.
 Current WLAN release: `20261014-teatro-r22-left-brand-signature-v22`.
 No public HTTPS deployment was made; v21 remains available for rollback.
+
+## 15 October 2026 — Fountain Press shared Bookshelf v27
+
+WLAN release: `20261015-fountain-press-shared-bookshelf-v27`.
+Active iPad review entrance: `http://192.168.8.249:8180/`.
+The exact same root content is served at `/editions/`.
+
+The Fountain Coach owner now renders the accepted shared Fountain Press
+`runtime/bookshelf.py` and `runtime/bookshelf.css` instead of a duplicate
+estate-specific stylesheet and HTML grid. It projects the canonical three
+front-door destinations from the Git-owned `estate/manifest.json`; the Teatro
+cover enters `/editions/first-hearing/` directly. The authentic logo and
+three admitted original cover artworks remain unchanged. The paper container
+is transparent and shadow-free; individual covers retain their restrained
+borders, shadows, and keyboard-focus affordance. There is no visible edition
+metadata or navigation outside the cover artwork.
+
+Source lock: Fountain Coach `30fc01d4d`, First Reading `bb365cae7`,
+Teatro `2c543589e`, Estate `13d7c8b`; exact 40-character SHAs are recorded
+in the immutable staging release's `source-lock.json`. All 79/101/59 original
+source files passed independent SHA-256 inventory validation before the
+WLAN-only link projection. The Fountain Coach responsive Chrome proof passed
+on desktop, iPad landscape/portrait and phone landscape/portrait; complete
+essay-source, paragraph, image, pagination and sub-edition checks passed.
+The live three-port `npm run staging:verify` passed, including the original
+Teatro First Hearing/Ear/Stage boundary. The beta v16 reader and its media
+assets were not modified. Actual human iPad Safari visual acceptance remains
+an editorial review, not an automated claim. Previous v26 release is retained
+for rollback. No public HTTPS, DNS or Caddy production release was performed.
