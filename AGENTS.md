@@ -67,3 +67,18 @@ become the full rectangular grid item. Fountain Press owns
 `--bookshelf-slot-radius:22.37%`. The hand-and-spring logo keeps its
 independent circular identity, shared with Play/Stop. Source and browser
 checks must measure geometry and preserve exactly three navigable covers.
+
+## R31 — Score-first Teatro entry, one admitted trace
+
+The three-cover Bookshelf structure, rounded squares, logo circle, original
+artwork and other publisher destinations are unchanged. The Teatro cover
+selects `/editions/first-hearing/`, which **now opens the authentic Score as
+first Linotype leaf**. An inherited conventional `book-cover` is no longer
+inserted. One admitted movement (06 Attention / Authority) resolves to the
+source-identified empty-chair passage and interactive scene. Six movements
+remain unlinked. Direct trace entry, return, browser Back, responsive
+pagination and unknown-address refusal are verified in Teatro's
+`npm run browser:navigation`. Do not describe this one admitted relation as
+a finished seven-movement navigable Score. The source manifests and public
+site ownership remain unchanged. Public DNS/Caddy/HTTPS release requires a
+separate authorized operation; WLAN staging is not production.

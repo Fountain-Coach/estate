@@ -479,3 +479,38 @@ containment and absence of overflow across desktop, iPad portrait/landscape
 and phone portrait/landscape. Teatro's direct book entry, pagination,
 Play/Stop, Ear and Stage tests passed. The active WLAN three-port verifier
 passed; production remained untouched. Previous v29 remains for rollback.
+
+## 15 October 2026 — v31 Score-first semantic navigation
+
+Current WLAN staging release:
+`20261015-score-trace-navigation-v31`, served at
+`http://192.168.8.249:8180/` with Teatro book at
+`http://192.168.8.249:8182/editions/first-hearing/`. Previous v30
+release is retained intact for rollback.
+
+The Teatro Bookshelf cover navigates to the **authentic Teatro Score as the
+first measured editorial leaf**, not to the inherited generic Essays cover.
+The original Score SVG is moved once from the former chapter opener, with
+its artwork checksum unchanged and no duplicate image; the original
+22-paragraph manuscript, interactive scene, MIDI2, Play/Stop and Ear remain
+intact. Exactly one publisher-admitted relation is available:
+`06 ATTENTION / AUTHORITY → teatro:unfinished-composition:empty-chair-attention`.
+The other six Score movements have no admitted links. A visible and keyboard
+accessible Score link opens the precise source passage. A return link and
+browser history lead back to the Score. The exact same trace survives
+responsive pagination with different physical folio numbers; an unknown
+trace is visibly refused and cannot be silently reassigned.
+
+Source commits pinned into `source-lock.json`:
+Fountain Press `003288d`, Teatro `e5ee775`, Fountain Coach `8d79039`,
+First Reading `bb365cae`, Estate pre-release verifier `4658be0`.
+The 80/101/60 owner-file SHA-256 inventories passed before the staging-only
+link projection. Full Fountain Press First Reading regression, 22-paragraph
+Teatro source tests, existing five-layout audio/Stage browser checks, and
+four-layout reciprocal navigation/deep-link/reflow/invalid-trace tests all
+passed. The same navigation test passed **against the live WLAN address**,
+not merely the local workstation preview. Live three-port
+`npm run staging:verify` also passed with the new Score assertions.
+No public DNS, Caddy or HTTPS deployment was attempted. iPad Safari human
+visual/editorial acceptance is still a distinct action, not an automated
+claim.
