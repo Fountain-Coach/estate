@@ -110,8 +110,8 @@ def test():
  assert 'class="bookshelf-intro"' not in shelf
  assert '<h1' not in shelf
  assert shelf.count('class="bookshelf-brand"')==1
- assert shelf.count('class="bookshelf-wordmark"')==1
- assert 'FOUNTAIN COACH</span>' in shelf
+ assert shelf.count('class="bookshelf-wordmark"')==0  # authentic mark alone (R24)
+ assert 'FOUNTAIN COACH</span>' not in shelf
  assert 'src="/assets/bookshelf/fountain-coach-logo-transparent.png"' in shelf
  logo=fetch(ROOTS["teatro"]+"assets/bookshelf/fountain-coach-logo-transparent.png")[0]
  import hashlib
@@ -128,7 +128,7 @@ def test():
   assert 'id="book-flow"' in fetch(ROOTS["fountain"]+path)[0].decode()
  for image in (
   "/assets/bookshelf/fountain-coach-edition.png",
-  "/assets/bookshelf/first-reading.jpg",
+  "/assets/bookshelf/first-reading-ink.png",
   "/assets/edition/teatro-score-memory-vector-human-condition.svg"):
   assert len(fetch(ROOTS["teatro"]+image.lstrip("/"))[0])>1000,image
  assert 'rotate(-3deg)' not in fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
