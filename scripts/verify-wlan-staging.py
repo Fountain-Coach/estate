@@ -89,7 +89,7 @@ def test():
  assert 'class="edition-list"' in detailed
  assert 'data-legal-role="company-status"' in detailed
  check_rail(detailed,'preserved detailed catalogue',NAV)
- print("PASS","fountain","four occupied cells plus twenty visible vacant slots","three canonical cover routes and retained detailed catalogue")
+ print("PASS","fountain","publisher logo and two admitted publication covers, twenty vacant slots","three canonical cover routes and retained detailed catalogue")
  essay_book=fetch(ROOTS["fountain"]+"editions/essays/")[0].decode()
  assert 'id="book-viewport"' in essay_book
  assert essay_book.count('data-book-chapter=')==3

@@ -104,8 +104,8 @@ def rewrite(content: str):
             host=match.group("host")
             if host=="fountain":
                 prefix="https://fountain.coach/"
-                if href==DEST["estate"]:
-                    stage_href=href  # idempotent already-projected staging release
+                if href==DEST["estate"] or href.startswith(f"http://{IP}:8180/editions/") or href.startswith(f"http://{IP}:8180/collections/first-readings/"):
+                    stage_href=href  # idempotent admitted preview route
                 else:
                     if not (href.startswith(prefix+'editions/') or href.startswith(prefix+'collections/first-readings/')):raise ValueError('Unapproved Fountain publication URL '+href)
                     stage_href=f"http://{IP}:8180/"+href[len(prefix):]
