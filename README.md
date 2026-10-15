@@ -189,3 +189,17 @@ scenario R20. Existing 8180/8181 reader routes and the approved
 v16 Teatro book on 8182 are preserved. The R17–R19 layouts are
 historical candidates; none changes the established three-edition
 estate taxonomy. No public HTTPS mutation was requested or made.
+
+## Estate thumbnails (15 October 2026)
+
+The estate owner Fountain-Coach/fountain.coach projects `/` and `/editions/`
+as an Instruments-inspired *edition* grid: the verified Fountain Coach
+open-hand logo plus exactly three source-backed cover images (Essays,
+First Reading, Teatro). This adapts grid rhythm, not iOS application icons or
+MIDI2 instrument identities. Its previous detailed, text-rich catalogue is
+retained at `/editions/catalogue/`, with all the original complete authorial
+essays and reader routes unchanged. The estate staging projection rewrites
+only the three verified book destinations to WLAN ports, never content.
+
+The owner repository builds the grid deterministically; source commits and
+WLAN tests do not constitute production publication.

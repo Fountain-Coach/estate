@@ -47,12 +47,22 @@ def test():
   assert re.fullmatch(r"[a-f0-9]{40}",health["sites"][host]["commit"])
  catalogue=fetch(ROOTS["fountain"])[0].decode()
  assert catalogue==fetch(ROOTS["fountain"]+"editions/")[0].decode()
- assert 'class="edition-list"' in catalogue
- assert '<h1>Editions<span>.</span></h1>' in catalogue
- assert 'id="book-viewport"' not in catalogue
- check_rail(catalogue,"catalogue",NAV)
- assert 'data-legal-role="company-status"' in catalogue
- print("PASS","fountain","editions catalogue at root","three edition rail links")
+ assert 'class="shelf-grid"' in catalogue
+ assert catalogue.count('class="shelf-entry"')==3
+ assert catalogue.count('class="shelf-brand"')==1
+ assert catalogue.count('class="shelf-cover"')==3
+ assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
+ assert 'instrument-slot' not in catalogue
+ for href in HREFS:
+  assert 'href="'+href+'"' in catalogue
+ for asset in ('fountain-coach-edition.png','first-reading-ink.png',
+               'teatro-score-memory-vector-human-condition.svg'):
+  assert len(fetch(ROOTS['fountain']+'assets/estate-bookshelf/'+asset)[0])>1000
+ detailed=fetch(ROOTS['fountain']+'editions/catalogue/')[0].decode()
+ assert 'class="edition-list"' in detailed
+ assert 'data-legal-role="company-status"' in detailed
+ check_rail(detailed,'preserved detailed catalogue',NAV)
+ print("PASS","fountain","four-position thumbnail grid","three existing cover routes and retained detailed catalogue")
  essay_book=fetch(ROOTS["fountain"]+"editions/essays/")[0].decode()
  assert 'id="book-viewport"' in essay_book
  assert essay_book.count('data-book-chapter=')==3

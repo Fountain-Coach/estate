@@ -91,6 +91,21 @@ def rewrite(content: str):
             raise ValueError("Incomplete edition rail: "+str(seen))
         return match.group(1)+new+match.group(3)
     updated, edition_count=edition_nav.subn(update_edition_rail,updated)
+    # Edition grid uses real thumbnails, not the previous descriptive rail.
+    # Only the three authoritative book links are substituted in disposable
+    # WLAN proof releases; GitHub source keeps canonical HTTPS identities.
+    if 'class="shelf-grid"' in updated:
+        expected={
+            '/editions/essays/':DEST['estate'],
+            'https://works.benedikt-eickhoff.de/solstice/editions/first-reading/':DEST['first-reading'],
+            'https://teatro.fountain.coach/':DEST['teatro'],
+        }
+        assert updated.count('class="shelf-entry"')==3
+        for old,new in expected.items():
+            pattern='href="'+old+'"'
+            if updated.count(pattern)!=1:raise ValueError('Invalid edition grid destination '+old)
+            updated=updated.replace(pattern,'href="'+new+'"',1)
+        count+=3
     # Source owners retain canonical HTTPS reader URLs. The disposable WLAN
     # release translates only admitted bookshelf links (identified by
     # data-preview-host) into the three neighboring staging origins. It

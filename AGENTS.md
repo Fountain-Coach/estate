@@ -35,3 +35,13 @@
   explicitly reported, not silently generated from text.
 - Stage playback is user-activated, not proof of a spoken edition or
   a Reframe/MIDI2/Ear performance witness.
+
+## Estate grid invariant
+
+- Fountain Coach root and `/editions/` display four first-row positions:
+  the authentic logo plus three real source-owned edition thumbnails.
+- Preserve the formerly detailed catalogue at `/editions/catalogue/` and
+  every full essay manuscript/nested route; MIDI2 Instruments stays intact.
+- The estate's WLAN-only renderer remaps the three root cover links to
+  neighboring preview ports, never claiming public availability.
+- Production remains a separate explicitly governed deployment operation.
