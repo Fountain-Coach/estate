@@ -119,12 +119,18 @@ def rewrite(content: str):
             host=match.group("host")
             if host=="fountain":
                 prefix="https://fountain.coach/"
-                if not href.startswith(prefix+"editions/"):raise ValueError("Unapproved Fountain book URL "+href)
-                stage_href=f"http://{IP}:8180/"+href[len(prefix):]
+                if href==DEST["estate"]:
+                    stage_href=href  # idempotent already-projected staging release
+                else:
+                    if not href.startswith(prefix+"editions/"):raise ValueError("Unapproved Fountain book URL "+href)
+                    stage_href=f"http://{IP}:8180/"+href[len(prefix):]
             elif host=="solstice":
                 prefix="https://works.benedikt-eickhoff.de/solstice/"
-                if not href.startswith(prefix+"editions/first-reading/"):raise ValueError("Unapproved First Reading URL "+href)
-                stage_href=f"http://{IP}:8181/"+href[len(prefix):]
+                if href==DEST["first-reading"]:
+                    stage_href=href  # idempotent already-projected staging release
+                else:
+                    if not href.startswith(prefix+"editions/first-reading/"):raise ValueError("Unapproved First Reading URL "+href)
+                    stage_href=f"http://{IP}:8181/"+href[len(prefix):]
             else:
                 if href!="/editions/first-hearing/":raise ValueError("Unapproved Teatro URL "+href)
                 stage_href=href
