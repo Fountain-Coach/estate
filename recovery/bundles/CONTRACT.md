@@ -56,3 +56,11 @@ Note: embedded absolute links naturally point to the existing public estate.
 A temporary tunnel hostname by itself does not provide multi-host browser
 redirection equivalence; full interactive reader testing requires separate
 hostname mapping or approved preview-host rewriting with clear provenance.
+
+## Acceptance witness
+
+A direct GitHub-release download was independently verified on Ubuntu and served by Caddy on a loopback-only port; all 600 recorded public bytes matched the original independent public witness. See [the local and external test report](../ubuntu-cold-restore-witness-20261015.md), including the disposable one-host Quick Tunnel and limits of this proof.
+
+## GitHub release immutability distinction
+
+The current GitHub release API reports `isImmutable=false`: the release asset/tag are **not protected by GitHub immutable-release enforcement**. Integrity is nevertheless pinned to the exact SHA-256 in this repository and independently checked before every extraction. A mutation of the release asset would make recovery validation **fail closed**, but it is not prevented at the GitHub policy layer. Enabling GitHub immutable releases is a separate repository policy decision applying to future releases, not a property this candidate currently possesses.

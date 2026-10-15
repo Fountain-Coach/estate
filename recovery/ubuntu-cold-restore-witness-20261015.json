@@ -10,7 +10,9 @@
     "releaseTag": "recovery-candidate-20261015-01",
     "asset": "estate-public-observed-20261015.tar.gz",
     "sha256": "20232def0be2be915d608c9ea491ffbd131edb5350e3721c3d081a7086d7b444",
-    "downloadedDirectlyByUbuntu": true
+    "downloadedDirectlyByUbuntu": true,
+    "githubEnforcedReleaseImmutability": false,
+    "integrityEnforcedByPinnedSHA256": true
   },
   "host": {
     "operatingSystem": "Ubuntu 24.04",
@@ -44,13 +46,14 @@
   "outboundPreview": {
     "transport": "Cloudflare Quick Tunnel",
     "version": "2026.10.0",
-    "hostname": "providence-eco-write-childrens.trycloudflare.com",
+    "hostname": "generators-handling-combining-linux.trycloudflare.com",
     "temporary": true,
     "domainMappedAtOrigin": "fountain.coach",
     "externalHttpsStatus": 200,
     "bytes": 16578,
     "sha256": "e5d4c2a2ef3471a05c4d53c22374fd2bf67be6be336e99519a148329152dd3fb",
-    "independentMobileOrExternalIspWitness": false
+    "independentMobileOrExternalIspWitness": false,
+    "verificationPath": "Mac HTTPS request through public Cloudflare edge, not independently witnessed off WLAN"
   },
   "limitations": [
     "Only 600 independently crawled successful public responses have been verified; 21 crawl observations were non-200, and unlinked URLs may be missing.",

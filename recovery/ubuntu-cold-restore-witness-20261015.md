@@ -117,3 +117,5 @@ The top-level candidate release lock remains `releaseAdmitted=false` and
 `allowRecoveryDeployment=false`. This outcome is precisely
 **LOCAL_OBSERVED_STATIC_COLD_RESTORE_VERIFIED**, **NOT**
 `EMERGENCY_DOMAIN_FAILOVER_READY`.
+
+**Supply-chain caveat:** The GitHub asset/tag is digest-pinned and was verified after direct download, but the GitHub release is not platform-immutable (`isImmutable=false`). Any changed asset will fail the SHA gate; publication protection against release mutation would require an independently approved repository immutable-releases policy and a new immutable release.

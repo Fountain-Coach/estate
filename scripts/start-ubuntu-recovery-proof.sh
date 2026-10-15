@@ -60,10 +60,10 @@ print('RECOVERY_PAYLOAD_VALIDATED',count,'public HTTP 200 responses',
      manifest['uniqueFilesOnDisk'],'unique files',flush=True)
 PY
 docker run --rm --mount type=bind,source="$ROOT/payload",target=/srv/recovery,readonly \
-    caddy:2.10.2 caddy validate --config /srv/recovery/Caddyfile --adapter caddyfile
+    caddy@sha256:c3d7ee5d2b11f9dc54f947f68a734c84e9c9666c92c88a7f30b9cba5da182adb caddy validate --config /srv/recovery/Caddyfile --adapter caddyfile
 docker run --detach --name "$NAME" --restart no \
     --publish 127.0.0.1:18480:18480 \
     --mount type=bind,source="$ROOT/payload",target=/srv/recovery,readonly \
-    caddy:2.10.2 caddy run --config /srv/recovery/Caddyfile --adapter caddyfile
+    caddy@sha256:c3d7ee5d2b11f9dc54f947f68a734c84e9c9666c92c88a7f30b9cba5da182adb caddy run --config /srv/recovery/Caddyfile --adapter caddyfile
 docker inspect --format '{{json .HostConfig.PortBindings}}' "$NAME"
 printf 'ISOLATED_UBUNTU_RECOVERY_ORIGIN_STARTED\n'
