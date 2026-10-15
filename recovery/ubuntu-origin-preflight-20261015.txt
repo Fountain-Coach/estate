@@ -1,0 +1,13 @@
+schema=fountain.estate.origin-prerequisite-witness.v1
+operating_system=ubuntu-24.04
+git_available=yes
+docker_available=yes
+caddy_available=no
+cloudflared_available=no
+cached_caddy_image=no-or-daemon-unavailable
+git_global_url_rewrite_count=2
+default_git_https_estate=unusable
+isolated_git_https_estate=usable
+isolated_git_https_private_archive=not_accessible_without_auth
+github_ssh_private_archive=not_verified
+mutations_performed=no

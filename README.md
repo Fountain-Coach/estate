@@ -239,3 +239,7 @@ The recovery audit now records [historical Git projection comparisons](recovery/
 ## Cold-recovery progress: complete observed public-byte evidence
 
 The [bounded public estate census](recovery/public-route-census.md) lists 621 checked URLs across all nine currently active public hosts; 600 returned HTTP 200. The [source-to-public byte ledger](recovery/public-git-coverage.md) proves SHA-256-matching Git artifact custody for all 600 observed successful responses (410 pinned historical owner-tree files, 178 archived Git-projection files, 10 published recovery snapshots in canonical owners, and two directly pinned Solstice assets). This does **not** prove every unlinked asset, dynamic service or an authorized full release is restorable; recovery stays BLOCKED until the remaining acceptance requirements are met. The normal source inventory and publication ownership remain unchanged.
+
+## Existing Ubuntu recovery host: read-only preflight
+
+The [Ubuntu recovery-origin preflight](recovery/ubuntu-origin-preflight-20261015.txt) establishes that the WLAN machine is reachable and has Git/Docker, but currently lacks Caddy and cloudflared and cannot retrieve the private historical Git projection. Its default GitHub URL lookup is redirected toward a legacy Git host; an isolated Git configuration successfully reaches public GitHub. No installed service, credentials, DNS or live site was changed. The next phase must make the static release independently retrievable from GitHub and test an isolated Caddy origin before starting a tunnel.
