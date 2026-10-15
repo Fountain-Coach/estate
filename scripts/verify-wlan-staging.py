@@ -62,6 +62,10 @@ def test():
  press_css=fetch(ROOTS['fountain']+'assets/linotype/bookshelf.css')[0]
  teatro_css=fetch(ROOTS['teatro']+'assets/linotype/bookshelf.css')[0]
  assert press_css==teatro_css and b'background:transparent;box-shadow:none;' in press_css
+ assert b'--bookshelf-slot-radius:22.37%' in press_css
+ assert b'width:100%;height:100%;aspect-ratio:1' in press_css
+ assert b'border-radius:var(--bookshelf-slot-radius)' in press_css
+ assert b'object-fit:contain' in press_css
  identity=fetch(ROOTS['fountain']+'assets/linotype/identity-circle.css')[0]
  assert identity==fetch(ROOTS['teatro']+'assets/linotype/identity-circle.css')[0]
  assert b'--fc-identity-circle-radius:50%' in identity and b'--fc-identity-circle-stroke:1px' in identity

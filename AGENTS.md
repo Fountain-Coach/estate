@@ -56,3 +56,14 @@ Teatro's actual Play/Stop button. Owner sites copy it at source build time.
 The staging release must serve identical bytes from Fountain Coach and Teatro;
 verify it alongside the unchanged three canonical cover navigation targets.
 This identity does not introduce an extra link, player, status or audio claim.
+
+## Rounded-square thumbnail invariant (v30)
+
+The outer geometry of every occupied publication thumbnail must remain a
+**rounded square** of the same dimensions and border radius as each empty
+Bookshelf cell. The actual cover artwork is source-owned and retained inside
+the square via `object-fit:contain`; an original portrait cover must never
+become the full rectangular grid item. Fountain Press owns
+`--bookshelf-slot-radius:22.37%`. The hand-and-spring logo keeps its
+independent circular identity, shared with Play/Stop. Source and browser
+checks must measure geometry and preserve exactly three navigable covers.

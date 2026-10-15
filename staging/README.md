@@ -458,3 +458,24 @@ Stop, Ear, Stage and pagination. The three-port live WLAN verification also
 passed. Previous v28 release remains on host for rollback. Public DNS,
 production HTTPS and Caddy were not modified. Author iPad visual acceptance
 is still required.
+
+## 15 October 2026 — v30 square thumbnail correction
+
+Current WLAN release: `20261015-rounded-square-thumbnails-v30`, active at
+`http://192.168.8.249:8180/`. Author screenshot of v29 revealed rectangular
+portrait cover cards inside a lattice of rounded-square empty thumbnails.
+The originating Fountain Press `runtime/bookshelf.css` now renders each
+occupied thumbnail at exactly the same square size and 22.37% corner
+radius as the empty slots. Genuine source art is contained unaltered inside
+those rounded-square objects, rather than used as the outer geometry. The
+one publisher-logo circle and its shared Play/Stop identity are unchanged.
+
+Source owner commits: Fountain Press `6e9c4b6`, Fountain Coach `8d79039`
+(source styling `206a0ac`), Teatro `dbf2543`, First Reading `bb365cae`.
+80/101/60 tracked source files passed SHA-256 inventories before the
+bounded three-origin preview projection. Chrome browser verification checked
+all three occupied frames, their matching empty-cell radius, source artwork
+containment and absence of overflow across desktop, iPad portrait/landscape
+and phone portrait/landscape. Teatro's direct book entry, pagination,
+Play/Stop, Ear and Stage tests passed. The active WLAN three-port verifier
+passed; production remained untouched. Previous v29 remains for rollback.
