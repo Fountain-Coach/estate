@@ -1,0 +1,46 @@
+{
+  "allowDeployment": false,
+  "capturedDate": "2026-10-15",
+  "completePublicReleaseProof": false,
+  "exactOwnerGitAssetCount": 2,
+  "explanation": "Ten public readbacks and two owner source assets pinned to committed owner Git objects; not a full approved static release",
+  "ownerDirectGitAssets": [
+    {
+      "gitPath": "site/assets/press-accepted.css",
+      "ownerRepo": "Fountain-Coach/solstice.fountain.coach",
+      "publicUrl": "https://works.benedikt-eickhoff.de/solstice/assets/press-accepted.css",
+      "revision": "ce30b16376345730cc16509919af6ced6b46a217",
+      "sha256": "3a2d880ff27ef538a286a611d5f9540163341995ab4cd901d5f61f71cc24c4d5"
+    },
+    {
+      "gitPath": "site/assets/press-accepted.js",
+      "ownerRepo": "Fountain-Coach/solstice.fountain.coach",
+      "publicUrl": "https://works.benedikt-eickhoff.de/solstice/assets/press-accepted.js",
+      "revision": "ce30b16376345730cc16509919af6ced6b46a217",
+      "sha256": "530336b8248654af2d51ea6ea1aa79602a9d55ddbf936be6816474d0984afcea"
+    }
+  ],
+  "ownerRecords": [
+    {
+      "commit": "ba06a08c224d22e4dce763012ee5132855ed7186",
+      "integration": "main",
+      "ownerRepo": "Fountain-Coach/book-of-reframe"
+    },
+    {
+      "commit": "b596c7e8b2f1b1fd12b430b72cb79dae54c23a8a",
+      "integration": "main-squash-merge-pr-193",
+      "ownerRepo": "Fountain-Coach/midi2"
+    },
+    {
+      "commit": "ce30b16376345730cc16509919af6ced6b46a217",
+      "integration": "main",
+      "ownerRepo": "Fountain-Coach/solstice.fountain.coach"
+    }
+  ],
+  "ownerSnapshotCount": 10,
+  "publicCensusSHA256": "2a5b60b94a1c33809cfdf1298ba8dcd585ec4abb45e8b0ce2d7c4dec1df48c7f",
+  "releaseAdmitted": false,
+  "schema": "fountain.estate.owner-public-byte-custody.v2",
+  "sourceHTMLProvenanceSHA256": "fb07bd631adaae796480ae2eb3ec479441d52a617388cd1f0bb3f11ec34dfa4e",
+  "sourceOwnershipUnchanged": true
+}

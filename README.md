@@ -235,3 +235,7 @@ The ADR is an architectural decision only. No live DNS, Cloudflare configuration
 ## Archival artifact provenance in GitHub
 
 The recovery audit now records [historical Git projection comparisons](recovery/root-matched-historical-artifacts.md) and [individual public-byte provenance](recovery/public-byte-provenance.md). It found matching published roots for Book of Reframe, MIDI2 and delegated Solstice in older GitHub commits of `midi2-gpu-fabric`, then located byte-identical Git blobs for 177 of 182 publicly responding files in that limited archival inventory. Five publicly served files remain unmatched, and no complete route/asset release approval exists; this does not change canonical domain owners or permit deployment.
+
+## Cold-recovery progress: complete observed public-byte evidence
+
+The [bounded public estate census](recovery/public-route-census.md) lists 621 checked URLs across all nine currently active public hosts; 600 returned HTTP 200. The [source-to-public byte ledger](recovery/public-git-coverage.md) proves SHA-256-matching Git artifact custody for all 600 observed successful responses (410 pinned historical owner-tree files, 178 archived Git-projection files, 10 published recovery snapshots in canonical owners, and two directly pinned Solstice assets). This does **not** prove every unlinked asset, dynamic service or an authorized full release is restorable; recovery stays BLOCKED until the remaining acceptance requirements are met. The normal source inventory and publication ownership remain unchanged.

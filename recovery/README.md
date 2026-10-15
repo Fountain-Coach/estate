@@ -25,6 +25,12 @@ Recorded public HTTPS witness: 2026-10-15T13:14:11+00:00
 
 See [public-byte-provenance.md](public-byte-provenance.md) and [root-matched-historical-artifacts.md](root-matched-historical-artifacts.md). This is evidence from midi2-gpu-fabric, **not** a change to domain source ownership or an approved static recovery release.
 
+## Public-byte custody and bounded site census
+
+The five previously unmatched public HTML documents were preserved as SHA-256-verified recovery snapshots in their canonical Book of Reframe and MIDI2 owner repositories (MIDI2 through protected PR #193, squash-merged). Five additional Solstice HTML/PDF proofs were preserved in its source owner, and its two previously unmatched styles/scripts exactly match committed owner Git assets.
+The [owner custody](owner-readback-custody.json) verifies ten captured published files and two additional owner Git assets. The [nine-domain public-route census](public-route-census.md) verified 621 URLs, of which 600 returned HTTP 200. [Public Git coverage](public-git-coverage.md) assigns exact Git-byte provenance to all 600 successful public responses in that bounded crawl; 21 URLs returned other HTTP statuses.
+**None of this is an exhaustive estate crawl, complete last-published release, private-state backup, or authority to deploy.** Unknown unlinked assets and dynamic/public API boundaries remain outside coverage.
+
 ## Findings and next steps
 
 Only Git objects of pinned candidate commits are inspected, never uncommitted working-tree files.
