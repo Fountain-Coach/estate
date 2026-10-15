@@ -14,6 +14,12 @@ assert lock['blockers']
 assert lock['hostCount']==len(inventory['domains'])
 assert lock['publicationSurfaces']==len(lock['domains'])
 assert all(not row['releaseAdmitted'] for row in lock['domains'])
+supplemental=lock['supplementaryHistoricalBlobEvidence']
+assert supplemental['authority'].startswith('historical Git blob evidence')
+assert supplemental['publicArtifactCounts']['ROOT_REVISION_EXACT']==170
+assert supplemental['publicArtifactCounts']['OTHER_GIT_REVISION_EXACT']==7
+assert supplemental['publicArtifactCounts']['PUBLIC_BYTES_NOT_LOCATED']==5
+assert supplemental['publicArtifactCounts']['ARCHIVAL_FILE_NOT_PUBLIC_AT_PROBED_URL']==2
 host_names={r['host'] for r in inventory['domains']}
 surfaces={(r['publicHost'],r.get('routePrefix','')):r for r in lock['domains']}
 assert len(surfaces)==len(lock['domains'])

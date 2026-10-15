@@ -19,6 +19,12 @@ Recorded public HTTPS witness: 2026-10-15T13:14:11+00:00
 | works.benedikt-eickhoff.de/ | Fountain-Coach/works-benedikt-eickhoff | 6b4721db185a | 3/3 | BLOCKED |
 | works.benedikt-eickhoff.de/solstice/ | Fountain-Coach/solstice.fountain.coach | not found | — | BLOCKED |
 
+## Cross-repository historical byte provenance
+
+177 archival public file responses have exact Git blob provenance (170 in their matching historical root trees; 7 in other historical commits). 5 publicly responding files remain unmatched; 2 archival files returned HTTP 404.
+
+See [public-byte-provenance.md](public-byte-provenance.md) and [root-matched-historical-artifacts.md](root-matched-historical-artifacts.md). This is evidence from midi2-gpu-fabric, **not** a change to domain source ownership or an approved static recovery release.
+
 ## Findings and next steps
 
 Only Git objects of pinned candidate commits are inspected, never uncommitted working-tree files.

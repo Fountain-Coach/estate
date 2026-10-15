@@ -165,6 +165,18 @@ def plan():
             domains.append(evaluation(host,delegated,sources[delegated]['sourceRoot'],
                                       prefix,host,witness_route,'delegated-literary-publication'))
 
+    supplementary=None
+    evidence=OUT/'public-byte-provenance.json'
+    if evidence.exists():
+        recorded=json.loads(evidence.read_text())
+        if recorded.get('schema')!='fountain.estate.public-byte-provenance.v1' or recorded.get('releaseAdmitted'):
+            raise ValueError('Unsafe supplemental Git blob evidence')
+        totals={status:sum(s['counts'][status] for s in recorded['sections']) for status in
+                ('ROOT_REVISION_EXACT','OTHER_GIT_REVISION_EXACT','PUBLIC_BYTES_NOT_LOCATED','ARCHIVAL_FILE_NOT_PUBLIC_AT_PROBED_URL')}
+        supplementary=dict(evidencePath='recovery/public-byte-provenance.json',
+                           evidenceSHA256=sha(evidence.read_bytes()),archivalOwner='Fountain-Coach/midi2-gpu-fabric',
+                           authority='historical Git blob evidence, not canonical owner, not release admission',
+                           publicArtifactCounts=totals)
     return dict(schema='fountain.estate.candidate-public-release-lock.v1',
          authority='evidence-only; neither publication approval nor deploy permission',
          releaseAdmitted=False,allowRecoveryDeployment=False,
@@ -172,7 +184,7 @@ def plan():
          publicReadbackSHA256=sha((INV/'public-readback.json').read_bytes()),
          manifestSHA256=sha((ROOT/'manifest.json').read_bytes()),
          observedAt=witnessed['observedAt'],
-         requiredOwnerApproval=True,
+         requiredOwnerApproval=True,supplementaryHistoricalBlobEvidence=supplementary,
          proofBoundary='Exact matching of observed HTML is not proof of complete asset/route recovery; receipts and full readback missing',
          hostCount=len(hosts),publicationSurfaces=len(domains),
          matchedPublicationRoots=sum(bool(x.get('candidateRevision')) for x in domains),
@@ -189,6 +201,12 @@ def markdown(lock):
         score=str(sum(y['matches'] is True for y in samples))+'/'+str(len(samples)) if samples else '—'
         lines.append('| '+x['publicHost']+x.get('routePrefix','')+' | '+x['ownerRepo']+
           ' | '+(x.get('candidateRevision') or 'not found')[:12]+' | '+score+' | '+x['readiness']+' |')
+    supplemental=lock.get('supplementaryHistoricalBlobEvidence')
+    if supplemental:
+        counts=supplemental['publicArtifactCounts']
+        lines+=['','## Cross-repository historical byte provenance','',
+          f"{counts['ROOT_REVISION_EXACT']+counts['OTHER_GIT_REVISION_EXACT']} archival public file responses have exact Git blob provenance ({counts['ROOT_REVISION_EXACT']} in their matching historical root trees; {counts['OTHER_GIT_REVISION_EXACT']} in other historical commits). {counts['PUBLIC_BYTES_NOT_LOCATED']} publicly responding files remain unmatched; {counts['ARCHIVAL_FILE_NOT_PUBLIC_AT_PROBED_URL']} archival files returned HTTP 404.",
+          '', 'See [public-byte-provenance.md](public-byte-provenance.md) and [root-matched-historical-artifacts.md](root-matched-historical-artifacts.md). This is evidence from midi2-gpu-fabric, **not** a change to domain source ownership or an approved static recovery release.']
     lines+=['','## Findings and next steps','',
       'Only Git objects of pinned candidate commits are inspected, never uncommitted working-tree files.',
       'A match is per public HTML document. Some hosts also have sampled route matches; none has an independently certified complete public static asset manifest.',

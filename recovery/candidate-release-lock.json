@@ -3197,5 +3197,17 @@
   "releaseAdmitted": false,
   "requiredOwnerApproval": true,
   "schema": "fountain.estate.candidate-public-release-lock.v1",
-  "sourceInventorySHA256": "4656439e41a4289012354b7c05cd4835ed812b2873b7c8e56d5322eed49db468"
+  "sourceInventorySHA256": "4656439e41a4289012354b7c05cd4835ed812b2873b7c8e56d5322eed49db468",
+  "supplementaryHistoricalBlobEvidence": {
+    "archivalOwner": "Fountain-Coach/midi2-gpu-fabric",
+    "authority": "historical Git blob evidence, not canonical owner, not release admission",
+    "evidencePath": "recovery/public-byte-provenance.json",
+    "evidenceSHA256": "fb07bd631adaae796480ae2eb3ec479441d52a617388cd1f0bb3f11ec34dfa4e",
+    "publicArtifactCounts": {
+      "ARCHIVAL_FILE_NOT_PUBLIC_AT_PROBED_URL": 2,
+      "OTHER_GIT_REVISION_EXACT": 7,
+      "PUBLIC_BYTES_NOT_LOCATED": 5,
+      "ROOT_REVISION_EXACT": 170
+    }
+  }
 }

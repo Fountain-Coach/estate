@@ -231,3 +231,7 @@ The ADR is an architectural decision only. No live DNS, Cloudflare configuration
 ## Candidate published-release recovery lock
 
 [Recovery contract](recovery/CONTRACT.md) and the [generated candidate](recovery/README.md) implement the read-only first step after ADR 001: match observed public HTML to immutable owning Git history, pin historical candidate revisions and their tracked source trees, and record missing release/asset proof as blockers. Use `npm run recovery:plan` to rebuild and `npm run recovery:verify` to check. This is **not** an admitted release; no SSH, tunnel, DNS, Caddy or publication mutation follows automatically. The live historical estate, not the newer Bookshelf, is the comparison baseline.
+
+## Archival artifact provenance in GitHub
+
+The recovery audit now records [historical Git projection comparisons](recovery/root-matched-historical-artifacts.md) and [individual public-byte provenance](recovery/public-byte-provenance.md). It found matching published roots for Book of Reframe, MIDI2 and delegated Solstice in older GitHub commits of `midi2-gpu-fabric`, then located byte-identical Git blobs for 177 of 182 publicly responding files in that limited archival inventory. Five publicly served files remain unmatched, and no complete route/asset release approval exists; this does not change canonical domain owners or permit deployment.
