@@ -255,3 +255,9 @@ The [Ubuntu static recovery receipt](recovery/ubuntu-cold-restore-witness-202610
 ## Proven local Ubuntu cold-restore rehearsal
 
 On 15 October 2026 the existing Ubuntu Mac mini independently downloaded the immutable public GitHub release, verified its archive and all 600 public SHA-256 resources, and served them unchanged through a separate loopback-only Caddy container across all nine original HTTP Host names. A temporary one-host Cloudflare Quick Tunnel was verified against the exact published Fountain Coach homepage SHA. See the [full recovery witness](recovery/ubuntu-cold-restore-witness-20261015.md) for acceptance results, image digests, limitations, temporary URL and specific container-only shutdown instructions. This proves the bounded observed static surface only; it does **not** authorize production DNS failover or replace the blocked complete-release admission.
+
+## Canonical-domain recovery: DNS and dynamic-service boundaries
+
+[ADR 002](docs/decisions/002-canonical-domain-provider-loss-failover.md) governs the transition **after** the proven GitHub-to-Ubuntu static restore. The [read-only provider-loss gate](recovery/failover-readiness.md) records public authoritative DNS dependencies for both registered zones, mail preservation requirements, existing host routing, release/owner-trust blockers and a deliberately negative total-Hetzner-loss simulation. [Browser/runtime indicators](recovery/runtime-boundary-witness.md) are inferred from frozen published assets but are not tests of functioning external APIs, MIDI, audio, login or FountainStore.
+
+Run `npm run recovery:failover:probe` only to refresh public DNS observations; `npm run recovery:failover:verify` and `npm run recovery:runtime:verify` validate the pinned evidence offline. Production DNS, registrar delegation, named tunnel, live Caddy and secrets are unchanged. A healthy static restore must not be mistaken for canonical-domain failover readiness.

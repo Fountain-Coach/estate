@@ -1,0 +1,447 @@
+{
+  "bundleSHA256": "20232def0be2be915d608c9ea491ffbd131edb5350e3721c3d081a7086d7b444",
+  "deviceOrBrowserInteractionTested": false,
+  "hosts": {
+    "benedikt-eickhoff.de": {
+      "browserCodeIndicators": {},
+      "browserRuntimeBehaviorProof": "NOT_TESTED",
+      "externalHtmlLinkHosts": [
+        "book.fountain.coach",
+        "fountain.coach",
+        "governance.fountain.coach",
+        "instruments.fountain.coach",
+        "midi2.fountain.coach",
+        "status.fountain.coach",
+        "teatro.fountain.coach",
+        "works.benedikt-eickhoff.de"
+      ],
+      "fileExtensions": {
+        ".css": 3,
+        ".html": 1,
+        ".js": 3,
+        ".png": 9,
+        ".svg": 1,
+        "route": 6
+      },
+      "httpResponseReplayProof": "PASS_BOUNDED",
+      "publicResources": 23,
+      "serverSideApiRecoveryProof": "NOT_TESTED"
+    },
+    "book.fountain.coach": {
+      "browserCodeIndicators": {
+        "csound_browser": {
+          "examplePaths": [
+            "sites/book.fountain.coach/capabilities/csound-auv3-instrument-boundary/index.html",
+            "sites/book.fountain.coach/csound-teatro-publication-manifest.json",
+            "sites/book.fountain.coach/csound-teatro-route-manifest.json",
+            "sites/book.fountain.coach/csound-teatro/index.html",
+            "sites/book.fountain.coach/index.html",
+            "sites/book.fountain.coach/scenarios/index.html"
+          ],
+          "fileCount": 6
+        }
+      },
+      "browserRuntimeBehaviorProof": "NOT_TESTED",
+      "externalHtmlLinkHosts": [
+        "benedikt-eickhoff.de",
+        "doi.org",
+        "fountain.coach",
+        "github.com",
+        "governance.fountain.coach",
+        "instruments.fountain.coach",
+        "midi2.fountain.coach",
+        "status.fountain.coach",
+        "teatro.fountain.coach",
+        "works.benedikt-eickhoff.de"
+      ],
+      "fileExtensions": {
+        ".css": 2,
+        ".jpg": 1,
+        ".js": 2,
+        ".json": 3,
+        ".md": 5,
+        ".png": 14,
+        ".svg": 4,
+        ".yaml": 1,
+        "route": 22
+      },
+      "httpResponseReplayProof": "PASS_BOUNDED",
+      "publicResources": 54,
+      "serverSideApiRecoveryProof": "NOT_TESTED"
+    },
+    "fountain.coach": {
+      "browserCodeIndicators": {
+        "browser_audio": {
+          "examplePaths": [
+            "sites/fountain.coach/teatro-stage-web/assets/index-Cw3IurmS.js"
+          ],
+          "fileCount": 1
+        },
+        "camera_or_microphone": {
+          "examplePaths": [
+            "sites/fountain.coach/teatro-stage-web/assets/index-Cw3IurmS.js"
+          ],
+          "fileCount": 1
+        },
+        "csound_browser": {
+          "examplePaths": [
+            "sites/fountain.coach/index.html",
+            "sites/fountain.coach/performance-ecosystem/index.html",
+            "sites/fountain.coach/teatro-stage-web/assets/index-Cw3IurmS.js"
+          ],
+          "fileCount": 3
+        },
+        "fetch_api": {
+          "examplePaths": [
+            "sites/fountain.coach/teatro-stage-web/assets/index-Cw3IurmS.js"
+          ],
+          "fileCount": 1
+        },
+        "midi_browser_api": {
+          "examplePaths": [
+            "sites/fountain.coach/teatro-stage-web/assets/index-Cw3IurmS.js"
+          ],
+          "fileCount": 1
+        },
+        "wasm": {
+          "examplePaths": [
+            "sites/fountain.coach/teatro-stage-web/assets/index-Cw3IurmS.js"
+          ],
+          "fileCount": 1
+        },
+        "websocket_or_sse": {
+          "examplePaths": [
+            "sites/fountain.coach/teatro-stage-web/assets/index-Cw3IurmS.js"
+          ],
+          "fileCount": 1
+        }
+      },
+      "browserRuntimeBehaviorProof": "NOT_TESTED",
+      "externalHtmlLinkHosts": [
+        "benedikt-eickhoff.de",
+        "book.fountain.coach",
+        "governance.fountain.coach",
+        "instruments.fountain.coach",
+        "midi2.fountain.coach",
+        "openai.com",
+        "status.fountain.coach",
+        "teatro.fountain.coach",
+        "works.benedikt-eickhoff.de",
+        "www.pewresearch.org"
+      ],
+      "fileExtensions": {
+        ".css": 3,
+        ".js": 3,
+        ".json": 1,
+        ".png": 4,
+        ".svg": 6,
+        ".txt": 1,
+        "route": 8
+      },
+      "httpResponseReplayProof": "PASS_BOUNDED",
+      "publicResources": 26,
+      "serverSideApiRecoveryProof": "NOT_TESTED"
+    },
+    "governance.fountain.coach": {
+      "browserCodeIndicators": {
+        "csound_browser": {
+          "examplePaths": [
+            "sites/governance.fountain.coach/assets/governance.js",
+            "sites/governance.fountain.coach/chapter-status.json",
+            "sites/governance.fountain.coach/chapters/00-abstract/index.html",
+            "sites/governance.fountain.coach/chapters/01-reading-index/index.html",
+            "sites/governance.fountain.coach/chapters/02-development-history/index.html",
+            "sites/governance.fountain.coach/chapters/03-current-state-and-problem/index.html"
+          ],
+          "fileCount": 162
+        },
+        "fetch_api": {
+          "examplePaths": [
+            "sites/governance.fountain.coach/chapters/59-copilot-initiated-library-curation/index.html"
+          ],
+          "fileCount": 1
+        },
+        "midi_browser_api": {
+          "examplePaths": [
+            "sites/governance.fountain.coach/chapters/133-csound-auv3-instrument-boundary/index.html"
+          ],
+          "fileCount": 1
+        },
+        "oauth_or_external_identity": {
+          "examplePaths": [
+            "sites/governance.fountain.coach/chapter-status.json",
+            "sites/governance.fountain.coach/chapters/00-abstract/index.html",
+            "sites/governance.fountain.coach/chapters/01-reading-index/index.html",
+            "sites/governance.fountain.coach/chapters/02-development-history/index.html",
+            "sites/governance.fountain.coach/chapters/03-current-state-and-problem/index.html",
+            "sites/governance.fountain.coach/chapters/04-target-architecture/index.html"
+          ],
+          "fileCount": 161
+        },
+        "wasm": {
+          "examplePaths": [
+            "sites/governance.fountain.coach/chapters/136-reframe-web-native-headless-audio-runtime/index.html",
+            "sites/governance.fountain.coach/chapters/137-teatro-web-reframe-materialization/index.html",
+            "sites/governance.fountain.coach/chapters/138-ear-is-the-web-audio-graphs-midi2-listening-boundary/index.html"
+          ],
+          "fileCount": 3
+        }
+      },
+      "browserRuntimeBehaviorProof": "NOT_TESTED",
+      "externalHtmlLinkHosts": [
+        "aclanthology.org",
+        "arxiv.org",
+        "benedikt-eickhoff.de",
+        "book.fountain.coach",
+        "certification.enisa.europa.eu",
+        "csound.com",
+        "cucumber.io",
+        "developer.apple.com",
+        "developers.openai.com",
+        "digital-strategy.ec.europa.eu",
+        "doi.org",
+        "eur-lex.europa.eu",
+        "fountain.coach",
+        "github.com",
+        "instruments.fountain.coach",
+        "midi2.fountain.coach",
+        "openai.com",
+        "spec.c2pa.org",
+        "spectrum.adobe.com",
+        "status.fountain.coach",
+        "teatro.fountain.coach",
+        "works.benedikt-eickhoff.de",
+        "www.bsi.bund.de",
+        "www.enisa.europa.eu"
+      ],
+      "fileExtensions": {
+        ".css": 3,
+        ".jpg": 35,
+        ".js": 3,
+        ".json": 1,
+        ".png": 5,
+        ".svg": 65,
+        "route": 165
+      },
+      "httpResponseReplayProof": "PASS_BOUNDED",
+      "publicResources": 277,
+      "serverSideApiRecoveryProof": "NOT_TESTED"
+    },
+    "instruments.fountain.coach": {
+      "browserCodeIndicators": {
+        "csound_browser": {
+          "examplePaths": [
+            "sites/instruments.fountain.coach/index.html",
+            "sites/instruments.fountain.coach/instruments/csound-auv3/index.html"
+          ],
+          "fileCount": 2
+        }
+      },
+      "browserRuntimeBehaviorProof": "NOT_TESTED",
+      "externalHtmlLinkHosts": [
+        "benedikt-eickhoff.de",
+        "book.fountain.coach",
+        "fountain.coach",
+        "governance.fountain.coach",
+        "midi.org",
+        "midi2.fountain.coach",
+        "status.fountain.coach",
+        "teatro.fountain.coach",
+        "works.benedikt-eickhoff.de"
+      ],
+      "fileExtensions": {
+        ".css": 2,
+        ".js": 2,
+        ".png": 1,
+        ".svg": 5,
+        "route": 4
+      },
+      "httpResponseReplayProof": "PASS_BOUNDED",
+      "publicResources": 14,
+      "serverSideApiRecoveryProof": "NOT_TESTED"
+    },
+    "midi2.fountain.coach": {
+      "browserCodeIndicators": {
+        "browser_audio": {
+          "examplePaths": [
+            "sites/midi2.fountain.coach/docs/comprehensive-spec-audit-report.html"
+          ],
+          "fileCount": 1
+        }
+      },
+      "browserRuntimeBehaviorProof": "NOT_TESTED",
+      "externalHtmlLinkHosts": [
+        "benedikt-eickhoff.de",
+        "book.fountain.coach",
+        "fountain.coach",
+        "github.com",
+        "governance.fountain.coach",
+        "instruments.fountain.coach",
+        "status.fountain.coach",
+        "teatro.fountain.coach",
+        "works.benedikt-eickhoff.de"
+      ],
+      "fileExtensions": {
+        ".css": 2,
+        ".html": 17,
+        ".js": 2,
+        ".json": 10,
+        ".md": 2,
+        ".png": 1,
+        ".yaml": 1,
+        "route": 2
+      },
+      "httpResponseReplayProof": "PASS_BOUNDED",
+      "publicResources": 37,
+      "serverSideApiRecoveryProof": "NOT_TESTED"
+    },
+    "status.fountain.coach": {
+      "browserCodeIndicators": {},
+      "browserRuntimeBehaviorProof": "NOT_TESTED",
+      "externalHtmlLinkHosts": [
+        "benedikt-eickhoff.de",
+        "book.fountain.coach",
+        "fountain.coach",
+        "github.com",
+        "governance.fountain.coach",
+        "instruments.fountain.coach",
+        "midi2.fountain.coach",
+        "teatro.fountain.coach",
+        "works.benedikt-eickhoff.de"
+      ],
+      "fileExtensions": {
+        ".css": 2,
+        ".js": 2,
+        ".json": 4,
+        ".png": 1,
+        ".txt": 1,
+        "route": 12
+      },
+      "httpResponseReplayProof": "PASS_BOUNDED",
+      "publicResources": 22,
+      "serverSideApiRecoveryProof": "NOT_TESTED"
+    },
+    "teatro.fountain.coach": {
+      "browserCodeIndicators": {
+        "browser_audio": {
+          "examplePaths": [
+            "sites/teatro.fountain.coach/assets/index-CY5_5ULO.js"
+          ],
+          "fileCount": 1
+        },
+        "camera_or_microphone": {
+          "examplePaths": [
+            "sites/teatro.fountain.coach/assets/index-CY5_5ULO.js"
+          ],
+          "fileCount": 1
+        },
+        "csound_browser": {
+          "examplePaths": [
+            "sites/teatro.fountain.coach/assets/index-CY5_5ULO.js",
+            "sites/teatro.fountain.coach/index.html"
+          ],
+          "fileCount": 2
+        },
+        "fetch_api": {
+          "examplePaths": [
+            "sites/teatro.fountain.coach/assets/index-CY5_5ULO.js"
+          ],
+          "fileCount": 1
+        },
+        "midi_browser_api": {
+          "examplePaths": [
+            "sites/teatro.fountain.coach/assets/index-CY5_5ULO.js"
+          ],
+          "fileCount": 1
+        },
+        "wasm": {
+          "examplePaths": [
+            "sites/teatro.fountain.coach/assets/index-CY5_5ULO.js"
+          ],
+          "fileCount": 1
+        },
+        "websocket_or_sse": {
+          "examplePaths": [
+            "sites/teatro.fountain.coach/assets/index-CY5_5ULO.js"
+          ],
+          "fileCount": 1
+        }
+      },
+      "browserRuntimeBehaviorProof": "NOT_TESTED",
+      "externalHtmlLinkHosts": [
+        "benedikt-eickhoff.de",
+        "book.fountain.coach",
+        "fountain.coach",
+        "governance.fountain.coach",
+        "instruments.fountain.coach",
+        "midi2.fountain.coach",
+        "status.fountain.coach",
+        "works.benedikt-eickhoff.de"
+      ],
+      "fileExtensions": {
+        ".css": 1,
+        ".js": 2,
+        ".png": 1,
+        "route": 1
+      },
+      "httpResponseReplayProof": "PASS_BOUNDED",
+      "publicResources": 5,
+      "serverSideApiRecoveryProof": "NOT_TESTED"
+    },
+    "works.benedikt-eickhoff.de": {
+      "browserCodeIndicators": {
+        "fetch_api": {
+          "examplePaths": [
+            "sites/works.benedikt-eickhoff.de/solstice/assets/press-accepted.js",
+            "sites/works.benedikt-eickhoff.de/solstice/assets/press-proof.js"
+          ],
+          "fileCount": 2
+        },
+        "persistent_browser_storage": {
+          "examplePaths": [
+            "sites/works.benedikt-eickhoff.de/solstice/assets/book.js",
+            "sites/works.benedikt-eickhoff.de/solstice/assets/press-accepted.js",
+            "sites/works.benedikt-eickhoff.de/solstice/assets/press-proof.js"
+          ],
+          "fileCount": 3
+        }
+      },
+      "browserRuntimeBehaviorProof": "NOT_TESTED",
+      "externalHtmlLinkHosts": [
+        "atomicgauguin.de",
+        "benedikt-eickhoff.de",
+        "book.fountain.coach",
+        "fountain.coach",
+        "fredberndt.de",
+        "governance.fountain.coach",
+        "instruments.fountain.coach",
+        "jeron.org",
+        "midi2.fountain.coach",
+        "status.fountain.coach",
+        "teatro.fountain.coach",
+        "unpopular-electronics.bandcamp.com",
+        "www.alfred-banze.de"
+      ],
+      "fileExtensions": {
+        ".css": 8,
+        ".jpg": 41,
+        ".js": 8,
+        ".json": 4,
+        ".pdf": 14,
+        ".png": 2,
+        ".txt": 1,
+        ".webp": 1,
+        ".xml": 1,
+        "route": 62
+      },
+      "httpResponseReplayProof": "PASS_BOUNDED",
+      "publicResources": 142,
+      "serverSideApiRecoveryProof": "NOT_TESTED"
+    }
+  },
+  "inferenceLimit": "Presence of words or script references is not evidence of functioning or deployed external service. Missing signs cannot prove absence.",
+  "privateStoreRestoreProven": false,
+  "schema": "fountain.estate.public-browser-runtime-indicators.v1",
+  "serverAPIsRestored": false,
+  "staticResourceBytesVerified": true
+}

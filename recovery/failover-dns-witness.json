@@ -1,0 +1,747 @@
+{
+  "method": "Read-only dig against listed authoritative nameservers for explicit host and email labels",
+  "observedAt": "2026-10-15T17:17:54+00:00",
+  "ownerRegistrarSessionVerified": false,
+  "schema": "fountain.estate.provider-loss-dns-witness.v1",
+  "scope": "selected existing estate hostnames and common mail labels only",
+  "zoneCompletenessClaim": false,
+  "zones": [
+    {
+      "authoritativeQueries": [
+        {
+          "name": "_dmarc.fountain.coach",
+          "rrtypes": {
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "book.fountain.coach",
+          "rrtypes": {
+            "A": {
+              "answers": [
+                {
+                  "name": "book.fountain.coach",
+                  "ttl": 300,
+                  "type": "A",
+                  "value": "65.109.14.71"
+                }
+              ],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "fountain.coach",
+          "rrtypes": {
+            "A": {
+              "answers": [
+                {
+                  "name": "fountain.coach",
+                  "ttl": 300,
+                  "type": "A",
+                  "value": "65.109.14.71"
+                }
+              ],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "MX": {
+              "answers": [],
+              "error": null
+            },
+            "NS": {
+              "answers": [
+                {
+                  "name": "fountain.coach",
+                  "ttl": 86400,
+                  "type": "NS",
+                  "value": "helium.ns.hetzner.de."
+                },
+                {
+                  "name": "fountain.coach",
+                  "ttl": 86400,
+                  "type": "NS",
+                  "value": "hydrogen.ns.hetzner.com."
+                },
+                {
+                  "name": "fountain.coach",
+                  "ttl": 86400,
+                  "type": "NS",
+                  "value": "oxygen.ns.hetzner.com."
+                }
+              ],
+              "error": null
+            },
+            "SOA": {
+              "answers": [
+                {
+                  "name": "fountain.coach",
+                  "ttl": 86400,
+                  "type": "SOA",
+                  "value": "hydrogen.ns.hetzner.com. dns.hetzner.com. 2026092400 86400 10800 3600000 3600"
+                }
+              ],
+              "error": null
+            },
+            "TXT": {
+              "answers": [
+                {
+                  "name": "fountain.coach",
+                  "ttl": 86400,
+                  "type": "TXT",
+                  "value": "\"facebook-domain-verification=yvoeq1tbtxlj5qdt43clf1ngw7xfoz\""
+                }
+              ],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "governance.fountain.coach",
+          "rrtypes": {
+            "A": {
+              "answers": [
+                {
+                  "name": "governance.fountain.coach",
+                  "ttl": 300,
+                  "type": "A",
+                  "value": "65.109.14.71"
+                }
+              ],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "instruments.fountain.coach",
+          "rrtypes": {
+            "A": {
+              "answers": [
+                {
+                  "name": "instruments.fountain.coach",
+                  "ttl": 300,
+                  "type": "A",
+                  "value": "65.109.14.71"
+                }
+              ],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "midi2.fountain.coach",
+          "rrtypes": {
+            "A": {
+              "answers": [
+                {
+                  "name": "midi2.fountain.coach",
+                  "ttl": 300,
+                  "type": "A",
+                  "value": "65.109.14.71"
+                }
+              ],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "selector1._domainkey.fountain.coach",
+          "rrtypes": {
+            "A": {
+              "answers": [],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "selector2._domainkey.fountain.coach",
+          "rrtypes": {
+            "A": {
+              "answers": [],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "status.fountain.coach",
+          "rrtypes": {
+            "A": {
+              "answers": [
+                {
+                  "name": "status.fountain.coach",
+                  "ttl": 300,
+                  "type": "A",
+                  "value": "65.109.14.71"
+                }
+              ],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null,
+              "retryAfterPrimaryError": "NO_RESPONSE"
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "teatro.fountain.coach",
+          "rrtypes": {
+            "A": {
+              "answers": [
+                {
+                  "name": "teatro.fountain.coach",
+                  "ttl": 300,
+                  "type": "A",
+                  "value": "65.109.14.71"
+                }
+              ],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        }
+      ],
+      "completeZoneTransfer": false,
+      "consistencySamples": [
+        {
+          "primary": {
+            "answers": [
+              {
+                "name": "fountain.coach",
+                "ttl": 300,
+                "type": "A",
+                "value": "65.109.14.71"
+              }
+            ],
+            "error": null
+          },
+          "secondary": {
+            "answers": [
+              {
+                "name": "fountain.coach",
+                "ttl": 300,
+                "type": "A",
+                "value": "65.109.14.71"
+              }
+            ],
+            "error": null
+          },
+          "type": "A"
+        },
+        {
+          "primary": {
+            "answers": [
+              {
+                "name": "fountain.coach",
+                "ttl": 86400,
+                "type": "NS",
+                "value": "oxygen.ns.hetzner.com."
+              },
+              {
+                "name": "fountain.coach",
+                "ttl": 86400,
+                "type": "NS",
+                "value": "helium.ns.hetzner.de."
+              },
+              {
+                "name": "fountain.coach",
+                "ttl": 86400,
+                "type": "NS",
+                "value": "hydrogen.ns.hetzner.com."
+              }
+            ],
+            "error": null
+          },
+          "secondary": {
+            "answers": [
+              {
+                "name": "fountain.coach",
+                "ttl": 86400,
+                "type": "NS",
+                "value": "helium.ns.hetzner.de."
+              },
+              {
+                "name": "fountain.coach",
+                "ttl": 86400,
+                "type": "NS",
+                "value": "hydrogen.ns.hetzner.com."
+              },
+              {
+                "name": "fountain.coach",
+                "ttl": 86400,
+                "type": "NS",
+                "value": "oxygen.ns.hetzner.com."
+              }
+            ],
+            "error": null
+          },
+          "type": "NS"
+        }
+      ],
+      "delegatedNameservers": [
+        "helium.ns.hetzner.de",
+        "hydrogen.ns.hetzner.com",
+        "oxygen.ns.hetzner.com"
+      ],
+      "discoveredViaRecursiveNS": {
+        "answers": [
+          {
+            "name": "fountain.coach",
+            "ttl": 86010,
+            "type": "NS",
+            "value": "oxygen.ns.hetzner.com."
+          },
+          {
+            "name": "fountain.coach",
+            "ttl": 86010,
+            "type": "NS",
+            "value": "helium.ns.hetzner.de."
+          },
+          {
+            "name": "fountain.coach",
+            "ttl": 86010,
+            "type": "NS",
+            "value": "hydrogen.ns.hetzner.com."
+          }
+        ],
+        "error": null
+      },
+      "observedRecordNames": [
+        "_dmarc.fountain.coach",
+        "book.fountain.coach",
+        "fountain.coach",
+        "governance.fountain.coach",
+        "instruments.fountain.coach",
+        "midi2.fountain.coach",
+        "selector1._domainkey.fountain.coach",
+        "selector2._domainkey.fountain.coach",
+        "status.fountain.coach",
+        "teatro.fountain.coach"
+      ],
+      "registrarControlVerified": false,
+      "zone": "fountain.coach"
+    },
+    {
+      "authoritativeQueries": [
+        {
+          "name": "_dmarc.benedikt-eickhoff.de",
+          "rrtypes": {
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "benedikt-eickhoff.de",
+          "rrtypes": {
+            "A": {
+              "answers": [
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 600,
+                  "type": "A",
+                  "value": "65.109.14.71"
+                }
+              ],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null,
+              "retryAfterPrimaryError": "NO_RESPONSE"
+            },
+            "CAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "MX": {
+              "answers": [
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 600,
+                  "type": "MX",
+                  "value": "10 mx01.mail.icloud.com."
+                },
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 600,
+                  "type": "MX",
+                  "value": "10 mx02.mail.icloud.com."
+                }
+              ],
+              "error": null
+            },
+            "NS": {
+              "answers": [
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 3600,
+                  "type": "NS",
+                  "value": "ns71.domaincontrol.com."
+                },
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 3600,
+                  "type": "NS",
+                  "value": "ns72.domaincontrol.com."
+                }
+              ],
+              "error": null
+            },
+            "SOA": {
+              "answers": [
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 3600,
+                  "type": "SOA",
+                  "value": "ns71.domaincontrol.com. dns.jomax.net. 2026101200 28800 7200 604800 600"
+                }
+              ],
+              "error": null
+            },
+            "TXT": {
+              "answers": [
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 600,
+                  "type": "TXT",
+                  "value": "\"apple-domain=TEjLFwEy6GUCoXaE\""
+                },
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 600,
+                  "type": "TXT",
+                  "value": "\"v=spf1 include:icloud.com ~all\""
+                }
+              ],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "selector1._domainkey.benedikt-eickhoff.de",
+          "rrtypes": {
+            "A": {
+              "answers": [],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null
+            }
+          }
+        },
+        {
+          "name": "selector2._domainkey.benedikt-eickhoff.de",
+          "rrtypes": {
+            "A": {
+              "answers": [],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [],
+              "error": null
+            },
+            "TXT": {
+              "answers": [],
+              "error": null,
+              "retryAfterPrimaryError": "NO_RESPONSE"
+            }
+          }
+        },
+        {
+          "name": "works.benedikt-eickhoff.de",
+          "rrtypes": {
+            "A": {
+              "answers": [
+                {
+                  "name": "works.benedikt-eickhoff.de",
+                  "ttl": 86400,
+                  "type": "CNAME",
+                  "value": "benedikt-eickhoff.de."
+                },
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 600,
+                  "type": "A",
+                  "value": "65.109.14.71"
+                }
+              ],
+              "error": null
+            },
+            "AAAA": {
+              "answers": [
+                {
+                  "name": "works.benedikt-eickhoff.de",
+                  "ttl": 86400,
+                  "type": "CNAME",
+                  "value": "benedikt-eickhoff.de."
+                }
+              ],
+              "error": null
+            },
+            "CNAME": {
+              "answers": [
+                {
+                  "name": "works.benedikt-eickhoff.de",
+                  "ttl": 86400,
+                  "type": "CNAME",
+                  "value": "benedikt-eickhoff.de."
+                }
+              ],
+              "error": null
+            },
+            "TXT": {
+              "answers": [
+                {
+                  "name": "works.benedikt-eickhoff.de",
+                  "ttl": 86400,
+                  "type": "CNAME",
+                  "value": "benedikt-eickhoff.de."
+                },
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 600,
+                  "type": "TXT",
+                  "value": "\"apple-domain=TEjLFwEy6GUCoXaE\""
+                },
+                {
+                  "name": "benedikt-eickhoff.de",
+                  "ttl": 600,
+                  "type": "TXT",
+                  "value": "\"v=spf1 include:icloud.com ~all\""
+                }
+              ],
+              "error": null
+            }
+          }
+        }
+      ],
+      "completeZoneTransfer": false,
+      "consistencySamples": [
+        {
+          "primary": {
+            "answers": [
+              {
+                "name": "benedikt-eickhoff.de",
+                "ttl": 600,
+                "type": "A",
+                "value": "65.109.14.71"
+              }
+            ],
+            "error": null
+          },
+          "secondary": {
+            "answers": [
+              {
+                "name": "benedikt-eickhoff.de",
+                "ttl": 600,
+                "type": "A",
+                "value": "65.109.14.71"
+              }
+            ],
+            "error": null
+          },
+          "type": "A"
+        },
+        {
+          "primary": {
+            "answers": [
+              {
+                "name": "benedikt-eickhoff.de",
+                "ttl": 3600,
+                "type": "NS",
+                "value": "ns71.domaincontrol.com."
+              },
+              {
+                "name": "benedikt-eickhoff.de",
+                "ttl": 3600,
+                "type": "NS",
+                "value": "ns72.domaincontrol.com."
+              }
+            ],
+            "error": null
+          },
+          "secondary": {
+            "answers": [
+              {
+                "name": "benedikt-eickhoff.de",
+                "ttl": 3600,
+                "type": "NS",
+                "value": "ns71.domaincontrol.com."
+              },
+              {
+                "name": "benedikt-eickhoff.de",
+                "ttl": 3600,
+                "type": "NS",
+                "value": "ns72.domaincontrol.com."
+              }
+            ],
+            "error": null
+          },
+          "type": "NS"
+        }
+      ],
+      "delegatedNameservers": [
+        "ns71.domaincontrol.com",
+        "ns72.domaincontrol.com"
+      ],
+      "discoveredViaRecursiveNS": {
+        "answers": [
+          {
+            "name": "benedikt-eickhoff.de",
+            "ttl": 3192,
+            "type": "NS",
+            "value": "ns72.domaincontrol.com."
+          },
+          {
+            "name": "benedikt-eickhoff.de",
+            "ttl": 3192,
+            "type": "NS",
+            "value": "ns71.domaincontrol.com."
+          }
+        ],
+        "error": null
+      },
+      "observedRecordNames": [
+        "_dmarc.benedikt-eickhoff.de",
+        "benedikt-eickhoff.de",
+        "selector1._domainkey.benedikt-eickhoff.de",
+        "selector2._domainkey.benedikt-eickhoff.de",
+        "works.benedikt-eickhoff.de"
+      ],
+      "registrarControlVerified": false,
+      "zone": "benedikt-eickhoff.de"
+    }
+  ]
+}

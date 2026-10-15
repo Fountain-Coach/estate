@@ -1,0 +1,222 @@
+{
+  "authorizedDNSFailover": false,
+  "automaticDNSMutationAllowed": false,
+  "dnsWitnessSHA256": "11d33bf88f040ddcbfbdaaa01e5d7790fcee3e598e3df18460572a8fa6d5af53",
+  "editionIsAuthorApproved": false,
+  "knownHosts": [
+    {
+      "canonicalDNSCutover": "NOT_AUTHORIZED",
+      "dynamicHostServices": "NOT_ESTABLISHED",
+      "host": "benedikt-eickhoff.de",
+      "interactiveBehavior": "NOT_VERIFIED",
+      "liveA": [
+        "65.109.14.71"
+      ],
+      "liveCNAME": [],
+      "public200Resources": 23,
+      "sourceRepo": "Fountain-Coach/benedikt-eickhoff.de",
+      "staticHTTPByteRestore": "PASS_BOUNDED",
+      "zone": "benedikt-eickhoff.de"
+    },
+    {
+      "canonicalDNSCutover": "NOT_AUTHORIZED",
+      "dynamicHostServices": "NOT_ESTABLISHED",
+      "host": "book.fountain.coach",
+      "interactiveBehavior": "NOT_VERIFIED",
+      "liveA": [
+        "65.109.14.71"
+      ],
+      "liveCNAME": [],
+      "public200Resources": 54,
+      "sourceRepo": "Fountain-Coach/book-of-reframe",
+      "staticHTTPByteRestore": "PASS_BOUNDED",
+      "zone": "fountain.coach"
+    },
+    {
+      "canonicalDNSCutover": "NOT_AUTHORIZED",
+      "dynamicHostServices": "NOT_ESTABLISHED",
+      "host": "fountain.coach",
+      "interactiveBehavior": "NOT_VERIFIED",
+      "liveA": [
+        "65.109.14.71"
+      ],
+      "liveCNAME": [],
+      "public200Resources": 26,
+      "sourceRepo": "Fountain-Coach/fountain.coach",
+      "staticHTTPByteRestore": "PASS_BOUNDED",
+      "zone": "fountain.coach"
+    },
+    {
+      "canonicalDNSCutover": "NOT_AUTHORIZED",
+      "dynamicHostServices": "NOT_ESTABLISHED",
+      "host": "governance.fountain.coach",
+      "interactiveBehavior": "NOT_VERIFIED",
+      "liveA": [
+        "65.109.14.71"
+      ],
+      "liveCNAME": [],
+      "public200Resources": 277,
+      "sourceRepo": "Fountain-Coach/governance.fountain.coach",
+      "staticHTTPByteRestore": "PASS_BOUNDED",
+      "zone": "fountain.coach"
+    },
+    {
+      "canonicalDNSCutover": "NOT_AUTHORIZED",
+      "dynamicHostServices": "NOT_ESTABLISHED",
+      "host": "instruments.fountain.coach",
+      "interactiveBehavior": "NOT_VERIFIED",
+      "liveA": [
+        "65.109.14.71"
+      ],
+      "liveCNAME": [],
+      "public200Resources": 14,
+      "sourceRepo": "Fountain-Coach/instruments.fountain.coach",
+      "staticHTTPByteRestore": "PASS_BOUNDED",
+      "zone": "fountain.coach"
+    },
+    {
+      "canonicalDNSCutover": "NOT_AUTHORIZED",
+      "dynamicHostServices": "NOT_ESTABLISHED",
+      "host": "midi2.fountain.coach",
+      "interactiveBehavior": "NOT_VERIFIED",
+      "liveA": [
+        "65.109.14.71"
+      ],
+      "liveCNAME": [],
+      "public200Resources": 37,
+      "sourceRepo": "Fountain-Coach/midi2",
+      "staticHTTPByteRestore": "PASS_BOUNDED",
+      "zone": "fountain.coach"
+    },
+    {
+      "canonicalDNSCutover": "NOT_AUTHORIZED",
+      "dynamicHostServices": "NOT_ESTABLISHED",
+      "host": "status.fountain.coach",
+      "interactiveBehavior": "NOT_VERIFIED",
+      "liveA": [
+        "65.109.14.71"
+      ],
+      "liveCNAME": [],
+      "public200Resources": 22,
+      "sourceRepo": "Fountain-Coach/status.fountain.coach",
+      "staticHTTPByteRestore": "PASS_BOUNDED",
+      "zone": "fountain.coach"
+    },
+    {
+      "canonicalDNSCutover": "NOT_AUTHORIZED",
+      "dynamicHostServices": "NOT_ESTABLISHED",
+      "host": "teatro.fountain.coach",
+      "interactiveBehavior": "NOT_VERIFIED",
+      "liveA": [
+        "65.109.14.71"
+      ],
+      "liveCNAME": [],
+      "public200Resources": 5,
+      "sourceRepo": "Fountain-Coach/teatro.fountain.coach",
+      "staticHTTPByteRestore": "PASS_BOUNDED",
+      "zone": "fountain.coach"
+    },
+    {
+      "canonicalDNSCutover": "NOT_AUTHORIZED",
+      "dynamicHostServices": "NOT_ESTABLISHED",
+      "host": "works.benedikt-eickhoff.de",
+      "interactiveBehavior": "NOT_VERIFIED",
+      "liveA": [
+        "65.109.14.71"
+      ],
+      "liveCNAME": [
+        "benedikt-eickhoff.de."
+      ],
+      "public200Resources": 142,
+      "sourceRepo": "Fountain-Coach/works-benedikt-eickhoff",
+      "staticHTTPByteRestore": "PASS_BOUNDED",
+      "zone": "benedikt-eickhoff.de"
+    }
+  ],
+  "nextMilestone": "Prepare complete alternative authoritative DNS zone and test owner registrar delegation in a separately authorized plan, without modifying production in this run",
+  "publiclyObservedStaticReconstruction": "PASS_BOUNDED",
+  "releaseAdmitted": false,
+  "scenarioSimulation": {
+    "canonicalEstateAccessible": false,
+    "githubPublicReleaseAvailable": true,
+    "hetznerDnsControlAvailable": false,
+    "originalIpAvailable": false,
+    "reason": "GitHub plus Ubuntu restore the observed static bytes, but fountain.coach registrar delegation still points to lost Hetzner nameservers. Domain routing cannot be asserted without separate NS authority.",
+    "scenario": "hetzner-origin-and-authoritative-dns-lost",
+    "ubuntuHostAvailable": true
+  },
+  "schema": "fountain.estate.provider-loss-readiness.v1",
+  "serviceAndAuthorityGates": [
+    {
+      "id": "immutable-public-bundle",
+      "reason": "600/600 observed HTTP-200 files retrieved from GitHub and hash verified on Ubuntu; SHA-pin protects integrity but GitHub release is not policy-immutable",
+      "status": "PASS_BOUNDED"
+    },
+    {
+      "id": "ubuntu-static-origin",
+      "reason": "Isolated local Caddy on loopback 18480 answered 600/600 resource bytes for all nine original Host headers",
+      "status": "PASS_BOUNDED"
+    },
+    {
+      "id": "cloudflare-single-host",
+      "reason": "Temporary uncredentialed Cloudflare URL returned exact fountain.coach root over public HTTPS, not the original canonical hostname",
+      "status": "PASS_BOUNDED"
+    },
+    {
+      "id": "complete-public-release",
+      "reason": "621 bounded URLs observed; unlinked public resources, complete source release admission and source owner signature unknown",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "fountain-authoritative-dns-independent-of-hetzner",
+      "reason": "Current NS delegation entirely to Hetzner; registrar-level NS migration/access not exercised",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "founder-zone-and-icloud-mail-preserved",
+      "reason": "Different registrar DNS; existing iCloud mail MX/TXT must survive; public observation does not establish full zone contents",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "zone-inventory-exhaustive",
+      "reason": "Known-host and common mail-label DNS readback is not a complete zone enumeration and does not prove registrar credentials",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "canonical-nine-host-ingress-and-tls",
+      "reason": "Named tunnel, per-host hostname ingress, canonical-domain TLS, control-token custody and rollback not tested",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "owner-auth-domain-trust-and-secrets",
+      "reason": "No independently recoverable owner key or SecretStore custody proof",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "private-fountainstore-state",
+      "reason": "Git static publication does not include private Store durable state or a verified off-provider encrypted restore",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "browser-runtime-and-interactive-audio",
+      "reason": "Caddy byte equality does not test iPad reader interaction, browser Csound, MIDI2 performance, playback or user consent",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "external-api-and-service-identities",
+      "reason": "Public static URL census cannot establish active OAuth, BotCast, API, email integrations or other external runtime state",
+      "status": "UNDETERMINED"
+    },
+    {
+      "id": "off-home-network-witness",
+      "reason": "Quick Tunnel tested via internet by Mac, not independently accepted on a separate ISP/device",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "recovery-rto-rpo-and-failback",
+      "reason": "No timed authorized full cutover or rollback; private data loss objective undefined",
+      "status": "BLOCKED"
+    }
+  ],
+  "status": "NOT_READY_FOR_CANONICAL_PROVIDER_LOSS_FAILOVER"
+}
