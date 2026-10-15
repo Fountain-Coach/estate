@@ -247,3 +247,7 @@ The [Ubuntu recovery-origin preflight](recovery/ubuntu-origin-preflight-20261015
 ## Reproducible public static cold-restore artifact
 
 The [candidate bundle contract](recovery/bundles/CONTRACT.md) and [complete file-level manifest](recovery/bundles/estate-public-observed-20261015.manifest.json) describe a SHA-256-verified, immutable archive of the nine-domain observed public estate. The archive is intentionally delivered as a separate GitHub Release asset rather than embedding ~80 MB of public binary content in Git history. This is a recovery candidate, not authority to publish, change DNS, or modify existing Ubuntu services.
+
+## Ubuntu cold restore now verified (2026-10-15)
+
+The [Ubuntu static recovery receipt](recovery/ubuntu-cold-restore-witness-20261015.md) records direct GitHub download of the frozen recovery candidate, SHA-256 verification of 599 static files representing all 600 independently observed successful public URLs across nine domains, loopback-only Caddy serving with **600/600 byte-matching responses**, unknown-host rejection, and a working temporary Cloudflare Quick Tunnel for the Fountain Coach homepage. This is a bounded **static rehearsal, not an admitted public release or canonical DNS failover**. Full estate completeness, dynamic private state, multi-domain external routing and independent cellular-browser acceptance remain open.

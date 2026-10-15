@@ -1,0 +1,63 @@
+{
+  "schema": "fountain.estate.ubuntu-cold-recovery-witness.v1",
+  "date": "2026-10-15",
+  "status": "PARTIAL_REHEARSAL_VERIFIED",
+  "releaseAdmitted": false,
+  "productionCutoverAuthorized": false,
+  "providerLossScenario": "Original Hetzner origin/IP unavailable; independent GitHub artifact download to known WLAN Ubuntu origin",
+  "github": {
+    "repository": "Fountain-Coach/estate",
+    "releaseTag": "recovery-candidate-20261015-01",
+    "asset": "estate-public-observed-20261015.tar.gz",
+    "sha256": "20232def0be2be915d608c9ea491ffbd131edb5350e3721c3d081a7086d7b444",
+    "downloadedDirectlyByUbuntu": true
+  },
+  "host": {
+    "operatingSystem": "Ubuntu 24.04",
+    "machineLabel": "benedikt-Macmini",
+    "service": "Caddy Docker caddy:2.10.2",
+    "container": "fountain-estate-restore-20261015",
+    "listener": "127.0.0.1:18480",
+    "knownUnknownHostStatus": 421,
+    "existingProductionModified": false,
+    "existingWlanStagingModified": false
+  },
+  "staticRestore": {
+    "manifestPublic200Count": 600,
+    "uniqueStaticFiles": 599,
+    "distinctPublishedHosts": 9,
+    "sha256VerifiedResponses": 600,
+    "failures": 0,
+    "redirects": 0,
+    "perHost": {
+      "benedikt-eickhoff.de": 23,
+      "book.fountain.coach": 54,
+      "fountain.coach": 26,
+      "governance.fountain.coach": 277,
+      "instruments.fountain.coach": 14,
+      "midi2.fountain.coach": 37,
+      "status.fountain.coach": 22,
+      "teatro.fountain.coach": 5,
+      "works.benedikt-eickhoff.de": 142
+    }
+  },
+  "outboundPreview": {
+    "transport": "Cloudflare Quick Tunnel",
+    "version": "2026.10.0",
+    "hostname": "providence-eco-write-childrens.trycloudflare.com",
+    "temporary": true,
+    "domainMappedAtOrigin": "fountain.coach",
+    "externalHttpsStatus": 200,
+    "bytes": 16578,
+    "sha256": "e5d4c2a2ef3471a05c4d53c22374fd2bf67be6be336e99519a148329152dd3fb",
+    "independentMobileOrExternalIspWitness": false
+  },
+  "limitations": [
+    "Only 600 independently crawled successful public responses have been verified; 21 crawl observations were non-200, and unlinked URLs may be missing.",
+    "Quick Tunnel establishes only single-host homepage preview; full multi-host external browser routing is not established.",
+    "No private FountainStore, APIs, OAuth, dynamic audio, uploads or interactive application state recovered.",
+    "Public DNS remains unchanged; no registrar failover rehearsal or canonical TLS promotion.",
+    "Cloudflare ingress still relies on local ISP and power; service is ephemeral, availability not guaranteed."
+  ],
+  "nextGate": "Complete public coverage and dynamic-state classification, independent mobile/off-WLAN witness, and host-neutral owner-authorized failover before any production admission"
+}
