@@ -47,3 +47,7 @@ A visual UI release must not be declared estate-complete while these differences
 The currently captured remote evidence is a bounded HTTPS root + representative route sampling. It does not exhaustively verify every publicly served page or authenticate the exact remote deployed Git revision by a deployment receipt. The source route inventory is complete for locally checked-out **Git-tracked HTML**; dynamic server endpoints, unpublished documents and CDN-hosted generated material require separate authority. Local origin/main comparisons are local tracking refs, not an up-to-the-second GitHub ref fetch.
 
 Source SHA equality to live HTTP body bytes is strong evidence for a matching artifact. A mismatch only proves different bytes—not automatically which revision is deployed. Public release continues to require an independent authorized publishing/readback process.
+
+## Stable verification while owner repositories advance
+
+`inventory:build` deliberately captures the presently committed `HEAD` of each owning Git checkout, storing the full SHA in the inventory. `inventory:verify` instead rereads the **pinned commit objects** recorded in the existing inventory; it does not follow a moving `HEAD`, Git index or working tree. Owner changes cannot invalidate already frozen disaster-recovery evidence merely by advancing a branch. A separate build creates a new owner snapshot when explicitly requested. Both modes confirm the GitHub remote identity and rehash committed files; neither takes uncommitted editorial work as publication authority.

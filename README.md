@@ -227,3 +227,7 @@ No hosting, Caddy, DNS, GitHub CI or public content is modified by inventory com
 [ADR 001 — Local Ubuntu emergency origin through an outbound tunnel](docs/decisions/001-local-ubuntu-off-provider-tunnel-recovery.md) records the Hetzner provider-loss rationale. The first planned test reconstructs exact published GitHub source on the existing WLAN Ubuntu machine, runs isolated Caddy and exposes it via a temporary outbound tunnel. Permanent DNS and named tunnel routing are later, owner-authorized decisions.
 
 The ADR is an architectural decision only. No live DNS, Cloudflare configuration, current Caddy site, SSH credentials or published material are changed by this record. See [the complete estate inventory](inventory/CONTRACT.md) for the source ownership and public-versus-Git discrepancies that recovery must resolve.
+
+## Candidate published-release recovery lock
+
+[Recovery contract](recovery/CONTRACT.md) and the [generated candidate](recovery/README.md) implement the read-only first step after ADR 001: match observed public HTML to immutable owning Git history, pin historical candidate revisions and their tracked source trees, and record missing release/asset proof as blockers. Use `npm run recovery:plan` to rebuild and `npm run recovery:verify` to check. This is **not** an admitted release; no SSH, tunnel, DNS, Caddy or publication mutation follows automatically. The live historical estate, not the newer Bookshelf, is the comparison baseline.

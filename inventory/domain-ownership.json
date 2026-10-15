@@ -1,9 +1,9 @@
 {
   "counts": {
     "gitHTMLRoutes": 325,
-    "gitNavigationEdges": 32599,
+    "gitNavigationEdges": 32596,
     "hosts": 11,
-    "riskFindings": 4,
+    "riskFindings": 3,
     "sourceRepositories": 11
   },
   "domains": [
@@ -30,7 +30,7 @@
       "host": "fountain.coach",
       "lifecycle": "active",
       "role": "editorial-identity",
-      "sourceCommit": "b4b1d3fbd9cc9f76fb810345aff22ec07cf19a0b",
+      "sourceCommit": "0caa563f443ac39add375f2208ad46aac45b5142",
       "sourceHTMLRoutes": 22,
       "sourceRepo": "Fountain-Coach/fountain.coach"
     },
@@ -123,10 +123,6 @@
   },
   "risks": [
     {
-      "repository": "Fountain-Coach/fountain.coach",
-      "type": "dirty-owner-checkout"
-    },
-    {
       "repository": "Fountain-Coach/midi2",
       "type": "revision-differs-from-local-origin-main"
     },
@@ -180,22 +176,22 @@
       "trackedHTML": 17
     },
     {
-      "clean": false,
+      "clean": true,
       "editionState": "source-candidate-editions-hierarchy-not-publicly-deployed",
       "github": "https://github.com/Fountain-Coach/fountain.coach",
-      "head": "b4b1d3fbd9cc9f76fb810345aff22ec07cf19a0b",
+      "head": "0caa563f443ac39add375f2208ad46aac45b5142",
       "headMatchesLocalOriginMain": true,
       "hosts": [
         "fountain.coach"
       ],
       "localCheckout": "estate-domain-owners/fountain.coach",
-      "localOriginMain": "b4b1d3fbd9cc9f76fb810345aff22ec07cf19a0b",
+      "localOriginMain": "0caa563f443ac39add375f2208ad46aac45b5142",
       "repository": "Fountain-Coach/fountain.coach",
       "sourceInventoryStatus": "verified",
       "sourceRoot": "site",
-      "trackedContentSHA256": "9828422c744c20dbe17fd7af74d4ffd516fde2545e94b4a1ded07ee5f7540b38",
-      "trackedDocuments": 6,
-      "trackedFiles": 153,
+      "trackedContentSHA256": "87bddd1422b016be3210a063dc23550f9775fe1401d1a857dfd6fc7136d9c33b",
+      "trackedDocuments": 9,
+      "trackedFiles": 212,
       "trackedHTML": 22
     },
     {

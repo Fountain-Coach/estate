@@ -19,7 +19,7 @@ No publishing, DNS, Caddy or Git mutation. Source ownership is not proof of depl
 
 ## Critical boundaries
 
-- Complete tracked HTML routes are in source-routes.json; all 31,918 navigation edges are preserved losslessly in navigation-edges.json.gz and cross-domain relations are summarized in estate-relations.json.
+- Complete tracked HTML routes are in source-routes.json; all 32,596 navigation edges are preserved losslessly in navigation-edges.json.gz and cross-domain relations are summarized in estate-relations.json.
 - The public readback is a bounded sample; no false claim of exhaustive public routing.
 - The works.benedikt-eickhoff.de parent hostname is owned by works-benedikt-eickhoff; its /solstice/ subtree delegates to the Solstice source repository.
 - The MIDI2 code/documentation repository has no tracked deployed site root in this checkout; its live website must be read back independently.
@@ -40,7 +40,6 @@ No publishing, DNS, Caddy or Git mutation. Source ownership is not proof of depl
 
 ## Repository-side risks
 
-- dirty-owner-checkout: Fountain-Coach/fountain.coach
 - revision-differs-from-local-origin-main: Fountain-Coach/midi2
 - no-tracked-static-publication-root: Fountain-Coach/midi2
 - planned-host-no-publication-assertion: solstice.fountain.coach

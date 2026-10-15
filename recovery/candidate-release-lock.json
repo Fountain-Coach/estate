@@ -1,0 +1,3201 @@
+{
+  "allowRecoveryDeployment": false,
+  "authority": "evidence-only; neither publication approval nor deploy permission",
+  "blockers": [
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "benedikt-eickhoff.de",
+      "routePrefix": "/"
+    },
+    {
+      "code": "NO_EXACT_GIT_COMMIT_MATCHING_LIVE_DOCUMENT",
+      "host": "book.fountain.coach",
+      "routePrefix": "/"
+    },
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "book.fountain.coach",
+      "routePrefix": "/"
+    },
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "fountain.coach",
+      "routePrefix": "/"
+    },
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "governance.fountain.coach",
+      "routePrefix": "/"
+    },
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "instruments.fountain.coach",
+      "routePrefix": "/"
+    },
+    {
+      "code": "MISSING_GIT_TRACKED_DEPLOYMENT_ROOT",
+      "host": "midi2.fountain.coach",
+      "routePrefix": "/"
+    },
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "midi2.fountain.coach",
+      "routePrefix": "/"
+    },
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "status.fountain.coach",
+      "routePrefix": "/"
+    },
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "teatro.fountain.coach",
+      "routePrefix": "/"
+    },
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "works.benedikt-eickhoff.de",
+      "routePrefix": "/"
+    },
+    {
+      "code": "NO_EXACT_GIT_COMMIT_MATCHING_LIVE_DOCUMENT",
+      "host": "works.benedikt-eickhoff.de",
+      "routePrefix": "/solstice/"
+    },
+    {
+      "code": "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED",
+      "host": "works.benedikt-eickhoff.de",
+      "routePrefix": "/solstice/"
+    }
+  ],
+  "domains": [
+    {
+      "blockers": [
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": "fa3d1b406d1128ae33f2ae4eb9b2443b3f935128",
+      "candidateSourceRootTree": "d80833a754b73c7007449073d594438612215d31",
+      "currentOwnerHead": "fa3d1b406d1128ae33f2ae4eb9b2443b3f935128",
+      "deploymentRole": "adjacent-founder-pointer",
+      "gitSourceRoot": "site",
+      "gitTrackedBlobCount": 31,
+      "gitTrackedHTMLCount": 7,
+      "historicalRootRevisionCandidatesExamined": 1,
+      "matchedHistoricalRevisions": [
+        "fa3d1b406d1128ae33f2ae4eb9b2443b3f935128"
+      ],
+      "ownerRepo": "Fountain-Coach/benedikt-eickhoff.de",
+      "owningRepository": "https://github.com/Fountain-Coach/benedikt-eickhoff.de",
+      "publicHost": "benedikt-eickhoff.de",
+      "publicWitnessHost": "benedikt-eickhoff.de",
+      "publicWitnessSHA256": "a0a87ec2a26728b7a946716d4687d02e59eb7b9121d11ada09749d00ee25a381",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/",
+      "routePrefix": "/",
+      "sampleRoutes": [
+        {
+          "candidateSHA256": "a0a87ec2a26728b7a946716d4687d02e59eb7b9121d11ada09749d00ee25a381",
+          "matches": true,
+          "publicSHA256": "a0a87ec2a26728b7a946716d4687d02e59eb7b9121d11ada09749d00ee25a381",
+          "route": "/",
+          "sourceFile": "site/index.html"
+        },
+        {
+          "candidateSHA256": "be7c3708b067ab07ad3125ff0ac4e637c0838c8f946f1e5a88efa11142fba852",
+          "matches": true,
+          "publicSHA256": "be7c3708b067ab07ad3125ff0ac4e637c0838c8f946f1e5a88efa11142fba852",
+          "route": "/posts/a-day-becomes-a-readable-scene/content.html",
+          "sourceFile": "site/posts/a-day-becomes-a-readable-scene/content.html"
+        },
+        {
+          "candidateSHA256": "240b6c3f931da2636f74c405e576d147073ab446ca1ee47d5eb48a991358f14d",
+          "matches": true,
+          "publicSHA256": "240b6c3f931da2636f74c405e576d147073ab446ca1ee47d5eb48a991358f14d",
+          "route": "/posts/a-pointer-enters-the-scene/",
+          "sourceFile": "site/posts/a-pointer-enters-the-scene/index.html"
+        },
+        {
+          "candidateSHA256": "eefb794659874e1859b311b5e10b2177163ea4b2c6e440ede2750802a882dacd",
+          "matches": true,
+          "publicSHA256": "eefb794659874e1859b311b5e10b2177163ea4b2c6e440ede2750802a882dacd",
+          "route": "/posts/chapter-129-the-image-becomes-a-contract/",
+          "sourceFile": "site/posts/chapter-129-the-image-becomes-a-contract/index.html"
+        }
+      ],
+      "sourceAssetManifestSHA256": "3f9119988d13d26269d954250052408fd06de7277570baaf3af78d67863be0c3",
+      "sourceDocument": "site/index.html",
+      "sourceFiles": [
+        {
+          "blobGitObject": "7df2984d9c01987532e9063fac8bb3ed381832c9",
+          "mode": "100644",
+          "path": "site/assets/estate-core.css"
+        },
+        {
+          "blobGitObject": "6f9e857d5036d3199eb6717c97319aed55ec3d99",
+          "mode": "100644",
+          "path": "site/assets/estate-core.js"
+        },
+        {
+          "blobGitObject": "55ed320b611b069d25c704a7fbc1cba163c7fae4",
+          "mode": "100644",
+          "path": "site/assets/fountain-coach-logo-transparent.png"
+        },
+        {
+          "blobGitObject": "a6f635aa8d08a7602ac0fd3f9e448129c3f36c44",
+          "mode": "100644",
+          "path": "site/assets/gallery.css"
+        },
+        {
+          "blobGitObject": "4b8a5ae9c1d33138bef4e3cd8305e6227c8837d1",
+          "mode": "100644",
+          "path": "site/assets/gallery.js"
+        },
+        {
+          "blobGitObject": "06ab9b481dcec0af0097550ffc2fdbd62a39f145",
+          "mode": "100644",
+          "path": "site/assets/pointer-mark.svg"
+        },
+        {
+          "blobGitObject": "b11177bbc8fbac00c3d9423c94a11d29847b604c",
+          "mode": "100644",
+          "path": "site/assets/pointer-social-card.svg"
+        },
+        {
+          "blobGitObject": "a86fbda9ad6d0820c31689dbadb19ab90a00e590",
+          "mode": "100644",
+          "path": "site/assets/pointer.css"
+        },
+        {
+          "blobGitObject": "9437f89711f13061af290991c9b9c1de448d5f7b",
+          "mode": "100644",
+          "path": "site/assets/pointer.js"
+        },
+        {
+          "blobGitObject": "5b36529d1b03d572d261fe8897060f1f0c2ff3e3",
+          "mode": "100644",
+          "path": "site/assets/teatro-placeholder/teatro-gallery-placeholder.svg"
+        },
+        {
+          "blobGitObject": "40ce9260964fbf198af1a7e3131fe16811f8b324",
+          "mode": "100644",
+          "path": "site/assets/teatro-placeholder/teatro-memory-vector-placeholder.svg"
+        },
+        {
+          "blobGitObject": "ab0430be5d708cf8e6668ab1497bcea70b8ebcc7",
+          "mode": "100644",
+          "path": "site/assets/teatro-placeholder/teatro-placeholder-manifest.json"
+        },
+        {
+          "blobGitObject": "e5571369cc50c19d325ee51777b15aa10bfd4752",
+          "mode": "100644",
+          "path": "site/assets/teatro-placeholder/teatro-pointer-placeholder.svg"
+        },
+        {
+          "blobGitObject": "5a45e560d27750c22986018434ad79fae72c54a0",
+          "mode": "100644",
+          "path": "site/assets/teatro-placeholder/teatro-score-placeholder.svg"
+        },
+        {
+          "blobGitObject": "4dc489a677f9029f7c7495a86775cbbb9ab20088",
+          "mode": "100644",
+          "path": "site/assets/teatro-score-generated/field-to-post.png"
+        },
+        {
+          "blobGitObject": "806dbf9753aaa2a30c5ed8fe23b8ff292bad81d3",
+          "mode": "100644",
+          "path": "site/assets/teatro-score-generated/memory-threshold.png"
+        },
+        {
+          "blobGitObject": "1c6a329dcd426ab25eb7462d3006fc21488e42e6",
+          "mode": "100644",
+          "path": "site/assets/teatro-score-generated/memory-vector-meta-landscape.png"
+        },
+        {
+          "blobGitObject": "f157c0e93f98dcd80b5ff2df62ba581913e02a01",
+          "mode": "100644",
+          "path": "site/assets/teatro-score-generated/memory-vector-meta.png"
+        },
+        {
+          "blobGitObject": "74b99d20a61d5d7e299e7d54b3807ae9c401cf52",
+          "mode": "100644",
+          "path": "site/assets/teatro-score-generated/pointer-field.png"
+        },
+        {
+          "blobGitObject": "31340280abd2d1d4ed5cbaa6eeab5f071a2e09f6",
+          "mode": "100644",
+          "path": "site/assets/teatro-score-generated/score-structure.png"
+        },
+        {
+          "blobGitObject": "667968fd27292d7cec436ea3cd114f39813a3cbf",
+          "mode": "100644",
+          "path": "site/assets/teatro-score-generated/teatro-score-meta-landscape.png"
+        },
+        {
+          "blobGitObject": "833450547d41b4ac64cd6687f1a3b1bf443fd125",
+          "mode": "100644",
+          "path": "site/assets/teatro-score-generated/teatro-score-meta.png"
+        },
+        {
+          "blobGitObject": "10deef3acc3f57ac2dc8b0b695f81dae21069025",
+          "mode": "100644",
+          "path": "site/index.html"
+        },
+        {
+          "blobGitObject": "40650d439defc00079f1f6250f0ebb19bc78f077",
+          "mode": "100644",
+          "path": "site/posts/a-day-becomes-a-readable-scene/a-day-becomes-a-readable-scene.fountain"
+        },
+        {
+          "blobGitObject": "6c34de199ad2699d7272ee8eab49657f463401f0",
+          "mode": "100644",
+          "path": "site/posts/a-day-becomes-a-readable-scene/content.html"
+        },
+        {
+          "blobGitObject": "00e2781016ce41da5260301866d594f3f9b33acd",
+          "mode": "100644",
+          "path": "site/posts/a-pointer-enters-the-scene/index.html"
+        },
+        {
+          "blobGitObject": "2e1214ed2a093ba2cf7442fab68b286e55eb4173",
+          "mode": "100644",
+          "path": "site/posts/chapter-129-the-image-becomes-a-contract/index.html"
+        },
+        {
+          "blobGitObject": "37b665f51a4d422f9ab1a664944a2a1cfa3808e9",
+          "mode": "100644",
+          "path": "site/posts/memory-vector/index.html"
+        },
+        {
+          "blobGitObject": "d37fef10c0a796413fcd1e19472382d95598a589",
+          "mode": "100644",
+          "path": "site/posts/teatro-score/index.html"
+        },
+        {
+          "blobGitObject": "ab4b2422ea965bfd81c042c1ec5a41f6c04164c6",
+          "mode": "100644",
+          "path": "site/posts/the-gallery-becomes-a-post/index.html"
+        },
+        {
+          "blobGitObject": "0698509953e1844fdd707755c585dc6766ad0cdc",
+          "mode": "100644",
+          "path": "site/publication-manifest.json"
+        }
+      ]
+    },
+    {
+      "blockers": [
+        "NO_EXACT_GIT_COMMIT_MATCHING_LIVE_DOCUMENT",
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": null,
+      "candidateSourceRootTree": null,
+      "currentOwnerHead": "f5965dd0a5c1687ad1703aae4c615e0aad7095b1",
+      "deploymentRole": "reframe-historical-reference-not-linotype",
+      "gitSourceRoot": "site",
+      "historicalRootRevisionCandidatesExamined": 16,
+      "matchedHistoricalRevisions": [],
+      "ownerRepo": "Fountain-Coach/book-of-reframe",
+      "owningRepository": "https://github.com/Fountain-Coach/book-of-reframe",
+      "publicHost": "book.fountain.coach",
+      "publicWitnessHost": "book.fountain.coach",
+      "publicWitnessSHA256": "d87292d725a09da074791a79e19c56fc2ea91c02d88c55ab7bfc5dba52d16914",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/",
+      "routePrefix": "/",
+      "sampleRoutes": [],
+      "sourceAssetManifestSHA256": null,
+      "sourceDocument": "site/index.html",
+      "sourceFiles": []
+    },
+    {
+      "blockers": [
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": "420be0ca655d2262ec987934c0dc573cbb11eefd",
+      "candidateSourceRootTree": "0445f721f7edb0ac874c0fe801156507987810ff",
+      "currentOwnerHead": "0caa563f443ac39add375f2208ad46aac45b5142",
+      "deploymentRole": "editorial-identity",
+      "gitSourceRoot": "site",
+      "gitTrackedBlobCount": 59,
+      "gitTrackedHTMLCount": 8,
+      "historicalRootRevisionCandidatesExamined": 16,
+      "matchedHistoricalRevisions": [
+        "420be0ca655d2262ec987934c0dc573cbb11eefd"
+      ],
+      "ownerRepo": "Fountain-Coach/fountain.coach",
+      "owningRepository": "https://github.com/Fountain-Coach/fountain.coach",
+      "publicHost": "fountain.coach",
+      "publicWitnessHost": "fountain.coach",
+      "publicWitnessSHA256": "e5d4c2a2ef3471a05c4d53c22374fd2bf67be6be336e99519a148329152dd3fb",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/",
+      "routePrefix": "/",
+      "sampleRoutes": [
+        {
+          "candidateSHA256": "e5d4c2a2ef3471a05c4d53c22374fd2bf67be6be336e99519a148329152dd3fb",
+          "matches": true,
+          "publicSHA256": "e5d4c2a2ef3471a05c4d53c22374fd2bf67be6be336e99519a148329152dd3fb",
+          "route": "/",
+          "sourceFile": "site/index.html"
+        },
+        {
+          "candidateSHA256": "4ba3c6743e8606392635b332e17214a1d3974ea1bc984080082e027ea46ff673",
+          "matches": true,
+          "publicSHA256": "4ba3c6743e8606392635b332e17214a1d3974ea1bc984080082e027ea46ff673",
+          "route": "/essays/",
+          "sourceFile": "site/essays/index.html"
+        }
+      ],
+      "sourceAssetManifestSHA256": "c4d6fe291e052e59f1d47a49f3bf793fd2d29e56b74f99683649e6132add344a",
+      "sourceDocument": "site/index.html",
+      "sourceFiles": [
+        {
+          "blobGitObject": "89135751be49bda8d038e69214e2db7c449149d1",
+          "mode": "100644",
+          "path": "site/assets/agent-bootstrap.css"
+        },
+        {
+          "blobGitObject": "7df2984d9c01987532e9063fac8bb3ed381832c9",
+          "mode": "100644",
+          "path": "site/assets/estate-core.css"
+        },
+        {
+          "blobGitObject": "05f17a4582818166bb922555c61179d2a2a4e400",
+          "mode": "100644",
+          "path": "site/assets/estate-core.js"
+        },
+        {
+          "blobGitObject": "55ed320b611b069d25c704a7fbc1cba163c7fae4",
+          "mode": "100644",
+          "path": "site/assets/fountain-coach-logo-transparent.png"
+        },
+        {
+          "blobGitObject": "10f664a6f2bc5bf6b0384b53e71b66c20b7b560e",
+          "mode": "100644",
+          "path": "site/assets/fountain-logo.png"
+        },
+        {
+          "blobGitObject": "ae1f76cc53fc1e6dd6d1e8f4d22e6a3f30e3a542",
+          "mode": "100644",
+          "path": "site/assets/future-estate-portal.svg"
+        },
+        {
+          "blobGitObject": "ae35d4b6a4c39ab0aa286378383fe065858c3916",
+          "mode": "100644",
+          "path": "site/assets/metaphor-memory.png"
+        },
+        {
+          "blobGitObject": "94a906aed05d36513ea53bddb5edba73de67b4db",
+          "mode": "100644",
+          "path": "site/assets/performance-ecosystem-map.svg"
+        },
+        {
+          "blobGitObject": "1102a96ea213fd1804820c80175d05e34c7bbe74",
+          "mode": "100644",
+          "path": "site/assets/performance-listening-stage.svg"
+        },
+        {
+          "blobGitObject": "e64949add65fb9f8982c62131f16638c4c85deec",
+          "mode": "100644",
+          "path": "site/assets/performance-render-boundary.svg"
+        },
+        {
+          "blobGitObject": "39764aaebd97cfb4b0bd796ba47708c11b46a02e",
+          "mode": "100644",
+          "path": "site/assets/presence-extension.png"
+        },
+        {
+          "blobGitObject": "4f4e7156328aa2c535851c1d8af0cd892d63e211",
+          "mode": "100644",
+          "path": "site/assets/site.css"
+        },
+        {
+          "blobGitObject": "0f9bf500ae30be5d6f7e39c38bc18b8e26760547",
+          "mode": "100644",
+          "path": "site/assets/site.js"
+        },
+        {
+          "blobGitObject": "93798a9241ac866e7de50e0fc90b510f67531e01",
+          "mode": "100644",
+          "path": "site/assets/social/future-estate-portal.jpg"
+        },
+        {
+          "blobGitObject": "c450d6ac68253c8d76f57a04a2acf037829a7988",
+          "mode": "100644",
+          "path": "site/assets/social/teatro-an-unfinished-composition.jpg"
+        },
+        {
+          "blobGitObject": "7aeeac4e6ef963370c73eb87174b90073ff5e64e",
+          "mode": "100644",
+          "path": "site/assets/unsaid-held-open.png"
+        },
+        {
+          "blobGitObject": "223008f1988ea430c021307cc83a7489fe4f97a3",
+          "mode": "100644",
+          "path": "site/essays/index.html"
+        },
+        {
+          "blobGitObject": "ea3cb7110eb0bc3f6bc37499dced3258af91751d",
+          "mode": "100644",
+          "path": "site/essays/reframe-and-the-business-value-of-the-estate/assets/address-landscape.png"
+        },
+        {
+          "blobGitObject": "9dcf5668658b48b3071950edd1065aaeb8ee333c",
+          "mode": "100644",
+          "path": "site/essays/reframe-and-the-business-value-of-the-estate/assets/estate-evolution.png"
+        },
+        {
+          "blobGitObject": "4a94b0c98d1ac8fe9a29e80833e3705a91da581c",
+          "mode": "100644",
+          "path": "site/essays/reframe-and-the-business-value-of-the-estate/assets/estate-landscape.png"
+        },
+        {
+          "blobGitObject": "629ef8de48b4973058db10abaff0d059ffaf77b8",
+          "mode": "100644",
+          "path": "site/essays/reframe-and-the-business-value-of-the-estate/assets/exchange-landscape.png"
+        },
+        {
+          "blobGitObject": "c608c3bee640b5223a09753fef1cf2a0cd82464d",
+          "mode": "100644",
+          "path": "site/essays/reframe-and-the-business-value-of-the-estate/assets/two-audiences.png"
+        },
+        {
+          "blobGitObject": "9f2792b3f85b1bf3db4da29eb6951cab11d6a117",
+          "mode": "100644",
+          "path": "site/essays/reframe-and-the-business-value-of-the-estate/assets/web-architectures.png"
+        },
+        {
+          "blobGitObject": "bf79dc8b0cc048a33f08609f0a2b24022bbf5382",
+          "mode": "100644",
+          "path": "site/essays/reframe-and-the-business-value-of-the-estate/index.html"
+        },
+        {
+          "blobGitObject": "b3659aefa9841a7972b28c794b3b29191856bec8",
+          "mode": "100644",
+          "path": "site/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.png"
+        },
+        {
+          "blobGitObject": "39220391a33bb9daf596963451e9b28cc014eb4c",
+          "mode": "100644",
+          "path": "site/essays/semantic-compilation-the-archive-is-not-the-edition/assets/semantic-compilation-estate-rail.svg"
+        },
+        {
+          "blobGitObject": "bb3e87b721fc9c944a0dae6a54f469454889d9df",
+          "mode": "100644",
+          "path": "site/essays/semantic-compilation-the-archive-is-not-the-edition/index.html"
+        },
+        {
+          "blobGitObject": "ecc46a0e805469c2a1585706e83f1fdbe0cbb702",
+          "mode": "100644",
+          "path": "site/essays/teatro-an-unfinished-composition/assets/teatro-score-memory-vector-human-condition.svg"
+        },
+        {
+          "blobGitObject": "abb5a8fa126e1f35c9225547363d67fb0d45ca13",
+          "mode": "100644",
+          "path": "site/essays/teatro-an-unfinished-composition/index.html"
+        },
+        {
+          "blobGitObject": "0d76bc0c212064e5bed2a4b529bd65f89f9a8e41",
+          "mode": "100644",
+          "path": "site/for-agents/index.html"
+        },
+        {
+          "blobGitObject": "8fa796956956019e2017a13101e688c6bbbee6bd",
+          "mode": "100644",
+          "path": "site/index.html"
+        },
+        {
+          "blobGitObject": "badd825a9196b4fdab24b11e0eef04efd0aaffad",
+          "mode": "100644",
+          "path": "site/llms.txt"
+        },
+        {
+          "blobGitObject": "1a56e12ef5fcc53964c4561dac09387cccc4a1bf",
+          "mode": "100644",
+          "path": "site/performance-ecosystem/index.html"
+        },
+        {
+          "blobGitObject": "94a906aed05d36513ea53bddb5edba73de67b4db",
+          "mode": "100644",
+          "path": "site/performance-ecosystem/performance-ecosystem-map.svg"
+        },
+        {
+          "blobGitObject": "729d62fb58c7ea4e46a0fc5fccc37f10a894cf21",
+          "mode": "100644",
+          "path": "site/publication-manifest.json"
+        },
+        {
+          "blobGitObject": "1e30e17bb1a56dc8e3b72c850016d010c30153ec",
+          "mode": "100644",
+          "path": "site/publication-status.json"
+        },
+        {
+          "blobGitObject": "63f8286dd9d624fbeea9d7958085ed186c3fcc2b",
+          "mode": "100644",
+          "path": "site/route-manifest.json"
+        },
+        {
+          "blobGitObject": "992966c7d436f1d0c875d6911145e2176f029fda",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-09FqmPnu.js"
+        },
+        {
+          "blobGitObject": "f669b06ae2053d0f5d7882c7d2632cade498eb1f",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-5JuoGUIj.js"
+        },
+        {
+          "blobGitObject": "4ae5645a173113b1dd79d526ffdd4db883a504f1",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-B1fRXcYu.js"
+        },
+        {
+          "blobGitObject": "1303d882fbb12e0e6a2ecd418da1410da908253b",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-BC4HUg43.js"
+        },
+        {
+          "blobGitObject": "5b3ab2c9dd4812d13175621c096a30c8e1740e8a",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-BFBTxbbm.js"
+        },
+        {
+          "blobGitObject": "8648e2206f1c43f5d051379d24694fbf90022445",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-BRPXydF9.js"
+        },
+        {
+          "blobGitObject": "6ebd8c4645cd0f718228aa60f5a46a18465282a8",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-BXbucT7z.js"
+        },
+        {
+          "blobGitObject": "dff383dc7b1082b9e84d5169ce2c7db42c3384ae",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-CGFVr2Rx.js"
+        },
+        {
+          "blobGitObject": "4c53911d368bbf88a7d9978d41f3997679ab579e",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-CJP5AypJ.js"
+        },
+        {
+          "blobGitObject": "22ed728209aafc91ab3b69e94c4f5712cb743889",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-CY5_5ULO.js"
+        },
+        {
+          "blobGitObject": "d9e74e34108e8eff158f27a94e2092b7ec2666a4",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-Cbpx-wBm.js"
+        },
+        {
+          "blobGitObject": "7a379d2b3a91b2b206fc99760c57368df3045586",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-Cgen3ruB.js"
+        },
+        {
+          "blobGitObject": "291d5e56d0c274548e9f9ee6ef1f34f5a9c6d2d7",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-Cw3IurmS.js"
+        },
+        {
+          "blobGitObject": "9f82707c280cbddc0e7bd40ccbbabb83ed469301",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-DR_CV8N9.js"
+        },
+        {
+          "blobGitObject": "48bb018c402636ccb5ef4b2a961791b3bd6de2d9",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-DTfKqjw0.js"
+        },
+        {
+          "blobGitObject": "eb9282c11cafd630dccfd92aa65210178bd5715a",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-DUCzu5ky.js"
+        },
+        {
+          "blobGitObject": "9b2e411bf15df1e5494da2e4c186e6fa7097239e",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-NZ16pemF.js"
+        },
+        {
+          "blobGitObject": "324a8db5da40b3ee12da204c39b4d8ec4fd1a826",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-O4DIRmgg.js"
+        },
+        {
+          "blobGitObject": "14973c46cb42a5dc98b679cd88b0ff497520595b",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-pBCa16bt.js"
+        },
+        {
+          "blobGitObject": "a8a90f9246b91350bab9d9f695ac965c416ab6eb",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-pP0RUD7H.js"
+        },
+        {
+          "blobGitObject": "eef85e13296adb12b8d4ddccc71d322c0519803d",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/assets/index-pn5bKnQA.js"
+        },
+        {
+          "blobGitObject": "5dffada2aea605c177ad950742f5f4c002f98d64",
+          "mode": "100644",
+          "path": "site/teatro-stage-web/index.html"
+        }
+      ]
+    },
+    {
+      "blockers": [
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": "9f48476835a9a1fb525cc9001f8b3e504ae44805",
+      "candidateSourceRootTree": "1c47cb19a3bc8b303a340fe51aa5ec7fbb084023",
+      "currentOwnerHead": "93ad87e007616d17a5b303a1925e7104db03d15c",
+      "deploymentRole": "normative-reference",
+      "gitSourceRoot": "site",
+      "gitTrackedBlobCount": 292,
+      "gitTrackedHTMLCount": 165,
+      "historicalRootRevisionCandidatesExamined": 2,
+      "matchedHistoricalRevisions": [
+        "9f48476835a9a1fb525cc9001f8b3e504ae44805"
+      ],
+      "ownerRepo": "Fountain-Coach/governance.fountain.coach",
+      "owningRepository": "https://github.com/Fountain-Coach/governance.fountain.coach",
+      "publicHost": "governance.fountain.coach",
+      "publicWitnessHost": "governance.fountain.coach",
+      "publicWitnessSHA256": "28d10ef29e4b627e8370051aa3252aed230840abffe842533a764ea33236aa11",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/",
+      "routePrefix": "/",
+      "sampleRoutes": [
+        {
+          "candidateSHA256": "28d10ef29e4b627e8370051aa3252aed230840abffe842533a764ea33236aa11",
+          "matches": true,
+          "publicSHA256": "28d10ef29e4b627e8370051aa3252aed230840abffe842533a764ea33236aa11",
+          "route": "/",
+          "sourceFile": "site/index.html"
+        },
+        {
+          "candidateSHA256": "e0748bfb87bee5be6d97ac98f92e4167a3131282d6329c80b57c7638a2610c5a",
+          "matches": true,
+          "publicSHA256": "e0748bfb87bee5be6d97ac98f92e4167a3131282d6329c80b57c7638a2610c5a",
+          "route": "/chapters/00-abstract/",
+          "sourceFile": "site/chapters/00-abstract/index.html"
+        },
+        {
+          "candidateSHA256": "4d128df5e62203d705514b2c8dfd7e8b2aa63dd1adc89ded1e6e802004f6203a",
+          "matches": true,
+          "publicSHA256": "4d128df5e62203d705514b2c8dfd7e8b2aa63dd1adc89ded1e6e802004f6203a",
+          "route": "/accessibility/",
+          "sourceFile": "site/accessibility/index.html"
+        },
+        {
+          "candidateSHA256": "8a4ce6097585729c2e847ee26617c75a8055bdcda69d0f574176b0fe1329cb6a",
+          "matches": true,
+          "publicSHA256": "8a4ce6097585729c2e847ee26617c75a8055bdcda69d0f574176b0fe1329cb6a",
+          "route": "/chapters/01-reading-index/",
+          "sourceFile": "site/chapters/01-reading-index/index.html"
+        }
+      ],
+      "sourceAssetManifestSHA256": "debe7a2313acc2383bb696fbb5422be1b44924ce25fbbf8538fc01cd973710ae",
+      "sourceDocument": "site/index.html",
+      "sourceFiles": [
+        {
+          "blobGitObject": "c77ab0c86f2ff123293211ed6e5ef412c12204a1",
+          "mode": "100644",
+          "path": "site/accessibility/index.html"
+        },
+        {
+          "blobGitObject": "7df2984d9c01987532e9063fac8bb3ed381832c9",
+          "mode": "100644",
+          "path": "site/assets/estate-core.css"
+        },
+        {
+          "blobGitObject": "6f9e857d5036d3199eb6717c97319aed55ec3d99",
+          "mode": "100644",
+          "path": "site/assets/estate-core.js"
+        },
+        {
+          "blobGitObject": "55ed320b611b069d25c704a7fbc1cba163c7fae4",
+          "mode": "100644",
+          "path": "site/assets/fountain-coach-logo-transparent.png"
+        },
+        {
+          "blobGitObject": "5aac904f028b1e44570b5ff1d4761ca4f12c1a00",
+          "mode": "100644",
+          "path": "site/assets/governance.css"
+        },
+        {
+          "blobGitObject": "984d1ba083cc752c3a95bc960a32a3e491a6b7b4",
+          "mode": "100644",
+          "path": "site/assets/governance.js"
+        },
+        {
+          "blobGitObject": "82d9973e94ebc513d8a7d90bff0cdaf9d6eeacf9",
+          "mode": "100644",
+          "path": "site/assets/illustrations/100-semantic-scenographer.svg"
+        },
+        {
+          "blobGitObject": "106345b1aa70ec14af496b3d7eced155d288e769",
+          "mode": "100644",
+          "path": "site/assets/illustrations/102-semantic-inference-execution-session-and-latency-governance.png"
+        },
+        {
+          "blobGitObject": "4137ff7f434ad030d964a3f39dcab0f3f05264b6",
+          "mode": "100644",
+          "path": "site/assets/illustrations/103-fcis-kit-semantic-factory-and-wired-instrument-event-stream.png"
+        },
+        {
+          "blobGitObject": "0001e380384e34428b2d012ac567cd9102beb741",
+          "mode": "100644",
+          "path": "site/assets/illustrations/103-fcis-kit-semantic-factory-and-wired-instrument-event-stream.svg"
+        },
+        {
+          "blobGitObject": "5b4911fc250d61bafb700c0b42c393fc5b5571f4",
+          "mode": "100644",
+          "path": "site/assets/illustrations/104-midi2-event-time-jitter-and-asynchronous-completion-governance.png"
+        },
+        {
+          "blobGitObject": "e775d9a8fb77f50b7c9e4277ce7b29497b8bb03b",
+          "mode": "100644",
+          "path": "site/assets/illustrations/104-midi2-event-time-jitter-and-asynchronous-completion-governance.svg"
+        },
+        {
+          "blobGitObject": "a43ea931682471fe44e1f9b697d4d505efa301d7",
+          "mode": "100644",
+          "path": "site/assets/illustrations/105-semantic-scenographer-one-spatial-thought.png"
+        },
+        {
+          "blobGitObject": "5a2dde2aac002a7618ec97e39ecb0bc0f2a543ad",
+          "mode": "100644",
+          "path": "site/assets/illustrations/105-semantic-scenographer-one-spatial-thought.svg"
+        },
+        {
+          "blobGitObject": "251a486632caec78d5884c79ea87e138941675e9",
+          "mode": "100644",
+          "path": "site/assets/illustrations/106-teatro-midi2-monitor-canonical-runtime-projection.png"
+        },
+        {
+          "blobGitObject": "5e2ccb6f19fc27a9c3b9fe71de26e93be493d48e",
+          "mode": "100644",
+          "path": "site/assets/illustrations/106-teatro-midi2-monitor-canonical-runtime-projection.svg"
+        },
+        {
+          "blobGitObject": "6d2401d5b21e7ccc2a2b6d8c9a52993249eb9ef1",
+          "mode": "100644",
+          "path": "site/assets/illustrations/107-creating-the-canonical-teatro-stage-composition-layer.svg"
+        },
+        {
+          "blobGitObject": "ae798a2c8a2b123912d1a0edba1fce57289213fb",
+          "mode": "100644",
+          "path": "site/assets/illustrations/108-reframe-is-a-swift-native-cross-platform-runtime.svg"
+        },
+        {
+          "blobGitObject": "1ec8a8f29d58c3ab95a3ae94976a2c16e1258a15",
+          "mode": "100644",
+          "path": "site/assets/illustrations/109-natural-language-measurement-is-a-midi2-instrument.svg"
+        },
+        {
+          "blobGitObject": "3e6b923d827639007f3f547bc2e1df349cae7c54",
+          "mode": "100644",
+          "path": "site/assets/illustrations/110-three-run-semantic-drift.svg"
+        },
+        {
+          "blobGitObject": "08e16fe8f970267b9331e9d90bc2d4f4b6ad9624",
+          "mode": "100644",
+          "path": "site/assets/illustrations/111-evidence-cohorts-as-publication-units.svg"
+        },
+        {
+          "blobGitObject": "1e67edb11a0a5805449fc3d547b315df86f2abb7",
+          "mode": "100644",
+          "path": "site/assets/illustrations/112-skill-and-maintenance-capabilities-are-kit-owned.svg"
+        },
+        {
+          "blobGitObject": "97cfed732277485284ec7f7b4ced7ba3e4200c28",
+          "mode": "100644",
+          "path": "site/assets/illustrations/113-governance-becomes-an-executable-scenographic-policy.svg"
+        },
+        {
+          "blobGitObject": "67aaeaa437dd575aabca0fc2601661db21364ebd",
+          "mode": "100644",
+          "path": "site/assets/illustrations/114-server-side-semantic-proposals.svg"
+        },
+        {
+          "blobGitObject": "e25aaa7f977bf68f88ef8380bb3e6a3fb468b231",
+          "mode": "100644",
+          "path": "site/assets/illustrations/115-semantic-browser-midi2-fountainstore.svg"
+        },
+        {
+          "blobGitObject": "c95afcec232b76df5fbe8dd091aac85ba8649c3a",
+          "mode": "100644",
+          "path": "site/assets/illustrations/116-fountainstore-estate-edge.svg"
+        },
+        {
+          "blobGitObject": "14898a095df455c2d054c7442defadbf18b9e740",
+          "mode": "100644",
+          "path": "site/assets/illustrations/117-fountainstore-snapshot-export-git-recovery.svg"
+        },
+        {
+          "blobGitObject": "238304045841300df5df455c2655f747d00ee26b",
+          "mode": "100644",
+          "path": "site/assets/illustrations/118-european-cybersecurity-profile.svg"
+        },
+        {
+          "blobGitObject": "91dbaa631ba55e2dd9d859d35960d60a3bc057fa",
+          "mode": "100644",
+          "path": "site/assets/illustrations/119-scenario-pipeline-factory.svg"
+        },
+        {
+          "blobGitObject": "7f913f43a3f52457c2b2280a67d40d0c747d6c6c",
+          "mode": "100644",
+          "path": "site/assets/illustrations/120-internal-triadic-peer-dialogue-stage.svg"
+        },
+        {
+          "blobGitObject": "68b92f95a0f743df39ca2ae4a4c4d8b55ab66082",
+          "mode": "100644",
+          "path": "site/assets/illustrations/120-internal-triadic-peer-dialogue.svg"
+        },
+        {
+          "blobGitObject": "84d3e783b0ec8ae73a348acc04fddc62d2b10203",
+          "mode": "100644",
+          "path": "site/assets/illustrations/121-dynamic-midi2-instrument-factory.svg"
+        },
+        {
+          "blobGitObject": "40e4091cda2dcaeaf31812a5805793c7473ee9ef",
+          "mode": "100644",
+          "path": "site/assets/illustrations/122-governed-semantic-transformation-instrument.svg"
+        },
+        {
+          "blobGitObject": "b22239e55632d0ac233314833750bded7fef4479",
+          "mode": "100644",
+          "path": "site/assets/illustrations/123-commands-must-be-legible-to-reasoning.svg"
+        },
+        {
+          "blobGitObject": "cde166b8af082b4a5fe1d4172b61a2f74c8d1ab5",
+          "mode": "100644",
+          "path": "site/assets/illustrations/124-state-transition-visual-capabilities.svg"
+        },
+        {
+          "blobGitObject": "76063730066d25e8183464b14f5e79121d1df500",
+          "mode": "100644",
+          "path": "site/assets/illustrations/125-store-publication-graph-domain-mapping-and-atomic-route-promotion.svg"
+        },
+        {
+          "blobGitObject": "9f671f8b7163a8821bd0c7113b4aad52f4d5e9e6",
+          "mode": "100644",
+          "path": "site/assets/illustrations/126-fountain-coach-organization-web-projection.svg"
+        },
+        {
+          "blobGitObject": "3948a06f223e66071f716fdade4176d6383e25a8",
+          "mode": "100644",
+          "path": "site/assets/illustrations/127-estate-template-publishing-path.svg"
+        },
+        {
+          "blobGitObject": "80df69dd9d26258c1ce91e964c0f281272e0c0e4",
+          "mode": "100644",
+          "path": "site/assets/illustrations/128-deployed-estate-webkit-mirror.svg"
+        },
+        {
+          "blobGitObject": "5972508a3c2814bf59a836290826fdb83303e9c4",
+          "mode": "100644",
+          "path": "site/assets/illustrations/129-native-animated-svg-publication.svg"
+        },
+        {
+          "blobGitObject": "d6691e2621fdf7ba97cd77aef39d9dd2987fee31",
+          "mode": "100644",
+          "path": "site/assets/illustrations/130-human-machine-scenario-naming.svg"
+        },
+        {
+          "blobGitObject": "17a672ed1155dc5ca8431b86fa79d03c725541c4",
+          "mode": "100644",
+          "path": "site/assets/illustrations/131-remote-secretstore-authorization.svg"
+        },
+        {
+          "blobGitObject": "b44ada273e8987818fcb0b8d9a79042ec366a352",
+          "mode": "100644",
+          "path": "site/assets/illustrations/132-reframe-audiounit-auv3-aum.svg"
+        },
+        {
+          "blobGitObject": "4ce51299a0717e227ecae1b59d56806e6d44910a",
+          "mode": "100644",
+          "path": "site/assets/illustrations/133-csound-auv3-instrument-boundary.svg"
+        },
+        {
+          "blobGitObject": "211b472d4034e9bafdd5ff09c55275caad75077d",
+          "mode": "100644",
+          "path": "site/assets/illustrations/134-estatepublisher-publication-authority.svg"
+        },
+        {
+          "blobGitObject": "5baa3ce8e845e7a0d560d624fb016a186f85fe3a",
+          "mode": "100644",
+          "path": "site/assets/illustrations/135-reframe-ipad-scenario-driven-creative-host.svg"
+        },
+        {
+          "blobGitObject": "e36775f034506798ae27702b7dbb46ce4cb79849",
+          "mode": "100644",
+          "path": "site/assets/illustrations/136-reframe-web-native-headless-audio-runtime.svg"
+        },
+        {
+          "blobGitObject": "22bf1a75fc0590a1e024d62e6cda38c04b8b505b",
+          "mode": "100644",
+          "path": "site/assets/illustrations/137-teatro-web-reframe-materialization.svg"
+        },
+        {
+          "blobGitObject": "6b166577d0d67561ad2b0dc232febb4eb1ab5094",
+          "mode": "100644",
+          "path": "site/assets/illustrations/138-ear-web-audio-midi2-boundary.svg"
+        },
+        {
+          "blobGitObject": "324d78b345b6fec96223e5c0b242c9a421064a66",
+          "mode": "100644",
+          "path": "site/assets/illustrations/139-owner-trust-root-custody.svg"
+        },
+        {
+          "blobGitObject": "dac9425ad3d51877542fc693a852fcda7546f546",
+          "mode": "100644",
+          "path": "site/assets/illustrations/140-estatepublisher-codex-command-boundary.svg"
+        },
+        {
+          "blobGitObject": "25bd463c9af9dd675dd9b1f68dc05a2fa60e1d35",
+          "mode": "100644",
+          "path": "site/assets/illustrations/141-machine-midi2-instrument-admission.svg"
+        },
+        {
+          "blobGitObject": "6b9425688ef72092909620dac4d8369ed40e10cc",
+          "mode": "100644",
+          "path": "site/assets/illustrations/143-simplicity-is-key-one-bootstrap-one-trusted-session.svg"
+        },
+        {
+          "blobGitObject": "c58b80faddd0bd9aa4e325f2e11c807bd039b941",
+          "mode": "100644",
+          "path": "site/assets/illustrations/144-fountain-media-service-governed-media-plane.svg"
+        },
+        {
+          "blobGitObject": "a63b9d196b3116be869c3b88128c306984da65b0",
+          "mode": "100644",
+          "path": "site/assets/illustrations/145-one-estate-one-publication-state.svg"
+        },
+        {
+          "blobGitObject": "b327b04caa4c12ad172c45b5ebd626c46c5dbbf4",
+          "mode": "100644",
+          "path": "site/assets/illustrations/145-publication-authority-flow.svg"
+        },
+        {
+          "blobGitObject": "02493f2dc203761decfe994214314c8c5bf2f801",
+          "mode": "100644",
+          "path": "site/assets/illustrations/146-local-store-remote-caddy-production-estate.svg"
+        },
+        {
+          "blobGitObject": "7cb6e3813473ea68a6363d82dc4860bce7d81325",
+          "mode": "100644",
+          "path": "site/assets/illustrations/147-local-route-materialization-estatepublisher-preview.svg"
+        },
+        {
+          "blobGitObject": "7d69ad87631eae8f0f0a3b3de0b18727bbbb6585",
+          "mode": "100644",
+          "path": "site/assets/illustrations/148-production-runtime-artifact-only.svg"
+        },
+        {
+          "blobGitObject": "db83d12b33cc9f8640aeab3ad3e8f706928d77e2",
+          "mode": "100644",
+          "path": "site/assets/illustrations/149-remote-codexkit-governed-midi2-peer-instrument.svg"
+        },
+        {
+          "blobGitObject": "8b26825c67448409584a3e95f97be253f5cf39df",
+          "mode": "100644",
+          "path": "site/assets/illustrations/150-one-midi2-instrument-plane-multiple-governed-transports.svg"
+        },
+        {
+          "blobGitObject": "67b1aba08cde6dc27ac933a08007e1b7ccfffa6c",
+          "mode": "100644",
+          "path": "site/assets/illustrations/151-csound-teatro-speaking-sound-in-space.svg"
+        },
+        {
+          "blobGitObject": "026e40204fb00ea4de9638efdb4cd95159ddaa09",
+          "mode": "100644",
+          "path": "site/assets/illustrations/152-the-host-is-the-instrument.svg"
+        },
+        {
+          "blobGitObject": "b1d3eb1f5807e096f4c93daa58691aaa7ed33f4c",
+          "mode": "100644",
+          "path": "site/assets/illustrations/153-domain-admission-and-edge-binding.svg"
+        },
+        {
+          "blobGitObject": "cf208f272364bd06402f0db1223c8cb024f8c707",
+          "mode": "100644",
+          "path": "site/assets/illustrations/154-domain-neutral-local-model-reasoning-testing.svg"
+        },
+        {
+          "blobGitObject": "8183688a45928b89e48efe7623b770ebc209dbf6",
+          "mode": "100644",
+          "path": "site/assets/illustrations/155-estatepublisher-rest-projection.svg"
+        },
+        {
+          "blobGitObject": "4307de40d4d9ad01813bc67c5a9c613b17cf5cba",
+          "mode": "100644",
+          "path": "site/assets/illustrations/156-writer-workflow.svg"
+        },
+        {
+          "blobGitObject": "5e34aa4258f86dcd20a67f8af0654b4548b8700c",
+          "mode": "100644",
+          "path": "site/assets/illustrations/157-the-writer-owns-the-public-domain.svg"
+        },
+        {
+          "blobGitObject": "e6ef8d876f5071a19e21736f2f213a1fa9567d77",
+          "mode": "100644",
+          "path": "site/assets/illustrations/158-publishing-is-not-a-distributed-transaction.svg"
+        },
+        {
+          "blobGitObject": "593befbf052097178be95cecaf5dee81c81add34",
+          "mode": "100644",
+          "path": "site/assets/illustrations/copilot-focused-state.png"
+        },
+        {
+          "blobGitObject": "08280c3fd9dd582a7906b10774670ed89279c3a3",
+          "mode": "100644",
+          "path": "site/assets/illustrations/copilot-working-state.png"
+        },
+        {
+          "blobGitObject": "aae340009d5b93c9ca1d3f50a0a1ee461ce2543c",
+          "mode": "100644",
+          "path": "site/assets/illustrations/fountain-coach-publication-estate.svg"
+        },
+        {
+          "blobGitObject": "988c577249c42fcb9a198fea00bb6cb104e4e508",
+          "mode": "100644",
+          "path": "site/assets/illustrations/reframe-codex-auth-instrument.svg"
+        },
+        {
+          "blobGitObject": "e7536865da2c8bd90865b461daa5858f09cf2aff",
+          "mode": "100644",
+          "path": "site/assets/illustrations/reframe-codexkit-midi2-instrument.svg"
+        },
+        {
+          "blobGitObject": "05a42f616e5dcc58ac46c89f0e3e378a1ec75bb4",
+          "mode": "100644",
+          "path": "site/assets/illustrations/reframe-default-semantic-workspace.jpg"
+        },
+        {
+          "blobGitObject": "ac9941df6c9d96cc6bf215d37d22470447ee1125",
+          "mode": "100644",
+          "path": "site/assets/illustrations/reframe-fcis-kit-instrument-store.svg"
+        },
+        {
+          "blobGitObject": "abd16be9f5c7911318499d596322fb7fc6565bec",
+          "mode": "100644",
+          "path": "site/assets/illustrations/reframe-midi2-monitor-architecture.svg"
+        },
+        {
+          "blobGitObject": "f3df72a08a0f51b1b865eff77b9e3a9091f15873",
+          "mode": "100644",
+          "path": "site/assets/illustrations/reframe-reading-room.svg"
+        },
+        {
+          "blobGitObject": "c942bc11a92831dbd6ef8addb1824f98817a8a08",
+          "mode": "100644",
+          "path": "site/assets/illustrations/reframe-scenario-design-mock.svg"
+        },
+        {
+          "blobGitObject": "9e465d66f13c28c5927a182baccbc8b1a89b0dbf",
+          "mode": "100644",
+          "path": "site/assets/illustrations/reframe-security-review-system-top.svg"
+        },
+        {
+          "blobGitObject": "0bfe5700e89a2d254355996e05bd6686b6bd787e",
+          "mode": "100644",
+          "path": "site/assets/illustrations/reframe-storify-defined-whole-mock.svg"
+        },
+        {
+          "blobGitObject": "828bf59c28976fc9ec2cddfd42786554dedcad10",
+          "mode": "100644",
+          "path": "site/assets/illustrations/storify-library-store-drift.svg"
+        },
+        {
+          "blobGitObject": "6135ff5109da6097958b5d0758b54eb03982d3eb",
+          "mode": "100644",
+          "path": "site/assets/pointer.css"
+        },
+        {
+          "blobGitObject": "9437f89711f13061af290991c9b9c1de448d5f7b",
+          "mode": "100644",
+          "path": "site/assets/pointer.js"
+        },
+        {
+          "blobGitObject": "de47c4a55c6cce0c60c46fb451327e79b126533b",
+          "mode": "100644",
+          "path": "site/assets/social/100-semantic-scenographer-e63cb7c607e3.jpg"
+        },
+        {
+          "blobGitObject": "f5a3ef100a7d46532b55f828dd655a35bff0dd68",
+          "mode": "100644",
+          "path": "site/assets/social/102-semantic-inference-execution-session-and-latency-governance-12a5ee0f0343.jpg"
+        },
+        {
+          "blobGitObject": "3213210dd99b6a4ce4404ea03b5d63f970383375",
+          "mode": "100644",
+          "path": "site/assets/social/103-fcis-kit-semantic-factory-and-wired-instrument-event-stream-ea00aa057ef5.jpg"
+        },
+        {
+          "blobGitObject": "082a5ef7463c6a35d74173c9f455bd528093b862",
+          "mode": "100644",
+          "path": "site/assets/social/104-midi2-event-time-jitter-and-asynchronous-completion-governance-bb86ff5d4906.jpg"
+        },
+        {
+          "blobGitObject": "1ddba98a331f1946f1c9a644ba8406b80523c047",
+          "mode": "100644",
+          "path": "site/assets/social/105-semantic-scenographer-one-spatial-thought-6ab72842b176.jpg"
+        },
+        {
+          "blobGitObject": "9a7473cdcb58b78b0dda149d4dfb91300e857af9",
+          "mode": "100644",
+          "path": "site/assets/social/106-teatro-midi2-monitor-canonical-runtime-projection-4e63b19f8453.jpg"
+        },
+        {
+          "blobGitObject": "7bc07aaf79cb3f2cce1112a074a032bf97df0638",
+          "mode": "100644",
+          "path": "site/assets/social/107-creating-the-canonical-teatro-stage-composition-layer-26737303e70f.jpg"
+        },
+        {
+          "blobGitObject": "fab0ac5a5015e0b5a0bfe3f27c59608f90950c93",
+          "mode": "100644",
+          "path": "site/assets/social/108-reframe-is-a-swift-native-cross-platform-runtime-7a8c39cf398c.jpg"
+        },
+        {
+          "blobGitObject": "ebb12b3a625c6258cc9082bc7e5a7fc6e356848b",
+          "mode": "100644",
+          "path": "site/assets/social/109-natural-language-measurement-is-a-midi2-instrument-1ec500198741.jpg"
+        },
+        {
+          "blobGitObject": "243477f6b5d03469d5796165af83285fd57a30a0",
+          "mode": "100644",
+          "path": "site/assets/social/110-three-run-semantic-drift-calculus-ce2c3993aa2f.jpg"
+        },
+        {
+          "blobGitObject": "03821637c7f6a7b1a4b24d38bb556f2f21278bcb",
+          "mode": "100644",
+          "path": "site/assets/social/111-evidence-cohorts-as-publication-units-0463cd404289.jpg"
+        },
+        {
+          "blobGitObject": "f6a882792781e0599cb5b88f8bea9ebcb9bcf092",
+          "mode": "100644",
+          "path": "site/assets/social/112-skill-and-maintenance-capabilities-are-kit-owned-fb58e7d6bc56.jpg"
+        },
+        {
+          "blobGitObject": "2d3334332a27d48967087cfd5fedd53d455d4190",
+          "mode": "100644",
+          "path": "site/assets/social/113-governance-becomes-an-executable-scenographic-policy-afa5318fdd98.jpg"
+        },
+        {
+          "blobGitObject": "ab7b24d15423a47405b9374d7fe590d2025a271c",
+          "mode": "100644",
+          "path": "site/assets/social/114-server-side-semantic-proposals-mac-and-linux-one-runtime-462f4631ce0d.jpg"
+        },
+        {
+          "blobGitObject": "a4c8d22725d33ffd0bee0101470a10e5c9196627",
+          "mode": "100644",
+          "path": "site/assets/social/115-semantic-browser-is-a-governed-midi2-and-fountainstore-instrument-523269e15f52.jpg"
+        },
+        {
+          "blobGitObject": "888509b33b6ca68b5df887a4355f80b763059c97",
+          "mode": "100644",
+          "path": "site/assets/social/116-fountainstore-owned-estate-edge-and-acme-promotion-9aae956137ca.jpg"
+        },
+        {
+          "blobGitObject": "7677d91bda2803dd38520923ca4932d58b62e98b",
+          "mode": "100644",
+          "path": "site/assets/social/117-fountainstore-snapshot-export-and-git-recovery-projection-0bd862644a92.jpg"
+        },
+        {
+          "blobGitObject": "4166a9fb87b29195ca1b445311d569cd201b6aa9",
+          "mode": "100644",
+          "path": "site/assets/social/118-european-cybersecurity-profile-198560edc67e.jpg"
+        },
+        {
+          "blobGitObject": "774c34f3c966ca586b6a97fbe567a9d9ad1b5ea0",
+          "mode": "100644",
+          "path": "site/assets/social/119-scenario-pipeline-factory-33656d341c5f.jpg"
+        },
+        {
+          "blobGitObject": "3cdee5fadfba0abc1e8e5ac6f5275b55ceff8fd4",
+          "mode": "100644",
+          "path": "site/assets/social/120-internal-triadic-peer-dialogue-921c35e002c3.jpg"
+        },
+        {
+          "blobGitObject": "4c712142c1e783d12fdeb6fd4531feb4a07bf561",
+          "mode": "100644",
+          "path": "site/assets/social/121-dynamic-midi2-instrument-factory-f63e065aa698.jpg"
+        },
+        {
+          "blobGitObject": "f94dde777661d886b8f34a3f9f31483552bcc5bb",
+          "mode": "100644",
+          "path": "site/assets/social/122-governed-semantic-transformation-instrument-92f005a1ae0d.jpg"
+        },
+        {
+          "blobGitObject": "a0a86a5526f0a0dd14665f8300f66fc8d09343aa",
+          "mode": "100644",
+          "path": "site/assets/social/133-csound-auv3-instrument-boundary.jpg"
+        },
+        {
+          "blobGitObject": "ba3edeff6a1abfb613c827d0d04b46b5cf8c496f",
+          "mode": "100644",
+          "path": "site/assets/social/137-teatro-web-reframe-materialization.jpg"
+        },
+        {
+          "blobGitObject": "07ca04bf3ccae12c16f002df7a47a6918af0f64c",
+          "mode": "100644",
+          "path": "site/assets/social/140-estatepublisher-ip-network-topology-mutator.jpg"
+        },
+        {
+          "blobGitObject": "25bd463c9af9dd675dd9b1f68dc05a2fa60e1d35",
+          "mode": "100644",
+          "path": "site/assets/social/141-machine-midi2-instrument-admission.svg"
+        },
+        {
+          "blobGitObject": "e2d907a6cae8de9c0d5b734c9e63e7daa4ae995e",
+          "mode": "100644",
+          "path": "site/assets/social/142-fountainauthkit-governed-authorization-authority.svg"
+        },
+        {
+          "blobGitObject": "4687d4fb9083304c9b490b821c73a6e79e4bedd8",
+          "mode": "100644",
+          "path": "site/assets/social/45-copilot-reading-surface-and-typography-343a632ce56d.jpg"
+        },
+        {
+          "blobGitObject": "c20e7bfea71f7f27c1539726279718963f2785e3",
+          "mode": "100644",
+          "path": "site/assets/social/79-default-semantic-manuscript-projection-4afedbfa98da.jpg"
+        },
+        {
+          "blobGitObject": "1441622282f7c951b75ff6e2d31a4dfd074ee841",
+          "mode": "100644",
+          "path": "site/assets/social/82-remote-midi2-reading-room-01c002ecb97e.jpg"
+        },
+        {
+          "blobGitObject": "97b6cd982adb2dd79cb38168f5e9c388a47630ed",
+          "mode": "100644",
+          "path": "site/assets/social/84-governed-reframe-design-mock-566e56b80e18.jpg"
+        },
+        {
+          "blobGitObject": "23e0958aabb23245c395cb67b67ed88a47779d6e",
+          "mode": "100644",
+          "path": "site/assets/social/85-storify-source-auto-reads-a-defined-whole-e6762a4e127a.jpg"
+        },
+        {
+          "blobGitObject": "cf2262a260a101692adcadaa0e52a532e904bbb6",
+          "mode": "100644",
+          "path": "site/assets/social/87-midi2-monitor-is-the-live-event-mirror-1e0b3589029d.jpg"
+        },
+        {
+          "blobGitObject": "bc79df128a7bfa7befcce339cd7627033d6e9546",
+          "mode": "100644",
+          "path": "site/assets/social/88-codexkit-is-a-governed-codex-app-server-boundary-4f32aa90d3cf.jpg"
+        },
+        {
+          "blobGitObject": "8385916beca8a3a3e4df00fada11675067f582ed",
+          "mode": "100644",
+          "path": "site/assets/social/89-codex-auth-instrument-is-the-copilot-login-surface-8883ee98e31f.jpg"
+        },
+        {
+          "blobGitObject": "463a77bd97eecac9071d2a8f38d5a47c74380444",
+          "mode": "100644",
+          "path": "site/assets/social/90-independent-security-review-is-a-separate-acceptance-boundary-8d3d0ba94d56.jpg"
+        },
+        {
+          "blobGitObject": "fbfe7648a131c7a22876d029c4bc11a35845234e",
+          "mode": "100644",
+          "path": "site/assets/social/91-fcis-kit-instrument-store-is-the-capability-plane-d3526f91d9be.jpg"
+        },
+        {
+          "blobGitObject": "8aef316f2b1d43c189d48038e717e3d25747921f",
+          "mode": "100644",
+          "path": "site/assets/social/92-fountain-coach-publication-estate-5d199dccac29.jpg"
+        },
+        {
+          "blobGitObject": "21bb345074abed214d4ea765d4fcdb41b91ab606",
+          "mode": "100644",
+          "path": "site/assets/social/fountain-coach-governance-estate.jpg"
+        },
+        {
+          "blobGitObject": "ae644a7c4ca77743eec75aeeb9bc056e0fa9afdf",
+          "mode": "100644",
+          "path": "site/chapter-status.json"
+        },
+        {
+          "blobGitObject": "01c7b6799280fe8b4c975603108973d077c0c0e1",
+          "mode": "100644",
+          "path": "site/chapters/00-abstract/index.html"
+        },
+        {
+          "blobGitObject": "94a3dead6dfc774461ef147f96de539b78bb7cc6",
+          "mode": "100644",
+          "path": "site/chapters/01-reading-index/index.html"
+        },
+        {
+          "blobGitObject": "6b95a5f5f2473c9b6811f4e1e010f09af78adb51",
+          "mode": "100644",
+          "path": "site/chapters/02-development-history/index.html"
+        },
+        {
+          "blobGitObject": "6d5080c8d917d75ac28ce3b6a8ffcd650f58971a",
+          "mode": "100644",
+          "path": "site/chapters/03-current-state-and-problem/index.html"
+        },
+        {
+          "blobGitObject": "ee0aca6ad9a04ae8b83ee48ac3531d43de11279d",
+          "mode": "100644",
+          "path": "site/chapters/04-target-architecture/index.html"
+        },
+        {
+          "blobGitObject": "22b7cb9a31fbb88d0f016b07c20898ae5162c2a7",
+          "mode": "100644",
+          "path": "site/chapters/05-grounding-contract/index.html"
+        },
+        {
+          "blobGitObject": "ce37b316b74ef27447450ab77b4abbcc86f3bfb4",
+          "mode": "100644",
+          "path": "site/chapters/06-refactoring-program/index.html"
+        },
+        {
+          "blobGitObject": "a683b2c91fe2d094be60609f9d8ab107a0e9f868",
+          "mode": "100644",
+          "path": "site/chapters/07-agent-operating-guide/index.html"
+        },
+        {
+          "blobGitObject": "4e2c32dec71c82aa7b298a12268ee7c36a960e3a",
+          "mode": "100644",
+          "path": "site/chapters/08-validation-and-acceptance/index.html"
+        },
+        {
+          "blobGitObject": "e7936387b40e199a60d52b695ca84c3529870e88",
+          "mode": "100644",
+          "path": "site/chapters/09-compatibility-and-future-evolution/index.html"
+        },
+        {
+          "blobGitObject": "79073c5b82bf671aea5982b7e1f6d0238ada0663",
+          "mode": "100644",
+          "path": "site/chapters/10-copilot-implementation-extension/index.html"
+        },
+        {
+          "blobGitObject": "1d77aef3177a8c3348186ea447d75eb7fcfdc7ab",
+          "mode": "100644",
+          "path": "site/chapters/100-semantic-scenographer/index.html"
+        },
+        {
+          "blobGitObject": "12d59e7961c05b57f7a49ea881a514b5d9169ee5",
+          "mode": "100644",
+          "path": "site/chapters/101-teatro-stage-engine-semantic-scenography/index.html"
+        },
+        {
+          "blobGitObject": "c6de724238c1bce2df2476ca134b8d1ffce16e80",
+          "mode": "100644",
+          "path": "site/chapters/102-semantic-inference-execution-session-and-latency-governance/index.html"
+        },
+        {
+          "blobGitObject": "c3720fbf90ee8ea395ec4419863de6e504d61ae5",
+          "mode": "100644",
+          "path": "site/chapters/103-fcis-kit-semantic-factory-and-wired-instrument-event-stream/index.html"
+        },
+        {
+          "blobGitObject": "c7bb0d713614b69770775ecc262262ba16baf454",
+          "mode": "100644",
+          "path": "site/chapters/104-midi2-event-time-jitter-and-asynchronous-completion-governance/index.html"
+        },
+        {
+          "blobGitObject": "170881c2276d14d5f4354feb4a9a4027c43b069c",
+          "mode": "100644",
+          "path": "site/chapters/105-semantic-scenographer-one-spatial-thought/index.html"
+        },
+        {
+          "blobGitObject": "51ea06d2eedf07c8d164e631734c2775388fded2",
+          "mode": "100644",
+          "path": "site/chapters/106-teatro-midi2-monitor-canonical-runtime-projection/index.html"
+        },
+        {
+          "blobGitObject": "21957fd8e4f7f5e87e1b6851c94dcb4b0738af7c",
+          "mode": "100644",
+          "path": "site/chapters/107-creating-the-canonical-teatro-stage-composition-layer/index.html"
+        },
+        {
+          "blobGitObject": "fb2828d2b1edfda959696e374770ae11ab4e84cb",
+          "mode": "100644",
+          "path": "site/chapters/108-reframe-is-a-swift-native-cross-platform-runtime/index.html"
+        },
+        {
+          "blobGitObject": "095f61d5ce497915aa26ec0258d9cf9c7eeb7c33",
+          "mode": "100644",
+          "path": "site/chapters/109-natural-language-measurement-is-a-midi2-instrument/index.html"
+        },
+        {
+          "blobGitObject": "ad2586e31c792eb25df3c60d9ac6ac5428dc5f33",
+          "mode": "100644",
+          "path": "site/chapters/11-grounding-as-a-given/index.html"
+        },
+        {
+          "blobGitObject": "51cb2063967340acda912145c3200e69c9e628d6",
+          "mode": "100644",
+          "path": "site/chapters/110-three-run-semantic-drift-calculus/index.html"
+        },
+        {
+          "blobGitObject": "33912986cc9e6615547ac2bdd617af889631a491",
+          "mode": "100644",
+          "path": "site/chapters/111-evidence-cohorts-as-publication-units/index.html"
+        },
+        {
+          "blobGitObject": "a5c1f90fd2ceb03bb70445f55a8589e766b63ce2",
+          "mode": "100644",
+          "path": "site/chapters/112-skill-and-maintenance-capabilities-are-kit-owned/index.html"
+        },
+        {
+          "blobGitObject": "a501249bf893034b3c8c562c4d9b097da2d65cb0",
+          "mode": "100644",
+          "path": "site/chapters/113-governance-becomes-an-executable-scenographic-policy/index.html"
+        },
+        {
+          "blobGitObject": "a0169f2da002ed24817d6f845b6c93fad003af21",
+          "mode": "100644",
+          "path": "site/chapters/114-server-side-semantic-proposals-mac-and-linux-one-runtime/index.html"
+        },
+        {
+          "blobGitObject": "9efba30346282e3ccd1ae5463dcf197248f8390e",
+          "mode": "100644",
+          "path": "site/chapters/115-semantic-browser-is-a-governed-midi2-and-fountainstore-instrument/index.html"
+        },
+        {
+          "blobGitObject": "73376f48acdc3b9e9d333916647a9d39a1da59fa",
+          "mode": "100644",
+          "path": "site/chapters/116-fountainstore-owned-estate-edge-and-acme-promotion/index.html"
+        },
+        {
+          "blobGitObject": "24aa27649057b59e9fd94a91a20adc88c9984448",
+          "mode": "100644",
+          "path": "site/chapters/117-fountainstore-snapshot-export-and-git-recovery-projection/index.html"
+        },
+        {
+          "blobGitObject": "da69692cafc3fb0d4b5a17115f794458225764a8",
+          "mode": "100644",
+          "path": "site/chapters/118-european-cybersecurity-profile/index.html"
+        },
+        {
+          "blobGitObject": "569fea4166dbcf2cb04ce99631413788960bdfcc",
+          "mode": "100644",
+          "path": "site/chapters/119-scenario-pipeline-factory/index.html"
+        },
+        {
+          "blobGitObject": "9874c2642c63773aa58f7103922d0a3f00d6c69f",
+          "mode": "100644",
+          "path": "site/chapters/12-animating-truth/index.html"
+        },
+        {
+          "blobGitObject": "ec436213575131ed8a2917fad27ee725c36499ec",
+          "mode": "100644",
+          "path": "site/chapters/120-internal-triadic-peer-dialogue/index.html"
+        },
+        {
+          "blobGitObject": "28b361f6cf7ec0288fc031f6a60b0cdcedb65f14",
+          "mode": "100644",
+          "path": "site/chapters/121-dynamic-midi2-instrument-factory/index.html"
+        },
+        {
+          "blobGitObject": "512613ca033513c567a41cf0270552c967e69c0d",
+          "mode": "100644",
+          "path": "site/chapters/122-governed-semantic-transformation-instrument/index.html"
+        },
+        {
+          "blobGitObject": "f9ab5db22236b21057a6ef8ff966ea09a686d88d",
+          "mode": "100644",
+          "path": "site/chapters/123-commands-must-be-legible-to-reasoning/index.html"
+        },
+        {
+          "blobGitObject": "ebb422e426299ebba827fef4a30a8f3e9d8108a0",
+          "mode": "100644",
+          "path": "site/chapters/124-midi2-timed-webkit-transitions/index.html"
+        },
+        {
+          "blobGitObject": "9ffafe866d092cabf7d7665d90ed79be0ee58ac4",
+          "mode": "100644",
+          "path": "site/chapters/125-store-publication-graph-domain-mapping-and-atomic-route-promotion/index.html"
+        },
+        {
+          "blobGitObject": "c41946408e483be49f0cbdd1e0ad37ec52ba8713",
+          "mode": "100644",
+          "path": "site/chapters/126-fountain-coach-organization-web-projection/index.html"
+        },
+        {
+          "blobGitObject": "49198ac5ffc0e21a44a2f11408d3c20125f46a6c",
+          "mode": "100644",
+          "path": "site/chapters/127-estate-template-publishing-path/index.html"
+        },
+        {
+          "blobGitObject": "000d104f18e088080a0d8fe12b53afb3a0cd3736",
+          "mode": "100644",
+          "path": "site/chapters/128-deployed-estate-webkit-mirror-authority/index.html"
+        },
+        {
+          "blobGitObject": "2fa04635abdd6c77d29a8be7a63f54264e62a22b",
+          "mode": "100644",
+          "path": "site/chapters/129-native-animated-svg-governed-publication-projection/index.html"
+        },
+        {
+          "blobGitObject": "291015fedc3089b708a4837acbfea0144a7310aa",
+          "mode": "100644",
+          "path": "site/chapters/13-storage-and-performance/index.html"
+        },
+        {
+          "blobGitObject": "f2dd72c37b5244368c0a048b0f57a2cd74ffe581",
+          "mode": "100644",
+          "path": "site/chapters/130-human-machine-scenario-naming-is-a-governed-identity-boundary/index.html"
+        },
+        {
+          "blobGitObject": "93e2a30ae97d2b06dbe619d1bbeade400594c835",
+          "mode": "100644",
+          "path": "site/chapters/131-remote-secretstore-authorization-and-approval-sessions/index.html"
+        },
+        {
+          "blobGitObject": "4457a1fa442cec35ab009e1d3cbc2e41b7cbf59e",
+          "mode": "100644",
+          "path": "site/chapters/132-reframe-audiounit-auv3-platform-and-aum-demo-host/index.html"
+        },
+        {
+          "blobGitObject": "814d5a79ef5dc953464e0f19f5fe0286b79aeda5",
+          "mode": "100644",
+          "path": "site/chapters/133-csound-auv3-instrument-boundary/index.html"
+        },
+        {
+          "blobGitObject": "37465c8e43a5dd61124cd2e5ccb8f524ab678091",
+          "mode": "100644",
+          "path": "site/chapters/134-estatepublisher-publication-authority/index.html"
+        },
+        {
+          "blobGitObject": "a423dc31c2d2c2ea73619fa08b50ef83e55fdea1",
+          "mode": "100644",
+          "path": "site/chapters/135-reframe-ipad-scenario-driven-creative-host/index.html"
+        },
+        {
+          "blobGitObject": "9f4ad5ec032e785a5daa39667f69b5a915d0bd0e",
+          "mode": "100644",
+          "path": "site/chapters/136-reframe-web-native-headless-audio-runtime/index.html"
+        },
+        {
+          "blobGitObject": "f443b52d4bd2aede70162360aaf84e3e3c134d9a",
+          "mode": "100644",
+          "path": "site/chapters/137-teatro-web-reframe-materialization/index.html"
+        },
+        {
+          "blobGitObject": "55dcb145e12f02f4d34b26daffdfeb3bbebf004f",
+          "mode": "100644",
+          "path": "site/chapters/138-ear-is-the-web-audio-graphs-midi2-listening-boundary/index.html"
+        },
+        {
+          "blobGitObject": "ef4eb4376187a54308f6f61e9f88a6bf20a196d3",
+          "mode": "100644",
+          "path": "site/chapters/139-owner-trust-root-secretstore-custody-and-recovery/index.html"
+        },
+        {
+          "blobGitObject": "55c4c3efc7d99ac9ca5a1458c8e8beb3f904960d",
+          "mode": "100644",
+          "path": "site/chapters/14-the-beat-and-its-arrangements/index.html"
+        },
+        {
+          "blobGitObject": "412f6273640455f44b78ceda9e8e41f94fc385a7",
+          "mode": "100644",
+          "path": "site/chapters/140-local-developer-cloud-joining-machine-and-estatepublisher/index.html"
+        },
+        {
+          "blobGitObject": "18e52658d512466b8ae37ad9ad8c325eca9e9677",
+          "mode": "100644",
+          "path": "site/chapters/141-each-joining-machine-is-a-governed-midi2-instrument/index.html"
+        },
+        {
+          "blobGitObject": "e0222397ab52c05163a4d3bf6dd229f645d61179",
+          "mode": "100644",
+          "path": "site/chapters/142-fountainauthkit-governed-authorization-authority/index.html"
+        },
+        {
+          "blobGitObject": "a5f0385a17fc7da5d2fe1ea55183fe9600f8bb69",
+          "mode": "100644",
+          "path": "site/chapters/143-simplicity-is-key-one-bootstrap-one-trusted-session/index.html"
+        },
+        {
+          "blobGitObject": "6e0f7661f1a488582b0997bee56d519e8ce1a513",
+          "mode": "100644",
+          "path": "site/chapters/144-fountain-media-service-governed-media-plane/index.html"
+        },
+        {
+          "blobGitObject": "b350002ca77a4990fe946bddc5586517e4299740",
+          "mode": "100644",
+          "path": "site/chapters/145-one-estate-one-publication-state-estatepublisher-and-reframe-semantic-browser/index.html"
+        },
+        {
+          "blobGitObject": "405a492a073163d406c223abc9f90674dcd179d4",
+          "mode": "100644",
+          "path": "site/chapters/146-local-fountainstore-remote-caddy-production-estate/index.html"
+        },
+        {
+          "blobGitObject": "8d55e0bb00860caeed63f74e120f66052663af13",
+          "mode": "100644",
+          "path": "site/chapters/147-local-route-materialization-estatepublisher-preview/index.html"
+        },
+        {
+          "blobGitObject": "c6afb9101df0ce26095df1f0f49a0c132d6093e0",
+          "mode": "100644",
+          "path": "site/chapters/148-production-runtime-artifact-only/index.html"
+        },
+        {
+          "blobGitObject": "cf5bab823c2f8ba8445959f22d52ad0fa303005b",
+          "mode": "100644",
+          "path": "site/chapters/149-remote-codexkit-governed-midi2-peer-instrument/index.html"
+        },
+        {
+          "blobGitObject": "cbb4d8622b9a80dfa5c851c31bd4a1c17c246a11",
+          "mode": "100644",
+          "path": "site/chapters/15-the-situated-copilot/index.html"
+        },
+        {
+          "blobGitObject": "37b378293234238f7fdc28b3da2a6081305507b8",
+          "mode": "100644",
+          "path": "site/chapters/150-one-midi2-instrument-plane-multiple-governed-transports/index.html"
+        },
+        {
+          "blobGitObject": "729084b969fe445571f9654b731a993f7db2d58b",
+          "mode": "100644",
+          "path": "site/chapters/151-csound-teatro-speaking-sound-in-space/index.html"
+        },
+        {
+          "blobGitObject": "3bdad5ff0acae37ff612ea90f75315680f6f89ac",
+          "mode": "100644",
+          "path": "site/chapters/152-the-host-is-the-instrument/index.html"
+        },
+        {
+          "blobGitObject": "69c998055a82834a93a1208374067a536e2ebcf5",
+          "mode": "100644",
+          "path": "site/chapters/153-domain-admission-and-edge-binding-are-separate-governed-capabilities/index.html"
+        },
+        {
+          "blobGitObject": "c477847e4b7690a7268c8750d673ee013e208413",
+          "mode": "100644",
+          "path": "site/chapters/154-domain-neutral-local-model-reasoning-testing/index.html"
+        },
+        {
+          "blobGitObject": "90e684c419a5f0611edec104d29c24646bbf8c13",
+          "mode": "100644",
+          "path": "site/chapters/155-estatepublisher-rest-projection/index.html"
+        },
+        {
+          "blobGitObject": "adf74350c305b5738b4c4707a606f184a69acfb9",
+          "mode": "100644",
+          "path": "site/chapters/156-fcis-156-writer-workflow/index.html"
+        },
+        {
+          "blobGitObject": "0d0cf4f5055adf1bd6a1d39f6acb6b9d2f203d9c",
+          "mode": "100644",
+          "path": "site/chapters/157-the-writer-owns-the-public-domain/index.html"
+        },
+        {
+          "blobGitObject": "1013f2aa25ac2b42e1802da19782adb3024ed8b1",
+          "mode": "100644",
+          "path": "site/chapters/158-publishing-is-not-a-distributed-transaction/index.html"
+        },
+        {
+          "blobGitObject": "25186cf898106c76d758d86a7abf5f398a842045",
+          "mode": "100644",
+          "path": "site/chapters/16-the-timeline-is-the-machine-room/index.html"
+        },
+        {
+          "blobGitObject": "9afafd5de56ed0bfe8a5afe7a00b841dbdbf5487",
+          "mode": "100644",
+          "path": "site/chapters/17-the-score/index.html"
+        },
+        {
+          "blobGitObject": "e3410d335acbd1c9ece2e341132a372919d4daa1",
+          "mode": "100644",
+          "path": "site/chapters/18-the-stage-presents-the-act/index.html"
+        },
+        {
+          "blobGitObject": "221d43d30b207a9ab04191af8821822500937fc5",
+          "mode": "100644",
+          "path": "site/chapters/19-apple-human-interface-guidelines/index.html"
+        },
+        {
+          "blobGitObject": "0a3c41093783224c88e1c582fb804bb3a97d10b3",
+          "mode": "100644",
+          "path": "site/chapters/20-on-device-first-and-the-writers-key/index.html"
+        },
+        {
+          "blobGitObject": "d428c28514c7b8c397dfd9d00747d1037f009b2a",
+          "mode": "100644",
+          "path": "site/chapters/21-training-perspectives/index.html"
+        },
+        {
+          "blobGitObject": "8ba1cddf046b49617d8c6302c6e9015e459062e7",
+          "mode": "100644",
+          "path": "site/chapters/22-no-preferences-only-reasoning/index.html"
+        },
+        {
+          "blobGitObject": "e256e99402a23ff65904428f7a6def0135ed6ffb",
+          "mode": "100644",
+          "path": "site/chapters/23-one-reasoning/index.html"
+        },
+        {
+          "blobGitObject": "d2c1194bb9758330f65ff1d21306880a75a100da",
+          "mode": "100644",
+          "path": "site/chapters/24-the-reasoning-is-an-uncertainty-map/index.html"
+        },
+        {
+          "blobGitObject": "5cc641bc83617411156f103ff74c451d4dc1e592",
+          "mode": "100644",
+          "path": "site/chapters/25-the-copilot-is-the-surface/index.html"
+        },
+        {
+          "blobGitObject": "b273d195a74f9cb4ada3b9f6ef95e1bc78a162bc",
+          "mode": "100644",
+          "path": "site/chapters/26-internals-tune-themselves/index.html"
+        },
+        {
+          "blobGitObject": "5871898e8a47a517b8a01987735bdb0d10f43d63",
+          "mode": "100644",
+          "path": "site/chapters/27-parse-before-you-ask/index.html"
+        },
+        {
+          "blobGitObject": "7ab2cd56f9eeb018d729d499e145a5843128270f",
+          "mode": "100644",
+          "path": "site/chapters/28-a-beat-is-the-question-it-raises/index.html"
+        },
+        {
+          "blobGitObject": "b70026e47915dfee3c18af36591075e5e427b7ed",
+          "mode": "100644",
+          "path": "site/chapters/29-natural-language-measures-storify-interprets/index.html"
+        },
+        {
+          "blobGitObject": "2b57c59fd8731fde9717281c2987c0b9a2b2a744",
+          "mode": "100644",
+          "path": "site/chapters/30-the-living-gazetteer/index.html"
+        },
+        {
+          "blobGitObject": "a784d8da7c1c9ab2aa7d246957535d3b66ac3a04",
+          "mode": "100644",
+          "path": "site/chapters/31-compiled-knowledge/index.html"
+        },
+        {
+          "blobGitObject": "6a0922d73fc7e42c293ef305a898d5008569be5c",
+          "mode": "100644",
+          "path": "site/chapters/32-referenced-knowledge/index.html"
+        },
+        {
+          "blobGitObject": "8c5fe82c02d63d4743ae40d6881fdccd28331141",
+          "mode": "100644",
+          "path": "site/chapters/33-a-want-is-a-gap-in-a-ledger/index.html"
+        },
+        {
+          "blobGitObject": "612d013bc572877a5c2fc97dae2a4ab4bf4f3e68",
+          "mode": "100644",
+          "path": "site/chapters/34-a-question-that-leaves-the-work/index.html"
+        },
+        {
+          "blobGitObject": "7ce5b5475ef3744ffd10cb694f37886aa63d964c",
+          "mode": "100644",
+          "path": "site/chapters/35-deep-search/index.html"
+        },
+        {
+          "blobGitObject": "32ddbc11773fabea26cf8f18408908084d4e48da",
+          "mode": "100644",
+          "path": "site/chapters/36-every-gap-keeps-its-address/index.html"
+        },
+        {
+          "blobGitObject": "224ea7795615d8b8b820166c051aec514c101473",
+          "mode": "100644",
+          "path": "site/chapters/37-copilot-capability-governance/index.html"
+        },
+        {
+          "blobGitObject": "febd280a746ba3a18558621a0cdf71739a9a5ef7",
+          "mode": "100644",
+          "path": "site/chapters/38-copilot-capability-audit-skill/index.html"
+        },
+        {
+          "blobGitObject": "584de48e7cce62d6a2b3fe88d8453ee6af479e33",
+          "mode": "100644",
+          "path": "site/chapters/39-a-model-cannot-be-told-what-it-cannot-do/index.html"
+        },
+        {
+          "blobGitObject": "91026b7745bb79be207ba03b3be0048640aa1995",
+          "mode": "100644",
+          "path": "site/chapters/40-a-citation-is-a-promise-someone-can-check/index.html"
+        },
+        {
+          "blobGitObject": "80f90d866f77eacbce895bb5053add64530cea02",
+          "mode": "100644",
+          "path": "site/chapters/41-one-retrieval-two-directions/index.html"
+        },
+        {
+          "blobGitObject": "1acf82eb7144f697984fcbcb12bb65110248aa47",
+          "mode": "100644",
+          "path": "site/chapters/42-what-is-already-recorded-is-read/index.html"
+        },
+        {
+          "blobGitObject": "42ee410a9697d8aa844d55c2dea6c6e1ca7210ac",
+          "mode": "100644",
+          "path": "site/chapters/43-the-released-surface-is-a-named-build/index.html"
+        },
+        {
+          "blobGitObject": "58074580370e410689fce9f405a28dda5e4cdd87",
+          "mode": "100644",
+          "path": "site/chapters/44-publication-and-source-policy/index.html"
+        },
+        {
+          "blobGitObject": "5950ad4a2a6c4efbe0a7710c5747e8a23fdcc007",
+          "mode": "100644",
+          "path": "site/chapters/45-copilot-reading-surface-and-typography/index.html"
+        },
+        {
+          "blobGitObject": "172c20fdb34541c3b5877afa25c449a1a8fde993",
+          "mode": "100644",
+          "path": "site/chapters/46-dynamic-grounding/index.html"
+        },
+        {
+          "blobGitObject": "ceb8151f45ffebead35521ba6aa4a5d96b80bc98",
+          "mode": "100644",
+          "path": "site/chapters/47-situated-mixed-initiative-interaction/index.html"
+        },
+        {
+          "blobGitObject": "f629bf3ff8206dffd1bd5e7901bad294ad23128f",
+          "mode": "100644",
+          "path": "site/chapters/48-a-service-is-a-fact-not-a-symptom/index.html"
+        },
+        {
+          "blobGitObject": "35ad357f7e81bb809f1a5c4f038df0f472c2ed3e",
+          "mode": "100644",
+          "path": "site/chapters/49-one-definition-two-projections/index.html"
+        },
+        {
+          "blobGitObject": "ed24dcb830f84ea7299b34016396875c4fdf9f8e",
+          "mode": "100644",
+          "path": "site/chapters/50-text-is-stored-so-it-can-be-pointed-at/index.html"
+        },
+        {
+          "blobGitObject": "f289d87ef823b2ec6c37a62f35c0ca1450862734",
+          "mode": "100644",
+          "path": "site/chapters/51-one-decision-decides-the-lane/index.html"
+        },
+        {
+          "blobGitObject": "4b79fc8938912910bf474335d2b6ecfcca709276",
+          "mode": "100644",
+          "path": "site/chapters/52-the-pencil-belongs-to-the-writer/index.html"
+        },
+        {
+          "blobGitObject": "db0b6aa4316e83baa09ab7863be573eb85d694cd",
+          "mode": "100644",
+          "path": "site/chapters/53-a-selection-snaps-to-meaning/index.html"
+        },
+        {
+          "blobGitObject": "24b0b37fa74d98cc966b191644c36917a7bec106",
+          "mode": "100644",
+          "path": "site/chapters/54-the-writer-does-not-manage-the-projection/index.html"
+        },
+        {
+          "blobGitObject": "97309fee4a2dd3ab09e27ce5b1d9693214a28940",
+          "mode": "100644",
+          "path": "site/chapters/55-one-store-authority-across-repositories/index.html"
+        },
+        {
+          "blobGitObject": "f6775288e535df98b1dd05b12dceeec064f192ed",
+          "mode": "100644",
+          "path": "site/chapters/56-the-book-library-is-a-portable-source-provider/index.html"
+        },
+        {
+          "blobGitObject": "b0e3e1916b4d9aca501f17a163d786152e2dd449",
+          "mode": "100644",
+          "path": "site/chapters/57-the-writer-enters-by-intention/index.html"
+        },
+        {
+          "blobGitObject": "81f84ffe2475b7b64cc544061c3348cabed82315",
+          "mode": "100644",
+          "path": "site/chapters/58-open-turn-mediation-protocol/index.html"
+        },
+        {
+          "blobGitObject": "5bbf1b79f432916dc606d9002daf91af15db76c5",
+          "mode": "100644",
+          "path": "site/chapters/59-copilot-initiated-library-curation/index.html"
+        },
+        {
+          "blobGitObject": "46c57068d49e8f0bc5b4669286b8fe7379348692",
+          "mode": "100644",
+          "path": "site/chapters/60-the-fountain-editor-is-the-project-surface/index.html"
+        },
+        {
+          "blobGitObject": "8858456f110221fc4c58e2c113b784da246037c3",
+          "mode": "100644",
+          "path": "site/chapters/61-the-fountain-project-round-trip/index.html"
+        },
+        {
+          "blobGitObject": "e478532ec18b6cca73efaf739f1521023b0af966",
+          "mode": "100644",
+          "path": "site/chapters/62-reframe-maintenance-control-plane/index.html"
+        },
+        {
+          "blobGitObject": "c0823b7cbfde8043aaa6433cdfcaa04481311a97",
+          "mode": "100644",
+          "path": "site/chapters/63-fountain-maintenance-kit/index.html"
+        },
+        {
+          "blobGitObject": "b33c3372515df9a970e5b94c1001cc51e81c8e10",
+          "mode": "100644",
+          "path": "site/chapters/64-fountain-project-kit-durable-draft-custody/index.html"
+        },
+        {
+          "blobGitObject": "dd3aa33caf94880a529a81e33df5ff4e8be9ddcc",
+          "mode": "100644",
+          "path": "site/chapters/65-the-copilot-as-writing-coach/index.html"
+        },
+        {
+          "blobGitObject": "3ac496edba24a7d1aa5c98b4587903c7307b4080",
+          "mode": "100644",
+          "path": "site/chapters/66-fountain-image-publication-kit/index.html"
+        },
+        {
+          "blobGitObject": "c85be4af2787809d060197d3abc864af72037c3f",
+          "mode": "100644",
+          "path": "site/chapters/67-fountain-composer-kit-remote-attachment-custody/index.html"
+        },
+        {
+          "blobGitObject": "bc76269d1a96a6930971868b8a401af3b03dc37f",
+          "mode": "100644",
+          "path": "site/chapters/68-the-reframe-e2e-scenario-is-the-publication-unit/index.html"
+        },
+        {
+          "blobGitObject": "dff67ec5f91bd44ee8a102be9bf8ab279ef04365",
+          "mode": "100644",
+          "path": "site/chapters/69-the-book-of-reframe-is-a-dual-projection/index.html"
+        },
+        {
+          "blobGitObject": "b45dcef7324606d71e540ed63d2047d4e2d7f135",
+          "mode": "100644",
+          "path": "site/chapters/70-external-midi2-control-of-reframe/index.html"
+        },
+        {
+          "blobGitObject": "64523a64488657dbe4e1f387aa2ac73434d0ff40",
+          "mode": "100644",
+          "path": "site/chapters/71-reframe-to-reframe-software-peer-acceptance/index.html"
+        },
+        {
+          "blobGitObject": "3d5f91704566c19254c90d633fb208bfb6213df9",
+          "mode": "100644",
+          "path": "site/chapters/72-midi2-peer-projections-and-capacity-admission/index.html"
+        },
+        {
+          "blobGitObject": "c0776423e113afc8fd25f8bc9ab2bcee47e7328c",
+          "mode": "100644",
+          "path": "site/chapters/73-reframe-scenario-development-cycle/index.html"
+        },
+        {
+          "blobGitObject": "e42cb4ef8217e2931834e7ebc1db26c1b8b4d9d6",
+          "mode": "100644",
+          "path": "site/chapters/74-private-image-prompt-history/index.html"
+        },
+        {
+          "blobGitObject": "0b0e0fd11ffe4d151a4e9367741611d4c49dcfb4",
+          "mode": "100644",
+          "path": "site/chapters/75-scenario-run-ownership-and-non-interference/index.html"
+        },
+        {
+          "blobGitObject": "31ad04814684063a8be947f918336619ecac7f42",
+          "mode": "100644",
+          "path": "site/chapters/76-beat-movement-and-uncertainty-overlay/index.html"
+        },
+        {
+          "blobGitObject": "21c43041a9b2d245beaa26a578ea9196a620536f",
+          "mode": "100644",
+          "path": "site/chapters/77-swift-midi2-scenario-runtime/index.html"
+        },
+        {
+          "blobGitObject": "b887c96e1ee39d4ba580d601ee58486492592d33",
+          "mode": "100644",
+          "path": "site/chapters/78-scenario-driven-development-as-org-infrastructure/index.html"
+        },
+        {
+          "blobGitObject": "72a2f7221fdacc0c2777f34393ed4707c9165476",
+          "mode": "100644",
+          "path": "site/chapters/79-default-semantic-manuscript-projection/index.html"
+        },
+        {
+          "blobGitObject": "19e5f6738d241ba80c1d4263e9ed32cb2f3b50c4",
+          "mode": "100644",
+          "path": "site/chapters/80-independent-governance-publication/index.html"
+        },
+        {
+          "blobGitObject": "5913fd5a9b0ebf1b81dc80bff8812557eef84278",
+          "mode": "100644",
+          "path": "site/chapters/81-universal-midi2-command-plane/index.html"
+        },
+        {
+          "blobGitObject": "9f16031b1881aab9d781ca562dd7f66f1409cf7b",
+          "mode": "100644",
+          "path": "site/chapters/82-remote-midi2-reading-room/index.html"
+        },
+        {
+          "blobGitObject": "8fe9af3b6940c6d88c6e31de6b2cc041068422bc",
+          "mode": "100644",
+          "path": "site/chapters/83-conversational-scenario-authoring/index.html"
+        },
+        {
+          "blobGitObject": "5d2882d290423e6f99154ea79766ccee37da57d8",
+          "mode": "100644",
+          "path": "site/chapters/84-governed-reframe-design-mock/index.html"
+        },
+        {
+          "blobGitObject": "c352ac2a12ba47705f356ad4d594e2d5bdb66254",
+          "mode": "100644",
+          "path": "site/chapters/85-storify-source-auto-reads-a-defined-whole/index.html"
+        },
+        {
+          "blobGitObject": "f45b38f9e65892012915f37a78a027032c254b30",
+          "mode": "100644",
+          "path": "site/chapters/86-apple-native-semantic-pipeline-is-one-midi2-graph/index.html"
+        },
+        {
+          "blobGitObject": "197bfd1a8104381ef40370b7f1d9d9dcf903b0e3",
+          "mode": "100644",
+          "path": "site/chapters/87-midi2-monitor-is-the-live-event-mirror/index.html"
+        },
+        {
+          "blobGitObject": "64c85dd1351c563bd711c60f630d269375f06cdd",
+          "mode": "100644",
+          "path": "site/chapters/88-codexkit-is-a-governed-codex-app-server-boundary/index.html"
+        },
+        {
+          "blobGitObject": "0b98f4606139c3a69fbdacaaeb2563e2d512f476",
+          "mode": "100644",
+          "path": "site/chapters/89-codex-auth-instrument-is-the-copilot-login-surface/index.html"
+        },
+        {
+          "blobGitObject": "22487c5c4ab9c2978a970faf188c5cd139ed3889",
+          "mode": "100644",
+          "path": "site/chapters/90-independent-security-review-is-a-separate-acceptance-boundary/index.html"
+        },
+        {
+          "blobGitObject": "a06c2c42ffe164106cd1c52653d1c019e9167bb2",
+          "mode": "100644",
+          "path": "site/chapters/91-fcis-kit-instrument-store-is-the-capability-plane/index.html"
+        },
+        {
+          "blobGitObject": "bf4e12ce91c419f8b9a924a2f99ee4ae7adf4de4",
+          "mode": "100644",
+          "path": "site/chapters/92-fountain-coach-publication-estate/index.html"
+        },
+        {
+          "blobGitObject": "a8aea974a6d4a8a56e2c606bb79fcd300d172fa2",
+          "mode": "100644",
+          "path": "site/chapters/93-instrument-creation-is-a-governed-promotion-path/index.html"
+        },
+        {
+          "blobGitObject": "185a02cc1d6368753541c8eae7dad6ffa5ba0c00",
+          "mode": "100644",
+          "path": "site/chapters/94-credentialed-infrastructure-operations-and-provider-adapters/index.html"
+        },
+        {
+          "blobGitObject": "c596b5876395fa7f2c204bc0057053428b9e5daf",
+          "mode": "100644",
+          "path": "site/chapters/95-fountainstore-headless-linux-authority/index.html"
+        },
+        {
+          "blobGitObject": "7e4512abb06b2549301309990a8ff1ab989f593a",
+          "mode": "100644",
+          "path": "site/chapters/96-swiftacmekit-is-a-provider-neutral-certificate-automation-boundary/index.html"
+        },
+        {
+          "blobGitObject": "ceeea79c0a2f8f82b40d92510f250e77b6526fe3",
+          "mode": "100644",
+          "path": "site/chapters/97-provider-neutral-host-bootstrap-and-enrollment/index.html"
+        },
+        {
+          "blobGitObject": "ef119ac4ce946590f84ed93cfad293df8bb6bed1",
+          "mode": "100644",
+          "path": "site/chapters/98-apple-native-markdown-presentation-and-transferable-engraving-rules/index.html"
+        },
+        {
+          "blobGitObject": "e477ccb0c70e80262a60b082d26bbe39a3c98146",
+          "mode": "100644",
+          "path": "site/chapters/99-decoupled-manuscript-instruments/index.html"
+        },
+        {
+          "blobGitObject": "aca49435a991dee172d5c644e66cb347feed9c58",
+          "mode": "100644",
+          "path": "site/compliance/index.html"
+        },
+        {
+          "blobGitObject": "434a1c6ae12c308bbb99d69574adcba86a974d69",
+          "mode": "100644",
+          "path": "site/copyright/index.html"
+        },
+        {
+          "blobGitObject": "434699f3a799c87b2b8cf5f1e6901681ab34bdd2",
+          "mode": "100644",
+          "path": "site/estate-route-map.json"
+        },
+        {
+          "blobGitObject": "b686c5807ce340521ab2acd56987ae3ec3372fea",
+          "mode": "100644",
+          "path": "site/index.html"
+        },
+        {
+          "blobGitObject": "c4ff03b0b3af58c27c98d5328efc9e2455cd0562",
+          "mode": "100644",
+          "path": "site/legal/index.html"
+        },
+        {
+          "blobGitObject": "aa1d6894918cac75689b3ddd1724d169d0810b3d",
+          "mode": "100644",
+          "path": "site/privacy/index.html"
+        },
+        {
+          "blobGitObject": "0e60c579c9bdf22e1eaaeeb4d7db38600ad826e4",
+          "mode": "100644",
+          "path": "site/publication-manifest.json"
+        },
+        {
+          "blobGitObject": "3a383f6ff3c52f65f48001c1b9add942d61f95b4",
+          "mode": "100644",
+          "path": "site/route-manifest.json"
+        },
+        {
+          "blobGitObject": "90da1191aba58247acf46747fd99b5d640007f25",
+          "mode": "100644",
+          "path": "site/route-map.yaml"
+        }
+      ]
+    },
+    {
+      "blockers": [
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": "34f75755f1d77448926c4b27d4cee964b25df663",
+      "candidateSourceRootTree": "657a7cdebbf9a2efdfa940f8875c194ab9e08726",
+      "currentOwnerHead": "34f75755f1d77448926c4b27d4cee964b25df663",
+      "deploymentRole": "technical-catalogue",
+      "gitSourceRoot": "site",
+      "gitTrackedBlobCount": 19,
+      "gitTrackedHTMLCount": 4,
+      "historicalRootRevisionCandidatesExamined": 1,
+      "matchedHistoricalRevisions": [
+        "34f75755f1d77448926c4b27d4cee964b25df663"
+      ],
+      "ownerRepo": "Fountain-Coach/instruments.fountain.coach",
+      "owningRepository": "https://github.com/Fountain-Coach/instruments.fountain.coach",
+      "publicHost": "instruments.fountain.coach",
+      "publicWitnessHost": "instruments.fountain.coach",
+      "publicWitnessSHA256": "293b057932a9886157d1d7f2d260738cac3c7d8d64e8619ff9ea2da8655dbd0b",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/",
+      "routePrefix": "/",
+      "sampleRoutes": [
+        {
+          "candidateSHA256": "293b057932a9886157d1d7f2d260738cac3c7d8d64e8619ff9ea2da8655dbd0b",
+          "matches": true,
+          "publicSHA256": "293b057932a9886157d1d7f2d260738cac3c7d8d64e8619ff9ea2da8655dbd0b",
+          "route": "/",
+          "sourceFile": "site/index.html"
+        },
+        {
+          "candidateSHA256": "56a65da13f63a2c8c568e9d8f9ecfcfe92bafd0f69b02fcfab8018893d1a11a0",
+          "matches": true,
+          "publicSHA256": "56a65da13f63a2c8c568e9d8f9ecfcfe92bafd0f69b02fcfab8018893d1a11a0",
+          "route": "/instruments/codex-auth-instrument/",
+          "sourceFile": "site/instruments/codex-auth-instrument/index.html"
+        },
+        {
+          "candidateSHA256": "3c76f6f3437e3c6dc063cac9bcd8e753783e9b628a372e748b42b39927eede73",
+          "matches": true,
+          "publicSHA256": "3c76f6f3437e3c6dc063cac9bcd8e753783e9b628a372e748b42b39927eede73",
+          "route": "/instruments/csound-auv3/",
+          "sourceFile": "site/instruments/csound-auv3/index.html"
+        },
+        {
+          "candidateSHA256": "06cb3c060553a9279debcee7e463bfaf8d3667a0e683a87e4f9e60d3d5011d7c",
+          "matches": true,
+          "publicSHA256": "06cb3c060553a9279debcee7e463bfaf8d3667a0e683a87e4f9e60d3d5011d7c",
+          "route": "/instruments/semantic-browser/",
+          "sourceFile": "site/instruments/semantic-browser/index.html"
+        }
+      ],
+      "sourceAssetManifestSHA256": "edcdffca86617a2bb2270630d44b5ac449d2e7ff5dbb3ae90e438ad37a0644de",
+      "sourceDocument": "site/index.html",
+      "sourceFiles": [
+        {
+          "blobGitObject": "f46b8135c182c861691db1d250024de86d73d3d7",
+          "mode": "100644",
+          "path": "site/assets/catalog-grid-social.png"
+        },
+        {
+          "blobGitObject": "52fff7183d0cefcce7770ede7af7d07129a5794f",
+          "mode": "100644",
+          "path": "site/assets/codex-login-instrument-icon.svg"
+        },
+        {
+          "blobGitObject": "5cb0c9917a5477bcc49b56bc5a4c05f22c4a8ca4",
+          "mode": "100644",
+          "path": "site/assets/csound-auv3-instrument-social.png"
+        },
+        {
+          "blobGitObject": "eee2a9bd9765b68bd9a49fc8e445066e117aabfa",
+          "mode": "100644",
+          "path": "site/assets/csound-auv3-instrument.svg"
+        },
+        {
+          "blobGitObject": "7df2984d9c01987532e9063fac8bb3ed381832c9",
+          "mode": "100644",
+          "path": "site/assets/estate-core.css"
+        },
+        {
+          "blobGitObject": "6f9e857d5036d3199eb6717c97319aed55ec3d99",
+          "mode": "100644",
+          "path": "site/assets/estate-core.js"
+        },
+        {
+          "blobGitObject": "55ed320b611b069d25c704a7fbc1cba163c7fae4",
+          "mode": "100644",
+          "path": "site/assets/fountain-coach-logo-transparent.png"
+        },
+        {
+          "blobGitObject": "95219e846c025ac92c59deda3ae13a3ff68eaccb",
+          "mode": "100644",
+          "path": "site/assets/reframe-codex-auth-instrument-social.png"
+        },
+        {
+          "blobGitObject": "988c577249c42fcb9a198fea00bb6cb104e4e508",
+          "mode": "100644",
+          "path": "site/assets/reframe-codex-auth-instrument.svg"
+        },
+        {
+          "blobGitObject": "ce23920a63a6501e9d91b01b41dc9d54032fafc4",
+          "mode": "100644",
+          "path": "site/assets/semantic-browser-instrument-icon.svg"
+        },
+        {
+          "blobGitObject": "b6e75b59f6491306e75b1f8251bb205b1017a01b",
+          "mode": "100644",
+          "path": "site/assets/semantic-browser-instrument-social.png"
+        },
+        {
+          "blobGitObject": "c7235ed5a9b34e9e21f47b142713001b461fb1e4",
+          "mode": "100644",
+          "path": "site/assets/semantic-browser-instrument.svg"
+        },
+        {
+          "blobGitObject": "8be4e101dbfe59493aaa7f6f0cb70dbd9f9be271",
+          "mode": "100644",
+          "path": "site/assets/site.css"
+        },
+        {
+          "blobGitObject": "1fae6ada689e3f192610322be2fa3e898aba7a91",
+          "mode": "100644",
+          "path": "site/assets/site.js"
+        },
+        {
+          "blobGitObject": "bc4c82acb5fd97078601e80b7b2cb7e00d247f46",
+          "mode": "100644",
+          "path": "site/index.html"
+        },
+        {
+          "blobGitObject": "a061674a597e818f1edbc2b00e785e2a7944aa86",
+          "mode": "100644",
+          "path": "site/instruments/codex-auth-instrument/index.html"
+        },
+        {
+          "blobGitObject": "91d2d95619c9972dc63616b4d0dc3f9ef876fc32",
+          "mode": "100644",
+          "path": "site/instruments/csound-auv3/index.html"
+        },
+        {
+          "blobGitObject": "1eaadeaba8ebd6e1047e9fef43c95852c6ba65b8",
+          "mode": "100644",
+          "path": "site/instruments/semantic-browser/index.html"
+        },
+        {
+          "blobGitObject": "9e2c2a68e5559988b7995cd2ad3cea6876d1206c",
+          "mode": "100644",
+          "path": "site/publication-manifest.json"
+        }
+      ]
+    },
+    {
+      "blockers": [
+        "MISSING_GIT_TRACKED_DEPLOYMENT_ROOT",
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": null,
+      "candidateSourceRootTree": null,
+      "currentOwnerHead": "e9622ef935048239c5ee5ab64d59b429e73d17fa",
+      "deploymentRole": "technical-evidence",
+      "gitSourceRoot": null,
+      "matchedHistoricalRevisions": [],
+      "ownerRepo": "Fountain-Coach/midi2",
+      "owningRepository": "https://github.com/Fountain-Coach/midi2",
+      "publicHost": "midi2.fountain.coach",
+      "publicWitnessHost": "midi2.fountain.coach",
+      "publicWitnessSHA256": "c9872ee856d334a94e004abc9f511ac9ceeb0294aa3b57b92e61946d4a91b180",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/",
+      "routePrefix": "/",
+      "sampleRoutes": [],
+      "sourceAssetManifestSHA256": null,
+      "sourceDocument": null,
+      "sourceFiles": []
+    },
+    {
+      "blockers": [],
+      "deploymentRole": "authored-literary-edition",
+      "lifecycle": "planned",
+      "ownerRepo": "Fountain-Coach/solstice.fountain.coach",
+      "publicHost": "solstice.fountain.coach",
+      "readiness": "NOT_PUBLIC_RECOVERY_TARGET",
+      "releaseAdmitted": false
+    },
+    {
+      "blockers": [
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": "941cd20b2b7cef4223988e470d6995636eac1a6e",
+      "candidateSourceRootTree": "7e4e971a4ca5d8d02dfb4570f0501a1c82eb1123",
+      "currentOwnerHead": "958d1a9e86fb8b520db03bc4b0d485d35a91a519",
+      "deploymentRole": "mandatory-legal-footer-and-transparency",
+      "gitSourceRoot": "site",
+      "gitTrackedBlobCount": 25,
+      "gitTrackedHTMLCount": 12,
+      "historicalRootRevisionCandidatesExamined": 3,
+      "matchedHistoricalRevisions": [
+        "941cd20b2b7cef4223988e470d6995636eac1a6e"
+      ],
+      "ownerRepo": "Fountain-Coach/status.fountain.coach",
+      "owningRepository": "https://github.com/Fountain-Coach/status.fountain.coach",
+      "publicHost": "status.fountain.coach",
+      "publicWitnessHost": "status.fountain.coach",
+      "publicWitnessSHA256": "5474a576383164da216d1e93355d6258f56584c5d2986a08fce072fac28e8bfa",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/",
+      "routePrefix": "/",
+      "sampleRoutes": [
+        {
+          "candidateSHA256": "5474a576383164da216d1e93355d6258f56584c5d2986a08fce072fac28e8bfa",
+          "matches": true,
+          "publicSHA256": "5474a576383164da216d1e93355d6258f56584c5d2986a08fce072fac28e8bfa",
+          "route": "/",
+          "sourceFile": "site/index.html"
+        },
+        {
+          "candidateSHA256": "af4ff2362e4c3093150619a109ac8f1ee25c595f068e3139fbab7e199b95faa7",
+          "matches": true,
+          "publicSHA256": "af4ff2362e4c3093150619a109ac8f1ee25c595f068e3139fbab7e199b95faa7",
+          "route": "/business-architecture/",
+          "sourceFile": "site/business-architecture/index.html"
+        },
+        {
+          "candidateSHA256": "7acfd3debe59600ed4f815a89076d06a78face107dc1a30e6ee9abea73d6acf2",
+          "matches": true,
+          "publicSHA256": "7acfd3debe59600ed4f815a89076d06a78face107dc1a30e6ee9abea73d6acf2",
+          "route": "/business-model/",
+          "sourceFile": "site/business-model/index.html"
+        },
+        {
+          "candidateSHA256": "469058bf1a2b706dcefc3b05795f91568699d9228984d3843500ad46937bdb21",
+          "matches": true,
+          "publicSHA256": "469058bf1a2b706dcefc3b05795f91568699d9228984d3843500ad46937bdb21",
+          "route": "/ci/",
+          "sourceFile": "site/ci/index.html"
+        }
+      ],
+      "sourceAssetManifestSHA256": "4d966b40daae5ee1ef64047a9c52e4ac207f29c2a9e48c61731d4f43d0e3544f",
+      "sourceDocument": "site/index.html",
+      "sourceFiles": [
+        {
+          "blobGitObject": "15e79caca970472b382ba2d957ddc9797a6955fc",
+          "mode": "100644",
+          "path": "site/.well-known/agent-bootstrap.json"
+        },
+        {
+          "blobGitObject": "953910e98b5be3930d45d62d7563391a51689c2a",
+          "mode": "100644",
+          "path": "site/assets/copilot-system-light.svg"
+        },
+        {
+          "blobGitObject": "65ba63a4a1df645c8b6267ad51335362bb438a4e",
+          "mode": "100644",
+          "path": "site/assets/copilot-system.svg"
+        },
+        {
+          "blobGitObject": "7df2984d9c01987532e9063fac8bb3ed381832c9",
+          "mode": "100644",
+          "path": "site/assets/estate-core.css"
+        },
+        {
+          "blobGitObject": "6f9e857d5036d3199eb6717c97319aed55ec3d99",
+          "mode": "100644",
+          "path": "site/assets/estate-core.js"
+        },
+        {
+          "blobGitObject": "55ed320b611b069d25c704a7fbc1cba163c7fae4",
+          "mode": "100644",
+          "path": "site/assets/fountain-coach-logo-transparent.png"
+        },
+        {
+          "blobGitObject": "70e26332d86354e3e08f0cb0664586faeacfbcee",
+          "mode": "100644",
+          "path": "site/assets/status-screenplay-plate.svg"
+        },
+        {
+          "blobGitObject": "f3d6360b37320048b8898d58a12aff23f6fe9485",
+          "mode": "100644",
+          "path": "site/assets/status.css"
+        },
+        {
+          "blobGitObject": "4df980139dd3cb6216f20a27ba8f0c9836f15335",
+          "mode": "100644",
+          "path": "site/assets/status.js"
+        },
+        {
+          "blobGitObject": "af31039e85e5b3f52afa2b5f61b6c0126c3a3da2",
+          "mode": "100644",
+          "path": "site/business-architecture.json"
+        },
+        {
+          "blobGitObject": "21b81ef8640afb07d0c65ad26100ce73b1b3eac2",
+          "mode": "100644",
+          "path": "site/business-architecture.schema.json"
+        },
+        {
+          "blobGitObject": "05c07eff5c1f92620ae4d06f0e0df623ba41dfac",
+          "mode": "100644",
+          "path": "site/business-architecture/index.html"
+        },
+        {
+          "blobGitObject": "436ae0f41b89d83c221434f3d9e132544743d86b",
+          "mode": "100644",
+          "path": "site/business-model/index.html"
+        },
+        {
+          "blobGitObject": "721533ecfdf4ffe49e2e932345a100392217cd79",
+          "mode": "100644",
+          "path": "site/ci/index.html"
+        },
+        {
+          "blobGitObject": "a5ea29ce2f01789ef9fdef3429815112e75b51c8",
+          "mode": "100644",
+          "path": "site/company/index.html"
+        },
+        {
+          "blobGitObject": "968ecc7de3ac8237cecfb1afb14eeacd846b0e0c",
+          "mode": "100644",
+          "path": "site/evidence/index.html"
+        },
+        {
+          "blobGitObject": "15e79caca970472b382ba2d957ddc9797a6955fc",
+          "mode": "100644",
+          "path": "site/for-agents/bootstrap.json"
+        },
+        {
+          "blobGitObject": "7d5e9a3cf35d43f2e9fed2b1e3b8ce33d31201e2",
+          "mode": "100644",
+          "path": "site/for-agents/index.html"
+        },
+        {
+          "blobGitObject": "3511fb0afb94f24e110346b470db45c1ce45564a",
+          "mode": "100644",
+          "path": "site/foundation/index.html"
+        },
+        {
+          "blobGitObject": "cd2f7f7b48b383fbbeb168417e0a42a4e604c18d",
+          "mode": "100644",
+          "path": "site/index.html"
+        },
+        {
+          "blobGitObject": "338c3b5d824d4f4cf56df78eb194f391d6d090db",
+          "mode": "100644",
+          "path": "site/llms.txt"
+        },
+        {
+          "blobGitObject": "95cd1da625503a6b2d00c4411056d27947b8450a",
+          "mode": "100644",
+          "path": "site/midi2/index.html"
+        },
+        {
+          "blobGitObject": "a2f44ee0b72be1ea27dd063ef7d17fefce88f9ab",
+          "mode": "100644",
+          "path": "site/product-fields/index.html"
+        },
+        {
+          "blobGitObject": "5ddce89252c1e91941025c1b36feb6408612994a",
+          "mode": "100644",
+          "path": "site/reframe/index.html"
+        },
+        {
+          "blobGitObject": "f5205c925b1d4296a0d399beb5b1e1b25bdf9b05",
+          "mode": "100644",
+          "path": "site/transparency/index.html"
+        }
+      ]
+    },
+    {
+      "blockers": [
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": "609122db395ff442ee62cb193663ea71d216c65f",
+      "candidateSourceRootTree": "88f67b64d56d2ad13b408dd10037475e610ba00e",
+      "currentOwnerHead": "37c0caf2179a7c68c7e491d4dbea4319dc973b93",
+      "deploymentRole": "authoring-and-performance-instrument-not-publication",
+      "gitSourceRoot": "site",
+      "gitTrackedBlobCount": 27,
+      "gitTrackedHTMLCount": 1,
+      "historicalRootRevisionCandidatesExamined": 25,
+      "matchedHistoricalRevisions": [
+        "609122db395ff442ee62cb193663ea71d216c65f"
+      ],
+      "ownerRepo": "Fountain-Coach/teatro.fountain.coach",
+      "owningRepository": "https://github.com/Fountain-Coach/teatro.fountain.coach",
+      "publicHost": "teatro.fountain.coach",
+      "publicWitnessHost": "teatro.fountain.coach",
+      "publicWitnessSHA256": "71308fe02d4df6e0237884aeccccd8b040c0df2d32e2ea05e4243f93a008d996",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/",
+      "routePrefix": "/",
+      "sampleRoutes": [
+        {
+          "candidateSHA256": "71308fe02d4df6e0237884aeccccd8b040c0df2d32e2ea05e4243f93a008d996",
+          "matches": true,
+          "publicSHA256": "71308fe02d4df6e0237884aeccccd8b040c0df2d32e2ea05e4243f93a008d996",
+          "route": "/",
+          "sourceFile": "site/index.html"
+        }
+      ],
+      "sourceAssetManifestSHA256": "11d8254df1e0806860878419f6a2776bd3e15f392374aa3172769009e6088e1f",
+      "sourceDocument": "site/index.html",
+      "sourceFiles": [
+        {
+          "blobGitObject": "7df2984d9c01987532e9063fac8bb3ed381832c9",
+          "mode": "100644",
+          "path": "site/assets/estate-core.css"
+        },
+        {
+          "blobGitObject": "6f9e857d5036d3199eb6717c97319aed55ec3d99",
+          "mode": "100644",
+          "path": "site/assets/estate-core.js"
+        },
+        {
+          "blobGitObject": "55ed320b611b069d25c704a7fbc1cba163c7fae4",
+          "mode": "100644",
+          "path": "site/assets/fountain-coach-logo-transparent.png"
+        },
+        {
+          "blobGitObject": "706dec5232abea9173cd0633c194723f1fdd14dc",
+          "mode": "100644",
+          "path": "site/assets/index-2FQ3OB_0.js"
+        },
+        {
+          "blobGitObject": "f669b06ae2053d0f5d7882c7d2632cade498eb1f",
+          "mode": "100644",
+          "path": "site/assets/index-5JuoGUIj.js"
+        },
+        {
+          "blobGitObject": "4ae5645a173113b1dd79d526ffdd4db883a504f1",
+          "mode": "100644",
+          "path": "site/assets/index-B1fRXcYu.js"
+        },
+        {
+          "blobGitObject": "c43c83ff6c7988aba675b5304a16880eb1c549f1",
+          "mode": "100644",
+          "path": "site/assets/index-B5l90xQf.js"
+        },
+        {
+          "blobGitObject": "261ff1f80d87703d577b0988fe3bec3c08132365",
+          "mode": "100644",
+          "path": "site/assets/index-B9aQnIXZ.js"
+        },
+        {
+          "blobGitObject": "94a4dee85307ef42a2d66b51c467bf2cea614166",
+          "mode": "100644",
+          "path": "site/assets/index-Bh1Hsng8.js"
+        },
+        {
+          "blobGitObject": "d29ffd22332d087691ca6eb7e3f9ec63bef8d923",
+          "mode": "100644",
+          "path": "site/assets/index-CFpd2RHV.js"
+        },
+        {
+          "blobGitObject": "4c53911d368bbf88a7d9978d41f3997679ab579e",
+          "mode": "100644",
+          "path": "site/assets/index-CJP5AypJ.js"
+        },
+        {
+          "blobGitObject": "5d6083d8d1b0f5cfba8613877175601dc2e5b099",
+          "mode": "100644",
+          "path": "site/assets/index-CRHvfQPC.js"
+        },
+        {
+          "blobGitObject": "22ed728209aafc91ab3b69e94c4f5712cb743889",
+          "mode": "100644",
+          "path": "site/assets/index-CY5_5ULO.js"
+        },
+        {
+          "blobGitObject": "7a379d2b3a91b2b206fc99760c57368df3045586",
+          "mode": "100644",
+          "path": "site/assets/index-Cgen3ruB.js"
+        },
+        {
+          "blobGitObject": "1fc3dfaf106c52ed65b357f8ace59b770d19529a",
+          "mode": "100644",
+          "path": "site/assets/index-D7nQ6CRe.js"
+        },
+        {
+          "blobGitObject": "ed6632ec9d5511cd653e0a161572e8efa818b9df",
+          "mode": "100644",
+          "path": "site/assets/index-DA4iH78P.js"
+        },
+        {
+          "blobGitObject": "9f82707c280cbddc0e7bd40ccbbabb83ed469301",
+          "mode": "100644",
+          "path": "site/assets/index-DR_CV8N9.js"
+        },
+        {
+          "blobGitObject": "d208bc12d894c4578feb74a3c5a5708e28921c8b",
+          "mode": "100644",
+          "path": "site/assets/index-Eqf99ohO.js"
+        },
+        {
+          "blobGitObject": "9b2e411bf15df1e5494da2e4c186e6fa7097239e",
+          "mode": "100644",
+          "path": "site/assets/index-NZ16pemF.js"
+        },
+        {
+          "blobGitObject": "324a8db5da40b3ee12da204c39b4d8ec4fd1a826",
+          "mode": "100644",
+          "path": "site/assets/index-O4DIRmgg.js"
+        },
+        {
+          "blobGitObject": "f3ad3db9ee77f8aec95a7e9b17f0d69dec2cbdf4",
+          "mode": "100644",
+          "path": "site/assets/index-_qyjk1bh.js"
+        },
+        {
+          "blobGitObject": "724f1ad4d90bedd7bafa26dea3da5d9488254dea",
+          "mode": "100644",
+          "path": "site/assets/index-d4CUNYeA.js"
+        },
+        {
+          "blobGitObject": "14973c46cb42a5dc98b679cd88b0ff497520595b",
+          "mode": "100644",
+          "path": "site/assets/index-pBCa16bt.js"
+        },
+        {
+          "blobGitObject": "7b9cabd7d7de549df93635a97cef938b71924c46",
+          "mode": "100644",
+          "path": "site/assets/index-pj5IaYKx.js"
+        },
+        {
+          "blobGitObject": "eef85e13296adb12b8d4ddccc71d322c0519803d",
+          "mode": "100644",
+          "path": "site/assets/index-pn5bKnQA.js"
+        },
+        {
+          "blobGitObject": "e54ea74bdd5c568e2c6d2effef95f77b9ac083ef",
+          "mode": "100644",
+          "path": "site/index.html"
+        },
+        {
+          "blobGitObject": "a1171fcfedc225f9a1cec4f112ab44dde2e5b768",
+          "mode": "100644",
+          "path": "site/publication-manifest.json"
+        }
+      ]
+    },
+    {
+      "blockers": [],
+      "deploymentRole": "retired-technical-experiment",
+      "lifecycle": "archived",
+      "ownerRepo": "Fountain-Coach/tennis.fountain.coach",
+      "publicHost": "tennis.fountain.coach",
+      "readiness": "NOT_PUBLIC_RECOVERY_TARGET",
+      "releaseAdmitted": false
+    },
+    {
+      "blockers": [
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": "6b4721db185a3039e5431ab436263e6898f32834",
+      "candidateSourceRootTree": "f69cf90ccbe9f5e4fc0474f50403faf89f94f519",
+      "currentOwnerHead": "6b4721db185a3039e5431ab436263e6898f32834",
+      "deploymentRole": "literary-works-publication",
+      "gitSourceRoot": ".",
+      "gitTrackedBlobCount": 75,
+      "gitTrackedHTMLCount": 28,
+      "historicalRootRevisionCandidatesExamined": 8,
+      "matchedHistoricalRevisions": [
+        "6b4721db185a3039e5431ab436263e6898f32834",
+        "3d97bd3ae0775105d05600baad31d829c180efd2"
+      ],
+      "ownerRepo": "Fountain-Coach/works-benedikt-eickhoff",
+      "owningRepository": "https://github.com/Fountain-Coach/works-benedikt-eickhoff",
+      "publicHost": "works.benedikt-eickhoff.de",
+      "publicWitnessHost": "works.benedikt-eickhoff.de",
+      "publicWitnessSHA256": "5d5de0ce48b571523800b0d3a5573efb26b9a9c427c59fd711300682407e47da",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/",
+      "routePrefix": "/",
+      "sampleRoutes": [
+        {
+          "candidateSHA256": "5d5de0ce48b571523800b0d3a5573efb26b9a9c427c59fd711300682407e47da",
+          "matches": true,
+          "publicSHA256": "5d5de0ce48b571523800b0d3a5573efb26b9a9c427c59fd711300682407e47da",
+          "route": "/",
+          "sourceFile": "index.html"
+        },
+        {
+          "candidateSHA256": "43206efd4708a84301eabd71f93f7a339a7dcfaeab33613e411bede7ac6b1814",
+          "matches": true,
+          "publicSHA256": "43206efd4708a84301eabd71f93f7a339a7dcfaeab33613e411bede7ac6b1814",
+          "route": "/ballern-gehen/",
+          "sourceFile": "ballern-gehen/index.html"
+        },
+        {
+          "candidateSHA256": "c8f3d40f1f75d47542c199dc6f51ce1eedc90feaa28671be1efc2dae6c6262ad",
+          "matches": true,
+          "publicSHA256": "c8f3d40f1f75d47542c199dc6f51ce1eedc90feaa28671be1efc2dae6c6262ad",
+          "route": "/barrierefreiheit/",
+          "sourceFile": "barrierefreiheit/index.html"
+        }
+      ],
+      "sourceAssetManifestSHA256": "4cbb0ce03ceee659b727ddc5d674dc7b086daab14fca7c39fc8fe1f26fe2c3c6",
+      "sourceDocument": "index.html",
+      "sourceFiles": [
+        {
+          "blobGitObject": "5ece631e76d8d033596306c4135ae25cadd7358d",
+          "mode": "100644",
+          "path": ".gitignore"
+        },
+        {
+          "blobGitObject": "7c9d11172973cf34b3e2b8d92173a4a1d0fe2056",
+          "mode": "100644",
+          "path": "Caddyfile.works-candidate"
+        },
+        {
+          "blobGitObject": "28e3727dec1997b4ad48fef2371c5cfa9989fc61",
+          "mode": "100644",
+          "path": "DEPLOYMENT.md"
+        },
+        {
+          "blobGitObject": "428716a1876dd32db499ffd70b883da05d6164cf",
+          "mode": "100644",
+          "path": "README.md"
+        },
+        {
+          "blobGitObject": "6d9ba4d432fab957bad7a183eb7b1ae5f4e9718a",
+          "mode": "100644",
+          "path": "assets/AMidsummerNightsDream.pdf"
+        },
+        {
+          "blobGitObject": "fc25691ec70ce2f0798da6b98dd3f8cccea7ad3c",
+          "mode": "100644",
+          "path": "assets/Ballern-Gehen.pdf"
+        },
+        {
+          "blobGitObject": "c657156f61230224b1df340880b1066f8ccdbf1f",
+          "mode": "100644",
+          "path": "assets/Between_Gardens_Production_Score.pdf"
+        },
+        {
+          "blobGitObject": "62c37526353426b270b677ae1cff4a6d1a26c132",
+          "mode": "100644",
+          "path": "assets/above-the-line.pdf"
+        },
+        {
+          "blobGitObject": "388fbac6c62c2c3d9eaa671c45f51f98c759b457",
+          "mode": "100644",
+          "path": "assets/ballern-gehen-linotype.pdf"
+        },
+        {
+          "blobGitObject": "62d409b020ae6a162943374a686c1e896fd19bca",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-01.webp"
+        },
+        {
+          "blobGitObject": "c6e7ec39a929cc1c59e8d730e3b090f4ef5e2dad",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-02.webp"
+        },
+        {
+          "blobGitObject": "702d35ec49ae073fb21f2f3532f3990464ac2316",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-03.webp"
+        },
+        {
+          "blobGitObject": "cac3d74169e3232c23b2c832b950406d02060bdb",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-04.webp"
+        },
+        {
+          "blobGitObject": "911e16b522b8204295d6e7dac5c3b29db567fbaf",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-05.webp"
+        },
+        {
+          "blobGitObject": "3aedf92f10c87bedfc8df9f50f4ad783e454421f",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-06.webp"
+        },
+        {
+          "blobGitObject": "b2c41d31f064611fa91a1e447f0fc2b160885594",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-07.webp"
+        },
+        {
+          "blobGitObject": "acd86f72d3b3266ab3fef6b94d60a9911bfe53ed",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-08.webp"
+        },
+        {
+          "blobGitObject": "461d1783b887b876ee16ebe29577f1f4478e493e",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-09.webp"
+        },
+        {
+          "blobGitObject": "096647640fa66136058b52fc37c2c0a0ba89e462",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-10.webp"
+        },
+        {
+          "blobGitObject": "1fc90fef4087f55efb247d64e939f76f6829052b",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-11.webp"
+        },
+        {
+          "blobGitObject": "f0d6f7a819f5f0b33ac3d9099e4560d21bee1e3b",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-12.webp"
+        },
+        {
+          "blobGitObject": "1b5f373c7d4acabff13308476a39e9f47e1b105f",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-13.webp"
+        },
+        {
+          "blobGitObject": "580b43844545015c8a1630c3338b78b8f097627c",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-14.webp"
+        },
+        {
+          "blobGitObject": "9dc9dc3d4b5e6cf286c24f20a2ad349d1e8502d7",
+          "mode": "100644",
+          "path": "assets/between-gardens-pages/page-15.webp"
+        },
+        {
+          "blobGitObject": "9f4ca3b59e2023cefb25e64c4a17831301db648c",
+          "mode": "100644",
+          "path": "assets/custom.css"
+        },
+        {
+          "blobGitObject": "213adaad67d24b2bd51103148361a8899815912f",
+          "mode": "100644",
+          "path": "assets/diplomurkunde-1994-faksimile.pdf"
+        },
+        {
+          "blobGitObject": "92b9a5364a989b7d966df3085f92beed4b5fbac3",
+          "mode": "100644",
+          "path": "assets/diplomurkunde-1994-linotype.pdf"
+        },
+        {
+          "blobGitObject": "55ed320b611b069d25c704a7fbc1cba163c7fae4",
+          "mode": "100644",
+          "path": "assets/fountain-coach-logo-transparent.png"
+        },
+        {
+          "blobGitObject": "c8bb8b801b495244af752c837d51a53409f19c14",
+          "mode": "100644",
+          "path": "assets/midsummer-linotype.pdf"
+        },
+        {
+          "blobGitObject": "cb32fefcbbe00303167325950853a8bb8aa9313b",
+          "mode": "100644",
+          "path": "assets/score-reader.js"
+        },
+        {
+          "blobGitObject": "1ad228808acd67337fbff34be3f0046721ed2bd8",
+          "mode": "100644",
+          "path": "assets/site.css"
+        },
+        {
+          "blobGitObject": "e3063955b0fa118813941f03ffb6b80bda530f21",
+          "mode": "100644",
+          "path": "assets/strahl-application-de-linotype.pdf"
+        },
+        {
+          "blobGitObject": "f61213bb42ad2431429ae806fb3db74d08472815",
+          "mode": "100644",
+          "path": "assets/strahl-application-en-linotype.pdf"
+        },
+        {
+          "blobGitObject": "f4cb22ab54c4940517a8c9badf1f6822d7b5256f",
+          "mode": "100644",
+          "path": "ballern-gehen/index.html"
+        },
+        {
+          "blobGitObject": "845fffb75c58694375430be9de83513a0fbc6728",
+          "mode": "100644",
+          "path": "barrierefreiheit/index.html"
+        },
+        {
+          "blobGitObject": "1d947bfe4f529f7f29195e17b16969c40bd6d2b0",
+          "mode": "100644",
+          "path": "bewerbung/index.html"
+        },
+        {
+          "blobGitObject": "b8844ad81e25327f2afea5ed335b526e0cbb2cb9",
+          "mode": "100644",
+          "path": "build_editions.py"
+        },
+        {
+          "blobGitObject": "cf920d30223a3fc8a618d3eff364d727bc1e89c9",
+          "mode": "100644",
+          "path": "build_site.py"
+        },
+        {
+          "blobGitObject": "50c32254d4ca043819f19e47015c9b8b407966be",
+          "mode": "100644",
+          "path": "content/between_gardens.json"
+        },
+        {
+          "blobGitObject": "e15deed121aad9b3ec01aae881b80b0d93bcfe63",
+          "mode": "100644",
+          "path": "content/diplomurkunde.json"
+        },
+        {
+          "blobGitObject": "fd13d0840527bccf33d6959550d5d1b20e3f1961",
+          "mode": "100644",
+          "path": "content/influences.json"
+        },
+        {
+          "blobGitObject": "17afe47d639d00e1a397ff2eef932dfa1cbb680c",
+          "mode": "100644",
+          "path": "content/works_notices.json"
+        },
+        {
+          "blobGitObject": "2ef21db7fbe31adb493e3c6d10f5a0af5d9633a4",
+          "mode": "100644",
+          "path": "datenschutz/index.html"
+        },
+        {
+          "blobGitObject": "2d6cc9d5ec6aa31b072249f6b94f4010c37e44d6",
+          "mode": "100644",
+          "path": "diplomurkunde/index.html"
+        },
+        {
+          "blobGitObject": "5abe22df599c976f548e832d9d1d8d61c456b4c6",
+          "mode": "100644",
+          "path": "ein-sommernachtstraum/index.html"
+        },
+        {
+          "blobGitObject": "9904ca27b6a43e2cb57bec54758e69646d920d08",
+          "mode": "100644",
+          "path": "en/accessibility/index.html"
+        },
+        {
+          "blobGitObject": "171455f1dffb83a6aa7f7100aa44d645e63c140d",
+          "mode": "100644",
+          "path": "en/ai-first-draft/index.html"
+        },
+        {
+          "blobGitObject": "090e403d667971bcf135a2edea5919c7abda90a7",
+          "mode": "100644",
+          "path": "en/application/index.html"
+        },
+        {
+          "blobGitObject": "7591a490e0b7953faac98e15aca4e9003cf703d2",
+          "mode": "100644",
+          "path": "en/ballern-gehen/index.html"
+        },
+        {
+          "blobGitObject": "5bfc2f77dc0230d44410584ea7c13ef1bb082ed1",
+          "mode": "100644",
+          "path": "en/between-gardens/index.html"
+        },
+        {
+          "blobGitObject": "5a1d71f81d8e0fb4101e22b672e15676d6e7f8d4",
+          "mode": "100644",
+          "path": "en/collaborations/index.html"
+        },
+        {
+          "blobGitObject": "09963cfd1f82cd84c6af2e64ff77f49a3800a922",
+          "mode": "100644",
+          "path": "en/copyright/index.html"
+        },
+        {
+          "blobGitObject": "0e3cf1c474ac21303f5b03e557933749dafe54b9",
+          "mode": "100644",
+          "path": "en/diploma/index.html"
+        },
+        {
+          "blobGitObject": "83258b59d75bd9cd3246da30a7058b60d54e09c7",
+          "mode": "100644",
+          "path": "en/eu-context/index.html"
+        },
+        {
+          "blobGitObject": "77dc9c4cb7736369054524a5e47f38e4a4b096e4",
+          "mode": "100644",
+          "path": "en/index.html"
+        },
+        {
+          "blobGitObject": "53afc72690cfe82560896992a6ea8545f5df2a41",
+          "mode": "100644",
+          "path": "en/legal/index.html"
+        },
+        {
+          "blobGitObject": "a3b31e81c500761a3f6c6a9ad14a57b93055020a",
+          "mode": "100644",
+          "path": "en/midsummer-nights-dream/index.html"
+        },
+        {
+          "blobGitObject": "28b580ff4570ca3012c60dcba340f04d3fff3025",
+          "mode": "100644",
+          "path": "en/perspective/index.html"
+        },
+        {
+          "blobGitObject": "00a4a58434bb9e061c785921fec7630677186171",
+          "mode": "100644",
+          "path": "en/privacy/index.html"
+        },
+        {
+          "blobGitObject": "7f703498d0d88cdd059ab71ed6c9a626ea6d5775",
+          "mode": "100644",
+          "path": "eu-kontext/index.html"
+        },
+        {
+          "blobGitObject": "2d83dce2473fb1da165f64d6c7a437be46ce04b2",
+          "mode": "100644",
+          "path": "garden_section.py"
+        },
+        {
+          "blobGitObject": "88a7f5f4353b7a6a903718e3dfcae564650fb083",
+          "mode": "100644",
+          "path": "index.html"
+        },
+        {
+          "blobGitObject": "ca9a21d0175c6b6828a77e772f38e47d4cee4c12",
+          "mode": "100644",
+          "path": "ki-erstentwurf/index.html"
+        },
+        {
+          "blobGitObject": "13d318b01c12f48e240b9c8153c8208a7e293ef4",
+          "mode": "100644",
+          "path": "perspektive/index.html"
+        },
+        {
+          "blobGitObject": "fd0141a6e4c33c695d67be59ae44b447d6c32654",
+          "mode": "100644",
+          "path": "rechtliches/index.html"
+        },
+        {
+          "blobGitObject": "86daa925c5636a34debeec1c26cde2d8f3be916c",
+          "mode": "100644",
+          "path": "site_navigation.py"
+        },
+        {
+          "blobGitObject": "054fb843f63272f6584923029f3972aefeab8c57",
+          "mode": "100644",
+          "path": "tools/build_between_gardens_reader.py"
+        },
+        {
+          "blobGitObject": "ffd03aa06aac848daf0c0c71cae52c14184e6823",
+          "mode": "100644",
+          "path": "tools/build_public_diploma.py"
+        },
+        {
+          "blobGitObject": "ea981f047d0541e22c375862bc69f66c2aa2e8c0",
+          "mode": "100644",
+          "path": "tools/test_score_reader_live.mjs"
+        },
+        {
+          "blobGitObject": "350759102fdfd24aed0179d05db6cfd0ae7f65ec",
+          "mode": "100644",
+          "path": "tools/test_works_navigation.mjs"
+        },
+        {
+          "blobGitObject": "b1e5d9d7e60b7128ab0bbdff7f726ef0be61d91a",
+          "mode": "100644",
+          "path": "urheberrecht/index.html"
+        },
+        {
+          "blobGitObject": "6964c18065973bec9acc5b9dec7ae03d1e6bd3c1",
+          "mode": "100644",
+          "path": "validate.py"
+        },
+        {
+          "blobGitObject": "d073c45b8729ba316dac729af096324cefa82977",
+          "mode": "100644",
+          "path": "works_legal.py"
+        },
+        {
+          "blobGitObject": "02d7cb5a20df000d23c2363468e8972fa8b08b43",
+          "mode": "100644",
+          "path": "zusammenarbeit/index.html"
+        },
+        {
+          "blobGitObject": "96b1338edc04253cd8d1e96fee82951e85396878",
+          "mode": "100644",
+          "path": "zwischen-gaerten/index.html"
+        }
+      ]
+    },
+    {
+      "blockers": [
+        "NO_EXACT_GIT_COMMIT_MATCHING_LIVE_DOCUMENT",
+        "FULL_LAST_PUBLIC_RELEASE_AND_ASSET_PROOF_NOT_ESTABLISHED"
+      ],
+      "candidateRevision": null,
+      "candidateSourceRootTree": null,
+      "currentOwnerHead": "bb365cae73dacd1558345690bc5c77126891c27b",
+      "deploymentRole": "delegated-literary-publication",
+      "gitSourceRoot": "site",
+      "historicalRootRevisionCandidatesExamined": 2,
+      "matchedHistoricalRevisions": [],
+      "ownerRepo": "Fountain-Coach/solstice.fountain.coach",
+      "owningRepository": "https://github.com/Fountain-Coach/solstice.fountain.coach",
+      "publicHost": "works.benedikt-eickhoff.de",
+      "publicWitnessHost": "works.benedikt-eickhoff.de",
+      "publicWitnessSHA256": "3faddbff97117fbe4e528ead6b714a093932d6f425806517d9c0ee8c18fb0e09",
+      "publicWitnessStatus": 200,
+      "readiness": "BLOCKED",
+      "releaseAdmitted": false,
+      "rootWitnessRoute": "/solstice/editions/first-reading/",
+      "routePrefix": "/solstice/",
+      "sampleRoutes": [],
+      "sourceAssetManifestSHA256": null,
+      "sourceDocument": "site/editions/first-reading/index.html",
+      "sourceFiles": []
+    }
+  ],
+  "hostCount": 11,
+  "manifestSHA256": "704149a7ea1e83e400bd22690d117a659da1891909b82a3132c9bacb44830a52",
+  "matchedPublicationRoots": 7,
+  "observedAt": "2026-10-15T13:14:11+00:00",
+  "proofBoundary": "Exact matching of observed HTML is not proof of complete asset/route recovery; receipts and full readback missing",
+  "publicReadbackSHA256": "81bd340a1e86c8a43ac8d355326ff310c85b9c5f940226be0ce391963fd71ff3",
+  "publicationSurfaces": 12,
+  "releaseAdmitted": false,
+  "requiredOwnerApproval": true,
+  "schema": "fountain.estate.candidate-public-release-lock.v1",
+  "sourceInventorySHA256": "4656439e41a4289012354b7c05cd4835ed812b2873b7c8e56d5322eed49db468"
+}

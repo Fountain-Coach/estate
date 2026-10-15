@@ -28,8 +28,8 @@ def git(path,*args,allow_failure=False):
     if p.returncode and not allow_failure:raise RuntimeError('git '+str(args)+' '+p.stderr[:300])
     return p.stdout.strip()
 
-def committed_bytes(path,name):
-    read=subprocess.run(['git','show','HEAD:'+name],cwd=path,capture_output=True)
+def committed_bytes(path,name,revision='HEAD'):
+    read=subprocess.run(['git','show',revision+':'+name],cwd=path,capture_output=True)
     if read.returncode:raise ValueError('Unresolvable committed Git file '+str(path)+' '+name)
     return read.stdout
 
@@ -107,7 +107,7 @@ def source_root(path,repo,edition):
     if not directory.is_dir():raise ValueError('Missing source root '+str(directory))
     return directory
 
-def inventory():
+def inventory(pinned_revisions=None):
     domains=domains_from_manifest()
     required={v['sourceRepo'] for v in domains.values()}
     paths=checkouts(required)
@@ -116,28 +116,30 @@ def inventory():
     for repo in sorted(required):
         path=paths[repo]
         if remote_repo(path)!=repo:raise ValueError('Wrong repo '+repo)
-        head=git(path,'rev-parse','HEAD')
-        upstream=git(path,'rev-parse','--verify','refs/remotes/origin/main',allow_failure=True)
-        clean=not git(path,'status','--porcelain')
+        locked=(pinned_revisions or {}).get(repo)
+        head=locked['head'] if locked else git(path,'rev-parse','HEAD')
+        git(path,'cat-file','-e',head+'^{commit}')
+        upstream=locked['localOriginMain'] if locked else git(path,'rev-parse','--verify','refs/remotes/origin/main',allow_failure=True)
+        clean=locked['clean'] if locked else not git(path,'status','--porcelain')
         if not clean:risks.append(dict(type='dirty-owner-checkout',repository=repo))
         if upstream and upstream!=head:risks.append(dict(type='revision-differs-from-local-origin-main',repository=repo))
-        files=[x for x in git(path,'ls-files','-z').split('\x00') if x]
-        info=json.loads(committed_bytes(path,'edition.json')) if 'edition.json' in files else {}
+        files=[x for x in git(path,'ls-tree','-r','--name-only','-z',head).split('\x00') if x]
+        info=json.loads(committed_bytes(path,'edition.json',head)) if 'edition.json' in files else {}
         if info.get('repository',info.get('authority',repo))!=repo:raise ValueError('Edition owner disagreement '+repo)
         base=source_root(path,repo,info)
         prefix=base.relative_to(path).as_posix() if base else None
-        in_git={x for x in files if (path/x).is_file()}
+        in_git=set(files)
         selected=sorted(x for x in in_git if not prefix or prefix=='.' or x.startswith(prefix+'/'))
         htmls=[x for x in selected if x.endswith(('.html','.htm'))]
         docs=[x for x in files if x.endswith(('.md','.tei','.xml','.markdown'))]
         origin_hosts=sorted(k for k,v in domains.items() if v['sourceRepo']==repo)
-        committed={name:committed_bytes(path,name) for name in selected}
+        committed={name:committed_bytes(path,name,head) for name in selected}
         filehash={name:digest(body) for name,body in committed.items()}
         inv_state='not-provided'
         inv_file=path/'publication-files.sha256'
         if 'publication-files.sha256' in files:
             entries={}
-            for line in committed_bytes(path,'publication-files.sha256').decode().splitlines():
+            for line in committed_bytes(path,'publication-files.sha256',head).decode().splitlines():
                 h,sep,name=line.partition('  ')
                 if not sep or name in entries:raise ValueError('Malformed SHA inventory '+repo)
                 entries[name]=h
@@ -175,7 +177,8 @@ def inventory():
                 routes.append(dict(r,host=host,route=hosted_route,
                                    provenance='git-tracked-delegated-source',delegatedFrom=upstream))
                 checkout=DEV/owner_sources[delegated['sourceRepo']]['localCheckout']
-                edges.extend(parse_links(committed_bytes(checkout,r['sourceFile']),host,hosted_route,set(domains)))
+                revision=next(row['head'] for row in sources if row['repository']==delegated['sourceRepo'])
+                edges.extend(parse_links(committed_bytes(checkout,r['sourceFile'],revision),host,hosted_route,set(domains)))
             if not matched:risks.append(dict(type='delegated-source-unavailable',host=host))
     routes.sort(key=lambda r:(r['host'],r['route'],r['owner']))
     edges.sort(key=lambda e:(e['host'],e['fromRoute'],e['targetHost'],e['targetPath'],e['fragment'] or ''))
@@ -328,7 +331,7 @@ def make_report(data,witness):
         lines.append('| '+' | '.join([d['host'],d['sourceRepo'],d['role'],
                       str(d['sourceHTMLRoutes']),status,same])+' |')
     lines+=['','## Critical boundaries','',
-       '- Complete tracked HTML routes are in source-routes.json; all 31,918 navigation edges are preserved losslessly in navigation-edges.json.gz and cross-domain relations are summarized in estate-relations.json.',
+       f'- Complete tracked HTML routes are in source-routes.json; all {data["counts"]["gitNavigationEdges"]:,} navigation edges are preserved losslessly in navigation-edges.json.gz and cross-domain relations are summarized in estate-relations.json.',
        '- The public readback is a bounded sample; no false claim of exhaustive public routing.',
        '- The works.benedikt-eickhoff.de parent hostname is owned by works-benedikt-eickhoff; its /solstice/ subtree delegates to the Solstice source repository.',
        '- The MIDI2 code/documentation repository has no tracked deployed site root in this checkout; its live website must be read back independently.',
@@ -360,7 +363,12 @@ def main():
     parser.add_argument('mode',choices=['build','verify','probe'])
     mode=parser.parse_args().mode
     OUTPUT.mkdir(exist_ok=True)
-    data,routes,edges=inventory()
+    pinned=None
+    if mode=='verify':
+        recorded=OUTPUT/'domain-ownership.json'
+        if not recorded.exists():raise ValueError('Missing source lock: build inventory first')
+        pinned={item['repository']:item for item in json.loads(recorded.read_text())['sources']}
+    data,routes,edges=inventory(pinned)
     persist(data,routes,edges,mode=='verify')
     witness=probe(data,routes,edges) if mode=='probe' else (
        json.loads((OUTPUT/'public-readback.json').read_text()) if (OUTPUT/'public-readback.json').exists() else None)

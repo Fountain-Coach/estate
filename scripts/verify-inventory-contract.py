@@ -36,7 +36,11 @@ assert any(x for x in edges if x['host']=='works.benedikt-eickhoff.de'
            and x['fromRoute'].startswith('/solstice/'))
 assert len(set((x['host'],x['route']) for x in routes))==len(routes)
 assert all(x['repository'].startswith('Fountain-Coach/') for x in owners['sources'])
-assert all(x['sourceInventoryStatus']!='mismatch' for x in owners['sources'])
+# Owner checkouts may advance independently. Preserve a mismatching SHA inventory
+# as an explicit recoverability finding rather than hiding it or editing that owner.
+for source in owners['sources']:
+    if source['sourceInventoryStatus']=='mismatch':
+        assert any(r['type']=='source-file-inventory-mismatch' and r['repository']==source['repository'] for r in owners['risks'])
 assert any(x['fromHost']=='fountain.coach' for x in relationships)
 assert witness['schema']=='fountain.estate.public-readback.v1'
 byhost={x['host']:x for x in witness['domains']}
