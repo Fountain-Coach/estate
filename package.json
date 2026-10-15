@@ -3,14 +3,18 @@
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "description": "Three-front GitHub-owned Fountain Coach estate registry",
+  "description": "Owned-domain, route and live-deployment estate registry",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fountain-Coach/estate.git"
   },
   "scripts": {
-    "check": "node scripts/verify-estate.mjs",
-    "test": "node scripts/verify-estate.mjs",
-    "staging:verify": "python3 scripts/verify-wlan-staging.py"
+    "check": "node scripts/verify-estate.mjs && python3 scripts/build-domain-inventory.py verify && python3 scripts/verify-inventory-contract.py",
+    "test": "node scripts/verify-estate.mjs && python3 scripts/build-domain-inventory.py verify && python3 scripts/verify-inventory-contract.py",
+    "staging:verify": "python3 scripts/verify-wlan-staging.py",
+    "inventory:build": "python3 scripts/build-domain-inventory.py build",
+    "inventory:verify": "python3 scripts/build-domain-inventory.py verify",
+    "inventory:probe": "python3 scripts/build-domain-inventory.py probe",
+    "inventory:test": "python3 scripts/verify-inventory-contract.py"
   }
 }

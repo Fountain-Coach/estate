@@ -263,6 +263,21 @@
       "status": "live-adjacent"
     },
     {
+      "host": "works.benedikt-eickhoff.de",
+      "role": "literary-works-publication",
+      "sourceRepo": "Fountain-Coach/works-benedikt-eickhoff",
+      "status": "live",
+      "delegatedPublications": [
+        {
+          "pathPrefix": "/solstice/",
+          "sourceRepo": "Fountain-Coach/solstice.fountain.coach",
+          "sourceDomain": "solstice.fountain.coach",
+          "work": "First Reading",
+          "publicationState": "public-under-works-host; solstice-subdomain-unresolved"
+        }
+      ]
+    },
+    {
       "host": "tennis.fountain.coach",
       "role": "retired-technical-experiment",
       "sourceRepo": "Fountain-Coach/tennis.fountain.coach",

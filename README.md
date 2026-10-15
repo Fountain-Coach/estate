@@ -203,3 +203,21 @@ only the three verified book destinations to WLAN ports, never content.
 
 The owner repository builds the grid deterministically; source commits and
 WLAN tests do not constitute production publication.
+
+## Complete estate inventory and HTTPS reconciliation
+
+The canonical source-owner inventory is in [inventory/](inventory/README.md).
+Its [contract](inventory/CONTRACT.md) separates the complete registered domain
+estate from the editorial Bookshelf, maps delegated Solstice hosting beneath
+works.benedikt-eickhoff.de, and records every Git-tracked HTML source route and
+navigation dependency. The current-public-versus-Git evidence is stored in
+[inventory/public-readback.json](inventory/public-readback.json). It is a
+bounded read-only public HTTPS witness, not a release command or a claim of
+complete remote crawl coverage.
+
+- `npm run inventory:build` regenerates deterministic owner, routes, and link graph files.
+- `npm run inventory:verify` checks them without modification.
+- `npm run inventory:probe` refreshes independently read public HTTPS samples.
+- `npm run check` enforces the owner graph and anti-omission contract.
+
+No hosting, Caddy, DNS, GitHub CI or public content is modified by inventory commands.

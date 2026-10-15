@@ -1,0 +1,410 @@
+[
+  {
+    "fromHost": "benedikt-eickhoff.de",
+    "links": 12,
+    "originRouteCount": 6,
+    "toHost": "book.fountain.coach"
+  },
+  {
+    "fromHost": "benedikt-eickhoff.de",
+    "links": 13,
+    "originRouteCount": 6,
+    "toHost": "fountain.coach"
+  },
+  {
+    "fromHost": "benedikt-eickhoff.de",
+    "links": 42,
+    "originRouteCount": 6,
+    "toHost": "governance.fountain.coach"
+  },
+  {
+    "fromHost": "benedikt-eickhoff.de",
+    "links": 12,
+    "originRouteCount": 6,
+    "toHost": "instruments.fountain.coach"
+  },
+  {
+    "fromHost": "benedikt-eickhoff.de",
+    "links": 12,
+    "originRouteCount": 6,
+    "toHost": "midi2.fountain.coach"
+  },
+  {
+    "fromHost": "benedikt-eickhoff.de",
+    "links": 12,
+    "originRouteCount": 6,
+    "toHost": "status.fountain.coach"
+  },
+  {
+    "fromHost": "benedikt-eickhoff.de",
+    "links": 12,
+    "originRouteCount": 6,
+    "toHost": "teatro.fountain.coach"
+  },
+  {
+    "fromHost": "benedikt-eickhoff.de",
+    "links": 6,
+    "originRouteCount": 6,
+    "toHost": "works.benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "book.fountain.coach",
+    "links": 68,
+    "originRouteCount": 17,
+    "toHost": "fountain.coach"
+  },
+  {
+    "fromHost": "book.fountain.coach",
+    "links": 34,
+    "originRouteCount": 17,
+    "toHost": "governance.fountain.coach"
+  },
+  {
+    "fromHost": "book.fountain.coach",
+    "links": 34,
+    "originRouteCount": 17,
+    "toHost": "instruments.fountain.coach"
+  },
+  {
+    "fromHost": "book.fountain.coach",
+    "links": 17,
+    "originRouteCount": 17,
+    "toHost": "status.fountain.coach"
+  },
+  {
+    "fromHost": "fountain.coach",
+    "links": 6,
+    "originRouteCount": 6,
+    "toHost": "benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "fountain.coach",
+    "links": 7,
+    "originRouteCount": 6,
+    "toHost": "book.fountain.coach"
+  },
+  {
+    "fromHost": "fountain.coach",
+    "links": 68,
+    "originRouteCount": 12,
+    "toHost": "governance.fountain.coach"
+  },
+  {
+    "fromHost": "fountain.coach",
+    "links": 7,
+    "originRouteCount": 6,
+    "toHost": "instruments.fountain.coach"
+  },
+  {
+    "fromHost": "fountain.coach",
+    "links": 8,
+    "originRouteCount": 7,
+    "toHost": "midi2.fountain.coach"
+  },
+  {
+    "fromHost": "fountain.coach",
+    "links": 13,
+    "originRouteCount": 12,
+    "toHost": "status.fountain.coach"
+  },
+  {
+    "fromHost": "fountain.coach",
+    "links": 18,
+    "originRouteCount": 11,
+    "toHost": "teatro.fountain.coach"
+  },
+  {
+    "fromHost": "fountain.coach",
+    "links": 18,
+    "originRouteCount": 11,
+    "toHost": "works.benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "governance.fountain.coach",
+    "links": 314,
+    "originRouteCount": 165,
+    "toHost": "benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "governance.fountain.coach",
+    "links": 329,
+    "originRouteCount": 165,
+    "toHost": "book.fountain.coach"
+  },
+  {
+    "fromHost": "governance.fountain.coach",
+    "links": 637,
+    "originRouteCount": 165,
+    "toHost": "fountain.coach"
+  },
+  {
+    "fromHost": "governance.fountain.coach",
+    "links": 319,
+    "originRouteCount": 165,
+    "toHost": "instruments.fountain.coach"
+  },
+  {
+    "fromHost": "governance.fountain.coach",
+    "links": 328,
+    "originRouteCount": 165,
+    "toHost": "midi2.fountain.coach"
+  },
+  {
+    "fromHost": "governance.fountain.coach",
+    "links": 163,
+    "originRouteCount": 160,
+    "toHost": "status.fountain.coach"
+  },
+  {
+    "fromHost": "governance.fountain.coach",
+    "links": 314,
+    "originRouteCount": 165,
+    "toHost": "teatro.fountain.coach"
+  },
+  {
+    "fromHost": "governance.fountain.coach",
+    "links": 165,
+    "originRouteCount": 165,
+    "toHost": "works.benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "instruments.fountain.coach",
+    "links": 8,
+    "originRouteCount": 4,
+    "toHost": "benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "instruments.fountain.coach",
+    "links": 11,
+    "originRouteCount": 4,
+    "toHost": "book.fountain.coach"
+  },
+  {
+    "fromHost": "instruments.fountain.coach",
+    "links": 12,
+    "originRouteCount": 4,
+    "toHost": "fountain.coach"
+  },
+  {
+    "fromHost": "instruments.fountain.coach",
+    "links": 31,
+    "originRouteCount": 4,
+    "toHost": "governance.fountain.coach"
+  },
+  {
+    "fromHost": "instruments.fountain.coach",
+    "links": 10,
+    "originRouteCount": 4,
+    "toHost": "midi2.fountain.coach"
+  },
+  {
+    "fromHost": "instruments.fountain.coach",
+    "links": 8,
+    "originRouteCount": 4,
+    "toHost": "status.fountain.coach"
+  },
+  {
+    "fromHost": "instruments.fountain.coach",
+    "links": 8,
+    "originRouteCount": 4,
+    "toHost": "teatro.fountain.coach"
+  },
+  {
+    "fromHost": "instruments.fountain.coach",
+    "links": 4,
+    "originRouteCount": 4,
+    "toHost": "works.benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "solstice.fountain.coach",
+    "links": 1,
+    "originRouteCount": 1,
+    "toHost": "benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "solstice.fountain.coach",
+    "links": 1,
+    "originRouteCount": 1,
+    "toHost": "book.fountain.coach"
+  },
+  {
+    "fromHost": "solstice.fountain.coach",
+    "links": 65,
+    "originRouteCount": 31,
+    "toHost": "fountain.coach"
+  },
+  {
+    "fromHost": "solstice.fountain.coach",
+    "links": 155,
+    "originRouteCount": 31,
+    "toHost": "governance.fountain.coach"
+  },
+  {
+    "fromHost": "solstice.fountain.coach",
+    "links": 31,
+    "originRouteCount": 31,
+    "toHost": "status.fountain.coach"
+  },
+  {
+    "fromHost": "solstice.fountain.coach",
+    "links": 32,
+    "originRouteCount": 31,
+    "toHost": "teatro.fountain.coach"
+  },
+  {
+    "fromHost": "solstice.fountain.coach",
+    "links": 63,
+    "originRouteCount": 32,
+    "toHost": "works.benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "status.fountain.coach",
+    "links": 24,
+    "originRouteCount": 12,
+    "toHost": "benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "status.fountain.coach",
+    "links": 26,
+    "originRouteCount": 12,
+    "toHost": "book.fountain.coach"
+  },
+  {
+    "fromHost": "status.fountain.coach",
+    "links": 27,
+    "originRouteCount": 12,
+    "toHost": "fountain.coach"
+  },
+  {
+    "fromHost": "status.fountain.coach",
+    "links": 86,
+    "originRouteCount": 12,
+    "toHost": "governance.fountain.coach"
+  },
+  {
+    "fromHost": "status.fountain.coach",
+    "links": 25,
+    "originRouteCount": 12,
+    "toHost": "instruments.fountain.coach"
+  },
+  {
+    "fromHost": "status.fountain.coach",
+    "links": 25,
+    "originRouteCount": 12,
+    "toHost": "midi2.fountain.coach"
+  },
+  {
+    "fromHost": "status.fountain.coach",
+    "links": 24,
+    "originRouteCount": 12,
+    "toHost": "teatro.fountain.coach"
+  },
+  {
+    "fromHost": "status.fountain.coach",
+    "links": 12,
+    "originRouteCount": 12,
+    "toHost": "works.benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "teatro.fountain.coach",
+    "links": 1,
+    "originRouteCount": 1,
+    "toHost": "benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "teatro.fountain.coach",
+    "links": 1,
+    "originRouteCount": 1,
+    "toHost": "book.fountain.coach"
+  },
+  {
+    "fromHost": "teatro.fountain.coach",
+    "links": 4,
+    "originRouteCount": 3,
+    "toHost": "fountain.coach"
+  },
+  {
+    "fromHost": "teatro.fountain.coach",
+    "links": 6,
+    "originRouteCount": 1,
+    "toHost": "governance.fountain.coach"
+  },
+  {
+    "fromHost": "teatro.fountain.coach",
+    "links": 1,
+    "originRouteCount": 1,
+    "toHost": "instruments.fountain.coach"
+  },
+  {
+    "fromHost": "teatro.fountain.coach",
+    "links": 1,
+    "originRouteCount": 1,
+    "toHost": "midi2.fountain.coach"
+  },
+  {
+    "fromHost": "teatro.fountain.coach",
+    "links": 1,
+    "originRouteCount": 1,
+    "toHost": "status.fountain.coach"
+  },
+  {
+    "fromHost": "teatro.fountain.coach",
+    "links": 3,
+    "originRouteCount": 3,
+    "toHost": "works.benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "tennis.fountain.coach",
+    "links": 1,
+    "originRouteCount": 1,
+    "toHost": "fountain.coach"
+  },
+  {
+    "fromHost": "works.benedikt-eickhoff.de",
+    "links": 29,
+    "originRouteCount": 29,
+    "toHost": "benedikt-eickhoff.de"
+  },
+  {
+    "fromHost": "works.benedikt-eickhoff.de",
+    "links": 29,
+    "originRouteCount": 29,
+    "toHost": "book.fountain.coach"
+  },
+  {
+    "fromHost": "works.benedikt-eickhoff.de",
+    "links": 121,
+    "originRouteCount": 59,
+    "toHost": "fountain.coach"
+  },
+  {
+    "fromHost": "works.benedikt-eickhoff.de",
+    "links": 193,
+    "originRouteCount": 59,
+    "toHost": "governance.fountain.coach"
+  },
+  {
+    "fromHost": "works.benedikt-eickhoff.de",
+    "links": 28,
+    "originRouteCount": 28,
+    "toHost": "instruments.fountain.coach"
+  },
+  {
+    "fromHost": "works.benedikt-eickhoff.de",
+    "links": 28,
+    "originRouteCount": 28,
+    "toHost": "midi2.fountain.coach"
+  },
+  {
+    "fromHost": "works.benedikt-eickhoff.de",
+    "links": 59,
+    "originRouteCount": 59,
+    "toHost": "status.fountain.coach"
+  },
+  {
+    "fromHost": "works.benedikt-eickhoff.de",
+    "links": 60,
+    "originRouteCount": 59,
+    "toHost": "teatro.fountain.coach"
+  }
+]

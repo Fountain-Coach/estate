@@ -1,0 +1,2578 @@
+[
+  {
+    "host": "benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/benedikt-eickhoff.de",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "a0a87ec2a26728b7a946716d4687d02e59eb7b9121d11ada09749d00ee25a381"
+  },
+  {
+    "host": "benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/benedikt-eickhoff.de",
+    "provenance": "git-tracked-source",
+    "route": "/posts/a-day-becomes-a-readable-scene/content.html",
+    "sourceFile": "site/posts/a-day-becomes-a-readable-scene/content.html",
+    "sourceSHA256": "be7c3708b067ab07ad3125ff0ac4e637c0838c8f946f1e5a88efa11142fba852"
+  },
+  {
+    "host": "benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/benedikt-eickhoff.de",
+    "provenance": "git-tracked-source",
+    "route": "/posts/a-pointer-enters-the-scene/",
+    "sourceFile": "site/posts/a-pointer-enters-the-scene/index.html",
+    "sourceSHA256": "240b6c3f931da2636f74c405e576d147073ab446ca1ee47d5eb48a991358f14d"
+  },
+  {
+    "host": "benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/benedikt-eickhoff.de",
+    "provenance": "git-tracked-source",
+    "route": "/posts/chapter-129-the-image-becomes-a-contract/",
+    "sourceFile": "site/posts/chapter-129-the-image-becomes-a-contract/index.html",
+    "sourceSHA256": "eefb794659874e1859b311b5e10b2177163ea4b2c6e440ede2750802a882dacd"
+  },
+  {
+    "host": "benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/benedikt-eickhoff.de",
+    "provenance": "git-tracked-source",
+    "route": "/posts/memory-vector/",
+    "sourceFile": "site/posts/memory-vector/index.html",
+    "sourceSHA256": "99ab0bcdf9301af64459e58d1bc9c38ff9a4150139a68c12664cde54abc419c1"
+  },
+  {
+    "host": "benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/benedikt-eickhoff.de",
+    "provenance": "git-tracked-source",
+    "route": "/posts/teatro-score/",
+    "sourceFile": "site/posts/teatro-score/index.html",
+    "sourceSHA256": "d4ba8578193445143b72ad037bfc7e268a7ef7b6ec1c57f5e83eaf6a0c7c55d6"
+  },
+  {
+    "host": "benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/benedikt-eickhoff.de",
+    "provenance": "git-tracked-source",
+    "route": "/posts/the-gallery-becomes-a-post/",
+    "sourceFile": "site/posts/the-gallery-becomes-a-post/index.html",
+    "sourceSHA256": "38fde3d4b92955d7fb3cbe66a5dc8ac50d59de7462f359718c1c9588064508e6"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "6da66dd08d9c194991762862ae27403605179cc1ce03eeffd1e5e696a34a9c33"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/accessibility/",
+    "sourceFile": "site/accessibility/index.html",
+    "sourceSHA256": "4abee4b4fe32d48b0f623952b06e9881b9ff5e3509b005daf2a5aa4abaaa7d36"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/capabilities/reframe-to-reframe-peer-projection/",
+    "sourceFile": "site/capabilities/reframe-to-reframe-peer-projection/index.html",
+    "sourceSHA256": "71127c57665471cfdb294a5b1423b8fdeb9b810ae7668f2fbe47e082abe52434"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/capabilities/scenario-runtime-midi2/",
+    "sourceFile": "site/capabilities/scenario-runtime-midi2/index.html",
+    "sourceSHA256": "68e5d0eb133adc5cf243ed814aa79d3b6a435287d5d39006ff18a2a4ca225605"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/commands/commands/",
+    "sourceFile": "site/commands/commands/index.html",
+    "sourceSHA256": "bc41bff93f23540a401a3310570ffea3e8a0069c07942183dae7c6e0008f73bd"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/commands/ground/",
+    "sourceFile": "site/commands/ground/index.html",
+    "sourceSHA256": "519d649193e8b256dbc870423703e100e7026fe77774c9d7189762b07f50cff7"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/commands/pipeline-status/",
+    "sourceFile": "site/commands/pipeline-status/index.html",
+    "sourceSHA256": "7bb427fbda33cf06c5ed8433d0f82966dee9d8871ca225232170117816e0b1f8"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/commands/readings/",
+    "sourceFile": "site/commands/readings/index.html",
+    "sourceSHA256": "77d9d8327b38ecfb1b91347d36acb172fef043f3645a40598a205024a53b2d12"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/commands/threads/",
+    "sourceFile": "site/commands/threads/index.html",
+    "sourceSHA256": "6bb2e7285ecdfef05d5f3cf5a79da3956547ff07d1387f129f6961e74898b8bf"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/compliance/",
+    "sourceFile": "site/compliance/index.html",
+    "sourceSHA256": "a0ee668eb0d465ba74d0a0c145f0f4ab9fc0160d010c676e1d90b725c34e4e1d"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/copyright/",
+    "sourceFile": "site/copyright/index.html",
+    "sourceSHA256": "ae1a73d18f64c060b2a55eb56b2ac8fa21cf6cbf6b1c9ef7d329bc1877067cda"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/governance/default-semantic-manuscript-projection/",
+    "sourceFile": "site/governance/default-semantic-manuscript-projection/index.html",
+    "sourceSHA256": "5da20d8d1f268152ddad37742abd954107aaa526a23ff1a91316989d3230a52e"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/legal/",
+    "sourceFile": "site/legal/index.html",
+    "sourceSHA256": "786673f8c4922650a5e5281c2c55f03a7ad4680a9aea9bb349569885f4541846"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/privacy/",
+    "sourceFile": "site/privacy/index.html",
+    "sourceSHA256": "45504473828b14f6e8da7ecbc9d427acb3452a19eab12c17efe8fab7f4ab39e3"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/scenario-driven-development/",
+    "sourceFile": "site/scenario-driven-development/index.html",
+    "sourceSHA256": "4d87721c88db36af4abefb35c816949da85707680f88e1bd171110868bb85ea4"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/scenarios/",
+    "sourceFile": "site/scenarios/index.html",
+    "sourceSHA256": "4c45fb720ad0d064910dea8540bfbac3702921da2cbaab00c1e5911b309389fb"
+  },
+  {
+    "host": "book.fountain.coach",
+    "owner": "Fountain-Coach/book-of-reframe",
+    "provenance": "git-tracked-source",
+    "route": "/sticker/",
+    "sourceFile": "site/sticker/index.html",
+    "sourceSHA256": "76640e75d7b91de37fc1bfe79e12cf0dfedaed56a6ebd0f3697f45f7fc0bbafa"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "aeb3c22469b1db4c8917e04d14cf1fb3335c44dc7c1a40d7c6fc5a08feb7b7c6"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/collections/first-readings/",
+    "sourceFile": "site/collections/first-readings/index.html",
+    "sourceSHA256": "d3470f2ee5422c70b905d7f61d3e612b874ca4b0e5a36b985d04b3a240dafe55"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/",
+    "sourceFile": "site/editions/index.html",
+    "sourceSHA256": "aeb3c22469b1db4c8917e04d14cf1fb3335c44dc7c1a40d7c6fc5a08feb7b7c6"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/catalogue/",
+    "sourceFile": "site/editions/catalogue/index.html",
+    "sourceSHA256": "5367efab6cbef91c825e761decbd0557644c8b481e87461156ce7eb75f7318d7"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/essays/",
+    "sourceFile": "site/editions/essays/index.html",
+    "sourceSHA256": "4cf8622a4e9c95f67d740cf9eecc38f8627b23bb69de5b72a857c2980a712a36"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/essays/reframe-and-the-business-value-of-the-estate/",
+    "sourceFile": "site/editions/essays/reframe-and-the-business-value-of-the-estate/index.html",
+    "sourceSHA256": "fde9eee8763f65975f8385a4655f2eaed1c2e3cbd59cbcf5c34e0da02f9f806b"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/essays/semantic-compilation-the-archive-is-not-the-edition/",
+    "sourceFile": "site/editions/essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+    "sourceSHA256": "d52c2a8926e0ec224d24364fbbda0fe9f9e4577b42ded089ce0a93c48bd7648a"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/essays/teatro-an-unfinished-composition/",
+    "sourceFile": "site/editions/essays/teatro-an-unfinished-composition/index.html",
+    "sourceSHA256": "74c99ea70bdd6efe3914d04f1edfa3a240639226f3c74c17d67c078318ae7c76"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/essays/",
+    "sourceFile": "site/essays/index.html",
+    "sourceSHA256": "6d5f1c98f2c50c93ce29b39fecc2f6774230c8cc283e0a4c2062f5a46bde4292"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/essays/reframe-and-the-business-value-of-the-estate/",
+    "sourceFile": "site/essays/reframe-and-the-business-value-of-the-estate/index.html",
+    "sourceSHA256": "c43fa422d8a60627b44900a1f1da5ca6e8a8955be1a0f95fafb0575ef4a6762a"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/essays/semantic-compilation-the-archive-is-not-the-edition/",
+    "sourceFile": "site/essays/semantic-compilation-the-archive-is-not-the-edition/index.html",
+    "sourceSHA256": "485d2514a8692bff998180b6ad5e5442bc3db4e66d222f89c3f1865a2fd0a2c1"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/essays/teatro-an-unfinished-composition/",
+    "sourceFile": "site/essays/teatro-an-unfinished-composition/index.html",
+    "sourceSHA256": "5f77e58bbb59d0802d5b8b0ee48ecea1bbea7d44ebf4b73e3107363b7b95bad8"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/for-agents/",
+    "sourceFile": "site/for-agents/index.html",
+    "sourceSHA256": "9d4c6a3ff864f3c8fcdc994ebb9def6bfce167f8b3a8ffbb6be1cabddf013254"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/performance-ecosystem/",
+    "sourceFile": "site/performance-ecosystem/index.html",
+    "sourceSHA256": "9645d4417c6f95f53b2a594f098f506341d5662eb2d5d5585f86d431988f3df3"
+  },
+  {
+    "host": "fountain.coach",
+    "owner": "Fountain-Coach/fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/teatro-stage-web/",
+    "sourceFile": "site/teatro-stage-web/index.html",
+    "sourceSHA256": "d33060d79cb99fc45cd42c1dff21fe2fd72fcfaf9b74a12a5ae59ead0f1a8225"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "f5b316c7ddbdf4c287e37558e2184ca7002ca3a483d9f2cbbab957bdbfa28919"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/accessibility/",
+    "sourceFile": "site/accessibility/index.html",
+    "sourceSHA256": "dfc309c9b653d87e3772c3e98a7bfedf5de24adfe3cf7b7803af3898ff0a6380"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/00-abstract/",
+    "sourceFile": "site/chapters/00-abstract/index.html",
+    "sourceSHA256": "1e25c8f84f29fc495faf5d53521a79f8010727fe1823668f0dde36605176d026"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/01-reading-index/",
+    "sourceFile": "site/chapters/01-reading-index/index.html",
+    "sourceSHA256": "68cbba00e166078d08ac36245a188a815baa7cc01e235855e7d26c7a1c7a1710"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/02-development-history/",
+    "sourceFile": "site/chapters/02-development-history/index.html",
+    "sourceSHA256": "9eed7c652bc3a57169f4481dc36c469d47c9492be747a6dd78dfc8e6c2b9b309"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/03-current-state-and-problem/",
+    "sourceFile": "site/chapters/03-current-state-and-problem/index.html",
+    "sourceSHA256": "ee78472d74c7e47f570c670a08ab0040d7b01b82dd550dfc4f1609fdc9263246"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/04-target-architecture/",
+    "sourceFile": "site/chapters/04-target-architecture/index.html",
+    "sourceSHA256": "f4e7777c807922d9a12a20a5e4e86cbb61d59e17be7aea40aba01272563dd1c3"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/05-grounding-contract/",
+    "sourceFile": "site/chapters/05-grounding-contract/index.html",
+    "sourceSHA256": "3f3f9f6f4853a3a557b43917bf985aa0126c19483801018a0953519994e7c3a5"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/06-refactoring-program/",
+    "sourceFile": "site/chapters/06-refactoring-program/index.html",
+    "sourceSHA256": "8051bdb0b5afa943a9dc0740bd0760d6bd21cba3600add3c7bda573a1c41b377"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/07-agent-operating-guide/",
+    "sourceFile": "site/chapters/07-agent-operating-guide/index.html",
+    "sourceSHA256": "f0a4fc06b46e3dfdcf250ba8183e9f8074529a72dbd2ace9c4096ee058463371"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/08-validation-and-acceptance/",
+    "sourceFile": "site/chapters/08-validation-and-acceptance/index.html",
+    "sourceSHA256": "4912a239abd7c78b7fc6e9e7770149d60694ff77b303319c06148081236afb42"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/09-compatibility-and-future-evolution/",
+    "sourceFile": "site/chapters/09-compatibility-and-future-evolution/index.html",
+    "sourceSHA256": "83b9503cdca505c7b14278714d6ecef26ce3fdc6f3ad99c9c2963b3fe6bb4b8b"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/10-copilot-implementation-extension/",
+    "sourceFile": "site/chapters/10-copilot-implementation-extension/index.html",
+    "sourceSHA256": "20f4804ce4d2985bccc6752cb2c29912a9d8e176ecc1af3e5101973dd8b837ce"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/100-semantic-scenographer/",
+    "sourceFile": "site/chapters/100-semantic-scenographer/index.html",
+    "sourceSHA256": "0aecea8f42c44cbaaa1cd302642fdfb7b97ecc75f48ab404e3d78c027a493445"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/101-teatro-stage-engine-semantic-scenography/",
+    "sourceFile": "site/chapters/101-teatro-stage-engine-semantic-scenography/index.html",
+    "sourceSHA256": "c393ea62e3dbddf3b70d4fdeae6dbbbfb848121b25f04c865fc20471f33d9b7b"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/102-semantic-inference-execution-session-and-latency-governance/",
+    "sourceFile": "site/chapters/102-semantic-inference-execution-session-and-latency-governance/index.html",
+    "sourceSHA256": "f1b288fa697d6ec8345046198fdbcd326218c4e6ae4683b1de3f6e1cce9756c1"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/103-fcis-kit-semantic-factory-and-wired-instrument-event-stream/",
+    "sourceFile": "site/chapters/103-fcis-kit-semantic-factory-and-wired-instrument-event-stream/index.html",
+    "sourceSHA256": "7121179b705707f8d2bad07e9cafd44390188ad64918766268118afa13534e6c"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/104-midi2-event-time-jitter-and-asynchronous-completion-governance/",
+    "sourceFile": "site/chapters/104-midi2-event-time-jitter-and-asynchronous-completion-governance/index.html",
+    "sourceSHA256": "e994a578b79c085e6850cfe87477f7e4c1dbf3ed9985a9a47d662b7482c415c2"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/105-semantic-scenographer-one-spatial-thought/",
+    "sourceFile": "site/chapters/105-semantic-scenographer-one-spatial-thought/index.html",
+    "sourceSHA256": "210a11733827bf378571cf50658c3bad491fe316029ab47498473e7f9a0c8101"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/106-teatro-midi2-monitor-canonical-runtime-projection/",
+    "sourceFile": "site/chapters/106-teatro-midi2-monitor-canonical-runtime-projection/index.html",
+    "sourceSHA256": "974e217e13865a1544306a766761ce0a059b6e55ef334834fbaddf5792aa408e"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/107-creating-the-canonical-teatro-stage-composition-layer/",
+    "sourceFile": "site/chapters/107-creating-the-canonical-teatro-stage-composition-layer/index.html",
+    "sourceSHA256": "a50ba84b11d6f7099570420c34f989859e0508a6bde09ea755f08036fac07d3f"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/108-reframe-is-a-swift-native-cross-platform-runtime/",
+    "sourceFile": "site/chapters/108-reframe-is-a-swift-native-cross-platform-runtime/index.html",
+    "sourceSHA256": "20a3d2e772cc0db9898ec9dd43c68ac4d6bb00fecde8c294d93c7bdf7135439f"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/109-natural-language-measurement-is-a-midi2-instrument/",
+    "sourceFile": "site/chapters/109-natural-language-measurement-is-a-midi2-instrument/index.html",
+    "sourceSHA256": "4f2f4a5de0e352b8aa86bdba1420d107fd8ac69d4f2a1902acf5d8a414e2b6e8"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/11-grounding-as-a-given/",
+    "sourceFile": "site/chapters/11-grounding-as-a-given/index.html",
+    "sourceSHA256": "eb2bdbbc50f562639180fbde1251d24465d5b31a6a58bb01be2ef62355c49c1d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/110-three-run-semantic-drift-calculus/",
+    "sourceFile": "site/chapters/110-three-run-semantic-drift-calculus/index.html",
+    "sourceSHA256": "9944c0570983abc77b69fe606fd8305f57261bb4c0fb7aa005b08ac3d86cb1a4"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/111-evidence-cohorts-as-publication-units/",
+    "sourceFile": "site/chapters/111-evidence-cohorts-as-publication-units/index.html",
+    "sourceSHA256": "4e05b72814083aec9f9a3a2e70df95d60b60e0f9cbcf835768d20337e8e3e567"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/112-skill-and-maintenance-capabilities-are-kit-owned/",
+    "sourceFile": "site/chapters/112-skill-and-maintenance-capabilities-are-kit-owned/index.html",
+    "sourceSHA256": "1f5dd6e5aa2576ee11f5b48aad6ed1081d2c1ae7ff3b0c5ec3de7a744ca3ff21"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/113-governance-becomes-an-executable-scenographic-policy/",
+    "sourceFile": "site/chapters/113-governance-becomes-an-executable-scenographic-policy/index.html",
+    "sourceSHA256": "3d7225b2b789199f51129b0721fa6433d6d9333823f50a1cc14397defad421af"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/114-server-side-semantic-proposals-mac-and-linux-one-runtime/",
+    "sourceFile": "site/chapters/114-server-side-semantic-proposals-mac-and-linux-one-runtime/index.html",
+    "sourceSHA256": "4336305254464165e2227ec5b36c9a1fa324ab7606de0fbfbcb2a556521518f0"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/115-semantic-browser-is-a-governed-midi2-and-fountainstore-instrument/",
+    "sourceFile": "site/chapters/115-semantic-browser-is-a-governed-midi2-and-fountainstore-instrument/index.html",
+    "sourceSHA256": "3c6467d398156f2a30b5a8231c8afb55ea2b3fd64af83a31d2ade52f3aecaddf"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/116-fountainstore-owned-estate-edge-and-acme-promotion/",
+    "sourceFile": "site/chapters/116-fountainstore-owned-estate-edge-and-acme-promotion/index.html",
+    "sourceSHA256": "b1d195d226f90212886091069547664576ccfdafac573bbc8030da42fb7c955d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/117-fountainstore-snapshot-export-and-git-recovery-projection/",
+    "sourceFile": "site/chapters/117-fountainstore-snapshot-export-and-git-recovery-projection/index.html",
+    "sourceSHA256": "ff54845f4b9ec9a017ed168f4d2ddc07fc8cfdd4595517431e68c5e422ba597e"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/118-european-cybersecurity-profile/",
+    "sourceFile": "site/chapters/118-european-cybersecurity-profile/index.html",
+    "sourceSHA256": "f5152bc3a63b6a7ca036a9c015bd82ce054d72844c110fb16870764b5caaf78a"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/119-scenario-pipeline-factory/",
+    "sourceFile": "site/chapters/119-scenario-pipeline-factory/index.html",
+    "sourceSHA256": "7d4e538d89b0849c989559cf2984405f48f4631a3c9446344bae57f8018a95ce"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/12-animating-truth/",
+    "sourceFile": "site/chapters/12-animating-truth/index.html",
+    "sourceSHA256": "a71f88ee6cac6678d5dcc3aba82d0369e7069f3750db195fd54ecdea2ce2c865"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/120-internal-triadic-peer-dialogue/",
+    "sourceFile": "site/chapters/120-internal-triadic-peer-dialogue/index.html",
+    "sourceSHA256": "146bd1a6945e910aa49b09a06330bea1419fd936fada508d486c1c250fe64b25"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/121-dynamic-midi2-instrument-factory/",
+    "sourceFile": "site/chapters/121-dynamic-midi2-instrument-factory/index.html",
+    "sourceSHA256": "d82fb27f32aeaa57f2daf4cdd899b3f234b25d2a55b4e63bc59d72d6a932b1fe"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/122-governed-semantic-transformation-instrument/",
+    "sourceFile": "site/chapters/122-governed-semantic-transformation-instrument/index.html",
+    "sourceSHA256": "2c82616fc8d201d0daa2d416d741258a456435cbc442ed1627306109af7fd84e"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/123-commands-must-be-legible-to-reasoning/",
+    "sourceFile": "site/chapters/123-commands-must-be-legible-to-reasoning/index.html",
+    "sourceSHA256": "ed2c1fa207321d8aeb13d7fc018ff07d844e26b4a67855ece246c8ffac87d4aa"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/124-midi2-timed-webkit-transitions/",
+    "sourceFile": "site/chapters/124-midi2-timed-webkit-transitions/index.html",
+    "sourceSHA256": "7ba7507a8ba1035e38e0ff5ac2d2d4de150bd5283a79658f278daec96e658804"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/125-store-publication-graph-domain-mapping-and-atomic-route-promotion/",
+    "sourceFile": "site/chapters/125-store-publication-graph-domain-mapping-and-atomic-route-promotion/index.html",
+    "sourceSHA256": "9932b830df8c4f91aa16b312dd5a57887a06cdadc2dc2c79864878a6810d239b"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/126-fountain-coach-organization-web-projection/",
+    "sourceFile": "site/chapters/126-fountain-coach-organization-web-projection/index.html",
+    "sourceSHA256": "fb1b3a3415e0c3b324488d2a9e193e2fb3fde5ad8fe7a3d3c76152b64744aa1c"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/127-estate-template-publishing-path/",
+    "sourceFile": "site/chapters/127-estate-template-publishing-path/index.html",
+    "sourceSHA256": "6519c2211760b010708f9a59d895dadd119898e6b1420ed81ec6cf3248b59e41"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/128-deployed-estate-webkit-mirror-authority/",
+    "sourceFile": "site/chapters/128-deployed-estate-webkit-mirror-authority/index.html",
+    "sourceSHA256": "6a6f19a109d5788910803b79bd6eaace1acb3171e74ebaf540a95f3902d8400e"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/129-native-animated-svg-governed-publication-projection/",
+    "sourceFile": "site/chapters/129-native-animated-svg-governed-publication-projection/index.html",
+    "sourceSHA256": "2f5b46576353ea724e3b7dd13f588f62ded49ff3b5719182d60d0fa5b9b83bb0"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/13-storage-and-performance/",
+    "sourceFile": "site/chapters/13-storage-and-performance/index.html",
+    "sourceSHA256": "85d68d537d1f647a9111c49fa59f290069028cbca23ece3c23312ce6d6126d35"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/130-human-machine-scenario-naming-is-a-governed-identity-boundary/",
+    "sourceFile": "site/chapters/130-human-machine-scenario-naming-is-a-governed-identity-boundary/index.html",
+    "sourceSHA256": "2c28597a6d91b126ddfed20a1403ea6ca003fbdbab15dd1d38a15b30a7398e69"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/131-remote-secretstore-authorization-and-approval-sessions/",
+    "sourceFile": "site/chapters/131-remote-secretstore-authorization-and-approval-sessions/index.html",
+    "sourceSHA256": "cd633e439b56add109df7b14ca0ac016a3ac9cc9a9738638989b45eb9508bdb3"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/132-reframe-audiounit-auv3-platform-and-aum-demo-host/",
+    "sourceFile": "site/chapters/132-reframe-audiounit-auv3-platform-and-aum-demo-host/index.html",
+    "sourceSHA256": "e13a552bc4245a22c0ecedde53ad787d1733b242de42355b3746aae49b734140"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/133-csound-auv3-instrument-boundary/",
+    "sourceFile": "site/chapters/133-csound-auv3-instrument-boundary/index.html",
+    "sourceSHA256": "c2dc6f4999adb5017797c15c89dc97d1346283e13e452196f04bb21f5cb69042"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/134-estatepublisher-publication-authority/",
+    "sourceFile": "site/chapters/134-estatepublisher-publication-authority/index.html",
+    "sourceSHA256": "8bc5894bcd0ae25c9606bcf56daf2e695fd1a55f4c75a4df9186153ab5c46dce"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/135-reframe-ipad-scenario-driven-creative-host/",
+    "sourceFile": "site/chapters/135-reframe-ipad-scenario-driven-creative-host/index.html",
+    "sourceSHA256": "41f247c0ed26f767e2185529f24bb04714a9ae14d2de040b80adff0fb9ec05c9"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/136-reframe-web-native-headless-audio-runtime/",
+    "sourceFile": "site/chapters/136-reframe-web-native-headless-audio-runtime/index.html",
+    "sourceSHA256": "ab93233c9b23d42e5e0642022a88f9b676a5e5ce98e2186962ec4ae22f48c39c"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/137-teatro-web-reframe-materialization/",
+    "sourceFile": "site/chapters/137-teatro-web-reframe-materialization/index.html",
+    "sourceSHA256": "a74798f4ea8c4e62eaa2a58f30be390c07b96fcb0c69b62913a57ba47031c7d6"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/138-ear-is-the-web-audio-graphs-midi2-listening-boundary/",
+    "sourceFile": "site/chapters/138-ear-is-the-web-audio-graphs-midi2-listening-boundary/index.html",
+    "sourceSHA256": "168db63df4d618516d96ffb9a22bc601418f4b86b2356f4348a2f7ca242b46f2"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/139-owner-trust-root-secretstore-custody-and-recovery/",
+    "sourceFile": "site/chapters/139-owner-trust-root-secretstore-custody-and-recovery/index.html",
+    "sourceSHA256": "c79edae558be8caa88f31f9b04770599742b9a09b8fb8803048278c4a828fb6d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/14-the-beat-and-its-arrangements/",
+    "sourceFile": "site/chapters/14-the-beat-and-its-arrangements/index.html",
+    "sourceSHA256": "2c22dd5e430fb3d74b267a2f8688f5ae9b86e8db3c3c226eab9b0da16086a4c0"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/140-local-developer-cloud-joining-machine-and-estatepublisher/",
+    "sourceFile": "site/chapters/140-local-developer-cloud-joining-machine-and-estatepublisher/index.html",
+    "sourceSHA256": "372a59fae0c9ede3c6c21941dc9dd0a07343ab93d045c8f94959882db9f13cfa"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/141-each-joining-machine-is-a-governed-midi2-instrument/",
+    "sourceFile": "site/chapters/141-each-joining-machine-is-a-governed-midi2-instrument/index.html",
+    "sourceSHA256": "20faa7b6b6fbbc021cbaa8b9c570621baa4088056b92f2367b660f870e9a17bd"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/142-fountainauthkit-governed-authorization-authority/",
+    "sourceFile": "site/chapters/142-fountainauthkit-governed-authorization-authority/index.html",
+    "sourceSHA256": "ffdeb2cac720645ac900a0d26313ab83956f4f41bb4cec04282f047eabb9fe7b"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/143-simplicity-is-key-one-bootstrap-one-trusted-session/",
+    "sourceFile": "site/chapters/143-simplicity-is-key-one-bootstrap-one-trusted-session/index.html",
+    "sourceSHA256": "9c0f61aec0a7f669ccbbba8c8077ce85a6f10973e550c98e0554019e62bd6317"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/144-fountain-media-service-governed-media-plane/",
+    "sourceFile": "site/chapters/144-fountain-media-service-governed-media-plane/index.html",
+    "sourceSHA256": "a92ec8b6a613bfd2d225c7234cf555e9365ac0b1de4662d05584975e31b545db"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/145-one-estate-one-publication-state-estatepublisher-and-reframe-semantic-browser/",
+    "sourceFile": "site/chapters/145-one-estate-one-publication-state-estatepublisher-and-reframe-semantic-browser/index.html",
+    "sourceSHA256": "adcae277e1a2d4e2a5c9246023be64de2534394070fa3c58e9b785c6c00d074d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/146-local-fountainstore-remote-caddy-production-estate/",
+    "sourceFile": "site/chapters/146-local-fountainstore-remote-caddy-production-estate/index.html",
+    "sourceSHA256": "c328d90d99e38cfb1e16800ccef2413a65985f553204e408bc01cd436cfc766a"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/147-local-route-materialization-estatepublisher-preview/",
+    "sourceFile": "site/chapters/147-local-route-materialization-estatepublisher-preview/index.html",
+    "sourceSHA256": "db39268d81cc202eb2d7d8ef693f7c465ddb13ff9fded5ac225a960dabcd53ac"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/148-production-runtime-artifact-only/",
+    "sourceFile": "site/chapters/148-production-runtime-artifact-only/index.html",
+    "sourceSHA256": "77f145734bb5e1eca6dae4b3381b4a796f4be13f2c76ee0ce92efa4c561d3291"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/149-remote-codexkit-governed-midi2-peer-instrument/",
+    "sourceFile": "site/chapters/149-remote-codexkit-governed-midi2-peer-instrument/index.html",
+    "sourceSHA256": "d9aa62f8267575392bdcc71bd23e0a3cecf94684e90b14cc252e16783e71f8b1"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/15-the-situated-copilot/",
+    "sourceFile": "site/chapters/15-the-situated-copilot/index.html",
+    "sourceSHA256": "4f94bdc5f2c0c49833b5c7c950f0ebf34ec1fbb90d02dab1170e64e6665f9425"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/150-one-midi2-instrument-plane-multiple-governed-transports/",
+    "sourceFile": "site/chapters/150-one-midi2-instrument-plane-multiple-governed-transports/index.html",
+    "sourceSHA256": "1b22cb0ac15c2a1877fa1de45897a38b6ceec2cee055dd33ad75b5eda74f2493"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/151-csound-teatro-speaking-sound-in-space/",
+    "sourceFile": "site/chapters/151-csound-teatro-speaking-sound-in-space/index.html",
+    "sourceSHA256": "7e2edc580efdc9b70851404b08c849e8c0758d9703ff0fb6b93964bb1414832d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/152-the-host-is-the-instrument/",
+    "sourceFile": "site/chapters/152-the-host-is-the-instrument/index.html",
+    "sourceSHA256": "727eafbca2e8b84d3b388988d9d25f3298e0f166d69832cab9da1b448bede77a"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/153-domain-admission-and-edge-binding-are-separate-governed-capabilities/",
+    "sourceFile": "site/chapters/153-domain-admission-and-edge-binding-are-separate-governed-capabilities/index.html",
+    "sourceSHA256": "318a567b3b9ec8a3331b8a7261b5a59795db0bfb5a3311b6143ed87433276ecf"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/154-domain-neutral-local-model-reasoning-testing/",
+    "sourceFile": "site/chapters/154-domain-neutral-local-model-reasoning-testing/index.html",
+    "sourceSHA256": "d58463139a9dbcbdc786dc41c8c50e23e012d221574b7d14626e753b60bea573"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/155-estatepublisher-rest-projection/",
+    "sourceFile": "site/chapters/155-estatepublisher-rest-projection/index.html",
+    "sourceSHA256": "c45a023ce20b8ca79d7fc1f769925e65a1b6317206ab249c8e0540b3cefae966"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/156-fcis-156-writer-workflow/",
+    "sourceFile": "site/chapters/156-fcis-156-writer-workflow/index.html",
+    "sourceSHA256": "26bd3a07d760228b58fecef9703397fb15c39bc5aa961eb297ef91474e66c2d4"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/157-the-writer-owns-the-public-domain/",
+    "sourceFile": "site/chapters/157-the-writer-owns-the-public-domain/index.html",
+    "sourceSHA256": "207ec98c9b16ccc63efc62122f37f7e6e628733afa79e199c5fec7eb71414083"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/158-publishing-is-not-a-distributed-transaction/",
+    "sourceFile": "site/chapters/158-publishing-is-not-a-distributed-transaction/index.html",
+    "sourceSHA256": "66ada6e6f04fd0a91f286743be1b752e79e2e0e108c75b3bab6679d500bf0bf0"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/16-the-timeline-is-the-machine-room/",
+    "sourceFile": "site/chapters/16-the-timeline-is-the-machine-room/index.html",
+    "sourceSHA256": "b7caddfb0b8e2269e58b69b092152bac714258d2acfa7a0e8d556464f2b09f44"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/17-the-score/",
+    "sourceFile": "site/chapters/17-the-score/index.html",
+    "sourceSHA256": "55cfdf1b43721fee3da395215ae90e500eb401fd89f2b8291fd6f96aaaf08a03"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/18-the-stage-presents-the-act/",
+    "sourceFile": "site/chapters/18-the-stage-presents-the-act/index.html",
+    "sourceSHA256": "4528326aa26fb2c9cba5bddbf9151e5f8cc3d3007177bf1f827f88e11c77e438"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/19-apple-human-interface-guidelines/",
+    "sourceFile": "site/chapters/19-apple-human-interface-guidelines/index.html",
+    "sourceSHA256": "4d0999cb8a79083a056e5ac390ceae6f6ded9445e78a0b23e6ff61e96180f252"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/20-on-device-first-and-the-writers-key/",
+    "sourceFile": "site/chapters/20-on-device-first-and-the-writers-key/index.html",
+    "sourceSHA256": "ab04b5f1a7e5de0306977ac532c7804351fcacf675a0a1372f48e74ebd80e753"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/21-training-perspectives/",
+    "sourceFile": "site/chapters/21-training-perspectives/index.html",
+    "sourceSHA256": "f1beb27c19a2ec38ed5947c8c391823aa9871530adde671f5ac087e03ff50d2f"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/22-no-preferences-only-reasoning/",
+    "sourceFile": "site/chapters/22-no-preferences-only-reasoning/index.html",
+    "sourceSHA256": "bb52cda36dd5d4460555fab3bcd411a4641fc84628be0826058f2e5caa3aaee0"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/23-one-reasoning/",
+    "sourceFile": "site/chapters/23-one-reasoning/index.html",
+    "sourceSHA256": "38e8a4308ad747c48112f5bb9b9e482f276f1d61e8ddb6f1307cbbe81b959fb8"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/24-the-reasoning-is-an-uncertainty-map/",
+    "sourceFile": "site/chapters/24-the-reasoning-is-an-uncertainty-map/index.html",
+    "sourceSHA256": "33744b336d4b05b38fe11f4b08a56efd66affbf665e24d6291ba0e7bf4e816c9"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/25-the-copilot-is-the-surface/",
+    "sourceFile": "site/chapters/25-the-copilot-is-the-surface/index.html",
+    "sourceSHA256": "5fa7731c627bc8533a45be041a2fa0759fa5f5dac61fb22f8d4198744f1ed673"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/26-internals-tune-themselves/",
+    "sourceFile": "site/chapters/26-internals-tune-themselves/index.html",
+    "sourceSHA256": "9e4cfaecba8e02a1558baa9e02810c2cc7ff68054d767a8c8f7d8895fe016482"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/27-parse-before-you-ask/",
+    "sourceFile": "site/chapters/27-parse-before-you-ask/index.html",
+    "sourceSHA256": "beb4f157ed1c93d9fdca1bfa98f459e221a7cc4eb63256def7654fb9de1196d8"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/28-a-beat-is-the-question-it-raises/",
+    "sourceFile": "site/chapters/28-a-beat-is-the-question-it-raises/index.html",
+    "sourceSHA256": "ea32283fc14d7ebaeb9ce1835a30e8f558247a9b09048f964d846b797896cc6d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/29-natural-language-measures-storify-interprets/",
+    "sourceFile": "site/chapters/29-natural-language-measures-storify-interprets/index.html",
+    "sourceSHA256": "95e3046084458b660e3e47a0c727979a485186232611538d624092bcaa5d454d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/30-the-living-gazetteer/",
+    "sourceFile": "site/chapters/30-the-living-gazetteer/index.html",
+    "sourceSHA256": "82d894338bc70b9556a9ac0ecab6774e746097f85c451c08fd77e5a6831018bb"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/31-compiled-knowledge/",
+    "sourceFile": "site/chapters/31-compiled-knowledge/index.html",
+    "sourceSHA256": "72011a4481645941f8129e055ae2022ab6fb70cfe3a06ec1fe1133363a0578d4"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/32-referenced-knowledge/",
+    "sourceFile": "site/chapters/32-referenced-knowledge/index.html",
+    "sourceSHA256": "bd7d85196fc74e239c64efd2ae952d4abed1d3dd30d2cb589e9a7ce91d732b3b"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/33-a-want-is-a-gap-in-a-ledger/",
+    "sourceFile": "site/chapters/33-a-want-is-a-gap-in-a-ledger/index.html",
+    "sourceSHA256": "620a70a44680812383e29312a6ffc326f74218139c06127a520185a072520acc"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/34-a-question-that-leaves-the-work/",
+    "sourceFile": "site/chapters/34-a-question-that-leaves-the-work/index.html",
+    "sourceSHA256": "6cb3e6f02d3e630e44ece63925800174e0da7818019cf02c52a5fa6edb1eba16"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/35-deep-search/",
+    "sourceFile": "site/chapters/35-deep-search/index.html",
+    "sourceSHA256": "7b8e232d3755631792f8002ae4a167a2524d46e0e951ff92d42777f7547546af"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/36-every-gap-keeps-its-address/",
+    "sourceFile": "site/chapters/36-every-gap-keeps-its-address/index.html",
+    "sourceSHA256": "2c8b61720c082f964f523e719000a0d2afc0353f4a67294cca1596535016a15d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/37-copilot-capability-governance/",
+    "sourceFile": "site/chapters/37-copilot-capability-governance/index.html",
+    "sourceSHA256": "879645b1fb60beab6719eca694b0455eec65c955cc9363a0cb726bfe1d500ac2"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/38-copilot-capability-audit-skill/",
+    "sourceFile": "site/chapters/38-copilot-capability-audit-skill/index.html",
+    "sourceSHA256": "9478937f6d0ca1854dd738510e1c63e72559b3626ce318bf2203ff41fb500a57"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/39-a-model-cannot-be-told-what-it-cannot-do/",
+    "sourceFile": "site/chapters/39-a-model-cannot-be-told-what-it-cannot-do/index.html",
+    "sourceSHA256": "82ad6bcf3a6750a4e71b962165d0410184d158657be46222dfa722b2533f429b"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/40-a-citation-is-a-promise-someone-can-check/",
+    "sourceFile": "site/chapters/40-a-citation-is-a-promise-someone-can-check/index.html",
+    "sourceSHA256": "889a49c0ded3a3bd5db755e44704ed88625bbb16c1cdee5586357ba212760d0a"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/41-one-retrieval-two-directions/",
+    "sourceFile": "site/chapters/41-one-retrieval-two-directions/index.html",
+    "sourceSHA256": "c2f2c06d8106d001aca1b98827897f24dd3d3febe004791b19ee7a5417aa591c"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/42-what-is-already-recorded-is-read/",
+    "sourceFile": "site/chapters/42-what-is-already-recorded-is-read/index.html",
+    "sourceSHA256": "904c800efe104cfed1efe70aabfc9026f9e3dd95218d1a3e7ba0ae5669f233ca"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/43-the-released-surface-is-a-named-build/",
+    "sourceFile": "site/chapters/43-the-released-surface-is-a-named-build/index.html",
+    "sourceSHA256": "fa7a56d26b7c980ba16ead73089585754127b475bf7f30506a86b9f7e1676925"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/44-publication-and-source-policy/",
+    "sourceFile": "site/chapters/44-publication-and-source-policy/index.html",
+    "sourceSHA256": "8e38dcb9ce20f9ac7ab9124b538f76736c6ed64f9ceb88759ce0c72e331ae357"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/45-copilot-reading-surface-and-typography/",
+    "sourceFile": "site/chapters/45-copilot-reading-surface-and-typography/index.html",
+    "sourceSHA256": "7b56455115d5f66fa98aee049a46373ca011f3b2836c1526a86cfb481c366e41"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/46-dynamic-grounding/",
+    "sourceFile": "site/chapters/46-dynamic-grounding/index.html",
+    "sourceSHA256": "78826060705218ed16ab8a10f33d53be2a61a1cebcc93d0f014a8ddc550cf53e"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/47-situated-mixed-initiative-interaction/",
+    "sourceFile": "site/chapters/47-situated-mixed-initiative-interaction/index.html",
+    "sourceSHA256": "d0a48c1769ea2dcfdd491beb27315453a5c5e0fc5ca2a33aaa8e5b091dfcd9c5"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/48-a-service-is-a-fact-not-a-symptom/",
+    "sourceFile": "site/chapters/48-a-service-is-a-fact-not-a-symptom/index.html",
+    "sourceSHA256": "653fa0485bbbed002c8b3205f71fa3f24556409732e2c7476167e9e776bf76ec"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/49-one-definition-two-projections/",
+    "sourceFile": "site/chapters/49-one-definition-two-projections/index.html",
+    "sourceSHA256": "5e6e83f5b5ab171fbc61a21450d30eff837d6306a78cb0c77079aaf5ea97133e"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/50-text-is-stored-so-it-can-be-pointed-at/",
+    "sourceFile": "site/chapters/50-text-is-stored-so-it-can-be-pointed-at/index.html",
+    "sourceSHA256": "eaaab8c0ebfea81a3e003b11256ac6c0ab75c6e4da5e132b400a5eb522ac6414"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/51-one-decision-decides-the-lane/",
+    "sourceFile": "site/chapters/51-one-decision-decides-the-lane/index.html",
+    "sourceSHA256": "37befb0d4ad988fd2bfdaa79671870681e1a6345cfb178aebdafe2ae1b04142c"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/52-the-pencil-belongs-to-the-writer/",
+    "sourceFile": "site/chapters/52-the-pencil-belongs-to-the-writer/index.html",
+    "sourceSHA256": "16c447cb030110566db8b283ab1290e4deea1f6ac1246c93f30425873912b09c"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/53-a-selection-snaps-to-meaning/",
+    "sourceFile": "site/chapters/53-a-selection-snaps-to-meaning/index.html",
+    "sourceSHA256": "2b0601203123c599b445ace3bf0d1704068e1736b8799ae223546407082daa8d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/54-the-writer-does-not-manage-the-projection/",
+    "sourceFile": "site/chapters/54-the-writer-does-not-manage-the-projection/index.html",
+    "sourceSHA256": "84be777759fa888eeac223066e06ca773d21ce598e5cf06035a8086ac34b7a97"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/55-one-store-authority-across-repositories/",
+    "sourceFile": "site/chapters/55-one-store-authority-across-repositories/index.html",
+    "sourceSHA256": "c2f91d69a320242d9014150e2d86946c2ae93082c7ee35576a380d4d2f589cd2"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/56-the-book-library-is-a-portable-source-provider/",
+    "sourceFile": "site/chapters/56-the-book-library-is-a-portable-source-provider/index.html",
+    "sourceSHA256": "7219f6d1a24690ab6965d113afcba50d6de9dca33c5a6202846f3a2b528e189c"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/57-the-writer-enters-by-intention/",
+    "sourceFile": "site/chapters/57-the-writer-enters-by-intention/index.html",
+    "sourceSHA256": "34b84440c82bdb1ac09d363ae1a9eb57e261cfa4464ebbb5ab0d0be8315cda3d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/58-open-turn-mediation-protocol/",
+    "sourceFile": "site/chapters/58-open-turn-mediation-protocol/index.html",
+    "sourceSHA256": "3e9e4ec5b70c038edd39226d9209dcab403c26e8d1ae68d0866253b1185ab2c9"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/59-copilot-initiated-library-curation/",
+    "sourceFile": "site/chapters/59-copilot-initiated-library-curation/index.html",
+    "sourceSHA256": "ac4e2e6f798eb3099aa1a7ec4e6c2f550ab581fa533828432a5b0f348600648c"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/60-the-fountain-editor-is-the-project-surface/",
+    "sourceFile": "site/chapters/60-the-fountain-editor-is-the-project-surface/index.html",
+    "sourceSHA256": "8c29630260fa85965392c5a42e9bfa8fd3afcd1a6b8765b3f52fab026448fa08"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/61-the-fountain-project-round-trip/",
+    "sourceFile": "site/chapters/61-the-fountain-project-round-trip/index.html",
+    "sourceSHA256": "e63104d1c5180ca85d8489ed10f354cc936d4480250de199cdd4a41eac535f1b"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/62-reframe-maintenance-control-plane/",
+    "sourceFile": "site/chapters/62-reframe-maintenance-control-plane/index.html",
+    "sourceSHA256": "59ce007bafcb40b2215ac075fa667c0781f642ceb8ca0b7c591b3f86ad0e6026"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/63-fountain-maintenance-kit/",
+    "sourceFile": "site/chapters/63-fountain-maintenance-kit/index.html",
+    "sourceSHA256": "74adcca41ec28ca092725826d1db1e040af1610a8b6fd3d1db8a517f12a8ea00"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/64-fountain-project-kit-durable-draft-custody/",
+    "sourceFile": "site/chapters/64-fountain-project-kit-durable-draft-custody/index.html",
+    "sourceSHA256": "ca1e36c267465cc5efae5e90948a89ade06f2ac5929d7817dcdaf9251bf1d178"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/65-the-copilot-as-writing-coach/",
+    "sourceFile": "site/chapters/65-the-copilot-as-writing-coach/index.html",
+    "sourceSHA256": "eefb2f03e0957188484735a2beaf2c2e7bc541bfea55c23eecb8ece9b264c3f6"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/66-fountain-image-publication-kit/",
+    "sourceFile": "site/chapters/66-fountain-image-publication-kit/index.html",
+    "sourceSHA256": "94ea37b386fd09e32ae1d44b4fd926fda453f5a4fd8503c3b8081ee03b0aa5e5"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/67-fountain-composer-kit-remote-attachment-custody/",
+    "sourceFile": "site/chapters/67-fountain-composer-kit-remote-attachment-custody/index.html",
+    "sourceSHA256": "842b05f3790e8f3007b54240cdb6bcee019dd55e22107f2e7f33a376a4995ba2"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/68-the-reframe-e2e-scenario-is-the-publication-unit/",
+    "sourceFile": "site/chapters/68-the-reframe-e2e-scenario-is-the-publication-unit/index.html",
+    "sourceSHA256": "a9688296db58e38f8240422b0bbc6cafce1fa3d873080810140b8c707d4fd4e5"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/69-the-book-of-reframe-is-a-dual-projection/",
+    "sourceFile": "site/chapters/69-the-book-of-reframe-is-a-dual-projection/index.html",
+    "sourceSHA256": "191c587fe40e40dc164a226f488b0290104b0fac95f3c76582c85ac7148783ed"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/70-external-midi2-control-of-reframe/",
+    "sourceFile": "site/chapters/70-external-midi2-control-of-reframe/index.html",
+    "sourceSHA256": "2b1886fcb0039b3015f492b403508fea1ea93e887673b373aebd34f804df2052"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/71-reframe-to-reframe-software-peer-acceptance/",
+    "sourceFile": "site/chapters/71-reframe-to-reframe-software-peer-acceptance/index.html",
+    "sourceSHA256": "64bd9127b08d4634a6afcb6c15ef2492e7ec5aea8801263658dbee90ffaac25c"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/72-midi2-peer-projections-and-capacity-admission/",
+    "sourceFile": "site/chapters/72-midi2-peer-projections-and-capacity-admission/index.html",
+    "sourceSHA256": "e68054a68886a2aa804b3b2a6e51fde64f617e16a880a8d85d8dfac78f5736f9"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/73-reframe-scenario-development-cycle/",
+    "sourceFile": "site/chapters/73-reframe-scenario-development-cycle/index.html",
+    "sourceSHA256": "54d97c326ab652973bf426b3de9cbfca9d7bb924e1c9cd36d54bda59c72bd210"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/74-private-image-prompt-history/",
+    "sourceFile": "site/chapters/74-private-image-prompt-history/index.html",
+    "sourceSHA256": "9da27920f4284d2b376e1738696888464c6bde2347c313b9664ebf8e5d398afb"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/75-scenario-run-ownership-and-non-interference/",
+    "sourceFile": "site/chapters/75-scenario-run-ownership-and-non-interference/index.html",
+    "sourceSHA256": "5cda6c26d546dbbea7e1e591890ade5b5ff9f8bac76a7194f556062cc13df11d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/76-beat-movement-and-uncertainty-overlay/",
+    "sourceFile": "site/chapters/76-beat-movement-and-uncertainty-overlay/index.html",
+    "sourceSHA256": "60a013af161a3273b29e81be6d3059e376227d1546ea42b6b92004db16a79a8f"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/77-swift-midi2-scenario-runtime/",
+    "sourceFile": "site/chapters/77-swift-midi2-scenario-runtime/index.html",
+    "sourceSHA256": "5f6239a0232c5de6260d7c1d6273e3a980ba9bc8ddbab073b87444326dc0c0bd"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/78-scenario-driven-development-as-org-infrastructure/",
+    "sourceFile": "site/chapters/78-scenario-driven-development-as-org-infrastructure/index.html",
+    "sourceSHA256": "23b35857dbfa9fa95a3a873ac336c3ee96e3029f5c14e7382669eacf4baca516"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/79-default-semantic-manuscript-projection/",
+    "sourceFile": "site/chapters/79-default-semantic-manuscript-projection/index.html",
+    "sourceSHA256": "99844e9f3e53d27287cacd0aa018272b3a9c0d54a5462aecef433fca24b093ca"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/80-independent-governance-publication/",
+    "sourceFile": "site/chapters/80-independent-governance-publication/index.html",
+    "sourceSHA256": "c3c94c236b0b908c73fc11741f36c09deb5b119b0bebfcc252029dd13e67b38b"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/81-universal-midi2-command-plane/",
+    "sourceFile": "site/chapters/81-universal-midi2-command-plane/index.html",
+    "sourceSHA256": "823d417da4266b32c40d06abe987a7d4ae8f47c5ae2b233c46bca5959a4f3596"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/82-remote-midi2-reading-room/",
+    "sourceFile": "site/chapters/82-remote-midi2-reading-room/index.html",
+    "sourceSHA256": "c2bfeef267275b8110956a54d01f1a2dc672fdce7acf5d1e3de3bfc5529657b2"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/83-conversational-scenario-authoring/",
+    "sourceFile": "site/chapters/83-conversational-scenario-authoring/index.html",
+    "sourceSHA256": "2f3ffd623f05b55bfecc6a1e9158175c056c629abd08f35717e2313c027f1b7e"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/84-governed-reframe-design-mock/",
+    "sourceFile": "site/chapters/84-governed-reframe-design-mock/index.html",
+    "sourceSHA256": "f63fd792cb4f3e591d06a469cd04b4b66bdd9e9b01f21768bced8a36344a3058"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/85-storify-source-auto-reads-a-defined-whole/",
+    "sourceFile": "site/chapters/85-storify-source-auto-reads-a-defined-whole/index.html",
+    "sourceSHA256": "e45d19792171c4a43ab230cabde51b4b08daaefca8d05610f7da189cc5227bc2"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/86-apple-native-semantic-pipeline-is-one-midi2-graph/",
+    "sourceFile": "site/chapters/86-apple-native-semantic-pipeline-is-one-midi2-graph/index.html",
+    "sourceSHA256": "702953ef51810dbdd8460cfcbf53610c68b8bf3ede46042d9278e8bf54e5a40b"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/87-midi2-monitor-is-the-live-event-mirror/",
+    "sourceFile": "site/chapters/87-midi2-monitor-is-the-live-event-mirror/index.html",
+    "sourceSHA256": "76b685b1cbf00ef6352fdeb6fa8635cac282f7793809d429cfa7d0e4f69c6a8a"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/88-codexkit-is-a-governed-codex-app-server-boundary/",
+    "sourceFile": "site/chapters/88-codexkit-is-a-governed-codex-app-server-boundary/index.html",
+    "sourceSHA256": "c26a2116496c52811e633125bfbd8ffc6b8e22bb965b5983fa0285511470f582"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/89-codex-auth-instrument-is-the-copilot-login-surface/",
+    "sourceFile": "site/chapters/89-codex-auth-instrument-is-the-copilot-login-surface/index.html",
+    "sourceSHA256": "a5bfc6f9a1f3b9704eb36010d9191d412218b0e6d2cb1a0e76b12af31f555ccb"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/90-independent-security-review-is-a-separate-acceptance-boundary/",
+    "sourceFile": "site/chapters/90-independent-security-review-is-a-separate-acceptance-boundary/index.html",
+    "sourceSHA256": "bafdb2ee15e8179d8003bad2596d46f9876d3c3690a8d3ee30b27e520b8f598f"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/91-fcis-kit-instrument-store-is-the-capability-plane/",
+    "sourceFile": "site/chapters/91-fcis-kit-instrument-store-is-the-capability-plane/index.html",
+    "sourceSHA256": "093b7ec5cbf6c5a4a95eeeec2087d39c2436f8c167e275d29d6641ff02578433"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/92-fountain-coach-publication-estate/",
+    "sourceFile": "site/chapters/92-fountain-coach-publication-estate/index.html",
+    "sourceSHA256": "8ab84893e03ef3a531ec4d1886fcee903d6d6d9c441e1f879ebf8279d934ea7a"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/93-instrument-creation-is-a-governed-promotion-path/",
+    "sourceFile": "site/chapters/93-instrument-creation-is-a-governed-promotion-path/index.html",
+    "sourceSHA256": "679abffa5f76ff75598099d5915eeb39b4b214d1b14aebcea6789cd395cd7b24"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/94-credentialed-infrastructure-operations-and-provider-adapters/",
+    "sourceFile": "site/chapters/94-credentialed-infrastructure-operations-and-provider-adapters/index.html",
+    "sourceSHA256": "973bfcc57ac8dcdde3892c5318b934826ce6b2395a734ea5389cbd155f6aa200"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/95-fountainstore-headless-linux-authority/",
+    "sourceFile": "site/chapters/95-fountainstore-headless-linux-authority/index.html",
+    "sourceSHA256": "48e13674803e20825271971effffd85aafa3f6a58ed14ba1142171cd7bc3ceb8"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/96-swiftacmekit-is-a-provider-neutral-certificate-automation-boundary/",
+    "sourceFile": "site/chapters/96-swiftacmekit-is-a-provider-neutral-certificate-automation-boundary/index.html",
+    "sourceSHA256": "aaf9fa912a31da4d677ac56463f587c152acd63014837ae32a292f290d641d6a"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/97-provider-neutral-host-bootstrap-and-enrollment/",
+    "sourceFile": "site/chapters/97-provider-neutral-host-bootstrap-and-enrollment/index.html",
+    "sourceSHA256": "1cc7ddff4af36dd113109d3090303b5f7b0c1379b30e34127990d3b569c906f5"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/98-apple-native-markdown-presentation-and-transferable-engraving-rules/",
+    "sourceFile": "site/chapters/98-apple-native-markdown-presentation-and-transferable-engraving-rules/index.html",
+    "sourceSHA256": "4fffc68e4d2557e70585cc9178ed3dccb984f1de1fec1a7105d7021e4e8f87a7"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/chapters/99-decoupled-manuscript-instruments/",
+    "sourceFile": "site/chapters/99-decoupled-manuscript-instruments/index.html",
+    "sourceSHA256": "cd9c60c794df2e5608f31c5daa2bc28a85366985d0d7f1d0587b41d7682320bd"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/compliance/",
+    "sourceFile": "site/compliance/index.html",
+    "sourceSHA256": "8942139b1cd7a923c99b2f3c12d98f7cf25120064127c627d3970f8e068290f3"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/copyright/",
+    "sourceFile": "site/copyright/index.html",
+    "sourceSHA256": "d15603280972d85ef1aefa8161291b502a3b2ac0088586726cf3b59d8ac4b81d"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/legal/",
+    "sourceFile": "site/legal/index.html",
+    "sourceSHA256": "84f665f763e458924cc016e4924c2c60dcd2404243842c7e887481d9491310be"
+  },
+  {
+    "host": "governance.fountain.coach",
+    "owner": "Fountain-Coach/governance.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/privacy/",
+    "sourceFile": "site/privacy/index.html",
+    "sourceSHA256": "5c6e988a45a08b2450f326ee4d1567ad001fc7a40aa46ec9c8a7c572f9c7a561"
+  },
+  {
+    "host": "instruments.fountain.coach",
+    "owner": "Fountain-Coach/instruments.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "293b057932a9886157d1d7f2d260738cac3c7d8d64e8619ff9ea2da8655dbd0b"
+  },
+  {
+    "host": "instruments.fountain.coach",
+    "owner": "Fountain-Coach/instruments.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/instruments/codex-auth-instrument/",
+    "sourceFile": "site/instruments/codex-auth-instrument/index.html",
+    "sourceSHA256": "56a65da13f63a2c8c568e9d8f9ecfcfe92bafd0f69b02fcfab8018893d1a11a0"
+  },
+  {
+    "host": "instruments.fountain.coach",
+    "owner": "Fountain-Coach/instruments.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/instruments/csound-auv3/",
+    "sourceFile": "site/instruments/csound-auv3/index.html",
+    "sourceSHA256": "3c76f6f3437e3c6dc063cac9bcd8e753783e9b628a372e748b42b39927eede73"
+  },
+  {
+    "host": "instruments.fountain.coach",
+    "owner": "Fountain-Coach/instruments.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/instruments/semantic-browser/",
+    "sourceFile": "site/instruments/semantic-browser/index.html",
+    "sourceSHA256": "06cb3c060553a9279debcee7e463bfaf8d3667a0e683a87e4f9e60d3d5011d7c"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "bdcf680db69dc79d7d69b47083fee26b39fac21516697d80aa083e8108f6d88e"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/",
+    "sourceFile": "site/editions/first-reading/index.html",
+    "sourceSHA256": "3704caa5375046a13e54257273725eabc868563b712f89b48de9a4c32af41db6"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2025-12-22-anweisung-an-den-schmerz/",
+    "sourceFile": "site/editions/first-reading/entries/2025-12-22-anweisung-an-den-schmerz/index.html",
+    "sourceSHA256": "b11552ef192e0e039fb4aa24112410c6aeb400588017f4e545f3ebd56b17ad68"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2025-12-23-integration/",
+    "sourceFile": "site/editions/first-reading/entries/2025-12-23-integration/index.html",
+    "sourceSHA256": "177bbcb7ad07b58a79381d2a796d0e6e9008b6f27145473b4ef3cd2c2b1cf369"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2025-12-28-renaturalization/",
+    "sourceFile": "site/editions/first-reading/entries/2025-12-28-renaturalization/index.html",
+    "sourceSHA256": "bff48c4f763b85d00c10253f9ac839c5c1665bca6c5261e87d6bb1b9ca8f2ecf"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-01-08-vier-aussagen-zum-atherleib/",
+    "sourceFile": "site/editions/first-reading/entries/2026-01-08-vier-aussagen-zum-atherleib/index.html",
+    "sourceSHA256": "69f0c1365da53cf9661ee9a4531f12377952977e6c3da2a21147ebb83b683afc"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-01-22-three-floors/",
+    "sourceFile": "site/editions/first-reading/entries/2026-01-22-three-floors/index.html",
+    "sourceSHA256": "177a71aa4485bb514d44347e4ac2632198f16b913f5ce7fc980620c0ce8e2d12"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-01-23-i-keep-moving/",
+    "sourceFile": "site/editions/first-reading/entries/2026-01-23-i-keep-moving/index.html",
+    "sourceSHA256": "1dceb3ddff83650d7f3a4ac60ada1d2df8a17f468b2aa6e8d08c44380b25fc29"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-02-04-two-rooms/",
+    "sourceFile": "site/editions/first-reading/entries/2026-02-04-two-rooms/index.html",
+    "sourceSHA256": "eb24f21b330029740a0b75b5cf726f97cba9b261042f0d84e86ee2ba93d71521"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-02-14-on-a-future-not-yet-drafted/",
+    "sourceFile": "site/editions/first-reading/entries/2026-02-14-on-a-future-not-yet-drafted/index.html",
+    "sourceSHA256": "d9dae7c52f57a9aa8709f5547c69298cb4197ab870174f3c3a500c7ad44066c7"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-02-28-no-optimize/",
+    "sourceFile": "site/editions/first-reading/entries/2026-02-28-no-optimize/index.html",
+    "sourceSHA256": "9a7dda11bd9d0a948748cf878762fb3fc38cb62af5d7c4975c8ec9e29b671532"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-03-16-the-teatre-of-the-mind/",
+    "sourceFile": "site/editions/first-reading/entries/2026-03-16-the-teatre-of-the-mind/index.html",
+    "sourceSHA256": "80bfbf714615a484e4aabc165d4c4db74421740c0b9d44e2d2331d782624d07e"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-03-20-my-place-in-space/",
+    "sourceFile": "site/editions/first-reading/entries/2026-03-20-my-place-in-space/index.html",
+    "sourceSHA256": "d9686802881f07be986706f597ad6500df1c5432d718e79aef9ed93b795e7e67"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-03-21-muttersprache/",
+    "sourceFile": "site/editions/first-reading/entries/2026-03-21-muttersprache/index.html",
+    "sourceSHA256": "b1dcb895291e00aa9ff0c23b0147186f4efdcde8df209dfd5863467c0f057d4b"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-04-22-the-writing-hand/",
+    "sourceFile": "site/editions/first-reading/entries/2026-04-22-the-writing-hand/index.html",
+    "sourceSHA256": "6ada2d2d49fb78f4c27cfc342a3acd16cbe64d0b704fef9f9cd9e77e46721ded"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-04-23-who-is-bee/",
+    "sourceFile": "site/editions/first-reading/entries/2026-04-23-who-is-bee/index.html",
+    "sourceSHA256": "2bf0d8b3c32c3730e7515533b1a6de46c148b980d8b0280d628f7cd0362e6c9d"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-04-30-about-writing-letters/",
+    "sourceFile": "site/editions/first-reading/entries/2026-04-30-about-writing-letters/index.html",
+    "sourceSHA256": "78efc99f7e246d545262c7360a760c376c9c0e343874161727e8414954a8e052"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-05-01-a-score-before-production/",
+    "sourceFile": "site/editions/first-reading/entries/2026-05-01-a-score-before-production/index.html",
+    "sourceSHA256": "4fb81e882a7198edc47264ee2540f6ed9c93c6b9fb842f7b62d6d783dd7fadd9"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-05-25-seitenlicht/",
+    "sourceFile": "site/editions/first-reading/entries/2026-05-25-seitenlicht/index.html",
+    "sourceSHA256": "02a19ea7849fbb12b90528dd99c95686ca1a35f4ebf2facbd4e3ba7635e1fe49"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-05-30-the-sheet/",
+    "sourceFile": "site/editions/first-reading/entries/2026-05-30-the-sheet/index.html",
+    "sourceSHA256": "9e6c54e1c53e07256cd46ed2436efda37914346ecbce1ea9fcdf0d56d3ed010e"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-06-06-the-sentimental-machine/",
+    "sourceFile": "site/editions/first-reading/entries/2026-06-06-the-sentimental-machine/index.html",
+    "sourceSHA256": "102a1e93463804ed84cf4bd41b083324f8a693b23cc80c04917cc931784ad3d8"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-06-15-fck-frg-we-all-had-parents/",
+    "sourceFile": "site/editions/first-reading/entries/2026-06-15-fck-frg-we-all-had-parents/index.html",
+    "sourceSHA256": "1ad2ea7a5824681351a0b717cf6fddab732f171c8d96416cd11a6827300610ab"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-06-24-prufe-dein-gewicht/",
+    "sourceFile": "site/editions/first-reading/entries/2026-06-24-prufe-dein-gewicht/index.html",
+    "sourceSHA256": "60e431d13a6028b5608d7d0ab11780fb79503f874982a5b238ee956b6a68718f"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-07-21-everything-else-is-illustration/",
+    "sourceFile": "site/editions/first-reading/entries/2026-07-21-everything-else-is-illustration/index.html",
+    "sourceSHA256": "522f81ce52ea88a64e1270dc91bec4f606d57f2d15fa9d65be72240a408cdec0"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-07-28-bees-journal/",
+    "sourceFile": "site/editions/first-reading/entries/2026-07-28-bees-journal/index.html",
+    "sourceSHA256": "89d43b8d97c45342e9a4c3944d8676bf45ed57a4d2c0ee066a13bed96617fa01"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-07-31-n-journal/",
+    "sourceFile": "site/editions/first-reading/entries/2026-07-31-n-journal/index.html",
+    "sourceSHA256": "3b66c6e26d2661230cbd845973a330f2cfbc011d6a8bba8d864ad63e6a7846f5"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-08-17-the-scissors/",
+    "sourceFile": "site/editions/first-reading/entries/2026-08-17-the-scissors/index.html",
+    "sourceSHA256": "16d1fa9e01ffca944e5f813020391c793c3e9f972379d73b3fd605e2b28a008d"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-08-19-six-panels/",
+    "sourceFile": "site/editions/first-reading/entries/2026-08-19-six-panels/index.html",
+    "sourceSHA256": "b8d637dbbd280afd2cd5cefbfdc0050ba67b3d56f64973258a083da1a065d997"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-08-28-the-old-woman/",
+    "sourceFile": "site/editions/first-reading/entries/2026-08-28-the-old-woman/index.html",
+    "sourceSHA256": "812cac50799cd1a251d6ce7d7c2805f03fab3f492aed18b04c7a7a8505cf3fab"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-09-04-the-strawberry/",
+    "sourceFile": "site/editions/first-reading/entries/2026-09-04-the-strawberry/index.html",
+    "sourceSHA256": "f23c78b78522ae4c82a80843759acdf67395a8e6da1597391ea2fa50d4c7f10d"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-09-06-leselust/",
+    "sourceFile": "site/editions/first-reading/entries/2026-09-06-leselust/index.html",
+    "sourceSHA256": "4c2cc90f39c0b70183d059debdec6c1008504cce7b1fdc7406a49853efd8129d"
+  },
+  {
+    "host": "solstice.fountain.coach",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-reading/entries/2026-09-18-object-crossing-voice/",
+    "sourceFile": "site/editions/first-reading/entries/2026-09-18-object-crossing-voice/index.html",
+    "sourceSHA256": "40c9eb491fc9063a93010873608339c470352a5a2d0a328737865722b4ce6427"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "fc8219ce68205ade8bef5bef40f25ce4290c80bdeae8a5911a891f3d2e6c65d7"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/business-architecture/",
+    "sourceFile": "site/business-architecture/index.html",
+    "sourceSHA256": "db7ce2ecc247f56bcb7b2d96bae14f7adba1043a684b4ca1fcf67ae596840f94"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/business-model/",
+    "sourceFile": "site/business-model/index.html",
+    "sourceSHA256": "b587872f2a5b12d33f3a7651258f8819141832784d87337d4f920467dec2ca8c"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/ci/",
+    "sourceFile": "site/ci/index.html",
+    "sourceSHA256": "6ddeae0856f189ea02581d5f65533bdb35f6e9293ce75d48ba0f11efb26be1ec"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/company/",
+    "sourceFile": "site/company/index.html",
+    "sourceSHA256": "1e534c56a10590b4deefe2ad7cb5067835db75313d54f2439392bfe9ae620eef"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/evidence/",
+    "sourceFile": "site/evidence/index.html",
+    "sourceSHA256": "1a2efaf59807c5f39a87d10c47fc59bb631592e4addc1b937e955bf58188d32c"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/for-agents/",
+    "sourceFile": "site/for-agents/index.html",
+    "sourceSHA256": "bbb04fa16fffccffc12046d45ee7faa2fc396d5e3bf6576189c8330d00d878d5"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/foundation/",
+    "sourceFile": "site/foundation/index.html",
+    "sourceSHA256": "6310aea89eca28a1c3ea9a7338a6ecec9c38881d45e3a72c4e291f3467d75bc1"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/midi2/",
+    "sourceFile": "site/midi2/index.html",
+    "sourceSHA256": "64d5ef91d855536378744d404e74754c32127fdd97951878f6cda8c7c265e957"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/product-fields/",
+    "sourceFile": "site/product-fields/index.html",
+    "sourceSHA256": "c6d522251e426c733fb22bf208c98fc5f42f0e38cb0e363c28db1d8ce628ed5b"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/reframe/",
+    "sourceFile": "site/reframe/index.html",
+    "sourceSHA256": "990033342fb447fd711f740ae2a8402a35a4d956f883728647b672bb580bbba3"
+  },
+  {
+    "host": "status.fountain.coach",
+    "owner": "Fountain-Coach/status.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/transparency/",
+    "sourceFile": "site/transparency/index.html",
+    "sourceSHA256": "a43f72175f09f2b8dd937ac98347c759581c6605823fa9b03cdd59ff13a9f957"
+  },
+  {
+    "host": "teatro.fountain.coach",
+    "owner": "Fountain-Coach/teatro.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "40770585e33044edd8692beabee312a7670a3484f43af3caf32a84fc96633afc"
+  },
+  {
+    "host": "teatro.fountain.coach",
+    "owner": "Fountain-Coach/teatro.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/",
+    "sourceFile": "site/editions/index.html",
+    "sourceSHA256": "40770585e33044edd8692beabee312a7670a3484f43af3caf32a84fc96633afc"
+  },
+  {
+    "host": "teatro.fountain.coach",
+    "owner": "Fountain-Coach/teatro.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/first-hearing/",
+    "sourceFile": "site/editions/first-hearing/index.html",
+    "sourceSHA256": "64bfefc0e61074568f4f374b3d8ffd4d697f2c082e19d2f173a1d88183a12c28"
+  },
+  {
+    "host": "teatro.fountain.coach",
+    "owner": "Fountain-Coach/teatro.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/stage/",
+    "sourceFile": "site/editions/stage/index.html",
+    "sourceSHA256": "48383194fe9241620f7c6c1f9c635cb7cae660ce80cb02a21d765c593663b468"
+  },
+  {
+    "host": "teatro.fountain.coach",
+    "owner": "Fountain-Coach/teatro.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/editions/stage/embed/",
+    "sourceFile": "site/editions/stage/embed/index.html",
+    "sourceSHA256": "076aa24f35ae75776cd71ea35ab2f5e56b9e805cf116964b784eb1a3b1134d07"
+  },
+  {
+    "host": "tennis.fountain.coach",
+    "owner": "Fountain-Coach/tennis.fountain.coach",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "c0bef70fb51d76a11d6b8705efa29d26f1f3afb05838bd867f3d4ec71da708d3"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/",
+    "sourceFile": "index.html",
+    "sourceSHA256": "5d5de0ce48b571523800b0d3a5573efb26b9a9c427c59fd711300682407e47da"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/ballern-gehen/",
+    "sourceFile": "ballern-gehen/index.html",
+    "sourceSHA256": "43206efd4708a84301eabd71f93f7a339a7dcfaeab33613e411bede7ac6b1814"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/barrierefreiheit/",
+    "sourceFile": "barrierefreiheit/index.html",
+    "sourceSHA256": "c8f3d40f1f75d47542c199dc6f51ce1eedc90feaa28671be1efc2dae6c6262ad"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/bewerbung/",
+    "sourceFile": "bewerbung/index.html",
+    "sourceSHA256": "2c1fad9ac05b3e8cc637de139b07831ccdb9b126565f7c0ac6b1fcbc566abc05"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/datenschutz/",
+    "sourceFile": "datenschutz/index.html",
+    "sourceSHA256": "bf544d918c3140a40ac57ec6dcc64baac53981d5338a18861df10e21699dae8a"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/diplomurkunde/",
+    "sourceFile": "diplomurkunde/index.html",
+    "sourceSHA256": "705bfb53397a4fae70f4af0229dab170e21eef1e0fe8b578eeb78030c019cf51"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/ein-sommernachtstraum/",
+    "sourceFile": "ein-sommernachtstraum/index.html",
+    "sourceSHA256": "513a5481ee72650f2c92336c523ba26bce3d8bafe54c16f0c8fefbbcd9bb669d"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/",
+    "sourceFile": "en/index.html",
+    "sourceSHA256": "e44c3d0f1a761c46df2bdc9d89f55516df836faac366935fb27dbebf2748acf0"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/accessibility/",
+    "sourceFile": "en/accessibility/index.html",
+    "sourceSHA256": "2e4dcd7d1f7643e7667cf99b56431aaf7a1c6dc467215ab4dcc9f9ea311b187f"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/ai-first-draft/",
+    "sourceFile": "en/ai-first-draft/index.html",
+    "sourceSHA256": "4dd2d24a8ff3bccfc8790c0326866eda55a04f4aacfdc50b51bd5174ccb5cb5d"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/application/",
+    "sourceFile": "en/application/index.html",
+    "sourceSHA256": "5c8ffe9df0807586e7d9f05a72ad6503ee74d391907abee77b3f87f76a0f4185"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/ballern-gehen/",
+    "sourceFile": "en/ballern-gehen/index.html",
+    "sourceSHA256": "a253e0e779dd7bb9af0eff7bb04490268c4ce11e1346c8e674389c27edd1bddd"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/between-gardens/",
+    "sourceFile": "en/between-gardens/index.html",
+    "sourceSHA256": "cdd8c798f0bd16af37627870917c8794ce0d25eb66280f75037ac2709332c21c"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/collaborations/",
+    "sourceFile": "en/collaborations/index.html",
+    "sourceSHA256": "80bda8e4e2243a082d2755a12e744a888182f30b95f9008649d54256796b78ff"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/copyright/",
+    "sourceFile": "en/copyright/index.html",
+    "sourceSHA256": "ed1a6e8b9e7d79d9b7ec7a47fde2c96a910cf3dffa507839985c86cf95a5d2a8"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/diploma/",
+    "sourceFile": "en/diploma/index.html",
+    "sourceSHA256": "c85d0af7f7d917a91d3069e9d82689bfeb3bb4c4df4b5205ac5a57cb64b8f07c"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/eu-context/",
+    "sourceFile": "en/eu-context/index.html",
+    "sourceSHA256": "d935ef0372bca11d16f982cc6a1ee1b137bcbaa7d6af45a9394fae0864902568"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/legal/",
+    "sourceFile": "en/legal/index.html",
+    "sourceSHA256": "2f15910aab83eeace1d76c0dfcc7a744837d3ab653bc2fd6433d1e63ddf373e3"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/midsummer-nights-dream/",
+    "sourceFile": "en/midsummer-nights-dream/index.html",
+    "sourceSHA256": "cf595118fbce99e77295322b2817c8891cc7619239d3056ddbe203acfa8be757"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/perspective/",
+    "sourceFile": "en/perspective/index.html",
+    "sourceSHA256": "a622da563d2300996ffba5f23ad20969f22a53972ecac7a40d747a63d8e662c2"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/en/privacy/",
+    "sourceFile": "en/privacy/index.html",
+    "sourceSHA256": "91b8a494b12acb0e164c29a107c8344a231aa340d956d47f45f728af579fc8a5"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/eu-kontext/",
+    "sourceFile": "eu-kontext/index.html",
+    "sourceSHA256": "bf1eb499b680e532131c5dabf47e0c8d96cc6ebabf9ceed3e3299e91eff7a0db"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/ki-erstentwurf/",
+    "sourceFile": "ki-erstentwurf/index.html",
+    "sourceSHA256": "1276f7a8df81fe66d1736b496ee311c707f61e9c928aa9ed46c42a7a50e02a95"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/perspektive/",
+    "sourceFile": "perspektive/index.html",
+    "sourceSHA256": "cd8305e1d4d8ec165400ccfc8aa3dc3de7ad9492cb0f78faca3736cf2fe6b379"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/rechtliches/",
+    "sourceFile": "rechtliches/index.html",
+    "sourceSHA256": "9decdc4640f157225c009b06c8e2748d72fedb35fa3c38f97df1f7d2d9b88749"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/",
+    "sourceFile": "site/index.html",
+    "sourceSHA256": "bdcf680db69dc79d7d69b47083fee26b39fac21516697d80aa083e8108f6d88e"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/",
+    "sourceFile": "site/editions/first-reading/index.html",
+    "sourceSHA256": "3704caa5375046a13e54257273725eabc868563b712f89b48de9a4c32af41db6"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2025-12-22-anweisung-an-den-schmerz/",
+    "sourceFile": "site/editions/first-reading/entries/2025-12-22-anweisung-an-den-schmerz/index.html",
+    "sourceSHA256": "b11552ef192e0e039fb4aa24112410c6aeb400588017f4e545f3ebd56b17ad68"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2025-12-23-integration/",
+    "sourceFile": "site/editions/first-reading/entries/2025-12-23-integration/index.html",
+    "sourceSHA256": "177bbcb7ad07b58a79381d2a796d0e6e9008b6f27145473b4ef3cd2c2b1cf369"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2025-12-28-renaturalization/",
+    "sourceFile": "site/editions/first-reading/entries/2025-12-28-renaturalization/index.html",
+    "sourceSHA256": "bff48c4f763b85d00c10253f9ac839c5c1665bca6c5261e87d6bb1b9ca8f2ecf"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-01-08-vier-aussagen-zum-atherleib/",
+    "sourceFile": "site/editions/first-reading/entries/2026-01-08-vier-aussagen-zum-atherleib/index.html",
+    "sourceSHA256": "69f0c1365da53cf9661ee9a4531f12377952977e6c3da2a21147ebb83b683afc"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-01-22-three-floors/",
+    "sourceFile": "site/editions/first-reading/entries/2026-01-22-three-floors/index.html",
+    "sourceSHA256": "177a71aa4485bb514d44347e4ac2632198f16b913f5ce7fc980620c0ce8e2d12"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-01-23-i-keep-moving/",
+    "sourceFile": "site/editions/first-reading/entries/2026-01-23-i-keep-moving/index.html",
+    "sourceSHA256": "1dceb3ddff83650d7f3a4ac60ada1d2df8a17f468b2aa6e8d08c44380b25fc29"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-02-04-two-rooms/",
+    "sourceFile": "site/editions/first-reading/entries/2026-02-04-two-rooms/index.html",
+    "sourceSHA256": "eb24f21b330029740a0b75b5cf726f97cba9b261042f0d84e86ee2ba93d71521"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-02-14-on-a-future-not-yet-drafted/",
+    "sourceFile": "site/editions/first-reading/entries/2026-02-14-on-a-future-not-yet-drafted/index.html",
+    "sourceSHA256": "d9dae7c52f57a9aa8709f5547c69298cb4197ab870174f3c3a500c7ad44066c7"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-02-28-no-optimize/",
+    "sourceFile": "site/editions/first-reading/entries/2026-02-28-no-optimize/index.html",
+    "sourceSHA256": "9a7dda11bd9d0a948748cf878762fb3fc38cb62af5d7c4975c8ec9e29b671532"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-03-16-the-teatre-of-the-mind/",
+    "sourceFile": "site/editions/first-reading/entries/2026-03-16-the-teatre-of-the-mind/index.html",
+    "sourceSHA256": "80bfbf714615a484e4aabc165d4c4db74421740c0b9d44e2d2331d782624d07e"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-03-20-my-place-in-space/",
+    "sourceFile": "site/editions/first-reading/entries/2026-03-20-my-place-in-space/index.html",
+    "sourceSHA256": "d9686802881f07be986706f597ad6500df1c5432d718e79aef9ed93b795e7e67"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-03-21-muttersprache/",
+    "sourceFile": "site/editions/first-reading/entries/2026-03-21-muttersprache/index.html",
+    "sourceSHA256": "b1dcb895291e00aa9ff0c23b0147186f4efdcde8df209dfd5863467c0f057d4b"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-04-22-the-writing-hand/",
+    "sourceFile": "site/editions/first-reading/entries/2026-04-22-the-writing-hand/index.html",
+    "sourceSHA256": "6ada2d2d49fb78f4c27cfc342a3acd16cbe64d0b704fef9f9cd9e77e46721ded"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-04-23-who-is-bee/",
+    "sourceFile": "site/editions/first-reading/entries/2026-04-23-who-is-bee/index.html",
+    "sourceSHA256": "2bf0d8b3c32c3730e7515533b1a6de46c148b980d8b0280d628f7cd0362e6c9d"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-04-30-about-writing-letters/",
+    "sourceFile": "site/editions/first-reading/entries/2026-04-30-about-writing-letters/index.html",
+    "sourceSHA256": "78efc99f7e246d545262c7360a760c376c9c0e343874161727e8414954a8e052"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-05-01-a-score-before-production/",
+    "sourceFile": "site/editions/first-reading/entries/2026-05-01-a-score-before-production/index.html",
+    "sourceSHA256": "4fb81e882a7198edc47264ee2540f6ed9c93c6b9fb842f7b62d6d783dd7fadd9"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-05-25-seitenlicht/",
+    "sourceFile": "site/editions/first-reading/entries/2026-05-25-seitenlicht/index.html",
+    "sourceSHA256": "02a19ea7849fbb12b90528dd99c95686ca1a35f4ebf2facbd4e3ba7635e1fe49"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-05-30-the-sheet/",
+    "sourceFile": "site/editions/first-reading/entries/2026-05-30-the-sheet/index.html",
+    "sourceSHA256": "9e6c54e1c53e07256cd46ed2436efda37914346ecbce1ea9fcdf0d56d3ed010e"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-06-06-the-sentimental-machine/",
+    "sourceFile": "site/editions/first-reading/entries/2026-06-06-the-sentimental-machine/index.html",
+    "sourceSHA256": "102a1e93463804ed84cf4bd41b083324f8a693b23cc80c04917cc931784ad3d8"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-06-15-fck-frg-we-all-had-parents/",
+    "sourceFile": "site/editions/first-reading/entries/2026-06-15-fck-frg-we-all-had-parents/index.html",
+    "sourceSHA256": "1ad2ea7a5824681351a0b717cf6fddab732f171c8d96416cd11a6827300610ab"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-06-24-prufe-dein-gewicht/",
+    "sourceFile": "site/editions/first-reading/entries/2026-06-24-prufe-dein-gewicht/index.html",
+    "sourceSHA256": "60e431d13a6028b5608d7d0ab11780fb79503f874982a5b238ee956b6a68718f"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-07-21-everything-else-is-illustration/",
+    "sourceFile": "site/editions/first-reading/entries/2026-07-21-everything-else-is-illustration/index.html",
+    "sourceSHA256": "522f81ce52ea88a64e1270dc91bec4f606d57f2d15fa9d65be72240a408cdec0"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-07-28-bees-journal/",
+    "sourceFile": "site/editions/first-reading/entries/2026-07-28-bees-journal/index.html",
+    "sourceSHA256": "89d43b8d97c45342e9a4c3944d8676bf45ed57a4d2c0ee066a13bed96617fa01"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-07-31-n-journal/",
+    "sourceFile": "site/editions/first-reading/entries/2026-07-31-n-journal/index.html",
+    "sourceSHA256": "3b66c6e26d2661230cbd845973a330f2cfbc011d6a8bba8d864ad63e6a7846f5"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-08-17-the-scissors/",
+    "sourceFile": "site/editions/first-reading/entries/2026-08-17-the-scissors/index.html",
+    "sourceSHA256": "16d1fa9e01ffca944e5f813020391c793c3e9f972379d73b3fd605e2b28a008d"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-08-19-six-panels/",
+    "sourceFile": "site/editions/first-reading/entries/2026-08-19-six-panels/index.html",
+    "sourceSHA256": "b8d637dbbd280afd2cd5cefbfdc0050ba67b3d56f64973258a083da1a065d997"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-08-28-the-old-woman/",
+    "sourceFile": "site/editions/first-reading/entries/2026-08-28-the-old-woman/index.html",
+    "sourceSHA256": "812cac50799cd1a251d6ce7d7c2805f03fab3f492aed18b04c7a7a8505cf3fab"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-09-04-the-strawberry/",
+    "sourceFile": "site/editions/first-reading/entries/2026-09-04-the-strawberry/index.html",
+    "sourceSHA256": "f23c78b78522ae4c82a80843759acdf67395a8e6da1597391ea2fa50d4c7f10d"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-09-06-leselust/",
+    "sourceFile": "site/editions/first-reading/entries/2026-09-06-leselust/index.html",
+    "sourceSHA256": "4c2cc90f39c0b70183d059debdec6c1008504cce7b1fdc7406a49853efd8129d"
+  },
+  {
+    "delegatedFrom": "solstice.fountain.coach",
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/solstice.fountain.coach",
+    "provenance": "git-tracked-delegated-source",
+    "route": "/solstice/editions/first-reading/entries/2026-09-18-object-crossing-voice/",
+    "sourceFile": "site/editions/first-reading/entries/2026-09-18-object-crossing-voice/index.html",
+    "sourceSHA256": "40c9eb491fc9063a93010873608339c470352a5a2d0a328737865722b4ce6427"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/urheberrecht/",
+    "sourceFile": "urheberrecht/index.html",
+    "sourceSHA256": "ba1cce262174599d5a1010751094818f80a499de6574345a020984ffc4f6d1c2"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/zusammenarbeit/",
+    "sourceFile": "zusammenarbeit/index.html",
+    "sourceSHA256": "3dfbceb4988f3c5d0bee4eaf2fbc0413a784ee41b6228f089466550ea2fe81f3"
+  },
+  {
+    "host": "works.benedikt-eickhoff.de",
+    "owner": "Fountain-Coach/works-benedikt-eickhoff",
+    "provenance": "git-tracked-source",
+    "route": "/zwischen-gaerten/",
+    "sourceFile": "zwischen-gaerten/index.html",
+    "sourceSHA256": "b931a8e588691ee8f1fda25179f29647dddb0f3348cbabb6cf49f9af8e4700de"
+  }
+]

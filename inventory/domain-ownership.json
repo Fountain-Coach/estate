@@ -1,0 +1,354 @@
+{
+  "counts": {
+    "gitHTMLRoutes": 318,
+    "gitNavigationEdges": 32572,
+    "hosts": 11,
+    "riskFindings": 4,
+    "sourceRepositories": 11
+  },
+  "domains": [
+    {
+      "delegations": [],
+      "host": "benedikt-eickhoff.de",
+      "lifecycle": "active",
+      "role": "adjacent-founder-pointer",
+      "sourceCommit": "fa3d1b406d1128ae33f2ae4eb9b2443b3f935128",
+      "sourceHTMLRoutes": 7,
+      "sourceRepo": "Fountain-Coach/benedikt-eickhoff.de"
+    },
+    {
+      "delegations": [],
+      "host": "book.fountain.coach",
+      "lifecycle": "active",
+      "role": "reframe-historical-reference-not-linotype",
+      "sourceCommit": "f5965dd0a5c1687ad1703aae4c615e0aad7095b1",
+      "sourceHTMLRoutes": 17,
+      "sourceRepo": "Fountain-Coach/book-of-reframe"
+    },
+    {
+      "delegations": [],
+      "host": "fountain.coach",
+      "lifecycle": "active",
+      "role": "editorial-identity",
+      "sourceCommit": "d1d86be9741c57d0c4cf8467edbc7c2a8d221cc1",
+      "sourceHTMLRoutes": 15,
+      "sourceRepo": "Fountain-Coach/fountain.coach"
+    },
+    {
+      "delegations": [],
+      "host": "governance.fountain.coach",
+      "lifecycle": "active",
+      "role": "normative-reference",
+      "sourceCommit": "93ad87e007616d17a5b303a1925e7104db03d15c",
+      "sourceHTMLRoutes": 165,
+      "sourceRepo": "Fountain-Coach/governance.fountain.coach"
+    },
+    {
+      "delegations": [],
+      "host": "instruments.fountain.coach",
+      "lifecycle": "active",
+      "role": "technical-catalogue",
+      "sourceCommit": "34f75755f1d77448926c4b27d4cee964b25df663",
+      "sourceHTMLRoutes": 4,
+      "sourceRepo": "Fountain-Coach/instruments.fountain.coach"
+    },
+    {
+      "delegations": [],
+      "host": "midi2.fountain.coach",
+      "lifecycle": "active",
+      "role": "technical-evidence",
+      "sourceCommit": "e9622ef935048239c5ee5ab64d59b429e73d17fa",
+      "sourceHTMLRoutes": 0,
+      "sourceRepo": "Fountain-Coach/midi2"
+    },
+    {
+      "delegations": [],
+      "host": "solstice.fountain.coach",
+      "lifecycle": "planned",
+      "role": "authored-literary-edition",
+      "sourceCommit": "bb365cae73dacd1558345690bc5c77126891c27b",
+      "sourceHTMLRoutes": 32,
+      "sourceRepo": "Fountain-Coach/solstice.fountain.coach"
+    },
+    {
+      "delegations": [],
+      "host": "status.fountain.coach",
+      "lifecycle": "active",
+      "role": "mandatory-legal-footer-and-transparency",
+      "sourceCommit": "958d1a9e86fb8b520db03bc4b0d485d35a91a519",
+      "sourceHTMLRoutes": 12,
+      "sourceRepo": "Fountain-Coach/status.fountain.coach"
+    },
+    {
+      "delegations": [],
+      "host": "teatro.fountain.coach",
+      "lifecycle": "active",
+      "role": "authoring-and-performance-instrument-not-publication",
+      "sourceCommit": "37c0caf2179a7c68c7e491d4dbea4319dc973b93",
+      "sourceHTMLRoutes": 5,
+      "sourceRepo": "Fountain-Coach/teatro.fountain.coach"
+    },
+    {
+      "delegations": [],
+      "host": "tennis.fountain.coach",
+      "lifecycle": "archived",
+      "role": "retired-technical-experiment",
+      "sourceCommit": "3880d4af6687ddbedc14d5449c277401f995cfb0",
+      "sourceHTMLRoutes": 1,
+      "sourceRepo": "Fountain-Coach/tennis.fountain.coach"
+    },
+    {
+      "delegations": [
+        {
+          "pathPrefix": "/solstice/",
+          "publicationState": "public-under-works-host; solstice-subdomain-unresolved",
+          "sourceDomain": "solstice.fountain.coach",
+          "sourceRepo": "Fountain-Coach/solstice.fountain.coach",
+          "work": "First Reading"
+        }
+      ],
+      "host": "works.benedikt-eickhoff.de",
+      "lifecycle": "active",
+      "role": "literary-works-publication",
+      "sourceCommit": "6b4721db185a3039e5431ab436263e6898f32834",
+      "sourceHTMLRoutes": 60,
+      "sourceRepo": "Fountain-Coach/works-benedikt-eickhoff"
+    }
+  ],
+  "manifestSHA256": "704149a7ea1e83e400bd22690d117a659da1891909b82a3132c9bacb44830a52",
+  "principles": {
+    "hosting": "Independent live HTTPS readback is required for release",
+    "navigation": "Bookshelf is a projection, never the estate inventory",
+    "source": "Git owner is authority for source; not for deployment state"
+  },
+  "risks": [
+    {
+      "repository": "Fountain-Coach/fountain.coach",
+      "type": "dirty-owner-checkout"
+    },
+    {
+      "repository": "Fountain-Coach/midi2",
+      "type": "revision-differs-from-local-origin-main"
+    },
+    {
+      "repository": "Fountain-Coach/midi2",
+      "type": "no-tracked-static-publication-root"
+    },
+    {
+      "host": "solstice.fountain.coach",
+      "type": "planned-host-no-publication-assertion"
+    }
+  ],
+  "schema": "fountain.estate.source-inventory.v1",
+  "sources": [
+    {
+      "clean": true,
+      "editionState": "verified-live-publication-baseline",
+      "github": "https://github.com/Fountain-Coach/benedikt-eickhoff.de",
+      "head": "fa3d1b406d1128ae33f2ae4eb9b2443b3f935128",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "benedikt-eickhoff.de"
+      ],
+      "localCheckout": "estate-domain-owners/benedikt-eickhoff.de",
+      "localOriginMain": "fa3d1b406d1128ae33f2ae4eb9b2443b3f935128",
+      "repository": "Fountain-Coach/benedikt-eickhoff.de",
+      "sourceInventoryStatus": "verified",
+      "sourceRoot": "site",
+      "trackedContentSHA256": "8a527c513d0cb91f2828478c52f52aad4d8ba2ebdf2459813a01e8c9088b4b76",
+      "trackedDocuments": 2,
+      "trackedFiles": 37,
+      "trackedHTML": 7
+    },
+    {
+      "clean": true,
+      "editionState": null,
+      "github": "https://github.com/Fountain-Coach/book-of-reframe",
+      "head": "f5965dd0a5c1687ad1703aae4c615e0aad7095b1",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "book.fountain.coach"
+      ],
+      "localCheckout": "press-source-checkouts/book-of-reframe",
+      "localOriginMain": "f5965dd0a5c1687ad1703aae4c615e0aad7095b1",
+      "repository": "Fountain-Coach/book-of-reframe",
+      "sourceInventoryStatus": "not-provided",
+      "sourceRoot": "site",
+      "trackedContentSHA256": "f008a43ee88c1366eed09bbe53ec3338f15497e59eb01a8aefdb25d8696d3dbb",
+      "trackedDocuments": 50,
+      "trackedFiles": 150,
+      "trackedHTML": 17
+    },
+    {
+      "clean": false,
+      "editionState": "source-candidate-editions-hierarchy-not-publicly-deployed",
+      "github": "https://github.com/Fountain-Coach/fountain.coach",
+      "head": "d1d86be9741c57d0c4cf8467edbc7c2a8d221cc1",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "fountain.coach"
+      ],
+      "localCheckout": "estate-domain-owners/fountain.coach",
+      "localOriginMain": "d1d86be9741c57d0c4cf8467edbc7c2a8d221cc1",
+      "repository": "Fountain-Coach/fountain.coach",
+      "sourceInventoryStatus": "verified",
+      "sourceRoot": "site",
+      "trackedContentSHA256": "7de5feee5e0b709796fd9a4cae4603006ef29df26e5d7dc9338a9dac1f6d3ddc",
+      "trackedDocuments": 3,
+      "trackedFiles": 104,
+      "trackedHTML": 15
+    },
+    {
+      "clean": true,
+      "editionState": "source-candidate-awaiting-publishing",
+      "github": "https://github.com/Fountain-Coach/governance.fountain.coach",
+      "head": "93ad87e007616d17a5b303a1925e7104db03d15c",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "governance.fountain.coach"
+      ],
+      "localCheckout": "governance.fountain.coach",
+      "localOriginMain": "93ad87e007616d17a5b303a1925e7104db03d15c",
+      "repository": "Fountain-Coach/governance.fountain.coach",
+      "sourceInventoryStatus": "verified",
+      "sourceRoot": "site",
+      "trackedContentSHA256": "f7baa93e191effd4dfd04bbbd545ef3a3a3f6c243a2a51123c7cb21c701baad5",
+      "trackedDocuments": 2,
+      "trackedFiles": 301,
+      "trackedHTML": 165
+    },
+    {
+      "clean": true,
+      "editionState": "verified-live-publication-baseline",
+      "github": "https://github.com/Fountain-Coach/instruments.fountain.coach",
+      "head": "34f75755f1d77448926c4b27d4cee964b25df663",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "instruments.fountain.coach"
+      ],
+      "localCheckout": "estate-domain-owners/instruments.fountain.coach",
+      "localOriginMain": "34f75755f1d77448926c4b27d4cee964b25df663",
+      "repository": "Fountain-Coach/instruments.fountain.coach",
+      "sourceInventoryStatus": "verified",
+      "sourceRoot": "site",
+      "trackedContentSHA256": "fe17c0c00a6c23ac41111a792d47b496ea55b0713acfedd6a53d7647ba9f27de",
+      "trackedDocuments": 2,
+      "trackedFiles": 25,
+      "trackedHTML": 4
+    },
+    {
+      "clean": true,
+      "editionState": null,
+      "github": "https://github.com/Fountain-Coach/midi2",
+      "head": "e9622ef935048239c5ee5ab64d59b429e73d17fa",
+      "headMatchesLocalOriginMain": false,
+      "hosts": [
+        "midi2.fountain.coach"
+      ],
+      "localCheckout": "press-source-checkouts/midi2",
+      "localOriginMain": "08fe3d2a02d10e7737b0c533ece583b08397c67b",
+      "repository": "Fountain-Coach/midi2",
+      "sourceInventoryStatus": "not-provided",
+      "sourceRoot": null,
+      "trackedContentSHA256": "c5373b2a066fdd74b7dbcaa3fe81bdae75e1a5871e2aa13b0e0ad9e0e3072856",
+      "trackedDocuments": 64,
+      "trackedFiles": 528,
+      "trackedHTML": 1
+    },
+    {
+      "clean": true,
+      "editionState": "source-candidate-three-front-navigation-not-publicly-deployed",
+      "github": "https://github.com/Fountain-Coach/solstice.fountain.coach",
+      "head": "bb365cae73dacd1558345690bc5c77126891c27b",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "solstice.fountain.coach"
+      ],
+      "localCheckout": "estate-domain-owners/solstice.fountain.coach",
+      "localOriginMain": "bb365cae73dacd1558345690bc5c77126891c27b",
+      "repository": "Fountain-Coach/solstice.fountain.coach",
+      "sourceInventoryStatus": "verified",
+      "sourceRoot": "site",
+      "trackedContentSHA256": "f9cfee963389ce27eb9d85c6706759f05b56b9e362f22361d53a50873759a0e7",
+      "trackedDocuments": 3,
+      "trackedFiles": 106,
+      "trackedHTML": 32
+    },
+    {
+      "clean": true,
+      "editionState": "source-candidate-not-publicly-deployed",
+      "github": "https://github.com/Fountain-Coach/status.fountain.coach",
+      "head": "958d1a9e86fb8b520db03bc4b0d485d35a91a519",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "status.fountain.coach"
+      ],
+      "localCheckout": "status.fountain.coach",
+      "localOriginMain": "958d1a9e86fb8b520db03bc4b0d485d35a91a519",
+      "repository": "Fountain-Coach/status.fountain.coach",
+      "sourceInventoryStatus": "verified",
+      "sourceRoot": "site",
+      "trackedContentSHA256": "8a9d4c39b9dd482a43141899fe6a33be4cf147176080dc5192d1991838e043c1",
+      "trackedDocuments": 2,
+      "trackedFiles": 36,
+      "trackedHTML": 12
+    },
+    {
+      "clean": true,
+      "editionState": "source-candidate-Linotype-bookshelf-first-hearing-not-publicly-deployed",
+      "github": "https://github.com/Fountain-Coach/teatro.fountain.coach",
+      "head": "37c0caf2179a7c68c7e491d4dbea4319dc973b93",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "teatro.fountain.coach"
+      ],
+      "localCheckout": "estate-domain-owners/teatro.fountain.coach",
+      "localOriginMain": "37c0caf2179a7c68c7e491d4dbea4319dc973b93",
+      "repository": "Fountain-Coach/teatro.fountain.coach",
+      "sourceInventoryStatus": "verified",
+      "sourceRoot": "site",
+      "trackedContentSHA256": "4e6639ac3f79c8cbfed83a5baf47705909b95bb4f1009f6293a037b989d23d16",
+      "trackedDocuments": 4,
+      "trackedFiles": 90,
+      "trackedHTML": 5
+    },
+    {
+      "clean": true,
+      "editionState": "archival-source-domain-not-publicly-admitted",
+      "github": "https://github.com/Fountain-Coach/tennis.fountain.coach",
+      "head": "3880d4af6687ddbedc14d5449c277401f995cfb0",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "tennis.fountain.coach"
+      ],
+      "localCheckout": "estate-domain-owners/tennis.fountain.coach",
+      "localOriginMain": "3880d4af6687ddbedc14d5449c277401f995cfb0",
+      "repository": "Fountain-Coach/tennis.fountain.coach",
+      "sourceInventoryStatus": "verified",
+      "sourceRoot": "site",
+      "trackedContentSHA256": "f2c4b9d8e9a086a251e51aa1f0269caffdcfc776902466a8bea435e92be34a4c",
+      "trackedDocuments": 2,
+      "trackedFiles": 12,
+      "trackedHTML": 1
+    },
+    {
+      "clean": true,
+      "editionState": null,
+      "github": "https://github.com/Fountain-Coach/works-benedikt-eickhoff",
+      "head": "6b4721db185a3039e5431ab436263e6898f32834",
+      "headMatchesLocalOriginMain": true,
+      "hosts": [
+        "works.benedikt-eickhoff.de"
+      ],
+      "localCheckout": "werke-benedikt-eickhoff-de",
+      "localOriginMain": "6b4721db185a3039e5431ab436263e6898f32834",
+      "repository": "Fountain-Coach/works-benedikt-eickhoff",
+      "sourceInventoryStatus": "not-provided",
+      "sourceRoot": ".",
+      "trackedContentSHA256": "ccc413010c6c6c5d5a19ee56c20e3f56b591bcbc31bf13f221610061f4d41f60",
+      "trackedDocuments": 2,
+      "trackedFiles": 75,
+      "trackedHTML": 28
+    }
+  ]
+}

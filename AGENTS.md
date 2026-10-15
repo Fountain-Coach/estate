@@ -96,3 +96,23 @@ the remaining movements cannot acquire invented authorial meaning. R33
 adjusts compact media height/positioned return so strict existing page
 measure and source-preservation tests pass on phone portrait/landscape as
 well as desktop and iPad. WLAN author acceptance remains pending.
+
+## Complete owned-estate source contract (15 October 2026)
+
+The canonical machine-readable owner/route/deployment reconciliation is under
+`inventory/`, governed by `inventory/CONTRACT.md`. Do **not** infer an estate
+inventory from a Bookshelf selection, published collection covers, or a locally
+successful landing-page test. The inventory discovers the registered domain
+owners by their actual GitHub remotes, emits every Git-tracked HTML source
+route and link, respects delegated hosting boundaries, and stores independent
+HTTPS readback separately from candidate Git state. The current public
+fountain.coach root matches its historical baseline, not the latest two-cover
+landing source; missing cross-domain links are explicitly diagnosed.
+
+`npm run check` must fail when the source inventory becomes stale. Use
+`npm run inventory:build` to regenerate it after a source or ownership change,
+then `npm run inventory:probe` to refresh bounded public HTTPS readback.
+A pass does not mean production was updated or every remote URL was crawled.
+No GitHub Actions, no automated push, no DNS/Caddy changes are authorized by
+these operations. Record source versus public mismatches before any publishing
+promotion or UI taxonomy changes.

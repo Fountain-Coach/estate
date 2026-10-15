@@ -1,0 +1,1008 @@
+{
+  "domains": [
+    {
+      "checks": [
+        {
+          "anchorCount": 46,
+          "bytes": 23702,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://benedikt-eickhoff.de/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinks": [
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinksMissingFromSource": [],
+          "route": "/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "a0a87ec2a26728b7a946716d4687d02e59eb7b9121d11ada09749d00ee25a381",
+          "sourceEstateLinks": [
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "sourceSHA256": "a0a87ec2a26728b7a946716d4687d02e59eb7b9121d11ada09749d00ee25a381",
+          "transportError": null,
+          "url": "https://benedikt-eickhoff.de/"
+        },
+        {
+          "anchorCount": 4,
+          "bytes": 1909,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://benedikt-eickhoff.de/posts/a-day-becomes-a-readable-scene/content.html",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de"
+          ],
+          "route": "/posts/a-day-becomes-a-readable-scene/content.html",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "be7c3708b067ab07ad3125ff0ac4e637c0838c8f946f1e5a88efa11142fba852",
+          "sourceSHA256": "be7c3708b067ab07ad3125ff0ac4e637c0838c8f946f1e5a88efa11142fba852",
+          "transportError": null,
+          "url": "https://benedikt-eickhoff.de/posts/a-day-becomes-a-readable-scene/content.html"
+        },
+        {
+          "anchorCount": 33,
+          "bytes": 8934,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://benedikt-eickhoff.de/posts/a-pointer-enters-the-scene/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/posts/a-pointer-enters-the-scene/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "240b6c3f931da2636f74c405e576d147073ab446ca1ee47d5eb48a991358f14d",
+          "sourceSHA256": "240b6c3f931da2636f74c405e576d147073ab446ca1ee47d5eb48a991358f14d",
+          "transportError": null,
+          "url": "https://benedikt-eickhoff.de/posts/a-pointer-enters-the-scene/"
+        },
+        {
+          "anchorCount": 31,
+          "bytes": 8713,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://benedikt-eickhoff.de/posts/chapter-129-the-image-becomes-a-contract/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/posts/chapter-129-the-image-becomes-a-contract/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "eefb794659874e1859b311b5e10b2177163ea4b2c6e440ede2750802a882dacd",
+          "sourceSHA256": "eefb794659874e1859b311b5e10b2177163ea4b2c6e440ede2750802a882dacd",
+          "transportError": null,
+          "url": "https://benedikt-eickhoff.de/posts/chapter-129-the-image-becomes-a-contract/"
+        }
+      ],
+      "host": "benedikt-eickhoff.de",
+      "lifecycle": "active"
+    },
+    {
+      "checks": [
+        {
+          "anchorCount": 49,
+          "bytes": 17001,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://book.fountain.coach/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "github.com",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinks": [
+            "benedikt-eickhoff.de",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinksMissingFromSource": [
+            "benedikt-eickhoff.de",
+            "midi2.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "d87292d725a09da074791a79e19c56fc2ea91c02d88c55ab7bfc5dba52d16914",
+          "sourceEstateLinks": [
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "status.fountain.coach"
+          ],
+          "sourceSHA256": "6da66dd08d9c194991762862ae27403605179cc1ce03eeffd1e5e696a34a9c33",
+          "transportError": null,
+          "url": "https://book.fountain.coach/"
+        },
+        {
+          "anchorCount": 31,
+          "bytes": 8849,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://book.fountain.coach/accessibility/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/accessibility/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "aec482e76b7e9f944b4c17e8545ca3f8388f30f3797e633a62e74e801b15b1fd",
+          "sourceSHA256": "4abee4b4fe32d48b0f623952b06e9881b9ff5e3509b005daf2a5aa4abaaa7d36",
+          "transportError": null,
+          "url": "https://book.fountain.coach/accessibility/"
+        },
+        {
+          "anchorCount": 41,
+          "bytes": 11456,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://book.fountain.coach/capabilities/reframe-to-reframe-peer-projection/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "github.com",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/capabilities/reframe-to-reframe-peer-projection/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "4522e7395d343f62adc7d19fe780ef3d3e0dc4d52c88a6140b99de638faca1aa",
+          "sourceSHA256": "71127c57665471cfdb294a5b1423b8fdeb9b810ae7668f2fbe47e082abe52434",
+          "transportError": null,
+          "url": "https://book.fountain.coach/capabilities/reframe-to-reframe-peer-projection/"
+        },
+        {
+          "anchorCount": 40,
+          "bytes": 10924,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://book.fountain.coach/capabilities/scenario-runtime-midi2/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "github.com",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/capabilities/scenario-runtime-midi2/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "ff5dcc3cf69e9a0eaf2bd879f4f96caccf6e50b19b4a9c46c5162f15988639e0",
+          "sourceSHA256": "68e5d0eb133adc5cf243ed814aa79d3b6a435287d5d39006ff18a2a4ca225605",
+          "transportError": null,
+          "url": "https://book.fountain.coach/capabilities/scenario-runtime-midi2/"
+        }
+      ],
+      "host": "book.fountain.coach",
+      "lifecycle": "active"
+    },
+    {
+      "checks": [
+        {
+          "anchorCount": 46,
+          "baselineGitCommit": "420be0ca655d2262ec987934c0dc573cbb11eefd",
+          "bytes": 16578,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://fountain.coach/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinksMissingFromSource": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/",
+          "sameBytesAsCurrentSource": false,
+          "sameBytesAsHistoricalBaseline": true,
+          "sha256": "e5d4c2a2ef3471a05c4d53c22374fd2bf67be6be336e99519a148329152dd3fb",
+          "sourceEstateLinks": [],
+          "sourceSHA256": "aeb3c22469b1db4c8917e04d14cf1fb3335c44dc7c1a40d7c6fc5a08feb7b7c6",
+          "transportError": null,
+          "url": "https://fountain.coach/"
+        },
+        {
+          "anchorCount": 36,
+          "bytes": 11428,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://fountain.coach/essays/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/essays/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "4ba3c6743e8606392635b332e17214a1d3974ea1bc984080082e027ea46ff673",
+          "sourceSHA256": "6d5f1c98f2c50c93ce29b39fecc2f6774230c8cc283e0a4c2062f5a46bde4292",
+          "transportError": null,
+          "url": "https://fountain.coach/essays/"
+        },
+        {
+          "bytes": 9,
+          "contentType": "text/plain; charset=utf-8",
+          "effectiveUrl": "https://fountain.coach/editions/",
+          "httpStatus": 404,
+          "route": "/editions/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "907ba78b4545338d3539683e63ecb51cf51c10adc9dabd86e92bd52339f298b9",
+          "sourceSHA256": "aeb3c22469b1db4c8917e04d14cf1fb3335c44dc7c1a40d7c6fc5a08feb7b7c6",
+          "transportError": null,
+          "url": "https://fountain.coach/editions/"
+        },
+        {
+          "bytes": 58,
+          "contentType": "application/problem+json",
+          "effectiveUrl": "https://fountain.coach/collections/first-readings/",
+          "httpStatus": 401,
+          "route": "/collections/first-readings/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "1992b42ac4cb9e3276b6a7359f5249fc74ff8021ddf53d41283ac9e3963123a5",
+          "sourceSHA256": "d3470f2ee5422c70b905d7f61d3e612b874ca4b0e5a36b985d04b3a240dafe55",
+          "transportError": null,
+          "url": "https://fountain.coach/collections/first-readings/"
+        }
+      ],
+      "host": "fountain.coach",
+      "lifecycle": "active"
+    },
+    {
+      "checks": [
+        {
+          "anchorCount": 382,
+          "bytes": 74609,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://governance.fountain.coach/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinksMissingFromSource": [],
+          "route": "/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "28d10ef29e4b627e8370051aa3252aed230840abffe842533a764ea33236aa11",
+          "sourceEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "sourceSHA256": "f5b316c7ddbdf4c287e37558e2184ca7002ca3a483d9f2cbbab957bdbfa28919",
+          "transportError": null,
+          "url": "https://governance.fountain.coach/"
+        },
+        {
+          "anchorCount": 193,
+          "bytes": 38867,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://governance.fountain.coach/chapters/00-abstract/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/chapters/00-abstract/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "e0748bfb87bee5be6d97ac98f92e4167a3131282d6329c80b57c7638a2610c5a",
+          "sourceSHA256": "1e25c8f84f29fc495faf5d53521a79f8010727fe1823668f0dde36605176d026",
+          "transportError": null,
+          "url": "https://governance.fountain.coach/chapters/00-abstract/"
+        },
+        {
+          "anchorCount": 163,
+          "bytes": 39333,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://governance.fountain.coach/accessibility/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/accessibility/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "4d128df5e62203d705514b2c8dfd7e8b2aa63dd1adc89ded1e6e802004f6203a",
+          "sourceSHA256": "dfc309c9b653d87e3772c3e98a7bfedf5de24adfe3cf7b7803af3898ff0a6380",
+          "transportError": null,
+          "url": "https://governance.fountain.coach/accessibility/"
+        },
+        {
+          "anchorCount": 388,
+          "bytes": 115886,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://governance.fountain.coach/chapters/01-reading-index/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "github.com",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/chapters/01-reading-index/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "8a4ce6097585729c2e847ee26617c75a8055bdcda69d0f574176b0fe1329cb6a",
+          "sourceSHA256": "68cbba00e166078d08ac36245a188a815baa7cc01e235855e7d26c7a1c7a1710",
+          "transportError": null,
+          "url": "https://governance.fountain.coach/chapters/01-reading-index/"
+        }
+      ],
+      "host": "governance.fountain.coach",
+      "lifecycle": "active"
+    },
+    {
+      "checks": [
+        {
+          "anchorCount": 38,
+          "bytes": 13963,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://instruments.fountain.coach/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi.org",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinksMissingFromSource": [],
+          "route": "/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "293b057932a9886157d1d7f2d260738cac3c7d8d64e8619ff9ea2da8655dbd0b",
+          "sourceEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "sourceSHA256": "293b057932a9886157d1d7f2d260738cac3c7d8d64e8619ff9ea2da8655dbd0b",
+          "transportError": null,
+          "url": "https://instruments.fountain.coach/"
+        },
+        {
+          "anchorCount": 38,
+          "bytes": 11977,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://instruments.fountain.coach/instruments/codex-auth-instrument/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi.org",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/instruments/codex-auth-instrument/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "56a65da13f63a2c8c568e9d8f9ecfcfe92bafd0f69b02fcfab8018893d1a11a0",
+          "sourceSHA256": "56a65da13f63a2c8c568e9d8f9ecfcfe92bafd0f69b02fcfab8018893d1a11a0",
+          "transportError": null,
+          "url": "https://instruments.fountain.coach/instruments/codex-auth-instrument/"
+        },
+        {
+          "anchorCount": 35,
+          "bytes": 10039,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://instruments.fountain.coach/instruments/csound-auv3/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/instruments/csound-auv3/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "3c76f6f3437e3c6dc063cac9bcd8e753783e9b628a372e748b42b39927eede73",
+          "sourceSHA256": "3c76f6f3437e3c6dc063cac9bcd8e753783e9b628a372e748b42b39927eede73",
+          "transportError": null,
+          "url": "https://instruments.fountain.coach/instruments/csound-auv3/"
+        },
+        {
+          "anchorCount": 36,
+          "bytes": 11619,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://instruments.fountain.coach/instruments/semantic-browser/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/instruments/semantic-browser/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "06cb3c060553a9279debcee7e463bfaf8d3667a0e683a87e4f9e60d3d5011d7c",
+          "sourceSHA256": "06cb3c060553a9279debcee7e463bfaf8d3667a0e683a87e4f9e60d3d5011d7c",
+          "transportError": null,
+          "url": "https://instruments.fountain.coach/instruments/semantic-browser/"
+        }
+      ],
+      "host": "instruments.fountain.coach",
+      "lifecycle": "active"
+    },
+    {
+      "checks": [
+        {
+          "anchorCount": 91,
+          "bytes": 17173,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://midi2.fountain.coach/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "github.com",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/",
+          "sameBytesAsCurrentSource": null,
+          "sha256": "c9872ee856d334a94e004abc9f511ac9ceeb0294aa3b57b92e61946d4a91b180",
+          "sourceSHA256": null,
+          "transportError": null,
+          "url": "https://midi2.fountain.coach/"
+        }
+      ],
+      "host": "midi2.fountain.coach",
+      "lifecycle": "active"
+    },
+    {
+      "checks": [
+        {
+          "contentType": "",
+          "effectiveUrl": "https://solstice.fountain.coach/",
+          "httpStatus": 0,
+          "route": "/",
+          "sameBytesAsCurrentSource": false,
+          "sourceSHA256": "bdcf680db69dc79d7d69b47083fee26b39fac21516697d80aa083e8108f6d88e",
+          "transportError": "curl: (6) Could not resolve host: solstice.fountain.coach",
+          "url": "https://solstice.fountain.coach/"
+        },
+        {
+          "contentType": "",
+          "effectiveUrl": "https://solstice.fountain.coach/editions/first-reading/",
+          "httpStatus": 0,
+          "route": "/editions/first-reading/",
+          "sameBytesAsCurrentSource": false,
+          "sourceSHA256": "3704caa5375046a13e54257273725eabc868563b712f89b48de9a4c32af41db6",
+          "transportError": "curl: (6) Could not resolve host: solstice.fountain.coach",
+          "url": "https://solstice.fountain.coach/editions/first-reading/"
+        },
+        {
+          "contentType": "",
+          "effectiveUrl": "https://solstice.fountain.coach/editions/first-reading/entries/2025-12-22-anweisung-an-den-schmerz/",
+          "httpStatus": 0,
+          "route": "/editions/first-reading/entries/2025-12-22-anweisung-an-den-schmerz/",
+          "sameBytesAsCurrentSource": false,
+          "sourceSHA256": "b11552ef192e0e039fb4aa24112410c6aeb400588017f4e545f3ebd56b17ad68",
+          "transportError": "curl: (6) Could not resolve host: solstice.fountain.coach",
+          "url": "https://solstice.fountain.coach/editions/first-reading/entries/2025-12-22-anweisung-an-den-schmerz/"
+        },
+        {
+          "contentType": "",
+          "effectiveUrl": "https://solstice.fountain.coach/editions/first-reading/entries/2025-12-23-integration/",
+          "httpStatus": 0,
+          "route": "/editions/first-reading/entries/2025-12-23-integration/",
+          "sameBytesAsCurrentSource": false,
+          "sourceSHA256": "177bbcb7ad07b58a79381d2a796d0e6e9008b6f27145473b4ef3cd2c2b1cf369",
+          "transportError": "curl: (6) Could not resolve host: solstice.fountain.coach",
+          "url": "https://solstice.fountain.coach/editions/first-reading/entries/2025-12-23-integration/"
+        }
+      ],
+      "host": "solstice.fountain.coach",
+      "lifecycle": "planned"
+    },
+    {
+      "checks": [
+        {
+          "anchorCount": 46,
+          "bytes": 9095,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://status.fountain.coach/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinksMissingFromSource": [],
+          "route": "/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "5474a576383164da216d1e93355d6258f56584c5d2986a08fce072fac28e8bfa",
+          "sourceEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "sourceSHA256": "fc8219ce68205ade8bef5bef40f25ce4290c80bdeae8a5911a891f3d2e6c65d7",
+          "transportError": null,
+          "url": "https://status.fountain.coach/"
+        },
+        {
+          "anchorCount": 48,
+          "bytes": 12775,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://status.fountain.coach/business-architecture/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/business-architecture/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "af4ff2362e4c3093150619a109ac8f1ee25c595f068e3139fbab7e199b95faa7",
+          "sourceSHA256": "db7ce2ecc247f56bcb7b2d96bae14f7adba1043a684b4ca1fcf67ae596840f94",
+          "transportError": null,
+          "url": "https://status.fountain.coach/business-architecture/"
+        },
+        {
+          "anchorCount": 40,
+          "bytes": 8385,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://status.fountain.coach/business-model/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/business-model/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "7acfd3debe59600ed4f815a89076d06a78face107dc1a30e6ee9abea73d6acf2",
+          "sourceSHA256": "b587872f2a5b12d33f3a7651258f8819141832784d87337d4f920467dec2ca8c",
+          "transportError": null,
+          "url": "https://status.fountain.coach/business-model/"
+        },
+        {
+          "anchorCount": 34,
+          "bytes": 7819,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://status.fountain.coach/ci/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/ci/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "469058bf1a2b706dcefc3b05795f91568699d9228984d3843500ad46937bdb21",
+          "sourceSHA256": "6ddeae0856f189ea02581d5f65533bdb35f6e9293ce75d48ba0f11efb26be1ec",
+          "transportError": null,
+          "url": "https://status.fountain.coach/ci/"
+        }
+      ],
+      "host": "status.fountain.coach",
+      "lifecycle": "active"
+    },
+    {
+      "checks": [
+        {
+          "anchorCount": 27,
+          "bytes": 7062,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://teatro.fountain.coach/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinksMissingFromSource": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach"
+          ],
+          "route": "/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "71308fe02d4df6e0237884aeccccd8b040c0df2d32e2ea05e4243f93a008d996",
+          "sourceEstateLinks": [
+            "fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "sourceSHA256": "40770585e33044edd8692beabee312a7670a3484f43af3caf32a84fc96633afc",
+          "transportError": null,
+          "url": "https://teatro.fountain.coach/"
+        },
+        {
+          "bytes": 9,
+          "contentType": "text/plain; charset=utf-8",
+          "effectiveUrl": "https://teatro.fountain.coach/editions/",
+          "httpStatus": 404,
+          "route": "/editions/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "907ba78b4545338d3539683e63ecb51cf51c10adc9dabd86e92bd52339f298b9",
+          "sourceSHA256": "40770585e33044edd8692beabee312a7670a3484f43af3caf32a84fc96633afc",
+          "transportError": null,
+          "url": "https://teatro.fountain.coach/editions/"
+        },
+        {
+          "bytes": 9,
+          "contentType": "text/plain; charset=utf-8",
+          "effectiveUrl": "https://teatro.fountain.coach/editions/first-hearing/",
+          "httpStatus": 404,
+          "route": "/editions/first-hearing/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "907ba78b4545338d3539683e63ecb51cf51c10adc9dabd86e92bd52339f298b9",
+          "sourceSHA256": "64bfefc0e61074568f4f374b3d8ffd4d697f2c082e19d2f173a1d88183a12c28",
+          "transportError": null,
+          "url": "https://teatro.fountain.coach/editions/first-hearing/"
+        },
+        {
+          "bytes": 9,
+          "contentType": "text/plain; charset=utf-8",
+          "effectiveUrl": "https://teatro.fountain.coach/editions/stage/",
+          "httpStatus": 404,
+          "route": "/editions/stage/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "907ba78b4545338d3539683e63ecb51cf51c10adc9dabd86e92bd52339f298b9",
+          "sourceSHA256": "48383194fe9241620f7c6c1f9c635cb7cae660ce80cb02a21d765c593663b468",
+          "transportError": null,
+          "url": "https://teatro.fountain.coach/editions/stage/"
+        }
+      ],
+      "host": "teatro.fountain.coach",
+      "lifecycle": "active"
+    },
+    {
+      "checks": [],
+      "host": "tennis.fountain.coach",
+      "lifecycle": "archived"
+    },
+    {
+      "checks": [
+        {
+          "anchorCount": 48,
+          "bytes": 9855,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://works.benedikt-eickhoff.de/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "publicEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach"
+          ],
+          "publicEstateLinksMissingFromSource": [],
+          "route": "/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "5d5de0ce48b571523800b0d3a5573efb26b9a9c427c59fd711300682407e47da",
+          "sourceEstateLinks": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach"
+          ],
+          "sourceSHA256": "5d5de0ce48b571523800b0d3a5573efb26b9a9c427c59fd711300682407e47da",
+          "transportError": null,
+          "url": "https://works.benedikt-eickhoff.de/"
+        },
+        {
+          "anchorCount": 68,
+          "bytes": 164190,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://works.benedikt-eickhoff.de/solstice/editions/first-reading/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/solstice/editions/first-reading/",
+          "sameBytesAsCurrentSource": false,
+          "sha256": "3faddbff97117fbe4e528ead6b714a093932d6f425806517d9c0ee8c18fb0e09",
+          "sourceSHA256": "3704caa5375046a13e54257273725eabc868563b712f89b48de9a4c32af41db6",
+          "transportError": null,
+          "url": "https://works.benedikt-eickhoff.de/solstice/editions/first-reading/"
+        },
+        {
+          "anchorCount": 43,
+          "bytes": 7424,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://works.benedikt-eickhoff.de/ballern-gehen/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/ballern-gehen/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "43206efd4708a84301eabd71f93f7a339a7dcfaeab33613e411bede7ac6b1814",
+          "sourceSHA256": "43206efd4708a84301eabd71f93f7a339a7dcfaeab33613e411bede7ac6b1814",
+          "transportError": null,
+          "url": "https://works.benedikt-eickhoff.de/ballern-gehen/"
+        },
+        {
+          "anchorCount": 43,
+          "bytes": 7447,
+          "contentType": "text/html; charset=utf-8",
+          "effectiveUrl": "https://works.benedikt-eickhoff.de/barrierefreiheit/",
+          "httpStatus": 200,
+          "linkedHosts": [
+            "benedikt-eickhoff.de",
+            "book.fountain.coach",
+            "fountain.coach",
+            "governance.fountain.coach",
+            "instruments.fountain.coach",
+            "midi2.fountain.coach",
+            "status.fountain.coach",
+            "teatro.fountain.coach",
+            "works.benedikt-eickhoff.de"
+          ],
+          "route": "/barrierefreiheit/",
+          "sameBytesAsCurrentSource": true,
+          "sha256": "c8f3d40f1f75d47542c199dc6f51ce1eedc90feaa28671be1efc2dae6c6262ad",
+          "sourceSHA256": "c8f3d40f1f75d47542c199dc6f51ce1eedc90feaa28671be1efc2dae6c6262ad",
+          "transportError": null,
+          "url": "https://works.benedikt-eickhoff.de/barrierefreiheit/"
+        }
+      ],
+      "host": "works.benedikt-eickhoff.de",
+      "lifecycle": "active"
+    }
+  ],
+  "manifestSHA256": "704149a7ea1e83e400bd22690d117a659da1891909b82a3132c9bacb44830a52",
+  "observedAt": "2026-10-15T13:14:11+00:00",
+  "schema": "fountain.estate.public-readback.v1",
+  "scope": "Sample of HTTPS root and max three routes per host; not complete public crawl"
+}

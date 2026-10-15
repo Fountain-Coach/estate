@@ -10,7 +10,10 @@ assert.deepEqual(m.publishingShelves.topLevelCollectionIds,['fountain-coach','fi
 assert.deepEqual(m.publishingShelves.toolDomainsNotBooks,['teatro.fountain.coach']);
 assert.equal(m.publishingShelves.firstHearingsPublicationState,'no admitted hearing, no cover, no issued spoken recording');
 assert.equal(m.frontDoors.find(x=>x.id==='teatro').toolNotEdition,true);
-assert.equal(m.supportingDomains.length,7);
+assert.equal(m.supportingDomains.length,8);
+const works=m.supportingDomains.find(x=>x.host==='works.benedikt-eickhoff.de');
+assert.equal(works.sourceRepo,'Fountain-Coach/works-benedikt-eickhoff');
+assert.equal(works.delegatedPublications[0].sourceRepo,'Fountain-Coach/solstice.fountain.coach');
 const repos=[...m.frontDoors,...m.supportingDomains].map(x=>x.sourceRepo);
 assert(repos.every(r=>r.startsWith('Fountain-Coach/')));
 assert.equal(new Set(repos).size,repos.length);
