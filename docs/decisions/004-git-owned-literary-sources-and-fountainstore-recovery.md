@@ -24,7 +24,7 @@ The first index contains eight distinct candidates: three original authored PDFs
 
 Six source objects were independently checked against their owning local immutable Git commits. **One actual remote reconstruction succeeded:** the private GitHub blob for `Ballern Gehen`, object `fc25691ec70ce2f0798da6b98dd3f8cccea7ad3c`, was downloaded independently of the local checkout, written to an isolated destination, and verified byte-for-byte: **34,877 bytes**, SHA-256 `ab610ab150eaeb2d67817529b012dedaeeedc9949abba0faf70ccd42f508202b`.
 
-This proves **one recoverable Git-authored source**, not recovery of an entire edition, FountainStore, or owner security authority. No manuscript bytes have been added to public Estate Git; no publication or production Store was changed.
+The initial proof established **one recoverable Git-authored source**, not the full authoritative FountainStore, edition or owner security authority; later bounded recovery evidence follows below. No manuscript bytes have been added to public Estate Git; no publication or production Store was changed.
 
 ## Mandatory invariants
 
@@ -41,3 +41,35 @@ This proves **one recoverable Git-authored source**, not recovery of an entire e
 Reframe's Bookshelf catalogue should resolve **Git-authored work → source edition → Store corpus/projection** through a verified registry, not list every attached Store as a book. The next controlled implementation is a private, classified source mirror for an eligible unmirrored corpus and a typed FountainStore export/clean-room restore, followed by a native reading/annotation readback. No new CI, public deployment or credential recovery is authorized by this document.
 
 Verify with `python3 scripts/verify-literary-git-ownership.py verify`; optional read-only `local-verify` checks the actual immutable local Git objects; the explicit `github-recover` drill reconstructs one approved object into an isolated path.
+
+
+## R22 classified collection checkpoint — 16 October 2026
+
+The owning Fountain-Store feature/classified-store-recovery-r22 at commits
+3ee498b (typed classified Store export + fresh restore) and 30b6f62
+(authenticated AES-GCM recovery envelope) proved a bounded local recovery
+using the **actual private author Git-recovered Ballern Gehen original**
+(34,877 bytes, SHA-256 matching the Git source), plus one **synthetic**
+editorial annotation. The isolated source Store produced a classified,
+omission-audited typed projection. Its bytes were sealed with a generated
+ephemeral test key, written as a 0600 **local ciphertext** file, reopened
+with authenticated context, then imported into a separate empty Store.
+A newly opened Store read back exact source bytes and annotation fixture.
+17 owner RecoveryKit tests passed, with negative classification, tampering,
+wrong key/context and existing-Store overwrite coverage. The existing
+physical Store backup regression also passed. Evidence: Reframe R22
+product main commit c1f37a4, in
+docs/evidence/r22-classified-store-recovery-20261016.md.
+
+**Strict meaning:** this is an accepted local typed collection recovery
+*mechanism*, not recovery of the actual historical estate FountainStore
+or its E01 notes. The annotation was synthetic. No off-host ciphertext
+custodian, durable recovery key, other-machine Mac-loss restore, GitHub-loss
+source mirror, owner-key succession, publication or entire-library snapshot
+has been admitted.
+
+The v1 registry field named anyFountainStoreRestored remains false,
+because that flag refers to **authoritative estate recovery**, not a
+fresh isolated test Store seeded from one real original source. Its
+wording is ambiguous; a successor registry should explicitly name
+that scope instead of silently flipping a misleading boolean.

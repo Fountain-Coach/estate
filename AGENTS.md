@@ -173,3 +173,16 @@ the registry with `npm run literary:verify` and negative tests with
 is evidenced in ADR 004; FULL FountainStore and owner recovery remain OPEN.
 Do not clone historical private sources into a public repo or invent new books
 from Scores, snapshots or fixture Store directories.
+
+
+## R22 classified Store recovery witness
+
+Estate ADR 004 documents the FountainStore owner local classified
+collection recovery and authenticated AES-GCM envelope at 30b6f62.
+The original Ballern Gehen Git source was real, but the test writer
+annotation is synthetic. Store snapshot completeness, historical E01,
+off-host encrypted custody, durable key recovery and Golden Key remain
+OPEN. The registry refusal field anyFountainStoreRestored=false applies
+to an independently reconstructed authoritative Estate Store, **not**
+a single isolated test materialization. Do not upgrade production or
+publication status from this bounded proof.
