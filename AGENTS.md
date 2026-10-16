@@ -154,3 +154,22 @@ Read [ADR 003](docs/decisions/003-owner-continuity-golden-key-recovery.md) and [
 ## Stage 2 operational discovery is a source audit, not a live Store receipt
 
 Read [Stage 2 operational discovery](recovery/state/OPERATIONAL-DISCOVERY.md) before claiming FountainStore can recover private state. Confirmed code symbols `createBackup`, `listBackups`, `restoreBackup` in an inspected Git revision do not prove any instance is deployed, backed up, authorized, or restorable off-host; the backup API currently stores data under Store-local `backups/`. The seven candidate service/custody classes in `recovery/state/operational-discovery.json` are NOT OBSERVED operational instances. Host-level privileged discovery was not admitted; do not circumvent that boundary. Run `npm run recovery:operational:verify` and `npm run recovery:operational:test`. Require an actual native owner-trust session and independent redacted typed receipt before asserting production inventory or private backup status. No keys or personal context belong in this repository.
+
+## ADR 004 — Git-owned literary source and Store recovery
+
+Read `docs/decisions/004-git-owned-literary-sources-and-fountainstore-recovery.md`
+and `inventory/literary-git-ownership.json` before changing Reframe books,
+FountainStore corpus-to-book admission, literary mirrors or clean-room recovery.
+Like the domain owners, each **authored work has one canonical Git owner**
+with immutable source ref/blob/digest. Editions reference works, and Store
+corpora are runtime materializations, not automatically distinct books.
+`FountainStore` alone owns live transactions and E01/reading state.
+A Git commit is NOT Store admission, publication authorization, or a private
+recovery receipt. Protect manuscripts: only the metadata index is in this
+public Estate repository. Private Store projections require explicit eligible
+FCIS 117/118 classified encrypted custody, not raw Git uploads. Validate
+the registry with `npm run literary:verify` and negative tests with
+`npm run literary:test`. A real GitHub source-object recovery of one PDF
+is evidenced in ADR 004; FULL FountainStore and owner recovery remain OPEN.
+Do not clone historical private sources into a public repo or invent new books
+from Scores, snapshots or fixture Store directories.
