@@ -160,7 +160,7 @@ def capture(identity,public,entries,root):
         mapping[item]="/"+identity+"/"+rel
         if rel.endswith(".css"):
             css=data.decode("utf-8","replace")
-            queue.extend(x.strip().strip("'\\"") for x in CSS_REF.findall(css) if x)
+            queue.extend(x.strip().strip(chr(39)+chr(34)) for x in CSS_REF.findall(css) if x)
     # Turn root-absolute assets into corresponding scoped preview paths; relative
     # assets work naturally at /<id>/. Internal anchor links remain public.
     for original,new in mapping.items():
