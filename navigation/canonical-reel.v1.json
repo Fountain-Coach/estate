@@ -35,12 +35,6 @@
       "path": "M8 4v10m0 0a3 3 0 1 0 2 2.8M8 7h8m0 0v8a3 3 0 1 0 2 2.8M16 7V4"
     },
     {
-      "id": "status",
-      "label": "Status",
-      "url": "https://status.fountain.coach/",
-      "path": "M4 17h3v3H4zM10.5 12h3v8h-3zM17 5h3v15h-3z"
-    },
-    {
       "id": "teatro",
       "label": "Teatro",
       "url": "https://teatro.fountain.coach/",
@@ -66,9 +60,19 @@
     }
   ],
   "notes": [
-    "Retains the nine live links plus Satzfunk; the previously published Governance reel omits Status, which is recorded as a drift to repair rather than copied.",
-    "This is a canonical navigation contract only; Status footer-only semantics are a separate authorial design decision and are not revised implicitly.",
-    "The future public Satzfunk URL is NOT live. Staging substitutes the existing authenticated LAN archive, no data copied.",
-    "The current active identity changes by host; identical order, labels, icon paths, canonical targets and keyboard semantics on every site."
+    "All nine editorial/top-level identities appear in the same order on every domain, plus a local Info/footnote action.",
+    "Status is a supporting legal/footer destination, not a top-reel item (FCIS and estate AGENTS). Its URL remains available from legal footers.",
+    "The authentic Satzfunk archive remains an author-only WLAN destination until a cleared public release exists. Do not link an unresolved production hostname.",
+    "Only the current domain receives aria-current; all other links share the same labels, icons and destinations."
+  ],
+  "supportingDestinations": [
+    {
+      "id": "status",
+      "label": "Status",
+      "url": "https://status.fountain.coach/",
+      "path": "M4 17h3v3H4zM10.5 12h3v8h-3zM17 5h3v15h-3z",
+      "placement": "legal-footer-only",
+      "role": "public transparency, not a publication reel item"
+    }
   ]
 }
