@@ -48,7 +48,7 @@ def build(source:Path,dest:Path,manifest:Path,projector:Path):
     if dest.exists():
         raise RuntimeError("Output exists; refusing overwrite")
     entries=json.loads(manifest.read_text())['entries']
-    assert len(entries)==10
+    assert len(entries)==9
     make_nav=runpy.run_path(str(projector))['make_nav']
     dest.mkdir(parents=True)
     nav='<nav class="estate-nav estate-local-unified-reel" aria-label="Fountain Coach publication estate" data-reel-contract="canonical-reel.v1">'+make_nav('satzfunk',entries)+'</nav>'
@@ -63,14 +63,14 @@ def build(source:Path,dest:Path,manifest:Path,projector:Path):
             if n!=1:
                 raise RuntimeError("Missing footer in "+path)
         assert updated.count('data-estate-id="satzfunk"')==1
-        assert updated.count('data-estate-id=')==10
+        assert updated.count('data-estate-id=')==9
         assert updated.count('aria-current="page"')==1
         (dest/path).write_text(updated)
     css=(source/'style.css').read_text()
     if '.estate-local-unified-reel' in css:
         raise RuntimeError("Already applied")
     (dest/'style.css').write_text(css+'\n'+CSS)
-    print("PASS: canonical ten-item reel staged for private Satzfunk and 7VST; zero media touched")
+    print("PASS: canonical nine-item reel staged for private Satzfunk and 7VST; zero media touched")
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser()
