@@ -1,5 +1,10 @@
 # Fountain Coach — the three-publication estate
 
+## Owned audio archive — decision 2026-10-21
+
+[Cross-estate owned audio boundary](docs/decisions/2026-10-21-owned-audio-archive-estate-boundary.md): independently verified 33 Bandcamp public playback MP4 files on Ubuntu; separate original-master and rights verification required. Artist Works catalogue owns work identity, Satzfunk owns hearing/performances, Store/EstatePublisher owns any public release. No new front door, deployed station, DNS, Caddy modification or storage bill.
+
+
 This registry owns public editorial roles and GitHub ownership references, not the content of other repositories or deployment credentials.
 
 ## Current milestone: Teatro / Linotype v16 beta acknowledged
