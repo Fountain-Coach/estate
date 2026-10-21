@@ -33,8 +33,11 @@ def check(root:Path,live=False):
         assert ids==IDS,(ident,ids)
         assert source.count('data-estate-id="satzfunk"')==1,ident
         current=[m.group('id') for m in matches if 'aria-current="page"' in m.group()]
-        assert current==[ident],(ident,current)
+        assert current==([ident] if ident in IDS else []),(ident,current)
         assert nav.group().count('aria-label="Info"')==1
+        assert 'status.fountain.coach' not in nav.group()
+        footer=re.search(r'<footer\\b.*?</footer>',source,re.S|re.I)
+        assert footer and 'status.fountain.coach' in footer.group(),ident
         for match in matches:
             id=match.group('id')
             expected=RADIO if id=='satzfunk' else ROOT+id+'/'
