@@ -11,8 +11,8 @@ from urllib.parse import urljoin
 
 IDS=['estate','book','governance','midi2','instruments','status',
      'teatro','satzfunk','pointer','solstice']
-NAV=re.compile(r'<nav\\b[^>]*class="[^"]*\\bestate-nav\\b[^"]*"[^>]*>.*?</nav>',re.S)
-A=re.compile(r'<a\\b[^>]*data-estate-id="(?P<id>[^"]+)"[^>]*>.*?</a>',re.S)
+NAV=re.compile(r'<nav\b[^>]*class="[^"]*\bestate-nav\b[^"]*"[^>]*>.*?</nav>',re.S)
+A=re.compile(r'<a\b[^>]*data-estate-id="(?P<id>[^"]+)"[^>]*>.*?</a>',re.S)
 ROOT='http://192.168.8.50:8198/'
 RADIO='http://192.168.8.50:8194/'
 
