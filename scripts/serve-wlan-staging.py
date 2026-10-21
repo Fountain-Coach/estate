@@ -14,7 +14,7 @@ from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 
 ROOT = Path("/home/benedikt/estate-three-front-staging")
-IP = "192.168.8.249"
+IP = "192.168.8.50"
 SITES = {"fountain": 8180, "solstice": 8181, "teatro": 8182}
 
 
