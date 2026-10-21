@@ -30,9 +30,9 @@ HOSTS = {
 }
 STAGE = "http://192.168.8.50:8198/"
 RADIO = "http://192.168.8.50:8194/"
-NAV_RE = re.compile(r'(<nav\\b[^>]*class="[^"]*\\bestate-nav\\b[^"]*"[^>]*>).*?(</nav>)', re.S)
-REF_RE = re.compile(r'(?P<pre>\\b(?:href|src)=)(?P<quote>["\\x27])(?P<value>.*?)(?P=quote)', re.S)
-CSS_REF = re.compile(r'url\\(\\s*[\\x27"]?(.*?)[\\x27"]?\\s*\\)', re.I)
+NAV_RE = re.compile(r'(<nav\b[^>]*class="[^"]*\bestate-nav\b[^"]*"[^>]*>).*?(</nav>)', re.S)
+REF_RE = re.compile(r'(?P<pre>\b(?:href|src)=)(?P<quote>["\x27])(?P<value>.*?)(?P=quote)', re.S)
+CSS_REF = re.compile(r'url\(\s*[\x27"]?(.*?)[\x27"]?\s*\)', re.I)
 
 class Assets(HTMLParser):
     def __init__(self):
@@ -87,7 +87,7 @@ def transform(html, identity, entries, public):
                 return a.group(0)
             return a.group("pre")+a.group("quote")+urljoin(public,u)+a.group("quote")
         return REF_RE.sub(rewrite,tag)
-    html=re.sub(r'<a\\b[^>]*>',anchor,html)
+    html=re.sub(r'<a\b[^>]*>',anchor,html)
     def nav(m):
         opening=m.group(1).replace("estate-nav", "estate-nav",1)
         return opening+make_nav(identity,entries)+m.group(2)
@@ -95,7 +95,7 @@ def transform(html, identity, entries, public):
     if n!=1:
         raise ValueError("expected unique estate-nav, found "+str(n)+" at "+identity)
     # Source page metadata and original work stay intact. This is clearly a WLAN preview.
-    html=html.replace("<head>","<head>\\n<meta name=\"robots\" content=\"noindex,nofollow\">"
+    html=html.replace("<head>","<head>\n<meta name=\"robots\" content=\"noindex,nofollow\">"
                       '<meta name="fountain:local-reel-projection" content="2026-10-21">',1)
     html=html.replace("<html ", '<html data-reel-preview-identity="'+identity+'" ',1)
     # Existing estate-core.js recognizes public domains, not an IP: restore correct
@@ -160,7 +160,7 @@ def capture(identity,public,entries,root):
         mapping[item]="/"+identity+"/"+rel
         if rel.endswith(".css"):
             css=data.decode("utf-8","replace")
-            queue.extend(x.strip().strip("'\\\"") for x in CSS_REF.findall(css) if x)
+            queue.extend(x.strip().strip("'\\"") for x in CSS_REF.findall(css) if x)
     # Turn root-absolute assets into corresponding scoped preview paths; relative
     # assets work naturally at /<id>/. Internal anchor links remain public.
     for original,new in mapping.items():
@@ -198,7 +198,7 @@ def main():
           "canonicalManifestSHA256":hashlib.sha256(args.manifest.read_bytes()).hexdigest(),
           "sites":out,"localReel":STAGE,"privateArchive":RADIO,
           "privateMediaCopied":False,"publicationChanged":False}
-    (args.release/"capture-lock.json").write_text(json.dumps(lock,indent=2)+"\\n")
+    (args.release/"capture-lock.json").write_text(json.dumps(lock,indent=2)+"\n")
     print(json.dumps({"staged":len(out),"identities":len(entries),
                       "status":"LOCAL_ONLY","root":str(args.release)},indent=2))
 if __name__=="__main__":
