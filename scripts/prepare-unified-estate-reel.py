@@ -123,7 +123,7 @@ def transform(html, identity, entries, public):
     # Existing estate-core.js recognizes public domains, not an IP: restore correct
     # active marking only in the disposable proof after original scripts have run.
     html=html.replace("</body>", '<script defer src="reel-preview-state.js"></script></body>', 1)
-    footer=re.search(r'<footer\\b[^>]*>.*?</footer>',html,re.S|re.I)
+    footer=re.search(r'<footer\b[^>]*>.*?</footer>',html,re.S|re.I)
     if not footer:
         raise ValueError("missing site footer: "+identity)
     if "status.fountain.coach" not in footer.group():
