@@ -1,0 +1,74 @@
+{
+  "schema": "fountain.estate.canonical-reel.v1",
+  "revision": "2026-10-21",
+  "purpose": "One identical top navigation reel across independently owned Fountain Coach estates",
+  "deployment": "projected per owner, not served from arbitrary cross-origin runtime",
+  "entries": [
+    {
+      "id": "estate",
+      "label": "Estate",
+      "url": "https://fountain.coach/",
+      "path": "M4 10.5 12 4l8 6.5v8.5h-5v-5H9v5H4z"
+    },
+    {
+      "id": "book",
+      "label": "Book",
+      "url": "https://book.fountain.coach/",
+      "path": "M5 4.5h11a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3V4.5Zm0 0v12a3 3 0 0 0 3 3"
+    },
+    {
+      "id": "governance",
+      "label": "Governance",
+      "url": "https://governance.fountain.coach/",
+      "path": "M12 3 4.5 6v5c0 5 3 8 7.5 10 4.5-2 7.5-5 7.5-10V6L12 3Z"
+    },
+    {
+      "id": "midi2",
+      "label": "MIDI2",
+      "url": "https://midi2.fountain.coach/",
+      "path": "M4 6h16M4 12h16M4 18h16M7 4v4m5 2v4m5 2v4"
+    },
+    {
+      "id": "instruments",
+      "label": "Instruments",
+      "url": "https://instruments.fountain.coach/",
+      "path": "M8 4v10m0 0a3 3 0 1 0 2 2.8M8 7h8m0 0v8a3 3 0 1 0 2 2.8M16 7V4"
+    },
+    {
+      "id": "status",
+      "label": "Status",
+      "url": "https://status.fountain.coach/",
+      "path": "M4 17h3v3H4zM10.5 12h3v8h-3zM17 5h3v15h-3z"
+    },
+    {
+      "id": "teatro",
+      "label": "Teatro",
+      "url": "https://teatro.fountain.coach/",
+      "path": "M4 5h16M6 5v14m12-14v14M4 19h16M8 5c0 4 2 6 4 7 2-1 4-3 4-7"
+    },
+    {
+      "id": "satzfunk",
+      "label": "Satzfunk",
+      "url": "https://satzfunk.fountain.coach/",
+      "path": "M2 12h3m3-5v10m3-14v18m3-13v8m3-11v14m3-9v4"
+    },
+    {
+      "id": "pointer",
+      "label": "Pointer",
+      "url": "https://benedikt-eickhoff.de/",
+      "path": "m5 4 14 7-6 2-3 7L5 4Z"
+    },
+    {
+      "id": "solstice",
+      "label": "Solstice",
+      "url": "https://works.benedikt-eickhoff.de/solstice/",
+      "path": "M4 12h16M12 4v16M6.5 6.5l11 11m0-11-11 11"
+    }
+  ],
+  "notes": [
+    "Retains the nine live links plus Satzfunk; the previously published Governance reel omits Status, which is recorded as a drift to repair rather than copied.",
+    "This is a canonical navigation contract only; Status footer-only semantics are a separate authorial design decision and are not revised implicitly.",
+    "The future public Satzfunk URL is NOT live. Staging substitutes the existing authenticated LAN archive, no data copied.",
+    "The current active identity changes by host; identical order, labels, icon paths, canonical targets and keyboard semantics on every site."
+  ]
+}
