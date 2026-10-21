@@ -123,6 +123,15 @@ def transform(html, identity, entries, public):
     # Existing estate-core.js recognizes public domains, not an IP: restore correct
     # active marking only in the disposable proof after original scripts have run.
     html=html.replace("</body>", '<script defer src="reel-preview-state.js"></script></body>', 1)
+    footer=re.search(r'<footer\\b[^>]*>.*?</footer>',html,re.S|re.I)
+    if not footer:
+        raise ValueError("missing site footer: "+identity)
+    if "status.fountain.coach" not in footer.group():
+        # Status is legally reachable but not part of the nine-identity reel.
+        replacement=footer.group().replace("</footer>",
+            '<p class="estate-status-footnote"><a data-legal-role="company-status" '
+            'href="https://status.fountain.coach/">Company status &amp; transparency</a></p></footer>')
+        html=html[:footer.start()]+replacement+html[footer.end():]
     assert html.count('data-estate-id="satzfunk"')==1
     assert len(re.findall(r'data-estate-id="([^"]+)"',NAV_RE.search(html).group()))==len(entries)
     return html
