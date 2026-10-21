@@ -43,7 +43,7 @@ CSS = """
   .estate-local-unified-reel .estate-icon {width:38px; height:40px; padding:7px}
 }
 """
-NAV = re.compile(r'<nav\\b[^>]*class="estate-local-rail"[^>]*>.*?</nav>',re.S)
+NAV = re.compile(r'<nav\b[^>]*class="estate-local-rail"[^>]*>.*?</nav>',re.S)
 def build(source:Path,dest:Path,manifest:Path,projector:Path):
     if dest.exists():
         raise RuntimeError("Output exists; refusing overwrite")
@@ -59,7 +59,7 @@ def build(source:Path,dest:Path,manifest:Path,projector:Path):
         if n!=1:
             raise RuntimeError("Expected exact old local link bar in "+path)
         if 'id="footer"' not in updated:
-            updated,n=re.subn(r'<footer\\b', '<footer id="footer"',updated,count=1)
+            updated,n=re.subn(r'<footer\b', '<footer id="footer"',updated,count=1)
             if n!=1:
                 raise RuntimeError("Missing footer in "+path)
         assert updated.count('data-estate-id="satzfunk"')==1
@@ -69,7 +69,7 @@ def build(source:Path,dest:Path,manifest:Path,projector:Path):
     css=(source/'style.css').read_text()
     if '.estate-local-unified-reel' in css:
         raise RuntimeError("Already applied")
-    (dest/'style.css').write_text(css+'\\n'+CSS)
+    (dest/'style.css').write_text(css+'\n'+CSS)
     print("PASS: canonical ten-item reel staged for private Satzfunk and 7VST; zero media touched")
 
 if __name__=='__main__':
