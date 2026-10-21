@@ -101,11 +101,17 @@ def transform(html, identity, entries, public):
     # Existing estate-core.js recognizes public domains, not an IP: restore correct
     # active marking only in the disposable proof after original scripts have run.
     html=html.replace("</body>",
-      '<script>document.addEventListener("DOMContentLoaded",()=>{'
-      'for(const a of document.querySelectorAll(".estate-nav a[data-estate-id]")){'
-      'if(a.dataset.estateId===document.documentElement.dataset.reelPreviewIdentity)'
-      'a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");}'
-      '});</script></body>',1)
+      '<script>(()=>{const id=document.documentElement.dataset.reelPreviewIdentity;'
+      'const rail=document.querySelector(".estate-nav");if(!rail)return;'
+      'function apply(){for(const a of rail.querySelectorAll("a[data-estate-id]")){'
+      'if(a.dataset.estateId===id){if(a.getAttribute("aria-current")!=="page")'
+      'a.setAttribute("aria-current","page");}'
+      'else if(a.hasAttribute("aria-current"))a.removeAttribute("aria-current");}}'
+      'const observer=new MutationObserver(apply);'
+      'observer.observe(rail,{attributes:true,subtree:true,attributeFilter:["aria-current"]});'
+      'apply();document.addEventListener("DOMContentLoaded",apply);'
+      'window.addEventListener("pageshow",apply);'
+      '})();</script></body>',1)
     assert html.count('data-estate-id="satzfunk"')==1
     assert len(re.findall(r'data-estate-id="([^"]+)"',NAV_RE.search(html).group()))==len(entries)
     return html
