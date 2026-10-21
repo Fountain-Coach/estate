@@ -9,7 +9,7 @@ from urllib.request import urlopen
 from urllib.error import HTTPError
 from urllib.parse import urljoin
 
-IDS=['estate','book','governance','midi2','instruments','status',
+IDS=['estate','book','governance','midi2','instruments',
      'teatro','satzfunk','pointer','solstice']
 NAV=re.compile(r'<nav\b[^>]*class="[^"]*\bestate-nav\b[^"]*"[^>]*>.*?</nav>',re.S)
 A=re.compile(r'<a\b[^>]*data-estate-id="(?P<id>[^"]+)"[^>]*>.*?</a>',re.S)
