@@ -205,7 +205,7 @@ def main():
     manifest=json.loads(args.manifest.read_text())
     assert manifest["schema"]=="fountain.estate.canonical-reel.v1"
     entries=manifest["entries"]
-    assert len(entries)==10 and len({e["id"] for e in entries})==10
+    assert len(entries)==9 and len({e["id"] for e in entries})==9
     args.release.mkdir(parents=True)
     out=[]
     for ident,public in HOSTS.items():
