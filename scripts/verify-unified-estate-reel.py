@@ -36,7 +36,7 @@ def check(root:Path,live=False):
         assert current==([ident] if ident in IDS else []),(ident,current)
         assert nav.group().count('aria-label="Info"')==1
         assert 'status.fountain.coach' not in nav.group()
-        footer=re.search(r'<footer\\b.*?</footer>',source,re.S|re.I)
+        footer=re.search(r'<footer\b.*?</footer>',source,re.S|re.I)
         assert footer and 'status.fountain.coach' in footer.group(),ident
         for match in matches:
             id=match.group('id')
