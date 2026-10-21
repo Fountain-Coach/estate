@@ -34,6 +34,28 @@ NAV_RE = re.compile(r'(<nav\b[^>]*class="[^"]*\bestate-nav\b[^"]*"[^>]*>).*?(</n
 REF_RE = re.compile(r'(?P<pre>\b(?:href|src)=)(?P<quote>["\x27])(?P<value>.*?)(?P=quote)', re.S)
 CSS_REF = re.compile(r'url\(\s*[\x27"]?(.*?)[\x27"]?\s*\)', re.I)
 
+STATE_JS = """(() => {
+  const rail = document.querySelector(".estate-nav");
+  const identity = document.documentElement.dataset.reelPreviewIdentity;
+  if (!rail || !identity) return;
+  const apply = () => {
+    for (const a of rail.querySelectorAll("a[data-estate-id]")) {
+      if (a.dataset.estateId === identity) {
+        if (a.getAttribute("aria-current") !== "page") a.setAttribute("aria-current", "page");
+      } else if (a.hasAttribute("aria-current")) {
+        a.removeAttribute("aria-current");
+      }
+    }
+  };
+  new MutationObserver(apply).observe(rail, {
+    attributes: true, subtree: true, attributeFilter: ["aria-current"]
+  });
+  apply();
+  document.addEventListener("DOMContentLoaded", apply);
+  window.addEventListener("pageshow", apply);
+})();
+"""
+
 class Assets(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -100,18 +122,7 @@ def transform(html, identity, entries, public):
     html=html.replace("<html ", '<html data-reel-preview-identity="'+identity+'" ',1)
     # Existing estate-core.js recognizes public domains, not an IP: restore correct
     # active marking only in the disposable proof after original scripts have run.
-    html=html.replace("</body>",
-      '<script>(()=>{const id=document.documentElement.dataset.reelPreviewIdentity;'
-      'const rail=document.querySelector(".estate-nav");if(!rail)return;'
-      'function apply(){for(const a of rail.querySelectorAll("a[data-estate-id]")){'
-      'if(a.dataset.estateId===id){if(a.getAttribute("aria-current")!=="page")'
-      'a.setAttribute("aria-current","page");}'
-      'else if(a.hasAttribute("aria-current"))a.removeAttribute("aria-current");}}'
-      'const observer=new MutationObserver(apply);'
-      'observer.observe(rail,{attributes:true,subtree:true,attributeFilter:["aria-current"]});'
-      'apply();document.addEventListener("DOMContentLoaded",apply);'
-      'window.addEventListener("pageshow",apply);'
-      '})();</script></body>',1)
+    html=html.replace("</body>", '<script defer src="reel-preview-state.js"></script></body>', 1)
     assert html.count('data-estate-id="satzfunk"')==1
     assert len(re.findall(r'data-estate-id="([^"]+)"',NAV_RE.search(html).group()))==len(entries)
     return html
@@ -176,6 +187,7 @@ def capture(identity,public,entries,root):
             html=html.replace("href='"+original+"'","href='"+new+"'")
             html=html.replace("src='"+original+"'","src='"+new+"'")
     (dest/"index.html").write_text(html)
+    (dest/"reel-preview-state.js").write_text(STATE_JS)
     return {"identity":identity,"public":public,
             "sourceSHA256":hashlib.sha256(raw).hexdigest(),
             "copiedAssets":copied,"htmlSHA256":hashlib.sha256(html.encode()).hexdigest(),
