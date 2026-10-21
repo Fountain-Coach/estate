@@ -1,4 +1,8 @@
 # Three-publication estate boundary
+## Archive attribution and estate release gate (21 October 2026)
+
+The independent personal Works catalogue and supporting Satzfunk audio/visual station must inherit the [mandatory visible-credit rule](https://github.com/Fountain-Coach/Satzfunk/blob/main/docs/decisions/2026-10-21-visible-credit-provenance-and-release-gate.md). Every public owner edition and embed must visibly identify **verified contributors, underlying textual source, credited translator/editor when established, and literal published copyright notices**, with provenance IDs and legal footer/Impressum intact. Unverified authorship/licensing remains explicitly unknown; a credit is never a licence. The estate registry must not add a public route until the Store release verifies credit/consent records, intended use rights, exact published media/text hashes, and public HTTPS credits/footer readback. Do not represent the local private archive as a public release or create a fourth front door.
+
 
 - The only public editorial front doors are Fountain Coach, First Reading, Teatro.
 - Each domain has one independent GitHub source owner; this registry does not edit their content.
