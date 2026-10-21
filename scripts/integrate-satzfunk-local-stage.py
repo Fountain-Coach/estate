@@ -23,7 +23,7 @@ COVER = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="i
 <path d="M59 374v30m37-83v119m37-107v95m37-132v169m37-89v35m37-150v211m37-96v62m37-181v222m37-106v70m37-147v185m37-104v79m37-135v151m37-84v46" stroke="#315b54" stroke-width="6" fill="none" stroke-linecap="round"/>
 <text x="43" y="543" font-family="monospace" font-size="18" fill="#5b625b">AN AUTHOR'S RADIO</text></svg>"""
 
-NAV = re.compile(r'(<nav\\b[^>]*class="[^"]*\\b(?:estate-nav|edition-rail)\\b[^"]*"[^>]*>)(.*?)(</nav>)', re.S)
+NAV = re.compile(r'(<nav\b[^>]*class="[^"]*\b(?:estate-nav|edition-rail)\b[^"]*"[^>]*>)(.*?)(</nav>)', re.S)
 
 def add_nav(source):
     def enrich(m):
@@ -116,7 +116,7 @@ def process(source, target, revision):
         'publicationReleased': False, 'archiveMediaCopied': False,
         'rollback': str(source),
     }
-    (target / 'source-lock.json').write_text(json.dumps(lock, indent=2) + '\\n')
+    (target / 'source-lock.json').write_text(json.dumps(lock, indent=2) + '\n')
     return {'release': str(target), 'navigationPages': navs, 'pagesChanged': sorted(set(changed)),
             'sourceLockSHA256': hashlib.sha256(before).hexdigest(),
             'archiveAuthUnchanged': True, 'productionPublished': False}
