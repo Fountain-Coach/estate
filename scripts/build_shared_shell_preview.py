@@ -18,6 +18,12 @@ SITES={
  "teatro": ("https://teatro.fountain.coach/", ""),
  "solstice": ("https://works.benedikt-eickhoff.de/solstice/editions/first-reading/","solstice/")
 }
+STAGE_BINDINGS = {
+ "estate": "http://192.168.8.50:8200/estate/",
+ "teatro": "http://192.168.8.50:8200/teatro/",
+ "solstice": "http://192.168.8.50:8200/solstice/editions/first-reading/",
+ "satzfunk": "http://192.168.8.50:8194/"
+}
 MAX_COPY=70*1024*1024
 def get(url):
  req=Request(url,headers={"User-Agent":"FountainCoach-EstateShell-Staging/1.0"})
@@ -93,6 +99,16 @@ def build(output,manifest_path):
   # Copy source-owned HTML with only asset URLs adjusted for stage identity.
   source=str(soup)
   html,receipt=project(source,ident,m,logo="/assets/estate-shell-logo.png")
+  # Explicit, stage-only LAN destinations. Keep the original canonical
+  # URL as evidence; do not modify the source-owned public manifest.
+  projected=BeautifulSoup(html,"html.parser")
+  for owner,url in STAGE_BINDINGS.items():
+   link=projected.select_one('nav.fc-shell-reel a[data-estate-id="'+owner+'"]')
+   assert link and link.get("href","").startswith("https://")
+   link["data-canonical-href"]=link["href"]
+   link["data-stage-binding"]="wlan-only"
+   link["href"]=url
+  html=str(projected)
   page=site/"editions"/"first-reading"/"index.html" if ident=="solstice" else site/"index.html"
   page.parent.mkdir(parents=True,exist_ok=True)
   html=html.replace("</body>",'<script defer src="/assets/estate-shell-stage-nav.js"></script></body>',1)
@@ -110,7 +126,8 @@ def build(output,manifest_path):
  result={"status":"WLAN-PREVIEW-NOT-PUBLIC","templateVersion":VERSION,
          "sites":evidence,"cssSHA256":hashlib.sha256(css.read_bytes()).hexdigest(),
          "logoSHA256":hashlib.sha256(logo.read_bytes()).hexdigest(),
-         "archiveMediaCopied":False,"authorPublished":False,"releaseReceipt":None}
+         "archiveMediaCopied":False,"authorPublished":False,"releaseReceipt":None,
+         "stageBindings":STAGE_BINDINGS,"canonicalManifestUnchanged":True}
  (output/"source-lock.json").write_text(json.dumps(result,indent=2)+"\n")
  return {"version":VERSION,"sources":{k:{"sha256":v["exactPublicSourceSHA256"],
      "files":v["assetCount"],"bytes":v["assetBytes"],"missing":len(v["missingAssets"])} for k,v in evidence.items()},
