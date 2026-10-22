@@ -15,6 +15,14 @@ description: Audit, specify, build and verify Fountain Coach Linotype readers, B
 4. The existing Mac EstatePublisher tests: `testEstatePreviewScenarioIsWholeProductTemplateReproduction` checks scenario declarations, `estate.visual-mirror.compare` validates inputs, and neither alone proves live WebKit/CSS parity. Require a true cross-domain browser transition report.
 5. Each domain's real body: Teatro Stage remains a tool, Satzfunk remains its original audiovisual archive, Solstice is writer-owned Linotype First Reading, and governance/other domains retain full authorship and rights. Do not manufacture books from tools, compilations or sound recordings.
 
+## Two distinct publication lanes
+
+**Reframe publishes an admitted work or edition *into its Bookshelf*.** Reframe owns the writer's source, the authorial permission to admit a work or edition, Bookshelf membership and containing-space relationships; FountainStore maintains source identity/revision and editorial/reading continuity. Fountain Press owns the genuine Bookshelf presentation and measured Linotype book pages; it neither invents membership nor writes the manuscript. `Bookshelf-admitted` does **not** mean `publicly released`.
+
+**EstatePublisher publishes an authorized website/edition *onto the public estate*.** This is a separate release transaction requiring admitted public rights, exact host/route, publication receipt, DNS/TLS and independently observed HTTPS outcomes. Adding or changing a Reframe Bookshelf tile **does not create a new hostname, reel entry, or public deployment**. A private Reframe book may remain private indefinitely.
+
+Inspect Reframe [R22 source/Bookshelf identity](https://github.com/Fountain-Coach/Reframe/blob/main/scenarios/022-git-authored-literary-estate-bookshelf.md), [R26 Empty and first writing act](https://github.com/Fountain-Coach/Reframe/blob/main/scenarios/026-empty-bookshelf-first-writing-act.md), and [Fountain Press composition owner boundary](https://github.com/Fountain-Coach/fountain-press/blob/main/docs/reframe-composition-owner-boundary.md) before implementing either lane. Distinguish **source known → Bookshelf member/admitted work → Press-composed readable edition → optional approved public release**, each with separate evidence. A selectable Empty slot is an authoring position, **not a published book**. Reject forged source/cover identity, inferred rights, nonadmitted corpus membership and premature public links.
+
 ## Implement and prove
 
 - **Template:** single versioned site shell with one masthead, one accessible nav reel, and one typed, four-region legal/provenance footer. Each domain consumes the same structure/styles and contributes only typed identity, copyright/source credits, authorized destinations and release state. Local design themes apply to the body, not unversioned variations of common chrome.
