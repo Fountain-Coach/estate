@@ -40,6 +40,18 @@ python3 scripts/build_public_estate_candidate.py \
 
 **Do not assume Governance Git main is identical to production.** The prior independent 294-file readback found two real Git-to-live differences at `index.html` and Chapter 7, reflecting newer FCIS material not yet present in the retained October 20 production release. Source/editor approval must determine whether those changes are part of the next authored edition; do not smuggle them into a chrome-only repair.
 
+## Live eight-domain source variants and browser-state correction
+
+The 22 October independent public HTML inspection found:
+- Estate, Book, Teatro and Pointer use `header.site-header`.
+- Governance and MIDI2 use `header.topbar`.
+- Instruments uses `header[role=banner]` without `.site-header` or `.topbar`, and has an unrelated `header.catalog-heading` inside its own content. The adapter selects the publisher header by the canonical reel; it never removes the source-owned catalogue heading.
+- Solstice uses `footer.solstice-footer#footer`, not `footer.footer#footer`. The adapter retains its original imprint and removes the old root footer before inserting the one common footer.
+
+The pure builder now names its three **same-origin** shared assets with their SHA-256 digests (16 hex characters): `estate-shell-<digest>.css`, `estate-shell-state-<digest>.js` and `estate-shell-logo-<digest>.png`. The output HTML refers to those exact byte-named files. Safari can keep ordinary history/cache state: a changed shared component has a different URL, rather than silently reusing the previous release's styling.
+
+The per-owner source revisions, immutable production predecessor, complete content inventory, browser screenshots, authorized publication and independent HTTPS receipts remain distinct from these source-level improvements.
+
 ## Remaining public gates
 
 1. Build and review actual source-locked owner candidates for all eight domains and every Governance chapter, including historical routes outside the ordinary route manifest.
