@@ -31,6 +31,15 @@ def run(base,chrome,out):
       return {
         header:get(h),nav:get(n),footer:get(f),logo:get(logo),link:get(link),
         workMain:!!qs('main'),logoReady:logo.complete&&logo.naturalWidth>0,
+        visibleReelLabels:[...n.querySelectorAll('a.fc-reel-link span')].filter(x=>{
+          const style=getComputedStyle(x),r=x.getBoundingClientRect();
+          return style.display!=='none' && style.visibility!=='hidden'
+            && style.clipPath==='none' && r.width>3 && r.height>3;
+        }).length,
+        footerCopyFontPx:parseFloat(getComputedStyle(
+          f.querySelector('[data-footer-slot="provenance"] p')).fontSize),
+        legalTouchHeights:[...f.querySelectorAll('.fc-legal-links a')].map(x=>
+          Math.round(x.getBoundingClientRect().height)),
         identity:h.dataset.estateIdentity,
         reel:[...n.querySelectorAll('a[data-estate-id]')].map(x=>x.dataset.estateId),
         active:[...n.querySelectorAll('a[aria-current="page"]')].map(x=>x.dataset.estateId),
@@ -49,6 +58,10 @@ def run(base,chrome,out):
     if not m['statusInFooter']:issues.append('Status absent from footer')
     if m['footerSlots']!=['imprint','provenance','legal','release-state']:issues.append('Footer slots/order drift')
     if not m['logoReady']:issues.append('Publisher mark missing')
+    if m['visibleReelLabels']!=10:issues.append('Editorial navigation labels are visually missing')
+    if m['footerCopyFontPx']<14:issues.append('Publisher footer print is undersized')
+    if width_name=='phone-portrait' and min(m['legalTouchHeights'],default=0)<40:
+     issues.append('Phone legal links have undersized touch height')
     if identity=='teatro' and m['canvases']<1:issues.append('Teatro source visual runtime missing')
     if identity=='solstice' and len(m['bookControls'])!=4:issues.append('Linotype source reader controls absent')
     if m['documentOverflow']>3:
