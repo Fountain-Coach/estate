@@ -180,6 +180,9 @@ class PublicEstatePipeline(unittest.TestCase):
         self.assertFalse(r['publicReleased'])
         self.assertEqual((out/'assets'/'work.css').read_text(),'original editorial styles')
         self.assertFalse((out/'receipt.json').exists())
+        self.assertTrue(all((out/v.lstrip('/')).exists() for v in r['sharedAssetURLs'].values()))
+        self.assertFalse((out/'assets'/'estate-shell.css').exists())
+        self.assertTrue(all('-' in v.rsplit('/',1)[-1] for v in r['sharedAssetURLs'].values()))
         with self.assertRaisesRegex(ValueError,'already exists'):
             prepare(site,sha,'governance',M,'a'*40,out,receipt,shell,routes)
 
