@@ -2,6 +2,8 @@
 
 **Binding estate-specific FCIS rule.** Source owner: `Fountain-Coach/estate`; machine-readable identity: [environment.json](environment.json). This is an **existing environment registration**, not a new server, additional release service, or requirement to build another test harness.
 
+**Current accepted staging release (22 October 2026):** `shared-shell-20261022-v10-editorial` is the observed active `current` target of the canonical author-facing service on port 8200; `shared-shell-20261022-v9-local-links` remains available for rollback. Three editorial roots returned HTTP 200 with the exact v2 shell marker after activation. The v10 shell improves the shared masthead, visible editorial reel labels and legal-footer hierarchy; the unchanged source work digests and test results are documented in [v10 correction and stage readback](../docs/acceptance/2026-10-22-estate-shell-v10-editorial-correction.md). This remains **WLAN staging**, not production.
+
 ## The identity is not the release
 
 The owner-controlled estate staging environment is the already existing **Ubuntu Intel Mac mini**, SSH alias `MacMiniDocker` and hostname `benedikt-Macmini.local`. Its **observed reachable WLAN** address on 22 October 2026 is `192.168.8.50` via `usb0`. This machine is the staging environment. Neither its IP address, its numerous services, nor any active symlink release separately constitutes a different *estate staging environment*.
