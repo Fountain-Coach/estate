@@ -60,7 +60,7 @@ def fragment(d,ident,logo):
          '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/>'
          '<path d="M12 11v6m0-10v.1"/></svg><span>Info</span></a>')
     header='<header class="fc-estate-shell" data-estate-shell-version="'+VERSION+\
-       '" data-estate-slot="masthead"><div class="fc-shell-row">'+\
+       '" data-estate-slot="masthead" data-estate-identity=""+ident+""><div class="fc-shell-row">'+\
        '<a class="fc-publisher" href="https://fountain.coach/"><img class="estate-logo" '+\
        'alt="Fountain Coach" src="'+h(logo,quote=True)+'"/>'+\
        '<span class="fc-publisher-name">Fountain Coach<small>Publication estate</small></span></a>'+\
