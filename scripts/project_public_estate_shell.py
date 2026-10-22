@@ -23,6 +23,8 @@ def project_public(source: str, identity: str, reel: dict, logo='/assets/estate-
     if original.select('meta[name="robots"][content*="noindex"]'):
         raise ValueError('private or noindex source cannot be made public')
     old_work = work_digest(original)
+    old_footer = original.select_one('footer.footer#footer')
+    old_footer_markup = str(old_footer) if old_footer else None
     # Legacy Governance uses header.topbar, other owners header.site-header.
     # Normalize the header *in memory* for the existing source-preserving
     # renderer. This does not change its Git-owned editorial main or assets.
@@ -53,6 +55,21 @@ def project_public(source: str, identity: str, reel: dict, logo='/assets/estate-
         'aria-label':'Satzfunk — not yet public',
         'title':'Satzfunk — not yet public',
     }
+    # Preserve source-owned rights/credits without introducing a second
+    # footer landmark. The original public imprint remains inspectable.
+    if old_footer_markup:
+        provenance = p.select_one('[data-footer-slot="provenance"]')
+        if not provenance:
+            raise AssertionError('shared provenance slot missing')
+        details = p.new_tag('details', attrs={'class':'fc-owner-imprint'})
+        summary = p.new_tag('summary')
+        summary.string = 'Original domain credits and terms'
+        details.append(summary)
+        retained = BeautifulSoup(old_footer_markup,'html.parser').footer
+        retained.name = 'div'
+        retained.attrs = {'class':['fc-owner-imprint-content']}
+        details.append(retained)
+        provenance.append(details)
     # Preserve the shared four-slot schema. Public candidate text must not
     # falsely say "private preview" or assert a completed HTTPS release.
     state = p.select_one('[data-footer-slot="release-state"] p')
@@ -80,7 +97,8 @@ def project_public(source: str, identity: str, reel: dict, logo='/assets/estate-
         'profile':'public-candidate','shellVersion':VERSION,
         'identity':identity,'sourceSHA256':hashlib.sha256(source.encode()).hexdigest(),
         'sourceWorkSHA256':old_work,'projectionSHA256':hashlib.sha256(html.encode()).hexdigest(),
-        'unpublishedSatzfunk':True,'publicReleased':False,
+        'unpublishedSatzfunk':True,'legacyImprintRetained':bool(old_footer_markup),
+        'publicReleased':False,
         'stageProjectionReceipt':stage_receipt['projectionSHA256'],
     }
 
