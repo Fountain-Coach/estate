@@ -3,7 +3,7 @@
 import sys,unittest,tempfile,json,shutil
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).parent))
-from estate_shell import project,manifest
+from estate_shell import project,manifest,VERSION
 from check_shared_shell_release import acceptance
 
 ROOT=Path(__file__).resolve().parent.parent
@@ -53,7 +53,7 @@ class CrossDomainShell(unittest.TestCase):
   self.mutate('teatro','href="https://status.fountain.coach/"','href="/wrong"')
   self.assertFalse(self.check()['passed'])
  def test_shell_revision_drift_fails(self):
-  self.mutate('estate','fountain.estate.shell.v1-candidate-20261022','wrong',)
+  self.mutate('estate',VERSION,'wrong',)
   self.assertFalse(self.check()['passed'])
  def test_css_owner_drift_fails(self):
   Path(self.css['solstice']).write_text('body{color:magenta}')
