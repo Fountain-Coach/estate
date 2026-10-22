@@ -6,7 +6,7 @@ font:13px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif
 .fc-estate-shell .fc-shell-row { display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:1200px;
 margin:auto; min-height:70px; padding:13px 24px 9px; }
 .fc-estate-shell .fc-publisher { display:flex; align-items:center; gap:11px; min-width:0; }
-.fc-estate-shell img.estate-logo { display:block; width:40px; height:40px; object-fit:contain; flex:none; }
+.fc-estate-shell img.estate-logo { display:block; width:40px; height:40px; object-fit:contain; flex:none; filter:brightness(0) invert(.84); }
 .fc-estate-shell .fc-publisher-name { display:flex; flex-direction:column; font-family:Georgia,"Times New Roman",serif;
 line-height:1.25; font-weight:600; font-size:17px; letter-spacing:.01em; }
 .fc-estate-shell .fc-publisher-name small { font:10px/1.3 -apple-system,"Helvetica Neue",Arial,sans-serif;
