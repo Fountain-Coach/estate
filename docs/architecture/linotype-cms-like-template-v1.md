@@ -18,6 +18,16 @@ The “CMS-like template” is actually **five independently owned components**:
 
 The term *template* must **not** collapse these into a single HTML file or a new ungoverned site generator. The shared shell can surround a real Linotype book or something deliberately **not** a book, such as the original Satzfunk audiovisual radio or Teatro Stage Web.
 
+## Two publishing lanes: Reframe Bookshelf versus EstatePublisher
+
+A **Reframe Bookshelf publication** is a writer-authorized source/edition and containing-space membership in the living Reframe workspace. Reframe owns the semantic admission and FountainStore's durable source identity, source revision and editorial state. Fountain Press projects the admitted book's thumbnail, original cover, reader and measured pages. This does **not** itself publish the book on the public web, establish a domain, update the top estate reel or grant redistribution permissions.
+
+**EstatePublisher publication** is a separately authorized release of an eligible work/edition or site state to an external hostname/route, with admission/rights, exact deployment manifest, rollback and independent HTTPS verification. Many Reframe Bookshelf works can live at one containing space without separate domains. A private book can remain private indefinitely.
+
+Evidence must distinguish (1) source candidate known and Git hash verified; (2) writer-admitted shelf membership and FountainStore corpus/edition binding; (3) actual source-preserving Press composition with selection, return and reopen; and (4) optional separately approved EstatePublisher website release. A source candidate, old PDF, Score, attractive cover or selectable Empty is not automatically a book. Missing Store state cannot imply publication; page numbers are ephemeral and cannot identify source positions.
+
+Authority: [Reframe R22](https://github.com/Fountain-Coach/Reframe/blob/main/scenarios/022-git-authored-literary-estate-bookshelf.md), [Reframe R26](https://github.com/Fountain-Coach/Reframe/blob/main/scenarios/026-empty-bookshelf-first-writing-act.md), [Press boundary](https://github.com/Fountain-Coach/fountain-press/blob/main/docs/reframe-composition-owner-boundary.md), [Reframe ADR-006](https://github.com/Fountain-Coach/Reframe/blob/main/docs/architecture/ADR-006-fountain-press-composition-owner-and-reframe-reading.md).
+
 ## Source-inspected Linotype mechanics
 
 - **Unmodified content:** `#book-flow` retains original full source; `window.SolsticeLinotype` measures and projects fixed-size leaves, preserving a no-JavaScript accessible HTML fallback. Folios are ephemeral; source passages/edition revision are durable.
