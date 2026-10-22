@@ -8,7 +8,7 @@ import argparse, hashlib, json
 from pathlib import Path
 from bs4 import BeautifulSoup
 
-VERSION="fountain.estate.shell.v1-candidate-20261022"
+VERSION="fountain.estate.shell.v2-editorial-20261022"
 REEL="fountain.estate.canonical-reel.v1"
 FOOTER="fountain.estate.canonical-footer.v1"
 LEGAL=(("Legal notices","https://governance.fountain.coach/legal/"),
@@ -73,16 +73,17 @@ def fragment(d,ident,logo):
        'alt="Fountain Coach" src="'+h(logo,quote=True)+'"/>'+\
        '<span class="fc-publisher-name">Fountain Coach<small>Publication estate</small></span></a>'+\
        '<span class="fc-site-identity">'+h(ident.upper())+'</span></div>'+\
-       '<nav class="estate-nav fc-shell-reel" data-reel-contract="'+REEL+\
+       '<nav class="fc-shell-reel" data-reel-contract="'+REEL+\
        '" aria-label="Fountain Coach publication estate">'+''.join(links)+'</nav></header>'
-    legal=' · '.join('<a href="'+h(url,quote=True)+'">'+h(label)+'</a>' for label,url in LEGAL)
-    footer='<footer class="estate-footer fc-estate-shell" id="footer" role="contentinfo" '+\
+    legal=''.join('<a href="'+h(url,quote=True)+'">'+h(label)+'</a>' for label,url in LEGAL)
+    footer='<footer class="estate-footer fc-estate-shell" id="footer" '+\
        'data-estate-shell-version="'+VERSION+'" data-footer-contract="'+FOOTER+'">'+\
        '<div class="fc-footer-grid"><section data-footer-slot="imprint"><h2>Fountain Coach</h2>'+\
        '<p>Founded by Benedikt Eickhoff · Berlin</p></section>'+\
        '<section data-footer-slot="provenance"><h2>Source &amp; edition</h2>'+\
        '<p>Independent editorial owner: '+h(ident)+'</p></section>'+\
-       '<section data-footer-slot="legal"><h2>Legal &amp; access</h2><p>'+legal+'</p></section>'+\
+       '<section data-footer-slot="legal"><h2>Legal &amp; access</h2>'+\
+       '<div class="fc-legal-links">'+legal+'</div></section>'+\
        '<section data-footer-slot="release-state"><h2>Publication state</h2>'+\
        '<p>Private template preview; no public release authorized.</p></section></div></footer>'
     return header,footer
