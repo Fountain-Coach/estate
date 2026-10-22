@@ -49,6 +49,31 @@ class PublicEstatePipeline(unittest.TestCase):
                           p.select_one('details.fc-owner-imprint').get_text(' ',strip=True))
             self.assertFalse(r['publicReleased'])
 
+    def test_real_instruments_and_solstice_legacy_shapes(self):
+        # Public Instruments has header[role=banner] but no .site-header.
+        instruments=legacy('topbar').replace('class="topbar" role="banner"','role="banner"')
+        instruments=instruments.replace('<main><h1>','<main><header class="catalog-heading">Catalog</header><h1>')
+        html,_=project_public(instruments,'instruments',M)
+        page=BeautifulSoup(html,'html.parser')
+        self.assertEqual(len(page.select('header.fc-estate-shell')),1)
+        self.assertEqual(len(page.select('header.catalog-heading')),1)
+        self.assertEqual(len(page.select('nav[aria-label="Fountain Coach publication estate"]')),1)
+        # Public Solstice uses footer.solstice-footer#footer, not .footer.
+        solstice=legacy('site-header').replace('class="footer" id="footer"',
+                                                'class="solstice-footer" id="footer"')
+        html,receipt=project_public(solstice,'solstice',M)
+        page=BeautifulSoup(html,'html.parser')
+        self.assertEqual(len(page.select('footer#footer')),1)
+        self.assertTrue(receipt['legacyImprintRetained'])
+        self.assertIn('Original rights, author and credits',
+                      page.select_one('details.fc-owner-imprint').get_text(' ',strip=True))
+
+    def test_duplicate_publisher_nav_is_refused(self):
+        src=legacy('topbar').replace('</header>',
+           '<nav aria-label="Fountain Coach publication estate"></nav></header>',1)
+        with self.assertRaisesRegex(ValueError,'duplicated publisher navigation'):
+            project_public(src,'governance',M)
+
     def test_nine_identities_satzfunk_inert_info_and_status_footer(self):
         html,r=project_public(legacy(),'governance',M)
         p=BeautifulSoup(html,'html.parser')
