@@ -43,7 +43,15 @@ def work_digest(soup):
     clone=BeautifulSoup(str(main),"html.parser")
     for foot in clone.select("footer.footer#footer,footer.estate-footer#footer"):
         foot.decompose()
-    return hashlib.sha256(str(clone.find("main")).encode()).hexdigest()
+    # A site's footer can be nested within main, leaving an insignificant
+    # direct-child separator on removal. Never normalize a literary passage,
+    # paragraph, PRE or other actual authored content.
+    from bs4 import NavigableString
+    main = clone.find("main")
+    for node in list(main.children):
+        if isinstance(node, NavigableString) and not node.strip():
+            node.extract()
+    return hashlib.sha256(str(main).encode()).hexdigest()
 
 def fragment(d,ident,logo):
     from html import escape as h
