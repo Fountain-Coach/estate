@@ -10,7 +10,21 @@ import hashlib
 import json
 from pathlib import Path
 from bs4 import BeautifulSoup
-from estate_shell import project, manifest, work_digest, VERSION
+from estate_shell import project, manifest, VERSION
+
+def authored_work_digest(soup):
+    """Digest authored main excluding only the owner-global #footer."""
+    main=soup.find('main')
+    if not main:return None
+    clone=BeautifulSoup(str(main),'html.parser')
+    for footer in clone.select('footer#footer'):
+        footer.decompose()
+    from bs4 import NavigableString
+    main=clone.find('main')
+    for node in list(main.children):
+        if isinstance(node,NavigableString) and not node.strip():
+            node.extract()
+    return hashlib.sha256(str(main).encode()).hexdigest()
 
 PUBLIC_IDS = ('estate','book','governance','midi2','instruments','teatro','satzfunk','pointer','solstice')
 
@@ -22,17 +36,32 @@ def project_public(source: str, identity: str, reel: dict, logo='/assets/estate-
         raise ValueError('already versioned: refuse double shell')
     if original.select('meta[name="robots"][content*="noindex"]'):
         raise ValueError('private or noindex source cannot be made public')
-    old_work = work_digest(original)
-    old_footer = original.select_one('footer.footer#footer')
-    old_footer_markup = str(old_footer) if old_footer else None
-    # Legacy Governance uses header.topbar, other owners header.site-header.
-    # Normalize the header *in memory* for the existing source-preserving
-    # renderer. This does not change its Git-owned editorial main or assets.
-    heads = original.select('header.topbar,header.site-header')
-    if len(heads)>1:
-        raise ValueError('ambiguous publisher headers')
-    if heads and 'site-header' not in heads[0].get('class',[]):
-        heads[0]['class']=['site-header']
+    old_work = authored_work_digest(original)
+    old_footers=original.select('footer#footer')
+    if len(old_footers)>1:
+        raise ValueError('ambiguous original publication footers')
+    old_footer=old_footers[0] if old_footers else None
+    old_footer_markup=str(old_footer) if old_footer else None
+    if old_footer:
+        # The v2 renderer removes footer.footer#footer; normalize only the
+        # owner-global #footer (Solstice uses .solstice-footer).
+        old_footer['class']=list(dict.fromkeys(old_footer.get('class',[])+['footer']))
+    # Identify publisher masthead by the one canonical nav, not guessed CSS
+    # class. Instruments uses header[role=banner], Governance .topbar.
+    publisher_navs=original.select('nav[aria-label="Fountain Coach publication estate"]')
+    if len(publisher_navs)>1:
+        raise ValueError('duplicated publisher navigation')
+    if publisher_navs:
+        header=publisher_navs[0].find_parent('header')
+        if header is None:raise ValueError('publisher reel outside a header')
+    else:
+        candidates=original.select('header.site-header,header.topbar,header[role="banner"]')
+        if len(candidates)>1:raise ValueError('ambiguous publisher masthead')
+        header=candidates[0] if candidates else None
+    if header:
+        conflicts=[h for h in original.select('header.site-header') if h is not header]
+        if conflicts:raise ValueError('ambiguous publisher masthead')
+        header['class']=list(dict.fromkeys(header.get('class',[])+['site-header']))
     stage_html, stage_receipt = project(str(original), identity, reel, logo)
     p = BeautifulSoup(stage_html,'html.parser')
     generated_robots = p.select('meta[name="robots"][content="noindex,nofollow"]')
@@ -90,7 +119,7 @@ def project_public(source: str, identity: str, reel: dict, logo='/assets/estate-
         raise AssertionError('Info destination mismatch')
     if len(p.select('header.fc-estate-shell'))!=1 or len(p.select('footer.estate-footer#footer'))!=1:
         raise AssertionError('ambiguous common shell')
-    if old_work!=work_digest(p):
+    if old_work!=authored_work_digest(p):
         raise AssertionError('authored main changed during projection')
     html=str(p)
     return html,{
