@@ -65,7 +65,7 @@ def fragment(d,ident,logo):
        'alt="Fountain Coach" src="'+h(logo,quote=True)+'"/>'+\
        '<span class="fc-publisher-name">Fountain Coach<small>Publication estate</small></span></a>'+\
        '<span class="fc-site-identity">'+h(ident.upper())+'</span></div>'+\
-       '<nav class="estate-nav fc-shell-reel" data-reel-contract="'+REEL+\
+       '<nav class="estate-nav site-nav fc-shell-reel" id="site-nav" data-site-nav="" data-reel-contract="'+REEL+\
        '" aria-label="Fountain Coach publication estate">'+''.join(links)+'</nav></header>'
     legal=' · '.join('<a href="'+h(url,quote=True)+'">'+h(label)+'</a>' for label,url in LEGAL)
     footer='<footer class="estate-footer fc-estate-shell" id="footer" role="contentinfo" '+\
@@ -79,7 +79,7 @@ def fragment(d,ident,logo):
        '<p>Private template preview; no public release authorized.</p></section></div></footer>'
     return header,footer
 
-def project(source,identity,d,logo="assets/fountain-coach-logo-transparent.png"):
+def project(source,identity,d,logo="/assets/estate-shell-logo.png"):
     soup=BeautifulSoup(source,"html.parser")
     if not soup.head or not soup.body:raise ValueError("not a complete HTML document")
     if soup.select_one("[data-estate-shell-version]"):raise ValueError("duplicate shell")
@@ -92,7 +92,7 @@ def project(source,identity,d,logo="assets/fountain-coach-logo-transparent.png")
     old_footer=soup.select_one("footer.footer#footer")
     if old_footer:old_footer.replace_with(BeautifulSoup(footer,"html.parser").footer)
     else:soup.body.append(BeautifulSoup(footer,"html.parser").footer)
-    css=soup.new_tag("link",rel="stylesheet",href="assets/estate-shell.css")
+    css=soup.new_tag("link",rel="stylesheet",href="/assets/estate-shell.css")
     soup.head.append(css)
     robots=soup.new_tag("meta");robots["name"]="robots";robots["content"]="noindex,nofollow"
     soup.head.append(robots)
@@ -111,7 +111,7 @@ def main():
     p.add_argument("--source",required=True,type=Path)
     p.add_argument("--identity",required=True)
     p.add_argument("--output",required=True,type=Path)
-    p.add_argument("--logo",default="assets/fountain-coach-logo-transparent.png")
+    p.add_argument("--logo",default="/assets/estate-shell-logo.png")
     x=p.parse_args()
     out,receipt=project(x.source.read_text(),x.identity,manifest(x.manifest),x.logo)
     if x.output.exists():raise SystemExit("refuse overwrite")
