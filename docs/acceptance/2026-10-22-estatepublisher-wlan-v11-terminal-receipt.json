@@ -1,0 +1,58 @@
+{
+  "activated": true,
+  "detail": "WLAN-only stage active; exact bytes independently verified via HTTP; no public publication",
+  "previousReleaseID": "shared-shell-20261022-v10-editorial",
+  "publicHost": "benedikt-Macmini.local",
+  "recordedAt": 814384826.396078,
+  "releaseID": "shared-shell-20261022-v11-eight-owner-47e7ac71",
+  "sourceInventorySHA256": "5d601f09d646e477bde0fa992596bb404a17f054f129fcbc79f7214a37398ec2",
+  "sourceRevision": "47e7ac71115a16cf7b73a595a554b9d37a93964b",
+  "stagingIdentity": "UbuntuEstateShellWLANStage",
+  "state": "active",
+  "verifiedPublicFiles": [
+    {
+      "path": "/estate/index.html",
+      "sha256": "6d72db9995439d3632e728b650e53751af8b2dd3e13d4049651450bf976e4146"
+    },
+    {
+      "path": "/book/index.html",
+      "sha256": "9f92e7311264ba0ecc98a3212ef1a966d907e602cdc1b224720afc69fe037554"
+    },
+    {
+      "path": "/governance/index.html",
+      "sha256": "7d2be1ab3fe743ddbf35111060c84a23b4fc9304b282f6a037ccbb4e146582d1"
+    },
+    {
+      "path": "/governance/chapters/158-publishing-is-not-a-distributed-transaction/index.html",
+      "sha256": "f52c49a1bf0ccd92f87a3298af9da96738782a3553227173be8c4ce80388d6c2"
+    },
+    {
+      "path": "/governance/chapters/159-userland-the-writers-books-outlive-the-device/index.html",
+      "sha256": "c543ea7aeebb66076898c3a723d498547ff21685a663782b9b3cf97ccbcedc73"
+    },
+    {
+      "path": "/midi2/index.html",
+      "sha256": "6ec4e1e299242bbaaa8aa700bfef0c0cdb6e74fe8358b4cb87cf6f1daee463f4"
+    },
+    {
+      "path": "/instruments/index.html",
+      "sha256": "41c7738f5c927d1a7f7675274e3b4f7e67bcc86060955ed0bd8cd022bac4f177"
+    },
+    {
+      "path": "/teatro/index.html",
+      "sha256": "b094ff26ebc914dee4f04fde51cd7d4f1166f8029ea4f5299c1eac87a744eae1"
+    },
+    {
+      "path": "/pointer/index.html",
+      "sha256": "cf3d7f6980b578d6b501106b5e6a8f6ba7cb037ecb7e3136469e5ddf0d55c25a"
+    },
+    {
+      "path": "/solstice/index.html",
+      "sha256": "fe99e579e905cd88c61d702ee121c527f6dc776a8504d0924dc3aea140a0b559"
+    },
+    {
+      "path": "/solstice/editions/first-reading/index.html",
+      "sha256": "2e3f650bf322c8da3e8afc01eb5f85896936e57fb921f80d81d17659146dcdac"
+    }
+  ]
+}
