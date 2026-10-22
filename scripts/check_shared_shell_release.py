@@ -76,12 +76,24 @@ def acceptance(manifest,sites,css,logo,mode,webkit=None,publisher=None):
     if publisher:
         e=json.loads(Path(publisher).read_text())
         gates['authorizedPublication']=bool(e.get('estatePublisherTerminalReceipt') and e.get('publicHTTPSReadbacks') and e.get('rollbackRelease'))
-    passed=structural if mode=='structural' else all(gates.values())
+    # An arbitrary JSON evidence file is NOT a cryptographically admitted
+    # native WebKit witness or an authorized EstatePublisher terminal receipt.
+    # Keep publication closed until native verification consumes both through
+    # the proper executor. Never turn a forged filename/string into authority.
+    untrustedEvidenceSupplied = bool(webkit or publisher)
+    if mode == 'publication':
+        passed = False
+        gates['nativeWebKit'] = False
+        gates['authorizedPublication'] = False
+    else:
+        passed = structural
     return {'passed':passed,'mode':mode,'checks':checks,'gates':gates,
             'primaryEditorialFrontDoors':['estate','solstice','teatro'],
             'reelDestinations':ids,'cssSHA256':next(iter(cssset)) if len(cssset)==1 else None,
             'logoSHA256':next(iter(logoset)) if len(logoset)==1 else None,
-            'publicReleasedByThisOperation':False}
+            'publicReleasedByThisOperation':False,
+            'reason':('native EstatePublisher must authenticate browser and publication receipts' if mode == 'publication' else None),
+            'untrustedEvidenceSupplied':untrustedEvidenceSupplied}
 
 def mapping(args):
     out={}
