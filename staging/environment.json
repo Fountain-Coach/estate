@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "environmentID": "fountain-coach-estate-wlan-staging",
+  "scope": "owner-controlled-wlan-only",
+  "authorityRepository": "Fountain-Coach/estate",
+  "host": {
+    "sshAlias": "MacMiniDocker",
+    "hostname": "benedikt-Macmini.local",
+    "observedWLANAddress": "192.168.8.50",
+    "networkInterface": "usb0"
+  },
+  "canonicalEntrySurface": "estate-shell-acceptance",
+  "surfaces": {
+    "estate-shell-acceptance": {
+      "role": "canonical-current-author-entrance",
+      "service": "fountain-shell-acceptance-preview.service",
+      "entryURL": "http://benedikt-Macmini.local:8200/estate/",
+      "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
+      "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
+      "observedRelease": "shared-shell-20261022-v9-local-links",
+      "editorialRoutes": {
+        "estate": "/estate/",
+        "teatro": "/teatro/",
+        "firstReading": "/solstice/editions/first-reading/"
+      }
+    },
+    "estate-shell-proof": {
+      "role": "isolated-October-22-shell-proof-not-canonical-entrance",
+      "service": "fountain-estate-shared-shell-proof.service",
+      "entryURL": "http://192.168.8.50:8202/estate/",
+      "activeReleaseSymlink": "/home/benedikt/estate-shared-shell-proof/current",
+      "observedRelease": "20261022-v5"
+    },
+    "release-continuity": {
+      "role": "isolated-browser-cache-and-release-transition-test",
+      "service": "fountain-release-continuity-stage.service",
+      "entryURL": "http://192.168.8.50:8201/estate/",
+      "activeReleaseSymlink": "/home/benedikt/estate-release-continuity-staging/current"
+    },
+    "public-estate-reel-mirror": {
+      "role": "earlier-multi-domain-public-byte-mirror-not-current-author-entrance",
+      "service": "fountain-canonical-reel-preview.service",
+      "entryURL": "http://192.168.8.50:8198/estate/",
+      "activeReleaseSymlink": "/home/benedikt/estate-unified-reel-staging/current"
+    },
+    "linotype-three-front": {
+      "role": "separate-Bookshelf-and-reader-staging",
+      "service": "fountain-three-front-stage.service",
+      "entryURL": "http://192.168.8.50:8180/",
+      "activeReleaseSymlink": "/home/benedikt/estate-three-front-staging/current",
+      "extraReaderURLs": [
+        "http://192.168.8.50:8181/editions/first-reading/",
+        "http://192.168.8.50:8182/editions/first-hearing/"
+      ]
+    },
+    "satzfunk-private-archive": {
+      "role": "protected-original-audiovisual-archive-never-public-substitute",
+      "service": "satzfunk-bandcamp-preview.service",
+      "entryURL": "http://192.168.8.50:8194/",
+      "access": "authenticated; anonymous HTTP 403 expected"
+    }
+  },
+  "provenance": {
+    "inspectedAt": "2026-10-22",
+    "environmentIdentity": "Observed over authenticated SSH to MacMiniDocker",
+    "releaseIdentity": "observedRelease is an audit snapshot; activeReleaseSymlink and HTTP readback are the current runtime authority",
+    "publicationClaim": "WLAN previews are not public DNS/Caddy releases",
+    "legacyServiceNote": "192.168.8.11:8443 is an older distinct estate service on the same Ubuntu host; 192.168.8.249 was a former WLAN address"
+  }
+}

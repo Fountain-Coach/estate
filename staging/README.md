@@ -1,10 +1,12 @@
-# Fountain Coach: Three-front WLAN staging
+# Fountain Coach: historical three-front WLAN staging
 
-The Ubuntu Intel Mac mini, `benedikt-Macmini.local` / `192.168.8.249`, serves the
-**current GitHub-owned editorial estate** from a separate staging release.
-This is NOT the public DNS or Caddy publisher and requires no Hetzner Git.
+**Current staging environment:** see [the binding estate WLAN environment identity](ENVIRONMENT.md) and its [machine-readable current entrance](environment.json). The **existing** Ubuntu Intel Mac mini is staging. At the 22 October 2026 inspection the author-facing EstateShell entrance is `http://benedikt-Macmini.local:8200/estate/` (observed direct IP fallback `192.168.8.50`) (service `fountain-shell-acceptance-preview.service`), with its exact active release discovered from the running symlink.
 
-Publicly usable only **within the WLAN**:
+**Historical material below** documents the earlier three-front reader releases. The address `192.168.8.249` and the releases described below are historical, not the present default estate-stage endpoint. Do not infer "current staging" from their dates, from another port on this machine, or from whichever service answers a request.
+
+The separate three-front reader staging was an owner-WLAN projection distinct from public DNS/Caddy publication and Hetzner Git. It was formerly reached through the following URLs (now superseded):
+
+Earlier WLAN reader routes:
 
 1. **Fountain Coach**: http://192.168.8.249:8180/
 2. **First Reading**: http://192.168.8.249:8181/editions/first-reading/
