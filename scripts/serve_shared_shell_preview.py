@@ -12,7 +12,7 @@ from pathlib import Path
 from functools import partial
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
-EXPECTED = "fountain.estate.shell.v1-candidate-20261022"
+EXPECTED = {"fountain.estate.shell.v1-candidate-20261022", "fountain.estate.shell.v2-editorial-20261022"}
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, root:Path, **kwargs):
         super().__init__(*args, directory=str(root), **kwargs)
@@ -45,7 +45,7 @@ def inspect(root:Path) ->dict:
         raise RuntimeError("Refuse non-source-locked shell preview")
     meta=json.loads(lockpath.read_text())
     if (meta.get("status")!="WLAN-PREVIEW-NOT-PUBLIC"
-        or meta.get("templateVersion")!=EXPECTED
+        or meta.get("templateVersion") not in EXPECTED
         or meta.get("archiveMediaCopied") is not False
         or meta.get("authorPublished") is not False
         or meta.get("releaseReceipt") is not None
