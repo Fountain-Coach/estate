@@ -15,6 +15,10 @@ description: Audit, specify, build and verify Fountain Coach Linotype readers, B
 4. The existing Mac EstatePublisher tests: `testEstatePreviewScenarioIsWholeProductTemplateReproduction` checks scenario declarations, `estate.visual-mirror.compare` validates inputs, and neither alone proves live WebKit/CSS parity. Require a true cross-domain browser transition report.
 5. Each domain's real body: Teatro Stage remains a tool, Satzfunk remains its original audiovisual archive, Solstice is writer-owned Linotype First Reading, and governance/other domains retain full authorship and rights. Do not manufacture books from tools, compilations or sound recordings.
 
+## Reframe Bookshelf admission is not public estate publication
+
+Reframe admits an authored source-bound work or edition **into its Bookshelf**, owns its membership, source identity and writer decisions, and uses FountainStore to persist source/editorial state. Fountain Press owns only the reusable measured Bookshelf/reader projection. EstatePublisher is a different publisher: it authorizes and deploys approved editions/routes to public websites. **A Bookshelf tile is not a DNS record, reel icon or public-release receipt.** A selectable Empty is not yet a book. Prove source candidate → authorized shelf membership → original Press-composed reading → optional separately permitted public release as independent transitions. Consult Reframe scenarios R22/R26 and Press's Reframe composition-owner boundary; refuse fabricated admission, cover, rights or publication status.
+
 ## Implement and prove
 
 - **Template:** single versioned site shell with one masthead, one accessible nav reel, and one typed, four-region legal/provenance footer. Each domain consumes the same structure/styles and contributes only typed identity, copyright/source credits, authorized destinations and release state. Local design themes apply to the body, not unversioned variations of common chrome.
