@@ -18,7 +18,7 @@ class Page(HTMLParser):
     def handle_starttag(self,tag,attrs):
         a=dict(attrs);cs=set(a.get('class','').split())
         if tag=='header' and 'fc-estate-shell' in cs:self.version.append(a.get('data-estate-shell-version'))
-        if tag=='nav' and 'estate-nav' in cs:
+        if tag=='nav' and 'fc-shell-reel' in cs:
             self.nav+=1;self.reel=a.get('data-reel-contract');self.innav=True
         if tag=='footer' and 'estate-footer' in cs:
             self.footer+=1;self.footer_version=a.get('data-footer-contract');self.infooter=True
