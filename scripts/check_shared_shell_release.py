@@ -18,7 +18,7 @@ class Page(HTMLParser):
     def handle_starttag(self,tag,attrs):
         a=dict(attrs);cs=set(a.get('class','').split())
         if tag=='header' and 'fc-estate-shell' in cs:self.version.append(a.get('data-estate-shell-version'))
-        if tag=='nav' and 'estate-nav' in cs:
+        if tag=='nav' and 'fc-shell-reel' in cs:
             self.nav+=1;self.reel=a.get('data-reel-contract');self.innav=True
         if tag=='footer' and 'estate-footer' in cs:
             self.footer+=1;self.footer_version=a.get('data-footer-contract');self.infooter=True
@@ -36,7 +36,7 @@ class Page(HTMLParser):
 
 def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
-def acceptance(manifest,sites,css,logo,mode,webkit=None,publisher=None):
+def acceptance(manifest,sites,css,logo,mode,webkit=None,publisher=None,stage_bindings=None):
     ids=[e['id'] for e in manifest['entries']]
     if len(ids)!=9 or len(set(ids))!=9 or 'status' in ids:raise ValueError('invalid canonical editorial reel')
     if len(sites)<2:raise ValueError('at least two distinct domains required')
@@ -56,7 +56,17 @@ def acceptance(manifest,sites,css,logo,mode,webkit=None,publisher=None):
         if page.version and page.version[0]:versions.add(page.version[0])
         require([x.get('data-estate-id') for x in page.links]==ids,'reel membership/order drift')
         for got,expected in zip(page.links,manifest['entries']):
-            require(all(got.get(key)==val for key,val in [('href',expected['url']),('aria-label',expected['label']),('data-icon-id',expected['id'])]),'reel link/icon drift: '+expected['id'])
+            checks_for_link=[('aria-label',expected['label']),('data-icon-id',expected['id'])]
+            if stage_bindings and expected['id'] in stage_bindings:
+                checks_for_link += [('href',stage_bindings[expected['id']]),
+                                    ('data-canonical-href',expected['url']),
+                                    ('data-stage-binding','wlan-only')]
+                require(got.get('href','').startswith('http://192.168.8.50:'),
+                    'stage destination must stay on admitted LAN: '+expected['id'])
+            else:
+                checks_for_link += [('href',expected['url'])]
+            require(all(got.get(key)==val for key,val in checks_for_link),
+                    'reel link/icon drift: '+expected['id'])
         active=[x.get('data-estate-id') for x in page.links if x.get('aria-current')=='page']
         require(active==([ident] if ident!='status' else []),'active identity mismatch')
         require(page.info==1 and page.footer_id=='footer','Info/footer anchor mismatch')
@@ -76,12 +86,25 @@ def acceptance(manifest,sites,css,logo,mode,webkit=None,publisher=None):
     if publisher:
         e=json.loads(Path(publisher).read_text())
         gates['authorizedPublication']=bool(e.get('estatePublisherTerminalReceipt') and e.get('publicHTTPSReadbacks') and e.get('rollbackRelease'))
-    passed=structural if mode=='structural' else all(gates.values())
+    # An arbitrary JSON evidence file is NOT a cryptographically admitted
+    # native WebKit witness or an authorized EstatePublisher terminal receipt.
+    # Keep publication closed until native verification consumes both through
+    # the proper executor. Never turn a forged filename/string into authority.
+    untrustedEvidenceSupplied = bool(webkit or publisher)
+    if mode == 'publication':
+        passed = False
+        gates['nativeWebKit'] = False
+        gates['authorizedPublication'] = False
+    else:
+        passed = structural
     return {'passed':passed,'mode':mode,'checks':checks,'gates':gates,
             'primaryEditorialFrontDoors':['estate','solstice','teatro'],
             'reelDestinations':ids,'cssSHA256':next(iter(cssset)) if len(cssset)==1 else None,
             'logoSHA256':next(iter(logoset)) if len(logoset)==1 else None,
-            'publicReleasedByThisOperation':False}
+            'publicReleasedByThisOperation':False,
+            'reason':('native EstatePublisher must authenticate browser and publication receipts' if mode == 'publication' else None),
+            'untrustedEvidenceSupplied':untrustedEvidenceSupplied,
+            'stageBindingsVerified':bool(stage_bindings and structural)}
 
 def mapping(args):
     out={}
@@ -99,12 +122,16 @@ def main():
     p.add_argument('--css',required=True,action='append')
     p.add_argument('--logo',required=True,action='append')
     p.add_argument('--mode',choices=['structural','publication'],default='structural')
+    p.add_argument('--stage-bindings',type=Path,help='explicit LAN-only bindings manifest')
     p.add_argument('--webkit-evidence',type=Path)
     p.add_argument('--publisher-receipt',type=Path)
     p.add_argument('--out',type=Path)
     a=p.parse_args()
     try:
-        r=acceptance(json.loads(a.manifest.read_text()),mapping(a.site),mapping(a.css),mapping(a.logo),a.mode,a.webkit_evidence,a.publisher_receipt)
+        stage=json.loads(a.stage_bindings.read_text()) if a.stage_bindings else None
+        if stage and (stage.get('status')!='WLAN-PREVIEW-NOT-PUBLIC' or stage.get('authorPublished') is not False):
+            raise ValueError('stage bindings require explicit unpublished WLAN lock')
+        r=acceptance(json.loads(a.manifest.read_text()),mapping(a.site),mapping(a.css),mapping(a.logo),a.mode,a.webkit_evidence,a.publisher_receipt,stage_bindings=stage.get('stageBindings') if stage else None)
     except (ValueError,AssertionError,OSError,KeyError) as e:r={'passed':False,'reason':str(e)}
     if a.out:a.out.write_text(json.dumps(r,indent=2)+'\n')
     print(json.dumps(r,indent=2));return 0 if r['passed'] else 1

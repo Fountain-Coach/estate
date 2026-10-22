@@ -1,0 +1,293 @@
+diff --git a/apps/estate-publisher/Sources/EstatePublisherCore/EstatePublisherScenarios.swift b/apps/estate-publisher/Sources/EstatePublisherCore/EstatePublisherScenarios.swift
+index 9d9b3223..1283ea02 100644
+--- a/apps/estate-publisher/Sources/EstatePublisherCore/EstatePublisherScenarios.swift
++++ b/apps/estate-publisher/Sources/EstatePublisherCore/EstatePublisherScenarios.swift
+@@ -198,8 +198,8 @@ public enum EstatePublisherScenarioCatalog {
+             purpose: "Reproduce the complete Fountain Coach product template from the local Store-backed estate source: one logo line, one button rail, breadcrumb-led content, explicit hash landing, host content slots, responsive reading surfaces, and the shared header/footer framing.",
+             steps: ["admit the projection manifest and transparent Linotype template contract", "admit the canonical portrait-iPad instrument icon norm and verify every catalog SVG against it", "materialize every declared host root and route into one explicit local Store snapshot", "preserve the common logo line, button rail, breadcrumb and content-slot hierarchy on every route", "exercise default and explicit hash landing states plus Safari/WebKit responsive desktop and turned-device states", "exercise reactive header framing, Info-to-footer navigation, footer clamp/recede behavior, and accessible control labels", "write the typed preview snapshot and read back the complete route index, template identity, icon-norm evidence, transition evidence, and digest"],
+             positive: ["all declared hosts and routes are present in one Store-backed preview", "Teatro is admitted as a derived integration of the existing semantic sequence", "every route has the same admitted shell order: logo line, button rail, breadcrumb-led content", "all instrument icons use the shared 512-square canvas and identical 3:4 portrait-iPad base frame", "catalog icon tiles remain square and captions remain full-width blocks outside the icon boundary", "default #main and explicit URL fragments resolve to their declared static landing targets", "host-specific editorial content remains a slot inside the shared product template", "Safari/WebKit desktop, iPhone portrait/landscape, and iPad portrait/landscape evidence is complete", "header and footer framing transitions are observable and Info lands on the semantic footer", "template, route index, shared-core digests, icon-norm, AX/VRT evidence, and Store snapshot read back with matching provenance"],
+-            negative: ["target-mismatch", "missing-template-slot", "shell-order-drift", "icon-norm-drift", "hash-landing-drift", "responsive-state-failure", "accessibility-label-failure", "digest-mismatch", "partial-failure"],
+-            evidence: ["template-contract admission receipt", "Teatro integration projection", "instrument icon norm report", "projection manifest and host/root inventory", "Store session and route-index receipt", "Safari/WebKit AX transcript", "desktop and turned-device VRT captures", "header/footer transition report", "shared CSS/JS digests", "typed snapshot digest"],
++            negative: ["target-mismatch", "missing-template-slot", "shell-order-drift", "shared-shell-digest-drift", "reel-membership-order-drift", "footer-legal-drift", "source-content-mutation", "icon-norm-drift", "hash-landing-drift", "responsive-state-failure", "accessibility-label-failure", "digest-mismatch", "partial-failure"],
++            evidence: ["template-contract admission receipt", "Teatro integration projection", "instrument icon norm report", "projection manifest and host/root inventory", "Store session and route-index receipt", "Safari/WebKit AX transcript", "desktop and turned-device VRT captures", "header/footer transition report", "cross-domain shared-shell acceptance receipt", "shared CSS/JS digests", "typed snapshot digest"],
+             claimBoundary: "local reproduction and acceptance of the current estate product template only; no remote publication, release promotion, CMS compatibility claim, or new domain content mutation"),
+         make(
+             id: "estate-publisher-visual-mirror",
+diff --git a/apps/estate-publisher/Sources/EstatePublisherCore/EstatePublisherSharedShellAcceptance.swift b/apps/estate-publisher/Sources/EstatePublisherCore/EstatePublisherSharedShellAcceptance.swift
+new file mode 100644
+index 00000000..91d5f8db
+--- /dev/null
++++ b/apps/estate-publisher/Sources/EstatePublisherCore/EstatePublisherSharedShellAcceptance.swift
+@@ -0,0 +1,109 @@
++import Foundation
++
++/// Structural gate owned by EstatePublisher, distinct from Fountain Press composition
++/// and Reframe's private Bookshelf admission. Preview evaluation NEVER authorizes release.
++public enum EstatePublisherSharedShellAcceptance {
++    public static let reelIDs = [
++        "estate", "book", "governance", "midi2", "instruments",
++        "teatro", "satzfunk", "pointer", "solstice"
++    ]
++    public static let primaryEntrances = ["estate", "solstice", "teatro"]
++    public static let footerSlots = ["imprint", "provenance", "legal", "release-state"]
++    public static let statusURL = "https://status.fountain.coach/"
++    public static let reelVersion = "fountain.estate.canonical-reel.v1"
++    public static let footerVersion = "fountain.estate.canonical-footer.v1"
++
++    public struct Site: Codable, Equatable, Sendable {
++        public let identity: String
++        public let sourceRevision: String
++        public let shellVersion: String
++        public let reelVersion: String
++        public let footerVersion: String
++        public let reelIDs: [String]
++        public let activeIdentity: String?
++        public let footerSlots: [String]
++        public let legalLinks: [String]
++        public let cssSHA256: String
++        public let logoSHA256: String
++        public let iconSHA256: String
++        public let sourceBodySHA256Before: String
++        public let sourceBodySHA256After: String
++
++        public init(identity: String, sourceRevision: String, shellVersion: String,
++                    reelVersion: String, footerVersion: String, reelIDs: [String],
++                    activeIdentity: String?, footerSlots: [String], legalLinks: [String],
++                    cssSHA256: String, logoSHA256: String, iconSHA256: String,
++                    sourceBodySHA256Before: String, sourceBodySHA256After: String) {
++            self.identity = identity
++            self.sourceRevision = sourceRevision
++            self.shellVersion = shellVersion
++            self.reelVersion = reelVersion
++            self.footerVersion = footerVersion
++            self.reelIDs = reelIDs
++            self.activeIdentity = activeIdentity
++            self.footerSlots = footerSlots
++            self.legalLinks = legalLinks
++            self.cssSHA256 = cssSHA256
++            self.logoSHA256 = logoSHA256
++            self.iconSHA256 = iconSHA256
++            self.sourceBodySHA256Before = sourceBodySHA256Before
++            self.sourceBodySHA256After = sourceBodySHA256After
++        }
++    }
++
++    public struct Receipt: Codable, Equatable, Sendable {
++        public let state: String
++        public let siteCount: Int
++        public let shellVersion: String?
++        public let blockers: [String]
++        /// Must stay false. Only the typed EstatePublisher release executor can publish.
++        public let publicPublicationAuthorized: Bool
++        public var accepted: Bool { state == "structural-accepted" }
++    }
++
++    /// Pure gate over *independently measured* page observations. Browser/WebKit
++    /// geometry and actual public release remain separate mandatory evidence.
++    public static func check(_ sites: [Site], requiredIdentities: [String]) -> Receipt {
++        var errors: [String] = []
++        func fail(_ code: String) { if !errors.contains(code) { errors.append(code) } }
++        let expected = Set(requiredIdentities)
++        let observed = sites.map(\.identity)
++        if sites.isEmpty || expected.isEmpty || Set(observed) != expected ||
++           observed.count != Set(observed).count { fail("site-coverage-drift") }
++        if requiredIdentities.contains("status") && expected.count == reelIDs.count {
++            fail("status-is-footer-only")
++        }
++        for site in sites {
++            if site.sourceRevision.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
++                fail("unpinned-source")
++            }
++            if site.shellVersion.isEmpty || site.reelVersion != reelVersion ||
++                site.footerVersion != footerVersion { fail("shell-version-drift") }
++            if site.reelIDs != reelIDs { fail("reel-membership-order-drift") }
++            if site.activeIdentity != (site.identity == "status" ? nil : site.identity) {
++                fail("active-identity-drift")
++            }
++            if site.footerSlots != footerSlots || !site.legalLinks.contains(statusURL) {
++                fail("footer-legal-drift")
++            }
++            for hash in [site.cssSHA256, site.logoSHA256, site.iconSHA256,
++                         site.sourceBodySHA256Before, site.sourceBodySHA256After] {
++                if hash.count != 64 || !hash.utf8.allSatisfy({ ($0 >= 48 && $0 <= 57) ||
++                                                            ($0 >= 97 && $0 <= 102) }) {
++                    fail("unverified-asset-digest")
++                }
++            }
++            if site.sourceBodySHA256Before != site.sourceBodySHA256After {
++                fail("source-content-mutation")
++            }
++        }
++        for keyPath in [\Site.shellVersion, \Site.cssSHA256, \Site.logoSHA256, \Site.iconSHA256] {
++            if Set(sites.map { $0[keyPath: keyPath] }).count > 1 {
++                fail("shared-chrome-digest-drift")
++            }
++        }
++        return Receipt(state: errors.isEmpty ? "structural-accepted" : "blocked",
++                       siteCount: sites.count, shellVersion: sites.first?.shellVersion,
++                       blockers: errors.sorted(), publicPublicationAuthorized: false)
++    }
++}
+diff --git a/apps/estate-publisher/Sources/EstatePublisherScenarioRunner/AppMain.swift b/apps/estate-publisher/Sources/EstatePublisherScenarioRunner/AppMain.swift
+index 3b8eabcb..c12ebc0e 100644
+--- a/apps/estate-publisher/Sources/EstatePublisherScenarioRunner/AppMain.swift
++++ b/apps/estate-publisher/Sources/EstatePublisherScenarioRunner/AppMain.swift
+@@ -8,10 +8,16 @@ import Foundation
+ /// host executor and opaque lease path.
+ @main
+ struct EstatePublisherScenarioRunner {
++    private struct SharedShellInput: Decodable {
++        let requiredIdentities: [String]
++        let sites: [EstatePublisherSharedShellAcceptance.Site]
++    }
++
+     private struct Report: Codable {
+         let scenarioValidation: EstatePublisherScenarioValidationReceipt
+         let selectedScenario: EstatePublisherScenario?
+         let semanticAdmission: EstateSemanticSequenceReport?
++        let sharedShell: EstatePublisherSharedShellAcceptance.Receipt?
+     }
+ 
+     static func main() {
+@@ -42,7 +48,25 @@ struct EstatePublisherScenarioRunner {
+                     projectionManifestURL: URL(fileURLWithPath: projectionManifest))
+             }
+ 
+-            let report = Report(scenarioValidation: validation, selectedScenario: selected, semanticAdmission: semantic)
++            var sharedShell: EstatePublisherSharedShellAcceptance.Receipt?
++            if let evidencePath = value(after: "--shared-shell-observations") {
++                guard selected?.operation == "estate.preview" else {
++                    throw EstatePublisherScenarioError.missingOperation("estate.preview must be selected for shared shell evaluation")
++                }
++                let evidence = try Data(contentsOf: URL(fileURLWithPath: evidencePath))
++                let input = try JSONDecoder().decode(SharedShellInput.self, from: evidence)
++                let result = EstatePublisherSharedShellAcceptance.check(
++                    input.sites, requiredIdentities: input.requiredIdentities)
++                guard result.accepted else {
++                    throw NSError(domain: "EstatePublisherSharedShell", code: 65,
++                        userInfo: [NSLocalizedDescriptionKey:
++                            "shared shell refused: " + result.blockers.joined(separator: ", ")])
++                }
++                sharedShell = result
++            }
++
++            let report = Report(scenarioValidation: validation, selectedScenario: selected,
++                                semanticAdmission: semantic, sharedShell: sharedShell)
+             let encoder = JSONEncoder()
+             encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+             print(String(decoding: try encoder.encode(report), as: UTF8.self))
+diff --git a/apps/estate-publisher/Tests/EstatePublisherCoreTests/EstatePublisherSharedShellAcceptanceTests.swift b/apps/estate-publisher/Tests/EstatePublisherCoreTests/EstatePublisherSharedShellAcceptanceTests.swift
+new file mode 100644
+index 00000000..b06390ce
+--- /dev/null
++++ b/apps/estate-publisher/Tests/EstatePublisherCoreTests/EstatePublisherSharedShellAcceptanceTests.swift
+@@ -0,0 +1,109 @@
++import Foundation
++import XCTest
++@testable import EstatePublisherCore
++
++final class EstatePublisherSharedShellAcceptanceTests: XCTestCase {
++    typealias Gate = EstatePublisherSharedShellAcceptance
++
++    private func hash(_ character: Character) -> String {
++        String(repeating: String(character), count: 64)
++    }
++
++    private func site(_ identity: String, reel: [String] = Gate.reelIDs,
++                      active: String? = nil, slots: [String] = Gate.footerSlots,
++                      legal: [String] = [Gate.statusURL],
++                      shell: String = "shell-v1",
++                      css: String? = nil, before: String? = nil,
++                      after: String? = nil) -> Gate.Site {
++        Gate.Site(identity: identity, sourceRevision: "owner-revision-1",
++                  shellVersion: shell, reelVersion: Gate.reelVersion,
++                  footerVersion: Gate.footerVersion, reelIDs: reel,
++                  activeIdentity: active ?? (identity == "status" ? nil : identity),
++                  footerSlots: slots, legalLinks: legal,
++                  cssSHA256: css ?? hash("a"), logoSHA256: hash("b"),
++                  iconSHA256: hash("c"),
++                  sourceBodySHA256Before: before ?? hash("d"),
++                  sourceBodySHA256After: after ?? hash("d"))
++    }
++
++    func testSameNineEditorialSitesAreStructurallyAdmittedWithoutPublishing() {
++        let sites = Gate.reelIDs.map { site($0) }
++        let receipt = Gate.check(sites, requiredIdentities: Gate.reelIDs)
++        XCTAssertEqual(receipt.state, "structural-accepted")
++        XCTAssertEqual(receipt.siteCount, 9)
++        XCTAssertTrue(receipt.blockers.isEmpty)
++        XCTAssertFalse(receipt.publicPublicationAuthorized)
++        XCTAssertEqual(Gate.primaryEntrances, ["estate", "solstice", "teatro"])
++    }
++
++    func testSubsetLocalProofNeverClaimsPublicPublication() {
++        let sample = ["estate", "solstice"].map { site($0) }
++        let receipt = Gate.check(sample, requiredIdentities: ["estate", "solstice"])
++        XCTAssertTrue(receipt.accepted)
++        XCTAssertFalse(receipt.publicPublicationAuthorized)
++        XCTAssertFalse(Gate.reelIDs.contains("status"))
++    }
++
++    func testWrongLinkOrderFailsClosed() {
++        var ids = Gate.reelIDs
++        ids.swapAt(0, 1)
++        let receipt = Gate.check([site("estate", reel: ids)], requiredIdentities: ["estate"])
++        XCTAssertTrue(receipt.blockers.contains("reel-membership-order-drift"))
++    }
++
++    func testMissingStatusInLegalFooterFailsClosed() {
++        let receipt = Gate.check([site("estate", legal: [])], requiredIdentities: ["estate"])
++        XCTAssertTrue(receipt.blockers.contains("footer-legal-drift"))
++    }
++
++    func testFooterRoleMutationFailsClosed() {
++        let receipt = Gate.check([site("estate", slots: ["imprint", "rights"])],
++                                 requiredIdentities: ["estate"])
++        XCTAssertTrue(receipt.blockers.contains("footer-legal-drift"))
++    }
++
++    func testSourceChangeAndVisualStylesAreIndependentFailures() {
++        let items = [site("estate"), site("teatro", css: hash("e"), after: hash("f"))]
++        let receipt = Gate.check(items, requiredIdentities: ["estate", "teatro"])
++        XCTAssertTrue(receipt.blockers.contains("shared-chrome-digest-drift"))
++        XCTAssertTrue(receipt.blockers.contains("source-content-mutation"))
++    }
++
++    func testAdditionalStatusTopReelFailsClosed() {
++        let items = [site("estate", reel: Gate.reelIDs + ["status"])]
++        let receipt = Gate.check(items, requiredIdentities: ["estate"])
++        XCTAssertTrue(receipt.blockers.contains("reel-membership-order-drift"))
++    }
++
++    func testWrongActiveDomainFailsClosed() {
++        let bad = Gate.Site(identity: "solstice", sourceRevision: "source",
++            shellVersion: "shell-v1", reelVersion: Gate.reelVersion,
++            footerVersion: Gate.footerVersion, reelIDs: Gate.reelIDs,
++            activeIdentity: "teatro", footerSlots: Gate.footerSlots,
++            legalLinks: [Gate.statusURL], cssSHA256: hash("a"),
++            logoSHA256: hash("b"), iconSHA256: hash("c"),
++            sourceBodySHA256Before: hash("d"), sourceBodySHA256After: hash("d"))
++        XCTAssertTrue(Gate.check([bad], requiredIdentities: ["solstice"])
++                        .blockers.contains("active-identity-drift"))
++    }
++
++    func testAbsentHostRefusesFullEstateClaim() {
++        let sites = Gate.reelIDs.filter { $0 != "teatro" }.map { site($0) }
++        let receipt = Gate.check(sites, requiredIdentities: Gate.reelIDs)
++        XCTAssertTrue(receipt.blockers.contains("site-coverage-drift"))
++    }
++
++    func testStaleOrForgedDigestRefused() {
++        let receipt = Gate.check([site("estate", css: "not-a-hash")],
++                                 requiredIdentities: ["estate"])
++        XCTAssertTrue(receipt.blockers.contains("unverified-asset-digest"))
++    }
++
++    func testNoIndependentReframeBookshelfPublicationConflation() {
++        // The three editorial entrances and nine public reel destinations are
++        // separate from any number of privately admitted Reframe manuscripts.
++        XCTAssertEqual(Gate.primaryEntrances.count, 3)
++        XCTAssertEqual(Gate.reelIDs.count, 9)
++        XCTAssertFalse(Gate.reelIDs.contains("reframe-bookshelf-work"))
++    }
++}
