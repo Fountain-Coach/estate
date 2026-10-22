@@ -4,6 +4,7 @@
 **Scope:** the existing author-facing Ubuntu staging environment, not public production  
 **Source revision:** `feature/estate-shell-editorial-20261022`  
 **Shell version:** `fountain.estate.shell.v2-editorial-20261022`  
+**Git authority:** merged into `Fountain-Coach/estate` main via [PR #3](https://github.com/Fountain-Coach/estate/pull/3); the versioned renderer and stylesheet are now present on main.  
 **Active staged release:** `shared-shell-20261022-v10-editorial`  
 **Retained rollback:** `shared-shell-20261022-v9-local-links`
 
