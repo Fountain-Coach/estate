@@ -17,12 +17,14 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261022-v9-local-links",
+      "observedRelease": "shared-shell-20261022-v10-editorial",
       "editorialRoutes": {
         "estate": "/estate/",
         "teatro": "/teatro/",
         "firstReading": "/solstice/editions/first-reading/"
-      }
+      },
+      "retainedRollbackRelease": "shared-shell-20261022-v9-local-links",
+      "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022"
     },
     "estate-shell-proof": {
       "role": "isolated-October-22-shell-proof-not-canonical-entrance",
