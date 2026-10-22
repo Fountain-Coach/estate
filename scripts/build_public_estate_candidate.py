@@ -82,6 +82,15 @@ def prepare(site_root, sha_manifest, owner, canonical, source_revision,
     if set(original)&set(estate_assets):raise ValueError('source already owns common shell asset: abort')
     if not all(x.is_file() and not x.is_symlink() for x in estate_assets.values()):
         raise ValueError('versioned shared shell assets missing')
+    asset_names={
+        name:'/assets/'+Path(name).stem+'-'+sha(asset.read_bytes())[:16]+Path(name).suffix
+        for name,asset in estate_assets.items()
+    }
+    if len(set(asset_names.values()))!=3:
+        raise ValueError('shared asset fingerprint collision')
+    if any(name.lstrip('/') in original for name in asset_names.values()):
+        raise ValueError('source already owns a fingerprinted shell asset')
+    asset_urls={'/'+k:v for k,v in asset_names.items()}
     output.mkdir(parents=True)
     source_receipts={}
     try:
@@ -90,13 +99,13 @@ def prepare(site_root, sha_manifest, owner, canonical, source_revision,
             target=output/rel
             target.parent.mkdir(parents=True,exist_ok=True)
             if source.suffix.lower()=='.html':
-                projected,info=project_public(source.read_text(encoding='utf8'),owner,canonical)
+                projected,info=project_public(source.read_text(encoding='utf8'),owner,canonical,asset_urls=asset_urls)
                 target.write_text(projected,encoding='utf8')
                 source_receipts[rel]=info
             else:
                 shutil.copy2(source,target)
         for rel,source in estate_assets.items():
-            target=output/rel
+            target=output/asset_names[rel].lstrip('/')
             target.parent.mkdir(parents=True,exist_ok=True)
             shutil.copy2(source,target)
         results={p.relative_to(output).as_posix():sha(p.read_bytes())
@@ -109,8 +118,9 @@ def prepare(site_root, sha_manifest, owner, canonical, source_revision,
             'sourceFileCount':len(original),'projectedHTMLCount':len(source_receipts),
             'sourceInventorySHA256':sha(Path(sha_manifest).read_bytes()),
             'shellVersion':VERSION,
-            'sharedCSSSHA256':results['assets/estate-shell.css'],
-            'sharedLogoSHA256':results['assets/estate-shell-logo.png'],
+            'sharedCSSSHA256':results[asset_names['assets/estate-shell.css'].lstrip('/')],
+            'sharedLogoSHA256':results[asset_names['assets/estate-shell-logo.png'].lstrip('/')],
+            'sharedAssetURLs':asset_urls,
             'retainedAuthoredWorkSHA256':{p:r['sourceWorkSHA256'] for p,r in source_receipts.items()},
             'candidateFilesSHA256':results,
             'rollbackRelease':None,
