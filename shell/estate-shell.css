@@ -37,3 +37,34 @@ footer.estate-footer.fc-estate-shell .fc-footer-grid {display:grid!important;gri
  footer.estate-footer.fc-estate-shell {padding:22px 16px!important}
  footer.estate-footer.fc-estate-shell .fc-footer-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:19px 14px!important}
 }
+
+/* V1 acceptance correction: every reel item has fixed icon geometry.
+   Text labels remain accessible on each anchor rather than changing width. */
+header.fc-estate-shell .fc-reel-link {
+  width:44px!important;min-width:44px!important;max-width:44px!important;
+  font-weight:400!important;letter-spacing:normal!important;
+}
+header.fc-estate-shell .fc-reel-link span {
+  position:absolute!important;width:1px!important;height:1px!important;
+  padding:0!important;margin:-1px!important;overflow:hidden!important;
+  clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important;
+}
+footer.estate-footer.fc-estate-shell .fc-footer-grid h2 {
+  font:600 10px/1.4 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif!important;
+  margin:0 0 7px!important;color:#b6c6b5!important;
+}
+footer.estate-footer.fc-estate-shell .fc-footer-grid p {
+  font:400 12px/1.7 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif!important;
+  margin:0!important;color:#d9d8cf!important;
+}
+footer.estate-footer.fc-estate-shell .fc-footer-grid a {
+  color:inherit!important;text-decoration:underline!important;
+}
+footer.estate-footer.fc-estate-shell {min-height:116px!important}
+@media(max-width:900px) and (min-width:761px) {
+ footer.estate-footer.fc-estate-shell {min-height:136px!important}
+}
+@media(max-width:760px) {
+ header.fc-estate-shell .fc-reel-link {width:38px!important;min-width:38px!important;max-width:38px!important}
+ footer.estate-footer.fc-estate-shell {min-height:218px!important}
+}
