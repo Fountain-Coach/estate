@@ -65,7 +65,7 @@ def fragment(d,ident,logo):
        'alt="Fountain Coach" src="'+h(logo,quote=True)+'"/>'+\
        '<span class="fc-publisher-name">Fountain Coach<small>Publication estate</small></span></a>'+\
        '<span class="fc-site-identity">'+h(ident.upper())+'</span></div>'+\
-       '<nav class="estate-nav site-nav fc-shell-reel" id="site-nav" data-site-nav="" data-reel-contract="'+REEL+\
+       '<nav class="estate-nav fc-shell-reel" data-reel-contract="'+REEL+\
        '" aria-label="Fountain Coach publication estate">'+''.join(links)+'</nav></header>'
     legal=' · '.join('<a href="'+h(url,quote=True)+'">'+h(label)+'</a>' for label,url in LEGAL)
     footer='<footer class="estate-footer fc-estate-shell" id="footer" role="contentinfo" '+\
@@ -90,9 +90,14 @@ def project(source,identity,d,logo="/assets/estate-shell-logo.png"):
     if old_header:old_header.replace_with(BeautifulSoup(header,"html.parser").header)
     else:soup.body.insert(0,BeautifulSoup(header,"html.parser").header)
     old_footer=soup.select_one("footer.footer#footer")
-    if old_footer:old_footer.replace_with(BeautifulSoup(footer,"html.parser").footer)
-    else:soup.body.append(BeautifulSoup(footer,"html.parser").footer)
+    # Preserve the work as the single main. Place the shared legal footer as
+    # a real sibling after it; older portals nested their original footers
+    # inside main, which inherited domain-specific body CSS and semantics.
+    if old_footer:old_footer.decompose()
+    soup.body.append(BeautifulSoup(footer,"html.parser").footer)
     css=soup.new_tag("link",rel="stylesheet",href="/assets/estate-shell.css")
+    behavior=soup.new_tag("script",src="/assets/estate-shell-state.js",defer="")
+    soup.head.append(behavior)
     soup.head.append(css)
     robots=soup.new_tag("meta");robots["name"]="robots";robots["content"]="noindex,nofollow"
     soup.head.append(robots)
