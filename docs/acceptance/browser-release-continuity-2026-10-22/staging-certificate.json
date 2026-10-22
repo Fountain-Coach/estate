@@ -1,0 +1,28 @@
+{
+  "schema": "fountain.estate.browser-release-continuity.stage-certificate.v1",
+  "status": "STAGE_ONLY_VERIFIED",
+  "publicPromotionAuthorized": false,
+  "productionEstatePublisherReceipt": null,
+  "sourceHost": "author LAN Mac mini",
+  "sourceOrigin": "http://192.168.8.50:8201",
+  "activeReleaseAfterRollback": "2e3c3b38e0c5ef5bce5c0b996451985372c8b068d34533828fd03eff0929c9c8",
+  "simulatedPromotedRelease": "1e87dbe2bc7a127daf7ea52c479cc313f9fefeb2b7c85ef3b40ed3a2524bd602",
+  "transitionSteps": [
+    "A fresh anonymous session",
+    "Retained A tab detects B without reload",
+    "New isolated session starts B",
+    "Deliberate, ordinary navigation to B",
+    "Back navigation never claims old A current",
+    "Disconnected authority refuses freshness"
+  ],
+  "browserWitnessSHA256": "eac381be79b36f404283e3fbe0621127ac52aabaad8c8076872bb54f6ac3f2de",
+  "staleScreenshotSHA256": "332df595eece4bad48c1d88492bcf44ba768c378670cd07e58fe077a93931478",
+  "originHTMLSHA256": "e19d0fc0f22109b1e1276a37a50868b1e02c366265fd861d1a35c59db99aeb36",
+  "continuityAssetSHA256": "ffa512c91878d88f22cb57c8836564d938ff2e2b6033001974f755c0f3208b62",
+  "noStoreDocumentVerified": true,
+  "noStoreAuthorityVerified": true,
+  "immutableReleaseAssetsVerified": true,
+  "rollbackVerified": true,
+  "nativeIPadSafariAccepted": false,
+  "fullPublicDomainAcceptance": false
+}

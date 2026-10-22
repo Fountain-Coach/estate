@@ -1,0 +1,39 @@
+{
+  "scenario": "estate.browser-release-continuity",
+  "browser": "isolated Mac Chromium profile",
+  "notNativeIPad": true,
+  "publicPublished": false,
+  "steps": [
+    {
+      "name": "A fresh anonymous session",
+      "state": "fresh",
+      "release": "2e3c3b38e0c5ef5bce5c0b996451985372c8b068d34533828fd03eff0929c9c8"
+    },
+    {
+      "name": "Retained A tab detects B without reload",
+      "state": "stale",
+      "pageStatePreserved": true
+    },
+    {
+      "name": "New isolated session starts B",
+      "state": "fresh"
+    },
+    {
+      "name": "Deliberate, ordinary navigation to B",
+      "state": "fresh",
+      "historyPreserved": true
+    },
+    {
+      "name": "Back navigation never claims old A current",
+      "state": "fresh",
+      "serverRelease": "1e87dbe2bc7a127daf7ea52c479cc313f9fefeb2b7c85ef3b40ed3a2524bd602"
+    },
+    {
+      "name": "Disconnected authority refuses freshness",
+      "state": "unverified"
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "staleScreenSHA256": "332df595eece4bad48c1d88492bcf44ba768c378670cd07e58fe077a93931478"
+}
