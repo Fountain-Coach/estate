@@ -38,6 +38,7 @@ def build(output,manifest_path):
  shutil.copy2(css,output/"assets"/"estate-shell.css")
  shutil.copy2(logo,output/"assets"/"estate-shell-logo.png")
  shutil.copy2(root/"shell/estate-shell-state.js",output/"assets"/"estate-shell-state.js")
+ shutil.copy2(root/"shell/estate-shell-stage-nav.js",output/"assets"/"estate-shell-stage-nav.js")
  evidence={}
  for ident,(url,site_prefix) in SITES.items():
   original=get(url).decode('utf8')
@@ -94,6 +95,7 @@ def build(output,manifest_path):
   html,receipt=project(source,ident,m,logo="/assets/estate-shell-logo.png")
   page=site/"editions"/"first-reading"/"index.html" if ident=="solstice" else site/"index.html"
   page.parent.mkdir(parents=True,exist_ok=True)
+  html=html.replace("</body>",'<script defer src="/assets/estate-shell-stage-nav.js"></script></body>',1)
   page.write_text(html)
   if ident=="solstice":
    (site/"index.html").write_text('<!doctype html><meta name="robots" content="noindex">'
