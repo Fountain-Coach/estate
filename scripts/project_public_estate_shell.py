@@ -28,7 +28,7 @@ def authored_work_digest(soup):
 
 PUBLIC_IDS = ('estate','book','governance','midi2','instruments','teatro','satzfunk','pointer','solstice')
 
-def project_public(source: str, identity: str, reel: dict, logo='/assets/estate-shell-logo.png'):
+def project_public(source: str, identity: str, reel: dict, logo='/assets/estate-shell-logo.png', asset_urls=None):
     original = BeautifulSoup(source,'html.parser')
     if not original.head or not original.body:
         raise ValueError('public source must be complete HTML')
@@ -99,6 +99,23 @@ def project_public(source: str, identity: str, reel: dict, logo='/assets/estate-
         retained.attrs = {'class':['fc-owner-imprint-content']}
         details.append(retained)
         provenance.append(details)
+    # Content-addressed same-origin assets make browser-cache state explicit.
+    if asset_urls is not None:
+        expected={
+            '/assets/estate-shell.css':('link','href'),
+            '/assets/estate-shell-state.js':('script','src'),
+            '/assets/estate-shell-logo.png':('img','src'),
+        }
+        if set(asset_urls)!=set(expected):
+            raise ValueError('all three shared asset fingerprints required')
+        for original,(tag,attr) in expected.items():
+            nodes=p.select(f'{tag}[{attr}="{original}"]')
+            if len(nodes)!=1:
+                raise AssertionError('shared shell asset missing or duplicated: '+original)
+            value=asset_urls[original]
+            if not value.startswith('/assets/') or '..' in value or '?' in value or '#' in value:
+                raise ValueError('unsafe shared asset URL')
+            nodes[0][attr]=value
     # Preserve the shared four-slot schema. Public candidate text must not
     # falsely say "private preview" or assert a completed HTTPS release.
     state = p.select_one('[data-footer-slot="release-state"] p')
