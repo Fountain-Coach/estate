@@ -1,0 +1,15 @@
+# Implementation prompt — One Linotype estate shell, every owner, EstatePublisher enforced
+
+**Goal:** repair the inconsistent masthead, reel and footer captured on iPad 22 October 2026 without refactoring domain bodies or creating another CMS.
+
+Inspect the exact live HTTPS page bytes, each domain's Git authority/revision, EstatePublisher current package/tests, Fountain Press compositor/Bookshelf renderer, and the [site-template definition](../docs/architecture/linotype-cms-like-template-v1.md). Record source/live drift before making changes.
+
+**Implement one estate-owned, versioned common shell** with identical masthead/logo geometry, editorial reel and legal footer. Use [canonical-reel.v1.json](../navigation/canonical-reel.v1.json) for ordered domain identities, but make SVG paths, DOM, CSS tokens, keyboard/focus/active state and responsive geometry one shared renderer. Status is legal/footer only. Footer has four typed regions: imprint; provenance/edition; legal/privacy/accessibility/Status/credits; release state. Each domain injects only its own data slots, never a privately forked footer. Version-stamp the shell, reel and footer; support strict Content Security Policy via pinned same-origin assets. Match common chrome geometry visually regardless of domain body.
+
+**Preserve independent sources:** Fountain Press alone composes source-admitted books/Bookshelf. The authentic Satzfunk six-edition/43-video and 7VST archive stays a private audiovisual player until separate release rights; Teatro Stage is an authoring instrument; Solstice is a writer-owned Linotype reading; Governance/MIDI2/other source books remain complete. No fake anthology, empty cover, or copied media.
+
+**EstatePublisher gap closure:** source tests already check `estate-product-template-reproduction` scenario strings and mention header/footer transition report; add an actual `estate.shared-shell.cross-domain-acceptance` test path including negative fixtures and *rendered browser evidence*. Compare all root/deep routes and active link identities, DOM/visual component measurements at desktop/iPad landscape/iPad portrait/phone, keyboard/Info/Back, accessibility, credits/legal/Status and CSP, preserving each domain's player/folio. Reject version drift, extra/missing link, mismatched footer, wrong color/geometry, private-IP public link, broken anchor or archive leak. Distinguish source-level / WLAN / real public HTTPS acceptance.
+
+**Deliverables:** owner/revision inventory and diff, one shell schema+renderer+shared CSS, per-owner adapters and tests, screenshots and header/footer transition report, a reversible private WLAN staging preview, native iPad acceptance, then—only if authorized and all admission gates pass—a typed EstatePublisher production receipt plus independently observed HTTPS readbacks and rollback.
+
+**Definition of failure:** the same header/reel/footer still looks or behaves differently between Fountain Coach, Teatro and Satzfunk on an actual iPad at the same viewport. If that remains true, do not report the estate as unified. Do not deploy via raw SSH in lieu of EstatePublisher; no GitHub CI.
