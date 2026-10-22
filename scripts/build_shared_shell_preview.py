@@ -37,6 +37,7 @@ def build(output,manifest_path):
  assert css.is_file() and logo.is_file()
  shutil.copy2(css,output/"assets"/"estate-shell.css")
  shutil.copy2(logo,output/"assets"/"estate-shell-logo.png")
+ shutil.copy2(root/"shell/estate-shell-state.js",output/"assets"/"estate-shell-state.js")
  evidence={}
  for ident,(url,site_prefix) in SITES.items():
   original=get(url).decode('utf8')
