@@ -186,6 +186,19 @@ class PublicEstatePipeline(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'already exists'):
             prepare(site,sha,'governance',M,'a'*40,out,receipt,shell,routes)
 
+    def test_changed_css_changes_url_without_clearing_browser_history(self):
+        site,sha,routes,shell=self.owned_site()
+        first=prepare(site,sha,'governance',M,'a'*40,
+                      self.root/'candidate-one',self.root/'receipt-one.json',shell,routes)
+        (shell/'estate-shell.css').write_text('changed measured layout')
+        second=prepare(site,sha,'governance',M,'a'*40,
+                       self.root/'candidate-two',self.root/'receipt-two.json',shell,routes)
+        self.assertNotEqual(first['sharedAssetURLs']['/assets/estate-shell.css'],
+                            second['sharedAssetURLs']['/assets/estate-shell.css'])
+        self.assertEqual(first['sourceInventorySHA256'],second['sourceInventorySHA256'])
+        self.assertEqual(first['retainedAuthoredWorkSHA256'],second['retainedAuthoredWorkSHA256'])
+        self.assertFalse(second['publicReleased'])
+
     def test_tampered_source_refuses_without_output(self):
         site,sha,routes,shell=self.owned_site()
         (site/'index.html').write_text('tampered')
