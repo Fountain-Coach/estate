@@ -50,6 +50,21 @@ class ShellAcceptance(unittest.TestCase):
         src=__import__("bs4").BeautifulSoup(SOURCE,"html.parser")
         out=__import__("bs4").BeautifulSoup(self.entry.read_text(),"html.parser")
         self.assertEqual(work_digest(src),work_digest(out))
+    def test_shared_chrome_avoids_legacy_site_css_collision(self):
+        from bs4 import BeautifulSoup
+        page=BeautifulSoup(self.entry.read_text(),"html.parser")
+        reel=page.select_one("nav.fc-shell-reel")
+        footer=page.select_one("footer.estate-footer.fc-estate-shell")
+        self.assertIsNotNone(reel)
+        self.assertNotIn("estate-nav", reel.get("class",[]))
+        self.assertIsNotNone(footer)
+        # A top-level footer is a native contentinfo landmark. Explicit
+        # role="contentinfo" would also match old estate-core.css !important.
+        self.assertNotIn("role",footer.attrs)
+        css=(ROOT/"shell/estate-shell.css").read_text()
+        self.assertNotIn("!important",css)
+        self.assertIn("fc-legal-links",css)
+
     def test_one_version(self):
         self.assertIn("shellVersion",project(SOURCE,"estate",M)[1])
     def test_two_publication_lanes(self):
