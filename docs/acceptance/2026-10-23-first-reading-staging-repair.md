@@ -36,3 +36,37 @@ independently verified.
 
 Deployment and live readback are recorded below after the existing typed
 UbuntuEstateShellWLANStage delivery. No public publishing is authorized here.
+
+## Active stage and independent readback
+
+EstatePublisher activated shared-shell-20261023-v12-first-reading-ad04d80-r2
+using source revision ad04d80e750115fd292d0f5501965456e4532dd2.
+The prior immutable v11 release remains retained. All 443 candidate files
+were independently SHA-256 verified on Ubuntu before activation; nine typed
+HTTP witnesses passed. The current symlink and existing user service were
+independently observed active after delivery.
+
+[Terminal receipt](2026-10-23-first-reading-stage-terminal-receipt.json).
+[All 92 live HTTP/hash witnesses](evidence/2026-10-23-first-reading/live-http-witness.json).
+[Native macOS WebKit witness](evidence/2026-10-23-first-reading/native-webkit-live-witness.json)
+and [live screenshot](evidence/2026-10-23-first-reading/native-webkit-live-landscape.png).
+Native WebKit proves a working spread, Next and Contents with no visibly broken
+images. This is macOS WKWebView evidence, not a physical-iPad Safari claim.
+
+The public edition root remains exactly
+3faddbff97117fbe4e528ead6b714a093932d6f425806517d9c0ee8c18fb0e09.
+The staged edition and all 92 dependencies are exact public source bytes.
+No public release occurred.
+
+### Transport refusal and correction
+
+The first typed attempt refused activation because macOS generated an extra
+AppleDouble /._source-lock.json when copying from the external volume.
+Its refusal receipt is retained. The existing v11 stayed active.
+The second attempt used the same 443 approved byte hashes copied into plain
+local files without external-volume metadata and COPYFILE_DISABLE=1.
+The same native publisher then verified and activated the new immutable
+-r2 candidate; no remote helper or verification bypass was introduced.
+
+This repair establishes First Reading's staging integrity. It does not
+constitute whole-estate public release acceptance.

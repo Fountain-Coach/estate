@@ -1,0 +1,50 @@
+{
+  "activated" : true,
+  "detail" : "WLAN-only stage active; exact bytes independently verified via HTTP; no public publication",
+  "previousReleaseID" : "shared-shell-20261022-v11-eight-owner-47e7ac71",
+  "publicHost" : "benedikt-Macmini.local",
+  "recordedAt" : 814413833.117441,
+  "releaseID" : "shared-shell-20261023-v12-first-reading-ad04d80-r2",
+  "sourceInventorySHA256" : "ced5706f7723f8a5b1fc075b434b916fe5035a55e7efd406400909b361156862",
+  "sourceRevision" : "ad04d80e750115fd292d0f5501965456e4532dd2",
+  "stagingIdentity" : "UbuntuEstateShellWLANStage",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/estate\/index.html",
+      "sha256" : "6d72db9995439d3632e728b650e53751af8b2dd3e13d4049651450bf976e4146"
+    },
+    {
+      "path" : "\/solstice\/index.html",
+      "sha256" : "fe99e579e905cd88c61d702ee121c527f6dc776a8504d0924dc3aea140a0b559"
+    },
+    {
+      "path" : "\/solstice\/editions\/first-reading\/index.html",
+      "sha256" : "3faddbff97117fbe4e528ead6b714a093932d6f425806517d9c0ee8c18fb0e09"
+    },
+    {
+      "path" : "\/solstice\/assets\/book.css",
+      "sha256" : "a2b335a3b2b3ecf3a34dc84bf7c309409b9acf073b142970c15ad2c4fcff661d"
+    },
+    {
+      "path" : "\/solstice\/assets\/book.js",
+      "sha256" : "205d8c1fb36a81df21c0ff4895a5c545f8ce9ba623b9f56528d22f0d9a1c7b39"
+    },
+    {
+      "path" : "\/solstice\/assets\/linotype-engine.js",
+      "sha256" : "09cb3a9d94668abbf26d4cf4639be15999e153b364f2a8fa39337f28e8c34d6f"
+    },
+    {
+      "path" : "\/solstice\/assets\/reading-layout-policy.js",
+      "sha256" : "f098b7faf814fc7faa027bc5a5b9a24969dc181064beebbe7a4597ba335f001b"
+    },
+    {
+      "path" : "\/solstice\/editions\/first-reading\/proof\/index.html",
+      "sha256" : "e22848c77b7f5ea39a696e4d1f345e440470cec30d63d54e718abc45acfd770f"
+    },
+    {
+      "path" : "\/solstice\/editions\/first-reading\/entries\/2025-12-22-anweisung-an-den-schmerz\/index.html",
+      "sha256" : "be3a869c31ece1f68eabea5b734e06b30df192b485b094f55b9d2050fc7a57c3"
+    }
+  ]
+}

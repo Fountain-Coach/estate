@@ -1,0 +1,15 @@
+{
+  "activated" : false,
+  "detail" : "Publication refused: remote staging inventory differs from approved static files",
+  "previousReleaseID" : "shared-shell-20261022-v11-eight-owner-47e7ac71",
+  "publicHost" : "benedikt-Macmini.local",
+  "recordedAt" : 814413714.960735,
+  "releaseID" : "shared-shell-20261023-v12-first-reading-ad04d80",
+  "sourceInventorySHA256" : "ced5706f7723f8a5b1fc075b434b916fe5035a55e7efd406400909b361156862",
+  "sourceRevision" : "ad04d80e750115fd292d0f5501965456e4532dd2",
+  "stagingIdentity" : "UbuntuEstateShellWLANStage",
+  "state" : "stagingFailed",
+  "verifiedPublicFiles" : [
+
+  ]
+}

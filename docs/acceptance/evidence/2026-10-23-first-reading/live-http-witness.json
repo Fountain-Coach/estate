@@ -1,0 +1,468 @@
+{
+  "filesVerified": 92,
+  "allMatched": true,
+  "publicEditionSHA256": "3faddbff97117fbe4e528ead6b714a093932d6f425806517d9c0ee8c18fb0e09",
+  "publicEditionUnchanged": true,
+  "files": [
+    {
+      "path": "solstice/editions/first-reading/index.html",
+      "http": 200,
+      "sha256": "3faddbff97117fbe4e528ead6b714a093932d6f425806517d9c0ee8c18fb0e09"
+    },
+    {
+      "path": "solstice/editions/first-reading/proof/index.html",
+      "http": 200,
+      "sha256": "e22848c77b7f5ea39a696e4d1f345e440470cec30d63d54e718abc45acfd770f"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2025-12-22-anweisung-an-den-schmerz/index.html",
+      "http": 200,
+      "sha256": "be3a869c31ece1f68eabea5b734e06b30df192b485b094f55b9d2050fc7a57c3"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2025-12-23-integration/index.html",
+      "http": 200,
+      "sha256": "2b96721a9698fc63d375595df0c07d61ddcecca22898171368cdbbc75b66e804"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2025-12-28-renaturalization/index.html",
+      "http": 200,
+      "sha256": "7c01ddc9a76c98a1010f5d711cb52d17840e879759b65945a5d1f7504bc82049"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-01-08-vier-aussagen-zum-atherleib/index.html",
+      "http": 200,
+      "sha256": "b542712ced46831d8733ea3a82e481a4b08f5c07ca58d25019ee1f562d5fc44b"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-01-22-three-floors/index.html",
+      "http": 200,
+      "sha256": "90e59b5d5d4bf0cb156565c3380ca5219478b744ba3524e55d5790f715d6319f"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-01-23-i-keep-moving/index.html",
+      "http": 200,
+      "sha256": "655f8d77c0d49460631f5357789447c35ab7e0f31e6616fbbe66f6ad7b16f72e"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-02-04-two-rooms/index.html",
+      "http": 200,
+      "sha256": "067990a231094c7310bf130c3aeb5a3db9223e1cac2d19a9f4757ed8aa8d3e51"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-02-14-on-a-future-not-yet-drafted/index.html",
+      "http": 200,
+      "sha256": "299248822d4d7fdc546e84a4e5290fa6fc70bb772bb8fd3e0cf8968b41fb2166"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-02-28-no-optimize/index.html",
+      "http": 200,
+      "sha256": "0ef1af3ef894afad0f33580dc579a46f55ecf9c48f54d9b8ac250e096adc662f"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-03-16-the-teatre-of-the-mind/index.html",
+      "http": 200,
+      "sha256": "1109c8157fb86fa0f7e7dc64dc6ee944ac63de139e1d6c5dec66dfac45838728"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-03-20-my-place-in-space/index.html",
+      "http": 200,
+      "sha256": "8ba05ddf1765fff918e6cb94214280a101236317d602dd8155b3dcdfbaa22e1b"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-03-21-muttersprache/index.html",
+      "http": 200,
+      "sha256": "3b4d8ed9d888e319eb8f7956840e241c77daf40f633393f9e0303d0221e10394"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-04-22-the-writing-hand/index.html",
+      "http": 200,
+      "sha256": "d1f0c17fc53f9a9456e631b57fe59d109d3c247c0866432c1de59d35628b8592"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-04-23-who-is-bee/index.html",
+      "http": 200,
+      "sha256": "885ab0c5e58985e39255298234410acc909072d117386321b9da38b3313cbd5a"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-04-30-about-writing-letters/index.html",
+      "http": 200,
+      "sha256": "c5b337d4f766e7a42655e46f3c1facec7e529dab22722c30cc59b3fac6939fcf"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-05-01-a-score-before-production/index.html",
+      "http": 200,
+      "sha256": "a3c5c798d7517b62cb6dd8e9446b5ef9589c55ca0e9c3da702dc6f692fb695aa"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-05-25-seitenlicht/index.html",
+      "http": 200,
+      "sha256": "257eabc504502d95af8788ec3d9f58d3aa9e0d5019bee3806a2c4c4346eb8b30"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-05-30-the-sheet/index.html",
+      "http": 200,
+      "sha256": "ed97794568b808a97424fad9a22030368ca6c9810922c48cb073da78e1ce6fcd"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-06-06-the-sentimental-machine/index.html",
+      "http": 200,
+      "sha256": "47cabfcc0b35a2f960668533853fefcf0727f98b4e1a6e3e386ef1670205164d"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-06-15-fck-frg-we-all-had-parents/index.html",
+      "http": 200,
+      "sha256": "b0c5e36f0cf88f4f6f6b0964c3a8a4e349b0577fecf64d579af813aeca2886ee"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-06-24-prufe-dein-gewicht/index.html",
+      "http": 200,
+      "sha256": "adbc01630aa44a580e31f102c6c0a1ce4cba2e2674b7c22d9e156f7efc2de20b"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-07-21-everything-else-is-illustration/index.html",
+      "http": 200,
+      "sha256": "f6dfdb0e138bce28ef26b3702c5056b4c981f6b96a66566a53f3ac970b24e0fe"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-07-28-bees-journal/index.html",
+      "http": 200,
+      "sha256": "a8add384fc608c4d4157bd9d34277e9fb17350cd4b01155270879e0df8fd183d"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-07-31-n-journal/index.html",
+      "http": 200,
+      "sha256": "19e9e5ef4b747fc75600fbc1ad1fc54060a8e51765689a183feca86248317c7b"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-08-17-the-scissors/index.html",
+      "http": 200,
+      "sha256": "b3dbc3d76cfd1d75b1ac096856c28c408e2b39ecb5b4415e9e5ed1264198d452"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-08-19-six-panels/index.html",
+      "http": 200,
+      "sha256": "0c0f0677763ece4f664bdcef4a8ef22183cf80dd40b675d092721f0dfdc1b2fd"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-08-28-the-old-woman/index.html",
+      "http": 200,
+      "sha256": "66009c9b52566a358eb7b74fde594c964745e9f41aa19f85536b49078b3c11b2"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-09-04-the-strawberry/index.html",
+      "http": 200,
+      "sha256": "42ca0c6ccc5dd4f2593d4a4730f3eda64c0da2d1d4481be61352dce4bc9ee610"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-09-06-leselust/index.html",
+      "http": 200,
+      "sha256": "f2ae99f90c3513ab4ed99bd0667f235392598af54cc0c0b4e2e22f5854534f54"
+    },
+    {
+      "path": "solstice/editions/first-reading/entries/2026-09-18-object-crossing-voice/index.html",
+      "http": 200,
+      "sha256": "bcedda7e691e49c930ea79205e46b345a015ddf79d48b2582e6bcea455498eac"
+    },
+    {
+      "path": "solstice/assets/book.css",
+      "http": 200,
+      "sha256": "a2b335a3b2b3ecf3a34dc84bf7c309409b9acf073b142970c15ad2c4fcff661d"
+    },
+    {
+      "path": "solstice/assets/reading-layout-policy.js",
+      "http": 200,
+      "sha256": "f098b7faf814fc7faa027bc5a5b9a24969dc181064beebbe7a4597ba335f001b"
+    },
+    {
+      "path": "solstice/assets/linotype-engine.js",
+      "http": 200,
+      "sha256": "09cb3a9d94668abbf26d4cf4639be15999e153b364f2a8fa39337f28e8c34d6f"
+    },
+    {
+      "path": "solstice/assets/book.js",
+      "http": 200,
+      "sha256": "205d8c1fb36a81df21c0ff4895a5c545f8ce9ba623b9f56528d22f0d9a1c7b39"
+    },
+    {
+      "path": "solstice/assets/edition/post-2025-12-22-b0e6cf8252aca0da.jpg",
+      "http": 200,
+      "sha256": "b0e6cf8252aca0da83a9b0bfbdbb3f57b88c826e8b85ac5a89f43b23bad98876"
+    },
+    {
+      "path": "solstice/assets/edition/post-2025-12-23-f0b9144a1df6ae0b.jpg",
+      "http": 200,
+      "sha256": "f0b9144a1df6ae0ba75145a89376441a21ce7f2d4aab7f1df8fd8dbc1b299f18"
+    },
+    {
+      "path": "solstice/assets/edition/post-2025-12-28-c9d7b304d2577e3c.jpg",
+      "http": 200,
+      "sha256": "c9d7b304d2577e3cd9c84c554e05aff7ea9dd59e3693e76858f748ed1309f8ed"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-01-08-7e60c7273855d415.jpg",
+      "http": 200,
+      "sha256": "7e60c7273855d41589a65200a7f6d75c596b9a920fa8a21b390acd092d7ca2b0"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-01-22-5df50180208e95ac.jpg",
+      "http": 200,
+      "sha256": "5df50180208e95ac2d2537120f2bb7c22fa3fa8af971867a9d7ac4de8ab398c3"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-01-23-1c3c1d6806e93f7b.jpg",
+      "http": 200,
+      "sha256": "1c3c1d6806e93f7be93de86315e81e31ffd1a2641ee1fae4c02d00fc00602790"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-02-04-d896e49fab8b9de6.jpg",
+      "http": 200,
+      "sha256": "d896e49fab8b9de64fe6d216ec3749127e52909b29a260fae285c6755e0966f7"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-02-14-a25168e8eaa4ea6f.jpg",
+      "http": 200,
+      "sha256": "a25168e8eaa4ea6f5b88454c3877662473c08c584db9b3bc3485c6ce2dc672e1"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-02-14-176bf23235b226f3.jpg",
+      "http": 200,
+      "sha256": "176bf23235b226f3f56175c3b5a96bcdebb5791d8a5459bcc6e79e1f69239600"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-02-14-4c119414e04b1a21.jpg",
+      "http": 200,
+      "sha256": "4c119414e04b1a214a6a2554c62962bd0f251c1eacc44fe30c24cb73aed9ae5f"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-02-28-90f23f8004961575.jpg",
+      "http": 200,
+      "sha256": "90f23f8004961575177329229889eb0ca522166cc73ffb7ded5c3758bd8d9d7c"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-03-16-f8848e33f3017105.jpg",
+      "http": 200,
+      "sha256": "f8848e33f3017105df7f9f008bddd0177f4a684e7252f6101960d7db48d3dd2c"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-03-16-c3f30632d4c61a08.jpg",
+      "http": 200,
+      "sha256": "c3f30632d4c61a088786b5c959deedbb5a9e5561c76211152e51d65b5017b5c4"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-03-20-6a08a376a9a616ad.jpg",
+      "http": 200,
+      "sha256": "6a08a376a9a616add8697ad5f3eff26367563f0b9b9ccc275ba37960d35732a8"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-03-21-dd4b3443194bbfe0.jpg",
+      "http": 200,
+      "sha256": "dd4b3443194bbfe0614fa8573cf404560d08d1f9a438311f6a70464a2d239bb9"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-04-22-a0427fee962c65c8.jpg",
+      "http": 200,
+      "sha256": "a0427fee962c65c8cde805ebb71a4a1685e7e34c9c374df2ed64e1bc82e8b14e"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-04-23-3115141ef9dee17f.jpg",
+      "http": 200,
+      "sha256": "3115141ef9dee17f7c6426c6b98968dd20a9b2daebe7d39f09e810574ed2c1e5"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-04-30-0e22d7426fe14b6a.jpg",
+      "http": 200,
+      "sha256": "0e22d7426fe14b6aecdb80749e8ca688df1a0ded1f5dd583dcc8a5f52069bda2"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-05-01-ca5df313851efc64.jpg",
+      "http": 200,
+      "sha256": "ca5df313851efc6420fbf9f1b58c4d31fa0bc6d175c600873838faf7cd794f2f"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-05-01-18375574f4b885e9.jpg",
+      "http": 200,
+      "sha256": "18375574f4b885e928262bb3b615cb82481dfc39abcbee529d68f1dba7aec0c1"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-05-25-ed229a3996db0d32.jpg",
+      "http": 200,
+      "sha256": "ed229a3996db0d3236b040b1888bbe061fed4839f7769d1c83fcea6162da20a1"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-05-30-c32610cb27096d79.jpg",
+      "http": 200,
+      "sha256": "c32610cb27096d7946200fa64dcb3173d7788aa5145589c5dfde19cab45a452d"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-05-30-1f467f3d2b353f56.jpg",
+      "http": 200,
+      "sha256": "1f467f3d2b353f56024cde2c9f2b9b6c1b0b08c8e266ed42a2379c49b72b163f"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-05-30-72608939958eb3b9.jpg",
+      "http": 200,
+      "sha256": "72608939958eb3b9ef3f08b6bdc21b542a5e56c086749305175688a045caf475"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-05-30-2abbf0eeeb401f07.jpg",
+      "http": 200,
+      "sha256": "2abbf0eeeb401f07b777d04f3be8a3fed2db9e645e00eb3e9f37879e771c2e67"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-05-30-d639865b8b728df8.jpg",
+      "http": 200,
+      "sha256": "d639865b8b728df806f7fbf3cd87f4e5f5a620b392c354d63efff231e926977e"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-06-06-398a7827c5faf579.jpg",
+      "http": 200,
+      "sha256": "398a7827c5faf579ef2452a157056b8e6520054361e17b4246d00a815d0ee453"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-06-06-254e011042fb679e.jpg",
+      "http": 200,
+      "sha256": "254e011042fb679efa713262ac56dc190904a4dfecfdd31095bc7a00f475d4cd"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-06-15-fa70b1744d6af826.jpg",
+      "http": 200,
+      "sha256": "fa70b1744d6af8269f69ae13c20d4f6263eed8b15f90a01317d1dbc15a267e2c"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-06-15-b2f077572eff8793.jpg",
+      "http": 200,
+      "sha256": "b2f077572eff8793dc8bbaf40485a4deb017faed90712bec7ef0af92350c205d"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-06-24-8f2981e0b674fe01.jpg",
+      "http": 200,
+      "sha256": "8f2981e0b674fe01c572cd53f4847e5ddad8eea37becc8f0d3187eb6b8d4eaee"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-06-24-f614868939456e96.jpg",
+      "http": 200,
+      "sha256": "f614868939456e96dec268c992951b3566fc8fa8d56e07dd73e3d41e263c88de"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-07-21-728a816389b59438.jpg",
+      "http": 200,
+      "sha256": "728a816389b59438647f6f16807059370250a0a134dece6eaaaf4d6676fc8f72"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-07-28-cdd8e5b1c9628c67.jpg",
+      "http": 200,
+      "sha256": "cdd8e5b1c9628c67a0a1c40e3dd5bd8d4069b9ff778d09268dfbfd7bc6299e90"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-07-31-b345eeebe3c904df.jpg",
+      "http": 200,
+      "sha256": "b345eeebe3c904df1968068b774144a9569e07ceef647718f1ffe420c7a161a4"
+    },
+    {
+      "path": "solstice/assets/edition/teatro-score-2026-08-17.jpg",
+      "http": 200,
+      "sha256": "153bcd73d037128c791b194d4a5f0f1b39e0979478a25ecc6bf7f7f92eced6fb"
+    },
+    {
+      "path": "solstice/assets/edition/teatro-score-2026-08-19.jpg",
+      "http": 200,
+      "sha256": "11772b92061b57289540732e5432d10db6ad6e1f7e3374ab84c3b4b952c4b272"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-08-28-330a889f93b0b76d.jpg",
+      "http": 200,
+      "sha256": "330a889f93b0b76d55269267f522543955297332098e473c7d7c13d6ed57e738"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-09-04-aeddf555dd785ebf.jpg",
+      "http": 200,
+      "sha256": "aeddf555dd785ebfbf9641b7c4d3784cc16fc1a3386674043000e4dca2cc498c"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-09-06-0e595f232b2d6da1.jpg",
+      "http": 200,
+      "sha256": "0e595f232b2d6da16ea71f8fa84812afd404c983e5bc5df40325ed1448daf591"
+    },
+    {
+      "path": "solstice/assets/edition/post-2026-09-18-c75d27c000b328a1.jpg",
+      "http": 200,
+      "sha256": "c75d27c000b328a1f07ab485c76c1bae0bfe775feb640122479593d5d228a264"
+    },
+    {
+      "path": "solstice/editions/first-reading/proof/archive/initial-coretext/index.html",
+      "http": 200,
+      "sha256": "4017bd20daec17d0b8bc1d4e44e4deba85e4438cfad6133c00236a333475b425"
+    },
+    {
+      "path": "solstice/editions/first-reading/proof/first-reading-a4.pdf",
+      "http": 200,
+      "sha256": "b04a1a1204041b81da672f247d5953a407a1c43c184be5b78321daab79b1ef01"
+    },
+    {
+      "path": "solstice/editions/first-reading/proof/first-reading-letter.pdf",
+      "http": 200,
+      "sha256": "f6bc68058d778d82f19eb5781b1627a230eea2c160491c68c508b4b293d7862b"
+    },
+    {
+      "path": "solstice/assets/press-proof.css",
+      "http": 200,
+      "sha256": "adb47ef55d0c7c0119bd553f7d827d2d28b7b14b05ff0fa21cb97782c1d97081"
+    },
+    {
+      "path": "solstice/assets/press-accepted.css",
+      "http": 200,
+      "sha256": "3a2d880ff27ef538a286a611d5f9540163341995ab4cd901d5f61f71cc24c4d5"
+    },
+    {
+      "path": "solstice/assets/press-accepted.js",
+      "http": 200,
+      "sha256": "530336b8248654af2d51ea6ea1aa79602a9d55ddbf936be6816474d0984afcea"
+    },
+    {
+      "path": "solstice/assets/solstice.css",
+      "http": 200,
+      "sha256": "3feaeb150840d84e78f25047f8edd2a58380d31f946f3074825decec14b66f59"
+    },
+    {
+      "path": "solstice/assets/reading.css",
+      "http": 200,
+      "sha256": "ae43f7098b1c5c06fde5696e9f919d0f5648dc1d157fc338b29b51de7e65d466"
+    },
+    {
+      "path": "solstice/assets/estate-core.css",
+      "http": 200,
+      "sha256": "31baf2864046acf1885c49ccff40869d0dfbc9da63a2af674aecf218b8f8dbfe"
+    },
+    {
+      "path": "solstice/assets/estate-core.js",
+      "http": 200,
+      "sha256": "d3c54081b69c0a3b62483100015dabc2bf69467d2903742909019b88a77cd869"
+    },
+    {
+      "path": "solstice/assets/book-entry-bridge.js",
+      "http": 200,
+      "sha256": "08abf931064ce292b667f4d9d8aff777619c2df8835eb50233e1ffe8ce9c170d"
+    },
+    {
+      "path": "solstice/assets/fountain-coach-logo-transparent.png",
+      "http": 200,
+      "sha256": "8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
+    },
+    {
+      "path": "solstice/editions/first-reading/proof/archive/initial-coretext/first-reading-a4.pdf",
+      "http": 200,
+      "sha256": "a20dd45ae92006f93ef233f7c964eed4c629d555cb2a1696d241ea9493e4af74"
+    },
+    {
+      "path": "solstice/editions/first-reading/proof/archive/initial-coretext/first-reading-letter.pdf",
+      "http": 200,
+      "sha256": "7dd8e082007056489537bb8a94cc01d3838b22a287cf63829c523d0bbc29787d"
+    },
+    {
+      "path": "solstice/assets/press-proof.js",
+      "http": 200,
+      "sha256": "a2bf6661ada408892cd648f87529ad2ee7bf9c05b17704965d15c956dffcd337"
+    }
+  ]
+}

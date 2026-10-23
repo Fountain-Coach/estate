@@ -1,0 +1,86 @@
+[
+  {
+    "engine": "chromium",
+    "label": "live",
+    "view": "landscape",
+    "before": "1 / 188",
+    "after": "2\u20133 / 188",
+    "turns": true,
+    "contentsOpens": true,
+    "metrics": {
+      "ready": "true",
+      "mode": "spread",
+      "pageCount": "188",
+      "images": 41,
+      "unloadedHiddenSourceImages": [
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-02-14-176bf23235b226f3.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-02-14-4c119414e04b1a21.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-03-16-c3f30632d4c61a08.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-01-18375574f4b885e9.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-30-1f467f3d2b353f56.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-30-72608939958eb3b9.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-30-2abbf0eeeb401f07.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-30-d639865b8b728df8.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-06-06-254e011042fb679e.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-06-15-b2f077572eff8793.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-06-24-f614868939456e96.jpg"
+      ],
+      "viewport": {
+        "x": 8,
+        "y": 72,
+        "width": 1164,
+        "height": 663
+      },
+      "toolbar": {
+        "x": 0,
+        "y": 0,
+        "width": 1180,
+        "height": 62
+      }
+    },
+    "errors": [],
+    "failedResources": []
+  },
+  {
+    "engine": "chromium",
+    "label": "live",
+    "view": "portrait",
+    "before": "1 / 173",
+    "after": "2 / 173",
+    "turns": true,
+    "contentsOpens": true,
+    "metrics": {
+      "ready": "true",
+      "mode": "single",
+      "pageCount": "173",
+      "images": 41,
+      "unloadedHiddenSourceImages": [
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-02-14-176bf23235b226f3.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-02-14-4c119414e04b1a21.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-03-16-c3f30632d4c61a08.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-01-18375574f4b885e9.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-30-1f467f3d2b353f56.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-30-72608939958eb3b9.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-30-2abbf0eeeb401f07.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-05-30-d639865b8b728df8.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-06-06-254e011042fb679e.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-06-15-b2f077572eff8793.jpg",
+        "http://192.168.8.50:8200/solstice/assets/edition/post-2026-06-24-f614868939456e96.jpg"
+      ],
+      "viewport": {
+        "x": 8,
+        "y": 72,
+        "width": 752,
+        "height": 867
+      },
+      "toolbar": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 62
+      }
+    },
+    "errors": [],
+    "failedResources": []
+  }
+]

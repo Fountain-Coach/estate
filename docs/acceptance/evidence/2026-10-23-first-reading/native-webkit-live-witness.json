@@ -1,0 +1,11 @@
+{
+  "engine": "native macOS WKWebView",
+  "ready": "true",
+  "mode": "spread",
+  "pages": "182",
+  "before": "2\u20133 / 182",
+  "after": "4\u20135 / 182",
+  "turns": true,
+  "contentsOpens": true,
+  "visibleBrokenImages": []
+}
