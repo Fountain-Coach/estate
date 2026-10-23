@@ -3,6 +3,7 @@
 import argparse,hashlib,json
 from pathlib import Path
 from bs4 import BeautifulSoup
+from complete_first_reading_stage import verify
 
 IDS=('estate','book','governance','midi2','instruments','teatro','satzfunk','pointer','solstice')
 OWNERS=tuple(i for i in IDS if i!='satzfunk')
@@ -26,8 +27,10 @@ def validate(root,receipt,reel):
     actual={p.relative_to(root).as_posix():digest(p.read_bytes())
         for p in root.rglob('*') if p.is_file() and not p.name.startswith('._') and p.name!='.DS_Store'}
     assert actual==expected, 'candidate file inventory differs from checked source'
-    html=[p for p in root.rglob('*.html') if not p.name.startswith('._')]
-    assert len(html)==174,(len(html),'missing expected 174 HTML projections')
+    reader='solstice/editions/first-reading/index.html'
+    verified_reading_files=verify(root)
+    html=[root/rel for rel in lock['stagedPageReceipts'] if rel!=reader]
+    assert len(html)==173,(len(html),'missing expected 173 shell projections')
     deep=[p for p in (root/'governance'/'chapters').rglob('index.html') if not p.name.startswith('._')]
     assert len(deep)==160,(len(deep),'governance chapter count')
     versions=set();failures=[]; owner_counts={}
@@ -74,11 +77,11 @@ def validate(root,receipt,reel):
     assert versions=={lock['templateVersion']}
     assert set(owner_counts)==set(OWNERS)
     assert owner_counts['governance']==166
-    assert owner_counts['solstice']==2
+    assert owner_counts['solstice']==1
     assert all(owner_counts[i]==1 for i in OWNERS if i not in ('governance','solstice'))
     return {'passed':True,'scope':'WLAN-staging-structure-not-Safari-or-publication',
             'sourceRevision':receipt['sourceRevision'],
-            'htmlRoutes':len(html),'governanceChapters':len(deep),
+            'htmlRoutes':len(html),'verifiedReadingFiles':verified_reading_files,'governanceChapters':len(deep),
             'ownerCounts':owner_counts,'verifiedStaticFiles':len(expected),
             'shellVersion':next(iter(versions)),'privateArchiveCopied':False,
             'publishedPublicly':False}

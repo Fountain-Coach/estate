@@ -13,6 +13,7 @@ from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 from project_public_estate_shell import project_public
 from estate_shell import manifest, VERSION
+from complete_first_reading_stage import complete
 
 ROOTS={
  'estate':'https://fountain.coach/',
@@ -136,6 +137,18 @@ def main():
         copy_subtree(gov,out/'governance')
         # Existing accepted First Reading's full assets, keeping Teatro media
         # and any private archives out of the accepted public preview.
+        # The reader assets live at /solstice/assets, outside its edition folder.
+        # Merge the pinned predecessor inventory; never retain stale receipt claims
+        # for files omitted from the assembled candidate.
+        for item in v10_lock['sites']['solstice']['assetReceipts']:
+            source=v10/'solstice'/item['path']
+            if not source.is_file() or digest(source.read_bytes())!=item['sha256']:
+                raise ValueError('missing or changed predecessor book asset: '+item['path'])
+            dest=out/'solstice'/item['path']
+            if dest.exists() and digest(dest.read_bytes())!=item['sha256']:
+                raise ValueError('conflicting book asset: '+item['path'])
+            dest.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copy2(source,dest)
         old_v10_deep=v10/'solstice/editions/first-reading'
         if not old_v10_deep.is_dir():raise ValueError('missing existing Linotype deep-route assets')
         for p in files(old_v10_deep):
@@ -228,6 +241,8 @@ def main():
             lock['sites'][owner]['projectionSHA256']=page_receipts[owner+'/index.html']['digest']
         lock['sites']['solstice']['projectionSHA256']=page_receipts['solstice/editions/first-reading/index.html']['digest']
         (out/'source-lock.json').write_text(json.dumps(lock,indent=2,sort_keys=True)+'\n')
+        # Complete and verify the actual reading graph before inventory/sign-off.
+        complete(out)
         results={f.relative_to(out).as_posix():digest(f.read_bytes()) for f in files(out)}
         record={'sourceRevision':o.source_revision,'stageProfile':'UbuntuEstateShellWLANStage',
             'publicPublished':False,'stageOnly':True,'rootSourceDigests':original_sources,
