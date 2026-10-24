@@ -1,0 +1,11 @@
+--- /etc/caddy/Caddyfile.before-instruments-assets-20261024	2026-10-24 04:03:50.633007081 +0000
++++ /etc/caddy/Caddyfile	2026-10-24 09:29:30.170245159 +0000
+@@ -63,7 +63,7 @@
+  }
+  @estateRailInstruments {
+   host instruments.fountain.coach
+-  path / /index.html /instruments/codex-auth-instrument/ /instruments/codex-auth-instrument/index.html /instruments/csound-auv3/ /instruments/csound-auv3/index.html /instruments/semantic-browser/ /instruments/semantic-browser/index.html /assets/estate-shell-d9a170d82a21d19b.css /assets/estate-shell-state-4139f6eec4e0f8d7.js /assets/estate-shell-logo-8c5fad1c3db56138.png /assets/estate-shell-state.js /assets/estate-shell-logo.png
++  path / /index.html /instruments/codex-auth-instrument/ /instruments/codex-auth-instrument/index.html /instruments/csound-auv3/ /instruments/csound-auv3/index.html /instruments/semantic-browser/ /instruments/semantic-browser/index.html /assets/estate-shell-d9a170d82a21d19b.css /assets/estate-shell-state-4139f6eec4e0f8d7.js /assets/estate-shell-logo-8c5fad1c3db56138.png /assets/estate-shell-state.js /assets/estate-shell-logo.png /assets/*
+  }
+  handle @estateRailInstruments {
+   root * /srv/fountain-static-publications/instruments.fountain.coach/current
