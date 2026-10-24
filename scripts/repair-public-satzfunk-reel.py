@@ -14,6 +14,7 @@ from pathlib import Path
 DOMAINS = (
     "fountain.coach", "governance.fountain.coach", "midi2.fountain.coach",
     "teatro.fountain.coach", "book.fountain.coach", "instruments.fountain.coach",
+    "benedikt-eickhoff.de",
 )
 PREDECESSOR = {
     "fountain.coach": "estate-20261023-v13-estate",
@@ -22,6 +23,7 @@ PREDECESSOR = {
     "teatro.fountain.coach": "estate-20261023-v13-teatro",
     "book.fountain.coach": "estate-20261023-v13-book",
     "instruments.fountain.coach": "estate-20261023-v13-instruments",
+    "benedikt-eickhoff.de": "estate-20261023-v13-pointer",
 }
 URL = "https://satzfunk.fountain.coach/"
 OLD_OPEN = (
@@ -85,8 +87,8 @@ def run(source: Path, dest: Path, evidence: Path) -> None:
         assert count >= 1, domain
         counts[domain] = {"totalFiles": file_total, "correctedHTMLPages": count,
                           "predecessor": PREDECESSOR[domain]}
-    assert sum(x["correctedHTMLPages"] for x in counts.values()) == 171, counts
-    assert len(records) == 171
+    assert sum(x["correctedHTMLPages"] for x in counts.values()) == 172, counts
+    assert len(records) == 172
     evidence.parent.mkdir(parents=True, exist_ok=True)
     assert not evidence.exists()
     evidence.write_text(json.dumps({

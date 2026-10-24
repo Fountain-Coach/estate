@@ -9,3 +9,7 @@
 **Production release rule:** Deploy six immutable, complete static releases through the current SSH/rsync/SHA256/atomic-link EstatePublisher, one per domain with its v13 predecessor and independent public HTTPS witness. No source-owner content reset or forced latest-Git promotion. Preserve each old release and terminal typed receipts. One corrected link must be keyboard focusable and navigate to canonical Satzfunk; no disabled marker should remain in any affected document.
 
 **FCIS non-invention:** The failure is a real outdated public navigation state, not an absence of a shared renderer, OAuth, security helper, new deployment environment or browser-matrix harness. Existing typed SSH publication is sufficient.
+
+## Seventh public header discovered
+
+A follow-up independent survey also found the obsolete disabled Satzfunk entry on the public personal pointer at benedikt-eickhoff.de. Its actual predecessor is estate-20261023-v13-pointer. The same exact navigation-only correction applies to its one root HTML file. The original six-domain release evidence remains independently retained; the expanded deterministic witness includes seven domains and 172 corrected HTML pages in total. Other public informational domains inspected (git, status, works) did not contain the disabled Satzfunk reel item; store and library currently return HTTP 404 at root, and www.benedikt-eickhoff.de is HTTP 401. No content, DNS or Caddy change is authorized outside the identified pointer and earlier six domains.
