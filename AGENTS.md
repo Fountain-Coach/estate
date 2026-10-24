@@ -197,3 +197,7 @@ OPEN. The registry refusal field anyFountainStoreRestored=false applies
 to an independently reconstructed authoritative Estate Store, **not**
 a single isolated test materialization. Do not upgrade production or
 publication status from this bounded proof.
+
+## Consistent functional icons: Lucide, not invented pictograms (24 October 2026)
+
+The source-owned estate rule is [Lucide functional icon and brand-identity boundary](docs/decisions/2026-10-24-lucide-icon-and-brand-identity.md). Reuse accepted **Lucide Static v0.468.0 (ISC)** SVG geometry for functional actions and catalogue symbols, with consistent size, stroke treatment, licensing and accessible text. The Sing / Ear / SatzfunkPlayer mapping is microphone / ear / clapperboard. Do **not** replace Fountain Coach's brand logo, authored edition marks, book covers or artwork with generic icons. Fix observable icon-family drift at the owning source; do not infer that every pictorial difference is a defect or auto-promote source decisions to public production.
