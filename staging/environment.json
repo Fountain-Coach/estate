@@ -17,7 +17,7 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261024-v23-book-publishing-be231f7",
+      "observedRelease": "shared-shell-20261024-v24-works-books-3c31eea",
       "editorialRoutes": {
         "estate": "/estate/",
         "book": "/book/",
@@ -29,21 +29,23 @@
         "solstice": "/solstice/",
         "firstReading": "/solstice/editions/first-reading/"
       },
-      "retainedRollbackRelease": "shared-shell-20261024-v22-semantic-book-7737c9b",
+      "retainedRollbackRelease": "shared-shell-20261024-v23-book-publishing-be231f7",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
       "lastEstatePublisherStageReceipt": "docs/acceptance/2026-10-22-estatepublisher-wlan-v11-terminal-receipt.json",
       "publisherStagingIdentity": "UbuntuEstateShellWLANStage",
       "publicProductionAffected": false,
       "latestObservedChange": {
-        "scope": "/book/ publishing-led reading entrance, real First Reading witness, historical Reframe manual route",
-        "sourceOwner": "Fountain-Coach/book-of-reframe",
-        "sourceCommit": "be231f7a033d1da60337b3168615a89f3da78c40",
-        "publicBaselineRelease": "estate-20261024-v14-satzfunk-reel-book",
-        "witness": "docs/acceptance/2026-10-24-book-publishing-v23-staging.md",
+        "scope": "Works source-owned bilingual books; Book-domain programme and local reading links",
+        "sourceOwners": [
+          "Fountain-Coach/works-benedikt-eickhoff",
+          "Fountain-Coach/book-of-reframe"
+        ],
+        "worksCommit": "3c31eea2fa1493c47903c8d648438c5665332b41",
+        "bookCommit": "184052d47b2b8ade5f7c9de990627671376bd333",
+        "witness": "docs/acceptance/2026-10-24-works-books-v24-stage.md",
         "publicProductionAffected": false,
-        "activationTransport": "existing SSH/rsync, SHA-256, atomic symlink, existing preview-service restart",
-        "typedEstatePublisherStageReceiptObtained": false,
-        "browserAcceptance": "Chromium 1280x900 and 393x852, live route-click/readback, no horizontal overflow"
+        "activationTransport": "existing SSH, rsync, SHA256 and atomic symlink with existing preview service restart",
+        "typedEstatePublisherStageReceiptObtained": false
       }
     },
     "estate-shell-proof": {
