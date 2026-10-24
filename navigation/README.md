@@ -20,7 +20,7 @@
 
 **Status is a supporting legal/footer address** at `https://status.fountain.coach/`, not an editorial top-reel item. The reel also has one **Info** footer jump that is not an estate domain. Only the active editorial domain has `aria-current="page"`; on Status there is no active editorial item. At the local archive the Satzfunk identity is active.
 
-The future public Satzfunk URL remains unresolved/unreleased. Never create a live clickable broken target or claim access to original assets on a new host just because the canonical manifest contains that intent.
+**Current as of 24 October 2026:** Satzfunk is publicly released at https://satzfunk.fountain.coach/ on its dedicated Hcloud server, with all 43 recorded Bandcamp video items served from owned storage and independently verified via TLS and byte-range readback. The public reel destination is now a normal focusable HTTPS anchor. The earlier WLAN-only condition below documents the historical 21 October state.
 
 ## Why this change was required
 

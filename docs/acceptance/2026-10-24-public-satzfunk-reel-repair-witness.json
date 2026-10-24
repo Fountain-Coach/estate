@@ -1,0 +1,1068 @@
+{
+  "schema": "fountain.estate.satzfunk-reel-public-admission.v1",
+  "asOf": "2026-10-24",
+  "rootCause": "v13 estate shells retained the obsolete aria-disabled Satzfunk span after the separate media host became public",
+  "change": "exact source-owned reel span -> canonical, focusable same-origin-safe HTTPS anchor",
+  "canonicalURL": "https://satzfunk.fountain.coach/",
+  "counts": {
+    "fountain.coach": {
+      "totalFiles": 26,
+      "correctedHTMLPages": 1,
+      "predecessor": "estate-20261023-v13-estate"
+    },
+    "governance.fountain.coach": {
+      "totalFiles": 299,
+      "correctedHTMLPages": 166,
+      "predecessor": "estate-20261023-v13-governance"
+    },
+    "midi2.fountain.coach": {
+      "totalFiles": 25,
+      "correctedHTMLPages": 1,
+      "predecessor": "estate-20261023-v13-midi2"
+    },
+    "teatro.fountain.coach": {
+      "totalFiles": 8,
+      "correctedHTMLPages": 1,
+      "predecessor": "estate-20261023-v13-teatro"
+    },
+    "book.fountain.coach": {
+      "totalFiles": 29,
+      "correctedHTMLPages": 1,
+      "predecessor": "estate-20261023-v13-book"
+    },
+    "instruments.fountain.coach": {
+      "totalFiles": 11,
+      "correctedHTMLPages": 1,
+      "predecessor": "estate-20261023-v13-instruments"
+    }
+  },
+  "changedHTML": [
+    {
+      "host": "fountain.coach",
+      "path": "/index.html",
+      "beforeSHA256": "9c7451f963628f1a1056d95e67a3b5b962c21880a477960ef02b163631b96abf",
+      "afterSHA256": "f234a80c286c27e2f147096c5421d2a8d54aed2339fc5ad9a3e5a5d2eda5f918"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/accessibility/index.html",
+      "beforeSHA256": "a20e6b8413df5430e3768ece4296b0e8dee5b810a9d3ea5f6b9ae9fbd55802cc",
+      "afterSHA256": "78e9561c23d8e22de793dfafd423066af9805a2710c7829207fd7d321b09cacd"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/00-abstract/index.html",
+      "beforeSHA256": "d53852a7218b0a3dde80f7d72efd9fa93cb64fff20e6387b8d0f6b2023e60d6c",
+      "afterSHA256": "5b4a2bf2a822bbb72a3917c9d41c340dd0caa88657c1f7886cba1fe4726617b0"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/01-reading-index/index.html",
+      "beforeSHA256": "c7fba9afd08a9e6eb39b031e08715db4b866c5ad2b2e0494e0b999ee884c5a96",
+      "afterSHA256": "bf3724117446ede14e9c02b5545a7b175fe60c9db7dd1762e73d2540dbe1216e"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/02-development-history/index.html",
+      "beforeSHA256": "a70cafb6a9bc31e9ba1c7584463e620164ff0835b47c781b0a2869c976d81d66",
+      "afterSHA256": "bd0f2b1914feb83a38b7848155df08c2168d1c4b2b65141130dc5c4cf03c1e71"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/03-current-state-and-problem/index.html",
+      "beforeSHA256": "c259a64b153230a4c43f31fd90def03cc4d08e78cf365963ae7e2cee4272f87c",
+      "afterSHA256": "82aef6dde820c26bfc265c0852bbb74e45d79a76e53404edfae2423fa53f35bf"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/04-target-architecture/index.html",
+      "beforeSHA256": "b24a35fba5d15353b821571749d80d51e840f004ee7fce71420167c93afe4af9",
+      "afterSHA256": "5b1e19c165877a6615cb20b56522c016d5866747eab7a84d18337a4f937e7be3"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/05-grounding-contract/index.html",
+      "beforeSHA256": "119e3dbaa8c847938cbed16ea17eeeacaccf50638dc061d1be8b329d2541d0f2",
+      "afterSHA256": "ad47a327ab489dc83825c3e7b9c714b23e09d1ed191e84684500d57342af158b"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/06-refactoring-program/index.html",
+      "beforeSHA256": "252245be0b25072806d703fae216571c08f77a0a9c6dc9c1403fd448678960a7",
+      "afterSHA256": "c9c29af25709b20e5be4d36558ea4232605865aa07521a2256af15da46b53325"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/07-agent-operating-guide/index.html",
+      "beforeSHA256": "736d0ce6199bc212964b93eb3957ed4d488bca1b8017d7c6b2ea3ca249223662",
+      "afterSHA256": "b2ca875d5916c354ef87bfd2dfa8ec74f8491465023b757767936b3c4394e3d9"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/08-validation-and-acceptance/index.html",
+      "beforeSHA256": "d87bbb55d053097821cf9e34cd354387d279c4454f200d2de77c8c9f1563ef3e",
+      "afterSHA256": "a1384fa86124fa8d9cde06f54c18f946209a259cd83a20cb6f01a3c2d6e94437"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/09-compatibility-and-future-evolution/index.html",
+      "beforeSHA256": "5d4b2a03dcf2621e3a36c10b61f67cd564e4ee8e84a65f608b58cc3a77cf241b",
+      "afterSHA256": "f6d785babc4af4fee07e7a1bb8a5ac7053b599917ae11b07d89e4db1348494f7"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/10-copilot-implementation-extension/index.html",
+      "beforeSHA256": "a7f56c73b34c54ac1882fdcf96cc10a8f9bcca9bf502f579750b0688b5829c62",
+      "afterSHA256": "b45483acd528a6ba1dd47a1615281498d5b2584df3c386e9aa73937ada3ff1ad"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/100-semantic-scenographer/index.html",
+      "beforeSHA256": "7f8245973090fe143e18ead94b932566625df50cc5d93ca206f4d6353edcff8e",
+      "afterSHA256": "735dc28f91bd8da72896d9a7928c87885143afcb362718278646a4e9a5bd6f58"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/101-teatro-stage-engine-semantic-scenography/index.html",
+      "beforeSHA256": "b553e2c38466a88333fac75e5f939b18270814c1d12abb7793a032896bb58855",
+      "afterSHA256": "ada258fee563a7560a2cce753ce0a40560eab455813d73f719c76b66695ed7d6"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/102-semantic-inference-execution-session-and-latency-governance/index.html",
+      "beforeSHA256": "be8f45219afd2e70d4031df23d8f85730463e13065c05c91cd639832574e2e20",
+      "afterSHA256": "82a0f8e9866e5b2504358bc0da4981c70b48d829fd680706db31d281cf4a9f9b"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/103-fcis-kit-semantic-factory-and-wired-instrument-event-stream/index.html",
+      "beforeSHA256": "eb5f21a8ff0ac1911d12a61585d34e2a2be7e615b705092a8a705eb0e1f34679",
+      "afterSHA256": "cc4a9636b83437a31c572a1edb0d440d787ea3ce3fdbf684932968ceab912f54"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/104-midi2-event-time-jitter-and-asynchronous-completion-governance/index.html",
+      "beforeSHA256": "6beddfff54c9f38bb193a2a99ab0d0dca2caf27dc12d247a1efccbc8999d7f16",
+      "afterSHA256": "dbe43fa287472cfba559b0595782a5508643b33e9c076ae75e1877a543960b8d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/105-semantic-scenographer-one-spatial-thought/index.html",
+      "beforeSHA256": "e4029bc404ea5727ac6ee9780d07d986733b7632ec6318b88bbd2fa459d40c95",
+      "afterSHA256": "f08e281be72d34d7986354b8dbe6f4ad995681bd75ce1cdf82f6a9b126f178ec"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/106-teatro-midi2-monitor-canonical-runtime-projection/index.html",
+      "beforeSHA256": "5921c53b03a1364ae69b397d0f86a113896e4fb4bbd38b185ed9c5d5e957511c",
+      "afterSHA256": "996aeb747f9bcdad8932dbdfcd74967557a3fa6f7814a2c755d8834a2f3c58f0"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/107-creating-the-canonical-teatro-stage-composition-layer/index.html",
+      "beforeSHA256": "a25d8993521be55b9402dd14f5adb8a3e52843dd20a902a829a6f0bcfa41d8f0",
+      "afterSHA256": "402fbcd426e57bd9a0cee3081422d5083c6837d6a2fa428e71e6127661a6ceeb"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/108-reframe-is-a-swift-native-cross-platform-runtime/index.html",
+      "beforeSHA256": "5bde90dc979f734f9f7d4093109841f3964cf6a2659b4557a52772c7a9d8f948",
+      "afterSHA256": "43ceb230d3b404b914b1f7fa09f2aac3c4e2fddeeb839444a9ebff2630acaa72"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/109-natural-language-measurement-is-a-midi2-instrument/index.html",
+      "beforeSHA256": "5f653c607ae8b21bec66904061abec50aabb5a50dc217c2a8f903872a5621f49",
+      "afterSHA256": "957919552e5ccf82af76df008f4bde0809b957fafae4b3a63fc0148051c8287c"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/11-grounding-as-a-given/index.html",
+      "beforeSHA256": "d1635c2064d97cebbfa851a1101e8b009510d4838eb0dc3be4dbb0b3ea956ca2",
+      "afterSHA256": "41c8bc964cdda7e23126752929b899ceb6b792915901a6a675178daec86147b8"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/110-three-run-semantic-drift-calculus/index.html",
+      "beforeSHA256": "967eea481c1e317547e142d895b87c44afc7d7c6c1ce4057db7f94bb7a72b507",
+      "afterSHA256": "b8216096f273d7392a993ac51a78f28f9c52081815a6016fc21e644aef10a1e3"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/111-evidence-cohorts-as-publication-units/index.html",
+      "beforeSHA256": "192aa2b6f95b56c540fe2d20c734e0e4d9e15dba15b7c2341406eb74664b71e5",
+      "afterSHA256": "6e0275be155bad77dcb104ada6af12660a9f7c9096187a5c9b96452d97ae9ce0"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/112-skill-and-maintenance-capabilities-are-kit-owned/index.html",
+      "beforeSHA256": "6de9de1f58d829665fdc8d326629d018b4e36ae4d842cc4871bc0b25af5e25da",
+      "afterSHA256": "a424c0fe2e20b7d583858d938664b573f3acfecec5c7bb9178fce07f70b2dc46"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/113-governance-becomes-an-executable-scenographic-policy/index.html",
+      "beforeSHA256": "0b2cea84069b60d270f47d7e1973cf9a72c8d7690dc003fa97d2fbd4412b77e1",
+      "afterSHA256": "e770363a584f0c8042b5f3b08931e796e6f02da3ad16039fb7b2df7925c3a0e2"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/114-server-side-semantic-proposals-mac-and-linux-one-runtime/index.html",
+      "beforeSHA256": "b04dc19261883f7ce138bbf65d0b71225f0da9586c97c25fed4324548f0d4a48",
+      "afterSHA256": "d786a115754231306334ebc59784e3449d3caca94b9245169deb3829200a0b33"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/115-semantic-browser-is-a-governed-midi2-and-fountainstore-instrument/index.html",
+      "beforeSHA256": "6e7b76e623bae01ae00cc0683265f22247184ecb82be8725b5d95b138295d57d",
+      "afterSHA256": "fe215b142fcb0ba0a127e210c02da9fe65c39c3e61c618afd8ee7c7f8ed5e30e"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/116-fountainstore-owned-estate-edge-and-acme-promotion/index.html",
+      "beforeSHA256": "b5fde52f51f6d759d70d12a48f686c0822e31f56b561e25e4a34b44ef113f9c6",
+      "afterSHA256": "2cbd63d54a77457063d6dea1fb0f239058666d72e58a67623cff2ff8d5e033b3"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/117-fountainstore-snapshot-export-and-git-recovery-projection/index.html",
+      "beforeSHA256": "69e40c1099a0eb151ed1b2b41068f3664e3196b9e413feac9553326cff914645",
+      "afterSHA256": "9ce9be22b76e7e527980e627e56fe5e2e5551dd904287295a5f0b57e55d5299b"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/118-european-cybersecurity-profile/index.html",
+      "beforeSHA256": "219148ab10fb70d533e532ec6979e5646111f2abb045d1cecfad1ceaec55c3c7",
+      "afterSHA256": "3332537c67c3461793be354d77c3e9df7dd7f5c3f83885b92f07b6e845778217"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/119-scenario-pipeline-factory/index.html",
+      "beforeSHA256": "50588213cb89ee55221ddcfe6ba66ffb2e25ec0bbd9685fe4f38e35f0986d1ee",
+      "afterSHA256": "e882829c5bd3d6ec8be949f54868819ea9ec21aa867a12b2ebe5a15bdb33012f"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/12-animating-truth/index.html",
+      "beforeSHA256": "28e9107f05a2a38d66ef4084f92ea74c3d405d00510ca94448a33c135ac65f7a",
+      "afterSHA256": "73ca2a9a5eccc6df0ebfb8c012aeee6ef0e0b4b015d156cb7d346ec446a8aae3"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/120-internal-triadic-peer-dialogue/index.html",
+      "beforeSHA256": "a9dafbce214f13602557d2b8a13902e90ed670787a1b722a4b3473bacc098c16",
+      "afterSHA256": "bc8c7469598a0f5c46a44e1be9ea80a368f5d37e1556bfd1dfda82a482783924"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/121-dynamic-midi2-instrument-factory/index.html",
+      "beforeSHA256": "cc096820a2c7b1ccf2e21cb65e532c8491c151f5b3ea758d45f96d0a896d955a",
+      "afterSHA256": "75ad9d9992b1b4be496eda6ce79298e7553e4c61a6c57cbe682b8103873d9441"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/122-governed-semantic-transformation-instrument/index.html",
+      "beforeSHA256": "d984a46f62fde2175f078cab605e6d007a483f32e7ef006ebb77e7667579d0db",
+      "afterSHA256": "e92689abe0804a481c4b061d37e5a74723a07bae0353de46fd5354f9925cdb39"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/123-commands-must-be-legible-to-reasoning/index.html",
+      "beforeSHA256": "80c7082248cf1c0f5b0c11a041667ce127df22ab955ae8d66203139c723e97c7",
+      "afterSHA256": "cb53fae5dcc36430116daacd3ce3b54b2dca8bf1c4c5b6cb644923350d48c711"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/124-midi2-timed-webkit-transitions/index.html",
+      "beforeSHA256": "f967b35b8a239cd87c1a036cecad914bcf83216a6fdb0a7ddfb819de7727d396",
+      "afterSHA256": "8de6c02f0ac1bd365629b894c9165604acd05a38864c8097d3cd8716de90f18a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/125-store-publication-graph-domain-mapping-and-atomic-route-promotion/index.html",
+      "beforeSHA256": "2eee7e80c736f5eaff89647c93f87df4d27e765e1a8524befc03cfaaa6b262a5",
+      "afterSHA256": "ba474327134a85fac31015ff56425dd9fa51cd15c3d4a593271544d5f87900db"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/126-fountain-coach-organization-web-projection/index.html",
+      "beforeSHA256": "bed74395ff53e4e1ff0320d795fe967beee1717c249eb297611f719cbf7862b5",
+      "afterSHA256": "03c31578e5a042c8bc21e941978ca239e95ec29daa83ed1d53844fb56236aae1"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/127-estate-template-publishing-path/index.html",
+      "beforeSHA256": "9b0f8ba177d83e3564db26be8fbba219fce844d33d3aa11d8306a9bf311c876f",
+      "afterSHA256": "7b95ef7ffe8c9fea86b5200a0ac8ac93d9f7b84e6ec5becb8ac888b8b0944c92"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/128-deployed-estate-webkit-mirror-authority/index.html",
+      "beforeSHA256": "e4b3e3ea965c9281cf27785051992528b5907f7deb4d1e639284d14cf345a70b",
+      "afterSHA256": "3c7f59258528b41601762a130300403e1a7b70568f7cb9a3356f0b829fb31321"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/129-native-animated-svg-governed-publication-projection/index.html",
+      "beforeSHA256": "7147d3f4c395116ead98a6713b35fa371e1f66ee6766498aeeb2aff2ea98c9b3",
+      "afterSHA256": "835327646b7e2a3ec66fbbd0cd82be05e0a2c10895019675719beb610f587a78"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/13-storage-and-performance/index.html",
+      "beforeSHA256": "d183749f9fb9888bcc845bf42342e6596cf25e41fd79041ace5422c7c8142ace",
+      "afterSHA256": "37af6b3668a051c8bf0920dcf8772ce0384e8007fd61935fb8cf0550de5af49a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/130-human-machine-scenario-naming-is-a-governed-identity-boundary/index.html",
+      "beforeSHA256": "3331e8db8284ae0292a01d7c822c60918ddcfe34f351f7a5b4be1cd1daf954a0",
+      "afterSHA256": "871da95dff3c3164ca71292c9d66980707630497e06cb62104399a6b4a3c32bb"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/131-remote-secretstore-authorization-and-approval-sessions/index.html",
+      "beforeSHA256": "05cc67ab90e71f04c384ac57d73a36be57c1611a18f2bfe266005b4915bf92a9",
+      "afterSHA256": "86a15a1a30f072821b2c1421dc8bf96b3ef668e09eb56a9d0043e3eff2bf5753"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/132-reframe-audiounit-auv3-platform-and-aum-demo-host/index.html",
+      "beforeSHA256": "d439376bce6865d4af906cc38b5730dbcc2c9586faf64754858f1c3214d19d71",
+      "afterSHA256": "004c2abb16afbd65d62063be5ced3506ad38cf73aae4ad46fe7388636dbe1863"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/133-csound-auv3-instrument-boundary/index.html",
+      "beforeSHA256": "bba76d794d378c0d8f2558ca7b3551577d89597f25fbe81176cf045362f6d609",
+      "afterSHA256": "7d3dca1f99e650412ba3e80de3556897e2e8efd8205967180814abb5fd00c975"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/134-estatepublisher-publication-authority/index.html",
+      "beforeSHA256": "746947c966c1a357bddc845ea14c2a26b7dc46e14cecef0850d744b7adb1040b",
+      "afterSHA256": "5b7a6b39b02dee2103fd077a8fabf601c171153c785920b0241ed917da65fd32"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/135-reframe-ipad-scenario-driven-creative-host/index.html",
+      "beforeSHA256": "01689a62f2c3fd3f3966a61d4673d4853a026168bdea8eb0000ad60a05ea362d",
+      "afterSHA256": "8653f068625c17c888d3d3e1f4bb3ee2b464c5942a0a1f96567142cb5c4e60cb"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/136-reframe-web-native-headless-audio-runtime/index.html",
+      "beforeSHA256": "d9f58e72313f110376e2e578b5d702bd6e1b79560fa00922cb43c58c9443512c",
+      "afterSHA256": "bdaf9364757c19a90fef48f5cb9253473352addef1434544ea25c9d2f2291d35"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/137-teatro-web-reframe-materialization/index.html",
+      "beforeSHA256": "64ba6e0f2b608a6658e99fac215a820112132379cc701a5008802dcb61cf1b07",
+      "afterSHA256": "09447a9ff31f8e4089340d60cdc6458446095f8d4bf50c84cc7b3b3b9fb8b993"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/138-ear-is-the-web-audio-graphs-midi2-listening-boundary/index.html",
+      "beforeSHA256": "d1fca2c3ce0510627a7f9771d6e360473a9787619318721f42186dfefea0bab3",
+      "afterSHA256": "55c59e5f71fa8f95075ff849074b1e7478efdcf48859d29347c8841f3829261e"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/139-owner-trust-root-secretstore-custody-and-recovery/index.html",
+      "beforeSHA256": "72a5283f17f65e67aa797dc2b3a7610c2a08d28ea42874eea3b2be665bd7b85d",
+      "afterSHA256": "3d3623dd081747acd040e5e9fb4b4bb7ec1d6a55ecff219c3367ab8a7320686d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/14-the-beat-and-its-arrangements/index.html",
+      "beforeSHA256": "8bfc68353cd8daba182fb8e5b44455a4a7a6298beef71fa9065f9473b289d31d",
+      "afterSHA256": "5adee82ca5adb47c053de62bd6891d617b05e3011b11a8df88b178ab03e59f1d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/140-local-developer-cloud-joining-machine-and-estatepublisher/index.html",
+      "beforeSHA256": "448e02a8efb93a547752252e79a6ae48510801695f4d9dcfb14c832cadc215b5",
+      "afterSHA256": "77991333b608b6a355b82c017476aaa387db8b9d6f30e9935fa7fee910b0b7ce"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/141-each-joining-machine-is-a-governed-midi2-instrument/index.html",
+      "beforeSHA256": "50af0ebf868a8be99fc8d7ff5e1b58f97751302107e4f7db7797b7ddcc20c29e",
+      "afterSHA256": "9069a2e1e746823bf8241614a27bb02478ace8768f8027dad9f57ce65d7beeab"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/142-fountainauthkit-governed-authorization-authority/index.html",
+      "beforeSHA256": "1f046d3c73a2abf41aaa5a5da55647d9c64dd8b3f7994a45ee7aecf4f932bb38",
+      "afterSHA256": "eac973906a4f9b46749801f02331690e84b28eec09f5b9f64463c501a818823b"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/143-simplicity-is-key-one-bootstrap-one-trusted-session/index.html",
+      "beforeSHA256": "436677d826c2d5332f32ef96eee301d158f923666605204a71e93869ff1a4025",
+      "afterSHA256": "397fc65720871dc2348cab9f68e9c0b0ed596c481b980ec67ad036ace7919fd9"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/144-fountain-media-service-governed-media-plane/index.html",
+      "beforeSHA256": "c45ffa6442ba127e650e7ffb81000bac2b6a9a3fb235d45a5bd97ad1f8a0b851",
+      "afterSHA256": "11e182df801592629a7f97f3071669be10f4c7ab5477d321768e83aea5ca13e2"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/145-one-estate-one-publication-state-estatepublisher-and-reframe-semantic-browser/index.html",
+      "beforeSHA256": "ac20c4fe6b8781639bcb7da2f308862c86e7b93ead5973718aad92e6867598f4",
+      "afterSHA256": "b8844ca88d52fc2c11a9b9d15fa4a5af12da04b807f5bdd5e6fbd6cd79949f3b"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/146-local-fountainstore-remote-caddy-production-estate/index.html",
+      "beforeSHA256": "c08f5779d30ce3a6709a9e43c0c5cb982ca2c8479fea87e8f2d5f2dae6bdd068",
+      "afterSHA256": "b36f92dee7251295899a94ac2786f54634da09c61a159947679d79681e90f869"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/147-local-route-materialization-estatepublisher-preview/index.html",
+      "beforeSHA256": "5e844ad86a2b75b6e587d243454e345655debac62970e4b68618304f7e7a242a",
+      "afterSHA256": "8cf29542f4c3c314a0eb80be31f0ae55fb6e7b16ffa4874d64415069707cf9f3"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/148-production-runtime-artifact-only/index.html",
+      "beforeSHA256": "82e75568e9ab646a83d465afd934569b70c8354116ea01036723012a72f3e594",
+      "afterSHA256": "6127fe298925f0944ed236bfcb64778bf8b7f4b4335a6a9a756ed7e8a848180a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/149-remote-codexkit-governed-midi2-peer-instrument/index.html",
+      "beforeSHA256": "090aa5910c708472a57089ece23cbc22785f16cf232e1a488d28e7c4d738d148",
+      "afterSHA256": "eac309c97b9a59425372b02413ba2095735beeca110364ae8d14db6943cf3778"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/15-the-situated-copilot/index.html",
+      "beforeSHA256": "1ba1d1db4ad936af860c47937f9215aec40406f6201b371ca65221cab23a3970",
+      "afterSHA256": "f552cdebae7c8bef6784d6813b5ea08fe4d170e433e6e342456a3fa554d9b310"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/150-one-midi2-instrument-plane-multiple-governed-transports/index.html",
+      "beforeSHA256": "6e3ea9fcb54c052162681a45a62d8a2a39828f5d27d60887702d965e23d300c2",
+      "afterSHA256": "a32cd9aaf84a1a4efa4e2f1b24b8c70acc25f80d7c56c6915f606c10b52f1236"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/151-csound-teatro-speaking-sound-in-space/index.html",
+      "beforeSHA256": "124a0e48c34f1efcb332b82ee048ade2a483240e05cd6aa3423402235317f1e0",
+      "afterSHA256": "5e3e8a041cd793df91356d1b06a3a11a1220aaccb6b8537b73cb52b73e9c69b4"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/152-the-host-is-the-instrument/index.html",
+      "beforeSHA256": "ad774a91b72f539029413c3bcb0c7fde157e1e62b78b2f25f24a37ceeae51198",
+      "afterSHA256": "ab77a2e7cd842095c8ed3317fcb360d691d614b8358a7c68ec842205ac8173b4"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/153-domain-admission-and-edge-binding-are-separate-governed-capabilities/index.html",
+      "beforeSHA256": "8f77d20451c714af40f96f8c87d2023e523693544f66cdea09eba6a1b105dc10",
+      "afterSHA256": "f77b27dd92d85c697343b3d497843a5d99b7521a0a69162a0a83688aa0b27052"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/154-domain-neutral-local-model-reasoning-testing/index.html",
+      "beforeSHA256": "52e510c1877fb76ebb8ba6b4a3ed9774d6f577922759faf5807fddd537fc85ed",
+      "afterSHA256": "50003adf1de27a917142030ec3b5a70c872a8eca6f1a448d9a1958ff0dbeef61"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/155-estatepublisher-rest-projection/index.html",
+      "beforeSHA256": "8b206aa5978a9f615b6fbd09f2fea005839b2f8b1d57fb4a77665e2641e13bd9",
+      "afterSHA256": "68464f4ae8201a9f7098524188717eceea2c8a04bbf0387c046b66ba39a95634"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/156-fcis-156-writer-workflow/index.html",
+      "beforeSHA256": "82c89591f653ee820c71c4317532cebb112f1366a84e64be1680d58a596425ea",
+      "afterSHA256": "5637dc467c16358f55f6c215d552e853897e23ab1e103138ec78e5b20320de3d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/157-the-writer-owns-the-public-domain/index.html",
+      "beforeSHA256": "3b736391534bfc7b10cb03b4e77524fc85ea937e1d440a01128909e5aa9e1498",
+      "afterSHA256": "52a0dac9a70bb3a621a6c4bd5620c043e1329b685d329b31740916470f82c726"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/158-publishing-is-not-a-distributed-transaction/index.html",
+      "beforeSHA256": "4d1daa3315ecbeafd0ba1b10b9c6b068ff74be86d5d7006eb8c48d4485049d66",
+      "afterSHA256": "f94c632ceaec352c2c5d28468a5f59ed958470e19bccb8046660567bb6d74c2c"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/159-userland-the-writers-books-outlive-the-device/index.html",
+      "beforeSHA256": "ee59c2d2bde6a8a3ec656d147f935fe53a34e368e269895a336f88a2904e9573",
+      "afterSHA256": "5a871931309d69f7ce8c415813c657ac8fd2f234c04edd26f3733c3f8caef838"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/16-the-timeline-is-the-machine-room/index.html",
+      "beforeSHA256": "cc0acb33720831201a4b10d426f2983ebc7468a304555176bad2f13d888365d0",
+      "afterSHA256": "5837e9485cc8785bbfafab1731a9bc46958c58666c9c21aa56f58ebb839e1d9d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/17-the-score/index.html",
+      "beforeSHA256": "f2cb9eda9adb19c6898dd149f00c59d437baccdb596e335d1f5f9790855ef97b",
+      "afterSHA256": "1eb37c87ca8b9e2d6abd9d631cd21b7d7a628eb3a41922146270bddef022f63b"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/18-the-stage-presents-the-act/index.html",
+      "beforeSHA256": "de369dec285dc2bc74432ab2d0570e2ac2426140c7ce107de44421652e97aecb",
+      "afterSHA256": "ad7c6b36168a8789a1c4dcbf9eefd355ef3aacdb88b98ea1c026d672cea0cd8e"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/19-apple-human-interface-guidelines/index.html",
+      "beforeSHA256": "8458b71b042ef7baf78d5169d1bb211a112529c3a8f8a24ed1202ecd3ba67409",
+      "afterSHA256": "b6e289c040567505b4dbeb02a4306e6bf016f4eb6530779fdfaeb8f41d58b62b"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/20-on-device-first-and-the-writers-key/index.html",
+      "beforeSHA256": "c5bb8f0bdb3e38d459fef3f01c01db009587a1b3d765aad61053d180d1907756",
+      "afterSHA256": "069c5248d3c6d79b91b6d53268faba1fa04dfd0d6683315bfee00fa0da736305"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/21-training-perspectives/index.html",
+      "beforeSHA256": "a185766dc440f9bdd571a13695d388e84ff51a7e5490160a53da034959447c93",
+      "afterSHA256": "961583827259c313af5050949f08fcd2e2bcdacc14655938bfcaa6b3770c26ba"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/22-no-preferences-only-reasoning/index.html",
+      "beforeSHA256": "b74401c73d50675b431ddf819e8253c0a5ff3708e1df28e4124ee8ff0c9668e8",
+      "afterSHA256": "fff0d928b928575462a02bbb4378482162692ca915897bc3c9c0645b5fa7671f"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/23-one-reasoning/index.html",
+      "beforeSHA256": "ac163524efa2222b85f83e28882d065b429034685be84c619b28def8898eb0e6",
+      "afterSHA256": "3a5d28b1cdf8992f9eb28310e2ccc8c6e902f379337411b80a3f1ba45c4812de"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/24-the-reasoning-is-an-uncertainty-map/index.html",
+      "beforeSHA256": "d0b4e47037695184a5adce093657b9471a1ff4387bd8864e0d1b531224e77165",
+      "afterSHA256": "f58f7d36a11cef9564394a99ef2b13292bd3fe029590f955ebc5023c8c3d1314"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/25-the-copilot-is-the-surface/index.html",
+      "beforeSHA256": "75bfe1cee2dd80b432ef2794f29c910f31054b2b83f932715f9a663e6c00006b",
+      "afterSHA256": "09f53c3c33dd6eae46fc601bf1998f7ac2b6396d9c6fce6820ebc2c9dc19f820"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/26-internals-tune-themselves/index.html",
+      "beforeSHA256": "121d1ea808bb8ad294e003f468310c023f84365face3447881c25e16ebff583d",
+      "afterSHA256": "a6d34878eb9e09a3755a87619e1c0698a47f80d251349c79e11561e0626d2f73"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/27-parse-before-you-ask/index.html",
+      "beforeSHA256": "975d983262052f7063afa234810be7fdf18e7744a7ab30ca97887f3c1ceb0894",
+      "afterSHA256": "8e6baba9476e4bbb57b0e185b2f7839f5dd3b52d381dc9b92fd0eb9b53198f27"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/28-a-beat-is-the-question-it-raises/index.html",
+      "beforeSHA256": "8c5a3000c0fa8cd3da0cc5f4462e70403efe20744fddb64a22e17bedb6065666",
+      "afterSHA256": "f0a571084d3c9e203b897d94b91cf37bfdfedcfd8c7d18d0f94148ea276a73e6"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/29-natural-language-measures-storify-interprets/index.html",
+      "beforeSHA256": "652722b2f86df99242cbd2f822eb31cb09ddacc9aceadd1dc1701078979ebf1e",
+      "afterSHA256": "147a3c4dfab8c61ca0d9d2dd8850267bb8865fd964d4d768b89323a1c24b99b3"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/30-the-living-gazetteer/index.html",
+      "beforeSHA256": "4e1f48baade07e3e5cbdf0a7e789d5c725c599d4ce55da017ef93cd380f39941",
+      "afterSHA256": "f087224ea9a4a49c8c1126ae9a6250f750af19d427da87d2d63a086f9bb352ab"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/31-compiled-knowledge/index.html",
+      "beforeSHA256": "5244226044d83d6c46038f3d5f030ecd6537feb03bc7028003fa6624dc7493df",
+      "afterSHA256": "ca4de1b4e05f62e284dbc7556c1136cb79bfc8775990673f0027aa133850203b"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/32-referenced-knowledge/index.html",
+      "beforeSHA256": "21190bd4272538eb8f5c73d6500ffe1e92928517f55798ac233e475f67da6b9a",
+      "afterSHA256": "373f9e88241f62e25c1ffc120e700301be060b93a2dd48c2a5cbc3b2e7c70b9c"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/33-a-want-is-a-gap-in-a-ledger/index.html",
+      "beforeSHA256": "68d9d0e749c9dd07119f22292d019a7e3ebc03c5a70e43c34ac3b4ff6ce45901",
+      "afterSHA256": "fed9dfab1240545f6dbfdc6fd08c4465e037fcdbd573f2c7a14b098e1580cfe3"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/34-a-question-that-leaves-the-work/index.html",
+      "beforeSHA256": "5dd8f983068e0ccab60b87ec00f3e7579fd8341d5b84e3d0d183ab907afeffae",
+      "afterSHA256": "aa8d35f7f1554661c8a280ce27d45160b2a3e94efffbed0c3dae7e86f32fcccc"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/35-deep-search/index.html",
+      "beforeSHA256": "2cf54dfb7399936ce07e1a24e2a028d527675522b6043ff2d22b98ce977174ef",
+      "afterSHA256": "577d862b2e13c7e171ba3e17a51591bdaa6fd350dd82205ac276fd131b5adafe"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/36-every-gap-keeps-its-address/index.html",
+      "beforeSHA256": "78a0edee15a5448cafa4c70d8f24d51b785d7f0319b4a65599079a2ea110992b",
+      "afterSHA256": "dac9b31f3803b07ecb9b081832b1ca2ddcb98d55c72a5e9a3b88ee482ea7495f"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/37-copilot-capability-governance/index.html",
+      "beforeSHA256": "133ad22180536ddd70a8b3b7419403d4df3a39ea11f47fb4841272924e23c9f2",
+      "afterSHA256": "3a4e63f89e96c778e997e471543798a18754b54e8a89d86294757ae31d1f10df"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/38-copilot-capability-audit-skill/index.html",
+      "beforeSHA256": "2091e86a1fdf8611c18abd98e52525d50827942d5baab153bbda5e01207986ea",
+      "afterSHA256": "fc23c3f25988ebd6ef7656a17317b00af1c69e5099ca4ce82ab5a755daba0521"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/39-a-model-cannot-be-told-what-it-cannot-do/index.html",
+      "beforeSHA256": "f0ae445bae9f7d85ea7a8ee49255b15213ffc1fdbcdb1e07bde1660deb2061a6",
+      "afterSHA256": "4ad8bcb7c88215d1e5230bc4e7042307cbf978f551cbd452540c213e969d831a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/40-a-citation-is-a-promise-someone-can-check/index.html",
+      "beforeSHA256": "3bdf1a8d524f4cb2a7c9224afe259c6aa9db3e20df8e2112fc64ae81fd0028f8",
+      "afterSHA256": "9aebbab774df5b67b99941b141fd150367ca4b62a5e912b0c88de9d0c1326b7a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/41-one-retrieval-two-directions/index.html",
+      "beforeSHA256": "f9a8f577f1a71a445d220b06345d55c5373d7cd3496dad891bedad8ac92eba44",
+      "afterSHA256": "913f239df6a7295a1287d75cdcb1251efb7788487dcf127452ad8f46b1bca9aa"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/42-what-is-already-recorded-is-read/index.html",
+      "beforeSHA256": "da6b2d4289bb7d4ebdb52c54e6da5c739fbf07ad877a008041d9ac9009e79f40",
+      "afterSHA256": "87599d2e077a492eaa8f60f9689e2cced4db370cdec974656a1418d6c255cf49"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/43-the-released-surface-is-a-named-build/index.html",
+      "beforeSHA256": "cdeaeac580a963bdddb0d3467f58425d79ae7b3e8a19a9ba1b8b222bb6ec120b",
+      "afterSHA256": "04e5298f4c6b8b84bb33f6538428ba3bdc7da25be8e425cb00a0721e5160ac9f"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/44-publication-and-source-policy/index.html",
+      "beforeSHA256": "9c724d043f74516092042567cbe711e2c6eb777cbe7107a4d380c667ca1ee92e",
+      "afterSHA256": "d071e6579a12f01951fb177e9e62decf1d1155763897d2a0c4c83bf6b2d395b0"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/45-copilot-reading-surface-and-typography/index.html",
+      "beforeSHA256": "addbbf622e25fdc45901542825095c167bf03c2c32a134f74f800d5e56c40dc9",
+      "afterSHA256": "d53603f39770b8e9642bc6e6bf766b48d48bfe0291726696220eda0d5a9be2d8"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/46-dynamic-grounding/index.html",
+      "beforeSHA256": "d8a2448af123b640482e61a1f1f03ddee15c99f40288c0865c87f717123ebd1e",
+      "afterSHA256": "adabf03134495dea3752439b0f65fdd65d4c4af9589bcf349a81c58b6769483a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/47-situated-mixed-initiative-interaction/index.html",
+      "beforeSHA256": "2d6e2a6f5250ebb0b9d39e2223354e4b705b3f1da68bb39d453f33f3c3188e30",
+      "afterSHA256": "ba6a435438718870db312e72cefff666bfc85a3b548b54c331b46b17888609a2"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/48-a-service-is-a-fact-not-a-symptom/index.html",
+      "beforeSHA256": "a730bdf9b1b54d45b8e0adeb278314ed08eac2c6112d217e3115cd846bafccca",
+      "afterSHA256": "4c8343dcb3637ecd099723242d40a87309609ed7297776bb05db752d83aae932"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/49-one-definition-two-projections/index.html",
+      "beforeSHA256": "7136257a3ce3a11cf42049ffcb7a0de96f22bb446c6bfe2bf59d75fd7b8e7abb",
+      "afterSHA256": "e0c0337c0612aaee11be45ca4b630845562668a4cd20bb2fb705e34efc7f92c9"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/50-text-is-stored-so-it-can-be-pointed-at/index.html",
+      "beforeSHA256": "74b754849a27b960078cc77df577dfa15dc359b250ce138f5c4fe7b130306a0c",
+      "afterSHA256": "3b755993f23d2d54f458d342549d11fdfe22a3bb77722639255c48cf1f3fc02e"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/51-one-decision-decides-the-lane/index.html",
+      "beforeSHA256": "8be10df9eb97ccef26f179aa5c02b423282ff698c40d32f60b22e3b368190a16",
+      "afterSHA256": "846541bb35a345e7a134b2be1645a2f3befa39e46cc0b652873580373ab31030"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/52-the-pencil-belongs-to-the-writer/index.html",
+      "beforeSHA256": "5e06f1132f5afb89e6a99d050f8018483e3faed67afee71d349c4dfaf31dfdc7",
+      "afterSHA256": "350f07c3214365aba0b7e4f4f0e8c3c8cfdd96aa3ad989d007f6dc49b17098e7"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/53-a-selection-snaps-to-meaning/index.html",
+      "beforeSHA256": "beec5a25e6d1c532b4939cc5effb93a3739ca9a2ffdd0083176474a7b04b8b7c",
+      "afterSHA256": "f3fa6e4560fb2323eb81810f16040a3be33ef26d3a2cdd64fc2c21eaa09ff25d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/54-the-writer-does-not-manage-the-projection/index.html",
+      "beforeSHA256": "7f6eefa762085cd227945624922f5a2859ec64a8b741d8fcbafb971c640f929b",
+      "afterSHA256": "5688fe7581b41284f35528e37c8b84f446b31b1093e4cfcb789d58627b82078d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/55-one-store-authority-across-repositories/index.html",
+      "beforeSHA256": "256e0ff7d906c4cbbb352113c6e57f3f3fc9677704d1be8b118029fbc8db1a08",
+      "afterSHA256": "7a4b6a148347fa4671ff2870114c5e9a635f4a78533d3a5f4fd317364277f1f0"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/56-the-book-library-is-a-portable-source-provider/index.html",
+      "beforeSHA256": "4dd2f1e85f20691f9dd7021abe5eb0213dbbf694399f7e855cc0bbf3d0ec2d74",
+      "afterSHA256": "fd37595e849d2a46db37f6256b0902890b04072ecf187dc0e04ebf2ceafc962f"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/57-the-writer-enters-by-intention/index.html",
+      "beforeSHA256": "0eb6a5c4827726709e9404ee830e6204fe1052c03980cc293dabce9206a73653",
+      "afterSHA256": "3dad971a6cb9ea173232b28e9e952874866ad5548cee29d599abd3685188a08e"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/58-open-turn-mediation-protocol/index.html",
+      "beforeSHA256": "b69f452ee992d140091c9fea076cd64056c18a0e4bae0c66864280efd2e33d79",
+      "afterSHA256": "8e6a545a7d3c6c6ea50c7e4f1a2ad9e553a98e8707a2f0c22b36a03a285adceb"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/59-copilot-initiated-library-curation/index.html",
+      "beforeSHA256": "b7bcd1885e81606f833797237068ae5f5c351c0b6105dfa2357777d035eb0965",
+      "afterSHA256": "ffc748263cc36c5f41abcc4cf7062e8c5ac8cb60529ec0e6d0fe2dd094020810"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/60-the-fountain-editor-is-the-project-surface/index.html",
+      "beforeSHA256": "d31f96e4f7996f5558d34855fadf944d149b2101ee14700981bf1c1ace0ac81b",
+      "afterSHA256": "2bc6c8b9e2ebbe95e6117897b40d249aa9fe0ac4a97bd0750d746bce20fb4de2"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/61-the-fountain-project-round-trip/index.html",
+      "beforeSHA256": "2b1b8fe6ddbbecd8b338b55da41a8a3511d4a8ce45773f830b4138be24d46064",
+      "afterSHA256": "03a3ad212904134857cd3c209727d3c8d0db258e7503eeece48d42c8ead5c65a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/62-reframe-maintenance-control-plane/index.html",
+      "beforeSHA256": "a516545e4b803aa38922f8547975c706435436aabb626551c169c05d283c51b7",
+      "afterSHA256": "8a752240d8b9c043227116cbca6320feece9cfd53a156398db96a630dad25b53"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/63-fountain-maintenance-kit/index.html",
+      "beforeSHA256": "4425f9ab0e22b5a8b648966fe0c0805d663063577074d7d61c075e613dd27374",
+      "afterSHA256": "f89c3db1c296fdbcd957ae6a23400e92359137514d2fb70c4313f5f09cb1fc7f"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/64-fountain-project-kit-durable-draft-custody/index.html",
+      "beforeSHA256": "f2348ef9e7d595b9df9a748a86b637fcf609a0334f3a539ec14802c3a936a7db",
+      "afterSHA256": "6c18bc8c00d2773abaf1653f5e4b739899de11c6784de03bcb1985ab16041ee2"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/65-the-copilot-as-writing-coach/index.html",
+      "beforeSHA256": "e5aced384c4613afa629ff957f4f77e1f1cb16ea7d06e3a7739eabdb2eeddb91",
+      "afterSHA256": "4649ff68bb68a81ffabfd4d95e2b40e09206b02e5bd5ee8454b76aefc4b7f22e"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/66-fountain-image-publication-kit/index.html",
+      "beforeSHA256": "1de6d335e24d6de20790227b7c67f0b2dec4d0814a52fe7074a912b278b018ae",
+      "afterSHA256": "72aa060e5c4f5ea07bb2b66b26ac3f0703884f4ce94d2b58fe801019f35cdeb0"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/67-fountain-composer-kit-remote-attachment-custody/index.html",
+      "beforeSHA256": "a9813e92c9795c65d8be0c7b3105dc7d978bf9c7a1b8dabbaa0f7eaa5b299151",
+      "afterSHA256": "f5a53ef64b8500139a99b371f40a5d583a8b2c27f64a39b8d9abf5587b0a6d74"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/68-the-reframe-e2e-scenario-is-the-publication-unit/index.html",
+      "beforeSHA256": "9668a8f7fa84927b40301ab3d135b736a33a2b01bce73c9eb10a881f4207edfe",
+      "afterSHA256": "bc4071ab1886f2f5144170afecf36f504d84b94827ab77ad0cc64dbdfcb4fd7c"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/69-the-book-of-reframe-is-a-dual-projection/index.html",
+      "beforeSHA256": "9743ecb6afdff984eaeb8571b64d795aae2782ff7dc90d7b6828c5b75c3247a7",
+      "afterSHA256": "a92d11e00107b08d8b1a53b0a107bbc37219a668dc76ebd05fd269a7af422cb3"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/70-external-midi2-control-of-reframe/index.html",
+      "beforeSHA256": "82201f5e7b597bd52e1a6bc8f2ae6591e6afd40cc5e9b6ab042cf8b99e149a9e",
+      "afterSHA256": "064082c4668f80ad8f87f7742a8a68c327c804fd384cc295a34bccd4c57c3cf1"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/71-reframe-to-reframe-software-peer-acceptance/index.html",
+      "beforeSHA256": "ad623a161f8388f359684e1897ee2251945258d7f3671272202a67313b614165",
+      "afterSHA256": "59d3afc8ab9d9dbb02078892de7dc14312fc52f547a3f01ff061e00170303958"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/72-midi2-peer-projections-and-capacity-admission/index.html",
+      "beforeSHA256": "c8e4e2fd88d9b33c9743668ff553d28d137b36c4cc8d2d650402d4db58ff5b8c",
+      "afterSHA256": "b53fa227f82771071960a38e36f7618b2f0946d4232067c825de7a3545c15935"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/73-reframe-scenario-development-cycle/index.html",
+      "beforeSHA256": "4d7a26c161e7b4308fee917717e7b94ddba937611ebd0f8ae66743ffafb8e153",
+      "afterSHA256": "3eba193dc8888de4acc5cbb71f650ef8745e69cc1c42cd1622bbe2e727dbc50a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/74-private-image-prompt-history/index.html",
+      "beforeSHA256": "f2de69e1e5b50b14504d8f3b388624a2686535dfc5f86191a05290fcb4e4d519",
+      "afterSHA256": "2e9137b7576af3c0e9166d5ddf602fb5b82742954f11cc3c195dc9021528958d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/75-scenario-run-ownership-and-non-interference/index.html",
+      "beforeSHA256": "42730342fd98cacff2fc261c4e485ae8dc4fefed35664c127f600261409bf119",
+      "afterSHA256": "9d6b1b597f9775ace07b39712d92644c3809e2085c4b1c33a7b6e5f617e785f0"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/76-beat-movement-and-uncertainty-overlay/index.html",
+      "beforeSHA256": "d191370f06dd8192f89f87780af226bdc3c89a214b40108a29d942fec5bc55b3",
+      "afterSHA256": "4f53613c8e4941ec7b31cde0a8cfe6d0073f02ae5df15744ff4df3ef05f4e23d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/77-swift-midi2-scenario-runtime/index.html",
+      "beforeSHA256": "b47dc214ffb63b1204d13b10a74c587b39ee23281a15693d8bc0980b0704a354",
+      "afterSHA256": "c781f4cae010b940c8b2632e36f3ca98b633c93aa4be199775413013e3fb0e67"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/78-scenario-driven-development-as-org-infrastructure/index.html",
+      "beforeSHA256": "39292c671f3d6f04d18c2fffc03c97b1ab3c4af7e61b552e175070ab166bfb65",
+      "afterSHA256": "1aa474c2bf5f0f6461877e4168534b7b8a08c7514d3b3981a12c9f8555859f2d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/79-default-semantic-manuscript-projection/index.html",
+      "beforeSHA256": "001ffd0ae2ee36930c382a5c76c894dc5c31e9c6d488f92eb443bbed2d02de84",
+      "afterSHA256": "58e8fe949c1f832f6b18f8c4f08bc9d761a3cf99cc779a00ebe507f3ab9f1b7a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/80-independent-governance-publication/index.html",
+      "beforeSHA256": "015dbab411331da2beb92d1134c2f75ec594a67d2c5f6754e59befb76a55b668",
+      "afterSHA256": "39643087d8d38f683b974a0f9781d4b8753df5fbd7629262ea7c60cc76344865"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/81-universal-midi2-command-plane/index.html",
+      "beforeSHA256": "c19f3f9e71e6aff066fad12f448eec17dcd9544132f9641fd9d39073816d9578",
+      "afterSHA256": "76a356c9e67ad680b9021e3119816943af56f218f4c9f6b71a8e073ea83c0f37"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/82-remote-midi2-reading-room/index.html",
+      "beforeSHA256": "a5a3ed92a0de0e78972e6050a71295038102804bdbdaecd88d9504a33c2b134b",
+      "afterSHA256": "72bf592ea2e710c77507e2cb1752dd4b71e5f43c4f7fb0ec08c72b3e09c7387a"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/83-conversational-scenario-authoring/index.html",
+      "beforeSHA256": "3c7fc16e5225f32c672a2f63e373f34931cfc312e03fc4307d5da42b20d5f37b",
+      "afterSHA256": "b21cf496b7d1ebce8feeb8cffe498e8a7e6d6674ff93f5b0aee64fe18a41c077"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/84-governed-reframe-design-mock/index.html",
+      "beforeSHA256": "a25695b02e5f68845428c0bcf7d331ffc4872f62f7d1aa7a1dbcb3a1c21d2584",
+      "afterSHA256": "5ef4671edaf200a139dd0875b92c5cbebd2daf2458a9b3fffb5ac74166fd4c0d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/85-storify-source-auto-reads-a-defined-whole/index.html",
+      "beforeSHA256": "4e27201b70090925721672e8064906fbed12e51b29b12426f0cf7e26a8501727",
+      "afterSHA256": "7746bd17bbc6616c83040d48e279f5b88ce8ec5d24bd9c652d39416daa74f034"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/86-apple-native-semantic-pipeline-is-one-midi2-graph/index.html",
+      "beforeSHA256": "bfdf19c320dee9b6f0e16e20bd9cd2970086fdf30ca5b2cdcd8618113fa8caf4",
+      "afterSHA256": "a5ee4d3473f93c18a0c284ef941a952020b65cae1deed45afa210c5477262743"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/87-midi2-monitor-is-the-live-event-mirror/index.html",
+      "beforeSHA256": "827a9b7bbe131a78c2bfab2a8635a2bdf8836111d0d1623bcc6a39277b2cf28a",
+      "afterSHA256": "4bc7b38a1d8cb0665864f65a73ab483253c608b40467dd8b0634856bd0203086"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/88-codexkit-is-a-governed-codex-app-server-boundary/index.html",
+      "beforeSHA256": "ae9f3c3b66f5a2149d733a1b1294760eedc0b9f7474fb88c5ee0822c0702aca4",
+      "afterSHA256": "7972bfd742bb0c34002e529004296ce52359128a7bc2a6f25be68014504b4fe5"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/89-codex-auth-instrument-is-the-copilot-login-surface/index.html",
+      "beforeSHA256": "b90529584a5cbf6f9db9d3a4bf5eadda1d37e9b30c1c5ef12f11341124958ef1",
+      "afterSHA256": "5ae007e8e5cec266d8474b9cb2b08142101e21646caac52d48e24d16b19e60b4"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/90-independent-security-review-is-a-separate-acceptance-boundary/index.html",
+      "beforeSHA256": "ec2e02e9e30337d2db593e5cf49db9cfad0e48eaf95d221ad537fcad1e08b632",
+      "afterSHA256": "cb38c4a92a50b4ddf2ac7317998c2130f3cb32347cff6088c2cb45fe9654f9d4"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/91-fcis-kit-instrument-store-is-the-capability-plane/index.html",
+      "beforeSHA256": "55c29d8bbc2c85ecef94b986cca0edc0db9ea47f7bff431f3d1e43ce99046087",
+      "afterSHA256": "cd26f6b01c9c275ba7afa8c0ff99674475fd5937dda09bac13b5b295f736c6af"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/92-fountain-coach-publication-estate/index.html",
+      "beforeSHA256": "511400823e693ec43763be7b4c903da717937448a7c222085d54b5c02a62c30b",
+      "afterSHA256": "9476050174c95b6d35a8271d9a402bbf323be6fbf6ca92f0273e3d19ee1e5a80"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/93-instrument-creation-is-a-governed-promotion-path/index.html",
+      "beforeSHA256": "2f4252a41fc746c5fc085ae76140dfb8175080e589147e15b52550a4b537dd0a",
+      "afterSHA256": "9672d6ae61bd9a3938989f74600173dc4733f2294ecc9edf9533df3c22dca512"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/94-credentialed-infrastructure-operations-and-provider-adapters/index.html",
+      "beforeSHA256": "0d8af6c02465f95c321e5f4bf4f81a3a0bd0eadab73a7c45ba4d0edd5d73b8c1",
+      "afterSHA256": "dcff888c29debaa8d08256ff52fa53b3b82051e34a6e9d54962c19d962201cfe"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/95-fountainstore-headless-linux-authority/index.html",
+      "beforeSHA256": "6d62d8892b47ec06063127365f5be0c78603560a721a7bf7b7d6983fb7f4a22c",
+      "afterSHA256": "c7f66e8b48af720f6bc0f5ec7466295fff03a700dfa446db6658b277b8e6b4b0"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/96-swiftacmekit-is-a-provider-neutral-certificate-automation-boundary/index.html",
+      "beforeSHA256": "4811e0b1aeaf0ba90053a5f694978565f2eebe1fc8756c5b6a2a54e9fb8e3a3c",
+      "afterSHA256": "d27c10c15f043bb0865eb61cbbfd40d220ce8dbfef6eea6face142dd6a54de09"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/97-provider-neutral-host-bootstrap-and-enrollment/index.html",
+      "beforeSHA256": "345bf9f4429165c39251e01455d498e936f57daa8c87f2be016441abab85414f",
+      "afterSHA256": "55f679c4180a4bb4031cd1e74f18af82c28563fc6a745c7681cd83a2ccc44c2b"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/98-apple-native-markdown-presentation-and-transferable-engraving-rules/index.html",
+      "beforeSHA256": "e6fb57188d8548cba8c45b34f0ee0d14b5c52f81ec62a68ef25ee6bd0664ad7d",
+      "afterSHA256": "b66b384d01eb9bcb33ee5bd7e4a3ffd77970b9f50d1ac90cfb164f7c371a86e7"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/chapters/99-decoupled-manuscript-instruments/index.html",
+      "beforeSHA256": "507bef02bee6b4eecf58c55e6b08ed77a858d2ebb89d4e334ec3a8095d2dd8f6",
+      "afterSHA256": "cababd1004db8b862a92d6623dcb18e9c8977893fc1f667f80295d27b9f60cf9"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/compliance/index.html",
+      "beforeSHA256": "3a943313ad7a0500afca4a4eb804ced04aed3f7dd4295aea0025edbb6aabba35",
+      "afterSHA256": "212879225d4cb3cdde1cb3ab09aab0db9d75527d86237a3325f5cd5578f362b6"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/copyright/index.html",
+      "beforeSHA256": "305d726f9c3802522c44d2469d760303654420a3c36548fc5706f9405727a7eb",
+      "afterSHA256": "038681ea3949be7c5be57d48c96a12339a9bde677bbff4c1fbc304289976889d"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/index.html",
+      "beforeSHA256": "5622f84dbdd03be077cd5fd1637d3cebbf9ef032b70207f8a3c1e86b5c50767e",
+      "afterSHA256": "4961131caa58586191ce76e05055e655454c4f5f5b9eea5233237bd18f211930"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/legal/index.html",
+      "beforeSHA256": "848b511c6829373b366f876bff860e67de24814be399a029371948efb751a9f2",
+      "afterSHA256": "69db8100711749d16873c0fd387a0e90ecec05560031938f9383c900cb74e655"
+    },
+    {
+      "host": "governance.fountain.coach",
+      "path": "/privacy/index.html",
+      "beforeSHA256": "11832fa7546c74780fc56ccfb4cfb22f619e8f1922d47bf2c36f84403e339014",
+      "afterSHA256": "5bc49ddd7b77ff88f3fa65fe5c3a4ef11e1075bc88b65a46b03e0c6db4b6d10f"
+    },
+    {
+      "host": "midi2.fountain.coach",
+      "path": "/index.html",
+      "beforeSHA256": "516fdcbec7be8c9299d4a7e4826316e2a5a696e355f37e4761c59c4a98a4a5a8",
+      "afterSHA256": "ec019d59131557e20c7dbbb1c6b4c6970c921c414d43fd7bf7ca3da6312b809f"
+    },
+    {
+      "host": "teatro.fountain.coach",
+      "path": "/index.html",
+      "beforeSHA256": "de1eb0693282d76317b49973b0b8f4a94ae89440904323e8de191a33676a48a7",
+      "afterSHA256": "3ec3f5cc06bb52d1b09c0789c897769a2c0f25a11c3577c48b509dcc9973ab6c"
+    },
+    {
+      "host": "book.fountain.coach",
+      "path": "/index.html",
+      "beforeSHA256": "5b15161dd2d1ce81edbb7d19daef26e1eb812c4b7be6ce5dca2c8809a89b3e65",
+      "afterSHA256": "e48807169921c09b73ad0636d9fde1e183a4d7ec20b9e22ac690d42b26dc128f"
+    },
+    {
+      "host": "instruments.fountain.coach",
+      "path": "/index.html",
+      "beforeSHA256": "c89c5b2727663c81ab7ed494d92c0a0e07686804aba2a934fd9f0d7732d4e213",
+      "afterSHA256": "b4b2330c2526163fd3fec512f99377fe9373257466e56d66dbd548007a716a28"
+    }
+  ],
+  "verification": "full preserved static site snapshots, per-file hashes, previous immutable releases retained"
+}

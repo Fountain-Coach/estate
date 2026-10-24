@@ -1,0 +1,11 @@
+# Satzfunk must be clickable in the public estate reel
+
+**Author request:** The reel's Satzfunk destination is not clickable. **Observed cause:** On 24 October 2026, six public estate domains (Fountain Coach, Governance, MIDI2, Teatro, Book, Instruments) served an obsolete aria-disabled span for Satzfunk. The independently published https://satzfunk.fountain.coach/ returned HTTPS 200 with 43 confirmed self-hosted partial-content video endpoints; its own reel already had a canonical anchor.
+
+**Source-owned delta:** The estate repository owns the common canonical navigation relation (navigation/canonical-reel.v1.json). The six domain owners retain editorial text and page layout. The small deterministic scripts/repair-public-satzfunk-reel.py composes the **current independently captured production v13 bytes** with the single authorized navigation correction. It does not regenerate, reorder, rewrite or deploy any author's domain content. Input releases are pinned to estate-20261023-v13-{estate,governance,midi2,teatro,book,instruments}. The source change is an exact obsolete span replacement using already-present canonical URL and SVG, not a generic link rewrite or new runtime service.
+
+**Scope:** 171 HTML pages across six domains, including 166 deep Governance HTML routes, retain nine ordered reel identities, unchanged icon geometry, Info and footer semantics, and unchanged non-HTML files. No changes to DNS, MIDI2 or Satzfunk recordings or the standalone Solstice reader. Proof: docs/acceptance/2026-10-24-public-satzfunk-reel-repair-witness.json, recording per-file SHA-256 before and after.
+
+**Production release rule:** Deploy six immutable, complete static releases through the current SSH/rsync/SHA256/atomic-link EstatePublisher, one per domain with its v13 predecessor and independent public HTTPS witness. No source-owner content reset or forced latest-Git promotion. Preserve each old release and terminal typed receipts. One corrected link must be keyboard focusable and navigate to canonical Satzfunk; no disabled marker should remain in any affected document.
+
+**FCIS non-invention:** The failure is a real outdated public navigation state, not an absence of a shared renderer, OAuth, security helper, new deployment environment or browser-matrix harness. Existing typed SSH publication is sufficient.
