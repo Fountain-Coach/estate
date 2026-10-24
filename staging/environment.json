@@ -17,7 +17,7 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261024-v21-standard-icons-5ac718e",
+      "observedRelease": "shared-shell-20261024-v22-semantic-book-7737c9b",
       "editorialRoutes": {
         "estate": "/estate/",
         "book": "/book/",
@@ -29,18 +29,19 @@
         "solstice": "/solstice/",
         "firstReading": "/solstice/editions/first-reading/"
       },
-      "retainedRollbackRelease": "shared-shell-20261024-v20-semantic-social-224517c",
+      "retainedRollbackRelease": "shared-shell-20261024-v21-standard-icons-5ac718e",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
       "lastEstatePublisherStageReceipt": "docs/acceptance/2026-10-22-estatepublisher-wlan-v11-terminal-receipt.json",
       "publisherStagingIdentity": "UbuntuEstateShellWLANStage",
       "publicProductionAffected": false,
       "latestObservedChange": {
-        "scope": "/instruments/ standard semantic mic, ear, clapperboard icons and matching social image",
-        "sourceOwner": "Fountain-Coach/instruments.fountain.coach",
-        "sourceCommit": "5ac718ed67bd9d528a294d3d4e94ef2514efd67e",
-        "witness": "docs/acceptance/2026-10-24-instruments-lucide-icon-correction-v21.md",
+        "scope": "/book/ semantic first page and supporting icon/social image, preservation of published deep routes",
+        "sourceOwner": "Fountain-Coach/book-of-reframe",
+        "sourceCommit": "7737c9b59d6cddb86e8bf44c84f94d73e6938c7f",
+        "publicBaselineRelease": "estate-20261024-v14-satzfunk-reel-book",
+        "witness": "docs/acceptance/2026-10-24-semantic-book-v22-staging.md",
         "publicProductionAffected": false,
-        "activationTransport": "existing SSH and rsync with SHA-256 plus atomic current symlink and preview service restart",
+        "activationTransport": "authenticated SSH, rsync, SHA256, atomic symlink and existing preview service restart",
         "typedEstatePublisherStageReceiptObtained": false
       }
     },
