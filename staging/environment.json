@@ -17,7 +17,7 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261024-v24-works-books-3c31eea",
+      "observedRelease": "shared-shell-20261024-v25-works-folio-reader-8375106",
       "editorialRoutes": {
         "estate": "/estate/",
         "book": "/book/",
@@ -29,23 +29,21 @@
         "solstice": "/solstice/",
         "firstReading": "/solstice/editions/first-reading/"
       },
-      "retainedRollbackRelease": "shared-shell-20261024-v23-book-publishing-be231f7",
+      "retainedRollbackRelease": "shared-shell-20261024-v24-works-books-3c31eea",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
       "lastEstatePublisherStageReceipt": "docs/acceptance/2026-10-22-estatepublisher-wlan-v11-terminal-receipt.json",
       "publisherStagingIdentity": "UbuntuEstateShellWLANStage",
       "publicProductionAffected": false,
       "latestObservedChange": {
-        "scope": "Works source-owned bilingual books; Book-domain programme and local reading links",
-        "sourceOwners": [
-          "Fountain-Coach/works-benedikt-eickhoff",
-          "Fountain-Coach/book-of-reframe"
-        ],
-        "worksCommit": "3c31eea2fa1493c47903c8d648438c5665332b41",
-        "bookCommit": "184052d47b2b8ade5f7c9de990627671376bd333",
-        "witness": "docs/acceptance/2026-10-24-works-books-v24-stage.md",
+        "scope": "four Works-owned books: inline source-faithful folio reader instead of PDF handoff",
+        "sourceOwner": "Fountain-Coach/works-benedikt-eickhoff",
+        "sourceCommit": "837510664fa90d2883d7670c13ecab287f6d4f49",
+        "predecessor": "shared-shell-20261024-v24-works-books-3c31eea",
+        "witness": "docs/acceptance/2026-10-24-works-folio-reader-v25-stage.md",
         "publicProductionAffected": false,
-        "activationTransport": "existing SSH, rsync, SHA256 and atomic symlink with existing preview service restart",
-        "typedEstatePublisherStageReceiptObtained": false
+        "activationTransport": "existing SSH/rsync, SHA-256, atomic stage symlink and existing preview service restart",
+        "typedEstatePublisherStageReceiptObtained": false,
+        "acceptance": "Chromium desktop/mobile, all 4 books, source-bound image folios and facing pages"
       }
     },
     "estate-shell-proof": {
