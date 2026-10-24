@@ -1,0 +1,17 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261023-v13-governance",
+  "publicHost" : "governance.fountain.coach",
+  "recordedAt" : 814512871.944745,
+  "releaseID" : "estate-20261024-v14-satzfunk-reel-governance",
+  "sourceInventorySHA256" : "90bf75f5fce4d272c4cb18c359a922f1084377f9c0256dec63088d2ce5f77087",
+  "sourceRevision" : "de46d7bd7aba436b3d6b91831b643d63586d3716",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "4961131caa58586191ce76e05055e655454c4f5f5b9eea5233237bd18f211930"
+    }
+  ]
+}

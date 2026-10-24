@@ -1,0 +1,17 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261023-v13-midi2",
+  "publicHost" : "midi2.fountain.coach",
+  "recordedAt" : 814512878.803946,
+  "releaseID" : "estate-20261024-v14-satzfunk-reel-midi2",
+  "sourceInventorySHA256" : "d7685ec45e23c93bae25eaafb5de7c5911ab3e67daef5899a2520478466484c5",
+  "sourceRevision" : "de46d7bd7aba436b3d6b91831b643d63586d3716",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "ec019d59131557e20c7dbbb1c6b4c6970c921c414d43fd7bf7ca3da6312b809f"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261023-v13-book",
+  "publicHost" : "book.fountain.coach",
+  "recordedAt" : 814512893.512954,
+  "releaseID" : "estate-20261024-v14-satzfunk-reel-book",
+  "sourceInventorySHA256" : "3deda39f677dc3fbbeffcbd1a40fe3450f2e870d8948b523aa40f9e8b92e6dc7",
+  "sourceRevision" : "de46d7bd7aba436b3d6b91831b643d63586d3716",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "e48807169921c09b73ad0636d9fde1e183a4d7ec20b9e22ac690d42b26dc128f"
+    }
+  ]
+}

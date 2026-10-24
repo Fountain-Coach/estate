@@ -1,0 +1,17 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261023-v13-pointer",
+  "publicHost" : "benedikt-eickhoff.de",
+  "recordedAt" : 814513043.525192,
+  "releaseID" : "estate-20261024-v14-satzfunk-reel-pointer",
+  "sourceInventorySHA256" : "b92a421907472257bf1a01d5e6a4faabafbbd4b5d96653249cb9da8c18cf4b11",
+  "sourceRevision" : "b01ce67832eab294f2234058456921933657b04f",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "faf9e2588480451f160464eadd81a79e170a71d5c78a6250795c3bf9767d3239"
+    }
+  ]
+}

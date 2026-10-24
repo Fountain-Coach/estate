@@ -1,0 +1,17 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261023-v13-teatro",
+  "publicHost" : "teatro.fountain.coach",
+  "recordedAt" : 814512886.2855,
+  "releaseID" : "estate-20261024-v14-satzfunk-reel-teatro",
+  "sourceInventorySHA256" : "1cbb8b015018700d2bc72a289936013ef4475f4c16dfab5322100ba8bb79423b",
+  "sourceRevision" : "de46d7bd7aba436b3d6b91831b643d63586d3716",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "3ec3f5cc06bb52d1b09c0789c897769a2c0f25a11c3577c48b509dcc9973ab6c"
+    }
+  ]
+}

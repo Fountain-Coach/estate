@@ -1,0 +1,17 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261023-v13-estate",
+  "publicHost" : "fountain.coach",
+  "recordedAt" : 814512849.661301,
+  "releaseID" : "estate-20261024-v14-satzfunk-reel-estate",
+  "sourceInventorySHA256" : "3e918ddfa17fd94ba65277da138c31e10c8589bf54ac9ec4d10f5ad8d9b6be79",
+  "sourceRevision" : "de46d7bd7aba436b3d6b91831b643d63586d3716",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "f234a80c286c27e2f147096c5421d2a8d54aed2339fc5ad9a3e5a5d2eda5f918"
+    }
+  ]
+}

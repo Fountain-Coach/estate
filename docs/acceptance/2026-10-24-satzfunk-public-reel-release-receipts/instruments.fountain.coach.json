@@ -1,0 +1,17 @@
+{
+  "activated" : true,
+  "detail" : "Exact published bytes verified independently via HTTPS",
+  "previousReleaseID" : "estate-20261023-v13-instruments",
+  "publicHost" : "instruments.fountain.coach",
+  "recordedAt" : 814512899.904632,
+  "releaseID" : "estate-20261024-v14-satzfunk-reel-instruments",
+  "sourceInventorySHA256" : "f9a7c1ac1a60e018e0a766ef7c2e627f9bd009fcdfdede9881d7774508e4129a",
+  "sourceRevision" : "de46d7bd7aba436b3d6b91831b643d63586d3716",
+  "state" : "active",
+  "verifiedPublicFiles" : [
+    {
+      "path" : "\/index.html",
+      "sha256" : "b4b2330c2526163fd3fec512f99377fe9373257466e56d66dbd548007a716a28"
+    }
+  ]
+}
