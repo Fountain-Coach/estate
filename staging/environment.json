@@ -17,7 +17,7 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261024-v26-discreet-references-876b613",
+      "observedRelease": "shared-shell-20261024-v30-first-reading-safari-39904c5",
       "editorialRoutes": {
         "estate": "/estate/",
         "book": "/book/",
@@ -29,23 +29,26 @@
         "solstice": "/solstice/",
         "firstReading": "/solstice/editions/first-reading/"
       },
-      "retainedRollbackRelease": "shared-shell-20261024-v25-works-folio-reader-8375106",
+      "retainedRollbackRelease": "shared-shell-20261024-v29-first-reading-safari-f803c5c",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
       "lastEstatePublisherStageReceipt": "docs/acceptance/2026-10-22-estatepublisher-wlan-v11-terminal-receipt.json",
       "publisherStagingIdentity": "UbuntuEstateShellWLANStage",
       "publicProductionAffected": false,
       "latestObservedChange": {
-        "scope": "Status off-reel supporting /references/ publication-boundary section, Transparency backlink and no private-case data; source off-reel Works/Book distinction documented",
-        "sourceOwner": "Fountain-Coach/status.fountain.coach",
-        "sourceCommit": "f4e1e2981e2bb6945a78e9c36ade6f50dd2f2a23",
-        "publicStatusBaseline": "status-public-snapshot-20261014; affected public page/CSS SHA-256 match",
-        "witness": "docs/acceptance/2026-10-24-status-discreet-references-v26.md",
-        "decision": "docs/decisions/2026-10-24-editorial-visibility-and-discreet-references.md",
+        "scope": "Solstice First Reading macOS Safari original page source and measured folios, head admission and full-text fallback, mobile atlas geometry; Lucide Book/Instruments icons preserved",
+        "sourceOwner": "Fountain-Coach/solstice.fountain.coach",
+        "sourceCommit": "39904c52aefcbde20a0d0f8ddf14e5f04ecb3a1e",
+        "compositionOwner": "Fountain-Coach/fountain-press",
+        "compositionCommit": "8a57e6fa10a3d0acde8a9ff79608663afcdbbef5",
+        "baseline": "Affected five First Reading public HTTPS files matched v26 WLAN baseline prior to adding source owner delta",
+        "predecessor": "shared-shell-20261024-v29-first-reading-safari-f803c5c",
+        "preservedOriginalWorks": 30,
+        "preservedOriginalImages": 41,
+        "witness": "docs/acceptance/2026-10-24-first-reading-v30-safari-stage.md",
         "publicProductionAffected": false,
-        "privateCaseDocumentsPublished": false,
-        "activationTransport": "existing SSH/rsync, SHA256, atomic symlink, existing preview service restart",
+        "activationTransport": "existing SSH/rsync, SHA-256, immutable release and atomic WLAN symlink",
         "typedEstatePublisherStageReceiptObtained": false,
-        "browserAcceptance": "Chromium 1280x900 and 393x852; Status Transparency to References and back; no scripts, cookies, external requests or overflow"
+        "acceptance": "actual macOS Safari facing-page and page turn; Chromium desktop/mobile portrait/landscape plus disabled-JS fallback; zero overflow"
       }
     },
     "estate-shell-proof": {
