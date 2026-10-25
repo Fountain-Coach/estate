@@ -17,7 +17,7 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261024-v30-first-reading-safari-39904c5",
+      "observedRelease": "shared-shell-20261025-v33-ear-sing-seek-d6736cd",
       "editorialRoutes": {
         "estate": "/estate/",
         "book": "/book/",
@@ -29,12 +29,32 @@
         "solstice": "/solstice/",
         "firstReading": "/solstice/editions/first-reading/"
       },
-      "retainedRollbackRelease": "shared-shell-20261024-v29-first-reading-safari-f803c5c",
+      "retainedRollbackRelease": "shared-shell-20261025-v32-ear-sing-listening-74bc464",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
       "lastEstatePublisherStageReceipt": "docs/acceptance/2026-10-22-estatepublisher-wlan-v11-terminal-receipt.json",
       "publisherStagingIdentity": "UbuntuEstateShellWLANStage",
       "publicProductionAffected": false,
       "latestObservedChange": {
+        "date": "2026-10-25",
+        "scope": "Revise The Ear That Learns with 04 listening-room engraved essay plate, 21 continuous-prose paragraphs, three original-source-derived AAC auditions, selectable take and time-addressed comments",
+        "fountainSourceOwner": "Fountain-Coach/fountain.coach",
+        "fountainSourceCommit": "d6736cdb04d8e8a4d5acf6cb6c031e5aaf8d522c",
+        "semanticPlayerOwner": "Fountain-Coach/SatzfunkPlayer",
+        "semanticPlayerCommit": "0d2ee25da224b71a24e997a4050805f157970d0c",
+        "mediaPreviewServerSourceCommit": "f2ac868da5d75deb6796958eaacd680229da88aa",
+        "activeRelease": "shared-shell-20261025-v33-ear-sing-seek-d6736cd",
+        "predecessor": "shared-shell-20261025-v32-ear-sing-listening-74bc464",
+        "privateAuditions": "three original Sing 48k PCM sources, SHA-256 pinned; 256kbps AAC browser derivatives, separately SHA-256 pinned; not human singers, not Japanese source, not public audio releases",
+        "publisher": "existing authenticated SSH and rsync, immutable release, SHA-256 proof, atomic symlink and rollback; same existing canonical service",
+        "runtimeCorrection": "Existing preview byte-range extension from MP4 to M4A, exact GET 206 content-range witness; no extra service",
+        "browserWitness": "headless local Chrome: 3 takes, 4 cues each, currentTime 2.15 on direct query link, source-time copy fallback, mobile viewport 390 px without horizontal overflow; all selected HTTP assets returned 200",
+        "nativeSafariWitness": "not-yet-performed",
+        "typedEstatePublisherStageReceiptObtained": false,
+        "publicProductionAffected": false,
+        "publicNewEssayStatus": 404,
+        "documentation": "docs/acceptance/2026-10-25-ear-sing-essay-listening-v33.md"
+      },
+      "priorObservedChange": {
         "scope": "Solstice First Reading macOS Safari original page source and measured folios, head admission and full-text fallback, mobile atlas geometry; Lucide Book/Instruments icons preserved",
         "sourceOwner": "Fountain-Coach/solstice.fountain.coach",
         "sourceCommit": "39904c52aefcbde20a0d0f8ddf14e5f04ecb3a1e",
@@ -49,7 +69,8 @@
         "activationTransport": "existing SSH/rsync, SHA-256, immutable release and atomic WLAN symlink",
         "typedEstatePublisherStageReceiptObtained": false,
         "acceptance": "actual macOS Safari facing-page and page turn; Chromium desktop/mobile portrait/landscape plus disabled-JS fallback; zero overflow"
-      }
+      },
+      "lastObservedEssayStagingReceipt": "docs/acceptance/2026-10-25-ear-sing-essay-listening-v33.md"
     },
     "estate-shell-proof": {
       "role": "isolated-October-22-shell-proof-not-canonical-entrance",
@@ -88,11 +109,12 @@
     }
   },
   "provenance": {
-    "inspectedAt": "2026-10-24",
+    "inspectedAt": "2026-10-25",
     "environmentIdentity": "Observed over authenticated SSH to MacMiniDocker",
     "releaseIdentity": "observedRelease is an audit snapshot; activeReleaseSymlink and HTTP readback are the current runtime authority",
     "publicationClaim": "WLAN previews are not public DNS/Caddy releases",
     "legacyServiceNote": "192.168.8.11:8443 is an older distinct estate service on the same Ubuntu host; 192.168.8.249 was a former WLAN address",
-    "stageOutcome": "EstatePublisher typed terminal active receipt; 356 host SHA-256 verified and 11 independent HTTP witness bytes; 174 route structural gate; public production unchanged"
+    "stageOutcome": "v33 private WLAN listening essay staging verified: 9 v32 overlay paths plus v33 player module SHA readback; 3 AAC sound witnesses; 206 M4A seek; real Chrome 2.15 s deep-link and mobile; public unchanged",
+    "priorStageOutcome": "EstatePublisher typed terminal active receipt; 356 host SHA-256 verified and 11 independent HTTP witness bytes; 174 route structural gate; public production unchanged"
   }
 }
