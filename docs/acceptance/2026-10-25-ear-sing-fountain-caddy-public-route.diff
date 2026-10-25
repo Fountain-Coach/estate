@@ -1,0 +1,11 @@
+--- Caddyfile.pre
++++ Caddyfile.ear-sing
+@@ -39,7 +39,7 @@
+  }
+  @fountainNewEssay {
+   host fountain.coach
+-  path / /index.html /essays /essays/ /essays/index.html /essays/semantic-compilation-the-archive-is-not-the-edition/* /essays/to-read-is-not-to-remember /essays/to-read-is-not-to-remember/ /essays/to-read-is-not-to-remember/* /assets/estate-core.js /publication-manifest.json /essays/the-composable-book /essays/the-composable-book/ /essays/the-composable-book/* /assets/estate-shell-d9a170d82a21d19b.css /assets/estate-shell-state-4139f6eec4e0f8d7.js /assets/estate-shell-logo-8c5fad1c3db56138.png /assets/estate-shell-state.js /assets/estate-shell-logo.png
++  path / /index.html /essays /essays/ /essays/index.html /essays/semantic-compilation-the-archive-is-not-the-edition/* /essays/to-read-is-not-to-remember /essays/to-read-is-not-to-remember/ /essays/to-read-is-not-to-remember/* /assets/estate-core.js /publication-manifest.json /essays/the-composable-book /essays/the-composable-book/ /essays/the-composable-book/* /assets/estate-shell-d9a170d82a21d19b.css /assets/estate-shell-state-4139f6eec4e0f8d7.js /assets/estate-shell-logo-8c5fad1c3db56138.png /assets/estate-shell-state.js /assets/estate-shell-logo.png /essays/the-ear-that-learns /essays/the-ear-that-learns/ /essays/the-ear-that-learns/* /assets/site.css
+  }
+  handle @fountainNewEssay {
+   root * /srv/fountain-static-publications/fountain.coach/current
