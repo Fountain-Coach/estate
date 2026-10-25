@@ -17,7 +17,7 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261025-v33-ear-sing-seek-d6736cd",
+      "observedRelease": "shared-shell-20261025-v34-ear-sing-dark-9f49cc1",
       "editorialRoutes": {
         "estate": "/estate/",
         "book": "/book/",
@@ -29,12 +29,42 @@
         "solstice": "/solstice/",
         "firstReading": "/solstice/editions/first-reading/"
       },
-      "retainedRollbackRelease": "shared-shell-20261025-v32-ear-sing-listening-74bc464",
+      "retainedRollbackRelease": "shared-shell-20261025-v33-ear-sing-seek-d6736cd",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
       "lastEstatePublisherStageReceipt": "docs/acceptance/2026-10-22-estatepublisher-wlan-v11-terminal-receipt.json",
       "publisherStagingIdentity": "UbuntuEstateShellWLANStage",
       "publicProductionAffected": false,
       "latestObservedChange": {
+        "date": "2026-10-25",
+        "scope": "Ear/Sing essay listening panel contrast in automatic OS dark and explicit dark mode; original light theme preserved",
+        "sourceOwner": "Fountain-Coach/fountain.coach",
+        "sourceCommit": "9f49cc1a9adc7a3df0597a455485f8f417286ee3",
+        "sourceFiles": [
+          "site/assets/site.css",
+          "scripts/verify_ear_sing_essay.py",
+          "publication-files.sha256",
+          "edition.json"
+        ],
+        "affectedStageRoute": "/estate/essays/the-ear-that-learns/",
+        "affectedStageAsset": "/estate/assets/essay-site.css",
+        "activeRelease": "shared-shell-20261025-v34-ear-sing-dark-9f49cc1",
+        "predecessor": "shared-shell-20261025-v33-ear-sing-seek-d6736cd",
+        "publicCSSBaselineSHA256": "d8a6e65183510323ebba5c45b28d8663205d55a00111b214a25b59766262e97f",
+        "stageBeforeCSSSHA256": "ed2e6bbebe9f31c1b023b2cb9b3eda9e5477320c4cb554bfebdd0e66650c0e36",
+        "stageAfterCSSSHA256": "6aba1927f4b60e6942ee4f2f19e14ad039d0af93fa4aa1809c9b38300842c9fd",
+        "sourceLineage": "Affected-scope public CSS prefix independently observed and byte preserved; pinned Git CSS delta applied to existing private stage v33",
+        "changedStageFiles": [
+          "estate/assets/essay-site.css",
+          "source-lock.json"
+        ],
+        "browserWitness": "Actual WLAN Chrome readback at 1024px/390px: automatic dark panel rgb(29,27,24), light text rgb(236,231,220), sampled minimum contrast 7.75:1, zero horizontal overflow; explicit dark and light preferences pass",
+        "nativeiPadSafariWitness": "not-performed; writer's native iPad screenshot was defect evidence",
+        "preserved": "all three original synthesized audio takes, semantic media player, illustration, essays, other estate sites, unchanged staged objects",
+        "publicProductionAffected": false,
+        "typedEstatePublisherTerminalReceiptObtained": false,
+        "documentation": "docs/acceptance/2026-10-25-ear-sing-dark-mode-v34.md"
+      },
+      "priorObservedChange": {
         "date": "2026-10-25",
         "scope": "Revise The Ear That Learns with 04 listening-room engraved essay plate, 21 continuous-prose paragraphs, three original-source-derived AAC auditions, selectable take and time-addressed comments",
         "fountainSourceOwner": "Fountain-Coach/fountain.coach",
@@ -54,23 +84,7 @@
         "publicNewEssayStatus": 404,
         "documentation": "docs/acceptance/2026-10-25-ear-sing-essay-listening-v33.md"
       },
-      "priorObservedChange": {
-        "scope": "Solstice First Reading macOS Safari original page source and measured folios, head admission and full-text fallback, mobile atlas geometry; Lucide Book/Instruments icons preserved",
-        "sourceOwner": "Fountain-Coach/solstice.fountain.coach",
-        "sourceCommit": "39904c52aefcbde20a0d0f8ddf14e5f04ecb3a1e",
-        "compositionOwner": "Fountain-Coach/fountain-press",
-        "compositionCommit": "8a57e6fa10a3d0acde8a9ff79608663afcdbbef5",
-        "baseline": "Affected five First Reading public HTTPS files matched v26 WLAN baseline prior to adding source owner delta",
-        "predecessor": "shared-shell-20261024-v29-first-reading-safari-f803c5c",
-        "preservedOriginalWorks": 30,
-        "preservedOriginalImages": 41,
-        "witness": "docs/acceptance/2026-10-24-first-reading-v30-safari-stage.md",
-        "publicProductionAffected": false,
-        "activationTransport": "existing SSH/rsync, SHA-256, immutable release and atomic WLAN symlink",
-        "typedEstatePublisherStageReceiptObtained": false,
-        "acceptance": "actual macOS Safari facing-page and page turn; Chromium desktop/mobile portrait/landscape plus disabled-JS fallback; zero overflow"
-      },
-      "lastObservedEssayStagingReceipt": "docs/acceptance/2026-10-25-ear-sing-essay-listening-v33.md"
+      "lastObservedEssayStagingReceipt": "docs/acceptance/2026-10-25-ear-sing-dark-mode-v34.md"
     },
     "estate-shell-proof": {
       "role": "isolated-October-22-shell-proof-not-canonical-entrance",
@@ -114,7 +128,7 @@
     "releaseIdentity": "observedRelease is an audit snapshot; activeReleaseSymlink and HTTP readback are the current runtime authority",
     "publicationClaim": "WLAN previews are not public DNS/Caddy releases",
     "legacyServiceNote": "192.168.8.11:8443 is an older distinct estate service on the same Ubuntu host; 192.168.8.249 was a former WLAN address",
-    "stageOutcome": "v33 private WLAN listening essay staging verified: 9 v32 overlay paths plus v33 player module SHA readback; 3 AAC sound witnesses; 206 M4A seek; real Chrome 2.15 s deep-link and mobile; public unchanged",
-    "priorStageOutcome": "EstatePublisher typed terminal active receipt; 356 host SHA-256 verified and 11 independent HTTP witness bytes; 174 route structural gate; public production unchanged"
+    "stageOutcome": "v34 private WLAN Ear/Sing dark-mode CSS repair independently read back: 2 changed files, source SHA 9f49cc1, 7.75:1 minimum dark text contrast, automatic/explicit theme and mobile verified, other media and public site unchanged",
+    "priorStageOutcome": "v33 private WLAN listening essay staging verified: 9 v32 overlay paths plus v33 player module SHA readback; 3 AAC sound witnesses; 206 M4A seek; real Chrome 2.15 s deep-link and mobile; public unchanged"
   }
 }
