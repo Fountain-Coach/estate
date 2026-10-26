@@ -1,0 +1,86 @@
+{
+  "schema": "fountain.estate.shell-acceptance.v1",
+  "fixtureOnly": true,
+  "exampleRevision": "2026-10-22-historical-synthetic",
+  "warning": "Synthetic static schema for checker unit tests only; NOT an approved public route manifest, FCIS standard, or production release gate.",
+  "reelVersion": "fountain.estate.canonical-reel.v1",
+  "footerVersion": "fountain.estate.canonical-footer.v1",
+  "footerSlots": [
+    "imprint",
+    "provenance",
+    "legal",
+    "release-state"
+  ],
+  "entries": [
+    {
+      "id": "estate",
+      "label": "Estate",
+      "url": "https://fountain.coach/"
+    },
+    {
+      "id": "book",
+      "label": "Book",
+      "url": "https://book.fountain.coach/"
+    },
+    {
+      "id": "governance",
+      "label": "Governance",
+      "url": "https://governance.fountain.coach/"
+    },
+    {
+      "id": "midi2",
+      "label": "MIDI2",
+      "url": "https://midi2.fountain.coach/"
+    },
+    {
+      "id": "instruments",
+      "label": "Instruments",
+      "url": "https://instruments.fountain.coach/"
+    },
+    {
+      "id": "teatro",
+      "label": "Teatro",
+      "url": "https://teatro.fountain.coach/"
+    },
+    {
+      "id": "satzfunk",
+      "label": "Satzfunk",
+      "url": "https://satzfunk.fountain.coach/"
+    },
+    {
+      "id": "pointer",
+      "label": "Pointer",
+      "url": "https://benedikt-eickhoff.de/"
+    },
+    {
+      "id": "solstice",
+      "label": "Solstice",
+      "url": "https://works.benedikt-eickhoff.de/solstice/"
+    }
+  ],
+  "supportingDestinations": [
+    {
+      "id": "legal",
+      "url": "https://fountain.coach/legal/"
+    },
+    {
+      "id": "status",
+      "url": "https://status.fountain.coach/"
+    }
+  ],
+  "publicationLanes": {
+    "reframeBookshelf": {
+      "authority": "Reframe and FountainStore membership; Fountain Press presentation",
+      "releasesPublicWebsite": false,
+      "createsEstateReelEntry": false
+    },
+    "estatePublisher": {
+      "authority": "source-owner publisher and EstatePublisher approved public release",
+      "requiresSeparateRightsAndRoute": true,
+      "independentHTTPSReadback": true
+    }
+  },
+  "unverifiedDestinations": [
+    "satzfunk"
+  ]
+}

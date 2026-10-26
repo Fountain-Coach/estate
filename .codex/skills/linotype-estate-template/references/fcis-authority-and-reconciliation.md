@@ -1,0 +1,45 @@
+# FCIS applicability and source reconciliation
+
+**Procedural guide revision: 2026-10-23.** This is a guide to finding governing rules, NOT an exhaustive bundled snapshot of FCIS and NOT a compliance certificate. Chapters, extensions, implementation state and public publication can change independently. Re-evaluate sources for the actual request.
+
+## First authority: fixed goal and real state
+
+1. Capture the user's observable goal and the minimum bounded acceptance. User approval can authorize scope changes; a procedural skill cannot do that on its own.
+2. Read the normative organization-wide [FCIS Goal Fidelity and Non-Invention](https://github.com/Fountain-Coach/.github/blob/main/docs/FCIS-Non-Invention-and-Goal-Fidelity.md) and [the named Invented-Prerequisite Loop](invented-prerequisite-loop.md). Before accepting a new blocker, apply its four-part test: requested goal; observed failure; why the existing mechanism is insufficient; smallest correction and acceptance. Do not promote speculative prerequisites through passing tests or allow an expanded security ceremony to redefine the original goal.
+3. Identify the accepted Governance edition and applicable chapter/amendment by reading [governance.fountain.coach](https://governance.fountain.coach/) AND the actual owner revision. Published chapter HTML is public evidence of an edition, not proof that every unpublished working-tree draft is in force. `Fountain-Coach/governance.fountain.coach` owns published source; `Fountain-Coach/midi2-gpu-fabric/apps/modernization-studio/docs/reframe-grounding-first-refactor/` may contain draft/source chapters. Confirm actual branch/commit, editorial adoption and publication state before ranking conflicts.
+4. Read `Fountain-Coach/estate/AGENTS.md` and `staging/environment.json` for estate-specific ownership/stage identity, the source owner's `AGENTS.md`, any relevant scenario decision, and the actual typed Kit/Store/EstatePublisher operation. The org default is not necessarily auto-imported by agents; explicitly inherit it in work records.
+5. Where sources appear contradictory, do not silently choose whichever increases work: pin both sources and their status, verify the applicable owner and user goal, use the binding contract, or report the exact unresolved seam. Observed current runtime is evidence of *state*, not automatic normative authorization. Do not describe a future proposal as implemented.
+
+## Applicability map - consult current text rather than trusting chapter-number memory
+
+| Task boundary | Sections to investigate (where still applicable) | Required distinction |
+| --- | --- | --- |
+| Agent scope, blocking claims and acceptance | Organization FCIS founding rule; Governance 07 and 08; repo AGENTS | Finite goal, real blocker, typed outcome; no invented prerequisites |
+| Skill, maintenance, Reframe execution | Governance 63, 77, 81, 91, 112 and relevant extensions; `ReframeSkillKit`, `FountainCoachMaintenanceKit`, host adapters | Agent ZIP is only a procedural projection; does not define or certify a runtime capability |
+| Bookshelf, source and reader | Fountain Press source/composition decisions; Reframe R17, R22, R24, R26; source Git; FountainStore | Candidate vs admitted work vs measured reader vs optional public release |
+| Estate authoring and source | Governance 92 and 127; estate owner contracts; Fountain Coach Publication Core | Complete checked-in direct-static route; no new runtime generator, hydration or global source mutation |
+| Mirror and visual acceptance | Governance 128; typed WebKit mirror and route manifest | Deployed HTTPS is read-only witness; exact matching needs correlated route, asset, AX and visual evidence |
+| Local staging and preview | Governance 143 and 147; EstatePublisher typed preview operations; estate staging registry | `draft-refresh` vs explicit digest-bound `draft-check-in`; neither means staging release or public release |
+| Git development → canonical staging | Owner's requested production-first lineage rule; Chapters 127, 128, 145, 147, 148, 158 as applicable; existing EstatePublisher/SSH path | Git is development, not DNS. Reuse a verified affected-scope production baseline + pinned Git delta + current stage predecessor. Native enforcement is needed *to claim the guarantee*, but not a pretext for new host security machinery or suspending unrelated SSH publication. See [development / staging / production](development-staging-production.md) |
+| One estate state and production | Governance 145 and 148; EstatePublisher and FountainStore receipts; rights manifests | Immutable prebuilt artifact; no source build or package resolution on production runtime |
+| Scenario composition or MIDI2 instruments | Governance 119, current MIDI2 transport/Kit sections and actual scenario registry | No string-matched invented executor; no undocumented parallel command plane |
+
+The map is navigational, not a claim that listed chapters are exhaustive or always binding. For a request explicitly demanding **all sections and extensions**, enumerate the current accepted Governance reading index and the repository's current amendments/linked subcontracts. Produce a chapter-by-chapter applicability ledger (applicable / not applicable with reason / unknown), source URL and exact commit, required runtime owner, evidence, and any contradiction. A skill ZIP alone cannot guarantee future or universally applicable FCIS compliance. Do not call a truncated search "complete".
+
+## Source-versus-environment clarification (23 October)
+
+- Development is a Git authority (repo, immutable SHA and authored intended delta), not a public DNS namespace. Existing local FountainStore native preview is a projection, not a separate environment and not public release.
+- Canonical owner-WLAN staging is one registered existing machine/service. For the **writer-requested guaranteed Git-to-canonical-staging promotion**, require evidence that the *selected affected scope* starts with current production and applies only the intended Git delta. Reuse existing immutable production snapshots/receipts where trustworthy; a fresh download, a second visible stage activation, or a new security subsystem is NOT independently required. Read [development / staging / production](development-staging-production.md).
+- This ordering rule comes from the author's explicitly requested staging behavior. It does not prove that the installed publisher enforces it, nor make ordinary previews, stage inspection or other authorized SSH static publication dependent on an invented lineage subsystem. Without evidence of the actual guard, do not claim a *guaranteed* canonical production-first transition; correct only the smallest demonstrated seam in the existing EstatePublisher delivery client. Apply [the Invented-Prerequisite Loop test](invented-prerequisite-loop.md) before introducing any new requirement.
+
+## Corrections to older October 2026 template proposals
+
+- An older Linotype Estate Template reference demanded creating "one shared renderer". Chapter 127's later direct-static contract requires one versioned *authoring contract* embodied in independently checked-in complete route files. Reuse an existing adopted authoring path; do not create another generator, compiler, wrapper, cross-origin runtime shell or second publisher.
+- An older proposal unconditionally added a new EstatePublisher cross-domain gate. First inspect the actual admitted preview, mirror, acceptance and publication operations. New gates are proposals until a real missing contract and minimal correction are demonstrated. A speculative DoD cannot block an already working outcome.
+- A sample nine-entry reel, four-footer-slot schema, proposed markup class, or intended Satzfunk hostname is a historical test fixture, NOT proof of the current accepted public route set. An unresolved private route must not be exposed or made a compulsory broken public link.
+- Static Python HTML checks are auxiliary development evidence. They cannot implement a Swift Kit maintenance operation, replace native WebKit/AX, or certify full FCIS. A failing comparison against a different unadopted schema is **contract mismatch requiring reconciliation**, not automatically a production defect.
+- Neither an approved local draft nor a passing iPad viewport screenshot constitutes a public EstatePublisher receipt. Production executes immutable artifacts only. Site readbacks must be independently observed.
+
+## Report claims and decisions
+
+For each changed or inspected route, record: goal; exact source owner/ref; applicability decisions and source publication status; current observed bytes, UI or execution; actual failed operation (if any); smallest correction; evidence class (OBSERVED / PROVEN / DOCUMENTED / INFERRED / PROPOSED); stage vs public distinction; whether the originally requested outcome is achieved. Close the task when the finite acceptance is met. Separate unfixed unrelated ideas into optional follow-up notes without making them prerequisites.

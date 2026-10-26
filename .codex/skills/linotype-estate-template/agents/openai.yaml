@@ -1,0 +1,14 @@
+interface:
+  display_name: Linotype Estate Template
+  short_description: FCIS-aware Linotype and production-first Git-to-staging estate
+    workflows
+  icon: book-open
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
