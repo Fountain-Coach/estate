@@ -126,6 +126,39 @@ def inspect(root:Path) ->dict:
             if hashlib.sha256(f.read_bytes()).hexdigest()!=digest:
                 raise RuntimeError("Historical media digest mismatch")
             media[rel]=digest
+    teatro=meta.get("teatroSatzfunkPlayerScenarioStage",{})
+    released=teatro.get("releasedMediaFiles",[]) if isinstance(teatro,dict) else []
+    if released:
+        if (teatro.get("scenarioID")!="teatro.satzfunk-player-ear-wind.01"
+            or teatro.get("status")!="WLAN-CANDIDATE-PLAYER-ROUTE-AND-BOOK-STAGED-LIVE-ACCEPTANCE-PENDING"
+            or teatro.get("publicProductionAffected") is not False
+            or not teatro.get("scenarioRoute","/teatro/scenarios/").startswith("/teatro/scenarios/")):
+            raise RuntimeError("Released Teatro media requires the source-locked Player Scenario candidate")
+        if not isinstance(released,list) or len(released)>4:
+            raise RuntimeError("Invalid source-locked Teatro released-media inventory")
+        for item in released:
+            rel=item.get("path","")
+            digest=item.get("sha256","")
+            size=item.get("bytes")
+            if (not isinstance(rel,str) or not rel.startswith("teatro/media/")
+                or ".." in Path(rel).parts or Path(rel).is_absolute()
+                or Path(rel).suffix.lower()!=".mp4"
+                or not isinstance(digest,str) or not re.fullmatch(r"[a-f0-9]{64}",digest)
+                or not isinstance(size,int) or size<=0
+                or item.get("publicReleaseAuthorized") is not True
+                or not isinstance(item.get("publicSource"),str)
+                or not item["publicSource"].startswith("https://")
+                or not isinstance(item.get("sourceRepository"),str)
+                or not item["sourceRepository"].startswith("Fountain-Coach/")
+                or rel in media):
+                raise RuntimeError("Invalid source-locked Teatro released-media entry")
+            f=(root/rel).resolve()
+            if not f.is_relative_to(root) or not f.is_file():
+                raise RuntimeError("Source-locked Teatro media missing")
+            data=f.read_bytes()
+            if len(data)!=size or hashlib.sha256(data).hexdigest()!=digest:
+                raise RuntimeError("Source-locked Teatro media bytes mismatch")
+            media[rel]=digest
     for scope in ("pointer/assets/historical-cache/boom-bangs",
                   "pointer/assets/historical-media"):
         for asset in (root/scope).rglob("*"):
