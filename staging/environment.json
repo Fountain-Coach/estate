@@ -17,7 +17,7 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261025-v36-composing-by-ear-mobile-0efbd70",
+      "observedRelease": "shared-shell-20261026-v47-teatro-techno-ear-dd34fd8",
       "editorialRoutes": {
         "estate": "/estate/",
         "book": "/book/",
@@ -27,58 +27,41 @@
         "teatro": "/teatro/",
         "pointer": "/pointer/",
         "solstice": "/solstice/",
-        "firstReading": "/solstice/editions/first-reading/"
+        "firstReading": "/solstice/editions/first-reading/",
+        "teatroTechnoDeck": "/teatro/experiments/classic-techno-deck/"
       },
-      "retainedRollbackRelease": "shared-shell-20261025-v35-composing-by-ear-42fe7fc",
+      "retainedRollbackRelease": "shared-shell-20261026-v46-governance160-editorial-fbc957d",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
       "lastEstatePublisherStageReceipt": "docs/acceptance/2026-10-22-estatepublisher-wlan-v11-terminal-receipt.json",
       "publisherStagingIdentity": "UbuntuEstateShellWLANStage",
       "publicProductionAffected": false,
       "latestObservedChange": {
-        "date": "2026-10-25",
-        "scope": "Original Sing Ear MIDI2 UMP CC74 to actual Csound Teatro private composition; two real Csound audition recordings plus mobile overflow repair",
+        "date": "2026-10-26",
+        "scope": "Teatro Stage Web independent six-channel Csound classic-techno mixing deck (not puppet view) with real Ear AudioWorklet observations and bounded bass-filter feedback; owner-WLAN-only v47 stage",
         "authorPublished": false,
         "publicProductionAffected": false,
-        "sourceOwner": "Fountain-Coach/teatro.fountain.coach",
-        "sourceImplementationCommit": "42fe7fc8d7864c6c9f5fbf14ddfc44f41c953729",
-        "sourceFinalCommit": "0efbd7005ba620f66b0620c8a22b509db7f66f43",
-        "sourcePath": "scripts/composing-by-ear/",
-        "stagingRelease": "shared-shell-20261025-v36-composing-by-ear-mobile-0efbd70",
-        "stagePredecessor": "shared-shell-20261025-v35-composing-by-ear-42fe7fc",
-        "preExperimentPredecessor": "shared-shell-20261025-v34-ear-sing-dark-9f49cc1",
-        "v35AddedFiles": [
-          "teatro/experiments/composing-by-ear/index.html",
-          "teatro/experiments/composing-by-ear/csound-control.m4a",
-          "teatro/experiments/composing-by-ear/csound-by-ear.m4a"
-        ],
-        "v35ChangedFiles": [
-          "source-lock.json"
-        ],
-        "v35PreExistingFilesPreserved": 994,
-        "v36ChangedFiles": [
-          "teatro/experiments/composing-by-ear/index.html",
-          "source-lock.json"
-        ],
-        "v36PreExistingFilesPreserved": 996,
-        "v36MediaUnchanged": true,
-        "sourceSingWAVSHA256": "1d285c6b0a9dd2f7b7be58aac1509b5f55bcac5e3636c530cbec25f20db8f505",
-        "stagePageSHA256": "41b7469740f45ec7e6ca38bf36cca7126c311e50d52d284a0b9f0c3a0412a6cf",
-        "stageControlAACSHA256": "d8a02db7222b25a0dd886c355b23d75b4ba9a38190cf6da622cc80961cee8b27",
-        "stageComposedAACSHA256": "48afe2ca50be06da1a5276413a9b368ca58ff23a826310400462907585bc28e0",
-        "midi2ControllerEventsAccepted": 61,
-        "csoundRealParameterChangesApplied": 61,
-        "rawCsoundRMSChangeRatio": 2.8651361725212365,
-        "noBackpressureDrops": true,
-        "stageURL": "http://192.168.8.50:8200/teatro/experiments/composing-by-ear/",
-        "browserAcceptance": "Actual Mac Chrome HTTP: 1280px desktop, 820px iPad-portrait, 390px phone, OS light; no overflow, both original AACs play, no browser errors",
-        "mediaRangeWitness": "HTTP 206 audio/mp4 0-31/85074",
+        "sourceOwner": "Fountain-Coach/midi2-gpu-fabric",
+        "sourceCommit": "dd34fd84556ceb5fb51b5d3af2db10dd0c014d2c",
+        "sourcePath": "apps/teatro-stage-web/src/techno/",
+        "scenarioOwner": "Fountain-Coach/teatro.fountain.coach",
+        "scenarioCommit": "724fa6783164b1a6ca2c741b80814fe5cee7fd54",
+        "scenarioPath": "scenarios/csound-teatro/classic-techno-deck.live.json",
+        "scenarioState": "candidate-unadmitted-browser-rehearsal",
+        "stagingRelease": "shared-shell-20261026-v47-teatro-techno-ear-dd34fd8",
+        "stagePredecessor": "shared-shell-20261026-v46-governance160-editorial-fbc957d",
+        "existingFilesPreserved": 1077,
+        "newFiles": 6,
+        "stageURL": "http://192.168.8.50:8200/teatro/experiments/classic-techno-deck/",
+        "stageSecureAudioURL": "https://192.168.8.11:8443/teatro.fountain.coach/experiments/classic-techno-deck/",
+        "secureAudioHostNote": "Existing separate TLS gateway at 192.168.8.11:8443, mirror of canonical staging release bytes. Requires local CA trust on client. Not an alternate canonical staging entrance.",
+        "indexHtmlSHA256": "e4df008a057d8836520c7d0182ac2e7b832975bf3f398789e8c260fdb564e433",
+        "browserAcceptance": "Actual post-activation desktop Chrome on secure TLS route: 6 strips, 357 real Ear windows, Csound RMS 0.0174 peak 0.0550, feedback off/on, Stop closes AudioContext, zero page and HTTP errors, 390px zero overflow; browser ignored local CA trust errors",
         "nativeiPadSafariWitness": "not-performed",
-        "nativeExternalMIDI2Witness": "not-performed",
-        "sourceLockRemoteOnly": true,
-        "originalWAVCopiedToStage": false,
+        "nativeScenarioAdmissionWitness": "not-performed",
+        "typedEstatePublisherStageReceiptObtained": false,
         "originalStageRoutesPreserved": true,
         "productionAffected": false,
-        "documentation": "docs/acceptance/2026-10-25-composing-by-ear-private-v36.md"
+        "documentation": "docs/acceptance/2026-10-26-teatro-techno-ear-stage-v47.md"
       },
       "priorObservedChange": {
         "date": "2026-10-25",
@@ -131,6 +114,53 @@
         "publicProductionAffected": false,
         "publicNewEssayStatus": 404,
         "documentation": "docs/acceptance/2026-10-25-ear-sing-essay-listening-v33.md"
+      },
+      "lastTeatroTechnoEarStageReceipt": "docs/acceptance/2026-10-26-teatro-techno-ear-stage-v47.md",
+      "priorTeatroStageChange": {
+        "date": "2026-10-25",
+        "scope": "Original Sing Ear MIDI2 UMP CC74 to actual Csound Teatro private composition; two real Csound audition recordings plus mobile overflow repair",
+        "authorPublished": false,
+        "publicProductionAffected": false,
+        "sourceOwner": "Fountain-Coach/teatro.fountain.coach",
+        "sourceImplementationCommit": "42fe7fc8d7864c6c9f5fbf14ddfc44f41c953729",
+        "sourceFinalCommit": "0efbd7005ba620f66b0620c8a22b509db7f66f43",
+        "sourcePath": "scripts/composing-by-ear/",
+        "stagingRelease": "shared-shell-20261025-v36-composing-by-ear-mobile-0efbd70",
+        "stagePredecessor": "shared-shell-20261025-v35-composing-by-ear-42fe7fc",
+        "preExperimentPredecessor": "shared-shell-20261025-v34-ear-sing-dark-9f49cc1",
+        "v35AddedFiles": [
+          "teatro/experiments/composing-by-ear/index.html",
+          "teatro/experiments/composing-by-ear/csound-control.m4a",
+          "teatro/experiments/composing-by-ear/csound-by-ear.m4a"
+        ],
+        "v35ChangedFiles": [
+          "source-lock.json"
+        ],
+        "v35PreExistingFilesPreserved": 994,
+        "v36ChangedFiles": [
+          "teatro/experiments/composing-by-ear/index.html",
+          "source-lock.json"
+        ],
+        "v36PreExistingFilesPreserved": 996,
+        "v36MediaUnchanged": true,
+        "sourceSingWAVSHA256": "1d285c6b0a9dd2f7b7be58aac1509b5f55bcac5e3636c530cbec25f20db8f505",
+        "stagePageSHA256": "41b7469740f45ec7e6ca38bf36cca7126c311e50d52d284a0b9f0c3a0412a6cf",
+        "stageControlAACSHA256": "d8a02db7222b25a0dd886c355b23d75b4ba9a38190cf6da622cc80961cee8b27",
+        "stageComposedAACSHA256": "48afe2ca50be06da1a5276413a9b368ca58ff23a826310400462907585bc28e0",
+        "midi2ControllerEventsAccepted": 61,
+        "csoundRealParameterChangesApplied": 61,
+        "rawCsoundRMSChangeRatio": 2.8651361725212365,
+        "noBackpressureDrops": true,
+        "stageURL": "http://192.168.8.50:8200/teatro/experiments/composing-by-ear/",
+        "browserAcceptance": "Actual Mac Chrome HTTP: 1280px desktop, 820px iPad-portrait, 390px phone, OS light; no overflow, both original AACs play, no browser errors",
+        "mediaRangeWitness": "HTTP 206 audio/mp4 0-31/85074",
+        "nativeiPadSafariWitness": "not-performed",
+        "nativeExternalMIDI2Witness": "not-performed",
+        "sourceLockRemoteOnly": true,
+        "originalWAVCopiedToStage": false,
+        "originalStageRoutesPreserved": true,
+        "productionAffected": false,
+        "documentation": "docs/acceptance/2026-10-25-composing-by-ear-private-v36.md"
       }
     },
     "estate-shell-proof": {
@@ -170,12 +200,12 @@
     }
   },
   "provenance": {
-    "inspectedAt": "2026-10-25",
+    "inspectedAt": "2026-10-26",
     "environmentIdentity": "Observed over authenticated SSH to MacMiniDocker",
     "releaseIdentity": "observedRelease is an audit snapshot; activeReleaseSymlink and HTTP readback are the current runtime authority",
     "publicationClaim": "WLAN previews are not public DNS/Caddy releases",
     "legacyServiceNote": "192.168.8.11:8443 is an older distinct estate service on the same Ubuntu host; 192.168.8.249 was a former WLAN address",
-    "stageOutcome": "Private v36 Composing by Ear accepted on canonical WLAN: 61 real UMP CC74 changes mapped to Csound, 2.865x measured PCM RMS; two original Csound-derived AACs served with byte ranges, browser iPad-size playback, 390px no overflow, unrelated routes preserved, no production promotion.",
+    "stageOutcome": "v47 Teatro classic techno Csound browser rehearsal: independently verified HTTPS mixer playback with nonzero Ear analysis and bounded control feedback, Stop/AudioContext closure, mobile viewport and preserved canonical staging entrances; no public production promotion. Secure gateway has separate local TLS CA trust requirement.",
     "priorStageOutcome": "v34 private WLAN Ear/Sing dark-mode CSS repair independently read back: 2 changed files, source SHA 9f49cc1, 7.75:1 minimum dark text contrast, automatic/explicit theme and mobile verified, other media and public site unchanged",
     "earlierStageOutcome": "v33 private WLAN listening essay staging verified: 9 v32 overlay paths plus v33 player module SHA readback; 3 AAC sound witnesses; 206 M4A seek; real Chrome 2.15 s deep-link and mobile; public unchanged"
   }
