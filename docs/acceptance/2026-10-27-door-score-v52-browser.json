@@ -1,0 +1,86 @@
+{
+  "url": "https://192.168.8.11:8443/fountain.coach/essays/the-door-is-a-score/",
+  "browser": "156.0.8078.48",
+  "sourceCommit": "424e54d482800c7aa678e9067685a031808ce2d8",
+  "physicaliPadSafari": false,
+  "layouts": [
+    {
+      "width": 1280,
+      "height": 900,
+      "noOverflow": true
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "noOverflow": true
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "noOverflow": true
+    }
+  ],
+  "audio": [
+    {
+      "id": "present",
+      "duration": 14,
+      "time": 0.182598,
+      "source": "https://192.168.8.11:8443/fountain.coach/essays/the-door-is-a-score/assets/present.mp3"
+    },
+    {
+      "id": "beyond",
+      "duration": 14,
+      "time": 0.176375,
+      "source": "https://192.168.8.11:8443/fountain.coach/essays/the-door-is-a-score/assets/beyond.mp3"
+    },
+    {
+      "id": "memory",
+      "duration": 14,
+      "time": 0.173445,
+      "source": "https://192.168.8.11:8443/fountain.coach/essays/the-door-is-a-score/assets/memory.mp3"
+    },
+    {
+      "id": "withheld",
+      "duration": 14,
+      "time": 0.177844,
+      "source": "https://192.168.8.11:8443/fountain.coach/essays/the-door-is-a-score/assets/withheld.mp3"
+    }
+  ],
+  "live": {
+    "running": true,
+    "engineVersion": 7000,
+    "recalls": 1,
+    "ended": false,
+    "maxRms": 0.09216821006601066,
+    "observedWindows": 237,
+    "selected": "present",
+    "contextState": "running"
+  },
+  "stopped": {
+    "running": false,
+    "engineVersion": 7000,
+    "recalls": 1,
+    "ended": true,
+    "maxRms": 0.09216821006601066,
+    "observedWindows": 240,
+    "selected": "present",
+    "contextState": "closed"
+  },
+  "galleryRoutes": [
+    "/essays/the-door-is-a-score/",
+    "/estate/essays/the-ear-that-learns/",
+    "/estate/essays/the-composable-book/",
+    "/estate/essays/to-read-is-not-to-remember/",
+    "/estate/essays/reframe-and-the-business-value-of-the-estate/",
+    "/estate/essays/teatro-an-unfinished-composition/",
+    "/estate/essays/semantic-compilation-the-archive-is-not-the-edition/"
+  ],
+  "galleryToSecureArticle": true,
+  "errors": [],
+  "failedResponses": []
+}

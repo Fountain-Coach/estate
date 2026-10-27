@@ -126,14 +126,76 @@ def inspect(root:Path) ->dict:
             if hashlib.sha256(f.read_bytes()).hexdigest()!=digest:
                 raise RuntimeError("Historical media digest mismatch")
             media[rel]=digest
+    teatro=meta.get("teatroSatzfunkPlayerScenarioStage",{})
+    released=teatro.get("releasedMediaFiles",[]) if isinstance(teatro,dict) else []
+    if released:
+        if (teatro.get("scenarioID")!="teatro.satzfunk-player-ear-wind.01"
+            or teatro.get("status")!="WLAN-CANDIDATE-PLAYER-ROUTE-AND-BOOK-STAGED-LIVE-ACCEPTANCE-PENDING"
+            or teatro.get("publicProductionAffected") is not False
+            or not teatro.get("scenarioRoute","/teatro/scenarios/").startswith("/teatro/scenarios/")):
+            raise RuntimeError("Released Teatro media requires the source-locked Player Scenario candidate")
+        if not isinstance(released,list) or len(released)>4:
+            raise RuntimeError("Invalid source-locked Teatro released-media inventory")
+        for item in released:
+            rel=item.get("path","")
+            digest=item.get("sha256","")
+            size=item.get("bytes")
+            if (not isinstance(rel,str) or not rel.startswith("teatro/media/")
+                or ".." in Path(rel).parts or Path(rel).is_absolute()
+                or Path(rel).suffix.lower()!=".mp4"
+                or not isinstance(digest,str) or not re.fullmatch(r"[a-f0-9]{64}",digest)
+                or not isinstance(size,int) or size<=0
+                or item.get("publicReleaseAuthorized") is not True
+                or not isinstance(item.get("publicSource"),str)
+                or not item["publicSource"].startswith("https://")
+                or not isinstance(item.get("sourceRepository"),str)
+                or not item["sourceRepository"].startswith("Fountain-Coach/")
+                or rel in media):
+                raise RuntimeError("Invalid source-locked Teatro released-media entry")
+            f=(root/rel).resolve()
+            if not f.is_relative_to(root) or not f.is_file():
+                raise RuntimeError("Source-locked Teatro media missing")
+            data=f.read_bytes()
+            if len(data)!=size or hashlib.sha256(data).hexdigest()!=digest:
+                raise RuntimeError("Source-locked Teatro media bytes mismatch")
+            media[rel]=digest
     for scope in ("pointer/assets/historical-cache/boom-bangs",
                   "pointer/assets/historical-media"):
         for asset in (root/scope).rglob("*"):
             if asset.is_file() and asset.suffix.lower() in (".jpg",".jpeg",".png",".mp4"):
                 if asset.relative_to(root).as_posix() not in media:
                     raise RuntimeError("Unlisted historical media")
-    if list(root.rglob("*.wav")):
-        raise RuntimeError("WAV not allowed on preview")
+    study = meta.get("doorScoreEssayStage", {})
+    wavs = study.get("permittedWAVFiles", []) if isinstance(study, dict) else []
+    admitted_wavs = set()
+    if wavs:
+        if (study.get("sourceOwner") != "Fountain-Coach/fountain.coach"
+            or not re.fullmatch(r"[a-f0-9]{40}", study.get("sourceCommit", ""))
+            or study.get("scope") != "owner-WLAN-only"
+            or study.get("publicProductionAffected") is not False
+            or study.get("sourceLicense") != "CC0-1.0"
+            or study.get("sourceURL") != "https://opengameart.org/content/100-cc0-metal-and-wood-sfx"
+            or not isinstance(wavs, list) or len(wavs) > 8):
+            raise RuntimeError("Invalid authored sound-study admission")
+        for item in wavs:
+            rel, digest, size = item.get("path", ""), item.get("sha256", ""), item.get("bytes")
+            if (not isinstance(rel, str)
+                or not rel.startswith("estate/essays/the-door-is-a-score/assets/")
+                or Path(rel).suffix.lower() != ".wav" or ".." in Path(rel).parts
+                or not re.fullmatch(r"[a-f0-9]{64}", digest)
+                or not isinstance(size, int) or not 0 < size <= 10000000
+                or item.get("sourceKind") not in {"CC0-source-conversion", "authored-sound-study"}
+                or rel in admitted_wavs):
+                raise RuntimeError("Invalid source-locked study WAV entry")
+            asset = (root / rel).resolve()
+            if (not asset.is_relative_to(root) or not asset.is_file()
+                or asset.stat().st_size != size
+                or hashlib.sha256(asset.read_bytes()).hexdigest() != digest):
+                raise RuntimeError("Source-locked study WAV bytes mismatch")
+            admitted_wavs.add(rel)
+    for wav in root.rglob("*.wav"):
+        if wav.relative_to(root).as_posix() not in admitted_wavs:
+            raise RuntimeError("WAV not allowed on preview")
     for film in root.rglob("*.mp4"):
         if film.relative_to(root).as_posix() not in media:
             raise RuntimeError("Unexpected MP4 outside historical media scope")
