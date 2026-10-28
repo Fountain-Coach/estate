@@ -8,7 +8,7 @@
       "rank": 1,
       "url": "https://fountain.coach/",
       "sourceRepo": "Fountain-Coach/fountain.coach",
-      "editorialEdition": "catalogue-with-source-bound-nested-essays",
+      "editorialEdition": "individual-author-with-source-owned-essays-and-independent-bookshelf",
       "editorialOrder": [
         "teatro-an-unfinished-composition",
         "semantic-compilation-the-archive-is-not-the-edition",
@@ -19,8 +19,14 @@
       "sourcePublicationState": "Git owner main; WLAN release v3; public production not deployed",
       "landing": {
         "url": "https://fountain.coach/",
-        "path": "/editions/",
-        "kind": "edition-catalogue"
+        "path": "/",
+        "kind": "author-led-editorial-identity",
+        "sourceOwner": "Fountain-Coach/fountain.coach",
+        "author": "Benedikt Eickhoff",
+        "publicationState": "source-candidate-not-staged",
+        "selectedEssayCount": 4,
+        "adjacentReadingRoom": "https://fountain.coach/essays/",
+        "retainedEditionCatalogue": "https://fountain.coach/editions/"
       },
       "entryEditionUrl": "https://fountain.coach/editions/essays/",
       "entryEditionPath": "/editions/essays/",
@@ -37,7 +43,18 @@
           "slug": "reframe-and-the-business-value-of-the-estate",
           "url": "https://fountain.coach/editions/essays/reframe-and-the-business-value-of-the-estate/"
         }
-      ]
+      ],
+      "adjacentReadingRoom": {
+        "url": "https://fountain.coach/essays/",
+        "role": "complete illustrated essay collection",
+        "verifiedPublicWorks": 7,
+        "sourcePublicationState": "mixed-public-production-and-git-authoring; preserve latest public bodies"
+      },
+      "editorialDecision": {
+        "date": "2026-10-28",
+        "status": "author-approved",
+        "meaning": "Fountain Coach introduces its one-person developer and author through four original essay hero illustrations; Essays is the neighboring full reading room; Bookshelf remains separate at /editions/."
+      }
     },
     {
       "id": "first-reading",
@@ -301,7 +318,7 @@
     "publishing": "typed-authorized EstatePublisher and independent live HTTPS readback; Git pushes alone cannot publish",
     "archives": "preserve hosted historical references; private archive unserved Tennis",
     "ci": "no GitHub Actions/workflows",
-    "rail": "A front-door rail points into that domain’s edition, not into the editions catalogue; the root / is the catalogue, not the Essays cover.",
+    "rail": "The parent fountain.coach/ is the independent author-led estate identity; /essays/ is its complete reading room; /editions/ is the separate Fountain Press Bookshelf; domain navigation follows the canonical estate authority graph, never promotes an unrelated essay to global navigation.",
     "subEditions": "Every nested edition has its own canonical source-backed URL, full manuscript, Linotype pagination, and independent reading position; original essays remain intact.",
     "teatroEntry": "Teatro and its global rail MUST enter an authored Linotype book. The existing Csound stage is a secondary, user-activated Stage sub-edition.",
     "satzfunkFirstHearing": "The Hear rail is source-bound and nonmodal; no approval, no narration release. A compiled Csound scene cannot substitute for source-matched recorded speech."
