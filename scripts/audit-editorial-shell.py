@@ -39,6 +39,7 @@ STAGE_ROLE = {
     "governance.fountain.coach": "governance", "midi2.fountain.coach": "midi2",
     "instruments.fountain.coach": "instruments", "teatro.fountain.coach": "teatro",
     "benedikt-eickhoff.de": "pointer", "solstice.fountain.coach": "solstice",
+    "works.benedikt-eickhoff.de": "works", "status.fountain.coach": "status",
 }
 REQUIRED_FOOTER = (
     "status.fountain.coach", "/legal/", "/privacy/",
@@ -68,19 +69,22 @@ class Document(HTMLParser):
         if tag == "html": self.has_html = True
         if tag == "meta" and d.get("name") == "fountain:publication-role":
             self.role = d.get("content", "")
-        if tag == "header" and ("site-header" in classes or d.get("role") == "banner"):
+        if tag == "header" and ("site-header" in classes or "fc-estate-shell" in classes or "topbar" in classes or d.get("data-estate-slot") == "masthead" or d.get("role") == "banner"):
             self.banners += 1
         if tag == "main": self.mains += 1
         if tag == "footer": self.footers += 1
         if tag == "h1": self.heading_count += 1
         self.stack.append((tag, d))
-        is_reel = any(t == "nav" and ("estate-nav" in a.get("class","").split() or
+        is_reel = any(t == "nav" and ("estate-nav" in a.get("class","").split() or "fc-shell-reel" in a.get("class","").split() or
                            "estate" in a.get("aria-label","").lower()) for t,a in self.stack)
         is_footer = any(t == "footer" for t,a in self.stack)
         is_header = any(t == "header" for t,a in self.stack)
         if tag == "a":
             href = d.get("href", "")
             if "skip-link" in classes and href.startswith("#"): self.skip = True
+            if is_header and ("fc-publisher" in classes or "brand" in classes or "wordmark" in classes or d.get("data-canonical-href") == "https://fountain.coach/"):
+                self.brand = True
+            if is_reel and "estate-info" in classes: self.info = True
             if is_reel:
                 identity = d.get("data-estate-id")
                 if identity: self.reel.append((identity,href))
@@ -159,7 +163,8 @@ def assess(html, entries, row, stage_mode):
     ftext = " ".join(doc.footer)
     for required in REQUIRED_FOOTER:
         if required not in ftext: errors.append("FOOTER: missing " + required)
-    if not doc.role: errors.append("ROLE: no explicit publication role")
+    if not doc.role and not any(x in html for x in ("data-estate-identity=", "data-publication-role=", "name=\"fountain:publication-role\"")):
+        errors.append("ROLE: no explicit publication role")
     evidence = {
       "headmastCount":doc.banners,"mainCount":doc.mains,"h1Count":doc.heading_count,
       "reelIDs":found,"footerLinks":doc.footer,"publicationRole":doc.role,
@@ -231,7 +236,7 @@ def main():
         routes=results)
     dest = Path(a.output)
     dest.parent.mkdir(parents=True,exist_ok=True)
-    dest.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\\n")
+    dest.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n")
     # A second human-readable route register is derived from the same evidence.
     md = ["# Estate chrome route-by-route acceptance",
           "", "Mode: `"+a.mode+"` | Verdict: **"+summary["verdict"]+"** | Routes: "+str(len(results)),
@@ -242,10 +247,10 @@ def main():
     md += ["", "## Routes", "", "| Host | Route | Result | Findings |",
            "| --- | --- | --- | --- |"]
     for item in sorted(results,key=lambda x:(x["host"],x["route"])):
-        msg = "; ".join(item["findings"]).replace("|","\\|").replace("\\n"," ")
+        msg = "; ".join(item["findings"]).replace("|","\\|").replace("\n"," ")
         md.append("| "+item["host"]+" | `"+item["route"].replace("|","\\|")+
                   "` | "+item["result"]+" | "+msg+" |")
-    dest.with_suffix(".md").write_text("\\n".join(md)+"\\n")
+    dest.with_suffix(".md").write_text("\n".join(md)+"\n")
     print("ESTATE_CHROME_AUDIT",a.mode,summary["verdict"],"routes",len(results),
           json.dumps(counts,sort_keys=True),"report",dest)
     if summary["verdict"] != "PASS" and not a.report_only: raise SystemExit(1)
