@@ -41,9 +41,19 @@ STAGE_ROLE = {
     "benedikt-eickhoff.de": "pointer", "solstice.fountain.coach": "solstice",
     "works.benedikt-eickhoff.de": "works", "status.fountain.coach": "status",
 }
-REQUIRED_FOOTER = (
-    "status.fountain.coach", "/legal/", "/privacy/",
-    "/accessibility/", "/copyright/", "/compliance/"
+REQUIRED_FOOTER = {
+    "status": ("status.fountain.coach",),
+    "legal": ("/legal/", "/rechtliches/"),
+    "privacy": ("/privacy/", "/datenschutz/"),
+    "accessibility": ("/accessibility/", "/barrierefreiheit/"),
+    "copyright": ("/copyright/", "/urheberrecht/"),
+    "compliance": ("/compliance/", "/eu-kontext/"),
+}
+EXTERNAL_OBSERVED = (
+    ("midi2.fountain.coach", "/", "Fountain-Coach/midi2",
+     "Public MIDI2 is a derived documentation projection, not a tracked owner HTML route"),
+    ("satzfunk.fountain.coach", "/", "Fountain-Coach/Satzfunk",
+     "Public media estate is released on its own origin and not present in this pinned owner inventory"),
 )
 
 class Document(HTMLParser):
@@ -161,8 +171,9 @@ def assess(html, entries, row, stage_mode):
     if not doc.info: errors.append("REEL: missing Info action")
     if doc.footers != 1: errors.append("FOOTER: expected one footer")
     ftext = " ".join(doc.footer)
-    for required in REQUIRED_FOOTER:
-        if required not in ftext: errors.append("FOOTER: missing " + required)
+    for role,alternatives in REQUIRED_FOOTER.items():
+        if not any(required in ftext for required in alternatives):
+            errors.append("FOOTER: missing " + role + " legal/provenance destination")
     if not doc.role and not any(x in html for x in ("data-estate-identity=", "data-publication-role=", "name=\"fountain:publication-role\"")):
         errors.append("ROLE: no explicit publication role")
     evidence = {
@@ -190,6 +201,10 @@ def main():
             rows.append(dict(host="fountain.coach",route=path,
                 owner="Fountain-Coach/fountain.coach",sourceFile=None,
                 provenance="public-HTTPS-route-not-present-in-Git-inventory"))
+    for host,path,owner,description in EXTERNAL_OBSERVED:
+        if (host,path) not in known:
+            rows.append(dict(host=host,route=path,owner=owner,sourceFile=None,
+                provenance="externally-observed-unregistered-or-derived-root",description=description))
     stage_routes = stage["editorialRoutes"]
     def inspect(row):
         host, route = row["host"],row["route"]
@@ -204,7 +219,7 @@ def main():
         if a.mode == "source":
             if not row.get("sourceFile"):
                 return dict(base,result="MISSING_SOURCE_CUSTODY",
-                    findings=["Publicly observed essay is absent from tracked source inventory"])
+                    findings=[row.get("description","Publicly observed essay is absent from pinned source inventory")])
             try: html = read_source(row, owners,a.fountain_ref)
             except Exception as e: return dict(base,result="ERROR",findings=[str(e)])
             result,findings,evidence = assess(html,entries,row,False)
@@ -212,7 +227,8 @@ def main():
                         contentSHA256=sha256(html.encode()).hexdigest())
         mapped = stage_path(row,stage_routes)
         if mapped is None:
-            return dict(base,result="UNMAPPED",findings=["No canonical stage route declared for this host"])
+            return dict(base,result="UNMAPPED",
+                findings=["No canonical stage route declared for this host; a separate owner/publication witness is necessary"])
         url = a.stage_base.rstrip("/") + mapped
         status,html = read_stage(url,a.timeout)
         base.update(stageURL=url,httpStatus=status)
@@ -230,6 +246,8 @@ def main():
         mode=a.mode, canonicalStageEntry=stage.get("entryURL"),
         sourceRouteInventoryCount=len(known),
         additionalPublicRoutes=[r for r in PUBLIC_ONLY if ("fountain.coach",r) not in known],
+        separatelyObservedRoots=[dict(host=h,route=p,owner=o,sourceState=d)
+            for h,p,o,d in EXTERNAL_OBSERVED if (h,p) not in known],
         checkedRoutes=len(results), counts=counts,
         verdict="PASS" if all(x["result"] in ("PASS","FRAGMENT","OUTSIDE_PUBLIC_SCOPE") for x in results)
                 else "NOT_ACCEPTED",
