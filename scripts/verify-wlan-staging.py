@@ -1,305 +1,169 @@
 #!/usr/bin/env python3
-"""Read-only WLAN proof of edition-catalogue and nested Linotype hierarchy."""
-from urllib.request import Request,urlopen
-import json,re
+"""Read-only acceptance for the *current* owner-WLAN estate staging service.
 
-IP="192.168.8.249"
-ROOTS={host:f"http://{IP}:{port}/" for host,port in
-       (("fountain",8180),("solstice",8181),("teatro",8182))}
-NAV=re.compile(r'<nav\b[^>]*class="[^"]*\bestate-nav\b[^"]*"[^>]*>.*?</nav>',re.S)
-EDNAV=re.compile(r'<nav\b[^>]*class="[^"]*\bedition-rail\b[^"]*"[^>]*>.*?</nav>',re.S)
-IDS=["estate","first-reading","teatro"]
-HREFS=[ROOTS["fountain"]+"editions/essays/",
-       ROOTS["solstice"]+"editions/first-reading/",
-       ROOTS["teatro"]+"editions/first-hearing/"]
-SLUGS=[
- ("teatro-an-unfinished-composition",1),
- ("semantic-compilation-the-archive-is-not-the-edition",1),
- ("reframe-and-the-business-value-of-the-estate",3)
-]
-def fetch(url):
- with urlopen(Request(url,headers={"Cache-Control":"no-cache"}),timeout=18) as response:
-  body=response.read()
-  assert response.status==200,(url,response.status)
-  assert "noindex" in response.headers.get("X-Robots-Tag",""),url
-  return body,response.headers
-def check_rail(html,label,matcher):
- nav=matcher.search(html)
- assert nav is not None,(label,"missing edition rail")
- links=nav.group()
- assert re.findall(r'data-estate-id="([^"]+)"',links)==IDS,(label,"wrong rail entries")
- for identity,href in zip(IDS,HREFS):
-  anchor=re.search(r'<a\b[^>]*data-estate-id="'+identity+r'"[^>]*>',links)
-  assert anchor is not None and 'href="'+href+'"' in anchor.group(),(label,identity,href)
- assert 'data-estate-id="status"' not in links
- return True
+Unlike verify-wlan-staging-legacy-8180.py this checks the source-registered
+8200 service, its actual active symlink and exact release file inventory.
+It emits an explicit verdict and one row for every staged HTML route.
+No server or Git mutation.
+"""
+from __future__ import annotations
+from pathlib import Path
+from urllib.parse import urlsplit
+from urllib.request import Request, urlopen
+from concurrent.futures import ThreadPoolExecutor
+from html.parser import HTMLParser
+from collections import Counter
+import argparse
+import datetime
+import hashlib
+import json
+import shlex
+import subprocess
 
-def test():
- for host,root in ROOTS.items():
-  health=json.loads(fetch(root+"__stage/health")[0])
-  assert health["status"]=="ready"
-  assert health["productionPublished"] is False
-  assert set(health["sites"])==set(ROOTS)
-  assert health["sites"][host]["repository"] == {
-   "fountain":"Fountain-Coach/fountain.coach",
-   "solstice":"Fountain-Coach/solstice.fountain.coach",
-   "teatro":"Fountain-Coach/teatro.fountain.coach"}[host]
-  assert re.fullmatch(r"[a-f0-9]{40}",health["sites"][host]["commit"])
- catalogue=fetch(ROOTS["fountain"])[0].decode()
- assert catalogue==fetch(ROOTS["fountain"]+"editions/")[0].decode()
- assert 'data-linotype-state="bookshelf"' in catalogue
- assert catalogue.count('class="shelf-book"')==2
- assert catalogue.count('class="shelf-item"')==2
- assert catalogue.count('class="bookshelf-brand fc-identity-circle"')==1
- assert catalogue.count('class="shelf-cover"')==2
- assert catalogue.count('data-preview-host="fountain"')==2
- assert catalogue.count('data-preview-host="teatro"')==0
- assert '<h1' not in catalogue and 'id="book-viewport"' not in catalogue
- assert 'instrument-slot' not in catalogue
- for href in (HREFS[0],ROOTS['fountain']+'collections/first-readings/'):
-  assert 'href="'+href+'"' in catalogue,href
- for asset in ('fountain-coach-edition.png','first-reading-ink.png',
-               'teatro-score-memory-vector-human-condition.svg'):
-  assert len(fetch(ROOTS['fountain']+'assets/estate-bookshelf/'+asset)[0])>1000
- collection=fetch(ROOTS['fountain']+'collections/first-readings/')[0].decode()
- assert 'data-collection-id="first-readings"' in collection
- assert '<h1>First Readings</h1>' in collection
- assert collection.count('class="shelf-cover"')==1
- assert 'href="'+ROOTS['fountain']+'editions/essays/teatro-an-unfinished-composition/"' in collection
- assert collection.count('class="bookshelf-empty" aria-hidden="true"')==20
- collection_info=json.loads(fetch(ROOTS['fountain']+'collections/first-readings/collection.json')[0])
- assert collection_info['workCount']==1
- assert collection_info['singularFirstReadingPreserved']=='https://works.benedikt-eickhoff.de/solstice/editions/first-reading/'
- work=fetch(ROOTS['fountain']+'editions/essays/teatro-an-unfinished-composition/')[0].decode()
- assert 'class="book-cover work-identity-cover"' in work
- assert work.count('src="'+collection_info['works'][0]['coverArtwork']+'"')==1
- assert collection_info['works'][0]['coverArtwork'] in fetch(ROOTS['fountain']+'assets/linotype/essays.css')[0].decode()
- assert 'href="/collections/first-readings/#work-teatro-an-unfinished-composition"' in work
- press_css=fetch(ROOTS['fountain']+'assets/linotype/bookshelf.css')[0]
- teatro_css=fetch(ROOTS['teatro']+'assets/linotype/bookshelf.css')[0]
- assert b'background:transparent;box-shadow:none;' in press_css and b'background:transparent;box-shadow:none;' in teatro_css
- assert b'--bookshelf-slot-radius:22.37%' in teatro_css
- assert b'.shelf-cover{' in teatro_css and b'.shelf-cover{' in press_css
- assert b'--bookshelf-slot-radius:22.37%' in press_css
- assert b'width:100%;height:100%;aspect-ratio:1' in press_css
- assert b'border-radius:var(--bookshelf-slot-radius)' in press_css
- assert b'object-fit:contain' in press_css
- identity=fetch(ROOTS['fountain']+'assets/linotype/identity-circle.css')[0]
- assert identity==fetch(ROOTS['teatro']+'assets/linotype/identity-circle.css')[0]
- assert b'--fc-identity-circle-radius:50%' in identity and b'--fc-identity-circle-stroke:1px' in identity
- assert b'@import url("./identity-circle.css")' in press_css
- detailed=fetch(ROOTS['fountain']+'editions/catalogue/')[0].decode()
- assert 'class="edition-list"' in detailed
- assert 'data-legal-role="company-status"' in detailed
- check_rail(detailed,'preserved detailed catalogue',NAV)
- print("PASS","fountain","publisher logo and two admitted publication covers, twenty vacant slots","three canonical cover routes and retained detailed catalogue")
- essay_book=fetch(ROOTS["fountain"]+"editions/essays/")[0].decode()
- assert 'id="book-viewport"' in essay_book
- assert essay_book.count('data-book-chapter=')==3
- assert essay_book.count('src="/essays/')==5
- assert essay_book.count('data-book-toc-target=')==4
- check_rail(essay_book,"essay-volume",EDNAV)
- assert 'data-legal-role="company-status"' in essay_book
- print("PASS","fountain","complete essay volume, 3 chapters, 5 originals")
- for slug,plates in SLUGS:
-  html=fetch(ROOTS["fountain"]+"editions/essays/"+slug+"/")[0].decode()
-  assert html.count('data-book-chapter=')==1,slug
-  assert html.count('src="/essays/')==plates
-  assert html.count('data-book-toc-target=')==2
-  assert 'data-edition-id="essays-'+slug+'"' in html
-  assert 'href="/editions/essays/"' in html
-  if slug=='teatro-an-unfinished-composition':
-   assert 'class="work-reading-identity"' in html
-   assert 'FIRST READINGS · AN UNFINISHED COMPOSITION' in html
-   assert 'class="edition-rail"' not in html
-  else:check_rail(html,slug,EDNAV)
-  assert 'data-legal-role="company-status"' in html
-  print("PASS","nested Linotype sub-edition",slug,"plates",plates)
- source=fetch(ROOTS["fountain"]+"essays/")[0].decode()
- check_rail(source,"original essay directory",NAV)
- assert 'data-legal-role="company-status"' in source
- body=fetch(ROOTS["solstice"])[0].decode()
- check_rail(body,"solstice",NAV)
- assert 'data-legal-role="company-status"' in body
- print("PASS","solstice","First Reading edition rail and footer")
- shelf=fetch(ROOTS["teatro"])[0].decode()
- assert shelf==fetch(ROOTS["teatro"]+"editions/")[0].decode()
- assert 'data-linotype-state="bookshelf"' in shelf
- assert 'data-book-count="3"' in shelf
- assert shelf.count('class="shelf-book"')==3
- assert shelf.count('class="shelf-cover"')==3
- assert shelf.count('data-preview-host="fountain"')==1
- assert shelf.count('data-preview-host="solstice"')==1
- assert shelf.count('data-preview-host="teatro"')==1
- assert shelf.count('data-release-status="public-live"')==1
- assert shelf.count('data-release-status="wlan-proof"')==2
- assert 'class="shelf-miniature"' not in shelf
- assert 'class="shelf-cover-title"' not in shelf
- assert 'class="shelf-cover-kicker"' not in shelf
- assert 'class="shelf-cover-author"' not in shelf
- assert 'class="bookshelf-toolbar"' not in shelf
- assert 'class="bookshelf-pagination"' not in shelf
- assert 'class="bookshelf-paper-head"' not in shelf
- assert 'class="bookshelf-paper-foot"' not in shelf
- assert 'class="bookshelf-intro"' not in shelf
- assert '<h1' not in shelf
- assert shelf.count('class="bookshelf-brand fc-identity-circle"')==1
- assert shelf.count('class="bookshelf-wordmark"')==0  # authentic mark alone (R24)
- assert 'FOUNTAIN COACH</span>' not in shelf
- assert 'src="/assets/bookshelf/fountain-coach-logo-transparent.png"' in shelf
- logo=fetch(ROOTS["teatro"]+"assets/bookshelf/fountain-coach-logo-transparent.png")[0]
- import hashlib
- assert hashlib.sha256(logo).hexdigest()=="8c5fad1c3db56138d5959da75991dc8034a0be537ce46da6ffcc0d9655e7f729"
- assert 'href="'+ROOTS["fountain"]+'editions/essays/"' in shelf
- assert 'href="'+ROOTS["solstice"]+'editions/first-reading/"' in shelf
- assert 'href="/editions/first-hearing/"' in shelf
- for root, path in [(ROOTS["fountain"],"editions/essays/"), (ROOTS["solstice"],"editions/first-reading/")]:
-  assert 'id="book-flow"' in fetch(root+path)[0].decode()
- for path in (
-  "editions/essays/teatro-an-unfinished-composition/",
-  "editions/essays/semantic-compilation-the-archive-is-not-the-edition/",
-  "editions/essays/reframe-and-the-business-value-of-the-estate/"):
-  assert 'id="book-flow"' in fetch(ROOTS["fountain"]+path)[0].decode()
- for image in (
-  "/assets/bookshelf/fountain-coach-edition.png",
-  "/assets/bookshelf/first-reading-ink.png",
-  "/assets/edition/teatro-score-memory-vector-human-condition.svg"):
-  assert len(fetch(ROOTS["teatro"]+image.lstrip("/"))[0])>1000,image
- assert 'rotate(-3deg)' not in fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
- shelf_css=fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0].decode()
- assert 'background:transparent;' in shelf_css
- assert '.bookshelf-brand{aspect-ratio:1;display:grid;place-items:center;' in shelf_css
- assert shelf.count('class="bookshelf-empty" aria-hidden="true"')==20
- assert catalogue.count('class="bookshelf-empty" aria-hidden="true"')==20
- assert 'box-shadow:none;' in shelf_css
- assert 'background:var(--paper);box-shadow:' not in shelf_css
- assert 'id="book-flow"' not in shelf
- assert 'governance-constitution' not in shelf and 'book-of-reframe' not in shelf
- assert len(fetch(ROOTS["teatro"]+"assets/linotype/bookshelf.css")[0])>1500
- teatro=fetch(ROOTS["teatro"]+"editions/first-hearing/")[0].decode()
- assert shelf!=teatro
- assert 'id="book-viewport"' in teatro and 'id="book-flow"' in teatro
- assert teatro.count('data-book-chapter=')==1
- assert teatro.count('src="/assets/edition/')==1
- portal=teatro.split('<main id="book-pages"',1)[1].split('<div id="book-flow"',1)[0]
- assert '<section class="book-score" id="teatro-score"' in portal
- assert 'src="/assets/edition/teatro-score-memory-vector-human-condition.svg"' in portal
- assert teatro.split('<div id="book-flow" class="book-flow">',1)[1].lstrip().startswith('<section class="book-chapter"')
- assert 'class="book-score"' not in teatro.split('<div id="book-flow" class="book-flow">',1)[1]
- assert 'body[data-editorial-state="score"]' in fetch(ROOTS['teatro']+'assets/linotype/teatro.css')[0].decode()
- assert teatro.count('class="book-cover"')==0 and teatro.count('class="book-score"')==1
- assert teatro.count('data-edition-entry-anchor="teatro-score"')==1
- trace='teatro:unfinished-composition:empty-chair-attention'
- assert teatro.count('data-score-trace-id="'+trace+'"')==1
- assert teatro.count('data-score-trace-link')==2
- assert teatro.count('data-score-return')==1
- assert 'data-book-toc-target="score"' in teatro
- assert 'id="book-navigation-status" role="status"' in teatro
- trace_manifest=json.loads(fetch(ROOTS['teatro']+'editions/first-hearing/edition.json')[0])
- assert trace_manifest['openingIdentity']=='teatro-score'
- assert len(trace_manifest['scoreNavigation']['traces'])==1
- assert trace_manifest['scoreNavigation']['traces'][0]['id']==trace
- assert sorted(trace_manifest['scoreNavigation']['unmappedMovements'])==['01','02','03','04','05','07']
- assert 'data-score-trace-id' in fetch(ROOTS['teatro']+'assets/linotype/linotype-engine.js')[0].decode()
- assert 'data-score-trace-link' in fetch(ROOTS['teatro']+'assets/linotype/book.js')[0].decode()
- assert 'teatro-score' in fetch(ROOTS['teatro']+'assets/linotype/mobile-page-navigation.js')[0].decode()
- assert 'class="fc-identity-circle" id="book-media-toggle"' in teatro and 'id="book-ear-status"' in teatro
- assert 'class="book-ear-icon"' in teatro
- assert 'class="book-player-status book-ear-status" id="book-ear-status"' in teatro
- assert 'id="book-ear-reading"' in teatro
- assert teatro.index('id="book-media-details"')<teatro.index('class="book-ear-icon"')
- assert 'class="book-ear-meter"' not in teatro
- assert teatro.index('id="book-media-toggle"')<teatro.index('id="book-media-settings"')<teatro.index('class="book-ear-icon"')
- css=fetch(ROOTS["teatro"]+"assets/linotype/book.css")[0].decode()
- assert 'justify-content:space-between' in css
- assert '.book-reading-controls .book-media-control{margin-right:auto}' in css
- assert '.book-reading-controls #book-toc-button{margin-left:auto' in css
- control_css=fetch(ROOTS["teatro"]+"assets/linotype/book-player.css")[0].decode()
- assert '--play-fill' in control_css and '--play-halo' in control_css
- assert '@import url("./identity-circle.css")' in control_css
- assert '--fc-identity-circle-radius' in control_css and '--fc-identity-circle-stroke' in control_css
- assert 'prefers-reduced-motion:reduce' in control_css
- assert '.book-ear-status' in control_css and '.book-ear-meter' not in control_css
- assert 'left:0;right:auto' in control_css
- scene_script=fetch(ROOTS["teatro"]+"assets/linotype/teatro-stage-page.js")[0].decode()
- assert 'fountain:book:play-request' in scene_script and 'fountain:book:transport' in scene_script
- player_script=fetch(ROOTS["teatro"]+"assets/linotype/book-player.mjs")[0].decode()
- assert 'fountain:book:play-request' in player_script
- assert 'fountain:book:transport' in player_script
- assert "earIcon" in player_script and "source==='teatro-web-audio-preview'?0.60:0.025" in player_script
- assert "'--play-halo'" in player_script and "'--play-fill'" in player_script
- assert "resetTransportVisual()" in player_script
- assert 'id="book-media-settings"' in teatro
- assert teatro.count('data-book-sound-parameter=')==4
- assert 'id="satzfunk-hear"' not in teatro and 'id="satzfunk-hearing-rail"' not in teatro
- assert '>Scene ↓<' not in teatro
- assert 'src="/assets/linotype/book-player.mjs"' in teatro
- assert 'data-teatro-scene-play' in teatro
- assert 'src="/assets/teatro-play.svg"' in teatro
- assert 'src="/assets/teatro-stage-poster.svg"' not in teatro
- atlas_script=fetch(ROOTS["teatro"]+"assets/linotype/mobile-page-navigation.js")[0].decode()
- assert 'book-atlas-identity' in atlas_script
- assert 'book-atlas-title' not in atlas_script
- assert 'cloneNode(true)' not in atlas_script
- for asset in ('assets/linotype/book-player.mjs','assets/linotype/book-midi2.mjs',
-               'assets/linotype/book-player.css','assets/book-csound-host.js'):
-  payload=fetch(ROOTS["teatro"]+asset)[0]
-  assert len(payload)>200,("Missing MIDI2 player asset",asset)
- # The book is a reading instrument, not another estate website.
- assert 'class="book-toolbar book-reading-controls"' in teatro
- assert 'class="book-pagination book-reading-pagination"' in teatro
- assert 'class="book-back"' not in teatro
- assert 'class="edition-rail"' not in teatro
- assert 'class="book-legal"' not in teatro
- assert 'data-legal-role="company-status"' not in teatro
- assert 'aria-haspopup="dialog">Contents</button>' not in teatro
- assert 'id="book-toc-button"' in teatro
- assert '<svg viewBox="0 0 24 24"' in teatro
- assert 'id="book-type-button"' not in teatro
- assert 'id="book-appearance"' not in teatro
- assert 'id="book-font-smaller"' not in teatro
- assert 'id="book-font-larger"' not in teatro
- assert 'src="/assets/teatro-play.svg"' in teatro
- assert '<a href="/editions/">' not in teatro
- assert 'PUBLISHED SOURCE · FOUNTAIN.COACH / TEATRO' in teatro
- book_js=fetch(ROOTS["teatro"]+"assets/linotype/book.js")[0].decode()
- assert 'book-reading-shell' in book_js and 'setContentsOpen(' in book_js
- assert 'engine.compose(1)' in book_js
- assert 'fontSize=clamp(' not in book_js
+ROOT=Path(__file__).resolve().parents[1]
+REGISTRY=ROOT/"staging/environment.json"
+REEL=ROOT/"navigation/canonical-reel.v1.json"
 
- stage=fetch(ROOTS["teatro"]+"editions/stage/")[0].decode()
- assert 'data-teatro-stage-return' in stage
- assert 'href="/editions/first-hearing/"' in stage
- assert 'src="/assets/index-CY5_5ULO.js"' in stage
- assert 'id="root"' in stage
- check_rail(stage,"teatro stage",NAV)
- assert 'data-legal-role="company-status"' in stage
- print("PASS","teatro","score identity entrance and source-pinned reader, MIDI2 Ear and Stage")
- status=__import__("urllib.error",fromlist=["HTTPError"])
- try:
-  fetch(ROOTS["teatro"]+"editions/first-hearing/hearings.json")
- except status.HTTPError as e:
-  assert e.code==404,("Undisclosed published hearing?",e.code)
- else:
-  raise AssertionError("No released, author-approved narrated Teatro hearing is admitted")
- first=fetch(ROOTS["solstice"]+"editions/first-reading/")[0]
- assert b'id="book-viewport"' in first and b'id="book-next"' in first
- assets={
-  "fountain":["assets/editions.css","assets/linotype/book.css",
-              "assets/linotype/book.js","assets/linotype/linotype-engine.js",
-              "assets/linotype/mobile-page-navigation.js","assets/linotype/essays.css"],
-  "solstice":["assets/book.css","assets/book.js","assets/linotype-engine.js",
-              "assets/mobile-page-navigation.js","assets/mobile-page-navigation.css"],
-  "teatro":["assets/estate-core.css","assets/estate-core.js","assets/index-CY5_5ULO.js",
-             "assets/linotype/book.css","assets/linotype/book.js",
-             "assets/linotype/linotype-engine.js","assets/linotype/mobile-page-navigation.js",
-             "assets/satzfunk/satzfunk-book.mjs","assets/edition/teatro-score-memory-vector-human-condition.svg"]
- }
- for host,files in assets.items():
-  for path in files:
-   body,_=fetch(ROOTS[host]+path)
-   assert len(body)>0,(host,path)
-  print("PASS",host,len(files),"real assets")
- print("WLAN_EDITION_HIERARCHY_ACCEPTED",HREFS)
+class Chrome(HTMLParser):
+    def __init__(self,html):
+        super().__init__(convert_charrefs=True)
+        self.stack=[]
+        self.masthead=0
+        self.reel=[]
+        self.info=0
+        self.footer=0
+        self.status=0
+        self.legal=0
+        self.provenance=0
+        self.ids=[]
+        self.feed(html)
 
-if __name__=="__main__":test()
+    def handle_starttag(self,tag,attrs):
+        a=dict(attrs)
+        self.stack.append((tag,a))
+        css=a.get("class","").split()
+        if tag=="header" and "fc-estate-shell" in css:self.masthead+=1
+        if tag=="footer" and "fc-estate-shell" in css:self.footer+=1
+        if a.get("id")=="footer":self.ids.append("footer")
+        in_reel=any(t=="nav" and "fc-shell-reel" in x.get("class","").split() for t,x in self.stack)
+        in_foot=any(t=="footer" and "fc-estate-shell" in x.get("class","").split() for t,x in self.stack)
+        if tag=="a" and in_reel:
+            if a.get("data-estate-id"):self.reel.append(a)
+            if "estate-info" in css and a.get("href")=="#footer":self.info+=1
+        if tag=="a" and in_foot and "status.fountain.coach" in a.get("href",""):self.status+=1
+        if in_foot and a.get("data-footer-slot")=="legal":self.legal+=1
+        if in_foot and a.get("data-footer-slot")=="provenance":self.provenance+=1
+    def handle_startendtag(self,tag,attrs):
+        self.handle_starttag(tag,attrs);self.handle_endtag(tag)
+    def handle_endtag(self,tag):
+        for i in range(len(self.stack)-1,-1,-1):
+            if self.stack[i][0]==tag:
+                del self.stack[i:]
+                break
+
+def ssh(alias,command):
+    p=subprocess.run(["ssh","-o","BatchMode=yes","-o","ConnectTimeout=5",alias,command],
+       text=True,capture_output=True,timeout=40)
+    if p.returncode:
+        raise RuntimeError("SSH read-only witness failed: "+p.stderr[-360:])
+    return p.stdout.strip()
+
+def run():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--ssh-alias",default="MacMiniDocker")
+    parser.add_argument("--manifest",type=Path,help="Existing local copy of an exact active release inventory")
+    parser.add_argument("--output",type=Path,default=Path("/tmp/fountain-estate-current-wlan-readback.json"))
+    parser.add_argument("--workers",type=int,default=12)
+    args=parser.parse_args()
+    registry=json.loads(REGISTRY.read_text())
+    surface=registry["surfaces"][registry["canonicalEntrySurface"]]
+    entry=surface.get("observedDirectAddressURL",surface["entryURL"])
+    parsed=urlsplit(entry)
+    base=parsed.scheme+"://"+parsed.netloc+"/"
+    release=surface["observedRelease"]
+    root=surface["activeReleaseSymlink"]
+    actual=ssh(args.ssh_alias,"readlink "+shlex.quote(root))
+    if actual!="releases/"+release:
+        raise RuntimeError("Active release changed. Registry="+release+" actual="+actual)
+    service=ssh(args.ssh_alias,"systemctl --user is-active fountain-shell-acceptance-preview.service")
+    if service!="active":raise RuntimeError("WLAN preview service is not active: "+service)
+    rec=surface["authorLedEditorialReleaseV57"]["typedPrivateReceipt"]
+    remote_manifest=str(Path(rec).with_name("release-inventory.json"))
+    manifest=json.loads(args.manifest.read_text() if args.manifest else
+                        ssh(args.ssh_alias,"cat "+shlex.quote(remote_manifest)))
+    if manifest["release"]!=release:raise RuntimeError("Release inventory mismatch")
+    if manifest.get("publicAuthorized") is not False:raise RuntimeError("Refuse public manifest")
+    files={x["path"]:x for x in manifest["files"]}
+    html=[x for x in manifest["files"] if x["path"].endswith("/index.html")]
+    if len(html)!=manifest["htmlCount"]:raise RuntimeError("HTML inventory mismatch")
+    reel=json.loads(REEL.read_text())["entries"]
+    ids=[r["id"] for r in reel]
+    if ids!=["estate","book","governance","midi2","instruments","teatro","satzfunk","works","solstice"]:
+        raise RuntimeError("Unreviewed canonical reel identity set")
+    lookup={r["id"]:r for r in reel}
+
+    def inspect(item):
+        path=item["path"]
+        route="/"+path[:-len("index.html")]
+        row=dict(route=route,path=path,state="FAIL",findings=[])
+        request=Request(base+route,headers={"Cache-Control":"no-cache",
+                           "User-Agent":"FountainCoach-WLAN-stage-audit/2.0"})
+        try:
+            with urlopen(request,timeout=18) as reply:
+                data=reply.read()
+                row["httpStatus"]=reply.status
+                row["contentType"]=reply.headers.get("Content-Type","")
+            digest=hashlib.sha256(data).hexdigest()
+            row["sha256"]=digest
+            expected=item["sha256"]
+            if path=="pointer/index.html":
+                expected=files["works/index.html"]["sha256"]
+                row["routeAlias"]="/works/"
+            if digest!=expected:row["findings"].append("HTML_SHA256")
+            if row["httpStatus"]!=200:row["findings"].append("HTTP_STATUS")
+            if "text/html" not in row["contentType"]:row["findings"].append("CONTENT_TYPE")
+            parsed=Chrome(data.decode("utf-8","replace"))
+            if parsed.masthead!=1:row["findings"].append("MASTHEAD_COUNT")
+            if parsed.footer!=1:row["findings"].append("FOOTER_COUNT")
+            if len(parsed.ids)!=1:row["findings"].append("FOOTER_ID")
+            if [v.get("data-estate-id") for v in parsed.reel]!=ids:
+                row["findings"].append("REEL_ORDER")
+            else:
+                for a in parsed.reel:
+                    v=lookup[a["data-estate-id"]]
+                    if a.get("aria-label")!=v["label"]:row["findings"].append("REEL_LABEL:"+v["id"])
+                    if a.get("data-icon-id")!=v["id"]:row["findings"].append("REEL_ICON:"+v["id"])
+                    if a.get("data-canonical-href")!=v["url"]:
+                        row["findings"].append("REEL_DESTINATION:"+v["id"])
+            if parsed.info!=1:row["findings"].append("INFO_ACTION")
+            if parsed.status<1:row["findings"].append("FOOTER_STATUS")
+            if parsed.legal!=1:row["findings"].append("FOOTER_LEGAL")
+            if parsed.provenance!=1:row["findings"].append("FOOTER_PROVENANCE")
+        except Exception as e:
+            row["findings"].append(type(e).__name__+": "+str(e)[:160])
+        if not row["findings"]:row["state"]="PASS"
+        return row
+
+    with ThreadPoolExecutor(max_workers=max(1,min(16,args.workers))) as pool:
+        results=list(pool.map(inspect,html))
+    counts=dict(Counter(x["state"] for x in results))
+    report={"schema":"fountain.estate.wlan-stage-live-route-check.v2",
+      "generatedAt":datetime.datetime.now(datetime.timezone.utc).isoformat(),
+      "release":release,"predecessor":manifest["priorRelease"],
+      "url":entry,"inventorySHA256":manifest["inventorySHA256"],
+      "routes":len(results),"counts":counts,
+      "accepted":len(results)==manifest["htmlCount"] and counts.get("PASS")==len(results),
+      "publicPublished":False,"rows":results}
+    args.output.parent.mkdir(parents=True,exist_ok=True)
+    args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n")
+    lines=["# Verified owner-WLAN stage routes","",
+        "Release: "+release+" | Entry: "+entry+" | Accepted: "+str(report["accepted"]),
+        "","| Route | Status | Findings |","| --- | --- | --- |"]
+    for row in results:
+        lines.append("| "+row["route"]+" | "+row["state"]+" | "+"; ".join(row["findings"])+" |")
+    args.output.with_suffix(".md").write_text("\n".join(lines)+"\n")
+    print("CURRENT_WLAN_STAGE",json.dumps({k:v for k,v in report.items() if k!="rows"},ensure_ascii=False))
+    if not report["accepted"]:raise SystemExit(1)
+
+if __name__=="__main__":
+    run()

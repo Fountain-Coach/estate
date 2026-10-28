@@ -1,5 +1,9 @@
 # Estate-wide editorial release plan — 28 October 2026
 
+## Terminal acceptance — owner-WLAN v57 (28 October 2026)
+
+Complete: [v57 terminal staging receipt](docs/acceptance/2026-10-28-v57-wlan-release.md); SSH+rsync transferred 1,138 files (249,543,543 bytes), Ubuntu verified all hashes, immutable v57 was activated with a guarded predecessor check, the existing systemd preview service was restarted, and independent readback passed all 509 HTML routes plus 30 Chrome page/viewport checks. v56 remains the rollback release. Earlier blocked-write/read-only findings below are historical pre-release observations, not the current service state.
+
 ## Goal
 
 Stage the user-approved author-led Fountain Coach home with the complete essay reading room next door, retaining all edition and domain authority. Enumerate **every** registered owned Git HTML route and report whether the source and/or exact active private WLAN staging route has correct shared masthead, ordered reel, accessible Info, legal/provenance footer and semantic owner identity. Stage only; **no public production release**.

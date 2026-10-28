@@ -1,5 +1,9 @@
 # Fountain Coach — the three-publication estate
 
+## Private WLAN v57 — live, independently accepted (28 October 2026)
+
+The writer-approved one-person Fountain Coach editorial release is active at http://192.168.8.50:8200/estate/. [v57 terminal staging receipt](docs/acceptance/2026-10-28-v57-wlan-release.md) records the exact source and release IDs, SHA-256 inventory, all 509 accepted live HTTP routes, 30 passing browser viewport checks and rollback to the retained v56 predecessor. The full 509-route report is available under the owner-controlled Ubuntu staging receipts, not misrepresented as the older Git-tracked 325-route source inventory. No public release occurred.
+
 ## Adopted author-led role and stage candidate — 28 October 2026
 
 Fountain Coach is one independent author's development and publishing practice, not a staffed institution. Its root presents Benedikt Eickhoff and four original illustrated essays; /essays/ is the complete seven-work reading room; /editions/ retains the separate Fountain Press Bookshelf. All other estate domains keep their owner-controlled provenance, rules and evidentiary roles.

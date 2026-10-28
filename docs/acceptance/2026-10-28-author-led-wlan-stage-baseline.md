@@ -1,6 +1,6 @@
 # Read-only WLAN stage baseline — 28 October 2026
 
-**Status: OBSERVED read-only baseline, NOT the author-led release.** No production, source-owned article or stage symlink was changed during this inspection. The canonical service is the registered `fountain-shell-acceptance-preview.service` at [owner-WLAN entrance](http://benedikt-Macmini.local:8200/estate/) with direct-IP fallback `http://192.168.8.50:8200/estate/`.
+**Historical v56 predecessor baseline, superseded by independently accepted v57.** See [the v57 staging release receipt](2026-10-28-v57-wlan-release.md). The information below records pre-activation findings, not the current WLAN service.\n\n**Status at original observation: OBSERVED read-only baseline, NOT yet the author-led release.** No production, source-owned article or stage symlink was changed during this inspection. The canonical service is the registered `fountain-shell-acceptance-preview.service` at [owner-WLAN entrance](http://benedikt-Macmini.local:8200/estate/) with direct-IP fallback `http://192.168.8.50:8200/estate/`.
 
 The actual `current` symlink returned `/home/benedikt/estate-shell-acceptance-staging/releases/shared-shell-20261028-v56-modell-wirklichkeit-e3753d7` on 28 October 2026. The prior registry `observedRelease=v50` was therefore **historical**. The currently retained rollback identity was **not independently inspected**.
 
