@@ -15,8 +15,9 @@ LEGAL=(("Legal notices","https://governance.fountain.coach/legal/"),
        ("Privacy","https://governance.fountain.coach/privacy/"),
        ("Accessibility","https://governance.fountain.coach/accessibility/"),
        ("Copyright","https://governance.fountain.coach/copyright/"),
+       ("Compliance","https://governance.fountain.coach/compliance/"),
        ("Status","https://status.fountain.coach/"))
-IDS=("estate","book","governance","midi2","instruments","teatro","satzfunk","pointer","solstice")
+IDS=("estate","book","governance","midi2","instruments","teatro","satzfunk","works","solstice")
 
 def manifest(path):
     d=json.loads(Path(path).read_text())
@@ -71,7 +72,7 @@ def fragment(d,ident,logo):
        '" data-estate-slot="masthead" data-estate-identity="'+ident+'"><div class="fc-shell-row">'+\
        '<a class="fc-publisher" href="https://fountain.coach/"><img class="estate-logo" '+\
        'alt="Fountain Coach" src="'+h(logo,quote=True)+'"/>'+\
-       '<span class="fc-publisher-name">Fountain Coach<small>Publication estate</small></span></a>'+\
+       '<span class="fc-publisher-name">Fountain Coach<small>Independent practice · Benedikt Eickhoff</small></span></a>'+\
        '<span class="fc-site-identity">'+h(ident.upper())+'</span></div>'+\
        '<nav class="fc-shell-reel" data-reel-contract="'+REEL+\
        '" aria-label="Fountain Coach publication estate">'+''.join(links)+'</nav></header>'

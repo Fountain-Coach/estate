@@ -1,6 +1,6 @@
 {
   "schema": "fountain.estate.canonical-reel.v1",
-  "revision": "2026-10-24-public-satzfunk-admission",
+  "revision": "2026-10-28-author-led-home-and-works-entry",
   "purpose": "One identical top navigation reel across independently owned Fountain Coach estates",
   "deployment": "projected per owner, not served from arbitrary cross-origin runtime",
   "entries": [
@@ -47,10 +47,10 @@
       "path": "M2 12h3m3-5v10m3-14v18m3-13v8m3-11v14m3-9v4"
     },
     {
-      "id": "pointer",
-      "label": "Pointer",
-      "url": "https://benedikt-eickhoff.de/",
-      "path": "m5 4 14 7-6 2-3 7L5 4Z"
+      "id": "works",
+      "label": "Works",
+      "url": "https://works.benedikt-eickhoff.de/",
+      "path": "M4 5h7l2 2h7v12H4zM7 11h10m-10 4h7"
     },
     {
       "id": "solstice",
@@ -60,10 +60,11 @@
     }
   ],
   "notes": [
-    "All nine editorial/top-level identities appear in the same order on every domain, plus a local Info/footnote action.",
+    "Nine estate identities, including Works rather than the retired Pointer reel link, share the same labels, icons and order; Info is a per-page action.",
     "Status is a supporting legal/footer destination, not a top-reel item (FCIS and estate AGENTS). Its URL remains available from legal footers.",
     "Satzfunk is now publicly served at https://satzfunk.fountain.coach/ on its own Hcloud origin; the original Bandcamp archive was admitted and independently HTTPS verified on 24 October 2026. It must be a normal clickable reel link, never aria-disabled.",
-    "Only the current domain receives aria-current; all other links share the same labels, icons and destinations."
+    "Only the current domain receives aria-current; all other links share the same labels, icons and destinations.",
+    "The personal benedikt-eickhoff.de domain remains a personal pointer to Works, not a second primary reel destination. Stage already exposes the Works identity at /works/; the Git projection is being reconciled to that current admitted route."
   ],
   "supportingDestinations": [
     {
