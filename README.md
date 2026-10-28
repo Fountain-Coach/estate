@@ -1,5 +1,12 @@
 # Fountain Coach — the three-publication estate
 
+## Adopted author-led role and stage candidate — 28 October 2026
+
+Fountain Coach is one independent author's development and publishing practice, not a staffed institution. Its root presents Benedikt Eickhoff and four original illustrated essays; /essays/ is the complete seven-work reading room; /editions/ retains the separate Fountain Press Bookshelf. All other estate domains keep their owner-controlled provenance, rules and evidentiary roles.
+
+The Git candidates are named editorial/2026-10-28-author-led-estate in this repository and Fountain-Coach/fountain.coach. The 325 recorded Git-tracked HTML routes are documented under docs/acceptance/2026-10-28-editorial-route-register.md; read-only stage findings under docs/acceptance/2026-10-28-author-led-wlan-stage-baseline.md. The canonical private stage remains the v56 predecessor at benedikt-Macmini.local:8200. The new editorial release has **not** been activated, and newer public-only essay/media are not to be lost.
+
+
 ## Owned audio archive — decision 2026-10-21
 
 [Cross-estate owned audio boundary](docs/decisions/2026-10-21-owned-audio-archive-estate-boundary.md): independently verified 33 Bandcamp public playback MP4 files on Ubuntu; separate original-master and rights verification required. Artist Works catalogue owns work identity, Satzfunk owns hearing/performances, Store/EstatePublisher owns any public release. No new front door, deployed station, DNS, Caddy modification or storage bill.
@@ -45,10 +52,9 @@ GitHub becomes the canonical home of content and estate composition. The old Het
 Run npm run check for the machine-readable role and ownership contract. No GitHub Actions/CI, Git submodules, fictional books, automatic DNS mutation or force pushes.
 
 
-## Editions hierarchy (October 2026, staging admitted)
+## Historical edition hierarchy (October 2026, independently preserved)
 
-The domain `fountain.coach/` now **lands in the editions catalogue**
-(mirrored at `/editions/`). It no longer drops a reader straight onto the
+Historical candidate: fountain.coach/ was proposed to land in an editions catalogue mirrored at /editions/. The approved 28 October homepage instead introduces an independent author and links directly to /essays/; only /editions/ remains the catalogue. It no longer drops a reader straight onto the
 Essays cover. The Fountain Coach estate rail points directly to its
 **`/editions/essays/`** volume, while First Reading and Teatro point into
 their independently owned edition surfaces.
