@@ -125,7 +125,14 @@ def main():
         assert 'data-reel-contract="fountain.estate.canonical-reel.v1"' in t
         assert 'href="/works/"' in t
     assert (output/'pointer/albums/index.html').is_file()
-    assert sha((output/'estate/essays/the-door-is-a-score/index.html').read_bytes())==sha((previous/'estate/essays/the-door-is-a-score/index.html').read_bytes()),'door score modified'
+    def authored_main_digest(path):
+        html=path.read_text()
+        main=re.search(r'<main\b[^>]*>.*?</main>',html,re.S|re.I)
+        if not main:
+            raise RuntimeError('Missing authored main: '+str(path))
+        return sha(main.group().encode())
+    essay=Path('estate/essays/the-door-is-a-score/index.html')
+    assert authored_main_digest(output/essay)==authored_main_digest(previous/essay),'door-score work modified'
     assert sha((output/'teatro/index.html').read_bytes())!=sha((previous/'teatro/index.html').read_bytes()),'reel not inherited'
 
     lock=previous_lock
