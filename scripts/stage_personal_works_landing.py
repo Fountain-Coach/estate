@@ -133,7 +133,7 @@ def main():
         return sha(main.group().encode())
     essay=Path('estate/essays/the-door-is-a-score/index.html')
     assert authored_main_digest(output/essay)==authored_main_digest(previous/essay),'door-score work modified'
-    assert sha((output/'teatro/index.html').read_bytes())!=sha((previous/'teatro/index.html').read_bytes()),'reel not inherited'
+    assert 'estate/index.html' in changed,'estate landing reel not updated'
 
     lock=previous_lock
     lock['personalWorksLanding']={
