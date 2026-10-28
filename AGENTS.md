@@ -1,5 +1,13 @@
 # Three-publication estate boundary
 
+## Author-led editorial identity — adopted 28 October 2026
+
+The author approved a one-person Fountain Coach identity, an illustrative selection of four authentic essays at `fountain.coach/`, the complete collection next door at `/essays/`, and the autonomous edition Bookshelf at `/editions/`. Chapter 92 continues to define parent identity and the cross-domain authority graph. This supersedes October 14's root-equals-Bookshelf proposal without changing the edition work or its separate ownership.
+
+The current nine-entry canonical reel at `navigation/canonical-reel.v1.json` is checked as an ordered destination/icon/label contract, with Status in the legal footer. Route acceptance applies to every currently registered and stage-served document: detect missing headmast, reel, footer, owner/role, accessibility and provenance; distinguish actual navigation defects from intentionally different article bodies, stand-alone media and historical archive material. Emit a route-by-route report, not a blanket PASS from a handful of roots.
+
+The new editorial source is a Git *candidate*, not stage. Never erase newer public essays, sound or their media with the old Git Bookshelf snapshot. The canonical stage must be built from verified relevant production bytes plus the pinned editorial delta and currently accepted stage-only work; live stage predecessor/readback and native publisher evidence decide release state.
+
 ## Canonical WLAN staging identity (FCIS, 22 October 2026)
 
 Read `staging/environment.json` and `staging/ENVIRONMENT.md` **before** any request to show, inspect, update or publish to "the staging environment". This repository owns the estate's single logical WLAN staging identity: the existing Ubuntu `MacMiniDocker` (`benedikt-Macmini.local`), observed reachable at `192.168.8.50`. The current **author-facing EstateShell entrance** is declared by the named registry surface `estate-shell-acceptance`, served on `8200` from its actual `current` symlink. Do not substitute older `192.168.8.11:8443`, retired `192.168.8.249`, historical snapshots, the unrelated `8202` proof, or an arbitrary latest-by-timestamp candidate.
@@ -24,7 +32,7 @@ The independent personal Works catalogue and supporting Satzfunk audio/visual st
 
 ## Hierarchical edition invariant
 
-- `/` **is** the editions catalogue, not a volume or essay index.
+- `/` is the one-person Fountain Coach editorial identity and selected essay-hero entrance. `/essays/` owns the complete reading-room gallery, and `/editions/` owns the retained Fountain Press Bookshelf. These are separate semantic routes by writer decision of 28 October 2026.
 - Every domain's estate rail targets the **edition itself**: Fountain Coach
   `/editions/essays/`, First Reading's accepted Linotype edition, Teatro's
   own performance domain.
@@ -49,14 +57,10 @@ The independent personal Works catalogue and supporting Satzfunk audio/visual st
 
 ## Estate grid invariant
 
-- Fountain Coach root and `/editions/` display an **actual repeating grid**
-  with four occupied cells (one authentic logo and three source-owned covers)
-  plus visibly empty, dashed slots. Empty cells are inert and aria-hidden,
-  never fabricated publications or unassigned clickable links.
+- `/editions/` alone displays the authentic Fountain Press repeating Bookshelf grid and its source-owned occupied/empty cover slots. The homepage must not duplicate the Bookshelf or turn essay illustrations into unrelated publication identities.
 - Preserve the formerly detailed catalogue at `/editions/catalogue/` and
   every full essay manuscript/nested route; MIDI2 Instruments stays intact.
-- The estate's WLAN-only renderer remaps the three root cover links to
-  neighboring preview ports, never claiming public availability.
+- The existing WLAN-only routing remaps the authentic edition cover destinations and preserves the editorial homepage's `/essays/` links; never claim public availability from that private mapping.
 - Production remains a separate explicitly governed deployment operation.
 
 ## Circular identity inheritance
