@@ -5,6 +5,7 @@
     estate: '/estate/',
     teatro: '/teatro/',
     solstice: '/solstice/editions/first-reading/',
+    works: '/works/',
     satzfunk: 'http://192.168.8.50:8194/'
   };
   if (!['192.168.8.50', '127.0.0.1', 'localhost'].includes(location.hostname)) return;

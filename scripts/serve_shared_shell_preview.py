@@ -16,7 +16,8 @@ from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 
 EXPECTED = {"fountain.estate.shell.v1-candidate-20261022", "fountain.estate.shell.v2-editorial-20261022"}
 class Handler(SimpleHTTPRequestHandler):
-    def __init__(self, *args, root:Path, **kwargs):
+    def __init__(self, *args, root:Path, personal_works_landing:bool=False, **kwargs):
+        self._personal_works_landing = personal_works_landing
         super().__init__(*args, directory=str(root), **kwargs)
     def end_headers(self):
         self.send_header("Cache-Control", "no-store, max-age=0")
@@ -31,12 +32,26 @@ class Handler(SimpleHTTPRequestHandler):
         return None
     def _private_path(self):
         return self.path.split('?',1)[0].strip('/') in ("source-lock.json","contract.json")
+    def _redirect_personal_landing(self):
+        if not self._personal_works_landing:
+            return False
+        if self.path.split("?",1)[0] not in ("/pointer/","/pointer/index.html"):
+            return False
+        self.send_response(308)
+        self.send_header("Location","/works/")
+        self.send_header("Content-Length","0")
+        self.end_headers()
+        return True
     def do_GET(self):
+        if self._redirect_personal_landing():
+            return
         if self._private_path():
             self.send_error(404)
             return
         return super().do_GET()
     def do_HEAD(self):
+        if self._redirect_personal_landing():
+            return
         if self._private_path():
             self.send_error(404)
             return
@@ -146,7 +161,18 @@ def main():
     p.add_argument("--port",type=int,default=8200)
     a=p.parse_args()
     meta=inspect(a.root)
-    server=ThreadingHTTPServer((a.bind,a.port),partial(Handler,root=a.root.resolve()))
+    landing=meta.get("personalWorksLanding")
+    if landing is not None and not (
+        isinstance(landing,dict)
+        and landing.get("stageFrom")=="/pointer/"
+        and landing.get("stageTo")=="/works/"
+        and landing.get("httpStatus")==308
+        and landing.get("sourceOwner")=="Fountain-Coach/benedikt-eickhoff.de"
+        and landing.get("stageOnly") is True
+    ):
+        raise RuntimeError("Invalid personal Works stage redirect")
+    server=ThreadingHTTPServer((a.bind,a.port),
+        partial(Handler,root=a.root.resolve(),personal_works_landing=landing is not None))
     server.daemon_threads=True
     print("READY EstateShell SOURCE-LOCKED WLAN ONLY",meta["templateVersion"],flush=True)
     server.serve_forever()

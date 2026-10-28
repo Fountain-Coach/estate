@@ -22,7 +22,8 @@ STAGE_BINDINGS = {
  "estate": "http://192.168.8.50:8200/estate/",
  "teatro": "http://192.168.8.50:8200/teatro/",
  "solstice": "http://192.168.8.50:8200/solstice/editions/first-reading/",
- "satzfunk": "http://192.168.8.50:8194/"
+ "satzfunk": "https://satzfunk.fountain.coach/",
+ "works": "http://192.168.8.50:8200/works/"
 }
 MAX_COPY=70*1024*1024
 def get(url):
