@@ -231,7 +231,21 @@ def main():
         routes=results)
     dest = Path(a.output)
     dest.parent.mkdir(parents=True,exist_ok=True)
-    dest.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n")
+    dest.write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\\n")
+    # A second human-readable route register is derived from the same evidence.
+    md = ["# Estate chrome route-by-route acceptance",
+          "", "Mode: `"+a.mode+"` | Verdict: **"+summary["verdict"]+"** | Routes: "+str(len(results)),
+          "", "This is source or private WLAN evidence, never a public release receipt.",
+          "Planned and archived hosts are represented without pretending they serve a public page.",
+          "", "## Result counts", ""]
+    for name,count in sorted(counts.items()): md.append("- "+name+": "+str(count))
+    md += ["", "## Routes", "", "| Host | Route | Result | Findings |",
+           "| --- | --- | --- | --- |"]
+    for item in sorted(results,key=lambda x:(x["host"],x["route"])):
+        msg = "; ".join(item["findings"]).replace("|","\\|").replace("\\n"," ")
+        md.append("| "+item["host"]+" | `"+item["route"].replace("|","\\|")+
+                  "` | "+item["result"]+" | "+msg+" |")
+    dest.with_suffix(".md").write_text("\\n".join(md)+"\\n")
     print("ESTATE_CHROME_AUDIT",a.mode,summary["verdict"],"routes",len(results),
           json.dumps(counts,sort_keys=True),"report",dest)
     if summary["verdict"] != "PASS" and not a.report_only: raise SystemExit(1)
