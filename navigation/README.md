@@ -1,5 +1,7 @@
 # One estate reel, one owner, many domains
 
+**28 October 2026 amendment:** The approved one-person Fountain Coach homepage uses the Works site as its adjacent author's published catalogue. The actual current canonical WLAN stage on port 8200 already projects the Works reel identity and URL. The personal benedikt-eickhoff.de domain remains a pointer to Works, not a duplicate global reel destination. The canonical nine identities are Estate, Book, Governance, MIDI2, Instruments, Teatro, Satzfunk, Works and Solstice; Status remains a legal-footer destination. The old port 8198 snapshot described below retained a historical Pointer identity and is not the canonical author acceptance stage.
+
 **Authorial decision:** 21 October 2026. The estate's top reel must have **identical membership, order, labels, destinations, icon shapes and active identity semantics on every domain**, including Satzfunk. A one-off link on `fountain.coach` is a failure.
 
 ## Canonical semantic contract
@@ -15,7 +17,7 @@
 | 5 | instruments | https://instruments.fountain.coach/ | Instrument capabilities |
 | 6 | teatro | https://teatro.fountain.coach/ | Performing and staging |
 | 7 | satzfunk | https://satzfunk.fountain.coach/ | The original audiovisual author radio/archive |
-| 8 | pointer | https://benedikt-eickhoff.de/ | Authorship and provenance |
+| 8 | works | https://works.benedikt-eickhoff.de/ | Public authorship and Works collection |
 | 9 | solstice | https://works.benedikt-eickhoff.de/solstice/ | Writer-owned source |
 
 **Status is a supporting legal/footer address** at `https://status.fountain.coach/`, not an editorial top-reel item. The reel also has one **Info** footer jump that is not an estate domain. Only the active editorial domain has `aria-current="page"`; on Status there is no active editorial item. At the local archive the Satzfunk identity is active.
@@ -28,7 +30,7 @@ Direct HTTPS readback on 21 October 2026 revealed **nine independently rendered 
 
 The source owners remain separate, and the currently deployed roots differ from their latest GitHub main branches. Consequently, a blanket `git pull` to production or replacing the whole public estate with the Linotype staging bookshelf is explicitly **not** an acceptable fix.
 
-## Current verified local presentation
+## Historical 21 October local comparison (not canonical 28 October stage)
 
 **Unified nine-domain comparison:** [http://192.168.8.50:8198/estate/](http://192.168.8.50:8198/estate/) (LAN only)
 
