@@ -7,7 +7,7 @@ SITES={'estate':'estate/','teatro':'teatro/',
        'solstice':'solstice/editions/first-reading/'}
 VIEWS={'desktop':(1180,800),'ipad-landscape':(1024,768),
        'ipad-portrait':(768,1024),'phone-portrait':(390,844)}
-IDS=['estate','book','governance','midi2','instruments','teatro','satzfunk','pointer','solstice']
+IDS=['estate','book','governance','midi2','instruments','teatro','satzfunk','works','solstice']
 def run(base,chrome,out):
  result={'stage':base,'browser':'Mac headless Chromium, not native iPad Safari',
          'state':'local acceptance candidate, not production release',
@@ -54,7 +54,7 @@ def run(base,chrome,out):
     issues=[]
     if m['identity']!=identity or m['active']!=[identity]:issues.append('Wrong active identity')
     if m['reel']!=IDS:issues.append('Nine editorial reel identities drift')
-    if len(m['localLinks'])!=4:issues.append('Local binding count drift')
+    if len(m['localLinks'])!=5:issues.append('Local binding count drift')
     if not m['statusInFooter']:issues.append('Status absent from footer')
     if m['footerSlots']!=['imprint','provenance','legal','release-state']:issues.append('Footer slots/order drift')
     if not m['logoReady']:issues.append('Publisher mark missing')

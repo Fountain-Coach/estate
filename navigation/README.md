@@ -15,7 +15,7 @@
 | 5 | instruments | https://instruments.fountain.coach/ | Instrument capabilities |
 | 6 | teatro | https://teatro.fountain.coach/ | Performing and staging |
 | 7 | satzfunk | https://satzfunk.fountain.coach/ | The original audiovisual author radio/archive |
-| 8 | pointer | https://benedikt-eickhoff.de/ | Authorship and provenance |
+| 8 | works | https://works.benedikt-eickhoff.de/ | Writer-owned work, books and production context |
 | 9 | solstice | https://works.benedikt-eickhoff.de/solstice/ | Writer-owned source |
 
 **Status is a supporting legal/footer address** at `https://status.fountain.coach/`, not an editorial top-reel item. The reel also has one **Info** footer jump that is not an estate domain. Only the active editorial domain has `aria-current="page"`; on Status there is no active editorial item. At the local archive the Satzfunk identity is active.
