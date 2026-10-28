@@ -1,5 +1,9 @@
 # Estate-wide editorial release plan — 28 October 2026
 
+## Terminal route-specific amendment — owner-WLAN v58 (28 October 2026)
+
+The Composable Book stylesheet was missing even while the v57 HTML/chrome check passed. The original published `assets/essay.css` (7,393 bytes; SHA-256 `05b3915a…`) was restored byte-identically as v58. Current symlink and systemd service are active, v57 retained for rollback. The source owner now tracks that exact stylesheet in Git at commit `72c0cc9d3d0353b708c1d1b6329b864f12932d64`. Live 509/509 route readbacks, 3/3 target Chrome viewport checks and the updated `npm run staging:verify` (which validates CSS MIME/hash) passed. See [the v58 repair record](docs/acceptance/2026-10-28-v58-composable-book-css-repair.md). No public HTTPS mutation.
+
 ## Terminal acceptance — owner-WLAN v57 (28 October 2026)
 
 Complete: [v57 terminal staging receipt](docs/acceptance/2026-10-28-v57-wlan-release.md); SSH+rsync transferred 1,138 files (249,543,543 bytes), Ubuntu verified all hashes, immutable v57 was activated with a guarded predecessor check, the existing systemd preview service was restarted, and independent readback passed all 509 HTML routes plus 30 Chrome page/viewport checks. v56 remains the rollback release. Earlier blocked-write/read-only findings below are historical pre-release observations, not the current service state.

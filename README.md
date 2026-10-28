@@ -1,5 +1,9 @@
 # Fountain Coach — the three-publication estate
 
+## Route-local Composable Book stylesheet repaired — v58 live (28 October 2026)
+
+The currently active private WLAN release is **v58**, not v57: `shared-shell-20261028-v58-composable-css-05b3915`. [The route-specific CSS recovery and acceptance record](docs/acceptance/2026-10-28-v58-composable-book-css-repair.md) proves the original public `assets/essay.css` is now served as exact `text/css`, with 509 original HTML routes preserved, 509/509 HTTP route readbacks and three responsive targeted browser checks passing. The former v57 remains the rollback release. Source, staging and public production are not conflated. The `staging:verify` script now rejects missing or wrong-MIME Composable Book CSS.
+
 ## Private WLAN v57 — live, independently accepted (28 October 2026)
 
 The writer-approved one-person Fountain Coach editorial release is active at http://192.168.8.50:8200/estate/. [v57 terminal staging receipt](docs/acceptance/2026-10-28-v57-wlan-release.md) records the exact source and release IDs, SHA-256 inventory, all 509 accepted live HTTP routes, 30 passing browser viewport checks and rollback to the retained v56 predecessor. The full 509-route report is available under the owner-controlled Ubuntu staging receipts, not misrepresented as the older Git-tracked 325-route source inventory. No public release occurred.

@@ -87,7 +87,7 @@ def run():
         raise RuntimeError("Active release changed. Registry="+release+" actual="+actual)
     service=ssh(args.ssh_alias,"systemctl --user is-active fountain-shell-acceptance-preview.service")
     if service!="active":raise RuntimeError("WLAN preview service is not active: "+service)
-    rec=surface["authorLedEditorialReleaseV57"]["typedPrivateReceipt"]
+    rec=surface.get("authorLedEditorialReleaseV58",surface["authorLedEditorialReleaseV57"])["typedPrivateReceipt"]
     remote_manifest=str(Path(rec).with_name("release-inventory.json"))
     manifest=json.loads(args.manifest.read_text() if args.manifest else
                         ssh(args.ssh_alias,"cat "+shlex.quote(remote_manifest)))
@@ -147,12 +147,38 @@ def run():
     with ThreadPoolExecutor(max_workers=max(1,min(16,args.workers))) as pool:
         results=list(pool.map(inspect,html))
     counts=dict(Counter(x["state"] for x in results))
+    # Route-local stylesheets are NOT implied by a passing HTML/reel check.
+    # The Composable Book CSS returned 404 on v56/v57 despite 509 green HTML
+    # results. Verify this exact production-sourced stylesheet on the running stage.
+    asset_checks=[]
+    css_proof=surface.get("authorLedEditorialReleaseV58")
+    if css_proof and release==css_proof["activeRelease"]:
+        asset_path="estate/essays/the-composable-book/assets/essay.css"
+        expected_css=css_proof["cssSHA256"]
+        assert files[asset_path]["sha256"]==expected_css, "CSS manifest/source mismatch"
+        row={"path":asset_path,"expectedSHA256":expected_css,"state":"FAIL"}
+        try:
+            req=Request(base+asset_path,headers={"Cache-Control":"no-cache"})
+            with urlopen(req,timeout=18) as reply:
+                content=reply.read()
+                row["httpStatus"]=reply.status
+                row["contentType"]=reply.headers.get("Content-Type","")
+            row["bytes"]=len(content)
+            row["sha256"]=hashlib.sha256(content).hexdigest()
+            ok=(row["httpStatus"]==200 and row["contentType"].startswith("text/css")
+                and row["bytes"]==css_proof["cssBytes"]
+                and row["sha256"]==expected_css)
+            row["state"]="PASS" if ok else "FAIL"
+        except Exception as error:
+            row["error"]=str(error)[:200]
+        asset_checks.append(row)
     report={"schema":"fountain.estate.wlan-stage-live-route-check.v2",
       "generatedAt":datetime.datetime.now(datetime.timezone.utc).isoformat(),
       "release":release,"predecessor":manifest["priorRelease"],
       "url":entry,"inventorySHA256":manifest["inventorySHA256"],
-      "routes":len(results),"counts":counts,
-      "accepted":len(results)==manifest["htmlCount"] and counts.get("PASS")==len(results),
+      "routes":len(results),"counts":counts,"assetChecks":asset_checks,
+      "accepted":len(results)==manifest["htmlCount"] and counts.get("PASS")==len(results)
+         and all(x["state"]=="PASS" for x in asset_checks),
       "publicPublished":False,"rows":results}
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n")
