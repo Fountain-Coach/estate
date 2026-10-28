@@ -21,7 +21,12 @@ assert.equal(m.supportingDomains.find(x=>x.host==='status.fountain.coach').role,
 assert.equal(m.supportingDomains.find(x=>x.host==='book.fountain.coach').status,'live-receded');
 assert(m.rules.publishing.includes('HTTPS readback'));
 const fc=m.frontDoors.find(x=>x.id==='fountain-coach');
-assert.equal(fc.landing.path,'/editions/');
+assert.equal(fc.landing.path,'/');
+assert.equal(fc.landing.kind,'author-led-editorial-identity');
+assert.equal(fc.landing.adjacentReadingRoom,'https://fountain.coach/essays/');
+assert.equal(fc.landing.retainedEditionCatalogue,'https://fountain.coach/editions/');
+assert.equal(fc.editorialDecision.status,'author-approved');
+assert.equal(fc.adjacentReadingRoom.verifiedPublicWorks,7);
 assert.equal(fc.entryEditionPath,'/editions/essays/');
 assert.equal(fc.nestedEditions.length,3);
 for(const edition of fc.nestedEditions){
@@ -30,7 +35,9 @@ for(const edition of fc.nestedEditions){
 }
 assert.equal(fc.sourceCommit,'e8d34eb0e6317586a293052d46fcbc005efc7fd7');
 assert(m.frontDoors.every(x=>typeof x.entryEditionUrl==='string'&&x.entryEditionUrl.startsWith('https://')));
-assert(m.rules.rail.includes('rail points into'));
+assert(m.rules.rail.includes('author-led estate identity'));
+assert(m.rules.rail.includes('/essays/'));
+assert(m.rules.rail.includes('/editions/'));
 assert(m.rules.subEditions.includes('independent reading position'));
 const teatro=m.frontDoors.find(x=>x.id==='teatro');
 assert.equal(teatro.landing.path,'/editions/');
