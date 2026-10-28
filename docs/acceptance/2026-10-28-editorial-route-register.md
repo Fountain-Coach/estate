@@ -356,6 +356,15 @@ These two public routes and their authentic illustrations have been independentl
 - https://fountain.coach/essays/the-door-is-a-score/
 - https://fountain.coach/essays/the-composable-book/
 
+## Public or derived roots outside the pinned Git HTML inventory
+
+Two further real public entrances have to be examined independently. They were not fabricated into the source-route count or the ownership inventory:
+
+- `https://midi2.fountain.coach/` — source owner `Fountain-Coach/midi2`, machine-readable specification and documentation derived into static HTML; a live private `/midi2/` stage root was inspected.
+- `https://satzfunk.fountain.coach/` — public audiovisual publisher, historical author archive, source owner `Fountain-Coach/Satzfunk`; public HTTPS readback establishes the site, but this owner is not currently represented as a tracked HTML source root in the 11-host estate inventory.
+
+The complete technical and audiovisual route sets require their native owner/derived inventories and rights/release evidence. Adding either to a generic static inventory without that authority would make a false coverage claim. The all-route checker reports both explicitly rather than silently omitting them.
+
 ## Lifecycle and release distinctions
 
 The planned solstice.fountain.coach routes are not proof of that hostname serving traffic. The archived tennis.fountain.coach route is not an active editorial surface. Delegated Solstice source is publicly served underneath works.benedikt-eickhoff.de/solstice/. This register does not infer public URL availability from Git files.
