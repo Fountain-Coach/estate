@@ -28,7 +28,9 @@
         "pointer": "/pointer/",
         "solstice": "/solstice/",
         "firstReading": "/solstice/editions/first-reading/",
-        "teatroTechnoDeck": "/teatro/experiments/classic-techno-deck/"
+        "teatroTechnoDeck": "/teatro/experiments/classic-techno-deck/",
+        "works": "/works/",
+        "status": "/status/"
       },
       "retainedRollbackRelease": "shared-shell-20261026-v49-teatro-ab-scenario-063c1d8",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
@@ -232,6 +234,23 @@
         "originalStageRoutesPreserved": true,
         "productionAffected": false,
         "documentation": "docs/acceptance/2026-10-26-teatro-ab-staging-v49.md"
+      },
+      "readOnlyEditorialInspection": {
+        "date": "2026-10-28",
+        "observation": "Live canonical current symlink read over authorized existing SSH; private HTTP readback of selected paths. Not this editorial release.",
+        "activeRelease": "shared-shell-20261028-v56-modell-wirklichkeit-e3753d7",
+        "serviceURL": "http://192.168.8.50:8200/estate/",
+        "verifiedAdditionalRoutes": [
+          "/works/",
+          "/status/",
+          "/estate/essays/",
+          "/estate/essays/the-door-is-a-score/",
+          "/estate/essays/the-composable-book/"
+        ],
+        "routeMappingState": "Works and Status paths observed serving but formerly absent from editorialRoutes",
+        "activationByThisBranch": false,
+        "authorApprovedEditorialCandidateStaged": false,
+        "note": "Older observedRelease/retainedRollbackRelease fields remain historical. Do not infer active rollback identity without a fresh symlink/receipt."
       }
     },
     "estate-shell-proof": {
