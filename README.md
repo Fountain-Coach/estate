@@ -1,5 +1,9 @@
 # Fountain Coach — publication source and reader registry
 
+## Open hand → Reader root (R28 v63)
+
+The original Fountain Press open-hand mark is now the consistent **Bookshelf/Home link**, both on the Bookshelf and inside the existing collection/book readers. Current WLAN staging: `http://192.168.8.50:8200/estate/`, active immutable `shared-shell-20261029-v63-reframe-hand-29fb917`, prior v62 retained for rollback. [Source/AX/keyboard verification](docs/acceptance/2026-10-29-r28-open-hand-root-v63.md) documents eight desktop/mobile return-to-root journeys. Fountain Press owns the canonical semantics and testing; physical iPad and public hosting remain separate.
+
 ## R28 — First free Reframe Reader staged on owner WLAN (29 October 2026)
 
 The first book-first **Reframe Reader** candidate is now live on the existing Ubuntu Mac mini at `http://192.168.8.50:8200/estate/`. It uses the **original two-cover Fountain Press Bookshelf**, with Essays opening the unchanged source-backed continuing seven-chapter reader at `/estate/editions/essays-continuing/`. First Readings' original collection route remains. Active immutable stage `shared-shell-20261029-v62-reframe-r28-20015e9` retains v61 for rollback; SHA readback and desktop/mobile Chrome CDP plus keyboard and AX witness are pinned in [R28 acceptance evidence](docs/acceptance/2026-10-29-r28-first-reader-wlan-v62.md). This is a **first private stage**, not the whole semantic reset: the nested First Readings route retains the older header, physical iPad/VoiceOver acceptance is open, and the production `fountain.coach` / `benedikt-eickhoff.de` names remain distinct. [Reframe R28 scenario](https://github.com/Fountain-Coach/Reframe/blob/main/scenarios/028-one-reader-wlan-first-bookshelf.md).
