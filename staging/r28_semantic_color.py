@@ -79,7 +79,16 @@ def build(args):
   shutil.copytree(active,target,symlinks=True)
   (target/"estate/collections/first-readings/index.html").write_text(sheet)
   (target/"estate/editions/essays/teatro-an-unfinished-composition/index.html").write_text(book)
-  for name,source in sources.items():shutil.copyfile(source,target/name)
+  for name,source in sources.items():
+   if name.endswith("/book.css"):
+    text=source.read_text()
+    marker="/* R28 source-bound containing space: a rail, not a rewritten book page. */"
+    if text.count(marker)!=1:raise RuntimeError("Press-owned color section not unique")
+    base=(active/name).read_text()
+    if marker in base:raise RuntimeError("Color section already in predecessor")
+    (target/name).write_text(base+"\n"+text[text.index(marker):])
+   else:
+    shutil.copyfile(source,target/name)
   if sha(target/"estate/index.html")!=INPUTS["estate/index.html"]:
    raise RuntimeError("Neutral root has changed")
   outputs={name:sha(target/name) for name in sorted(OUTPUTS)}
