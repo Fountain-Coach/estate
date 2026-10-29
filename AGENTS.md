@@ -1,5 +1,9 @@
 # Public book and reference publication source boundary
 
+## Shared public Reader under both domain names — 29 October 2026
+
+Read [the source-backed two-host Reader decision](docs/decisions/2026-10-29-one-reader-two-domains.md) before altering either `benedikt-eickhoff.de` or `fountain.coach`, their owner/route registry, shared Bookshelf publishing or domain release. The intended public site is **one `Fountain-Coach/fountain.coach` source-built Reframe Reader/Bookshelf under two hostnames**. The name domain does not need a second personal/author site. Keep source owners for books and governed instruments independent, and preserve the personal-domain original source and routes as provenance/compatibility. The existing ownership manifest and staging/prod states still describe the two independent sites and must **not** be claimed merged before exact release proof. Choose and verify serving same bytes versus redirect as a separate publication action, retaining canonical metadata, personal-domain TLS/DNS/MX/email, original deep links and rollback.
+
 ## Public terminology correction — 29 October 2026
 
 **Drop “Estate” completely as a public label, category, masthead title, route link name, accessible name, breadcrumb, social preview or product description** when projecting the new public Reader. **Do not rename it “Editorial”.** Editorial is a valid adjective for choosing/editing and ordering published material, and *an editorial* is ordinarily an opinion article, not this product. The public organization is **Reframe Reader / Bookshelf**, actual book and edition titles, **Author / About** for the named creator and **Fountain Coach** as publisher. Support sites for Instruments, MIDI2, Status, legal and technical references remain plain, accessible and intact. No separate public “Works” destination is required once original works have legitimate source-admitted Bookshelf places.
