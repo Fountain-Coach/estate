@@ -20,13 +20,23 @@
       "landing": {
         "url": "https://fountain.coach/",
         "path": "/",
-        "kind": "author-led-editorial-identity",
+        "kind": "reader-first-living-essays",
         "sourceOwner": "Fountain-Coach/fountain.coach",
         "author": "Benedikt Eickhoff",
-        "publicationState": "source-candidate-not-staged",
+        "publicationState": "owner-WLAN-v59-not-public",
         "selectedEssayCount": 4,
         "adjacentReadingRoom": "https://fountain.coach/essays/",
-        "retainedEditionCatalogue": "https://fountain.coach/editions/"
+        "retainedEditionCatalogue": "https://fountain.coach/editions/",
+        "latestVerifiedWrittenWork": "the-door-is-a-score",
+        "latestVerifiedWrittenDate": "2026-10-27",
+        "primaryPublishedChapterCount": 7,
+        "semanticReadingPaths": [
+          "recent",
+          "sound",
+          "reading",
+          "systems"
+        ],
+        "previousAuthorLedScenario": "/scenarios/author-led/"
       },
       "entryEditionUrl": "https://fountain.coach/editions/essays/",
       "entryEditionPath": "/editions/essays/",
@@ -54,7 +64,14 @@
         "date": "2026-10-28",
         "status": "author-approved",
         "meaning": "Fountain Coach introduces its one-person developer and author through four original essay hero illustrations; Essays is the neighboring full reading room; Bookshelf remains separate at /editions/."
-      }
+      },
+      "readerFirstDecision": {
+        "date": "2026-10-29",
+        "status": "writer-approved",
+        "scope": "WLAN staging scenario, not public production",
+        "meaning": "Open Fountain Coach directly in measured seven-essay Linotype reading. Latest verified authored work opens every semantic sequence. Original article source routes and other published editions remain accessible. Preserve previous author-led gallery as an alternate scenario."
+      },
+      "currentSourceGitRevision": "5ec8c5490c8a1fe2b4a941185ecb3f415a7bdfdd"
     },
     {
       "id": "first-reading",
@@ -318,7 +335,7 @@
     "publishing": "typed-authorized EstatePublisher and independent live HTTPS readback; Git pushes alone cannot publish",
     "archives": "preserve hosted historical references; private archive unserved Tennis",
     "ci": "no GitHub Actions/workflows",
-    "rail": "The parent fountain.coach/ is the independent author-led estate identity; /essays/ is its complete reading room; /editions/ is the separate Fountain Press Bookshelf; domain navigation follows the canonical estate authority graph, never promotes an unrelated essay to global navigation.",
+    "rail": "The parent fountain.coach/ is a writer-approved reader-first continuous Essays book on WLAN v59; /essays/ is the complete article catalogue, /editions/ is the original Press Bookshelf, and /scenarios/author-led/ preserves the prior homepage. All domain authority and the nine-entry canonical reel remain unchanged.",
     "subEditions": "Every nested edition has its own canonical source-backed URL, full manuscript, Linotype pagination, and independent reading position; original essays remain intact.",
     "teatroEntry": "Teatro and its global rail MUST enter an authored Linotype book. The existing Csound stage is a secondary, user-activated Stage sub-edition.",
     "satzfunkFirstHearing": "The Hear rail is source-bound and nonmodal; no approval, no narration release. A compiled Csound scene cannot substitute for source-matched recorded speech."

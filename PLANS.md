@@ -1,5 +1,9 @@
 # Estate-wide editorial release plan — 28 October 2026
 
+## Terminal acceptance: owner-WLAN reader-first v59 (29 October 2026)
+
+The writer-approved reader-first landing is active at port 8200. It retains all original article/media bytes and the earlier v58 release. The immutable staged inventory has 1,143 files and 511 HTML pages; 511 independent HTTP digests and shared chrome pass, plus six browser reading scenarios including semantic order and mobile/tablet/desktop controls. Source owner revision 5ec8c5490c8a1fe2b4a941185ecb3f415a7bdfdd. Typed receipt and route table are at the private Mac-mini path receipts/20261029-v59-reader-first/. No public release.
+
 ## Terminal route-specific amendment — owner-WLAN v58 (28 October 2026)
 
 The Composable Book stylesheet was missing even while the v57 HTML/chrome check passed. The original published `assets/essay.css` (7,393 bytes; SHA-256 `05b3915a…`) was restored byte-identically as v58. Current symlink and systemd service are active, v57 retained for rollback. The source owner now tracks that exact stylesheet in Git at commit `72c0cc9d3d0353b708c1d1b6329b864f12932d64`. Live 509/509 route readbacks, 3/3 target Chrome viewport checks and the updated `npm run staging:verify` (which validates CSS MIME/hash) passed. See [the v58 repair record](docs/acceptance/2026-10-28-v58-composable-book-css-repair.md). No public HTTPS mutation.
