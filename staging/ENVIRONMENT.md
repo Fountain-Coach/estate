@@ -1,5 +1,11 @@
 # Fountain Coach Estate — one named WLAN staging environment
 
+## Current WLAN staging — Fountain Press immersive app surface (29 October, v64)
+
+Current `/home/benedikt/estate-shell-acceptance-staging/current` resolves to immutable `shared-shell-20261029-v64-reframe-app-ef6e193` and the registered owner-WLAN endpoint is `http://192.168.8.50:8200/estate/`. Previous v63 remains rollback-ready. Fountain Press itself supplies `app_surface=True` and the complete responsive grid; the site's source builder selects that owner mode and the stage projection changes only the two byte-identical Press shelf entrances, First Readings shelf, and the owner Press CSS. No visible marketing header, "Bookshelf / Author" nav, text outside cover tiles or nine-site collection shell remains. Browser/AX/cover links passed at iPad landscape/portrait, phone and desktop; 14 Press tests passed. Supporting rights/links are accessible as nonvisual focus-revealed links. Exact route and source SHA: [R28 v64 evidence](../docs/acceptance/2026-10-29-r28-press-app-surface-v64.md). Full iPad Safari/VoiceOver and public two-host production are **not accepted**.
+
+The v63/v62 records below are preserved as **historical predecessor observations**, not current stage status.
+
 ## Current Reader stage update — open hand returns to root (29 October 2026)
 
 The actively serving **owner-WLAN Reader** is now immutable `shared-shell-20261029-v63-reframe-hand-29fb917` at `http://192.168.8.50:8200/estate/`; v62 remains rollback-ready. The original Fountain Press hand artwork is now an explicit named, keyboard-operable **Reader-root/Bookshelf link** on the root, First Readings collection, continuing Essays reader and its nested *An Unfinished Composition* reader. Chrome CDP verified **8/8 desktop/mobile keyboard Enter journeys**, AX root-link names and ≥44 px touch targets with fully loaded artwork, no overflow and zero JS exceptions. Exact source checksums, release/predecessor and remaining boundaries: [v63 root-hand evidence](../docs/acceptance/2026-10-29-r28-open-hand-root-v63.md). Fountain Press owns the reusable behavior, not the stage assembly script. The nested First Readings historic domain header remains, native iPad Safari/VoiceOver and public two-domain alias are not asserted. Earlier v62/v10 reports below are historical evidence, not currently selected release claims.
