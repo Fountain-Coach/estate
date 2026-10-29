@@ -1,6 +1,10 @@
 # Fountain Coach — publication source and reader registry
 
-## Open hand → Reader root (R28 v63)
+## Current first-screen design — Fountain Press app, not website (v64, 29 October)
+
+**The canonical owner-WLAN staging entrance** `http://192.168.8.50:8200/estate/` now serves `shared-shell-20261029-v64-reframe-app-ef6e193`, with v63 preserved for rollback. The visible first impression is **only** the original source-owned Fountain Press four-column iPad/two-column phone Bookshelf: one circular hand/Home control, two occupied authentic rounded-square covers (text inside), and twenty inert empty slots. The large "Bookshelf" heading, website explanatory copy, "Bookshelf / Author" strip and visible footer are gone; First Readings now uses the same full-screen composition. Book titles, AX-readable headings and keyboard-focus legal/reference links remain semantically available. [R28 v64 stage proof](docs/acceptance/2026-10-29-r28-press-app-surface-v64.md) includes owner source, SHA, 14 Press tests and eight CDP browser view/AX checks. Actual iPad Safari/VoiceOver and public release remain open; the older v63/v62 sections below are historical.
+
+## Previous stage — open hand → Reader root (R28 v63, superseded by v64)
 
 The original Fountain Press open-hand mark is now the consistent **Bookshelf/Home link**, both on the Bookshelf and inside the existing collection/book readers. Current WLAN staging: `http://192.168.8.50:8200/estate/`, active immutable `shared-shell-20261029-v63-reframe-hand-29fb917`, prior v62 retained for rollback. [Source/AX/keyboard verification](docs/acceptance/2026-10-29-r28-open-hand-root-v63.md) documents eight desktop/mobile return-to-root journeys. Fountain Press owns the canonical semantics and testing; physical iPad and public hosting remain separate.
 
