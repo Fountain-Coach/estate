@@ -1,5 +1,9 @@
 # Three-publication estate boundary
 
+## Current reader-first estate identity — 29 October 2026
+
+The writer approved the new estate root as the continuing seven-work Essays Linotype reader. The newest dated authored work always opens the book; the reader chooses semantic order for later chapters. The prior author-led landing is preserved at /scenarios/author-led/. Article source URLs, the Press Bookshelf, other domain readings and canonical estate shell authority remain unchanged. Private v59 was independently verified over all 511 served HTML routes; v58 remains rollback. The October 28 decision below records previous history, not the current homepage.
+
 ## Author-led editorial identity — adopted 28 October 2026
 
 The author approved a one-person Fountain Coach identity, an illustrative selection of four authentic essays at `fountain.coach/`, the complete collection next door at `/essays/`, and the autonomous edition Bookshelf at `/editions/`. Chapter 92 continues to define parent identity and the cross-domain authority graph. This supersedes October 14's root-equals-Bookshelf proposal without changing the edition work or its separate ownership.

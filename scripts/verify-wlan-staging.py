@@ -87,7 +87,7 @@ def run():
         raise RuntimeError("Active release changed. Registry="+release+" actual="+actual)
     service=ssh(args.ssh_alias,"systemctl --user is-active fountain-shell-acceptance-preview.service")
     if service!="active":raise RuntimeError("WLAN preview service is not active: "+service)
-    rec=surface.get("authorLedEditorialReleaseV58",surface["authorLedEditorialReleaseV57"])["typedPrivateReceipt"]
+    rec=surface.get("readerFirstStageV59",surface.get("authorLedEditorialReleaseV58",surface["authorLedEditorialReleaseV57"]))["typedPrivateReceipt"]
     remote_manifest=str(Path(rec).with_name("release-inventory.json"))
     manifest=json.loads(args.manifest.read_text() if args.manifest else
                         ssh(args.ssh_alias,"cat "+shlex.quote(remote_manifest)))
@@ -152,7 +152,7 @@ def run():
     # results. Verify this exact production-sourced stylesheet on the running stage.
     asset_checks=[]
     css_proof=surface.get("authorLedEditorialReleaseV58")
-    if css_proof and release==css_proof["activeRelease"]:
+    if css_proof and release in (css_proof["activeRelease"],surface.get("readerFirstStageV59",{}).get("activeRelease")):
         asset_path="estate/essays/the-composable-book/assets/essay.css"
         expected_css=css_proof["cssSHA256"]
         assert files[asset_path]["sha256"]==expected_css, "CSS manifest/source mismatch"

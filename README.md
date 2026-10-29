@@ -1,5 +1,9 @@
 # Fountain Coach — the three-publication estate
 
+## Reader-first living Essays on WLAN v59 (29 October 2026)
+
+Current stage http://192.168.8.50:8200/estate/ starts at The Door Is a Score, the latest verified written work (27 October 2026). Seven published essays are one measured Linotype book with four semantic orders; the former landing is retained at /estate/scenarios/author-led/. Source is pinned to 5ec8c5490c8a1fe2b4a941185ecb3f415a7bdfdd. All 511 HTTP HTML routes and six live Chrome reader scenarios passed. v58 is rollback; public production is unchanged. See docs/acceptance/2026-10-29-reader-first-v59-wlan-release.md.
+
 ## Route-local Composable Book stylesheet repaired — v58 live (28 October 2026)
 
 The currently active private WLAN release is **v58**, not v57: `shared-shell-20261028-v58-composable-css-05b3915`. [The route-specific CSS recovery and acceptance record](docs/acceptance/2026-10-28-v58-composable-book-css-repair.md) proves the original public `assets/essay.css` is now served as exact `text/css`, with 509 original HTML routes preserved, 509/509 HTTP route readbacks and three responsive targeted browser checks passing. The former v57 remains the rollback release. Source, staging and public production are not conflated. The `staging:verify` script now rejects missing or wrong-MIME Composable Book CSS.
