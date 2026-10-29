@@ -1,4 +1,10 @@
-# Three-publication estate boundary
+# Public book and reference publication source boundary
+
+## Public terminology correction — 29 October 2026
+
+**Drop “Estate” completely as a public label, category, masthead title, route link name, accessible name, breadcrumb, social preview or product description** when projecting the new public Reader. **Do not rename it “Editorial”.** Editorial is a valid adjective for choosing/editing and ordering published material, and *an editorial* is ordinarily an opinion article, not this product. The public organization is **Reframe Reader / Bookshelf**, actual book and edition titles, **Author / About** for the named creator and **Fountain Coach** as publisher. Support sites for Instruments, MIDI2, Status, legal and technical references remain plain, accessible and intact. No separate public “Works” destination is required once original works have legitimate source-admitted Bookshelf places.
+
+The `Fountain-Coach/estate` Git repository, legacy stage path `/estate/`, existing owner route manifest, independent source Git owner names, `EstatePublisher` operations and historical text remain valid technical and provenance identities pending separately authorized migration; this author decision neither renames those interfaces nor proves a stage/public release. See [the current source-based naming decision](docs/decisions/2026-10-29-bookshelf-estate-reframing.md).
 
 ## 29 October R27 — Reframe the Estate by book and author identity
 
