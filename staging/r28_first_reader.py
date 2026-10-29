@@ -71,10 +71,10 @@ def replace_once(source: str, old: str, new: str, name: str) -> str:
     return source.replace(old, new, 1)
 
 def strip_staged_shell(source: str, *, name: str) -> str:
-    html, n = re.subn(r'<header class="fc-estate-shell"\b[^>]*>.*?</header>\s*', '', source, count=1, flags=re.S)
+    html, n = re.subn(r'<header class="fc-estate-shell"[^>]*>.*?</header>\s*', '', source, count=1, flags=re.S)
     if n != 1:
         raise ValueError(f"{name}: no uniquely identified legacy shell header")
-    html, n = re.subn(r'<footer class="estate-footer fc-estate-shell"\b[^>]*>.*?</footer>\s*', '', html, count=1, flags=re.S)
+    html, n = re.subn(r'<footer class="estate-footer fc-estate-shell"[^>]*>.*?</footer>\s*', '', html, count=1, flags=re.S)
     if n != 1:
         raise ValueError(f"{name}: no uniquely identified legacy shell footer")
     for asset in (
@@ -184,7 +184,9 @@ def build(args: argparse.Namespace) -> dict:
         "pressBookshelf": digest(old_shelf),
         "firstReadingsCollection": digest(old_collection),
     }
-    if originals["essays"] != EXPECTED_ESSAYS_SHA256 or originals["pressBookshelf"] != EXPECTED_PRESS_SHELF_SHA256:
+    if (originals["essays"] != EXPECTED_ESSAYS_SHA256 or
+            originals["pressBookshelf"] != EXPECTED_PRESS_SHELF_SHA256 or
+            originals["firstReadingsCollection"] != EXPECTED_COLLECTION_SHA256):
         raise RuntimeError(f"Changed source artifacts, do not overwrite: {originals}")
     lock = json.loads((active / "source-lock.json").read_text())
     source_record = lock.get("readerFirstStageV59", {})
