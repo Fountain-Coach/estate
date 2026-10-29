@@ -17,7 +17,7 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261029-v62-reframe-r28-20015e9",
+      "observedRelease": "shared-shell-20261029-v63-reframe-hand-29fb917",
       "editorialRoutes": {
         "estate": "/estate/",
         "book": "/book/",
@@ -33,7 +33,7 @@
         "essaysContinuing": "/estate/editions/essays-continuing/",
         "firstReadingsCollection": "/estate/collections/first-readings/"
       },
-      "retainedRollbackRelease": "shared-shell-20261029-v61-sing-folio-e613dd4",
+      "retainedRollbackRelease": "shared-shell-20261029-v62-reframe-r28-20015e9",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
       "lastEstatePublisherStageReceipt": "docs/acceptance/2026-10-22-estatepublisher-wlan-v11-terminal-receipt.json",
       "publisherStagingIdentity": "UbuntuEstateShellWLANStage",
@@ -264,7 +264,41 @@
         "publicProductionAffected": false,
         "evidence": "docs/acceptance/2026-10-29-r28-first-reader-wlan-v62.md"
       },
-      "latestObservedChangeSupersededBy": "currentReaderStage (the older latestObservedChange object records the 2026-10-26 v50 instrument stage as historical evidence)"
+      "latestObservedChangeSupersededBy": "currentReaderStage (the older latestObservedChange object records the 2026-10-26 v50 instrument stage as historical evidence)",
+      "observedShellVersionAppliesTo": "Historical v2 shell in retained routes only; canonical root is the R28 Press Bookshelf and has no v2 shell",
+      "currentReaderStageSupersededBy": "rootHandStage",
+      "rootHandStage": {
+        "schema": "fountain.reframe.root-hand-wlan-witness.v1",
+        "date": "2026-10-29",
+        "meaning": "Original open-hand publisher mark is a universal link to Reader root /estate/; not a passive logo or parent-relative back action",
+        "activeRelease": "shared-shell-20261029-v63-reframe-hand-29fb917",
+        "predecessor": "shared-shell-20261029-v62-reframe-r28-20015e9",
+        "sourceOwner": "Fountain-Coach/fountain-press",
+        "pressOwnerCommit": "5e04ce2502d537ba06b6e772ab58af86ad773413",
+        "stagingSourceOwner": "Fountain-Coach/estate",
+        "stagingScript": "staging/r28_open_hand_root.py",
+        "stagingScriptCommit": "29fb917edf2c5ff6e5dd695ea268f9c209d3bdf8",
+        "rootURL": "http://192.168.8.50:8200/estate/",
+        "affectedRoutes": [
+          "/estate/",
+          "/estate/editions/",
+          "/estate/collections/first-readings/",
+          "/estate/editions/essays-continuing/",
+          "/estate/editions/essays/teatro-an-unfinished-composition/"
+        ],
+        "rootHTMLSHA256": "7cc797797a2aa73dc4176036655efefcfe7a85e585d4abb71868c4b3798c4d95",
+        "firstReadingsHTMLSHA256": "ea2d626ce7b516d6c3ab7864ad2bafb907b301e166cbe26bd6e2613af130f84b",
+        "essaysHTMLSHA256": "c24303fbe864f48c88c144c06f085f713208475728f8b39512fb1541221b506b",
+        "browser": "Chrome CDP 1024x850 desktop and 390x844 mobile-emulated; 8 keyboard Enter root navigation journeys, accessible AX link, no horizontal overflow, >=44px loaded touch target",
+        "cssImageFullyLoadedAcceptance": true,
+        "originalArtworkPreserved": true,
+        "originalSourceWorksAndPressRuntimePreserved": true,
+        "legacyFirstReadingsHeaderStillOpen": true,
+        "physicalIPadSafariVoiceOver": "not-performed",
+        "publicProductionAffected": false,
+        "typedEstatePublisherStageReceipt": false,
+        "evidence": "docs/acceptance/2026-10-29-r28-open-hand-root-v63.md"
+      }
     },
     "estate-shell-proof": {
       "role": "isolated-October-22-shell-proof-not-canonical-entrance",
