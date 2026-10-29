@@ -17,7 +17,7 @@
       "entryURL": "http://benedikt-Macmini.local:8200/estate/",
       "observedDirectAddressURL": "http://192.168.8.50:8200/estate/",
       "activeReleaseSymlink": "/home/benedikt/estate-shell-acceptance-staging/current",
-      "observedRelease": "shared-shell-20261029-v64-reframe-app-ef6e193",
+      "observedRelease": "shared-shell-20261029-v65-reframe-color-8b4e961",
       "editorialRoutes": {
         "estate": "/estate/",
         "book": "/book/",
@@ -33,7 +33,7 @@
         "essaysContinuing": "/estate/editions/essays-continuing/",
         "firstReadingsCollection": "/estate/collections/first-readings/"
       },
-      "retainedRollbackRelease": "shared-shell-20261029-v63-reframe-hand-29fb917",
+      "retainedRollbackRelease": "shared-shell-20261029-v64-reframe-app-ef6e193",
       "observedShellVersion": "fountain.estate.shell.v2-editorial-20261022",
       "lastEstatePublisherStageReceipt": "docs/acceptance/2026-10-22-estatepublisher-wlan-v11-terminal-receipt.json",
       "publisherStagingIdentity": "UbuntuEstateShellWLANStage",
@@ -327,7 +327,48 @@
         "publicProductionAffected": false,
         "evidence": "docs/acceptance/2026-10-29-r28-press-app-surface-v64.md"
       },
-      "immersiveAppStageSupersedes": "Older root header/footer presentation in R28 v62/v63; earlier release metadata remains historical"
+      "immersiveAppStageSupersedes": "Older root header/footer presentation in R28 v62/v63; earlier release metadata remains historical",
+      "semanticColorV65": {
+        "schema": "fountain.reframe.r28.semantic-color-wlan-witness.v1",
+        "observedDate": "2026-10-29",
+        "goal": "Restore actual semantic containing-space color without turning individual book cover or root into genre colors",
+        "activeRelease": "shared-shell-20261029-v65-reframe-color-8b4e961",
+        "predecessor": "shared-shell-20261029-v64-reframe-app-ef6e193",
+        "wlanEntry": "http://192.168.8.50:8200/estate/",
+        "containingRoute": "/estate/collections/first-readings/",
+        "containedWorkRoute": "/estate/editions/essays/teatro-an-unfinished-composition/",
+        "containingSpaceID": "first-readings",
+        "containingSourceSHA256": "8cbaa8cf73400602d0d61520f18d3b8f2e7885e2570981e941a6184b29d91314",
+        "exactMemberIDs": [
+          "teatro-an-unfinished-composition"
+        ],
+        "sourcePresentation": "Fountain-Coach/fountain.coach/site/collections/first-readings/containment-presentation.v1.json",
+        "sourceBuilder": "Fountain-Coach/fountain.coach/scripts/build_edition_hierarchy.py",
+        "sourceCompositor": "Fountain-Coach/fountain-press/runtime/bookshelf.py",
+        "stagingScript": "Fountain-Coach/estate/staging/r28_semantic_color.py",
+        "stageBuilderCommit": "8b4e96156d799375355c0b71ee25238da813a4cf",
+        "visualTone": {
+          "accent": "#4a8982",
+          "field": "#d4d8cf",
+          "historicalNumericMatch": "not-independently-proven"
+        },
+        "unchangedRootHTMLSHA256": "c9d8fb59fcd4fc9079124bc2a04c9b58b6c5a5d4cda534b173be3b0a535f386d",
+        "collectionHTMLSHA256": "7190fcb230e5a94b7800fd056b7b1a3d86b921d8981c131adff6b9ae31e24d26",
+        "containedReaderHTMLSHA256": "281b37e8e1a7a82ad6ac168702a7b687441fb38a6403a6f5629f42f6aa2e0a4a",
+        "bookshelfCSSSHA256": "f6a93b5b5e78697d5b92fdf862d9640b7e81923b2564a32667f9fe66215c792c",
+        "bookCSSSHA256": "2c2a80839da91f6e83a21a317e2f7404da2881b6c9fec6f3136dbad823ba8afb",
+        "sourceBookCoverMediaUnchanged": true,
+        "neutralRootConfirmed": true,
+        "bookArtRecolored": false,
+        "pressFocusedTests": "15 tests passed",
+        "chromeBrowserProof": "3 of 3 full stage root-collection-book-root journeys passed at 1024x768,768x1024,390x844; no horizontal overflow, no failed assets or runtime exceptions",
+        "firstReadingsChildLegacyHeaderStillOpen": true,
+        "publicProductionAffected": false,
+        "physicalIPadSafariVoiceOver": "not-performed",
+        "typedEstatePublisherProductionReceipt": false,
+        "evidence": "docs/acceptance/2026-10-29-r28-semantic-color-v65.md"
+      },
+      "semanticColorV65Supersedes": "v64 was the app-surface baseline without source-bound containment color; v64 remains rollback"
     },
     "estate-shell-proof": {
       "role": "isolated-October-22-shell-proof-not-canonical-entrance",
