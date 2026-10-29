@@ -1,5 +1,9 @@
 # Three-publication estate boundary
 
+## Free Reframe Reader and paid Writer — product projection decision (2026-10-29)
+
+Read [the public-safe Estate Reader decision](docs/decisions/2026-10-29-reframe-reader-estate-projection.md) before changing the Estate principal entrance, Bookshelf, author-owned edition projections or book instruments. **The Estate projects the free source-faithful Reframe Reader; paid editability belongs to authorized Reframe Writer; publication remains independent.** A reader may interact with released admitted instruments without mutating authored source. An instrument, domain, single folio, stage, Empty slot or generic static route is not automatically a book. Fountain Press alone owns measured Linotype page composition; the Fountain Coach Publication Core continues to own complete direct-static route shells. This product architecture decision neither changes the current staging/production state nor grants rights or release approval; preserve the owner/route inventory, legal/footer surfaces and exact release receipts.
+
 ## Canonical WLAN staging identity (FCIS, 22 October 2026)
 
 Read `staging/environment.json` and `staging/ENVIRONMENT.md` **before** any request to show, inspect, update or publish to "the staging environment". This repository owns the estate's single logical WLAN staging identity: the existing Ubuntu `MacMiniDocker` (`benedikt-Macmini.local`), observed reachable at `192.168.8.50`. The current **author-facing EstateShell entrance** is declared by the named registry surface `estate-shell-acceptance`, served on `8200` from its actual `current` symlink. Do not substitute older `192.168.8.11:8443`, retired `192.168.8.249`, historical snapshots, the unrelated `8202` proof, or an arbitrary latest-by-timestamp candidate.
