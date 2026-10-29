@@ -8,6 +8,8 @@
 
 The Fountain Coach publication Estate has accumulated websites that advertise **hostnames as if they were editorial categories**. The principal public entrance should instead become the **free Reframe Reader**, with Fountain Press Bookshelf state for source-authentic, actually admitted and released books. A book is identified by work/edition/source, not a hostname. A book's instrument is an admitted capability, not an additional book merely because it has a technical site.
 
+**This is content redistribution, not simply fewer links.** Source-bearing material from any retiring public destination must be individually mapped into its legitimate new containing edition, authorial name-domain identity, publisher publication, or maintained plain reference route—with original source, owner, contributor credits, multilingual versions, digest and deep-link continuity. The author sees fewer domains because their existing contents have been semantically placed, not because material was hidden or deleted. Keep an unmatched original route live until it has an independently verified destination.
+
 ### Candidate book shelves
 
 - **Essays — A Book Continually Written:** one ongoing, versioned book, with editorially admitted reading sequences such as latest-first; individual complete essays and permanent addresses survive.
