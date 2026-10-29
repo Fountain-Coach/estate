@@ -14,6 +14,10 @@ The **paid Reframe Writer** adds the capability to create and edit authorized au
 
 **Interaction is available to readers where published.** Readers may use author-approved chapter orders, semantic links, listening/scrubbing interfaces, authorized Teatro stages and admitted performance instruments without changing the authored edition. A personal reading position is distinct from a source revision. Missing rights or unavailable capabilities must be disclosed, not emulated or taken as permission to run a private service.
 
+## A single source under both domain names
+
+[The same-source decision](2026-10-29-one-reader-two-domains.md) fixes **`benedikt-eickhoff.de` and `fountain.coach` as two entrances to one Reframe Reader/Bookshelf and one source-built publication artifact**, not two separate personal and company websites. The future public Reader source is `Fountain-Coach/fountain.coach`; author/about, publisher and book contents live within one projection. The existing personal source is retained for originals/provenance; readers do not see a parallel author site. Deployment may serve the same artifact or safely redirect one name, subject to independent old-route, TLS, canonical-metadata and email preservation proof. The historical source/domain registry still records separate sites: no DNS, stage or live publication change is implied.
+
 ## Books and instruments
 
 Books are admitted attributed source-bound works/editions with exact source identity, revision, approved edition relationship, authentic cover and genuine Linotype reader. A web route, domain, PDF candidate, static page, score, audio track, Empty shelf cell, MIDI2 instrument or executable stage is **not** automatically a book.
