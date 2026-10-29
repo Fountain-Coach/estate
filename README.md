@@ -1,5 +1,9 @@
 # Fountain Coach — the three-publication estate
 
+## Product decision — Estate projects the free Reframe Reader (2026-10-29)
+
+[Estate Reader projection](docs/decisions/2026-10-29-reframe-reader-estate-projection.md) records the author-directed product split: **free source-bound Reader, paid authorized Writer editability, separately authorized publication**. The principal Estate entrance should become a genuine Linotype Bookshelf/Reader of released editions. Published music, scores, semantic paths and admitted book instruments may remain interactive without modifying source. This is an accepted **architecture direction**, not a claim that a complete Reader exists at staging or public HTTPS. The private product authority is `Fountain-Coach/Reframe/docs/architecture/ADR-007-free-reader-paid-writer-estate.md`; this public registry publishes only its intentionally sanitized consequence. Keep all authentic book identities, estate inventory, legal and technical routes, source ownership and independently verified publication states.
+
 ## Owned audio archive — decision 2026-10-21
 
 [Cross-estate owned audio boundary](docs/decisions/2026-10-21-owned-audio-archive-estate-boundary.md): independently verified 33 Bandcamp public playback MP4 files on Ubuntu; separate original-master and rights verification required. Artist Works catalogue owns work identity, Satzfunk owns hearing/performances, Store/EstatePublisher owns any public release. No new front door, deployed station, DNS, Caddy modification or storage bill.
