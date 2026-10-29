@@ -10,6 +10,12 @@
 
 **Authoring and source acceptance:** new or revised static routes, masthead, header/reel, footer, breadcrumbs, metadata, accessible names, titles and social previews must not present “Estate” or “Editorial” as public branding, a site category or a destination. Preserve authored quotations using those words and all old public URLs, source repos, checksums and release receipts. Legacy technical IDs, including the installed `EstatePublisher` publishing contract and this repository's historical identity, are not public labels and cannot safely be renamed by a site-copy change.
 
+## One publication source for both domain names
+
+**Later author decision (29 October 2026): `benedikt-eickhoff.de` and `fountain.coach` enter the **same Reframe Reader / Bookshelf**, from **one checked-in public composition source** in `Fountain-Coach/fountain.coach`, not two websites that merely link to each other.** The author/About identity and Fountain Coach publisher identity belong *within that same site*. The old `Fountain-Coach/benedikt-eickhoff.de` source stays preserved as original historical/provenance material, not the source of a competing future Reader. Individual books, normative Governance chapters and instruments keep their own authoritative source repositories. This supersedes the earlier separate name-domain/author-site interpretation. [Shared-source publication decision](2026-10-29-one-reader-two-domains.md).
+
+Both addresses need independent release/readback and historic deep-link handling. A later host-specific verified choice between serving an identical immutable artifact and redirecting one hostname must retain canonical URL/OG metadata, origin-specific reading-place behavior and personal-domain DNS/email. **Neither hostname has been changed by this decision.**
+
 ## Source and publication arrangement
 
 Fountain Coach's publications have accumulated websites that advertise **hostnames as if they were distinct destinations for readers**. The principal public entrance should instead become the **free Reframe Reader**, with Fountain Press Bookshelf state for source-authentic, actually admitted and released books. A book is identified by work/edition/source, not a hostname. A book's instrument is an admitted capability, not an additional book merely because it has a technical site.
@@ -28,7 +34,7 @@ Other individual works or dailies join only after authentic work/edition/cover/r
 
 ### Author / publisher rather than an infrastructure category
 
-**Remove the old infrastructure term from the complete public reading vocabulary**, not the publishing machinery that serves the works. The name `benedikt-eickhoff.de` identifies the actual author/creator and may be the reader's small **Author / About** entry. `fountain.coach` remains the company/product and canonical free Reader entrance; they need not be two competing catalogues. Preserve truthful distinct legal/company and person/creator identities and all credited collaborators.
+**Remove the old infrastructure term from the complete public reading vocabulary**, not the publishing machinery that serves the works. **Both `benedikt-eickhoff.de` and `fountain.coach` point to the same Reader publication source.** The author/creator is named in the Reader's **Author / About** content, and Fountain Coach is identified there as publisher; no distinct personal website, company portal or parallel catalogue is needed. Preserve truthful distinct legal/company and person/creator identities and all credited collaborators.
 
 **Works ceases to be a primary destination** *after* its individual editions open from the Bookshelf. The original `works.benedikt-eickhoff.de` URLs (including its source-owned delegated `/solstice/` path), PDFs, bilingual text, credits, incoming links and archives remain independently reachable pending separately approved route redirects. Less front-door chrome comes **before** optional hostname retirement. This public decision does not touch domain DNS, TLS, MX/email, Caddy, backlinks or source Git owners.
 
@@ -41,7 +47,7 @@ The final reel/footer geometry and any true domain retirement require a separate
 ## Migration order and evidence
 
 1. Establish **source-true identity, rights and state** of each selected work/edition and exact owner Git SHA. Work ≠ edition ≠ book admission ≠ public release; unknown ≠ no.
-2. Compose the free **Bookshelf and first books** through the existing Fountain Press reading contract on owner Git, preserving all real URLs and independent source/asset paths.
+2. Compose **one free Bookshelf and first books** through the existing Fountain Press reading contract in the `Fountain-Coach/fountain.coach` public composition source, preserving all real URLs and independent work/source/asset ownership; verify the same publication identity is reachable via both names.
 3. Give **Governance** an immutable *complete* edition and explicit chapter-status/canonical-current relation before claiming it as an admitted public Linotype book.
 4. Reduce the top navigation to book/edition reading and an appropriate author/publisher link; remove all visible “Estate” and “Editorial” public destination wording and place technical, legal and instrument references in a coherent **accessible** footer, checking every old-to-new route and metadata/accessible-name projection.
 5. Stage only through the registered owner-WLAN EstatePublisher/SSH contract, retaining source/published production baseline and predecessor. Require real browser/AX and Safari/iPad acceptance for the layout.
