@@ -34,6 +34,17 @@ APPROVED_ESSAY_ASSETS = {
 APPROVED_ESSAY_ASSET_DIR = "estate/essays/what-makes-a-page-modern/assets/"
 APPROVED_FIGURE_RELEASE = "shared-shell-20261104-v143-modern-page-balanced-6a15b6c"
 APPROVED_WEB_READER_RELEASE = "shared-shell-20261104-v144-webreader-inset-66ec9c5"
+
+# Author-WLAN-only listening derivatives. No Reader or narration source mutation.
+# Original WAVs, model snapshots, transcripts and approval receipts stay private.
+APPROVED_VERGIL_AUDITION_RELEASE = "shared-shell-20261104-v145-vergil-qwen-private-audition"
+APPROVED_VERGIL_AUDITION_ASSETS = {
+    "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-a.mp3":
+        "6f229cce508aa70236ee5c3b3eeb0bec7fe14bdc2296e0703d18016750ae91f8",
+    "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-b.mp3":
+        "845d07d3404a0527012752057a5c689c78b29cec863bbe9ddd15becc0da207b5",
+}
+
 APPROVED_WEB_READER_SOURCE_COMMIT = "66ec9c5144953766bc99e7f9cf704b5ea17cf7a0"
 APPROVED_WEB_READER_LOCK_SHA256 = "9ffddfa9fdd5bf853c973de266bcdc71404f954342c8931ca6e53e82f0da9396"
 APPROVED_WEB_READER_INDEX_SHA256 = "9d8b6c330146f4b7d1b6e437aa916f89aca99e110de7c8f24060df29050bd8c5"
@@ -336,6 +347,35 @@ def approved_web_reader_inset_files(baseline: Path, candidate: Path) -> dict[str
     return {**inherited, **exact}
 
 
+def approved_private_vergil_audition_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """Allow only two hash-pinned audition MP3s beside unchanged v144 Reader.
+
+    This cannot authorize itself from a modified source-lock or arbitrary
+    stage content. The predecessor must pass the existing v144 check first.
+    """
+    if candidate.name != APPROVED_VERGIL_AUDITION_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_WEB_READER_RELEASE
+    inherited = approved_web_reader_inset_files(baseline, predecessor)
+    if not inherited or not candidate.is_dir():
+        raise UnadmittedReaderRoute("Unverified v144 Reader predecessor for private audition")
+    before = {p.relative_to(predecessor).as_posix(): p
+              for p in predecessor.rglob("*") if p.is_file()}
+    after = {p.relative_to(candidate).as_posix(): p
+             for p in candidate.rglob("*") if p.is_file()}
+    if set(after) != set(before) | set(APPROVED_VERGIL_AUDITION_ASSETS):
+        raise UnadmittedReaderRoute("Private audition changed v144 Reader inventory")
+    for rel, original in before.items():
+        present = after[rel]
+        if present.is_symlink() or sha256(original) != sha256(present):
+            raise UnadmittedReaderRoute("Private audition changed Reader file: " + rel)
+    for rel, expected in APPROVED_VERGIL_AUDITION_ASSETS.items():
+        present = after[rel]
+        if present.is_symlink() or sha256(present) != expected:
+            raise UnadmittedReaderRoute("Wrong private audition recording: " + rel)
+    return inherited
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -363,9 +403,20 @@ class ReaderProvenanceGate:
             self.approved_essay = approved_balanced_essay_files(self.baseline, self.current)
         if self.current.name == APPROVED_WEB_READER_RELEASE:
             self.approved_essay = approved_web_reader_inset_files(self.baseline, self.current)
+        if self.current.name == APPROVED_VERGIL_AUDITION_RELEASE:
+            self.approved_essay = approved_private_vergil_audition_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
+        if rel.startswith("private-auditions/"):
+            expected = (APPROVED_VERGIL_AUDITION_ASSETS.get(rel)
+                        if self.current.name == APPROVED_VERGIL_AUDITION_RELEASE
+                        else None)
+            target = self.current / rel
+            if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
+                raise UnadmittedReaderRoute("Unknown or altered private audition asset")
+            return
         # Only the reviewed vector assets may exist under this work folder.
         # In particular, a new standalone index.html is NEVER an allowed
         # alternative Reader, even when the root source volume is admitted.
