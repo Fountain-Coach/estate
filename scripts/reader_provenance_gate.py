@@ -33,6 +33,12 @@ APPROVED_ESSAY_ASSETS = {
 }
 APPROVED_ESSAY_ASSET_DIR = "estate/essays/what-makes-a-page-modern/assets/"
 APPROVED_FIGURE_RELEASE = "shared-shell-20261104-v143-modern-page-balanced-6a15b6c"
+APPROVED_WEB_READER_RELEASE = "shared-shell-20261104-v144-webreader-inset-66ec9c5"
+APPROVED_WEB_READER_SOURCE_COMMIT = "66ec9c5144953766bc99e7f9cf704b5ea17cf7a0"
+APPROVED_WEB_READER_LOCK_SHA256 = "9ffddfa9fdd5bf853c973de266bcdc71404f954342c8931ca6e53e82f0da9396"
+APPROVED_WEB_READER_INDEX_SHA256 = "9d8b6c330146f4b7d1b6e437aa916f89aca99e110de7c8f24060df29050bd8c5"
+APPROVED_WEB_READER_SVG_SHA256 = "778a1a33b7f69e34f5603e02950d245abd221fff3ea260c02310a2a4d79df9fb"
+APPROVED_WEB_READER_SVG_PATH = "estate/essays/what-makes-a-page-modern/assets/reader.svg"
 APPROVED_FIGURE_LOCK_SHA256 = "0471e8d18d3ba80b365b1d744bfebd5548840da50ee2945cedc5274715a64990"
 APPROVED_FIGURE_SOURCE_COMMIT = "6a15b6c63d64a5e09da491b93f6e35c6dcc29b21"
 APPROVED_FIGURE_HTML_SHA256 = "610f1cde53ca00d3e2e249c2cc965acd53f084a7b447566855f05fa28766c720"
@@ -268,6 +274,68 @@ def approved_balanced_essay_files(baseline: Path, candidate: Path) -> dict[str, 
     return {**inherited, **exact}
 
 
+def approved_web_reader_inset_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """One SVG internal-ink correction on the accepted, unchanged v143 Reader."""
+    if candidate.name != APPROVED_WEB_READER_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_FIGURE_RELEASE
+    if not predecessor.is_dir():
+        raise UnadmittedReaderRoute("No original v143 Reader predecessor")
+    inherited = approved_balanced_essay_files(baseline, predecessor)
+    if len(inherited) != 15 or sha256(predecessor / "source-lock.json") != APPROVED_FIGURE_LOCK_SHA256:
+        raise UnadmittedReaderRoute("v143 figure source was not admitted")
+    if sha256(candidate / "source-lock.json") != APPROVED_WEB_READER_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Changed v144 source-lock receipt")
+    try:
+        current_lock = json.loads((candidate / "source-lock.json").read_text())
+        original_lock = json.loads((predecessor / "source-lock.json").read_text())
+        admission = current_lock.pop("modernPageWebReaderInsetAdmission")
+    except (KeyError, ValueError, OSError) as error:
+        raise UnadmittedReaderRoute("Missing verified WEB READER inset admission") from error
+    if current_lock != original_lock:
+        raise UnadmittedReaderRoute("Existing v143 editorial source was modified")
+    exact = {
+        "estate/index.html": APPROVED_WEB_READER_INDEX_SHA256,
+        APPROVED_WEB_READER_SVG_PATH: APPROVED_WEB_READER_SVG_SHA256,
+    }
+    required = {
+        "schema": "fountain.press.semantic-figure-inset.existing-reader.v1",
+        "sourceOwner": "Fountain-Coach/fountain.coach",
+        "sourceCommit": APPROVED_WEB_READER_SOURCE_COMMIT,
+        "sourcePDFSHA256": APPROVED_ESSAY_PDF_SHA256,
+        "predecessor": APPROVED_FIGURE_RELEASE,
+        "release": APPROVED_WEB_READER_RELEASE,
+        "stageOnly": True,
+        "publicReleased": False,
+        "fountainStoreAdmitted": False,
+        "readerRuntimeUnchanged": True,
+        "originalManuscriptUnchanged": True,
+        "innerTextFitsFrame": True,
+        "fileSHA256": exact,
+    }
+    if admission != required:
+        raise UnadmittedReaderRoute("v144 source identity/allowed files do not match source")
+    for rel, digest in exact.items():
+        item = candidate / rel
+        if not item.is_file() or item.is_symlink() or sha256(item) != digest:
+            raise UnadmittedReaderRoute("Unverified internal diagram source: " + rel)
+    def inventory(root: Path):
+        return {x.relative_to(root).as_posix():x for x in root.rglob("*") if x.is_file()}
+    before, after = inventory(predecessor), inventory(candidate)
+    if set(before) != set(after):
+        raise UnadmittedReaderRoute("Changed v143 Reader route inventory")
+    changed = set()
+    for rel in before:
+        a,b = before[rel],after[rel]
+        if a.stat().st_dev==b.stat().st_dev and a.stat().st_ino==b.stat().st_ino:
+            continue
+        if sha256(a) != sha256(b):
+            changed.add(rel)
+    if changed != set(exact) | {"source-lock.json"}:
+        raise UnadmittedReaderRoute("Change beyond approved WEB READER internal padding")
+    return {**inherited, **exact}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -293,6 +361,8 @@ class ReaderProvenanceGate:
         self.approved_essay = approved_essay_files(self.baseline, self.current)
         if self.current.name == APPROVED_FIGURE_RELEASE:
             self.approved_essay = approved_balanced_essay_files(self.baseline, self.current)
+        if self.current.name == APPROVED_WEB_READER_RELEASE:
+            self.approved_essay = approved_web_reader_inset_files(self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
