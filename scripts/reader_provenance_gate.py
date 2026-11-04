@@ -14,6 +14,7 @@ from urllib.parse import unquote, urlsplit
 ACCEPTED_STAGE = "shared-shell-20261103-v140-same-folio-return"
 ACCEPTED_SOURCE_LOCK_SHA256 = "d263837865d282f495de905e3c43833be3b118faf0332529f61564b137bfaebc"
 ACCEPTED_BOOKSHELF_SHA256 = "69e656346b219be35c030e437100e72338f54d3a70abecbe6030971773cb1c01"
+ACCEPTED_LINOTYPE_TREE_SHA256 = "307a04e852c382229f45c43ed6ad075674b24e3fcf3cae51e012fbb223458569"
 
 # Observed from public HTTPS and the accepted v140 WLAN Reader on 2026-11-04.
 # The main Reader app has a stage-only source-address/rehearsal delta.
@@ -42,6 +43,21 @@ class UnadmittedReaderRoute(ValueError):
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def linotype_inventory(root: Path) -> tuple[str, dict[str, str]]:
+    directory = root / "estate/assets/linotype"
+    if not directory.is_dir():
+        raise UnadmittedReaderRoute("Accepted Reader asset directory missing")
+    assets = {}
+    for p in sorted(directory.rglob("*")):
+        if p.is_file():
+            rel = p.relative_to(directory).as_posix()
+            if p.is_symlink() or not p.resolve().is_relative_to(directory.resolve()):
+                raise UnadmittedReaderRoute("Unexpected Reader asset symlink")
+            assets[rel] = sha256(p)
+    witness = "\n".join(name + "\t" + digest for name, digest in assets.items())
+    return hashlib.sha256(witness.encode()).hexdigest(), assets
 
 
 def normalized_request_path(raw_url: str) -> str:
@@ -89,15 +105,19 @@ class ReaderProvenanceGate:
             asset = self.baseline / "estate/assets/linotype" / name
             if sha256(asset) != expected:
                 raise UnadmittedReaderRoute("Changed accepted Reader engine: " + name)
+        inventory_digest, self.runtime_assets = linotype_inventory(self.baseline)
+        if inventory_digest != ACCEPTED_LINOTYPE_TREE_SHA256:
+            raise UnadmittedReaderRoute("Changed complete Linotype Reader asset inventory")
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
         asset_dir = "estate/assets/linotype/"
         if rel.startswith(asset_dir):
             name = rel[len(asset_dir):]
-            if name in STAGE_READER:
-                target = self.current / rel
-                if target.exists() and sha256(target) != STAGE_READER[name]:
+            target = self.current / rel
+            if target.exists():
+                expected = self.runtime_assets.get(name)
+                if not target.is_file() or expected is None or sha256(target) != expected:
                     raise UnadmittedReaderRoute("Reader runtime changed without production parity: " + name)
         html_path = rel if protected_reader_html(rel) else reader_parent(rel)
         if html_path is None:
