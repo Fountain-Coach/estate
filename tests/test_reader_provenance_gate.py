@@ -446,5 +446,46 @@ class ReaderProvenanceTests(unittest.TestCase):
                 gate.approved_private_vergil_audition_files(self.base, candidate)
 
 
+    def test_v146_one_git_owned_listening_page_preserves_exact_v145(self):
+        old = Path(self.temp.name) / gate.APPROVED_VERGIL_AUDITION_RELEASE
+        candidate = Path(self.temp.name) / gate.APPROVED_VERGIL_LISTENING_RELEASE
+        shutil.copytree(self.base, old)
+        shutil.copytree(old, candidate)
+        route = gate.APPROVED_VERGIL_LISTENING_ROUTE
+        page = put(candidate, route, "<!doctype html><title>Vergil audition</title>")
+        audios = tuple(gate.APPROVED_VERGIL_AUDITION_ASSETS)
+        for i, rel in enumerate(audios):
+            put(old, rel, "mp3 " + str(i))
+            put(candidate, rel, "mp3 " + str(i))
+        audio_digests = {rel: digest(candidate / rel) for rel in audios}
+        with (
+            patch.object(gate, "approved_private_vergil_audition_files",
+                         return_value={"estate/index.html": digest(self.home)}),
+            patch.object(gate, "APPROVED_VERGIL_LISTENING_GIT_BLOB",
+                         gate.git_blob_sha1(page)),
+            patch.object(gate, "APPROVED_VERGIL_AUDITION_ASSETS",
+                         audio_digests),
+        ):
+            approved = gate.approved_private_vergil_listening_files(self.base, candidate)
+            self.assertEqual(approved["estate/index.html"], digest(self.home))
+            guard = gate.ReaderProvenanceGate(self.base, candidate)
+            self.assertIsNone(guard.check("/" + route))
+            for rel in audios:
+                self.assertIsNone(guard.check("/" + rel))
+            for rel in ("private-auditions/fake.html", "private-auditions/unknown.mp3"):
+                with self.assertRaises(gate.UnadmittedReaderRoute):
+                    guard.check("/" + rel)
+            put(candidate, route, "<html>replaced listening page</html>")
+            with self.assertRaises(gate.UnadmittedReaderRoute):
+                guard.check("/" + route)
+            with self.assertRaises(gate.UnadmittedReaderRoute):
+                gate.approved_private_vergil_listening_files(self.base, candidate)
+            put(candidate, route, "<!doctype html><title>Vergil audition</title>")
+            put(candidate, "estate/index.html", "Changed actual Reader")
+            with self.assertRaises(gate.UnadmittedReaderRoute):
+                gate.approved_private_vergil_listening_files(self.base, candidate)
+
+
+
 if __name__ == "__main__":
     unittest.main()

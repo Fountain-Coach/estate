@@ -38,6 +38,10 @@ APPROVED_WEB_READER_RELEASE = "shared-shell-20261104-v144-webreader-inset-66ec9c
 # Author-WLAN-only listening derivatives. No Reader or narration source mutation.
 # Original WAVs, model snapshots, transcripts and approval receipts stay private.
 APPROVED_VERGIL_AUDITION_RELEASE = "shared-shell-20261104-v145-vergil-qwen-private-audition"
+APPROVED_VERGIL_LISTENING_RELEASE = "shared-shell-20261104-v146-vergil-qwen-listening-page"
+APPROVED_VERGIL_LISTENING_ROUTE = "private-auditions/what-makes-a-page-modern-20261104-qwen3/index.html"
+APPROVED_VERGIL_LISTENING_GIT_BLOB = "76b48a3fe14f1fb7e08de08e362de104b620c109"
+
 APPROVED_VERGIL_AUDITION_ASSETS = {
     "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-a.mp3":
         "6f229cce508aa70236ee5c3b3eeb0bec7fe14bdc2296e0703d18016750ae91f8",
@@ -378,6 +382,37 @@ def approved_private_vergil_audition_files(baseline: Path, candidate: Path) -> d
     return inherited
 
 
+def git_blob_sha1(path: Path) -> str:
+    raw = path.read_bytes()
+    return hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + bytes([0]) + raw).hexdigest()
+
+
+def approved_private_vergil_listening_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """Only one pinned Git-owned HTML listening route beyond exact v145."""
+    if candidate.name != APPROVED_VERGIL_LISTENING_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_VERGIL_AUDITION_RELEASE
+    if not predecessor.is_dir() or not candidate.is_dir():
+        raise UnadmittedReaderRoute("Missing reviewed v145 audition predecessor")
+    inherited = approved_private_vergil_audition_files(baseline, predecessor)
+    if not inherited:
+        raise UnadmittedReaderRoute("Unverified v145 audition predecessor")
+    before = {p.relative_to(predecessor).as_posix(): p
+              for p in predecessor.rglob("*") if p.is_file()}
+    after = {p.relative_to(candidate).as_posix(): p
+             for p in candidate.rglob("*") if p.is_file()}
+    if set(after) != set(before) | {APPROVED_VERGIL_LISTENING_ROUTE}:
+        raise UnadmittedReaderRoute("Unapproved private listening release inventory")
+    for rel, original in before.items():
+        candidate_file = after[rel]
+        if candidate_file.is_symlink() or sha256(candidate_file) != sha256(original):
+            raise UnadmittedReaderRoute("Existing Reader or audition file changed: " + rel)
+    page = after[APPROVED_VERGIL_LISTENING_ROUTE]
+    if page.is_symlink() or git_blob_sha1(page) != APPROVED_VERGIL_LISTENING_GIT_BLOB:
+        raise UnadmittedReaderRoute("Unverified Git-owned listening page")
+    return inherited
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -408,14 +443,25 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_VERGIL_AUDITION_RELEASE:
             self.approved_essay = approved_private_vergil_audition_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_VERGIL_LISTENING_RELEASE:
+            self.approved_essay = approved_private_vergil_listening_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
         if rel.startswith("private-auditions/"):
-            expected = (APPROVED_VERGIL_AUDITION_ASSETS.get(rel)
-                        if self.current.name == APPROVED_VERGIL_AUDITION_RELEASE
-                        else None)
             target = self.current / rel
+            if (self.current.name == APPROVED_VERGIL_LISTENING_RELEASE
+                    and rel == APPROVED_VERGIL_LISTENING_ROUTE):
+                if (not target.is_file() or target.is_symlink()
+                        or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
+                    raise UnadmittedReaderRoute("Altered private listening page")
+                return
+            expected = (APPROVED_VERGIL_AUDITION_ASSETS.get(rel)
+                        if self.current.name in (
+                            APPROVED_VERGIL_AUDITION_RELEASE,
+                            APPROVED_VERGIL_LISTENING_RELEASE)
+                        else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
             return
