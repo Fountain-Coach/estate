@@ -310,6 +310,54 @@ class ReaderProvenanceTests(unittest.TestCase):
         with self.assertRaises(gate.UnadmittedReaderRoute):
             gate.ReaderProvenanceGate(self.base, candidate)
 
+    def test_v144_ink_within_svg_frame_only_delta(self):
+        predecessor = Path(self.temp.name) / gate.APPROVED_FIGURE_RELEASE
+        candidate = Path(self.temp.name) / gate.APPROVED_WEB_READER_RELEASE
+        shutil.copytree(self.base, predecessor)
+        shutil.copytree(predecessor, candidate)
+        svg = gate.APPROVED_WEB_READER_SVG_PATH
+        put(predecessor, svg, "before reader.svg")
+        put(candidate, svg, "balanced text within WEB READER frame")
+        root = put(candidate, "estate/index.html", "same Reader + one new SVG digest")
+        prior = put(predecessor, "source-lock.json", '{"original":"v143"}')
+        lock = {
+            "original":"v143",
+            "modernPageWebReaderInsetAdmission":{
+                "schema":"fountain.press.semantic-figure-inset.existing-reader.v1",
+                "sourceOwner":"Fountain-Coach/fountain.coach",
+                "sourceCommit":gate.APPROVED_WEB_READER_SOURCE_COMMIT,
+                "sourcePDFSHA256":gate.APPROVED_ESSAY_PDF_SHA256,
+                "predecessor":gate.APPROVED_FIGURE_RELEASE,
+                "release":gate.APPROVED_WEB_READER_RELEASE,
+                "stageOnly":True,"publicReleased":False,"fountainStoreAdmitted":False,
+                "readerRuntimeUnchanged":True,"originalManuscriptUnchanged":True,
+                "innerTextFitsFrame":True,
+                "fileSHA256":{
+                    "estate/index.html":digest(root),
+                    svg:digest(candidate/svg),
+                }
+            }
+        }
+        receipt = put(candidate, "source-lock.json",
+                      json.dumps(lock,ensure_ascii=False,indent=2)+"\n")
+        with (
+            patch.object(gate, "approved_balanced_essay_files",
+                         return_value={"approved-"+str(i):str(i) for i in range(15)}),
+            patch.object(gate, "APPROVED_FIGURE_LOCK_SHA256", digest(prior)),
+            patch.object(gate, "APPROVED_WEB_READER_LOCK_SHA256", digest(receipt)),
+            patch.object(gate, "APPROVED_WEB_READER_INDEX_SHA256", digest(root)),
+            patch.object(gate, "APPROVED_WEB_READER_SVG_SHA256", digest(candidate/svg)),
+        ):
+            approved = gate.approved_web_reader_inset_files(self.base,candidate)
+            self.assertEqual(approved["estate/index.html"],digest(root))
+            put(candidate,svg,"not the reviewed text")
+            with self.assertRaises(gate.UnadmittedReaderRoute):
+                gate.approved_web_reader_inset_files(self.base,candidate)
+            put(candidate,svg,"balanced text within WEB READER frame")
+            put(candidate,"estate/unreviewed-image.svg","not admitted")
+            with self.assertRaises(gate.UnadmittedReaderRoute):
+                gate.approved_web_reader_inset_files(self.base,candidate)
+
     def test_unrelated_staging_routes_remain_allowed(self):
         put(self.stage, "teatro/example/index.html", "<html>Teatro retained</html>")
         self.assertIsNone(self.guard.check("/teatro/example/"))
