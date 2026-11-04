@@ -381,5 +381,70 @@ class ReaderProvenanceTests(unittest.TestCase):
                               "vergil-prologue-hearing.mjs"})
 
 
+    def _private_vergil_fixture(self):
+        predecessor = Path(self.temp.name) / gate.APPROVED_WEB_READER_RELEASE
+        candidate = Path(self.temp.name) / gate.APPROVED_VERGIL_AUDITION_RELEASE
+        shutil.copytree(self.base, predecessor)
+        shutil.copytree(predecessor, candidate)
+        names = tuple(gate.APPROVED_VERGIL_AUDITION_ASSETS)
+        assets = {}
+        for i, rel in enumerate(names):
+            assets[rel] = digest(put(candidate, rel, "private audition MP3 " + str(i)))
+        return predecessor, candidate, assets
+
+    def test_v145_serves_only_two_digest_bound_auditions_without_reader_change(self):
+        predecessor, candidate, assets = self._private_vergil_fixture()
+        with (
+            patch.object(gate, "approved_web_reader_inset_files",
+                         return_value={"estate/index.html": digest(self.home)}),
+            patch.object(gate, "APPROVED_VERGIL_AUDITION_ASSETS", assets),
+        ):
+            witness = gate.approved_private_vergil_audition_files(self.base, candidate)
+            self.assertEqual(witness["estate/index.html"], digest(self.home))
+            guard = gate.ReaderProvenanceGate(self.base, candidate)
+            for rel in assets:
+                self.assertIsNone(guard.check("/" + rel))
+            self.assertIsNone(guard.check("/estate/"))
+            for rel in ("private-auditions/unreviewed.mp3",
+                        "private-auditions/what-makes-a-page-modern-20261104-qwen3/other.wav"):
+                with self.assertRaisesRegex(gate.UnadmittedReaderRoute, "private audition"):
+                    guard.check("/" + rel)
+            old_guard = gate.ReaderProvenanceGate(self.base, self.stage)
+            for rel in assets:
+                with self.assertRaises(gate.UnadmittedReaderRoute):
+                    old_guard.check("/" + rel)
+
+    def test_v145_rejects_modified_reader_and_unapproved_files(self):
+        predecessor, candidate, assets = self._private_vergil_fixture()
+        with (
+            patch.object(gate, "approved_web_reader_inset_files",
+                         return_value={"estate/index.html": digest(self.home)}),
+            patch.object(gate, "APPROVED_VERGIL_AUDITION_ASSETS", assets),
+        ):
+            put(candidate, "estate/index.html", "Replaced Reader")
+            with self.assertRaisesRegex(gate.UnadmittedReaderRoute, "changed Reader"):
+                gate.approved_private_vergil_audition_files(self.base, candidate)
+            put(candidate, "estate/index.html", self.home.read_text())
+            put(candidate, "private-auditions/unreviewed.mp3", "not permitted")
+            with self.assertRaisesRegex(gate.UnadmittedReaderRoute, "inventory"):
+                gate.approved_private_vergil_audition_files(self.base, candidate)
+
+    def test_v145_rejects_modified_mp3_and_missing_predecessor(self):
+        predecessor, candidate, assets = self._private_vergil_fixture()
+        with (
+            patch.object(gate, "approved_web_reader_inset_files",
+                         return_value={"estate/index.html": digest(self.home)}),
+            patch.object(gate, "APPROVED_VERGIL_AUDITION_ASSETS", assets),
+        ):
+            rel = next(iter(assets))
+            put(candidate, rel, "tampered candidate")
+            with self.assertRaisesRegex(gate.UnadmittedReaderRoute, "recording"):
+                gate.approved_private_vergil_audition_files(self.base, candidate)
+            put(candidate, rel, "private audition MP3 0")
+            shutil.rmtree(predecessor)
+            with self.assertRaisesRegex(gate.UnadmittedReaderRoute, "predecessor"):
+                gate.approved_private_vergil_audition_files(self.base, candidate)
+
+
 if __name__ == "__main__":
     unittest.main()
