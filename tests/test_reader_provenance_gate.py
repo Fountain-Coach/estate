@@ -213,6 +213,103 @@ class ReaderProvenanceTests(unittest.TestCase):
         with self.assertRaises(gate.UnadmittedReaderRoute):
             gate.ReaderProvenanceGate(self.base, candidate)
 
+    def test_v143_exact_balanced_figures_admission_and_refusal(self):
+        # Create two source-bound release snapshots, each independently copied,
+        # as proof that the corrected figure does not replace the Reader.
+        root = Path(self.temp.name)
+        previous = root / gate.APPROVED_ESSAY_RELEASE
+        candidate = root / gate.APPROVED_FIGURE_RELEASE
+        shutil.copytree(self.base, previous)
+        prior_index = put(previous, "estate/index.html", "<html>v142 original Reader</html>")
+        prior_app = put(previous, "estate/assets/linotype/reading-first-app.js",
+                        "original Reader with the sixth essay")
+        prior_images = {}
+        for name in gate.APPROVED_ESSAY_ASSETS:
+            loc = gate.APPROVED_ESSAY_ASSET_DIR + name
+            prior_images[loc] = digest(put(previous, loc, "<svg>old " + name + "</svg>"))
+        prior_files = {
+            "estate/index.html": digest(prior_index),
+            "estate/assets/linotype/reading-first-app.js": digest(prior_app),
+            **prior_images,
+        }
+        prev_lock_data = json.loads((self.base / "source-lock.json").read_text())
+        prev_lock_data["modernPageExistingReaderAdmission"] = {
+            "schema": "fountain.press.existing-reader.essay-addition.v1",
+            "sourceOwner": "Fountain-Coach/fountain.coach",
+            "sourceCommit": gate.APPROVED_ESSAY_SOURCE_COMMIT,
+            "sourcePDFSHA256": gate.APPROVED_ESSAY_PDF_SHA256,
+            "predecessor": gate.ACCEPTED_STAGE,
+            "release": gate.APPROVED_ESSAY_RELEASE,
+            "stageOnly": True,
+            "publicReleased": False,
+            "fountainStoreAdmitted": False,
+            "readerRuntimeUnchangedExceptGalleryMembership": True,
+            "notAnAlternateReader": True,
+            "fileSHA256": prior_files,
+        }
+        prev_lock = put(previous, "source-lock.json",
+                        json.dumps(prev_lock_data, ensure_ascii=False, indent=2) + "\n")
+
+        shutil.copytree(previous, candidate)
+        new_index = put(candidate, "estate/index.html", "<html>v143 same Reader, corrected figures</html>")
+        revised_images = {}
+        for name in gate.APPROVED_ESSAY_ASSETS:
+            loc = gate.APPROVED_ESSAY_ASSET_DIR + name
+            revised_images[loc] = digest(put(candidate, loc, "<svg>balanced " + name + "</svg>"))
+        revised_files = {"estate/index.html": digest(new_index), **revised_images}
+        new_lock_data = json.loads(prev_lock.read_text())
+        new_lock_data["modernPageFigureBalanceAdmission"] = {
+            "schema": "fountain.press.figure-balance.existing-reader.v1",
+            "sourceOwner": "Fountain-Coach/fountain.coach",
+            "sourceCommit": gate.APPROVED_FIGURE_SOURCE_COMMIT,
+            "sourcePDFSHA256": gate.APPROVED_ESSAY_PDF_SHA256,
+            "predecessor": gate.APPROVED_ESSAY_RELEASE,
+            "release": gate.APPROVED_FIGURE_RELEASE,
+            "stageOnly": True,
+            "publicReleased": False,
+            "fountainStoreAdmitted": False,
+            "readerRuntimeUnchanged": True,
+            "originalManuscriptUnchanged": True,
+            "visibleFrameAlignedToText": True,
+            "fileSHA256": revised_files,
+        }
+        lock = put(candidate, "source-lock.json",
+                   json.dumps(new_lock_data, ensure_ascii=False, indent=2) + "\n")
+        expected = {name[len(gate.APPROVED_ESSAY_ASSET_DIR):]: value
+                    for name, value in revised_images.items()}
+        constants = [
+            patch.object(gate, "APPROVED_ESSAY_LOCK_SHA256", digest(prev_lock)),
+            patch.object(gate, "APPROVED_ESSAY_INDEX_SHA256", digest(prior_index)),
+            patch.object(gate, "APPROVED_ESSAY_APP_SHA256", digest(prior_app)),
+            patch.object(gate, "APPROVED_FIGURE_LOCK_SHA256", digest(lock)),
+            patch.object(gate, "APPROVED_FIGURE_HTML_SHA256", digest(new_index)),
+            patch.object(gate, "APPROVED_FIGURE_ASSET_SHA256", expected),
+        ]
+        for p in constants:
+            p.start()
+            self.addCleanup(p.stop)
+        original = gate.ReaderProvenanceGate(self.base, previous)
+        self.assertEqual(len(original.approved_essay), 15)
+        accepted = gate.ReaderProvenanceGate(self.base, candidate)
+        self.assertEqual(len(accepted.approved_essay), 15)
+        for route in ("/estate/", "/estate/editions/essays-continuing/",
+                      "/estate/assets/linotype/reading-first-app.js",
+                      "/estate/essays/what-makes-a-page-modern/assets/question.svg"):
+            self.assertIsNone(accepted.check(route))
+        put(candidate, gate.APPROVED_ESSAY_ASSET_DIR+"question.svg", "<svg>tampered</svg>")
+        with self.assertRaises(gate.UnadmittedReaderRoute):
+            accepted.check("/estate/essays/what-makes-a-page-modern/assets/question.svg")
+        with self.assertRaises(gate.UnadmittedReaderRoute):
+            gate.ReaderProvenanceGate(self.base, candidate)
+        put(candidate, gate.APPROVED_ESSAY_ASSET_DIR+"question.svg",
+            "<svg>balanced question.svg</svg>")
+        put(candidate, "estate/essays/what-makes-a-page-modern/index.html",
+            "<html>alternate reader</html>")
+        with self.assertRaises(gate.UnadmittedReaderRoute):
+            accepted.check("/estate/essays/what-makes-a-page-modern/")
+        with self.assertRaises(gate.UnadmittedReaderRoute):
+            gate.ReaderProvenanceGate(self.base, candidate)
+
     def test_unrelated_staging_routes_remain_allowed(self):
         put(self.stage, "teatro/example/index.html", "<html>Teatro retained</html>")
         self.assertIsNone(self.guard.check("/teatro/example/"))

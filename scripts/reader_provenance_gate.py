@@ -32,6 +32,25 @@ APPROVED_ESSAY_ASSETS = {
     "proof.svg", "question.svg", "reader.svg", "return.svg"
 }
 APPROVED_ESSAY_ASSET_DIR = "estate/essays/what-makes-a-page-modern/assets/"
+APPROVED_FIGURE_RELEASE = "shared-shell-20261104-v143-modern-page-balanced-6a15b6c"
+APPROVED_FIGURE_LOCK_SHA256 = "0471e8d18d3ba80b365b1d744bfebd5548840da50ee2945cedc5274715a64990"
+APPROVED_FIGURE_SOURCE_COMMIT = "6a15b6c63d64a5e09da491b93f6e35c6dcc29b21"
+APPROVED_FIGURE_HTML_SHA256 = "610f1cde53ca00d3e2e249c2cc965acd53f084a7b447566855f05fa28766c720"
+APPROVED_FIGURE_ASSET_SHA256 = {
+    "address.svg": "5fb7b53bd74fe4425c9e2bc2e967084170d3b940a57c4b2a0c9dff1d0cca7d2b",
+    "classical.svg": "87843cf80d8069cd94c78032709c2fcb9e7546b253fe8e1cbeb63fcb7f843c60",
+    "colophon.svg": "be5a4e96c9138562cace84faf2001e90f8e9b829f06ec20876460edae5e7ebe4",
+    "conditions.svg": "151aa2a5c715dbc44327ca1762d001de80f2f8abaf2a2d9c3224c49df4f98fc8",
+    "cursor.svg": "da859a9f710f0cd983141bff9167608d57801f23856d91e523f78c7016ae5076",
+    "joyce.svg": "bd0a30128db88aa2d0e5341d08de1810c13f9d57f3e89ac314e959f89150e965",
+    "machine.svg": "b896e4bac655bef13df12618cde4a8ec4dd7cbcdcb29aec30d5f44621213f341",
+    "midi.svg": "70c06ea968b1cbcccf96fe178dfa54ce3b8a48562f17941573515614d34aa7d3",
+    "modern.svg": "dfd404b517d475121a11fc49f1596816dbbf7bae74268b02c14f4cb97710a98e",
+    "proof.svg": "7da53f80040b50820f0bf5248d0e3b4ccc04d3537c00767de21ef6c09eb64bd2",
+    "question.svg": "147d2cfd793518420603fc253af102aea44bb875f2ab9c6044ace8dbf4f61888",
+    "reader.svg": "4584338a86f27c26f446eb5b9e269a9e43c12ce540bdf026a7f9f211615be7bb",
+    "return.svg": "a6928ab50245d72fef67dda6dd6383c4aba226761a7e99c8f8d66f960802ac7f",
+}
 APPROVED_ESSAY_CHANGE_PATHS = frozenset({
     "estate/index.html", "estate/assets/linotype/reading-first-app.js",
     *(APPROVED_ESSAY_ASSET_DIR + f for f in APPROVED_ESSAY_ASSETS),
@@ -175,6 +194,80 @@ def approved_essay_files(baseline: Path, candidate: Path) -> dict[str, str]:
     return dict(files)
 
 
+def approved_balanced_essay_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """Bounded v143 correction on the SAME v142 reader; no alternate shell.
+
+    Protect the old v142 signed admission as a predecessor, not just an
+    editable JSON manifest inside the candidate. Full-tree file comparison
+    excludes undeclared changed bytes, including source-owned SVGs.
+    """
+    if candidate.name != APPROVED_FIGURE_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_ESSAY_RELEASE
+    if not predecessor.is_dir():
+        raise UnadmittedReaderRoute("Missing admitted v142 predecessor")
+    inherited = approved_essay_files(baseline, predecessor)
+    if len(inherited) != 15 or (
+        sha256(predecessor / "source-lock.json") != APPROVED_ESSAY_LOCK_SHA256
+    ):
+        raise UnadmittedReaderRoute("No verified v142 Reader predecessor")
+    if sha256(candidate / "source-lock.json") != APPROVED_FIGURE_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Changed balanced-figure source-lock digest")
+    try:
+        current_lock = json.loads((candidate / "source-lock.json").read_text())
+        original_lock = json.loads((predecessor / "source-lock.json").read_text())
+        admission = current_lock.pop("modernPageFigureBalanceAdmission")
+    except (ValueError, KeyError, OSError) as error:
+        raise UnadmittedReaderRoute("Missing reviewed figure-layout admission") from error
+    if current_lock != original_lock:
+        raise UnadmittedReaderRoute("v142 Reader source identity was rewritten")
+    meta = {
+        "schema": "fountain.press.figure-balance.existing-reader.v1",
+        "sourceOwner": "Fountain-Coach/fountain.coach",
+        "sourceCommit": APPROVED_FIGURE_SOURCE_COMMIT,
+        "sourcePDFSHA256": APPROVED_ESSAY_PDF_SHA256,
+        "predecessor": APPROVED_ESSAY_RELEASE,
+        "release": APPROVED_FIGURE_RELEASE,
+        "stageOnly": True,
+        "publicReleased": False,
+        "fountainStoreAdmitted": False,
+        "readerRuntimeUnchanged": True,
+        "originalManuscriptUnchanged": True,
+        "visibleFrameAlignedToText": True,
+    }
+    if set(admission) != set(meta) | {"fileSHA256"} or any(
+        admission.get(name) != value for name, value in meta.items()
+    ):
+        raise UnadmittedReaderRoute("Unrecognized source-owned figure revision")
+    exact = {"estate/index.html": APPROVED_FIGURE_HTML_SHA256}
+    exact.update({
+        APPROVED_ESSAY_ASSET_DIR + name: digest
+        for name, digest in APPROVED_FIGURE_ASSET_SHA256.items()
+    })
+    if admission["fileSHA256"] != exact:
+        raise UnadmittedReaderRoute("Figure source digest registry mismatched")
+    for name, digest in exact.items():
+        path = candidate / name
+        if path.is_symlink() or not path.is_file() or sha256(path) != digest:
+            raise UnadmittedReaderRoute("Unreviewed figure source bytes: " + name)
+
+    def inventory(root: Path):
+        return {p.relative_to(root).as_posix(): p for p in root.rglob("*") if p.is_file()}
+    before = inventory(predecessor)
+    after = inventory(candidate)
+    changed = set(before) ^ set(after)
+    for name in set(before) & set(after):
+        older, newer = before[name], after[name]
+        a, b = older.stat(), newer.stat()
+        if a.st_dev == b.st_dev and a.st_ino == b.st_ino:
+            continue
+        if sha256(older) != sha256(newer):
+            changed.add(name)
+    if changed != set(exact) | {"source-lock.json"}:
+        raise UnadmittedReaderRoute("Unexpected Reader change beyond approved figures")
+    return {**inherited, **exact}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -198,6 +291,8 @@ class ReaderProvenanceGate:
         if inventory_digest != ACCEPTED_LINOTYPE_TREE_SHA256:
             raise UnadmittedReaderRoute("Changed complete Linotype Reader asset inventory")
         self.approved_essay = approved_essay_files(self.baseline, self.current)
+        if self.current.name == APPROVED_FIGURE_RELEASE:
+            self.approved_essay = approved_balanced_essay_files(self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
