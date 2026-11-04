@@ -54,6 +54,7 @@ class ReaderProvenanceTests(unittest.TestCase):
             patch.object(gate, "ACCEPTED_SOURCE_LOCK_SHA256", digest(self.lock)),
             patch.object(gate, "ACCEPTED_BOOKSHELF_SHA256", digest(self.home)),
             patch.object(gate, "STAGE_READER", originals),
+            patch.object(gate, "ACCEPTED_LINOTYPE_TREE_SHA256", gate.linotype_inventory(self.base)[0]),
         ]
         for p in self.patches:
             p.start()
@@ -85,6 +86,21 @@ class ReaderProvenanceTests(unittest.TestCase):
             put(self.stage, path, "<html>invented reader</html>")
             with self.subTest(path=path), self.assertRaises(gate.UnadmittedReaderRoute):
                 self.guard.check("/" + path)
+
+    def test_legacy_reader_compositor_asset_cannot_be_swapped(self):
+        rel = "estate/assets/linotype/book.js"
+        original = put(self.base, rel, "accepted older Linotype book.js")
+        candidate = put(self.stage, rel, original.read_text())
+        with patch.object(gate, "ACCEPTED_LINOTYPE_TREE_SHA256",
+                          gate.linotype_inventory(self.base)[0]):
+            refreshed = gate.ReaderProvenanceGate(self.base, self.stage)
+            self.assertIsNone(refreshed.check("/" + rel))
+            candidate.write_text("invented new compositor")
+            with self.assertRaisesRegex(gate.UnadmittedReaderRoute, "runtime changed"):
+                refreshed.check("/" + rel)
+            put(self.stage, "estate/assets/linotype/invented-reader.js", "reader")
+            with self.assertRaises(gate.UnadmittedReaderRoute):
+                refreshed.check("/estate/assets/linotype/invented-reader.js")
 
     def test_unreviewed_audio_module_is_refused(self):
         put(self.stage, "estate/assets/linotype/teatro-vergil-hearing.mjs", "another module")
