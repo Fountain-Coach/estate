@@ -34,9 +34,9 @@ The active stage-only `reading-first-app.js` differed in URL/address projection 
 
 Source: `scripts/reader_provenance_gate.py`, imported by `scripts/serve_shared_shell_preview.py`. This gate is a **temporary fail-closed version pin**, not a new Reader and not a second publisher.
 
-- Refuses startup if the purported accepted v140 source lock, Bookshelf HTML, or nine Reader runtime assets do not match the recorded SHA-256 bytes.
+- Refuses startup if the purported accepted v140 source lock, Bookshelf HTML, or nine production/stage comparison assets **or the complete accepted 27-file Linotype runtime tree** do not match the recorded SHA-256 bytes. The complete tree inventory SHA-256 is `307a04e852c382229f45c43ed6ad075674b24e3fcf3cae51e012fbb223458569`.
 - Protects all HTML in the `estate/`, `book/`, and `solstice/editions/` book roots. New or modified Reader HTML relative to the exact accepted v140 release yields **HTTP 403**, rather than an invented edition.
-- Checks each GET/HEAD against the accepted baseline before serving; modified Reader runtime scripts/styles yield **HTTP 403**. Source-locked stage files cannot whitelist themselves.
+- Checks each GET/HEAD against the accepted baseline before serving; modified Reader runtime scripts/styles (including the legacy `book.js` compositor), audio modules, and previously unknown files beneath `estate/assets/linotype/` yield **HTTP 403**. Source-locked stage files cannot whitelist themselves.
 - Allows unchanged v140 pages and unrelated non-Reader routes. Missing paths retain normal HTTP 404. Does not change public production.
 - **Re-admission is deliberate:** reconcile production, source ownership, existing Reader runtime, approved stage-only deltas and manuscript fidelity, then review/update the pinned baseline in the same owning code path before staging another release. A mere new file or updated `source-lock.json` is insufficient.
 - Not a claim that nobody with administrative SSH access can override a service. The current guarantee is for this installed, running canonical WLAN preview path. Public EstatePublisher/production requires separate admission and is unchanged.
@@ -54,9 +54,11 @@ Includes actual GET and HEAD refusal tests, full source-baseline tests, changed-
 - The original preview server source was retained as `.serve_shared_shell_preview_before_reader_guard_20261104.py` on the stage host; guarded installation used fail-safe restoration on failure.
 - Live active release remained `shared-shell-20261103-v140-same-folio-return`; `/estate/`, `/estate/editions/essays-continuing/`, and `/estate/assets/linotype/reading-first-app.js` each returned **HTTP 200**. Rejected new essay path returned its normal **HTTP 404** because it is not in the active v140 release.
 - Independently exercised the **installed** HTTP `Handler` against the retained v141 artifact using a temporary loopback request handler (not a new deployed service): accepted `/estate/editions/essays-continuing/` returned **200**, rejected `/estate/essays/what-makes-a-page-modern/` returned **403 on GET and HEAD**. This is direct executable refusal, not merely a policy statement.
-- **11 local regression tests passed** (including actual HTTP GET/HEAD and changed audio module refusal) and runtime file Python compilation passed. The production/staging Reader module mismatch is explicitly preserved.
+- **12 local regression tests passed** (including actual HTTP GET/HEAD and changed audio module refusal) and runtime file Python compilation passed. The production/staging Reader module mismatch is explicitly preserved.
 - This prevents serving the specific unadmitted invented Reader through the canonical guarded WLAN service. It does **not** establish production/live iPad semantic acceptance, and administrative replacement of the server remains outside the guard's authority.
 
 ## Authoring rule
 
 Future requests to “put this essay in Fountain Press staging” must **add the authentic admitted manuscript to the existing production-derived Reader's content model** and independently compare the resulting layout and behavior. The author must see an approved staged *book*, not an invented standalone reader. Never substitute passing generated-page tests for source or runtime provenance.
+
+**Subsequent hardening, 4 November 2026:** the complete original v140 Linotype runtime directory (27 files; inventory SHA-256 above) is now pinned in addition to the nine independently compared production-facing files. This prevents swapping the older `book.js` compositor or introducing a new runtime module at an otherwise unchanged Reader route. Source-level tests: 12 passed. The initial live installation SHA values above describe the first guarded version; the strengthened version requires its own deployment and readback before runtime enforcement of the *whole-tree* condition can be claimed.
