@@ -356,8 +356,10 @@ def approved_private_vergil_audition_files(baseline: Path, candidate: Path) -> d
     if candidate.name != APPROVED_VERGIL_AUDITION_RELEASE:
         return {}
     predecessor = candidate.parent / APPROVED_WEB_READER_RELEASE
+    if not predecessor.is_dir() or not candidate.is_dir():
+        raise UnadmittedReaderRoute("Missing v144 Reader predecessor for private audition")
     inherited = approved_web_reader_inset_files(baseline, predecessor)
-    if not inherited or not candidate.is_dir():
+    if not inherited:
         raise UnadmittedReaderRoute("Unverified v144 Reader predecessor for private audition")
     before = {p.relative_to(predecessor).as_posix(): p
               for p in predecessor.rglob("*") if p.is_file()}
