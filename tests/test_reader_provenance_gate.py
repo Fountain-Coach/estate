@@ -1,5 +1,10 @@
 """Regress the November 4 invented-Reader incident on the EXISTING preview server."""
 import hashlib
+import threading
+import urllib.error
+import urllib.request
+from functools import partial
+from http.server import ThreadingHTTPServer
 import sys
 import tempfile
 import unittest
@@ -8,6 +13,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import reader_provenance_gate as gate
+from serve_shared_shell_preview import Handler
 
 
 def put(root, rel, value):
@@ -71,6 +77,20 @@ class ReaderProvenanceTests(unittest.TestCase):
         with self.assertRaises(gate.UnadmittedReaderRoute):
             self.guard.check("/estate/essays/what-makes-a-page-modern/assets/proof.svg")
 
+    def test_new_edition_routes_and_reader_html_outside_essays_are_refused(self):
+        for path in ("estate/read/first-readings/index.html",
+                     "estate/editions/a/new-chapter.html",
+                     "book/chapters/a/index.html",
+                     "solstice/editions/first-reading/new.html"):
+            put(self.stage, path, "<html>invented reader</html>")
+            with self.subTest(path=path), self.assertRaises(gate.UnadmittedReaderRoute):
+                self.guard.check("/" + path)
+
+    def test_unreviewed_audio_module_is_refused(self):
+        put(self.stage, "estate/assets/linotype/teatro-vergil-hearing.mjs", "another module")
+        with self.assertRaisesRegex(gate.UnadmittedReaderRoute, "runtime changed"):
+            self.guard.check("/estate/assets/linotype/teatro-vergil-hearing.mjs")
+
     def test_similar_html_using_the_right_reader_still_requires_admission(self):
         put(self.stage, "estate/essays/another/index.html",
             '<script src="/estate/assets/linotype/reading-first-app.js"></script>')
@@ -84,6 +104,28 @@ class ReaderProvenanceTests(unittest.TestCase):
         put(self.stage, "estate/assets/linotype/reading-first-app.js", "another reader")
         with self.assertRaisesRegex(gate.UnadmittedReaderRoute, "runtime changed"):
             self.guard.check("/estate/assets/linotype/reading-first-app.js")
+
+    def test_live_http_handler_rejects_unadmitted_reader_get_and_head(self):
+        put(self.stage, "estate/essays/new-reader/index.html", "<html>unadmitted</html>")
+        server = ThreadingHTTPServer(("127.0.0.1", 0), partial(
+            Handler, root=self.stage, personal_works_landing=False,
+            reader_gate=self.guard))
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            base = "http://127.0.0.1:" + str(server.server_port)
+            with urllib.request.urlopen(base + "/estate/editions/essays-continuing/", timeout=3) as r:
+                self.assertEqual(r.status, 200)
+            for method in ("GET", "HEAD"):
+                request = urllib.request.Request(
+                    base + "/estate/essays/new-reader/", method=method)
+                with self.subTest(method=method), self.assertRaises(urllib.error.HTTPError) as error:
+                    urllib.request.urlopen(request, timeout=3)
+                self.assertEqual(error.exception.code, 403)
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=3)
 
     def test_unrelated_staging_routes_remain_allowed(self):
         put(self.stage, "teatro/example/index.html", "<html>Teatro retained</html>")
@@ -104,7 +146,8 @@ class ReaderProvenanceTests(unittest.TestCase):
     def test_production_reader_asset_difference_is_explicit(self):
         with patch.object(gate, "STAGE_READER", self.actual_stage_witness):
             self.assertEqual(set(gate.ReaderProvenanceGate.production_delta()),
-                             {"reading-first-app.js"})
+                             {"reading-first-app.js", "teatro-vergil-hearing.mjs",
+                              "vergil-prologue-hearing.mjs"})
 
 
 if __name__ == "__main__":
