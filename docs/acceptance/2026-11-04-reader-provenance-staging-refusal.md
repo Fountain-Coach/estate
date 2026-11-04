@@ -47,7 +47,15 @@ Source: `scripts/reader_provenance_gate.py`, imported by `scripts/serve_shared_s
 
 Includes actual GET and HEAD refusal tests, full source-baseline tests, changed-runtime and changed-audio-module tests, URL traversal refusal, and an explicit assertion that production/stage differ in the three declared JavaScript modules.
 
-**Live terminal receipt, if installed:** record service file SHA, current release, HTTP 200/403/404 and comparison against rejected v141. Until such a receipt is obtained, the branch tests demonstrate candidate behavior only, **not live enforcement**.
+**Installed WLAN terminal receipt — 4 November 2026:**
+
+- The existing `fountain-shell-acceptance-preview.service` was restarted with the source-owned gate imported in the **same** Python server. No new daemon, port, route, DNS name or publisher was created.
+- Running `serve_shared_shell_preview.py` SHA-256: `ab0082a239661e3809cef9dbb4074e6dab4cb1c53e0ea71aacd305a1feaa8433`. Running `reader_provenance_gate.py` SHA-256: `5ea503b3f53c355a39d5d0ce2055e7c42cfc2a6f91c55d9c85b09e697c525342`. Both verified as the committed branch files before installation.
+- The original preview server source was retained as `.serve_shared_shell_preview_before_reader_guard_20261104.py` on the stage host; guarded installation used fail-safe restoration on failure.
+- Live active release remained `shared-shell-20261103-v140-same-folio-return`; `/estate/`, `/estate/editions/essays-continuing/`, and `/estate/assets/linotype/reading-first-app.js` each returned **HTTP 200**. Rejected new essay path returned its normal **HTTP 404** because it is not in the active v140 release.
+- Independently exercised the **installed** HTTP `Handler` against the retained v141 artifact using a temporary loopback request handler (not a new deployed service): accepted `/estate/editions/essays-continuing/` returned **200**, rejected `/estate/essays/what-makes-a-page-modern/` returned **403 on GET and HEAD**. This is direct executable refusal, not merely a policy statement.
+- **11 local regression tests passed** (including actual HTTP GET/HEAD and changed audio module refusal) and runtime file Python compilation passed. The production/staging Reader module mismatch is explicitly preserved.
+- This prevents serving the specific unadmitted invented Reader through the canonical guarded WLAN service. It does **not** establish production/live iPad semantic acceptance, and administrative replacement of the server remains outside the guard's authority.
 
 ## Authoring rule
 
