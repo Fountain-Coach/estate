@@ -1,5 +1,7 @@
 """Regress the November 4 invented-Reader incident on the EXISTING preview server."""
 import hashlib
+import json
+import shutil
 import threading
 import urllib.error
 import urllib.request
@@ -142,6 +144,74 @@ class ReaderProvenanceTests(unittest.TestCase):
             server.shutdown()
             server.server_close()
             thread.join(timeout=3)
+
+
+    def test_exact_new_essay_admission_and_runtime_mutation_refusal(self):
+        candidate = Path(self.temp.name) / gate.APPROVED_ESSAY_RELEASE
+        shutil.copytree(self.base, candidate)
+        index = put(candidate, "estate/index.html", "<html>Accepted real v140 Reader plus source volume</html>")
+        app = put(candidate, "estate/assets/linotype/reading-first-app.js",
+                  "Original v140 Reader app, same algorithm, six essays")
+        images = {}
+        for name in gate.APPROVED_ESSAY_ASSETS:
+            namepath = gate.APPROVED_ESSAY_ASSET_DIR + name
+            images[namepath] = digest(put(candidate, namepath, "<svg>" + name + "</svg>"))
+        files = {
+            "estate/index.html": digest(index),
+            "estate/assets/linotype/reading-first-app.js": digest(app),
+            **images,
+        }
+        admission = dict(
+            schema="fountain.press.existing-reader.essay-addition.v1",
+            sourceOwner="Fountain-Coach/fountain.coach",
+            sourceCommit=gate.APPROVED_ESSAY_SOURCE_COMMIT,
+            sourcePDFSHA256=gate.APPROVED_ESSAY_PDF_SHA256,
+            predecessor=gate.ACCEPTED_STAGE,
+            release=gate.APPROVED_ESSAY_RELEASE,
+            stageOnly=True, publicReleased=False, fountainStoreAdmitted=False,
+            readerRuntimeUnchangedExceptGalleryMembership=True,
+            notAnAlternateReader=True, fileSHA256=files,
+        )
+        original = json.loads((self.base / "source-lock.json").read_text())
+        source_lock = put(candidate, "source-lock.json", json.dumps({
+            **original, "modernPageExistingReaderAdmission": admission
+        }, ensure_ascii=False, indent=2) + "\n")
+        patches = [
+            patch.object(gate, "APPROVED_ESSAY_LOCK_SHA256", digest(source_lock)),
+            patch.object(gate, "APPROVED_ESSAY_INDEX_SHA256", digest(index)),
+            patch.object(gate, "APPROVED_ESSAY_APP_SHA256", digest(app)),
+        ]
+        for item in patches:
+            item.start()
+            self.addCleanup(item.stop)
+        approved = gate.ReaderProvenanceGate(self.base, candidate)
+        self.assertEqual(len(approved.approved_essay), 15)
+        for path in ("/estate/", "/estate/editions/essays-continuing/",
+                     "/estate/assets/linotype/reading-first-app.js",
+                     "/estate/essays/what-makes-a-page-modern/assets/question.svg"):
+            self.assertIsNone(approved.check(path))
+        self.assertIsNone(approved.check("/estate/essays/what-makes-a-page-modern/"))
+        # A previously absent standalone Reader and any replaced illustration
+        # must still fail even after the new SOURCE has been admitted.
+        put(candidate, "estate/essays/what-makes-a-page-modern/index.html",
+            "<html>another invented reader</html>")
+        with self.assertRaises(gate.UnadmittedReaderRoute):
+            approved.check("/estate/essays/what-makes-a-page-modern/")
+        (candidate / "estate/essays/what-makes-a-page-modern/index.html").unlink()
+        put(candidate, gate.APPROVED_ESSAY_ASSET_DIR+"question.svg", "<svg>tampered</svg>")
+        with self.assertRaises(gate.UnadmittedReaderRoute):
+            approved.check("/estate/essays/what-makes-a-page-modern/assets/question.svg")
+        put(candidate, gate.APPROVED_ESSAY_ASSET_DIR+"question.svg", "<svg>question.svg</svg>")
+        put(candidate, "estate/assets/linotype/reading-first-app.js", "new runtime")
+        with self.assertRaises(gate.UnadmittedReaderRoute):
+            approved.check("/estate/assets/linotype/reading-first-app.js")
+        with self.assertRaises(gate.UnadmittedReaderRoute):
+            gate.ReaderProvenanceGate(self.base, candidate)
+        put(candidate, "estate/assets/linotype/reading-first-app.js",
+            "Original v140 Reader app, same algorithm, six essays")
+        put(candidate, "estate/essays/what-makes-a-page-modern/assets/new-reader.js", "unauthorized")
+        with self.assertRaises(gate.UnadmittedReaderRoute):
+            gate.ReaderProvenanceGate(self.base, candidate)
 
     def test_unrelated_staging_routes_remain_allowed(self):
         put(self.stage, "teatro/example/index.html", "<html>Teatro retained</html>")
