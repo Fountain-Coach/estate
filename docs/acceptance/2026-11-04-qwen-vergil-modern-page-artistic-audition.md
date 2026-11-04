@@ -2,6 +2,18 @@
 
 This is a bounded owner-controlled WLAN artistic audition. No new Reader, player, public production, source text or Vergil master was created or replaced.
 
+## Author's artistic selection — 4 November 2026
+
+**DECISION: Take A, "Lucid Editorial Vergil", is selected as the vocal character for the spoken edition of *What Makes a Page Modern?*.** The author listened and explicitly chose "the editorial voice" over the warmer Take B in the existing private Qwen3 A/B audition. No alternative voice should be substituted during continuation without a fresh author decision.
+
+- **Selected private audition WAV:** `vergil-a.wav`, SHA-256 `39f19760f619f2dd8e9fad8af33dc51acfc8dab48235e3268881949f82d32a7f`, PCM16 mono 24 kHz, 8.720 seconds. **Private listening MP3:** `vergil-a.mp3`, SHA-256 `6f229cce508aa70236ee5c3b3eeb0bec7fe14bdc2296e0703d18016750ae91f8`.
+- **Chosen TTS provider:** offline `Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign` pinned at `5ecdb67327fd37bb2e042aab12ff7391903235d3`, weight SHA-256 `391e8db219f292c515297cdceeb43e4eae67cdde35fa57e79a6a8a532fca0522`. **Candidate generation seed:** `20261104`. The exact original prompt and generated master belong to the source-owned private audition receipt on the Ubuntu host; do not substitute a fresh unverified rerender as the "same" performance.
+- **Original passage source:** `what-makes-a-page-modern.question.p1`, source text digest `ce476fec333cbfa6161b393452275b5b7fc56ed23d96eb9031c10eb5d8a4aa67`.
+- **Author verdict scope:** **artistic vocal-character direction accepted**; both Take B and any replacement narrator remain **not selected**. This decision is not a claim that a complete exact-text recording exists, that accent has been independently certified, that the short audio itself is a canonical full edition, or that any MIDI 2.0 word-timing/cursor has passed live acceptance.
+- **Follow-on:** preserve Take A's timbre using its hash-locked private audio reference and selected author direction through the existing owner-native spoken-edition workflow; render the *whole* exact text; independently recognize and correct any actual omissions/substitutions; only then derive qualified word timing and connect to the **existing** Fountain Press Linotype/SatzfunkPlayer MIDI2 cursor. Do not create a Reader, alternate transcript, public publication, or new generic voice preset.
+
+**Audit distinction:** the earlier "unaccepted" observations in this document describe the *pre-decision audition* state. This dated author decision supersedes that status for **Take A's artistic character only**. Take B remains an archived comparison, not the selection.
+
 ## Source and exact model
 The source is the first 126-character passage from what-makes-a-page-modern.question.p1 in the original admitted v144 Fountain Press essay. The essay's authoritative 13-page PDF SHA-256 is 2baaab0012e825b49f04e7a760b64efa52c95dc09deab7117de790f6c6e14bad. The passage begins "Two pages lie on a table" and its SHA-256 is ce476fec333cbfa6161b393452275b5b7fc56ed23d96eb9031c10eb5d8a4aa67.
 
