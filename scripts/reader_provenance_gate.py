@@ -21,12 +21,18 @@ ACCEPTED_BOOKSHELF_SHA256 = "69e656346b219be35c030e437100e72338f54d3a70abecbe603
 PRODUCTION_READER = {
     "reading-first-press-engine.js": "0fed47d6d2bb4c61565cbc37d9f6df21da3f650b365dc1856ee72fdb95eaba4d",
     "reading-first-app.js": "4243dea9d3d8be1187f0c72cbde994e7748eebaeacc78e91d618b222024cfea4",
+    "teatro-vergil-hearing.mjs": "185744bbc4daa72cc55044720d089b854f1cf2d6ca2eab10d868ac74e72ca720",
+    "vergil-prologue-hearing.mjs": "5d60ecfa5ecadce573c40ede51f83c88cd359c8f6e822fe18938c5fef336a9d8",
     "reading-first-press-frame.css": "4cd2f853315d51bdd2c31917782d42759fee0a9a20cf18ae4d261af085bd0e51",
     "reading-first-press-host.css": "a0ce4a3ba7c0e549354de8b3aaed608ad178f62bcfbc3451e3443f2989ea84b0",
     "reading-first-shell.css": "769fb12fbe7205e90269ecbf3760c8a6d226e78347bd1d62f05035174d671247",
+    "teatro-vergil-hearing.css": "aff97c7676e9f3cf254beba93f5e17d3d0bf57956b72f86e4c9cff750317314a",
+    "vergil-prologue-hearing.css": "a77abac2539be9c991e23f064851d12db5a1dfeb2e853de8a1a5c7beb3c553ce",
 }
 STAGE_READER = dict(PRODUCTION_READER, **{
-    "reading-first-app.js": "557ba7736110ccf1ae4819549b3bf80fa1d6c411cf3b77b0e977db8aace23253"
+    "reading-first-app.js": "557ba7736110ccf1ae4819549b3bf80fa1d6c411cf3b77b0e977db8aace23253",
+    "teatro-vergil-hearing.mjs": "ef22bbe0109dd39d3fc5772f222b6e38d6b388d2ee327467c522f4ea6515dd18",
+    "vergil-prologue-hearing.mjs": "25a248b4a12ec189292fe44e297b2c7f2a7b2edd59d9a58db48ce66fcb938b61"
 })
 
 
@@ -52,13 +58,11 @@ def normalized_request_path(raw_url: str) -> str:
 
 
 def protected_reader_html(rel: str) -> bool:
-    if rel in ("estate/index.html", "book/index.html", "solstice/index.html"):
-        return True
-    return bool(re.fullmatch(
-        r"(?:estate/(?:essays|editions|collections)/[^/]+(?:/[^/]+)*|"
-        r"solstice/editions/[^/]+(?:/[^/]+)*|"
-        r"book/[^/]+(?:/[^/]+)*)/index\.html", rel
-    ))
+    # No new or modified HTML within a book/publication root may be served
+    # without independent source and production-lineage approval. This also
+    # covers new deep-link conventions and not just the incident's /essays URL.
+    return rel.endswith(".html") and rel.startswith((
+        "estate/", "book/", "solstice/editions/"))
 
 
 def reader_parent(rel: str) -> str | None:
