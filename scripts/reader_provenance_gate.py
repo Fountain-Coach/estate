@@ -62,6 +62,20 @@ APPROVED_SPECIMEN_SOURCE_SHA256 = "8f7d60f9ae3cfd1dd6e95a92d869c050241a93482ab00
 APPROVED_SPECIMEN_READER_SHA256 = "532dbdf6603fb1300a974418130c50cbc17636262d9dcf7c0a802c3aabfdd81c"
 APPROVED_SPECIMEN_LOCK_SHA256 = "90d23ed381ece45f54d9621ca7341e204d5967738f1f48b3af2d8eab42483e1c"
 
+# First true nested measured typography on the existing Press compositor.
+# Exact Git content and a fixed four-file delta from the admitted v148 stage.
+APPROVED_NESTED_RELEASE = "shared-shell-20261105-v149-nested-specimen-ce0c1cd"
+APPROVED_NESTED_PREDECESSOR = APPROVED_SPECIMEN_RELEASE
+APPROVED_NESTED_SOURCE_COMMIT = "ce0c1cd704664027d94d6dd4c196b9c06e037e38"
+APPROVED_NESTED_SOURCE_SHA256 = "8f7d60f9ae3cfd1dd6e95a92d869c050241a93482ab00688be7ad3422d2786d6"
+APPROVED_NESTED_SPECIMEN_SOURCE_SHA256 = "693ca56d01757d03d2210234def136256cd04145efce95fc1fc205cf15c6658a"
+APPROVED_NESTED_LOCK_SHA256 = "935275ea1f3971a4307d6df445c7c925e005e8ce3be50ea0d25fa9dd309932e2"
+APPROVED_NESTED_FILES = {
+    "estate/index.html": "8ca2c693f4ae275f16331f3989790016a7f0ba3d0a2c2dc34d58e3a4f432478f",
+    "estate/assets/linotype/reading-first-press-engine.js": "67a3c842c92e86839a35cbee44c533d143f893eda954d750c0eddfffcad64058",
+    "estate/assets/linotype/reading-first-press-frame.css": "f7a85b7e573655bee124dc4218c0cb9ecdc4300b433b5ab0237e734507a03c03"
+}
+
 
 APPROVED_VERGIL_AUDITION_ASSETS = {
     "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-a.mp3":
@@ -567,6 +581,77 @@ def approved_typographic_specimen_files(baseline: Path, candidate: Path) -> dict
     return {**inherited,"estate/index.html":APPROVED_SPECIMEN_READER_SHA256}
 
 
+def approved_nested_measure_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """One native measured nested-type exception on the accepted v148 Reader."""
+    if candidate.name != APPROVED_NESTED_RELEASE:
+        return {}
+    before = candidate.parent / APPROVED_NESTED_PREDECESSOR
+    if not candidate.is_dir() or not before.is_dir():
+        raise UnadmittedReaderRoute("Unknown v149 predecessor")
+    inherited = approved_typographic_specimen_files(baseline, before)
+    if not inherited:
+        raise UnadmittedReaderRoute("Original Reader or previous edition not admitted")
+    if sha256(candidate / "source-lock.json") != APPROVED_NESTED_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unrecognized nested measure source-lock")
+    try:
+        current_lock = json.loads((candidate / "source-lock.json").read_text())
+        previous_lock = json.loads((before / "source-lock.json").read_text())
+        new_admission = current_lock.pop("modernPageNestedMeasureAdmission")
+    except (KeyError, ValueError, OSError) as exc:
+        raise UnadmittedReaderRoute("Missing v149 author and source admission") from exc
+    if current_lock != previous_lock:
+        raise UnadmittedReaderRoute("Unexpected inherited source identity mutation")
+    expected_admission = {
+        "schema": "fountain.press.native-nested-type-measure.v1",
+        "sourceOwner": "Fountain-Coach/fountain.coach",
+        "sourceCommit": APPROVED_NESTED_SOURCE_COMMIT,
+        "sourcePath": "site/essays/what-makes-a-page-modern/combined-essay.md",
+        "sourceSHA256": APPROVED_NESTED_SOURCE_SHA256,
+        "earlierDruckfahnePDFSHA256": APPROVED_ESSAY_PDF_SHA256,
+        "predecessor": APPROVED_NESTED_PREDECESSOR,
+        "release": APPROVED_NESTED_RELEASE,
+        "stageOnly": True,
+        "publicReleased": False,
+        "fountainStoreAdmitted": False,
+        "readerRuntimeUnchanged": False,
+        "existingReaderPreserved": True,
+        "pressCompositorSourceChanged": True,
+        "specimenSourcePath": "site/essays/what-makes-a-page-modern/specimen-source.txt",
+        "specimenSourceSHA256": APPROVED_NESTED_SPECIMEN_SOURCE_SHA256,
+        "nestedSettings": 2,
+        "fixedSVGSpecimensRemovedFromView": 2,
+        "historicalSVGAssetsPreserved": True,
+        "originalIllustrationsUnchanged": True,
+        "typographicSpecimensFramed": 2,
+        "duplicateNarrativeSpecimensRemoved": 2,
+        "authoredInlineFigureAnchors": 11,
+        "fileSHA256": APPROVED_NESTED_FILES
+    }
+    if new_admission != expected_admission:
+        raise UnadmittedReaderRoute("Unapproved nested type source or compositor revision")
+    older = {p.relative_to(before).as_posix(): p
+             for p in before.rglob("*") if p.is_file()}
+    newer = {p.relative_to(candidate).as_posix(): p
+             for p in candidate.rglob("*") if p.is_file()}
+    if set(older) != set(newer):
+        raise UnadmittedReaderRoute("v149 added or removed stage files")
+    changed = set()
+    for rel, previous in older.items():
+        current = newer[rel]
+        if not current.is_file() or current.is_symlink():
+            raise UnadmittedReaderRoute("Unreviewed symlink or file: " + rel)
+        if previous.stat().st_dev == current.stat().st_dev and previous.stat().st_ino == current.stat().st_ino:
+            continue
+        if sha256(previous) != sha256(current):
+            changed.add(rel)
+    if changed != set(APPROVED_NESTED_FILES) | {"source-lock.json"}:
+        raise UnadmittedReaderRoute("v149 changed unrelated Reader or private media assets")
+    for rel, approved_sha in APPROVED_NESTED_FILES.items():
+        if sha256(newer[rel]) != approved_sha:
+            raise UnadmittedReaderRoute("Wrong approved nested Reader asset: " + rel)
+    return {**inherited, **APPROVED_NESTED_FILES}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -606,6 +691,9 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_SPECIMEN_RELEASE:
             self.approved_essay = approved_typographic_specimen_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_NESTED_RELEASE:
+            self.approved_essay = approved_nested_measure_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -614,7 +702,8 @@ class ReaderProvenanceGate:
             if (self.current.name in (
                         APPROVED_VERGIL_LISTENING_RELEASE,
                         APPROVED_SELF_OUT_LOUD_RELEASE,
-                        APPROVED_SPECIMEN_RELEASE)
+                        APPROVED_SPECIMEN_RELEASE,
+                        APPROVED_NESTED_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -625,7 +714,8 @@ class ReaderProvenanceGate:
                             APPROVED_VERGIL_AUDITION_RELEASE,
                             APPROVED_VERGIL_LISTENING_RELEASE,
                             APPROVED_SELF_OUT_LOUD_RELEASE,
-                            APPROVED_SPECIMEN_RELEASE)
+                            APPROVED_SPECIMEN_RELEASE,
+                            APPROVED_NESTED_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
