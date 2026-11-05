@@ -76,6 +76,19 @@ APPROVED_NESTED_FILES = {
     "estate/assets/linotype/reading-first-press-frame.css": "f7a85b7e573655bee124dc4218c0cb9ecdc4300b433b5ab0237e734507a03c03"
 }
 
+# v150: exactly two Press compositor/styles source files differ from v149.
+# Do not admit a new reader, author route, media file, or public edition.
+APPROVED_FLUID_RELEASE = "shared-shell-20261105-v150-fluid-nested-3ba1b0e"
+APPROVED_FLUID_PREDECESSOR = APPROVED_NESTED_RELEASE
+APPROVED_FLUID_SOURCE_COMMIT = "3ba1b0e826efcec947e243100c2925ad78d2953e"
+APPROVED_FLUID_LOCK_SHA256 = "f10275f49d5da6837d6572b6508bb51b9752a4a25ffcb08ed4f9835fa986eee0"
+APPROVED_FLUID_FILES = {
+    "estate/assets/linotype/reading-first-press-engine.js":
+        "52f30f9fd36f3f1ccb24bd833b14f91289d270df394f8418a77cc672ee7c5342",
+    "estate/assets/linotype/reading-first-press-frame.css":
+        "8e175ccbdfdd71e506979772059c72fcfb85de8d3daa366a34544ccc7d4502e6"
+}
+
 
 APPROVED_VERGIL_AUDITION_ASSETS = {
     "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-a.mp3":
@@ -652,6 +665,75 @@ def approved_nested_measure_files(baseline: Path, candidate: Path) -> dict[str, 
     return {**inherited, **APPROVED_NESTED_FILES}
 
 
+def approved_fluid_nested_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """v150: only the parent folio measure and nested continuation may change.
+
+    Preserves the original production-derived Reader, accepted v149 book and
+    unchanged private audition assets; the candidate cannot self-admit.
+    """
+    if candidate.name != APPROVED_FLUID_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_FLUID_PREDECESSOR
+    if not candidate.is_dir() or not predecessor.is_dir():
+        raise UnadmittedReaderRoute("Missing exact v149 Reader ancestor")
+    inherited = approved_nested_measure_files(baseline, predecessor)
+    if not inherited:
+        raise UnadmittedReaderRoute("Unadmitted v149 source/Press baseline")
+    if sha256(candidate / "source-lock.json") != APPROVED_FLUID_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unrecognized fluid-layout source-lock")
+    try:
+        after = json.loads((candidate / "source-lock.json").read_text())
+        before = json.loads((predecessor / "source-lock.json").read_text())
+        admission = after.pop("modernPageFluidMeasureAdmission")
+    except (ValueError,KeyError,OSError) as err:
+        raise UnadmittedReaderRoute("Missing pinned v150 source revision") from err
+    if after != before:
+        raise UnadmittedReaderRoute("v150 mutates inherited publication identity")
+    expected = {
+       "schema": "fountain.press.fluid-parent-and-nested-flow.v1",
+       "sourceOwner": "Fountain-Coach/fountain.coach",
+       "sourceCommit": APPROVED_FLUID_SOURCE_COMMIT,
+       "sourcePaths": [
+          "scenarios/reading-first-20261101/reading-first-press-engine.js",
+          "scenarios/reading-first-20261101/reading-first-press-frame.css"
+       ],
+       "predecessor": APPROVED_FLUID_PREDECESSOR,
+       "release": APPROVED_FLUID_RELEASE,
+       "stageOnly": True,
+       "publicReleased": False,
+       "fountainStoreAdmitted": False,
+       "sameReaderShell": True,
+       "unchangedBookSources": True,
+       "proportionalMeasuredFolio": True,
+       "continuationUsesRemainingFolio": True,
+       "testedAt": [[390,690],[390,844],[820,1120],[1024,1366],[1200,860],[1200,1500]],
+       "fileSHA256": APPROVED_FLUID_FILES
+    }
+    if admission != expected:
+        raise UnadmittedReaderRoute("Unapproved fluid folio/Press source revision")
+    older = {p.relative_to(predecessor).as_posix():p
+             for p in predecessor.rglob("*") if p.is_file()}
+    newer = {p.relative_to(candidate).as_posix():p
+             for p in candidate.rglob("*") if p.is_file()}
+    if set(older) != set(newer):
+        raise UnadmittedReaderRoute("v150 changed the immutable Reader inventory")
+    changed = set()
+    for rel, prior in older.items():
+        current = newer[rel]
+        if current.is_symlink() or not current.is_file():
+            raise UnadmittedReaderRoute("Unreviewed link or file: "+rel)
+        if prior.stat().st_dev == current.stat().st_dev and prior.stat().st_ino == current.stat().st_ino:
+            continue
+        if sha256(prior) != sha256(current):
+            changed.add(rel)
+    if changed != set(APPROVED_FLUID_FILES)|{"source-lock.json"}:
+        raise UnadmittedReaderRoute("v150 changed an unrelated Reader/media file")
+    for rel,digest in APPROVED_FLUID_FILES.items():
+        if sha256(newer[rel]) != digest:
+            raise UnadmittedReaderRoute("Wrong verified fluid Reader asset: "+rel)
+    return {**inherited, **APPROVED_FLUID_FILES}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -694,6 +776,9 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_NESTED_RELEASE:
             self.approved_essay = approved_nested_measure_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_FLUID_RELEASE:
+            self.approved_essay = approved_fluid_nested_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -703,7 +788,8 @@ class ReaderProvenanceGate:
                         APPROVED_VERGIL_LISTENING_RELEASE,
                         APPROVED_SELF_OUT_LOUD_RELEASE,
                         APPROVED_SPECIMEN_RELEASE,
-                        APPROVED_NESTED_RELEASE)
+                        APPROVED_NESTED_RELEASE,
+                        APPROVED_FLUID_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -715,7 +801,8 @@ class ReaderProvenanceGate:
                             APPROVED_VERGIL_LISTENING_RELEASE,
                             APPROVED_SELF_OUT_LOUD_RELEASE,
                             APPROVED_SPECIMEN_RELEASE,
-                            APPROVED_NESTED_RELEASE)
+                            APPROVED_NESTED_RELEASE,
+                            APPROVED_FLUID_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
