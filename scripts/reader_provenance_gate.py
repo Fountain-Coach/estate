@@ -90,6 +90,18 @@ APPROVED_FLUID_FILES = {
 }
 
 
+# One admissible source-bound v151 semantic spread compositor revision.
+# Its only published-stage code delta is the existing Press engine.
+APPROVED_SPREAD_RELEASE = "shared-shell-20261105-v151-semantic-spread-17e32af"
+APPROVED_SPREAD_PREDECESSOR = APPROVED_FLUID_RELEASE
+APPROVED_SPREAD_SOURCE_COMMIT = "17e32af5b875ec5356ddfa8a9680711d60aaa4eb"
+APPROVED_SPREAD_LOCK_SHA256 = "ad15c096e83c4695c1b0feb1ec85a3f5f354498baf3a3ffc42d05cff1cad97b9"
+APPROVED_SPREAD_FILES = {
+    "estate/assets/linotype/reading-first-press-engine.js":
+        "e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a"
+}
+
+
 APPROVED_VERGIL_AUDITION_ASSETS = {
     "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-a.mp3":
         "6f229cce508aa70236ee5c3b3eeb0bec7fe14bdc2296e0703d18016750ae91f8",
@@ -734,6 +746,77 @@ def approved_fluid_nested_files(baseline: Path, candidate: Path) -> dict[str, st
     return {**inherited, **APPROVED_FLUID_FILES}
 
 
+def approved_semantic_spread_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """Admit only the measured facing-leaf editorial correction on v150.
+
+    The same production-derived Press Reader, manuscript/illustration source,
+    and all private audition media must remain byte-identical.
+    """
+    if candidate.name != APPROVED_SPREAD_RELEASE:
+        return {}
+    ancestor=candidate.parent / APPROVED_SPREAD_PREDECESSOR
+    if not ancestor.is_dir() or not candidate.is_dir():
+        raise UnadmittedReaderRoute("Missing accepted v150 Reader predecessor")
+    inherited=approved_fluid_nested_files(baseline,ancestor)
+    if not inherited:
+        raise UnadmittedReaderRoute("Unadmitted original Reader ancestry")
+    if sha256(candidate / "source-lock.json") != APPROVED_SPREAD_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Wrong source-locked semantic spread identity")
+    try:
+        current=json.loads((candidate / "source-lock.json").read_text())
+        prior=json.loads((ancestor / "source-lock.json").read_text())
+        new_admission=current.pop("modernPageSemanticSpreadAdmission")
+    except (ValueError,KeyError,OSError) as error:
+        raise UnadmittedReaderRoute("Missing semantic spread source admission") from error
+    if current!=prior:
+        raise UnadmittedReaderRoute("Modified inherited Reader or source lineage")
+    expected={
+        "schema":"fountain.press.semantic-spread-balance.v1",
+        "sourceOwner":"Fountain-Coach/fountain.coach",
+        "sourceCommit":APPROVED_SPREAD_SOURCE_COMMIT,
+        "sourcePath":"scenarios/reading-first-20261101/reading-first-press-engine.js",
+        "predecessor":APPROVED_SPREAD_PREDECESSOR,
+        "release":APPROVED_SPREAD_RELEASE,
+        "stageOnly":True,
+        "publicReleased":False,
+        "fountainStoreAdmitted":False,
+        "sameReaderShell":True,
+        "unchangedBookSources":True,
+        "unchangedOriginalImages":True,
+        "unchangedPrivateVoiceAuditions":True,
+        "rightLeafRetainsProseReserve":True,
+        "leftLeafMayCarryPictureAcrossGutter":True,
+        "headingAttachedToReadableOpening":True,
+        "minimumSecondaryImageScale":0.72,
+        "compactReaderProvenIdentical":True,
+        "fileSHA256":APPROVED_SPREAD_FILES
+    }
+    if new_admission!=expected:
+        raise UnadmittedReaderRoute("Unapproved measured-spread compositor decision")
+    before={p.relative_to(ancestor).as_posix():p
+            for p in ancestor.rglob("*") if p.is_file()}
+    after={p.relative_to(candidate).as_posix():p
+           for p in candidate.rglob("*") if p.is_file()}
+    if set(before)!=set(after):
+        raise UnadmittedReaderRoute("Spread update changed stage file inventory")
+    changed=set()
+    for rel,source in before.items():
+        target=after[rel]
+        if target.is_symlink() or not target.is_file():
+            raise UnadmittedReaderRoute("Spread update contains unexpected link or file: "+rel)
+        if (source.stat().st_dev==target.stat().st_dev and
+            source.stat().st_ino==target.stat().st_ino):
+            continue
+        if sha256(source)!=sha256(target):
+            changed.add(rel)
+    if changed != set(APPROVED_SPREAD_FILES)|{"source-lock.json"}:
+        raise UnadmittedReaderRoute("Spread update mutated unrelated Reader/media files")
+    for rel,digest in APPROVED_SPREAD_FILES.items():
+        if sha256(after[rel])!=digest:
+            raise UnadmittedReaderRoute("Unexpected active Press asset: "+rel)
+    return {**inherited,**APPROVED_SPREAD_FILES}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -779,6 +862,9 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_FLUID_RELEASE:
             self.approved_essay = approved_fluid_nested_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_SPREAD_RELEASE:
+            self.approved_essay = approved_semantic_spread_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -789,7 +875,8 @@ class ReaderProvenanceGate:
                         APPROVED_SELF_OUT_LOUD_RELEASE,
                         APPROVED_SPECIMEN_RELEASE,
                         APPROVED_NESTED_RELEASE,
-                        APPROVED_FLUID_RELEASE)
+                        APPROVED_FLUID_RELEASE,
+                        APPROVED_SPREAD_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -802,7 +889,8 @@ class ReaderProvenanceGate:
                             APPROVED_SELF_OUT_LOUD_RELEASE,
                             APPROVED_SPECIMEN_RELEASE,
                             APPROVED_NESTED_RELEASE,
-                            APPROVED_FLUID_RELEASE)
+                            APPROVED_FLUID_RELEASE,
+                            APPROVED_SPREAD_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
