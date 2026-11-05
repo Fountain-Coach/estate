@@ -33,6 +33,38 @@ APPROVED_ESSAY_ASSETS = {
 }
 APPROVED_ESSAY_ASSET_DIR = "estate/essays/what-makes-a-page-modern/assets/"
 APPROVED_FIGURE_RELEASE = "shared-shell-20261104-v143-modern-page-balanced-6a15b6c"
+APPROVED_WEB_READER_RELEASE = "shared-shell-20261104-v144-webreader-inset-66ec9c5"
+
+# Author-WLAN-only listening derivatives. No Reader or narration source mutation.
+# Original WAVs, model snapshots, transcripts and approval receipts stay private.
+APPROVED_VERGIL_AUDITION_RELEASE = "shared-shell-20261104-v145-vergil-qwen-private-audition"
+APPROVED_VERGIL_LISTENING_RELEASE = "shared-shell-20261104-v146-vergil-qwen-listening-page"
+APPROVED_VERGIL_LISTENING_ROUTE = "private-auditions/what-makes-a-page-modern-20261104-qwen3/index.html"
+APPROVED_VERGIL_LISTENING_GIT_BLOB = "76b48a3fe14f1fb7e08de08e362de104b620c109"
+
+# Writer-approved combined essay on the ORIGINAL production-derived Reader.
+# Source is a new revision; the earlier 13-page PDF is retained as provenance.
+# v146 private Vergil/Qwen auditions and all Reader runtime bytes stay unchanged.
+APPROVED_SELF_OUT_LOUD_RELEASE = "shared-shell-20261105-v147-self-out-loud-c884a3e"
+APPROVED_SELF_OUT_LOUD_PREDECESSOR = APPROVED_VERGIL_LISTENING_RELEASE
+APPROVED_SELF_OUT_LOUD_SOURCE_COMMIT = "c884a3e3bd04a2269212b7c5a7dadd6ef92e900f"
+APPROVED_SELF_OUT_LOUD_SOURCE_SHA256 = "4b3c0c2b2f02d707d0c88d3c4f045c8119d05707709512a832e995c648edf272"
+APPROVED_SELF_OUT_LOUD_READER_SHA256 = "11cd731753769f5feacd2f91dc2ba1fc8c0e914d5d107b00f9c98ad58eff3c2c"
+APPROVED_SELF_OUT_LOUD_LOCK_SHA256 = "75b8407fbc9762718df82560f5a7b2d4bb433dd6f52881c663fc115530453ea8"
+
+
+APPROVED_VERGIL_AUDITION_ASSETS = {
+    "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-a.mp3":
+        "6f229cce508aa70236ee5c3b3eeb0bec7fe14bdc2296e0703d18016750ae91f8",
+    "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-b.mp3":
+        "845d07d3404a0527012752057a5c689c78b29cec863bbe9ddd15becc0da207b5",
+}
+
+APPROVED_WEB_READER_SOURCE_COMMIT = "66ec9c5144953766bc99e7f9cf704b5ea17cf7a0"
+APPROVED_WEB_READER_LOCK_SHA256 = "9ffddfa9fdd5bf853c973de266bcdc71404f954342c8931ca6e53e82f0da9396"
+APPROVED_WEB_READER_INDEX_SHA256 = "9d8b6c330146f4b7d1b6e437aa916f89aca99e110de7c8f24060df29050bd8c5"
+APPROVED_WEB_READER_SVG_SHA256 = "778a1a33b7f69e34f5603e02950d245abd221fff3ea260c02310a2a4d79df9fb"
+APPROVED_WEB_READER_SVG_PATH = "estate/essays/what-makes-a-page-modern/assets/reader.svg"
 APPROVED_FIGURE_LOCK_SHA256 = "0471e8d18d3ba80b365b1d744bfebd5548840da50ee2945cedc5274715a64990"
 APPROVED_FIGURE_SOURCE_COMMIT = "6a15b6c63d64a5e09da491b93f6e35c6dcc29b21"
 APPROVED_FIGURE_HTML_SHA256 = "610f1cde53ca00d3e2e249c2cc965acd53f084a7b447566855f05fa28766c720"
@@ -268,6 +300,196 @@ def approved_balanced_essay_files(baseline: Path, candidate: Path) -> dict[str, 
     return {**inherited, **exact}
 
 
+def approved_web_reader_inset_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """One SVG internal-ink correction on the accepted, unchanged v143 Reader."""
+    if candidate.name != APPROVED_WEB_READER_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_FIGURE_RELEASE
+    if not predecessor.is_dir():
+        raise UnadmittedReaderRoute("No original v143 Reader predecessor")
+    inherited = approved_balanced_essay_files(baseline, predecessor)
+    if len(inherited) != 15 or sha256(predecessor / "source-lock.json") != APPROVED_FIGURE_LOCK_SHA256:
+        raise UnadmittedReaderRoute("v143 figure source was not admitted")
+    if sha256(candidate / "source-lock.json") != APPROVED_WEB_READER_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Changed v144 source-lock receipt")
+    try:
+        current_lock = json.loads((candidate / "source-lock.json").read_text())
+        original_lock = json.loads((predecessor / "source-lock.json").read_text())
+        admission = current_lock.pop("modernPageWebReaderInsetAdmission")
+    except (KeyError, ValueError, OSError) as error:
+        raise UnadmittedReaderRoute("Missing verified WEB READER inset admission") from error
+    if current_lock != original_lock:
+        raise UnadmittedReaderRoute("Existing v143 editorial source was modified")
+    exact = {
+        "estate/index.html": APPROVED_WEB_READER_INDEX_SHA256,
+        APPROVED_WEB_READER_SVG_PATH: APPROVED_WEB_READER_SVG_SHA256,
+    }
+    required = {
+        "schema": "fountain.press.semantic-figure-inset.existing-reader.v1",
+        "sourceOwner": "Fountain-Coach/fountain.coach",
+        "sourceCommit": APPROVED_WEB_READER_SOURCE_COMMIT,
+        "sourcePDFSHA256": APPROVED_ESSAY_PDF_SHA256,
+        "predecessor": APPROVED_FIGURE_RELEASE,
+        "release": APPROVED_WEB_READER_RELEASE,
+        "stageOnly": True,
+        "publicReleased": False,
+        "fountainStoreAdmitted": False,
+        "readerRuntimeUnchanged": True,
+        "originalManuscriptUnchanged": True,
+        "innerTextFitsFrame": True,
+        "fileSHA256": exact,
+    }
+    if admission != required:
+        raise UnadmittedReaderRoute("v144 source identity/allowed files do not match source")
+    for rel, digest in exact.items():
+        item = candidate / rel
+        if not item.is_file() or item.is_symlink() or sha256(item) != digest:
+            raise UnadmittedReaderRoute("Unverified internal diagram source: " + rel)
+    def inventory(root: Path):
+        return {x.relative_to(root).as_posix():x for x in root.rglob("*") if x.is_file()}
+    before, after = inventory(predecessor), inventory(candidate)
+    if set(before) != set(after):
+        raise UnadmittedReaderRoute("Changed v143 Reader route inventory")
+    changed = set()
+    for rel in before:
+        a,b = before[rel],after[rel]
+        if a.stat().st_dev==b.stat().st_dev and a.stat().st_ino==b.stat().st_ino:
+            continue
+        if sha256(a) != sha256(b):
+            changed.add(rel)
+    if changed != set(exact) | {"source-lock.json"}:
+        raise UnadmittedReaderRoute("Change beyond approved WEB READER internal padding")
+    return {**inherited, **exact}
+
+
+def approved_private_vergil_audition_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """Allow only two hash-pinned audition MP3s beside unchanged v144 Reader.
+
+    This cannot authorize itself from a modified source-lock or arbitrary
+    stage content. The predecessor must pass the existing v144 check first.
+    """
+    if candidate.name != APPROVED_VERGIL_AUDITION_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_WEB_READER_RELEASE
+    if not predecessor.is_dir() or not candidate.is_dir():
+        raise UnadmittedReaderRoute("Missing v144 Reader predecessor for private audition")
+    inherited = approved_web_reader_inset_files(baseline, predecessor)
+    if not inherited:
+        raise UnadmittedReaderRoute("Unverified v144 Reader predecessor for private audition")
+    before = {p.relative_to(predecessor).as_posix(): p
+              for p in predecessor.rglob("*") if p.is_file()}
+    after = {p.relative_to(candidate).as_posix(): p
+             for p in candidate.rglob("*") if p.is_file()}
+    if set(after) != set(before) | set(APPROVED_VERGIL_AUDITION_ASSETS):
+        raise UnadmittedReaderRoute("Private audition changed v144 Reader inventory")
+    for rel, original in before.items():
+        present = after[rel]
+        if present.is_symlink() or sha256(original) != sha256(present):
+            raise UnadmittedReaderRoute("Private audition changed Reader file: " + rel)
+    for rel, expected in APPROVED_VERGIL_AUDITION_ASSETS.items():
+        present = after[rel]
+        if present.is_symlink() or sha256(present) != expected:
+            raise UnadmittedReaderRoute("Wrong private audition recording: " + rel)
+    return inherited
+
+
+def git_blob_sha1(path: Path) -> str:
+    raw = path.read_bytes()
+    return hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + bytes([0]) + raw).hexdigest()
+
+
+def approved_private_vergil_listening_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """Only one pinned Git-owned HTML listening route beyond exact v145."""
+    if candidate.name != APPROVED_VERGIL_LISTENING_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_VERGIL_AUDITION_RELEASE
+    if not predecessor.is_dir() or not candidate.is_dir():
+        raise UnadmittedReaderRoute("Missing reviewed v145 audition predecessor")
+    inherited = approved_private_vergil_audition_files(baseline, predecessor)
+    if not inherited:
+        raise UnadmittedReaderRoute("Unverified v145 audition predecessor")
+    before = {p.relative_to(predecessor).as_posix(): p
+              for p in predecessor.rglob("*") if p.is_file()}
+    after = {p.relative_to(candidate).as_posix(): p
+             for p in candidate.rglob("*") if p.is_file()}
+    if set(after) != set(before) | {APPROVED_VERGIL_LISTENING_ROUTE}:
+        raise UnadmittedReaderRoute("Unapproved private listening release inventory")
+    for rel, original in before.items():
+        candidate_file = after[rel]
+        if candidate_file.is_symlink() or sha256(candidate_file) != sha256(original):
+            raise UnadmittedReaderRoute("Existing Reader or audition file changed: " + rel)
+    page = after[APPROVED_VERGIL_LISTENING_ROUTE]
+    if page.is_symlink() or git_blob_sha1(page) != APPROVED_VERGIL_LISTENING_GIT_BLOB:
+        raise UnadmittedReaderRoute("Unverified Git-owned listening page")
+    return inherited
+
+
+def approved_self_out_loud_essay_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """v147: allow only a new source-bound essay composition on exact v146.
+
+    Preserve both v145 private recordings, v146 private listening page, the
+    production-derived Reader engine and every other book. Pin the revised
+    manuscript's Git commit/digest separately from the immutable candidate.
+    """
+    if candidate.name != APPROVED_SELF_OUT_LOUD_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_SELF_OUT_LOUD_PREDECESSOR
+    if not predecessor.is_dir() or not candidate.is_dir():
+        raise UnadmittedReaderRoute("Missing exact approved v146 predecessor")
+    inherited = approved_private_vergil_listening_files(baseline, predecessor)
+    if not inherited:
+        raise UnadmittedReaderRoute("Unverified accepted v146 Reader before new manuscript")
+    if sha256(candidate / "source-lock.json") != APPROVED_SELF_OUT_LOUD_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unrecognized v147 manuscript source-lock digest")
+    try:
+        current_lock = json.loads((candidate / "source-lock.json").read_text())
+        before_lock = json.loads((predecessor / "source-lock.json").read_text())
+        admission = current_lock.pop("modernPageSelfOutLoudAdmission")
+    except (ValueError, KeyError, OSError) as error:
+        raise UnadmittedReaderRoute("Missing v147 source admission") from error
+    if current_lock != before_lock:
+        raise UnadmittedReaderRoute("v147 changed inherited source-lock identity")
+    expected = {
+        "schema": "fountain.press.modern-page-self-out-loud-edition.v1",
+        "sourceOwner": "Fountain-Coach/fountain.coach",
+        "sourceCommit": APPROVED_SELF_OUT_LOUD_SOURCE_COMMIT,
+        "sourcePath": "site/essays/what-makes-a-page-modern/combined-essay.md",
+        "sourceSHA256": APPROVED_SELF_OUT_LOUD_SOURCE_SHA256,
+        "earlierDruckfahnePDFSHA256": APPROVED_ESSAY_PDF_SHA256,
+        "predecessor": APPROVED_SELF_OUT_LOUD_PREDECESSOR,
+        "release": APPROVED_SELF_OUT_LOUD_RELEASE,
+        "stageOnly": True,
+        "publicReleased": False,
+        "fountainStoreAdmitted": False,
+        "readerRuntimeUnchanged": True,
+        "originalIllustrationsUnchanged": True,
+        "fileSHA256": {"estate/index.html": APPROVED_SELF_OUT_LOUD_READER_SHA256}
+    }
+    if admission != expected:
+        raise UnadmittedReaderRoute("v147 source revision is not the approved Git manuscript")
+    root = candidate / "estate/index.html"
+    if root.is_symlink() or not root.is_file() or sha256(root) != APPROVED_SELF_OUT_LOUD_READER_SHA256:
+        raise UnadmittedReaderRoute("Revised essay root does not match approved content digest")
+    before = {p.relative_to(predecessor).as_posix(): p
+              for p in predecessor.rglob("*") if p.is_file()}
+    after = {p.relative_to(candidate).as_posix(): p
+             for p in candidate.rglob("*") if p.is_file()}
+    if set(before) != set(after):
+        raise UnadmittedReaderRoute("v147 added or removed existing stage files")
+    changed = set()
+    for rel, old_file in before.items():
+        file = after[rel]
+        if file.is_symlink() or not file.is_file():
+            raise UnadmittedReaderRoute("v147 introduced an unreviewed symlink")
+        if old_file.stat().st_dev == file.stat().st_dev and old_file.stat().st_ino == file.stat().st_ino:
+            continue
+        if sha256(old_file) != sha256(file):
+            changed.add(rel)
+    if changed != {"estate/index.html", "source-lock.json"}:
+        raise UnadmittedReaderRoute("v147 modified unrelated Reader, media or source assets")
+    return {**inherited, "estate/index.html": APPROVED_SELF_OUT_LOUD_READER_SHA256}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -293,9 +515,39 @@ class ReaderProvenanceGate:
         self.approved_essay = approved_essay_files(self.baseline, self.current)
         if self.current.name == APPROVED_FIGURE_RELEASE:
             self.approved_essay = approved_balanced_essay_files(self.baseline, self.current)
+        if self.current.name == APPROVED_WEB_READER_RELEASE:
+            self.approved_essay = approved_web_reader_inset_files(self.baseline, self.current)
+        if self.current.name == APPROVED_VERGIL_AUDITION_RELEASE:
+            self.approved_essay = approved_private_vergil_audition_files(
+                self.baseline, self.current)
+        if self.current.name == APPROVED_VERGIL_LISTENING_RELEASE:
+            self.approved_essay = approved_private_vergil_listening_files(
+                self.baseline, self.current)
+        if self.current.name == APPROVED_SELF_OUT_LOUD_RELEASE:
+            self.approved_essay = approved_self_out_loud_essay_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
+        if rel.startswith("private-auditions/"):
+            target = self.current / rel
+            if (self.current.name in (
+                        APPROVED_VERGIL_LISTENING_RELEASE,
+                        APPROVED_SELF_OUT_LOUD_RELEASE)
+                    and rel == APPROVED_VERGIL_LISTENING_ROUTE):
+                if (not target.is_file() or target.is_symlink()
+                        or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
+                    raise UnadmittedReaderRoute("Altered private listening page")
+                return
+            expected = (APPROVED_VERGIL_AUDITION_ASSETS.get(rel)
+                        if self.current.name in (
+                            APPROVED_VERGIL_AUDITION_RELEASE,
+                            APPROVED_VERGIL_LISTENING_RELEASE,
+                            APPROVED_SELF_OUT_LOUD_RELEASE)
+                        else None)
+            if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
+                raise UnadmittedReaderRoute("Unknown or altered private audition asset")
+            return
         # Only the reviewed vector assets may exist under this work folder.
         # In particular, a new standalone index.html is NEVER an allowed
         # alternative Reader, even when the root source volume is admitted.
