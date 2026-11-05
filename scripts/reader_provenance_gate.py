@@ -102,6 +102,21 @@ APPROVED_SPREAD_FILES = {
 }
 
 
+# v152 archive current membership while preserving the original authored work.
+APPROVED_ARCHIVE_RELEASE = "shared-shell-20261105-v152-editorial-archive-1609cb9"
+APPROVED_ARCHIVE_PREDECESSOR = APPROVED_SPREAD_RELEASE
+APPROVED_ARCHIVE_SOURCE_COMMIT = "1609cb909ae2f89b4b28223fe70c482638d6b854"
+APPROVED_ARCHIVE_LOCK_SHA256 = "34953bb41c8bb405183809a138b1d0e32272419dcf303fe3f74ce7c875061317"
+APPROVED_ARCHIVE_FILES = {
+    "estate/index.html":"77f90b8db05a42700f727b4558f7e91a6406e2ae6bf25d59d953fa5ddae7b3d9",
+    "estate/assets/linotype/reading-first-app.js":"9fa017c008cebad8586a49a03741aae398a36a0fc61e935364f45b6e913b6345",
+    "estate/essays/index.html":"a72cf4bcd1cffebb94585ee20ccb7c4eb2dab4652a85c7d9555cac2b62014e08",
+    "estate/assets/essay-share/manifest.json":"21326154d893de327ca889596b4bd8da074d984c16d476a3f1afc0f8abfeefa3"
+}
+APPROVED_ARCHIVED_WORK_SOURCE_SHA256 = "553b26f69963d0787c416b64b56591d3ccb46b01541d57debf1f79dc5d6a1714"
+APPROVED_ARCHIVED_WORK_STAGE_SHA256 = "2eb20df27e4b1a85c2c531f061a712f2aaf66f792df5cda518bb14b62d0822b3"
+
+
 APPROVED_VERGIL_AUDITION_ASSETS = {
     "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-a.mp3":
         "6f229cce508aa70236ee5c3b3eeb0bec7fe14bdc2296e0703d18016750ae91f8",
@@ -817,6 +832,81 @@ def approved_semantic_spread_files(baseline: Path, candidate: Path) -> dict[str,
     return {**inherited,**APPROVED_SPREAD_FILES}
 
 
+def approved_editorial_archive_files(baseline: Path, candidate: Path) -> dict[str,str]:
+    """Current edition excludes one writer-archived essay, never its source."""
+    if candidate.name != APPROVED_ARCHIVE_RELEASE:return {}
+    predecessor=candidate.parent / APPROVED_ARCHIVE_PREDECESSOR
+    if not predecessor.is_dir() or not candidate.is_dir():
+        raise UnadmittedReaderRoute("Missing immutable accepted v151 ancestor")
+    inherited=approved_semantic_spread_files(baseline,predecessor)
+    if not inherited:
+        raise UnadmittedReaderRoute("Unadmitted Fountain Press source ancestry")
+    if sha256(candidate / "source-lock.json") != APPROVED_ARCHIVE_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Incorrect v152 editorial archive source lock")
+    try:
+        after=json.loads((candidate / "source-lock.json").read_text())
+        before=json.loads((predecessor / "source-lock.json").read_text())
+        receipt=after.pop("machineReadingEditorialArchiveAdmission")
+    except (ValueError,KeyError,OSError) as e:
+        raise UnadmittedReaderRoute("Missing explicit writer archive admission") from e
+    if after!=before:
+        raise UnadmittedReaderRoute("v152 rewrites inherited Reader publication identity")
+    expected={
+      "schema":"fountain.press.publication-editorial-archive.v1",
+      "sourceOwner":"Fountain-Coach/fountain.coach",
+      "sourceCommit":APPROVED_ARCHIVE_SOURCE_COMMIT,
+      "sourcePaths":[
+         "scenarios/reading-first-20261101/index.html",
+         "scenarios/reading-first-20261101/reading-first-app.js",
+         "scenarios/reading-first-20261101/essay-share-manifest.json",
+         "site/essays/index.html",
+         "scenarios/reading-first-20261101/editorial-archive-decision.json"
+      ],
+      "predecessor":APPROVED_ARCHIVE_PREDECESSOR,
+      "release":APPROVED_ARCHIVE_RELEASE,
+      "writerDecisionDate":"2026-11-05",
+      "archivedWork":"essay--to-read-is-not-to-remember",
+      "archivedWorkTitle":"Did the Machine Actually Read the Book?",
+      "originalSourceHTMLSHA256":APPROVED_ARCHIVED_WORK_SOURCE_SHA256,
+      "originalPrivateStageRouteSHA256":APPROVED_ARCHIVED_WORK_STAGE_SHA256,
+      "currentEssayCount":5,"unchangedFirstReadingsCount":30,
+      "archiveRoutePreserved":True,"originalWriterProseUnchanged":True,
+      "ReaderShellUnchanged":True,"PressCompositorUnchanged":True,
+      "privateMediaUnchanged":True,"stageOnly":True,
+      "publicReleased":False,"fountainStoreAdmitted":False,
+      "changedFileSHA256":APPROVED_ARCHIVE_FILES
+    }
+    if receipt != expected:
+        raise UnadmittedReaderRoute("Wrong writer-approved archive decision or source commit")
+    original_route = "estate/essays/to-read-is-not-to-remember/index.html"
+    if (sha256(candidate / original_route) != APPROVED_ARCHIVED_WORK_STAGE_SHA256
+        or sha256(predecessor / original_route) != APPROVED_ARCHIVED_WORK_STAGE_SHA256):
+        raise UnadmittedReaderRoute("Archive altered original source-owned essay route")
+    prior={p.relative_to(predecessor).as_posix():p
+           for p in predecessor.rglob("*") if p.is_file()}
+    next={p.relative_to(candidate).as_posix():p
+          for p in candidate.rglob("*") if p.is_file()}
+    if set(prior)!=set(next):
+        raise UnadmittedReaderRoute("Archive changed site inventory without admission")
+    changed=set()
+    for rel,before_path in prior.items():
+        after_path=next[rel]
+        if after_path.is_symlink() or not after_path.is_file():
+            raise UnadmittedReaderRoute("Unexpected link in archived stage: "+rel)
+        if (before_path.stat().st_dev==after_path.stat().st_dev and
+            before_path.stat().st_ino==after_path.stat().st_ino):
+            continue
+        if sha256(before_path)!=sha256(after_path):
+            changed.add(rel)
+    if changed != (set(APPROVED_ARCHIVE_FILES)|{"source-lock.json"}):
+        raise UnadmittedReaderRoute("Archive changed other Reader/media/source files: "+
+            str(sorted(changed-set(APPROVED_ARCHIVE_FILES)-{"source-lock.json"})[:4]))
+    for rel,digest in APPROVED_ARCHIVE_FILES.items():
+        if sha256(next[rel])!=digest:
+            raise UnadmittedReaderRoute("Wrong archive Reader projection: "+rel)
+    return {**inherited,**APPROVED_ARCHIVE_FILES}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -865,6 +955,9 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_SPREAD_RELEASE:
             self.approved_essay = approved_semantic_spread_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_ARCHIVE_RELEASE:
+            self.approved_essay = approved_editorial_archive_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -876,7 +969,8 @@ class ReaderProvenanceGate:
                         APPROVED_SPECIMEN_RELEASE,
                         APPROVED_NESTED_RELEASE,
                         APPROVED_FLUID_RELEASE,
-                        APPROVED_SPREAD_RELEASE)
+                        APPROVED_SPREAD_RELEASE,
+                        APPROVED_ARCHIVE_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -890,7 +984,8 @@ class ReaderProvenanceGate:
                             APPROVED_SPECIMEN_RELEASE,
                             APPROVED_NESTED_RELEASE,
                             APPROVED_FLUID_RELEASE,
-                            APPROVED_SPREAD_RELEASE)
+                            APPROVED_SPREAD_RELEASE,
+                            APPROVED_ARCHIVE_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
@@ -927,8 +1022,13 @@ class ReaderProvenanceGate:
         if not candidate.exists():
             return  # The ordinary HTTP 404 remains authoritative.
         original = self.baseline / html_path
-        if html_path == "estate/index.html" and self.approved_essay:
-            if sha256(candidate) == self.approved_essay[html_path]:
+        # The v152 archival decision changes the existing Essays catalogue
+        # but never the authored essay route. Admission remains exact-hash
+        # and source-lock-bound, not a blanket exemption for nested HTML.
+        admitted_catalogue=html_path in ("estate/index.html","estate/essays/index.html")
+        if admitted_catalogue and self.approved_essay:
+            expected=self.approved_essay.get(html_path)
+            if expected is not None and sha256(candidate)==expected:
                 return
         if not original.is_file() or sha256(candidate) != sha256(original):
             raise UnadmittedReaderRoute(
