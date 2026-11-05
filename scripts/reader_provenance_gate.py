@@ -52,6 +52,16 @@ APPROVED_SELF_OUT_LOUD_SOURCE_SHA256 = "4b3c0c2b2f02d707d0c88d3c4f045c8119d05707
 APPROVED_SELF_OUT_LOUD_READER_SHA256 = "11cd731753769f5feacd2f91dc2ba1fc8c0e914d5d107b00f9c98ad58eff3c2c"
 APPROVED_SELF_OUT_LOUD_LOCK_SHA256 = "75b8407fbc9762718df82560f5a7b2d4bb433dd6f52881c663fc115530453ea8"
 
+# A source-owned typographic demonstration, inside the SAME Reader.
+# v148 restores 11 exact author-specified figure anchors and clearly stages
+# the original pair of specimen SVGs; all other stage assets are untouched.
+APPROVED_SPECIMEN_RELEASE = "shared-shell-20261105-v148-specimen-boundary-a9575ba"
+APPROVED_SPECIMEN_PREDECESSOR = APPROVED_SELF_OUT_LOUD_RELEASE
+APPROVED_SPECIMEN_SOURCE_COMMIT = "a9575ba976917433baf0cc67940b5941e4c1de96"
+APPROVED_SPECIMEN_SOURCE_SHA256 = "8f7d60f9ae3cfd1dd6e95a92d869c050241a93482ab00688be7ad3422d2786d6"
+APPROVED_SPECIMEN_READER_SHA256 = "532dbdf6603fb1300a974418130c50cbc17636262d9dcf7c0a802c3aabfdd81c"
+APPROVED_SPECIMEN_LOCK_SHA256 = "90d23ed381ece45f54d9621ca7341e204d5967738f1f48b3af2d8eab42483e1c"
+
 
 APPROVED_VERGIL_AUDITION_ASSETS = {
     "private-auditions/what-makes-a-page-modern-20261104-qwen3/vergil-a.mp3":
@@ -490,6 +500,73 @@ def approved_self_out_loud_essay_files(baseline: Path, candidate: Path) -> dict[
     return {**inherited, "estate/index.html": APPROVED_SELF_OUT_LOUD_READER_SHA256}
 
 
+def approved_typographic_specimen_files(baseline: Path, candidate: Path) -> dict[str, str]:
+    """Admit a single source-owned v148 setting correction to v147 Reader.
+
+    The printer's nested type specimens have their own frames and precise
+    source paragraph anchors, but the existing Reader engine, original SVG
+    art, books, private recordings and listening routes are unchanged.
+    """
+    if candidate.name != APPROVED_SPECIMEN_RELEASE:
+        return {}
+    predecessor = candidate.parent / APPROVED_SPECIMEN_PREDECESSOR
+    if not predecessor.is_dir() or not candidate.is_dir():
+        raise UnadmittedReaderRoute("v148 requires the exact admitted v147 Reader")
+    inherited = approved_self_out_loud_essay_files(baseline, predecessor)
+    if not inherited:
+        raise UnadmittedReaderRoute("Unadmitted v147 Reader ancestor")
+    if sha256(candidate / "source-lock.json") != APPROVED_SPECIMEN_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unrecognized v148 source-lock digest")
+    try:
+        after = json.loads((candidate / "source-lock.json").read_text())
+        before = json.loads((predecessor / "source-lock.json").read_text())
+        admission = after.pop("modernPageTypographicSpecimenAdmission")
+    except (KeyError, ValueError, OSError) as exc:
+        raise UnadmittedReaderRoute("Missing signed-off v148 source addition") from exc
+    if after != before:
+        raise UnadmittedReaderRoute("v148 mutated inherited publication source identity")
+    expected = {
+        "schema": "fountain.press.typographic-specimen-source-anchor.v1",
+        "sourceOwner": "Fountain-Coach/fountain.coach",
+        "sourceCommit": APPROVED_SPECIMEN_SOURCE_COMMIT,
+        "sourcePath": "site/essays/what-makes-a-page-modern/combined-essay.md",
+        "sourceSHA256": APPROVED_SPECIMEN_SOURCE_SHA256,
+        "earlierDruckfahnePDFSHA256": APPROVED_ESSAY_PDF_SHA256,
+        "predecessor": APPROVED_SPECIMEN_PREDECESSOR,
+        "release": APPROVED_SPECIMEN_RELEASE,
+        "stageOnly": True,
+        "publicReleased": False,
+        "fountainStoreAdmitted": False,
+        "readerRuntimeUnchanged": True,
+        "originalIllustrationsUnchanged": True,
+        "typographicSpecimensFramed": 2,
+        "duplicateNarrativeSpecimensRemoved": 2,
+        "authoredInlineFigureAnchors": 11,
+        "fileSHA256": {"estate/index.html": APPROVED_SPECIMEN_READER_SHA256}
+    }
+    if admission != expected:
+        raise UnadmittedReaderRoute("Revised typographic source identity is not admitted")
+    html = candidate / "estate/index.html"
+    if html.is_symlink() or not html.is_file() or sha256(html) != APPROVED_SPECIMEN_READER_SHA256:
+        raise UnadmittedReaderRoute("Wrong v148 source-bound Reader root")
+    before_files = {p.relative_to(predecessor).as_posix():p for p in predecessor.rglob("*") if p.is_file()}
+    after_files = {p.relative_to(candidate).as_posix():p for p in candidate.rglob("*") if p.is_file()}
+    if set(before_files) != set(after_files):
+        raise UnadmittedReaderRoute("v148 changed stage inventory")
+    changed=set()
+    for rel, older in before_files.items():
+        current=after_files[rel]
+        if current.is_symlink() or not current.is_file():
+            raise UnadmittedReaderRoute("v148 changed file into symlink")
+        if older.stat().st_dev == current.stat().st_dev and older.stat().st_ino == current.stat().st_ino:
+            continue
+        if sha256(older)!=sha256(current):
+            changed.add(rel)
+    if changed != {"estate/index.html","source-lock.json"}:
+        raise UnadmittedReaderRoute("v148 changed unrelated Reader, media or stage assets")
+    return {**inherited,"estate/index.html":APPROVED_SPECIMEN_READER_SHA256}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -526,6 +603,9 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_SELF_OUT_LOUD_RELEASE:
             self.approved_essay = approved_self_out_loud_essay_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_SPECIMEN_RELEASE:
+            self.approved_essay = approved_typographic_specimen_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -533,7 +613,8 @@ class ReaderProvenanceGate:
             target = self.current / rel
             if (self.current.name in (
                         APPROVED_VERGIL_LISTENING_RELEASE,
-                        APPROVED_SELF_OUT_LOUD_RELEASE)
+                        APPROVED_SELF_OUT_LOUD_RELEASE,
+                        APPROVED_SPECIMEN_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -543,7 +624,8 @@ class ReaderProvenanceGate:
                         if self.current.name in (
                             APPROVED_VERGIL_AUDITION_RELEASE,
                             APPROVED_VERGIL_LISTENING_RELEASE,
-                            APPROVED_SELF_OUT_LOUD_RELEASE)
+                            APPROVED_SELF_OUT_LOUD_RELEASE,
+                            APPROVED_SPECIMEN_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
