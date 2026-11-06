@@ -1939,6 +1939,120 @@ def approved_governance_social_v164_files(baseline:Path,candidate:Path)->dict[st
 
 
 
+APPROVED_SOUND_CRAFT_V165_RELEASE="shared-shell-20261106-v165-satzfunk-csound-ab-eb45a85"
+APPROVED_SOUND_CRAFT_V165_LOCK_SHA256="1f369206aef342b8423f959df437e1c069e0312c5ee75ac1f8a947ec4d0c3a36"
+APPROVED_SOUND_CRAFT_V165_RECEIPT_SHA256="9e120b320e7f03206756d4a12d3d81b5bc94b6c1683259603616ef1f22cd0836"
+APPROVED_SOUND_CRAFT_V165_SCORE_SHA256="21ae0eda6621d1b2ff90a1baaa792def576d7399da62cc90609022d854abda49"
+APPROVED_SOUND_CRAFT_V165_REVISED_SHA256="b1da1f4c3651e84eb55e104d02d311ebd047278a046f427563600e091348ea44"
+APPROVED_SOUND_CRAFT_V165_CHANGED={
+    "estate/index.html":"5a2a8c084d806c515890e276be445fe34c21ca0243948d8cc088bcc70e65ab97",
+    "estate/assets/linotype/reading-first-app.js":"46876ca7b54c5f26df2372f1ec037871e61f6773a406ff41ec32a634337b7831"
+}
+APPROVED_SOUND_CRAFT_V165_ADDED={
+    "estate/media/kino/sound-craft/source-manifest.json":"712488ba5ae545692a7336f82a0b126b5165b85d62fcdf1d7ca91929c17786b7",
+    "estate/media/kino/sound-craft/edition.json":"20ff8f8acfb30efe189ec6e9981fffd3c8297a80cd4ad08a34523c68956b9e0f",
+    "estate/media/kino/sound-craft/a-literal.csd":"1f21a92ded2ceeaa699111254987c1d411bb740ebebfc140ef1b919ca9738ab7",
+    "estate/media/kino/sound-craft/b-directed.csd":"928656e3a6e8a6a2edf7ea9fad55b844afca1b27bd4af94140a63b3b5850a202",
+    "estate/media/kino/sound-craft/a-literal.m4a":"f8db7d1cee00b6e346fb400567c2868e99a97cf4c51007b3fe47fe542dbde427",
+    "estate/media/kino/sound-craft/b-directed.m4a":"5413a93ba9a1c471e2178f93f099e412b464f2e25447b8a7f4ebb960b298d94b",
+    "estate/evidence/press-sound-csound-v165.json":APPROVED_SOUND_CRAFT_V165_RECEIPT_SHA256
+}
+
+def approved_sound_craft_v165_files(baseline:Path,candidate:Path)->dict[str,str]:
+    """Preserve v164 byte-for-byte except a single edited essay and two Csound auditions."""
+    if candidate.name!=APPROVED_SOUND_CRAFT_V165_RELEASE:return {}
+    previous=candidate.parent/APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE
+    inherited=approved_governance_social_v164_files(baseline,previous)
+    if not inherited:
+        raise UnadmittedReaderRoute("No complete v164 predecessor for audio proof")
+    if sha256(candidate/"source-lock.json")!=APPROVED_SOUND_CRAFT_V165_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unapproved v165 source lock")
+    old_lock=json.loads((previous/"source-lock.json").read_text())
+    new_lock=json.loads((candidate/"source-lock.json").read_text())
+    admission=new_lock.pop("pressSoundCsoundV165Admission",None)
+    expected={
+      "schema":"fountain.press.satzfunk-csound-editorial-audition.v1",
+      "release":APPROVED_SOUND_CRAFT_V165_RELEASE,
+      "predecessor":APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE,
+      "sourceOwner":"Fountain-Coach/fountain.coach",
+      "sourceCommit":"eb45a85d7485e7e8e4b093bc259e4f6c8075ec6d",
+      "teatroOwner":"Fountain-Coach/teatro.fountain.coach",
+      "teatroCommit":"1d8f6345ee0cb9fc7b8802cf2f3e0cdd6fc14b03",
+      "editorialSourceSHA256":APPROVED_SOUND_CRAFT_V165_REVISED_SHA256,
+      "csoundScoreSHA256":APPROVED_SOUND_CRAFT_V165_SCORE_SHA256,
+      "readerIndexSHA256":APPROVED_SOUND_CRAFT_V165_CHANGED["estate/index.html"],
+      "readerAppSHA256":APPROVED_SOUND_CRAFT_V165_CHANGED["estate/assets/linotype/reading-first-app.js"],
+      "receiptSHA256":APPROVED_SOUND_CRAFT_V165_RECEIPT_SHA256,
+      "privateWLANOnly":True,
+      "publicReleaseAuthorized":False,
+      "otherWorksPreserved":True,
+      "nativeCsoundScenarioAdmissionClaimed":False
+    }
+    if old_lock!=new_lock or admission!=expected:
+        raise UnadmittedReaderRoute("v165 source-lock changes unrelated book or grants authority")
+    receipt=json.loads((candidate/"estate/evidence/press-sound-csound-v165.json").read_text())
+    if (receipt.get("schema")!="fountain.press.satzfunk-csound-essay-stage.v165"
+        or receipt.get("release")!=APPROVED_SOUND_CRAFT_V165_RELEASE
+        or receipt.get("predecessor")!=APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE
+        or receipt.get("editorialSourceSHA256")!=APPROVED_SOUND_CRAFT_V165_REVISED_SHA256
+        or receipt.get("csoundSourceScoreSHA256")!=APPROVED_SOUND_CRAFT_V165_SCORE_SHA256
+        or receipt.get("privateWLANOnly") is not True
+        or receipt.get("publicReleaseAuthorized") is not False
+        or receipt.get("artisticallyAccepted") is not False
+        or receipt.get("nativeCsoundScenarioAdmitted") is not False
+        or receipt.get("changedSHA256")!={**APPROVED_SOUND_CRAFT_V165_CHANGED,
+              **{k:v for k,v in APPROVED_SOUND_CRAFT_V165_ADDED.items() if k!="estate/evidence/press-sound-csound-v165.json"}}):
+        raise UnadmittedReaderRoute("v165 evidence does not match source and non-public rights")
+    edition=json.loads((candidate/"estate/media/kino/sound-craft/edition.json").read_text())
+    source=json.loads((candidate/"estate/media/kino/sound-craft/source-manifest.json").read_text())
+    if (edition.get("schema")!="satzfunk.recorded-essay-rehearsal.v1"
+        or edition.get("scoreSHA256")!=APPROVED_SOUND_CRAFT_V165_SCORE_SHA256
+        or edition.get("mediaBasePrefix")!="/estate/"
+        or source.get("sourceScoreSHA256")!=APPROVED_SOUND_CRAFT_V165_SCORE_SHA256
+        or source.get("noOutsideRecordings") is not True
+        or source.get("noNativeScenarioAdmissionClaim") is not True
+        or len(edition.get("tracks",[]))!=2
+        or len(source.get("files",[]))!=2
+        or {t.get("id") for t in edition["tracks"]}!={"a-literal","b-directed"}
+        or any(t.get("publicReleaseAuthorized") is not False or
+               t.get("privateRehearsalAuthorized") is not True or
+               t.get("sourceSHA256")!=APPROVED_SOUND_CRAFT_V165_SCORE_SHA256 for t in edition["tracks"])):
+        raise UnadmittedReaderRoute("unverified media/source custody or a public grant")
+    prev_html=(previous/"estate/index.html").read_text()
+    new_html=(candidate/"estate/index.html").read_text()
+    pattern=r'<template data-reader-volume="essay--a-sound-must-earn-its-place"[^>]*>.*?</template>'
+    old_matches=re.findall(pattern,prev_html,re.S)
+    new_matches=re.findall(pattern,new_html,re.S)
+    if (len(old_matches)!=1 or len(new_matches)!=1 or
+        new_html.replace(new_matches[0],old_matches[0],1)!=prev_html or
+        new_matches[0].count("<satzfunk-player compact")!=2 or
+        'data-source-sha256="'+APPROVED_SOUND_CRAFT_V165_REVISED_SHA256+'"' not in new_matches[0] or
+        'It is ready when the work can answer for it.' not in new_matches[0]):
+        raise UnadmittedReaderRoute("v165 changes unrelated reader content or old essay is still visible")
+    app=(candidate/"estate/assets/linotype/reading-first-app.js").read_text()
+    if ("const soundEditionPromise=" not in app or
+        "const soundCraftPromise=" not in app or
+        "if(volume===proofVolume)" not in app or
+        app.count("function syncSatzfunkPlayer(){")!=1):
+        raise UnadmittedReaderRoute("v165 must reuse the existing SatzfunkPlayer")
+    old={p.relative_to(previous).as_posix():p for p in previous.rglob("*") if p.is_file()}
+    new={p.relative_to(candidate).as_posix():p for p in candidate.rglob("*") if p.is_file()}
+    if set(new)-set(old)!=set(APPROVED_SOUND_CRAFT_V165_ADDED) or set(old)-set(new):
+        raise UnadmittedReaderRoute("v165 adds/removes unadmitted assets")
+    for rel,p in new.items():
+        if p.is_symlink():raise UnadmittedReaderRoute("v165 symbolic-link substitution")
+        if rel=="source-lock.json":continue
+        expected_hash=(APPROVED_SOUND_CRAFT_V165_CHANGED.get(rel) or
+                       APPROVED_SOUND_CRAFT_V165_ADDED.get(rel))
+        if expected_hash is not None:
+            if sha256(p)!=expected_hash:
+                raise UnadmittedReaderRoute("v165 source/file SHA mismatch "+rel)
+        elif sha256(p)!=sha256(old[rel]):
+            raise UnadmittedReaderRoute("v165 changes original Reader/other books "+rel)
+    return {**inherited,**APPROVED_SOUND_CRAFT_V165_CHANGED,
+            **APPROVED_SOUND_CRAFT_V165_ADDED}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -2023,6 +2137,9 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE:
             self.approved_essay = approved_governance_social_v164_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_SOUND_CRAFT_V165_RELEASE:
+            self.approved_essay = approved_sound_craft_v165_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -2046,7 +2163,8 @@ class ReaderProvenanceGate:
                             APPROVED_GOVERNANCE_V161_RELEASE,
                             APPROVED_GOVERNANCE_V162_RELEASE,
                             APPROVED_GOVERNANCE_V163_RELEASE,
-                            APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE)
+                            APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE,
+                            APPROVED_SOUND_CRAFT_V165_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -2072,16 +2190,23 @@ class ReaderProvenanceGate:
                             APPROVED_GOVERNANCE_V161_RELEASE,
                             APPROVED_GOVERNANCE_V162_RELEASE,
                             APPROVED_GOVERNANCE_V163_RELEASE,
-                            APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE)
+                            APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE,
+                            APPROVED_SOUND_CRAFT_V165_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
             return
-        if self.current.name == APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE and rel.startswith("estate/share/governance/"):
+        if self.current.name in (APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE, APPROVED_SOUND_CRAFT_V165_RELEASE) and rel.startswith("estate/share/governance/"):
             expected=self.approved_essay.get(rel)
             target=self.current/rel
             if (expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected):
                 raise UnadmittedReaderRoute("Unreviewed Governance static share artifact: "+rel)
+            return
+        if self.current.name == APPROVED_SOUND_CRAFT_V165_RELEASE and rel.startswith("estate/media/kino/sound-craft/"):
+            expected=self.approved_essay.get(rel)
+            target=self.current/rel
+            if expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected:
+                raise UnadmittedReaderRoute("Unreviewed Csound source audition: "+rel)
             return
         # Only the reviewed vector assets may exist under this work folder.
         # In particular, a new standalone index.html is NEVER an allowed
