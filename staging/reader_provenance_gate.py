@@ -2053,6 +2053,104 @@ def approved_sound_craft_v165_files(baseline:Path,candidate:Path)->dict[str,str]
             **APPROVED_SOUND_CRAFT_V165_ADDED}
 
 
+# Source-owned two-figure addition to the already verified original sound essay.
+# This is a reversible private stage publication, not a new Linotype edition,
+# public rights grant, or native Csound Scenario.
+APPROVED_KINO_FIGURES_V166_RELEASE="shared-shell-20261106-v166-essay-kino-figures-d79f9e0"
+APPROVED_KINO_FIGURES_V166_LOCK_SHA256="3ed927bf7388694d85aeb9c3afba878288e8ade4e9654c44285df3a4d59464ee"
+APPROVED_KINO_FIGURES_V166_SOURCE_SHA256="74d99a870040926c6e2ba86cb20e29b7c55585f385e9d0f56d6cc47b481f4432"
+APPROVED_KINO_FIGURES_V166_INDEX_SHA256="2184719abcb24b13ae3ca2c795f2dbabef5419ab46b817343a487efe8407abe1"
+APPROVED_KINO_FIGURES_V166_ADDED={
+    "estate/essays/a-sound-must-earn-its-place/media/illustration-source.json":"3e40e8e014a66511cc23270ad8bd3e1ef7c693db1f855fac5e9d7c6bd325df9b",
+    "estate/essays/a-sound-must-earn-its-place/media/kino-international-architectural-plate-20261106.jpg":"9bfa71540c6b54a4ac83696fbc0506e31ae58e47c681634d9b93dc4386d31a1c",
+    "estate/essays/a-sound-must-earn-its-place/media/kino-international-night-20261106.jpg":"cb7b399aeb472a65a7156f9d9990b39564ba492337ef19365ed079c68ac1bc52",
+    "estate/evidence/press-essay-kino-illustrations-v166.json":"53ca8c476c62fa8e95bbff3a566a58c4ce2de7db22aacb1d03c5a941bda3e3bc",
+}
+def approved_kino_figures_v166_files(baseline:Path,candidate:Path)->dict[str,str]:
+    """Accept exactly two source-addressed figures; preserve original Reader/audio."""
+    if candidate.name!=APPROVED_KINO_FIGURES_V166_RELEASE:return {}
+    previous=candidate.parent/APPROVED_SOUND_CRAFT_V165_RELEASE
+    inherited=approved_sound_craft_v165_files(baseline,previous)
+    if not inherited:raise UnadmittedReaderRoute("Unaccepted v165 sound essay predecessor")
+    if sha256(candidate/"source-lock.json")!=APPROVED_KINO_FIGURES_V166_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unadmitted v166 source lock")
+    old_lock=json.loads((previous/"source-lock.json").read_text())
+    new_lock=json.loads((candidate/"source-lock.json").read_text())
+    grant=new_lock.pop("pressKinoFiguresV166Admission",None)
+    if old_lock!=new_lock:raise UnadmittedReaderRoute("v166 changes unrelated source authority")
+    expected={
+      "schema":"fountain.press.kino-essay-illustrations.v166",
+      "release":APPROVED_KINO_FIGURES_V166_RELEASE,
+      "predecessor":APPROVED_SOUND_CRAFT_V165_RELEASE,
+      "sourceOwner":"Fountain-Coach/fountain.coach",
+      "sourceCommit":"d79f9e0704c143f41dbf5d06a7458997e016f3e1",
+      "sourceSHA256":APPROVED_KINO_FIGURES_V166_SOURCE_SHA256,
+      "previousIndexSHA256":APPROVED_SOUND_CRAFT_V165_CHANGED["estate/index.html"],
+      "readerIndexSHA256":APPROVED_KINO_FIGURES_V166_INDEX_SHA256,
+      "readerAppSHA256":APPROVED_SOUND_CRAFT_V165_CHANGED["estate/assets/linotype/reading-first-app.js"],
+      "receiptSHA256":APPROVED_KINO_FIGURES_V166_ADDED["estate/evidence/press-essay-kino-illustrations-v166.json"],
+      "figures":[
+        {"id":"architectural-plate","sha256":APPROVED_KINO_FIGURES_V166_ADDED["estate/essays/a-sound-must-earn-its-place/media/kino-international-architectural-plate-20261106.jpg"]},
+        {"id":"night-photograph","sha256":APPROVED_KINO_FIGURES_V166_ADDED["estate/essays/a-sound-must-earn-its-place/media/kino-international-night-20261106.jpg"]}],
+      "publicReleaseAuthorized":False,"privateWLANOnly":True,
+      "originalEssayProsePreserved":True,"originalSatzfunkPlayerPreserved":True,
+      "measuredArchitecturalDrawingClaimed":False
+    }
+    if grant!=expected:raise UnadmittedReaderRoute("Unreviewed image provenance/admission")
+    receipt=json.loads((candidate/"estate/evidence/press-essay-kino-illustrations-v166.json").read_text())
+    manifest=json.loads((candidate/"estate/essays/a-sound-must-earn-its-place/media/illustration-source.json").read_text())
+    if (receipt.get("schema")!="fountain.press.kino-essay-illustrations-stage-candidate.v1"
+        or receipt.get("v3SourceSHA256")!=APPROVED_KINO_FIGURES_V166_SOURCE_SHA256
+        or receipt.get("candidateIndexSHA256")!=APPROVED_KINO_FIGURES_V166_INDEX_SHA256
+        or receipt.get("candidateAppUnchanged") is not True
+        or receipt.get("essayBodyTextUnchanged") is not True
+        or receipt.get("csoundSatzfunkTracksUnchanged") is not True
+        or receipt.get("otherReaderVolumesUnchanged") is not True
+        or receipt.get("figureCount")!=2
+        or receipt.get("architecturePlateMeasured") is not False
+        or receipt.get("publicRightsGranted") is not False
+        or manifest.get("schema")!="fountain.press.essay-authored-illustrations.v1"
+        or manifest.get("publicRightsGranted") is not False
+        or len(manifest.get("figures",[]))!=2
+        or [x.get("id") for x in manifest["figures"]]!=["architectural-plate","night-photograph"]
+        or any(x.get("sha256")!=f["sha256"] or x.get("sourceAddress")!="a-sound-must-earn-its-place.figure."+str(i+1)
+               for i,(x,f) in enumerate(zip(manifest["figures"],expected["figures"])))):
+        raise UnadmittedReaderRoute("v166 no longer matches approved art/rights")
+    old_html=(previous/"estate/index.html").read_text()
+    new_html=(candidate/"estate/index.html").read_text()
+    pat=r'<template data-reader-volume="essay--a-sound-must-earn-its-place"[^>]*>.*?</template>'
+    a=re.findall(pat,old_html,re.S)
+    b=re.findall(pat,new_html,re.S)
+    if (len(a)!=1 or len(b)!=1 or new_html.replace(b[0],a[0],1)!=old_html
+        or 'data-source-sha256="'+APPROVED_KINO_FIGURES_V166_SOURCE_SHA256+'"' not in b[0]
+        or b[0].count('<satzfunk-player compact')!=2):
+        raise UnadmittedReaderRoute("v166 changed unrelated Reader or audio")
+    cleaned=b[0]
+    for kind in ("architectural-plate","night-photograph"):
+        pat=r'<figure[^>]*data-source-illustration-id="'+kind+r'"[^>]*>.*?</figure>'
+        matches=re.findall(pat,cleaned,re.S)
+        if len(matches)!=1:raise UnadmittedReaderRoute("Missing/duplicate source figure "+kind)
+        cleaned=cleaned.replace(matches[0],"",1)
+    cleaned=cleaned.replace(APPROVED_KINO_FIGURES_V166_SOURCE_SHA256,APPROVED_SOUND_CRAFT_V165_REVISED_SHA256,1)
+    if cleaned!=a[0]:
+        raise UnadmittedReaderRoute("Illustration insertion changed actual essay prose")
+    old={p.relative_to(previous).as_posix():p for p in previous.rglob("*") if p.is_file()}
+    new={p.relative_to(candidate).as_posix():p for p in candidate.rglob("*") if p.is_file()}
+    if set(new)-set(old)!=set(APPROVED_KINO_FIGURES_V166_ADDED) or set(old)-set(new):
+        raise UnadmittedReaderRoute("v166 adds unknown files or deletes source")
+    for rel,path in new.items():
+        if path.is_symlink():raise UnadmittedReaderRoute("Symlink injection")
+        if rel=="source-lock.json":continue
+        approved=APPROVED_KINO_FIGURES_V166_ADDED.get(rel)
+        if rel=="estate/index.html":approved=APPROVED_KINO_FIGURES_V166_INDEX_SHA256
+        if approved is not None:
+            if sha256(path)!=approved:raise UnadmittedReaderRoute("v166 asset drift "+rel)
+        elif sha256(path)!=sha256(old[rel]):
+            raise UnadmittedReaderRoute("v166 changed other books/audio/Reader "+rel)
+    return {**inherited,"estate/index.html":APPROVED_KINO_FIGURES_V166_INDEX_SHA256,
+            **APPROVED_KINO_FIGURES_V166_ADDED}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -2140,6 +2238,9 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_SOUND_CRAFT_V165_RELEASE:
             self.approved_essay = approved_sound_craft_v165_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_KINO_FIGURES_V166_RELEASE:
+            self.approved_essay = approved_kino_figures_v166_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -2164,7 +2265,8 @@ class ReaderProvenanceGate:
                             APPROVED_GOVERNANCE_V162_RELEASE,
                             APPROVED_GOVERNANCE_V163_RELEASE,
                             APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE,
-                            APPROVED_SOUND_CRAFT_V165_RELEASE)
+                            APPROVED_SOUND_CRAFT_V165_RELEASE,
+                            APPROVED_KINO_FIGURES_V166_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -2191,22 +2293,31 @@ class ReaderProvenanceGate:
                             APPROVED_GOVERNANCE_V162_RELEASE,
                             APPROVED_GOVERNANCE_V163_RELEASE,
                             APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE,
-                            APPROVED_SOUND_CRAFT_V165_RELEASE)
+                            APPROVED_SOUND_CRAFT_V165_RELEASE,
+                            APPROVED_KINO_FIGURES_V166_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
             return
-        if self.current.name in (APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE, APPROVED_SOUND_CRAFT_V165_RELEASE) and rel.startswith("estate/share/governance/"):
+        if self.current.name in (APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE, APPROVED_SOUND_CRAFT_V165_RELEASE, APPROVED_KINO_FIGURES_V166_RELEASE) and rel.startswith("estate/share/governance/"):
             expected=self.approved_essay.get(rel)
             target=self.current/rel
             if (expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected):
                 raise UnadmittedReaderRoute("Unreviewed Governance static share artifact: "+rel)
             return
-        if self.current.name == APPROVED_SOUND_CRAFT_V165_RELEASE and rel.startswith("estate/media/kino/sound-craft/"):
+        if self.current.name in (APPROVED_SOUND_CRAFT_V165_RELEASE, APPROVED_KINO_FIGURES_V166_RELEASE) and rel.startswith("estate/media/kino/sound-craft/"):
             expected=self.approved_essay.get(rel)
             target=self.current/rel
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected:
                 raise UnadmittedReaderRoute("Unreviewed Csound source audition: "+rel)
+            return
+        if self.current.name == APPROVED_KINO_FIGURES_V166_RELEASE and rel.startswith(
+            "estate/essays/a-sound-must-earn-its-place/media/"
+        ):
+            expected=self.approved_essay.get(rel)
+            target=self.current/rel
+            if expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected:
+                raise UnadmittedReaderRoute("Unreviewed sound essay illustration: "+rel)
             return
         # Only the reviewed vector assets may exist under this work folder.
         # In particular, a new standalone index.html is NEVER an allowed
