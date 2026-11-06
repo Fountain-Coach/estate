@@ -2248,6 +2248,197 @@ def approved_kino_composition_v167_files(baseline:Path,candidate:Path)->dict[str
     return {**inherited,**changed}
 
 
+# Complete Kino essay: four source-identified listening examples, two original inline illustrations.
+# Adds no second Reader, player, public media grant or independent front-door route.
+APPROVED_KINO_COMPLETE_V168_RELEASE="shared-shell-20261106-v168-kino-complete-9a2fd4f"
+APPROVED_KINO_COMPLETE_V168_LOCK_SHA="9bf083f2bf813385cc3d3e3095305ef7d7abb4e2d7e8c70172f23f7a06a3f075"
+APPROVED_KINO_COMPLETE_V168_SOURCE_SHA="3be10b6505dc7a58c10954c6ce10146e7d4adca591abd30bd1b305ac7cf8a858"
+APPROVED_KINO_COMPLETE_V168_CHANGED={
+ "estate/index.html":"98fd4f38587db9202bc0ad84cc9ebc2888fefdfbc30b14169b7dd79eac9e3c86",
+ "estate/assets/linotype/reading-first-app.js":"4c238138d2ba7bd1860509bd0441ce8975be569a528110b87f33ae9a8f5bc9bf"
+}
+APPROVED_KINO_COMPLETE_V168_ADDED={
+ "estate/media/kino/history/sources.json":"d2e6e6e2cc5a3f974a2cbc383d651c03a2ef6898ab8879e05a0e89cb9ff3df21",
+ "estate/media/kino/history/edition.json":"eec6bc41680c5273c04065ffd14350ffc0617773a22c8e7f8dd244c5a589bcc9",
+ "estate/media/kino/history/kino-history-groove.m4a":"0edefc5adc7ac0d60454fc94eedca5cd24c08162fadd0479004d689f50b52784",
+ "estate/media/kino/history/kino-history-memory.m4a":"feeaa9a898b161458c7dcde5ab7dadbaa3b4882572d3ab8a1b40746087188450",
+ "estate/evidence/press-kino-complete-v168.json":"082d2d7e3f4445d3a8b19495b19b53d553245c280e1bbc2b663206d8e49c2d7f"
+}
+def approved_kino_complete_v168_files(baseline:Path,candidate:Path)->dict[str,str]:
+    """Verify exactly four source-bound auditions within the existing press shell and audio player."""
+    if candidate.name!=APPROVED_KINO_COMPLETE_V168_RELEASE:return {}
+    prev=candidate.parent/APPROVED_KINO_COMPOSITION_V167_RELEASE
+    inherited=approved_kino_composition_v167_files(baseline,prev)
+    if not inherited:raise UnadmittedReaderRoute("No accepted v167 editorial predecessor")
+    if sha256(candidate/"source-lock.json")!=APPROVED_KINO_COMPLETE_V168_LOCK_SHA:
+        raise UnadmittedReaderRoute("Unapproved full-story source lock")
+    lock_before=json.loads((prev/"source-lock.json").read_text())
+    lock_after=json.loads((candidate/"source-lock.json").read_text())
+    grant=lock_after.pop("pressKinoFullStoryV168Admission",None)
+    expected={
+      "schema":"fountain.press.kino-four-auditions.v168",
+      "release":APPROVED_KINO_COMPLETE_V168_RELEASE,
+      "predecessor":APPROVED_KINO_COMPOSITION_V167_RELEASE,
+      "sourceOwner":"Fountain-Coach/fountain.coach",
+      "sourceCommit":"9a2fd4ff9184cc28adde9fbbf6e246130dfd62a2",
+      "teatroOwner":"Fountain-Coach/teatro.fountain.coach",
+      "teatroCommit":"36e785bdb3d3236f01bd66ce98c034d697b07e3c",
+      "sourceSHA256":APPROVED_KINO_COMPLETE_V168_SOURCE_SHA,
+      "readerIndexSHA256":APPROVED_KINO_COMPLETE_V168_CHANGED["estate/index.html"],
+      "readerAppSHA256":APPROVED_KINO_COMPLETE_V168_CHANGED["estate/assets/linotype/reading-first-app.js"],
+      "receiptSHA256":APPROVED_KINO_COMPLETE_V168_ADDED["estate/evidence/press-kino-complete-v168.json"],
+      "fourAudioTracks":True,
+      "historicalBrowserCapturesClaimed":False,
+      "originalReaderUnchanged":True,
+      "privateWLANOnly":True,
+      "publicReleaseAuthorized":False
+    }
+    if lock_after!=lock_before or grant!=expected:
+        raise UnadmittedReaderRoute("Kino full story provenance/source authority mismatch")
+    receipt=json.loads((candidate/"estate/evidence/press-kino-complete-v168.json").read_text())
+    if (receipt.get("schema")!="fountain.press.kino-complete-four-auditions.v1" or
+        receipt.get("sourceSHA256")!=APPROVED_KINO_COMPLETE_V168_SOURCE_SHA or
+        receipt.get("indexSHA256")!=APPROVED_KINO_COMPLETE_V168_CHANGED["estate/index.html"] or
+        receipt.get("appSHA256")!=APPROVED_KINO_COMPLETE_V168_CHANGED["estate/assets/linotype/reading-first-app.js"] or
+        receipt.get("privateWLANOnly") is not True or
+        receipt.get("publicRightsGranted") is not False or
+        receipt.get("historicalCaptureClaimed") is not False or
+        receipt.get("historicRecordingCount")!=2 or
+        receipt.get("controlledCsoundRecordingCount")!=2):
+        raise UnadmittedReaderRoute("Wrong Kino essay receipt/release claim")
+    manifest=json.loads((candidate/"estate/media/kino/history/sources.json").read_text())
+    edition=json.loads((candidate/"estate/media/kino/history/edition.json").read_text())
+    if (manifest.get("originalCapture") is not False or
+        manifest.get("sourceStemsCsoundRendered") is not True or
+        manifest.get("borrowedSamples") is not False or
+        len(manifest.get("files",[]))!=2 or
+        edition.get("schema")!="satzfunk.recorded-essay-rehearsal.v1" or
+        edition.get("mediaBasePrefix")!="/estate/" or
+        len(edition.get("tracks",[]))!=2 or
+        {t.get("id") for t in edition["tracks"]}!={"kino-history-groove","kino-history-memory"} or
+        any(t.get("sourceSHA256")!=APPROVED_KINO_COMPLETE_V168_ADDED["estate/media/kino/history/sources.json"] or
+            t.get("mediaSHA256")!=APPROVED_KINO_COMPLETE_V168_ADDED.get("estate/media/kino/history/"+t.get("id","")+".m4a") or
+            t.get("publicReleaseAuthorized") is not False or
+            t.get("privateRehearsalAuthorized") is not True for t in edition["tracks"])):
+        raise UnadmittedReaderRoute("Unverified Csound stem reconstruction/rights")
+    previous=(prev/"estate/index.html").read_text()
+    revised=(candidate/"estate/index.html").read_text()
+    pat=r'<template data-reader-volume="essay--a-sound-must-earn-its-place"[^>]*>.*?</template>'
+    a=re.findall(pat,previous,re.S);b=re.findall(pat,revised,re.S)
+    if len(a)!=1 or len(b)!=1 or revised.replace(b[0],a[0],1)!=previous:
+        raise UnadmittedReaderRoute("Kino full story overwrites unrelated volume or Reader")
+    essay=b[0]
+    if (essay.count("<satzfunk-player compact")!=4 or
+        essay.count('data-source-illustration-id=')!=2 or
+        'data-source-sha256="'+APPROVED_KINO_COMPLETE_V168_SOURCE_SHA+'"' not in essay or
+        any(essay.count('data-sound-track-id="'+t+'"')!=1 for t in (
+          "kino-history-groove","kino-history-memory","a-literal","b-directed")) or
+        essay.find('data-source-illustration-id="architectural-plate"')>=essay.find('data-press-media="kino-history-reconstruction"') or
+        essay.find('data-press-media="kino-history-reconstruction"')>=essay.find('data-source-illustration-id="night-photograph"') or
+        essay.find('data-source-illustration-id="night-photograph"')>=essay.find('data-press-media="satzfunk-csound-kino-a-b"')):
+        raise UnadmittedReaderRoute("Kino original figures/comparison sequence not respected")
+    oldfiles={x.relative_to(prev).as_posix():x for x in prev.rglob('*') if x.is_file()}
+    newfiles={x.relative_to(candidate).as_posix():x for x in candidate.rglob('*') if x.is_file()}
+    if set(newfiles)-set(oldfiles)!=set(APPROVED_KINO_COMPLETE_V168_ADDED) or set(oldfiles)-set(newfiles):
+        raise UnadmittedReaderRoute("Unreviewed audio/artwork route additions or removals")
+    for name,file in newfiles.items():
+        if file.is_symlink():raise UnadmittedReaderRoute("Unreviewed artifact symlink")
+        if name=="source-lock.json":continue
+        digest=APPROVED_KINO_COMPLETE_V168_CHANGED.get(name,APPROVED_KINO_COMPLETE_V168_ADDED.get(name))
+        if digest is None:digest=sha256(oldfiles[name])
+        if sha256(file)!=digest:raise UnadmittedReaderRoute("Kino audio/Reader source mismatch: "+name)
+    return {**inherited,**APPROVED_KINO_COMPLETE_V168_CHANGED,**APPROVED_KINO_COMPLETE_V168_ADDED}
+
+
+
+# The author requested the executable Kino instruments within the established Reader.
+APPROVED_KINO_LIVE_V169_RELEASE="shared-shell-20261106-v169-kino-live-06f63f7"
+APPROVED_KINO_LIVE_V169_LOCK_SHA="00e05c0bfa1aab1cc45d79fa5b77ccbece6c00116e9b6dd1beecc1121edb5089"
+APPROVED_KINO_LIVE_V169_INDEX_SHA="9f951ffc2d8cb81653058a2b745233c8cd267b115dff06bb5796731a33ee9577"
+APPROVED_KINO_LIVE_V169_SOURCE_SHA="22e7d1ee3bcc442767d256c090dc6da5be222f9e1b7cb50eef807ffdf62f71ab"
+APPROVED_KINO_LIVE_V169_ADDED={
+ "teatro/assets/book-csound-host.js":"2a02492a70b6c6bc5352cf405f5203feca4122a3d3dc87a68d38df5ef228e601",
+ "teatro/interludes/kino/live-csound/directed.json":"749f61ebe5b7b7b3dfd8d4f5a9f8389763d9e94e3b9398e0e158a89e49c08632",
+ "teatro/interludes/kino/live-csound/index.html":"a150360ec0f83326181d0db6afa6bedcf9bd192fa6e1df369d7ef07defd310cc",
+ "teatro/interludes/kino/live-csound/literal.json":"336be538389e156c013e6c06188a4d32e59d668aeef990acd0d6f74ab87f7deb",
+ "teatro/interludes/kino/live-csound/live.mjs":"d5212945e12484d055583c8656e400d65b6227655a3552f872bdc73ea652d111",
+ "teatro/interludes/kino/live-csound/history-groove.json":"c37ab308dba5431e1911cf823f592c4dec1707cf170c92c819ed3c2052b4046c",
+ "teatro/interludes/kino/live-csound/history-memory.json":"b3d780bdbc02c9a9464765cd7217764453b514b7bb1e83f5cc85e7a36b498ef5",
+ "estate/evidence/press-kino-live-v169.json":"279d3c89b58996c2e8a5a2fcca4938473d7b86e7c282177951057399aa751ecf",
+}
+def approved_kino_live_v169_files(baseline:Path,candidate:Path)->dict[str,str]:
+    if candidate.name!=APPROVED_KINO_LIVE_V169_RELEASE:return {}
+    previous=candidate.parent/APPROVED_KINO_COMPLETE_V168_RELEASE
+    inherited=approved_kino_complete_v168_files(baseline,previous)
+    if not inherited:raise UnadmittedReaderRoute("v169 predecessor not admitted")
+    if sha256(candidate/"source-lock.json")!=APPROVED_KINO_LIVE_V169_LOCK_SHA:
+        raise UnadmittedReaderRoute("v169 unexpected source-lock")
+    old_lock=json.loads((previous/"source-lock.json").read_text())
+    new_lock=json.loads((candidate/"source-lock.json").read_text())
+    expected={
+      "schema":"fountain.press.kino-live-csound.v169",
+      "release":APPROVED_KINO_LIVE_V169_RELEASE,
+      "predecessor":APPROVED_KINO_COMPLETE_V168_RELEASE,
+      "sourceOwner":"Fountain-Coach/fountain.coach",
+      "sourceCommit":"06f63f797c0d5050d0ede0fb9c6ce2ce24f41973",
+      "teatroOwner":"Fountain-Coach/teatro.fountain.coach",
+      "teatroCommit":"29211dd2eda1a887da413db1081fc3cb4d471ca0",
+      "manuscriptSHA256":APPROVED_KINO_LIVE_V169_SOURCE_SHA,
+      "indexSHA256":APPROVED_KINO_LIVE_V169_INDEX_SHA,
+      "readerAppSHA256":APPROVED_KINO_COMPLETE_V168_CHANGED["estate/assets/linotype/reading-first-app.js"],
+      "receiptSHA256":APPROVED_KINO_LIVE_V169_ADDED["estate/evidence/press-kino-live-v169.json"],
+      "liveCsoundAudioWorkletCount":4,
+      "historicalCapturesClaimed":False,
+      "privateWLANOnly":True,
+      "publicReleaseAuthorized":False
+    }
+    admission=new_lock.pop("pressKinoLiveV169Admission",None)
+    if old_lock!=new_lock or admission!=expected:
+        raise UnadmittedReaderRoute("v169 lineage/rights/admission mismatch")
+    receipt=json.loads((candidate/"estate/evidence/press-kino-live-v169.json").read_text())
+    if (receipt.get("schema")!="fountain.press.kino-live-csound-stage.v169"
+        or receipt.get("manuscriptSHA256")!=APPROVED_KINO_LIVE_V169_SOURCE_SHA
+        or receipt.get("readerIndexSHA256")!=APPROVED_KINO_LIVE_V169_INDEX_SHA
+        or receipt.get("readerAppSHA256")!=expected["readerAppSHA256"]
+        or receipt.get("recordedComparisonCount")!=4
+        or receipt.get("liveSourceCount")!=4
+        or receipt.get("liveSynthIDs")!=["history-groove","history-memory","literal","directed"]
+        or receipt.get("existingImagesPreserved") is not True
+        or receipt.get("originalBrowserCapturesClaimed") is not False
+        or receipt.get("privateWLANOnly") is not True
+        or receipt.get("publicReleaseAuthorized") is not False
+        or receipt.get("changed")!={"estate/index.html":APPROVED_KINO_LIVE_V169_INDEX_SHA}
+        or receipt.get("added")!={k:v for k,v in APPROVED_KINO_LIVE_V169_ADDED.items() if k!="estate/evidence/press-kino-live-v169.json"}):
+        raise UnadmittedReaderRoute("v169 receipt/rights/source mismatch")
+    original=(previous/"estate/index.html").read_text()
+    revised=(candidate/"estate/index.html").read_text()
+    pattern=r'<template data-reader-volume="essay--a-sound-must-earn-its-place"[^>]*>.*?</template>'
+    old=re.findall(pattern,original,re.S)
+    new=re.findall(pattern,revised,re.S)
+    if (len(old)!=1 or len(new)!=1 or revised.replace(new[0],old[0],1)!=original
+        or new[0].count("<satzfunk-player compact")!=4
+        or new[0].count('data-source-illustration-id=')!=2
+        or new[0].count("<iframe ")!=2
+        or new[0].count('data-press-live-csound="')!=2
+        or 'data-source-sha256="'+APPROVED_KINO_LIVE_V169_SOURCE_SHA+'"' not in new[0]):
+        raise UnadmittedReaderRoute("v169 changed unrelated book or missing live Csound")
+    for pair in ("history","controlled"):
+        if new[0].count('src="/teatro/interludes/kino/live-csound/?pair='+pair+'"')!=1:
+            raise UnadmittedReaderRoute("v169 changed approved live instrument projection")
+    oldfiles={x.relative_to(previous).as_posix():x for x in previous.rglob("*") if x.is_file()}
+    newfiles={x.relative_to(candidate).as_posix():x for x in candidate.rglob("*") if x.is_file()}
+    if set(newfiles)-set(oldfiles)!=set(APPROVED_KINO_LIVE_V169_ADDED) or set(oldfiles)-set(newfiles):
+        raise UnadmittedReaderRoute("v169 unapproved files added/deleted")
+    for rel,path in newfiles.items():
+        if path.is_symlink():raise UnadmittedReaderRoute("v169 asset symlink")
+        if rel=="source-lock.json":continue
+        expected_hash=APPROVED_KINO_LIVE_V169_INDEX_SHA if rel=="estate/index.html" else APPROVED_KINO_LIVE_V169_ADDED.get(rel)
+        if expected_hash is None:expected_hash=sha256(oldfiles[rel])
+        if sha256(path)!=expected_hash:raise UnadmittedReaderRoute("v169 asset mismatch: "+rel)
+    return {**inherited,"estate/index.html":APPROVED_KINO_LIVE_V169_INDEX_SHA,**APPROVED_KINO_LIVE_V169_ADDED}
+
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -2341,6 +2532,12 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_KINO_COMPOSITION_V167_RELEASE:
             self.approved_essay = approved_kino_composition_v167_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_KINO_COMPLETE_V168_RELEASE:
+            self.approved_essay = approved_kino_complete_v168_files(
+                self.baseline, self.current)
+        if self.current.name == APPROVED_KINO_LIVE_V169_RELEASE:
+            self.approved_essay = approved_kino_live_v169_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -2366,7 +2563,7 @@ class ReaderProvenanceGate:
                             APPROVED_GOVERNANCE_V163_RELEASE,
                             APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE,
                             APPROVED_SOUND_CRAFT_V165_RELEASE,
-                            APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE)
+                            APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE, APPROVED_KINO_COMPLETE_V168_RELEASE, APPROVED_KINO_LIVE_V169_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -2394,30 +2591,45 @@ class ReaderProvenanceGate:
                             APPROVED_GOVERNANCE_V163_RELEASE,
                             APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE,
                             APPROVED_SOUND_CRAFT_V165_RELEASE,
-                            APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE)
+                            APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE, APPROVED_KINO_COMPLETE_V168_RELEASE, APPROVED_KINO_LIVE_V169_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
             return
-        if self.current.name in (APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE, APPROVED_SOUND_CRAFT_V165_RELEASE, APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE) and rel.startswith("estate/share/governance/"):
+        if self.current.name in (APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE, APPROVED_SOUND_CRAFT_V165_RELEASE, APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE, APPROVED_KINO_COMPLETE_V168_RELEASE, APPROVED_KINO_LIVE_V169_RELEASE) and rel.startswith("estate/share/governance/"):
             expected=self.approved_essay.get(rel)
             target=self.current/rel
             if (expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected):
                 raise UnadmittedReaderRoute("Unreviewed Governance static share artifact: "+rel)
             return
-        if self.current.name in (APPROVED_SOUND_CRAFT_V165_RELEASE, APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE) and rel.startswith("estate/media/kino/sound-craft/"):
+        if self.current.name in (APPROVED_SOUND_CRAFT_V165_RELEASE, APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE, APPROVED_KINO_COMPLETE_V168_RELEASE, APPROVED_KINO_LIVE_V169_RELEASE) and rel.startswith("estate/media/kino/sound-craft/"):
             expected=self.approved_essay.get(rel)
             target=self.current/rel
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected:
                 raise UnadmittedReaderRoute("Unreviewed Csound source audition: "+rel)
             return
-        if self.current.name in (APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE) and rel.startswith(
+        if self.current.name in (APPROVED_KINO_FIGURES_V166_RELEASE, APPROVED_KINO_COMPOSITION_V167_RELEASE, APPROVED_KINO_COMPLETE_V168_RELEASE, APPROVED_KINO_LIVE_V169_RELEASE) and rel.startswith(
             "estate/essays/a-sound-must-earn-its-place/media/"
         ):
             expected=self.approved_essay.get(rel)
             target=self.current/rel
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected:
                 raise UnadmittedReaderRoute("Unreviewed sound essay illustration: "+rel)
+            return
+        if self.current.name == APPROVED_KINO_COMPLETE_V168_RELEASE and rel.startswith("estate/media/kino/history/"):
+            expected=self.approved_essay.get(rel)
+            target=self.current/rel
+            if expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected:
+                raise UnadmittedReaderRoute("Unreviewed Kino historic recording: "+rel)
+            return
+        if self.current.name == APPROVED_KINO_LIVE_V169_RELEASE and (
+            rel.startswith("teatro/interludes/kino/live-csound/")
+            or rel.startswith("teatro/assets/")
+        ):
+            expected=self.approved_essay.get(rel)
+            target=self.current/rel
+            if expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected:
+                raise UnadmittedReaderRoute("Unadmitted live Csound Teatro asset: "+rel)
             return
         # Only the reviewed vector assets may exist under this work folder.
         # In particular, a new standalone index.html is NEVER an allowed
