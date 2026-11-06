@@ -1516,6 +1516,209 @@ def approved_press_sound_v160_files(baseline:Path,candidate:Path)->dict[str,str]
     return {**inherited,**PRESS_SOUND_V160_MODIFIED,**PRESS_SOUND_V160_ADDED}
 
 
+APPROVED_GOVERNANCE_V161_RELEASE="shared-shell-20261106-v161-governance-complete-9dfb0fc"
+APPROVED_GOVERNANCE_V161_LOCK_SHA256="c852c8ea2d3e89a8c1edfa48aa7a69c8a3c1ac638dc81e2d3b0dd8a167fe983d"
+APPROVED_GOVERNANCE_V161_INDEX_SHA256="c2b45a1743aac8f504a8011b62b3de76b19762af94f9ad998a3c1fa71063ebfd"
+APPROVED_GOVERNANCE_V161_APP_SHA256="9fc914956045523522a1a4557721bb22a20fe995cb82f2f8c85c053f1f929f09"
+APPROVED_GOVERNANCE_V161_RECEIPT_SHA256="cc88dab7dc8a9973b306401a47746508af4d4f23b841da003dafafd36fc09fbe"
+GOVERNANCE_V161_CHANGED={
+    "estate/index.html":APPROVED_GOVERNANCE_V161_INDEX_SHA256,
+    "estate/assets/linotype/reading-first-app.js":APPROVED_GOVERNANCE_V161_APP_SHA256,
+}
+GOVERNANCE_V161_ADDED={
+    "estate/evidence/press-governance-v161.json":APPROVED_GOVERNANCE_V161_RECEIPT_SHA256,
+}
+
+
+def approved_governance_v161_files(baseline:Path,candidate:Path)->dict[str,str]:
+    """Full canonical 160-chapter Governance proof with exact inherited Reader.
+
+    This private WAN-independent staging exception does not edit the public
+    Governance source, issue a Store admission or authorize production release.
+    """
+    if candidate.name!=APPROVED_GOVERNANCE_V161_RELEASE:
+        return {}
+    prior=candidate.parent/APPROVED_PRESS_SOUND_V160_RELEASE
+    inherited=approved_press_sound_v160_files(baseline,prior)
+    if not inherited:
+        raise UnadmittedReaderRoute("Full Governance stage lacks accepted v160 Reader lineage")
+    if sha256(candidate/"source-lock.json")!=APPROVED_GOVERNANCE_V161_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unexpected full Governance stage source-lock digest")
+    before=json.loads((prior/"source-lock.json").read_text())
+    after=json.loads((candidate/"source-lock.json").read_text())
+    admission=after.pop("pressGovernanceV161Admission",None)
+    expected={
+        "schema":"fountain.press.governance-complete-wlan-admission.v1",
+        "predecessor":APPROVED_PRESS_SOUND_V160_RELEASE,
+        "release":APPROVED_GOVERNANCE_V161_RELEASE,
+        "sourceOwner":"Fountain-Coach/governance.fountain.coach",
+        "sourceCommit":"03f15306a018eddd85fab491e592d2fdffd61528",
+        "readerOwner":"Fountain-Coach/fountain.coach",
+        "readerCommit":"80f09f059db61611925cf273ca0c3cd54cabe4eb",
+        "pressOwner":"Fountain-Coach/fountain-press",
+        "pressCommit":"9dfb0fcb1234879a84671ee514b631d4f286fe12",
+        "sourceStatusSHA256":"48d563a4f0e7a03fb9ee27c63e00c0745b4b50364a73e91ba0c86cd4433482b3",
+        "sourceChapterCount":160,
+        "sourceCurrentCount":72,
+        "sourceReferenceCount":88,
+        "sourceOriginalFigures":70,
+        "existingLinotypeCompositorUnchanged":True,
+        "existingReaderAndPrivateMediaPreserved":True,
+        "governanceSourceUnchanged":True,
+        "privateWLANOnly":True,
+        "publicReleaseAuthorized":False,
+        "changedFileSHA256":GOVERNANCE_V161_CHANGED,
+        "addedFileSHA256":GOVERNANCE_V161_ADDED,
+    }
+    if after!=before or admission!=expected:
+        raise UnadmittedReaderRoute("Missing exact source-owned Governance edition admission")
+    old={p.relative_to(prior).as_posix():p for p in prior.rglob("*") if p.is_file()}
+    new={p.relative_to(candidate).as_posix():p for p in candidate.rglob("*") if p.is_file()}
+    if (set(new)-set(old)!=set(GOVERNANCE_V161_ADDED) or set(old)-set(new)):
+        raise UnadmittedReaderRoute("Unexpected added/removed file in complete Governance stage")
+    for name,path in new.items():
+        if path.is_symlink():
+            raise UnadmittedReaderRoute("Symlink in source-locked Governance artifact "+name)
+        if name=="source-lock.json":
+            continue
+        expected_hash=GOVERNANCE_V161_CHANGED.get(name,GOVERNANCE_V161_ADDED.get(name))
+        if expected_hash:
+            if sha256(path)!=expected_hash:
+                raise UnadmittedReaderRoute("Unrecognized Governance reader/receipt bytes: "+name)
+        elif sha256(path)!=sha256(old[name]):
+            raise UnadmittedReaderRoute("Existing Reader, private media or canonical Governance route changed: "+name)
+    record=json.loads((candidate/"estate/evidence/press-governance-v161.json").read_text())
+    if (record.get("schema")!="fountain.press.governance-complete-wlan-stage.v1"
+        or record.get("sourceCommit")!=expected["sourceCommit"]
+        or record.get("pressCommit")!=expected["pressCommit"]
+        or record.get("readerCommit")!=expected["readerCommit"]
+        or record.get("chapterCount")!=160
+        or record.get("chapterStatuses")!={"current":72,"reference":88}
+        or record.get("governanceStatusSHA256")!=expected["sourceStatusSHA256"]
+        or record.get("stageOnly") is not True
+        or record.get("publicReleaseAuthorized") is not False
+        or record.get("measuredLinotypeCompositorChanged") is not False
+        or record.get("governanceSourceModified") is not False
+        or record.get("privateAudioStagePreserved") is not True):
+        raise UnadmittedReaderRoute("False Governance publication status or source identity")
+    chapters=record.get("chapterSources")
+    if not isinstance(chapters,list) or len(chapters)!=160 or len({c.get("slug") for c in chapters})!=160:
+        raise UnadmittedReaderRoute("Incomplete or duplicate Governance corpus")
+    if sum(c.get("status")=="current" for c in chapters)!=72 or sum(c.get("status")=="reference" for c in chapters)!=88:
+        raise UnadmittedReaderRoute("Wrong historical/current source classification")
+    html_source=(candidate/"estate/index.html").read_text()
+    if html_source.count('data-reader-volume="governance--')!=160:
+        raise UnadmittedReaderRoute("Not all 160 Governance chapters are in the original Reader")
+    for entry in chapters:
+        if (not re.fullmatch(r"[0-9]{2,3}-[a-z0-9-]+",entry.get("slug",""))
+            or not re.fullmatch(r"[0-9a-f]{64}",entry.get("sourceSha256",""))
+            or ('data-reader-volume="governance--'+entry["slug"]+'"') not in html_source
+            or ('data-source-sha256="'+entry["sourceSha256"]+'"') not in html_source):
+            raise UnadmittedReaderRoute("Unmatched canonical Governance source: "+str(entry.get("slug")))
+    assets=record.get("figureAssetsSHA256")
+    if not isinstance(assets,dict) or len(assets)!=70:
+        raise UnadmittedReaderRoute("Governance figure inventory missing")
+    for url,expected_hash in assets.items():
+        if not re.fullmatch(r"/assets/illustrations/[a-z0-9_.-]+",url):
+            raise UnadmittedReaderRoute("Unrecognized Governance asset path")
+        asset=candidate/"governance"/url.lstrip("/")
+        if (not asset.is_file() or asset.is_symlink()
+            or not re.fullmatch("[0-9a-f]{64}",str(expected_hash))
+            or sha256(asset)!=expected_hash):
+            raise UnadmittedReaderRoute("Missing/stale original Governance art "+url)
+    if sha256(candidate/"estate/assets/linotype/reading-first-press-engine.js")!=sha256(prior/"estate/assets/linotype/reading-first-press-engine.js"):
+        raise UnadmittedReaderRoute("Second Governance compositor is not allowed")
+    return {**inherited,**GOVERNANCE_V161_CHANGED,**GOVERNANCE_V161_ADDED}
+
+
+APPROVED_GOVERNANCE_V162_RELEASE="shared-shell-20261106-v162-governance-link-fidelity-4d6046b"
+APPROVED_GOVERNANCE_V162_LOCK_SHA256="4fbc867a0cc7e50211e2568402341682fd9110fce41c91f8ce30e9f688e4f99e"
+APPROVED_GOVERNANCE_V162_INDEX_SHA256="35ade43f8c38ba56773e1130505d0262e11aec87b716f7d07614eebb13d7156c"
+APPROVED_GOVERNANCE_V162_RECEIPT_SHA256="d69c9208dd03dce8b910271a75c4db664d8481200376f911243d58a0adb00343"
+GOVERNANCE_V162_CHANGED={"estate/index.html":APPROVED_GOVERNANCE_V162_INDEX_SHA256}
+GOVERNANCE_V162_ADDED={"estate/evidence/press-governance-v162.json":APPROVED_GOVERNANCE_V162_RECEIPT_SHA256}
+
+
+def approved_governance_v162_files(baseline:Path,candidate:Path)->dict[str,str]:
+    """Preserve every original Governance href in the existing 160-chapter book.
+
+    No other Reader, source, audio or Estate route may change from admitted v161.
+    """
+    if candidate.name!=APPROVED_GOVERNANCE_V162_RELEASE:
+        return {}
+    prior=candidate.parent/APPROVED_GOVERNANCE_V161_RELEASE
+    inherited=approved_governance_v161_files(baseline,prior)
+    if not inherited:
+        raise UnadmittedReaderRoute("No accepted complete v161 Governance book lineage")
+    if sha256(candidate/"source-lock.json")!=APPROVED_GOVERNANCE_V162_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unknown v162 Governance link-fidelity source-lock")
+    before=json.loads((prior/"source-lock.json").read_text())
+    after=json.loads((candidate/"source-lock.json").read_text())
+    decision=after.pop("pressGovernanceV162Admission",None)
+    expected={
+        "schema":"fountain.press.governance-link-fidelity-wlan-admission.v1",
+        "predecessor":APPROVED_GOVERNANCE_V161_RELEASE,
+        "release":APPROVED_GOVERNANCE_V162_RELEASE,
+        "sourceOwner":"Fountain-Coach/governance.fountain.coach",
+        "sourceCommit":"03f15306a018eddd85fab491e592d2fdffd61528",
+        "pressOwner":"Fountain-Coach/fountain-press",
+        "pressCommit":"4d6046b6fd2438e8e7f0bfe41f6469916922179d",
+        "readerOwner":"Fountain-Coach/fountain.coach",
+        "readerCommit":"82efaddeec7a149774e4611fca908354c1ed74a0",
+        "chapterCount":160,
+        "statusCurrent":72,
+        "statusReference":88,
+        "originalLinksPreserved":1132,
+        "originalFiguresPreserved":70,
+        "priorLinotypeEngineUnchanged":True,
+        "governanceCanonicalSourceUnmodified":True,
+        "privateWLANOnly":True,
+        "publicReleaseAuthorized":False,
+        "changedFileSHA256":GOVERNANCE_V162_CHANGED,
+        "addedFileSHA256":GOVERNANCE_V162_ADDED,
+    }
+    if before!=after or decision!=expected:
+        raise UnadmittedReaderRoute("Missing exact Governance link-fidelity admission")
+    old={p.relative_to(prior).as_posix():p for p in prior.rglob("*") if p.is_file()}
+    new={p.relative_to(candidate).as_posix():p for p in candidate.rglob("*") if p.is_file()}
+    if (set(new)-set(old)!=set(GOVERNANCE_V162_ADDED)
+        or set(old)-set(new)):
+        raise UnadmittedReaderRoute("Additional Governance stage file mutation")
+    for rel,path in new.items():
+        if path.is_symlink():
+            raise UnadmittedReaderRoute("Unreviewed v162 stage symlink "+rel)
+        if rel=="source-lock.json":continue
+        wanted=GOVERNANCE_V162_CHANGED.get(rel,GOVERNANCE_V162_ADDED.get(rel))
+        if wanted:
+            if sha256(path)!=wanted:
+                raise UnadmittedReaderRoute("Unrecognized Governance link-fidelity bytes "+rel)
+        elif sha256(path)!=sha256(old[rel]):
+            raise UnadmittedReaderRoute("Prior Reader/Governance/Kino bytes changed "+rel)
+    record=json.loads((candidate/"estate/evidence/press-governance-v162.json").read_text())
+    if (record.get("schema")!="fountain.press.governance-link-fidelity-wlan-stage.v1"
+        or record.get("sourceCommit")!=expected["sourceCommit"]
+        or record.get("pressCommit")!=expected["pressCommit"]
+        or record.get("readerCommit")!=expected["readerCommit"]
+        or record.get("chapterCount")!=160
+        or record.get("chapterStatuses")!={"current":72,"reference":88}
+        or record.get("sourceLinksOriginal")!=1132
+        or record.get("sourceLinksPreserved")!=1132
+        or record.get("illustrationAssetsPreserved")!=70
+        or record.get("indexSHA256")!=APPROVED_GOVERNANCE_V162_INDEX_SHA256
+        or record.get("appSHA256")!=APPROVED_GOVERNANCE_V161_APP_SHA256
+        or record.get("stageOnly") is not True
+        or record.get("publicReleaseAuthorized") is not False
+        or record.get("readerRuntimeUnchanged") is not True):
+        raise UnadmittedReaderRoute("Untrue Governance original-link acceptance claims")
+    current_html=(candidate/"estate/index.html").read_text()
+    if (current_html.count('data-reader-volume="governance--')!=160
+        or 'https://governance.fountain.coach/assets/social/133-csound-auv3-instrument-boundary.jpg' not in current_html
+        or 'https://governance.fountain.coach/chapters/08-validation-and-acceptance/#cb2-1' not in current_html
+        or sha256(candidate/"estate/assets/linotype/reading-first-app.js")!=APPROVED_GOVERNANCE_V161_APP_SHA256):
+        raise UnadmittedReaderRoute("Lost original Governance link or modified Reader runtime")
+    return {**inherited,**GOVERNANCE_V162_CHANGED,**GOVERNANCE_V162_ADDED}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -1588,6 +1791,12 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_PRESS_SOUND_V160_RELEASE:
             self.approved_essay = approved_press_sound_v160_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_GOVERNANCE_V161_RELEASE:
+            self.approved_essay = approved_governance_v161_files(
+                self.baseline, self.current)
+        if self.current.name == APPROVED_GOVERNANCE_V162_RELEASE:
+            self.approved_essay = approved_governance_v162_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -1607,7 +1816,9 @@ class ReaderProvenanceGate:
                             APPROVED_KINO_GROOVE_RELEASE,
                             APPROVED_KINO_ATMOSPHERE_RELEASE,
                             APPROVED_KINO_MIDNIGHT_RELEASE,
-                            APPROVED_PRESS_SOUND_V160_RELEASE)
+                            APPROVED_PRESS_SOUND_V160_RELEASE,
+                            APPROVED_GOVERNANCE_V161_RELEASE,
+                            APPROVED_GOVERNANCE_V162_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -1629,7 +1840,9 @@ class ReaderProvenanceGate:
                             APPROVED_KINO_GROOVE_RELEASE,
                             APPROVED_KINO_ATMOSPHERE_RELEASE,
                             APPROVED_KINO_MIDNIGHT_RELEASE,
-                            APPROVED_PRESS_SOUND_V160_RELEASE)
+                            APPROVED_PRESS_SOUND_V160_RELEASE,
+                            APPROVED_GOVERNANCE_V161_RELEASE,
+                            APPROVED_GOVERNANCE_V162_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
