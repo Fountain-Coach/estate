@@ -1719,6 +1719,100 @@ def approved_governance_v162_files(baseline:Path,candidate:Path)->dict[str,str]:
     return {**inherited,**GOVERNANCE_V162_CHANGED,**GOVERNANCE_V162_ADDED}
 
 
+APPROVED_GOVERNANCE_V163_RELEASE="shared-shell-20261106-v163-governance-inline-hero-cfc2745"
+APPROVED_GOVERNANCE_V163_LOCK_SHA256="75198bfc5ae03f75d53a5fbc9c1a69b73bde0e5d0f563863d5fe8f73b7989091"
+APPROVED_GOVERNANCE_V163_INDEX_SHA256="4c9298785fa505f8971429be9cf42b10682acc950b534194415193c87472e757"
+APPROVED_GOVERNANCE_V163_RECEIPT_SHA256="8f0125958684dac0a9c2bf1c006f5e39b92e66b95ac43012da62c213745d871e"
+GOVERNANCE_V163_CHANGED={"estate/index.html":APPROVED_GOVERNANCE_V163_INDEX_SHA256}
+GOVERNANCE_V163_ADDED={"estate/evidence/press-governance-v163.json":APPROVED_GOVERNANCE_V163_RECEIPT_SHA256}
+
+
+def approved_governance_v163_files(baseline:Path,candidate:Path)->dict[str,str]:
+    """Only original Governance image source anchors; no new engine or artwork."""
+    if candidate.name!=APPROVED_GOVERNANCE_V163_RELEASE:return {}
+    prior=candidate.parent/APPROVED_GOVERNANCE_V162_RELEASE
+    inherited=approved_governance_v162_files(baseline,prior)
+    if not inherited:
+        raise UnadmittedReaderRoute("Governance hero stage lacks v162 accepted lineage")
+    if sha256(candidate/"source-lock.json")!=APPROVED_GOVERNANCE_V163_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unknown v163 source-lock")
+    before=json.loads((prior/"source-lock.json").read_text())
+    after=json.loads((candidate/"source-lock.json").read_text())
+    admission=after.pop("pressGovernanceV163Admission",None)
+    expected={
+        "schema":"fountain.press.governance-inline-hero-wlan-admission.v1",
+        "release":APPROVED_GOVERNANCE_V163_RELEASE,
+        "predecessor":APPROVED_GOVERNANCE_V162_RELEASE,
+        "sourceOwner":"Fountain-Coach/governance.fountain.coach",
+        "sourceCommit":"03f15306a018eddd85fab491e592d2fdffd61528",
+        "pressOwner":"Fountain-Coach/fountain-press",
+        "pressCommit":"cfc2745772c8d3ea306f86e1cae8ac53f8805a9c",
+        "readerOwner":"Fountain-Coach/fountain.coach",
+        "readerCommit":"748ba55c38e167e9de90d6ec0572191dbcafa41e",
+        "chapterCount":160,"statusCurrent":72,"statusReference":88,
+        "sourceFigureCount":70,"sourceHeroCount":67,"sourceInlineCount":3,
+        "allOriginalLinksUnchanged":True,"existingLinotypeEngineUnchanged":True,
+        "privateWLANOnly":True,"publicReleaseAuthorized":False,
+        "changedFileSHA256":GOVERNANCE_V163_CHANGED,
+        "addedFileSHA256":GOVERNANCE_V163_ADDED,
+    }
+    if before!=after or admission!=expected:
+        raise UnadmittedReaderRoute("Wrong Governance v163 source admission")
+    old={p.relative_to(prior).as_posix():p for p in prior.rglob("*") if p.is_file()}
+    new={p.relative_to(candidate).as_posix():p for p in candidate.rglob("*") if p.is_file()}
+    if set(new)-set(old)!=set(GOVERNANCE_V163_ADDED) or set(old)-set(new):
+        raise UnadmittedReaderRoute("Unexpected Governance v163 file additions/removals")
+    for rel,path in new.items():
+        if path.is_symlink():
+            raise UnadmittedReaderRoute("Unreviewed v163 link "+rel)
+        if rel=="source-lock.json":continue
+        needed=GOVERNANCE_V163_CHANGED.get(rel,GOVERNANCE_V163_ADDED.get(rel))
+        if needed:
+            if sha256(path)!=needed:
+                raise UnadmittedReaderRoute("Wrong v163 exact artifact: "+rel)
+        elif sha256(path)!=sha256(old[rel]):
+            raise UnadmittedReaderRoute("Unrelated Reader or private media mutated: "+rel)
+    expected_html=(prior/"estate/index.html").read_text()
+    new_html=(candidate/"estate/index.html").read_text()
+    marker=(r' data-press-illustration-role="(?:hero|inline)"'
+            r' data-source-illustration-id="[^"]+"'
+            r' data-inline-after-paragraph="\d+"'
+            r' data-source-paragraph-anchor="\d+"')
+    markers=re.findall(marker,new_html)
+    normalized=re.sub(marker,"",new_html)
+    if (normalized!=expected_html or len(markers)!=70 or
+        new_html.count('data-press-illustration-role="hero"')!=67 or
+        new_html.count('data-press-illustration-role="inline"')!=3 or
+        new_html.count('data-reader-volume="governance--')!=160):
+        raise UnadmittedReaderRoute("Governance changes extend beyond 70 source-anchored art figures")
+    record=json.loads((candidate/"estate/evidence/press-governance-v163.json").read_text())
+    if (record.get("schema")!="fountain.press.governance-source-anchored-illustration-wlan-stage.v1"
+        or record.get("sourceRevision")!=expected["sourceCommit"]
+        or record.get("pressCommit")!=expected["pressCommit"]
+        or record.get("readerCommit")!=expected["readerCommit"]
+        or record.get("indexSHA256")!=APPROVED_GOVERNANCE_V163_INDEX_SHA256
+        or record.get("appSHA256")!=APPROVED_GOVERNANCE_V161_APP_SHA256
+        or record.get("figuresInSourceFlow")!=70
+        or record.get("heroFigures")!=67
+        or record.get("inlineFigures")!=3
+        or record.get("existingLinotypeEngineUnchanged") is not True
+        or record.get("unchangedPriorMarkupAfterRemovingOnlySourceAnchors") is not True
+        or record.get("publicReleaseAuthorized") is not False
+        or record.get("socialMediaImagePublicationStatus")!="not-modified-in-this-illustration-placement-fix"):
+        raise UnadmittedReaderRoute("False Governance source illustration or social publishing witness")
+    figures=record.get("anchoredSourceFigureIdentities")
+    if not isinstance(figures,list) or len(figures)!=70 or len({f.get("id") for f in figures})!=70:
+        raise UnadmittedReaderRoute("Incomplete original Governance illustration identities")
+    for f in figures:
+        if (f.get("role") not in ("hero","inline")
+            or not isinstance(f.get("pressAnchorAfterParagraph"),int)
+            or not isinstance(f.get("authoredParagraphCountBeforeFigure"),int)
+            or f["pressAnchorAfterParagraph"]!=max(1,f["authoredParagraphCountBeforeFigure"])
+            or ('data-source-illustration-id="'+f["id"]+'"') not in new_html):
+            raise UnadmittedReaderRoute("Governance figure is not at its pinned source anchor")
+    return {**inherited,**GOVERNANCE_V163_CHANGED,**GOVERNANCE_V163_ADDED}
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -1797,6 +1891,9 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_GOVERNANCE_V162_RELEASE:
             self.approved_essay = approved_governance_v162_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_GOVERNANCE_V163_RELEASE:
+            self.approved_essay = approved_governance_v163_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -1818,7 +1915,8 @@ class ReaderProvenanceGate:
                             APPROVED_KINO_MIDNIGHT_RELEASE,
                             APPROVED_PRESS_SOUND_V160_RELEASE,
                             APPROVED_GOVERNANCE_V161_RELEASE,
-                            APPROVED_GOVERNANCE_V162_RELEASE)
+                            APPROVED_GOVERNANCE_V162_RELEASE,
+                            APPROVED_GOVERNANCE_V163_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -1842,7 +1940,8 @@ class ReaderProvenanceGate:
                             APPROVED_KINO_MIDNIGHT_RELEASE,
                             APPROVED_PRESS_SOUND_V160_RELEASE,
                             APPROVED_GOVERNANCE_V161_RELEASE,
-                            APPROVED_GOVERNANCE_V162_RELEASE)
+                            APPROVED_GOVERNANCE_V162_RELEASE,
+                            APPROVED_GOVERNANCE_V163_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
