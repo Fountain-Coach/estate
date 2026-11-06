@@ -1813,6 +1813,132 @@ def approved_governance_v163_files(baseline:Path,candidate:Path)->dict[str,str]:
     return {**inherited,**GOVERNANCE_V163_CHANGED,**GOVERNANCE_V163_ADDED}
 
 
+APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE="shared-shell-20261106-v164-governance-social-b7b1dee"
+APPROVED_GOVERNANCE_SOCIAL_V164_LOCK_SHA256="61703c3eb1271dd19461b6f79d09df21634efadfc1737d1c01735304e59b3771"
+APPROVED_GOVERNANCE_SOCIAL_V164_MANIFEST_SHA256="07097d3f5d485644b4a28e849d6fbca9e6829daed811f9852efcb417943ce2bc"
+APPROVED_GOVERNANCE_SOCIAL_V164_RECEIPT_SHA256="ea820fd6dd8b20dc888eec5e3494885a159598641df9852b17011c052a8c1244"
+
+def approved_governance_social_v164_files(baseline:Path,candidate:Path)->dict[str,str]:
+    """Only original-source art and measured-page social derivatives; never another Reader."""
+    if candidate.name != APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE:return {}
+    previous=candidate.parent/APPROVED_GOVERNANCE_V163_RELEASE
+    inherited=approved_governance_v163_files(baseline,previous)
+    if not inherited:raise UnadmittedReaderRoute("No accepted v163 figure predecessor")
+    if sha256(candidate/"source-lock.json")!=APPROVED_GOVERNANCE_SOCIAL_V164_LOCK_SHA256:
+        raise UnadmittedReaderRoute("Unpinned social source lock")
+    original_lock=json.loads((previous/"source-lock.json").read_text())
+    current_lock=json.loads((candidate/"source-lock.json").read_text())
+    admission=current_lock.pop("pressGovernanceSocialV164Admission",None)
+    expected={
+        "schema":"fountain.press.governance.static-social-wlan-admission.v1",
+        "release":APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE,
+        "predecessor":APPROVED_GOVERNANCE_V163_RELEASE,
+        "sourceOwner":"Fountain-Coach/governance.fountain.coach",
+        "sourceCommit":"03f15306a018eddd85fab491e592d2fdffd61528",
+        "pressOwner":"Fountain-Coach/fountain-press",
+        "pressCommit":"b7b1deec4d42f249c0cacbb009709486bfc1154d",
+        "readerOwner":"Fountain-Coach/fountain.coach",
+        "readerCommit":"748ba55c38e167e9de90d6ec0572191dbcafa41e",
+        "shareManifestSHA256":APPROVED_GOVERNANCE_SOCIAL_V164_MANIFEST_SHA256,
+        "shareReceiptSHA256":APPROVED_GOVERNANCE_SOCIAL_V164_RECEIPT_SHA256,
+        "shareDirectory":"estate/share/governance/",
+        "shareSourceChapterCount":160,
+        "heroDerivativeCount":68,
+        "firstLandscapePageCount":92,
+        "rightsRaisedForPublicUse":False,
+        "readerAndSourceUnchanged":True,
+        "privateWLANOnly":True,
+        "publicReleaseAuthorized":False
+    }
+    if original_lock!=current_lock or admission!=expected:
+        raise UnadmittedReaderRoute("Social admission changes v163 identity or grants new authority")
+    prefix="estate/share/governance/"
+    manifest_file=prefix+"manifest.json"
+    receipt_file="estate/evidence/press-governance-social-v164.json"
+    if (sha256(candidate/manifest_file)!=APPROVED_GOVERNANCE_SOCIAL_V164_MANIFEST_SHA256 or
+        sha256(candidate/receipt_file)!=APPROVED_GOVERNANCE_SOCIAL_V164_RECEIPT_SHA256):
+        raise UnadmittedReaderRoute("Unpinned image manifest/receipt")
+    report=json.loads((candidate/manifest_file).read_text())
+    receipt=json.loads((candidate/receipt_file).read_text())
+    if (report.get("schema")!="fountain.press.governance.static-social-cards.v1" or
+        report.get("sourceRevision")!=expected["sourceCommit"] or
+        report.get("readerIndexSha256")!=APPROVED_GOVERNANCE_V163_INDEX_SHA256 or
+        report.get("readerAppSha256")!=APPROVED_GOVERNANCE_V161_APP_SHA256 or
+        report.get("counts")!={"chapters":160,"heroRaster":68,"firstLandscapeSpread":92,"current":72,"reference":88} or
+        report.get("publicReleaseAuthorized") is not False or
+        report.get("cardRightsNotElevated") is not True or
+        len(report.get("entries",[]))!=160 or
+        receipt.get("schema")!="fountain.press.governance.static-social-stage.v1" or
+        receipt.get("pressCommit")!=expected["pressCommit"] or
+        receipt.get("socialManifestSha256")!=APPROVED_GOVERNANCE_SOCIAL_V164_MANIFEST_SHA256 or
+        receipt.get("stageOnly") is not True or receipt.get("publicReleaseAuthorized") is not False):
+        raise UnadmittedReaderRoute("False social-source or publication metadata")
+    prior_html=(previous/"estate/index.html").read_text()
+    ids=re.findall(r'<template data-reader-volume="governance--([^"]+)"[^>]*data-source-sha256="([a-f0-9]{64})" data-governance-status="(current|reference)"',prior_html)
+    if len(ids)!=160 or len({slug for slug,_,_ in ids})!=160:
+        raise UnadmittedReaderRoute("Lost canonical Governance volume identities")
+    extra={manifest_file:APPROVED_GOVERNANCE_SOCIAL_V164_MANIFEST_SHA256,
+           receipt_file:APPROVED_GOVERNANCE_SOCIAL_V164_RECEIPT_SHA256}
+    number_hero=0
+    for (slug,source_sha,status),entry in zip(ids,report["entries"]):
+        if (entry.get("slug")!=slug or entry.get("volumeId")!="governance--"+slug or
+            entry.get("sourceSha256")!=source_sha or entry.get("status")!=status):
+            raise UnadmittedReaderRoute("Chapter identity drift in social projection")
+        volume=re.search(r'<template data-reader-volume="governance--'+re.escape(slug)+r'".*?</template>',prior_html,re.S)
+        has_art=bool(volume and ('data-press-illustration-role="hero"' in volume.group() or 'gov-inline-svg' in volume.group()))
+        if entry.get("mode")!=("original-hero-raster" if has_art else "first-landscape-spread"):
+            raise UnadmittedReaderRoute("Image fallback contradicts original chapter")
+        if has_art:number_hero+=1
+        else:
+            proof=entry.get("firstLandscapeComposition") or {}
+            if (proof.get("firstFolioSourceId")!="work-governance-"+slug or
+                proof.get("mode")!="spread" or
+                proof.get("captureViewport")!={"width":1200,"height":630} or
+                proof.get("stageClip")!={"width":1168,"height":518}):
+                raise UnadmittedReaderRoute("First source landscape folio not witnessed")
+        base=prefix+slug+"/"
+        page=base+"index.html";card=base+"card.jpg"
+        if (entry.get("staticHTMLPath")!=page or entry.get("cardPath")!=card or
+            entry.get("cardWidth")!=1200 or entry.get("cardHeight")!=630 or
+            entry.get("cardMime")!="image/jpeg" or
+            not str(entry.get("rightsState","")).endswith("public-use-not-separately-authorized")):
+            raise UnadmittedReaderRoute("Unapproved social file scope/rights")
+        page_file=candidate/page;card_file=candidate/card
+        if (not page_file.is_file() or not card_file.is_file() or
+            page_file.is_symlink() or card_file.is_symlink() or
+            sha256(page_file)!=entry.get("staticHTMLSha256") or
+            sha256(card_file)!=entry.get("cardSha256")):
+            raise UnadmittedReaderRoute("Different social image or HTML bytes")
+        url="https://192.168.8.50:8243/"+base
+        head=page_file.read_text()
+        if (entry.get("stageShareURL")!=url or entry.get("stageImageURL")!=url+"card.jpg" or
+            '<meta property="og:url" content="'+url+'">' not in head or
+            '<meta property="og:image" content="'+url+'card.jpg">' not in head or
+            '<meta name="twitter:image" content="'+url+'card.jpg">' not in head or
+            '<meta property="og:image:width" content="1200">' not in head or
+            '<meta property="og:image:height" content="630">' not in head or
+            'fountain-coach-governance-estate.jpg' in head or
+            not card_file.read_bytes().startswith(bytes((255,216)))):
+            raise UnadmittedReaderRoute("Unrelated fallback or unaddressable crawler image")
+        extra[page]=entry["staticHTMLSha256"];extra[card]=entry["cardSha256"]
+    if number_hero!=68 or len(extra)!=322:
+        raise UnadmittedReaderRoute("Not all 160 source cards were admitted")
+    old={p.relative_to(previous).as_posix():p for p in previous.rglob("*") if p.is_file()}
+    new={p.relative_to(candidate).as_posix():p for p in candidate.rglob("*") if p.is_file()}
+    if set(new)-set(old)!=set(extra) or set(old)-set(new):
+        raise UnadmittedReaderRoute("Unreviewed file in social release")
+    for rel,p in new.items():
+        if p.is_symlink():raise UnadmittedReaderRoute("Unreviewed symbolic link")
+        if rel=="source-lock.json":continue
+        if rel in extra:
+            if sha256(p)!=extra[rel]:raise UnadmittedReaderRoute("Wrong new social file "+rel)
+        elif sha256(p)!=sha256(old[rel]):
+            raise UnadmittedReaderRoute("Existing Reader, audio or Governance modified "+rel)
+    return {**inherited,**extra}
+
+
+
+
 class ReaderProvenanceGate:
     """The running server must not serve any unreviewed book HTML or engine.
 
@@ -1894,6 +2020,9 @@ class ReaderProvenanceGate:
         if self.current.name == APPROVED_GOVERNANCE_V163_RELEASE:
             self.approved_essay = approved_governance_v163_files(
                 self.baseline, self.current)
+        if self.current.name == APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE:
+            self.approved_essay = approved_governance_social_v164_files(
+                self.baseline, self.current)
 
     def check(self, raw_url: str) -> None:
         rel = normalized_request_path(raw_url)
@@ -1916,7 +2045,8 @@ class ReaderProvenanceGate:
                             APPROVED_PRESS_SOUND_V160_RELEASE,
                             APPROVED_GOVERNANCE_V161_RELEASE,
                             APPROVED_GOVERNANCE_V162_RELEASE,
-                            APPROVED_GOVERNANCE_V163_RELEASE)
+                            APPROVED_GOVERNANCE_V163_RELEASE,
+                            APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE)
                     and rel == APPROVED_VERGIL_LISTENING_ROUTE):
                 if (not target.is_file() or target.is_symlink()
                         or git_blob_sha1(target) != APPROVED_VERGIL_LISTENING_GIT_BLOB):
@@ -1941,10 +2071,17 @@ class ReaderProvenanceGate:
                             APPROVED_PRESS_SOUND_V160_RELEASE,
                             APPROVED_GOVERNANCE_V161_RELEASE,
                             APPROVED_GOVERNANCE_V162_RELEASE,
-                            APPROVED_GOVERNANCE_V163_RELEASE)
+                            APPROVED_GOVERNANCE_V163_RELEASE,
+                            APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE)
                         else None)
             if expected is None or not target.is_file() or target.is_symlink() or sha256(target) != expected:
                 raise UnadmittedReaderRoute("Unknown or altered private audition asset")
+            return
+        if self.current.name == APPROVED_GOVERNANCE_SOCIAL_V164_RELEASE and rel.startswith("estate/share/governance/"):
+            expected=self.approved_essay.get(rel)
+            target=self.current/rel
+            if (expected is None or not target.is_file() or target.is_symlink() or sha256(target)!=expected):
+                raise UnadmittedReaderRoute("Unreviewed Governance static share artifact: "+rel)
             return
         # Only the reviewed vector assets may exist under this work folder.
         # In particular, a new standalone index.html is NEVER an allowed
