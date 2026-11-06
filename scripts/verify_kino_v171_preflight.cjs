@@ -6,6 +6,7 @@ const ROOT='/private/tmp/fountain-kino-verbatim-v171/candidate';
 const ESSAY_URL='https://192.168.8.50:8243/estate/#/read/essay--a-sound-must-earn-its-place';
 const ids=['v156','v158'];
 const stageActive=process.env.STAGE_ACTIVE==='1';
+const previewBridge=process.env.PREVIEW_BRIDGE==='1';
 const mime={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.css':'text/css','.png':'image/png','.m4a':'audio/mp4'};
 async function verify(engine,label,viewport,mobile=false){
  const browser=await engine.launch(label.startsWith('Chrome')?{
@@ -14,6 +15,7 @@ async function verify(engine,label,viewport,mobile=false){
  }:{headless:true});
  try{
   const context=await browser.newContext({viewport,deviceScaleFactor:2,hasTouch:mobile,isMobile:mobile,ignoreHTTPSErrors:true});
+  if(previewBridge)await context.route('**/estate/assets/instruments/kino-verbatim-bridge.js',route=>route.fulfill({status:200,contentType:'text/javascript',body:fs.readFileSync('/Users/benedikteickhoff/Developer/.estate-press-sound-proof-20261106/staging/press-kino-verbatim-bridge.js')}));
   if(!stageActive)await context.route('**/*',route=>{
    let parsed;try{parsed=new URL(route.request().url())}catch{return route.continue()}
    const target=parsed.pathname;
@@ -65,11 +67,14 @@ async function verify(engine,label,viewport,mobile=false){
     await dialog.waitFor({state:'visible',timeout:12000});
     const frame=page.frameLocator('dialog.press-source-sheet iframe.press-source-original');
     await frame.locator('#toggle').waitFor({state:'visible',timeout:25000});
+    if(previewBridge||process.env.STAGE_V172==='1')
+      await dialog.locator('.press-source-identity small').filter({hasText:'Source ready'}).waitFor({timeout:30000});
+    else await page.waitForTimeout(2100); // Old v171 has no source-readiness handshake.
     const claim=await frame.locator('h1').innerText();
     assert.match(claim,/Kino/);
     if(stageActive){
       await frame.locator('#toggle').click();
-      await page.waitForTimeout(1600);
+      await frame.locator('#status').filter({hasText:/Playing|listening|Could not start audio/i}).waitFor({timeout:30000});
       const state=await frame.locator('#status').innerText();
       assert.ok(/Playing|listening|room/i.test(state),id+': original source did not perform: '+state);
       console.log('VERBATIM_SOURCE_PERFORMS',label,id,state.replace(/\n/g,' ').slice(0,96));

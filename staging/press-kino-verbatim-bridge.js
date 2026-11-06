@@ -11,7 +11,7 @@ const citationSources=Object.freeze({
        source:'Teatro edd6929 · complete source e2f5dd2',
        href:'/teatro/interludes/kino/press-citation/v158/'}
 });
-let sheet=null,previousFocus=null;
+let sheet=null,previousFocus=null,sourceReadyTimer=null;
 const styles=document.createElement('style');
 styles.textContent=`
 .press-source-sheet{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#080b0d;color:#e3e8dd;overflow:hidden}
@@ -28,6 +28,7 @@ styles.textContent=`
 `;
 document.head.append(styles);
 function closeCitation(){
+ if(sourceReadyTimer){clearInterval(sourceReadyTimer);sourceReadyTimer=null}
  if(!sheet)return;
  const done=sheet;sheet=null;
  const frame=done.querySelector('iframe');
@@ -50,10 +51,13 @@ function openCitation(kind,button){
    '<button class="press-source-close" type="button" aria-label="Close original Kino instrument and return to reading">Close · Return</button>'+
    '</div></div>';
  dialog.querySelector('strong').textContent=source.title;
- dialog.querySelector('small').textContent=source.source+' · private stage audition';
+ const readiness=dialog.querySelector('small');
+ readiness.setAttribute('aria-live','polite');
+ readiness.textContent=source.source+' · Loading original source…';
  const frame=document.createElement('iframe');
  frame.className='press-source-original';
  frame.title=source.title+' · unmodified original Teatro source';
+ frame.style.pointerEvents='none';
  frame.setAttribute('allow','autoplay');
  frame.setAttribute('sandbox','allow-scripts allow-same-origin');
  dialog.querySelector('.press-source-sheet-inner').append(frame);
@@ -64,6 +68,27 @@ function openCitation(kind,button){
  sheet=dialog;
  dialog.showModal();
  frame.src=source.href;
+ // An original Teatro module can arrive after its controls appear in the DOM.
+ // Detect the source's own dynamically constructed sixteen windows; no changes
+ // to its byte-identical script or interface and no invented timer-based readiness.
+ const marker=kind==='v156'?'#kino-windows .window-step':'#kino-windows .memory-window';
+ const begin=Date.now();
+ sourceReadyTimer=setInterval(()=>{
+   if(sheet!==dialog){clearInterval(sourceReadyTimer);sourceReadyTimer=null;return}
+   try{
+     if(frame.contentDocument?.querySelectorAll(marker).length===16){
+       clearInterval(sourceReadyTimer);sourceReadyTimer=null;
+       frame.style.pointerEvents='auto';
+       readiness.textContent=source.source+' · Source ready · Play on the original instrument';
+     }else if(Date.now()-begin>25000){
+       clearInterval(sourceReadyTimer);sourceReadyTimer=null;
+       readiness.textContent=source.source+' · Source could not initialize · Close and retry';
+     }
+   }catch{
+     clearInterval(sourceReadyTimer);sourceReadyTimer=null;
+     readiness.textContent=source.source+' · Source unavailable · Close and retry';
+   }
+ },70);
  dialog.querySelector('.press-source-close').focus();
 }
 document.addEventListener('click',event=>{
