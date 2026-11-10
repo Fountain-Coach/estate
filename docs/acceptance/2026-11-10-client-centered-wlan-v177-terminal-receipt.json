@@ -1,0 +1,153 @@
+{
+  "schema": "fountain.press.client-centered.wlan-acceptance.v177",
+  "observedAt": "2026-11-10T05:59:51+00:00",
+  "work": "Client-Centered",
+  "sourceOwner": "Fountain-Coach/fountain.coach",
+  "sourceRevision": "bd8f6d93e01354cc0c09a9de0bf9417bd9cfde9c",
+  "manuscriptSource": "site/essays/client-centered/client-centered.md",
+  "sourceSHA256": "03e4497f6deabe173958bd632b721ac7f23ae95e3bbe0043a1204ad5039de78a",
+  "publishedPredecessor": "https://fountain.coach/estate/read/essay--the-ear-that-learns/",
+  "publishedReaderEngineSHA256": "e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a",
+  "stageURL": "http://192.168.8.50:8200/estate/read/essay--client-centered/",
+  "stageRelease": "shared-shell-20261110-v177-client-centered-bd8f6d9",
+  "stagePredecessor": "shared-shell-20261109-v176-four-domain-c265c57",
+  "stageSourceLockSHA256": "f67e3dd27d08d73e96f04e6c67a08983bb6c87145126f45c62f924a3fea4c688",
+  "sourceInventorySHA256": "01b6e426983fc17d69454df37a694bc77aa859f05e543c711068ed3bd28b32f7",
+  "proseParagraphs": 22,
+  "sections": 4,
+  "authoredTeatroScores": 2,
+  "inheritedStageFilesPreserved": 1830,
+  "addedStageFiles": 16,
+  "stageSourceAssetsReadback": [
+    {
+      "route": "/estate/read/essay--client-centered/assets/images/client-centered-open-method.svg",
+      "status": 200,
+      "sha256": "8ab0216021f363b1fcf711691dc59746cad2a628e8a2fd9ecfd1670c5634110e",
+      "size": 2008
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/images/client-centered-positions.svg",
+      "status": 200,
+      "sha256": "e5a8fc282d138efa561e332a306f8f4be3b1a5e36a840ecb6386daa223b8bbc3",
+      "size": 1529
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/ear-sing-press-listening.css",
+      "status": 200,
+      "sha256": "79b896da5221f7c37eeea3f19de2524db94f90be2398ddbeb8fafc12c6351527",
+      "size": 4469
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/ear-sing-press-listening.mjs",
+      "status": 200,
+      "sha256": "7481cd26a3c04194565b7dc24009e32f75c92e48096b2b1dfb3ed79680d60c37",
+      "size": 6274
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/reading-first-app.1a7b4f9e30f9448f5ac0bf1e773a9d8b91a69cedbb27c94e75564059b0fd8893.js",
+      "status": 200,
+      "sha256": "1a7b4f9e30f9448f5ac0bf1e773a9d8b91a69cedbb27c94e75564059b0fd8893",
+      "size": 42463
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/reading-first-app.client-centered-review.js",
+      "status": 200,
+      "sha256": "ef41500261da61c0e972ddd3cd91ce54c4b86477167d0403693687f17dda9925",
+      "size": 42540
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/reading-first-press-engine.e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a.js",
+      "status": 200,
+      "sha256": "e38301452ef0f07aa9440953d898dcf9ae13fcb828a7d4a97fac163976261d9a",
+      "size": 51188
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/reading-first-press-frame.8e175ccbdfdd71e506979772059c72fcfb85de8d3daa366a34544ccc7d4502e6.css",
+      "status": 200,
+      "sha256": "8e175ccbdfdd71e506979772059c72fcfb85de8d3daa366a34544ccc7d4502e6",
+      "size": 12278
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/reading-first-press-host.css",
+      "status": 200,
+      "sha256": "a0ce4a3ba7c0e549354de8b3aaed608ad178f62bcfbc3451e3443f2989ea84b0",
+      "size": 6070
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/reading-first-shell.css",
+      "status": 200,
+      "sha256": "769fb12fbe7205e90269ecbf3760c8a6d226e78347bd1d62f05035174d671247",
+      "size": 24215
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/teatro-vergil-hearing.css",
+      "status": 200,
+      "sha256": "aff97c7676e9f3cf254beba93f5e17d3d0bf57956b72f86e4c9cff750317314a",
+      "size": 1050
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/teatro-vergil-hearing.mjs",
+      "status": 200,
+      "sha256": "185744bbc4daa72cc55044720d089b854f1cf2d6ca2eab10d868ac74e72ca720",
+      "size": 6622
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/vergil-prologue-hearing.css",
+      "status": 200,
+      "sha256": "a77abac2539be9c991e23f064851d12db5a1dfeb2e853de8a1a5c7beb3c553ce",
+      "size": 79
+    },
+    {
+      "route": "/estate/read/essay--client-centered/assets/press/vergil-prologue-hearing.mjs",
+      "status": 200,
+      "sha256": "5d60ecfa5ecadce573c40ede51f83c88cd359c8f6e822fe18938c5fef336a9d8",
+      "size": 6685
+    },
+    {
+      "route": "/estate/read/essay--client-centered/edition-manifest.json",
+      "status": 200,
+      "sha256": "89f9c2768e933e6d633532898fcc6f8c5a00584aebf88f123eccb7c2be34b84d",
+      "size": 14444
+    },
+    {
+      "route": "/estate/read/essay--client-centered/index.html",
+      "status": 200,
+      "sha256": "4156567a14e9be84077c3f19b76ce7dfebd9ded2d0d03ceeb2c04651a35c8a08",
+      "size": 461750
+    }
+  ],
+  "browserWitness": {
+    "file": "client-centered-v177-bd8f6d9-browser.log",
+    "sha256": "017059bb72ab261a597951e9bf59fb6d04403eab36a9ff5524a32864c32cf542",
+    "passedViewports": [
+      "phone",
+      "ipad-portrait",
+      "ipad-landscape",
+      "desktop"
+    ],
+    "sourceReconstruction": true,
+    "twoFiguresOnComposedPages": true
+  },
+  "firstLeafScreenshots": {
+    "phone": {
+      "sha256": "575593e9a1ea0a2c6c4e52484033a1cf7673dfde3deeb4500bb334adcd9c0970",
+      "bytes": 65987
+    },
+    "ipad-portrait": {
+      "sha256": "81b68a7eea933161235aae94c1e5d53c0d385aef6054acfb1cafff8fbd75f518",
+      "bytes": 140152
+    },
+    "ipad-landscape": {
+      "sha256": "815059f0ecb067c12551de23536da1426afa76d50f0e9aee395de3cc738301cd",
+      "bytes": 164412
+    },
+    "desktop": {
+      "sha256": "8456a3bee8ec41882869e40b2290d4933c4bac2b5ef86c285efffa7247569b6e",
+      "bytes": 212438
+    }
+  },
+  "sourcePublishedProduction": false,
+  "publicProductionChanged": false,
+  "physicaliPadSafariVoiceOver": "not performed",
+  "rollbackReleaseRetained": true
+}
