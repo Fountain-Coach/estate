@@ -1,0 +1,95 @@
+{
+  "url": "https://192.168.8.50:8243/teatro/learn/noise-colours/?rev=189",
+  "title": "Three Colours of Noise — The Ear That Learns · Teatro",
+  "measurements": [
+    {
+      "colour": "white",
+      "status": "White noise",
+      "diagnostic": "A steady field, without an imposed beat. Listen and notice its colour.",
+      "witness": true,
+      "rms": 0.010109585044621477,
+      "slopeDbPerOctave": -0.09499523356143735,
+      "bandsDb": [
+        -79.24102417783159,
+        -78.62948948055754,
+        -78.76526318712177,
+        -78.91980069208732,
+        -79.06981036178257,
+        -79.14316098074363,
+        -79.37042583665851,
+        -79.37664262609425,
+        -79.16666422032154,
+        -79.19645527966091
+      ],
+      "stableFrames": 26
+    },
+    {
+      "colour": "pink",
+      "status": "Pink noise",
+      "diagnostic": "A steady field, without an imposed beat. Listen and notice its colour.",
+      "witness": true,
+      "rms": 0.009969734236900143,
+      "slopeDbPerOctave": -2.994114392390625,
+      "bandsDb": [
+        -70.2491375776114,
+        -70.97863284484878,
+        -73.08920208036565,
+        -75.46245312078464,
+        -76.08490601399647,
+        -77.42747366099876,
+        -79.0834845030324,
+        -80.68864775944638,
+        -81.97495381068295,
+        -83.5684848458077
+      ],
+      "stableFrames": 26
+    },
+    {
+      "colour": "brown",
+      "status": "Brown noise",
+      "diagnostic": "A steady field, without an imposed beat. Listen and notice its colour.",
+      "witness": true,
+      "rms": 0.010212999125180384,
+      "slopeDbPerOctave": -5.684734689963109,
+      "bandsDb": [
+        -65.77709019809221,
+        -67.86727183037529,
+        -70.1138494527002,
+        -73.03335529459738,
+        -76.1456788369271,
+        -79.31380755482995,
+        -81.94206386185132,
+        -85.13369651118066,
+        -87.80860247540159,
+        -90.71918918804141
+      ],
+      "stableFrames": 26
+    }
+  ],
+  "levelSpreadDb": 0.20939426449177417,
+  "stopped": "Silence",
+  "score": "Three steady noises, each alone. Change the colour; keep the level.",
+  "overflow": {
+    "width": 1150,
+    "scrollWidth": 1150,
+    "secure": true
+  },
+  "touch": {
+    "width": 820,
+    "scrollWidth": 820,
+    "secure": true
+  },
+  "errors": [],
+  "requests": [
+    {
+      "status": 200,
+      "url": "https://192.168.8.50:8243/teatro/learn/noise-colours/assets/Noise01Lesson-vAVbrAqY.css"
+    },
+    {
+      "status": 200,
+      "url": "https://192.168.8.50:8243/teatro/learn/noise-colours/assets/Noise01Lesson-6Hj8NT-w.js"
+    }
+  ],
+  "passed": true,
+  "provenanceNote": "Actual macOS Chrome over v189 WLAN HTTPS, Csound AudioWorklet, browser analyser; not human/physical iPad listening approval"
+}

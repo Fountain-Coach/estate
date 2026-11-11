@@ -1,0 +1,24 @@
+{
+  "activeReleaseVerified": true,
+  "browserAssetsSHA256": {
+    "teatro/learn/noise-colours/assets/Noise01Lesson-6Hj8NT-w.js": "2cc97c8f333e5253b43f922c0fb16f3ae86e993288d8a7452cc35fb4b8ce3388",
+    "teatro/learn/noise-colours/assets/Noise01Lesson-vAVbrAqY.css": "717543945dd7cf82b24ea32275914c1d88adb0302bc8b59caa0470f6608012ed",
+    "teatro/learn/noise-colours/assets/Wind01Lesson-BLtQi0w1.js": "17eea6909c20098989d4199e0782ab92368d30727fed91b8fa72cf5068c76dfa",
+    "teatro/learn/noise-colours/assets/Wind01Lesson-CmW69hK1.css": "a014bf1aefa43b550693746fe5ea57c5e38ff589c9bc021af652ed32aae928b0",
+    "teatro/learn/noise-colours/assets/index-BaVA6VYJ.js": "109a38cd7b4281b23d1261f26f2bbd5746262756c48ff7a8fbbdfa102a6d8584",
+    "teatro/learn/noise-colours/index.html": "eb08b8876350c22cbf4b4f441d1cf1d85489dfd25785b9265f5f80fea2a45f3b"
+  },
+  "httpAndHTTPSReadback": true,
+  "humanMusicalAuditionAccepted": false,
+  "lessonOwner": "Fountain-Coach/teatro-ear",
+  "lessonRevision": "1d8bfd338efdb4a3a89b8cedacd3dacc83a7ff05",
+  "newRelease": "shared-shell-20261111-v189-noise-colours-a6dcb72",
+  "physicalIPadSafariAccepted": false,
+  "predecessor": "shared-shell-20261111-v188-wind-gestures-13a7980",
+  "privateStagingOnly": true,
+  "publicProductionAffected": false,
+  "schema": "fountain.teatro-ear.noise01.owner-wlan-stage-terminal.v189",
+  "sourceOwner": "Fountain-Coach/midi2-gpu-fabric",
+  "sourceRevision": "a6dcb72e5c43f6254948153e457478e3352e85bc",
+  "typedEstatePublisherProductionReceipt": false
+}
