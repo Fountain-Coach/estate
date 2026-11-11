@@ -177,8 +177,8 @@ class Wind01V188Gate:
             if f.is_symlink() or not f.is_file() or digest(f)!=A["files"][rel]:
                 raise original.UnadmittedReaderRoute("Altered WIND-01 stage asset")
             return
-        if rel.startswith("{PREFIX}"):
-            raise original.UnadmittedReaderRoute("Unadmitted WIND-01 asset")
+        # The inherited v187 guard admits unchanged stylesheet/JS assets
+        # and itself rejects all unknown WIND-01 paths. Preserve that chain.
         self.inherited.check(raw_url)
 if __name__=="__main__":
     server.ReaderProvenanceGate=Wind01V188Gate
@@ -215,6 +215,7 @@ def check_gate(release):
     import serve_wind01_v188 as gate
     instance=gate.Wind01V188Gate(BASELINE,release)
     for url in ("/teatro/learn/two-winds/","/teatro/learn/two-winds/assets/index-BTFJUSpS.js",
+                "/teatro/learn/two-winds/assets/Wind01Lesson-CmW69hK1.css",
                 "/teatro/","/estate/"):
         instance.check(url)
     try:
@@ -361,12 +362,104 @@ def activate():
         subprocess.run(["systemctl","--user","restart",HTTP_UNIT,HTTPS_UNIT],check=False,timeout=230)
         raise
 
+def repair_css_guard():
+    """Correct the v188 service guard; leave all immutable release bytes intact."""
+    if active()!=NEW:
+        abort("v188 must be active before exact same-release guard correction")
+    if sha(RELEASES/NEW/"source-lock.json")!="afe90f2381e79b1ced2ffa5f27362330ad0ad21e27de65c5d02b58ea7099bf38":
+        abort("active v188 release or source lock changed")
+    meta=read_meta()
+    admission=CANDIDATES/ADMISSION_NAME
+    admission_sha=sha(admission)
+    if admission_sha!="2adddc5bff30943b525eefd94aed68eab9cb2651f382f498e1b50c04bb50479c":
+        abort("existing v188 admission changed")
+    original_guard=CANDIDATES/GUARD_NAME
+    old_sha="438cb455a57075bd5e0f2a3629674d8c194d26063c39389ae2a27c6569bfc3f4"
+    if sha(original_guard)!=old_sha:
+        abort("original rejected-CSS stage guard SHA no longer matches")
+    old_bytes=original_guard.read_bytes()
+    candidate_bytes=render_guard(admission_sha).encode()
+    if old_bytes==candidate_bytes:
+        abort("no actual guard correction")
+    css_route="teatro/learn/two-winds/assets/Wind01Lesson-CmW69hK1.css"
+    css_sha="a014bf1aefa43b550693746fe5ea57c5e38ff589c9bc021af652ed32aae928b0"
+    if sha(RELEASES/NEW/css_route)!=css_sha:
+        abort("unchanged source-owned stylesheet modified")
+    # Validate the candidate guard *without* changing the serving script.
+    import importlib.util
+    proposed=CANDIDATES/"serve_wind01_v188.css-verified-candidate.py"
+    write_exclusive(proposed,candidate_bytes)
+    spec=importlib.util.spec_from_file_location("wind01_v188_css_proposal",str(proposed))
+    if not spec or not spec.loader:abort("cannot import corrected candidate")
+    module=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    instance=module.Wind01V188Gate(BASELINE,RELEASES/NEW)
+    instance.check("/"+css_route)
+    instance.check("/teatro/learn/two-winds/")
+    try:
+        instance.check("/teatro/learn/two-winds/assets/not-admitted.css")
+    except module.original.UnadmittedReaderRoute:
+        print("WIND01_V188_CSS_REPAIR_UNKNOWN_ASSET_REFUSED",flush=True)
+    else:
+        abort("corrected guard failed unknown asset refusal")
+    backup=CANDIDATES/"serve_wind01_v188.py.before-retained-css-fix"
+    write_exclusive(backup,old_bytes)
+    try:
+        os.replace(proposed,original_guard)
+        subprocess.run(["systemctl","--user","restart",HTTP_UNIT,HTTPS_UNIT],check=True,timeout=230)
+        data_expectations={
+            "/teatro/learn/two-winds/":meta["files"]["teatro/learn/two-winds/index.html"],
+            "/"+css_route:css_sha,
+            "/teatro/learn/two-winds/assets/Wind01Lesson-CFCH-nmf.js":meta["files"]["teatro/learn/two-winds/assets/Wind01Lesson-CFCH-nmf.js"]
+        }
+        for prefix in ("http://192.168.8.50:8200","https://192.168.8.50:8243"):
+            context=ssl._create_unverified_context() if prefix.startswith("https://") else None
+            for route,expected in data_expectations.items():
+                last=None
+                deadline=time.monotonic()+180
+                while time.monotonic()<deadline:
+                    try:
+                        with urllib.request.urlopen(prefix+route,context=context,timeout=10) as response:
+                            actual=response.read()
+                            if response.status!=200 or sha(actual)!=expected:
+                                abort("corrected stage byte SHA mismatch at "+prefix+route)
+                            print("WIND01_V188_CSS_REPAIR_HTTPS_READBACK "+prefix+route+" sha256="+expected,flush=True)
+                            break
+                    except (OSError,urllib.error.URLError) as error:
+                        last=error
+                        time.sleep(3)
+                else:abort("corrected stage did not serve "+prefix+route+": "+str(last))
+        if active()!=NEW:abort("active release changed during repair")
+        receipt={
+            "schema":"fountain.teatro-ear.wind01.owner-wlan-stage-css-repair.terminal.v188",
+            "release":NEW,"originalStagingReceipt":"wind01-v188-terminal-receipt.json",
+            "sourceRevision":SOURCE_SHA,"lessonRevision":LESSON_SHA,
+            "oldGuardSHA256":old_sha,"newGuardSHA256":sha(original_guard),
+            "correctedExistingReleaseBytes":False,"immutableReleaseUnchanged":True,
+            "retainedCSSRoute":"/"+css_route,"retainedCSSSHA256":css_sha,
+            "httpAndHTTPSIndexAndCSSReadback":True,
+            "guardProvenanceAndUnknownRouteRefusal":True,
+            "privateStagingOnly":True,"productionAffected":False,
+            "humanAuditionAccepted":False,"physicalIPadSafariAccepted":False
+        }
+        out=STAGE/"wind01-v188-css-repair-terminal-receipt.json"
+        write_exclusive(out,text_json(receipt))
+        print("WIND01_V188_CSS_REPAIR_COMPLETE "+str(out),flush=True)
+    except Exception:
+        restored=CANDIDATES/"serve_wind01_v188.revert-css-fix.py"
+        restored.write_bytes(old_bytes)
+        os.replace(restored,original_guard)
+        subprocess.run(["systemctl","--user","restart",HTTP_UNIT,HTTPS_UNIT],check=False,timeout=230)
+        raise
+
+
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument("action",choices=["prepare","activate"])
+    parser.add_argument("action",choices=["prepare","activate","repair-css-guard"])
     args=parser.parse_args()
     if args.action=="prepare":prepare()
-    else:activate()
+    elif args.action=="activate":activate()
+    else:repair_css_guard()
 
 if __name__=="__main__":
     try:main()
