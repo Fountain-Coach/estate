@@ -1,0 +1,38 @@
+# WIND-01 auditory correction — private WLAN stage v188
+
+**Date:** 2026-11-11. **Task:** correct the writer's audible rejection of the first two wind gestures. The goal is an actually perceptible musical distinction and a learner slider that affects the currently playing sound.
+
+The writer heard **no difference**, perceived no effect from the control, and instead heard a repeating railway-like `ta-ta-tam tam` rhythm. This **fails** the first lesson's musical/educational acceptance despite v187's successful non-silent Csound signal witness.
+
+## Source of failure and correction
+
+Source inspection found the specific UI bug: `Wind01Lesson.tsx` captured `amount` at Play and never read subsequent slider changes. Separately, the generic Csound stage orchestra had a prominent shared low-frequency texture with its own `rspline/randi` modulations and only a faint turbulence-dependent voice.
+
+The correction uses the existing `BrowserCsoundRuntime(context, WIND01_ORCHESTRA)` injection point. Its lesson-only voice has **no independently timed mechanical modulation**; it uses the same `@csound/browser` AudioWorklet and the already-authored two-gust envelope, with explicit upper-frequency noise balance responding to `turbulence_mix`. `amountRef` is read on every 85ms gesture tick, so the learner can now modify the sound **during** playback. The generic Teatro stage orchestra remains untouched.
+
+**Source owner:** `Fountain-Coach/midi2-gpu-fabric@13a798086a5b75fbded189ae7510d8e76bceb551` (branch `feat/teatro-ear-wind01-browser`). The lesson text remains `Fountain-Coach/teatro-ear@886f12bfc3dc9e651e175eb6cc4966554f300816`.
+
+## Real browser acoustic comparison — not a hearing claim
+
+Chrome on macOS running the local Vite client instantiated the new lesson Csound WASM/AudioWorklet. An actual analyser captured ~95 100ms frames per gesture, using 2048-point FFT power from 1700–5000Hz divided by 120–950Hz:
+
+- **Wind I, 2.8–3.7s:** ratio 0.884; **Wind II:** 3.234. Distinct high-frequency power, not merely channel-value differences.
+- **Wind I, 5.9–6.9s:** ratio 0.802; **Wind II:** 3.187.
+- **Learner gesture during the same nine-second playback:** changing from 0% to 100% after 3.4s changed the measured high/low energy ratio from 0.750 (2.8–3.7s) to 1.796 (4.2–5.6s) and 3.040 (5.9–6.9s).
+- Zero captured browser errors. Unit suite: 29 passed, 1 previously skipped. Vite production build passed. The author has **not** yet heard or approved the revised sound.
+
+The measured frames and method are recorded in source `apps/teatro-stage-web/docs/wind01/audio-contrast-v188.json`. These are **spectral contrast observations**, not a perceptual test, a tinnitus remedy or a claim of naturalistic acoustic quality.
+
+## Proposed staging change
+
+**Existing active stage:** `shared-shell-20261111-v187-teatro-ear-wind01-af0d6f2`, existing owner-WLAN `192.168.8.50` port 8200 HTTP and 8243 HTTPS, with source-lock SHA256 `b195123e9c430b821ea69f61a174d3c52aff533422e6e2d504a117742b049bd6`.
+
+**New immutable release:** `shared-shell-20261111-v188-wind-gestures-13a7980`. It replaces only `teatro/learn/two-winds/index.html` and adds the two new content-hashed JS files. It preserves all v187 old JS/CSS files and every existing Estate/Teatro/Bookshelf route. One source-lock entry `wind01V188AuditoryCorrection` records the author report and exact new assets. The inherited v187 gate and v186... original readers stay authoritative.
+
+**Actual browser link after activation:** `https://192.168.8.50:8243/teatro/learn/two-winds/` (WLAN private certificate required). Never call this corrected until the new active release, full exact-asset SHA readback, existing neighboring route preservation and **real HTTPS browser Csound contrast** are separately verified.
+
+**Publisher procedure:** `staging/teatro_ear_wind01_v188.py` extends the current checked-in v187 staging procedure and rollback; no new server, user authentication, DNS, public Caddy, FountainStore, ChatGPT/MCP, independent synthesizer, or score rendering. The public static EstatePublisher CLI is not the executor for this existing private source-guarded WLAN stage.
+
+**Governance record:** Ch. 07 scoped source-first remediation, Ch. 08 explicitly downgrades the previous output-witness claim in light of failed human hearing, Ch. 151 retains the native Csound/Scenario boundary, Ch. 158 preserves source-bound immutable static staging. **Forbidden:** treating spectral data alone as proof of an audible lesson, wiping the failed v187 release, changing unrelated works, or production promotion. **Conflict:** automated v187 Csound non-silent checks versus user's actual "can't hear difference" report; the latter governs acceptance. **Excluded:** FCIS, MIDI2, engraving, hardware iPad audit until the two sound gestures themselves are worth teaching.
+
+**Terminal result:** pending, to be appended only from release and HTTPS acceptance evidence.
