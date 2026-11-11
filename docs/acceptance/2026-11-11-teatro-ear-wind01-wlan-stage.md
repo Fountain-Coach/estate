@@ -30,3 +30,21 @@ Prepare validates the input bundle digest, exact Git SHAs, four allowed asset pa
 Then verify in Mac Chrome on the **real WLAN HTTPS route**: read-only page, play Wind I and II and learner wind with actual Csound output witness, Stop, nine-second completion, mobile/tablet layout and no failed assets. This is not a physical iPad Safari or subjective auditory proof. The user may then proofread/listen on their iPad after accepting the local certificate trust.
 
 **Status:** no link should be described as staged until the active release, returned HTTP/HTTPS bytes, browser Csound and terminal receipt are verified.
+
+## Verified terminal result — 11 November 2026
+
+**State: ACTIVE PRIVATE WLAN STAGING.** Existing `current` resolves to `shared-shell-20261111-v187-teatro-ear-wind01-af0d6f2`, with v186 retained. Both existing services are active. Exact v187 gate accepts original v176–v186 source chain and new four-file route, and refuses an unknown WIND-01 asset. Terminal receipt: `wind01-v187-terminal-receipt.json` on the staging host, copied into this source branch as `docs/acceptance/2026-11-11-teatro-ear-wind01-terminal-receipt.json`.
+
+**Copy link — HTTPS (Csound):** `https://192.168.8.50:8243/teatro/learn/two-winds/`. The local HTTPS certificate uses the existing owner-WLAN trust boundary. **HTTP source readback only:** `http://192.168.8.50:8200/teatro/learn/two-winds/`.
+
+**Source:** `Fountain-Coach/midi2-gpu-fabric@af0d6f2bc4ab336306f047fa159203c2265147bf`; lesson `Fountain-Coach/teatro-ear@886f12bfc3dc9e651e175eb6cc4966554f300816`; stage procedure source in `Fountain-Coach/estate` branch `feat/teatro-ear-wind01-wlan-stage`.
+
+**Exact independent HTTPS SHA-256 read-back:** HTML `80790cda48522d34979e9d3b657f4cd892e9bd0adf954120ecea5debe86b9638`; main JS `6092e11cbd53f5cb97b8fb5bd8e4b3c6efe48be695e16de70f20c139dc913957`; lesson JS `faf59be5daa0b79adf0abd8308879c04dd8a8b141c6d20b6860071f2f7f9db99`; CSS `a014bf1aefa43b550693746fe5ea57c5e38ff589c9bc021af652ed32aae928b0`. All match the package admission. HTTP and HTTPS both served the same original index SHA.
+
+**Neighbor continuity:** `/estate/`, `/teatro/`, and `/teatro/experiments/classic-techno-deck/` all returned HTTPS 200 after v187 activation. The source-guard checked the inherited v186 full file inventory byte-for-byte.
+
+**Independent browser acceptance:** actual Chrome on macOS arm64 accessed the **real WLAN HTTPS route** (not localhost); the secure-context flag was true. All four app HTTP requests returned 200, no page errors or failed assets. Wind I, Wind II, and the learner-scaled wind were each started through page buttons, and the existing Csound analyser returned a non-silent/non-clipping signal witness. Learner control at 79%, editable verbal score, stop/silence, 1150px desktop and 820px touch/tablet-emulated layouts verified; neither overflowed horizontally.
+
+**Do not overclaim:** Human musical evaluation of whether the winds are distinct, native physical iPad Safari/VoiceOver, certificate trust on that iPad, FCIS/MIDI2 peer transport and public production remain unverified. No production deployment, new server, FountainStore write or native EstatePublisher production receipt occurred. This was the already documented owner-WLAN staging lane with immutable rollback, not the public Caddy publishing operation.
+
+**Next action:** author auditions Wind I / Wind II on an actual iPad in the registered WLAN and provides musical/gesture feedback. Do not spend this phase on Fountain Host.

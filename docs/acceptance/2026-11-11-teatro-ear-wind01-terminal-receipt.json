@@ -1,0 +1,22 @@
+{
+  "activeReleaseVerified": true,
+  "browserAssetsSHA256": {
+    "teatro/learn/two-winds/assets/Wind01Lesson-BYnlf7nc.js": "faf59be5daa0b79adf0abd8308879c04dd8a8b141c6d20b6860071f2f7f9db99",
+    "teatro/learn/two-winds/assets/Wind01Lesson-CmW69hK1.css": "a014bf1aefa43b550693746fe5ea57c5e38ff589c9bc021af652ed32aae928b0",
+    "teatro/learn/two-winds/assets/index-B1e3G1yc.js": "6092e11cbd53f5cb97b8fb5bd8e4b3c6efe48be695e16de70f20c139dc913957",
+    "teatro/learn/two-winds/index.html": "80790cda48522d34979e9d3b657f4cd892e9bd0adf954120ecea5debe86b9638"
+  },
+  "httpAndHTTPSReadback": true,
+  "humanMusicalAuditionAccepted": false,
+  "lessonOwner": "Fountain-Coach/teatro-ear",
+  "lessonRevision": "886f12bfc3dc9e651e175eb6cc4966554f300816",
+  "newRelease": "shared-shell-20261111-v187-teatro-ear-wind01-af0d6f2",
+  "physicalIPadSafariAccepted": false,
+  "predecessor": "shared-shell-20261111-v186-works-books-b8434c5",
+  "privateStagingOnly": true,
+  "publicProductionAffected": false,
+  "schema": "fountain.teatro-ear.wind01.owner-wlan-stage-terminal.v187",
+  "sourceOwner": "Fountain-Coach/midi2-gpu-fabric",
+  "sourceRevision": "af0d6f2bc4ab336306f047fa159203c2265147bf",
+  "typedEstatePublisherProductionReceipt": false
+}
