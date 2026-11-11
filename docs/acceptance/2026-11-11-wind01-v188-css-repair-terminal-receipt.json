@@ -1,0 +1,19 @@
+{
+  "correctedExistingReleaseBytes": false,
+  "guardProvenanceAndUnknownRouteRefusal": true,
+  "httpAndHTTPSIndexAndCSSReadback": true,
+  "humanAuditionAccepted": false,
+  "immutableReleaseUnchanged": true,
+  "lessonRevision": "886f12bfc3dc9e651e175eb6cc4966554f300816",
+  "newGuardSHA256": "99e742459b728182a2c3278ba1c33e15393b87b26e08cae3f953e50147fa32f6",
+  "oldGuardSHA256": "438cb455a57075bd5e0f2a3629674d8c194d26063c39389ae2a27c6569bfc3f4",
+  "originalStagingReceipt": "wind01-v188-terminal-receipt.json",
+  "physicalIPadSafariAccepted": false,
+  "privateStagingOnly": true,
+  "productionAffected": false,
+  "release": "shared-shell-20261111-v188-wind-gestures-13a7980",
+  "retainedCSSRoute": "/teatro/learn/two-winds/assets/Wind01Lesson-CmW69hK1.css",
+  "retainedCSSSHA256": "a014bf1aefa43b550693746fe5ea57c5e38ff589c9bc021af652ed32aae928b0",
+  "schema": "fountain.teatro-ear.wind01.owner-wlan-stage-css-repair.terminal.v188",
+  "sourceRevision": "13a798086a5b75fbded189ae7510d8e76bceb551"
+}

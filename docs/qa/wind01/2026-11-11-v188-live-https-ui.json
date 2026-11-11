@@ -1,0 +1,57 @@
+{
+  "url": "https://192.168.8.50:8243/teatro/learn/two-winds/",
+  "title": "Two Winds — The Ear That Learns · Teatro",
+  "links": [
+    "Teatro · The Ear That Learns"
+  ],
+  "overflow": {
+    "innerWidth": 1150,
+    "scrollWidth": 1150,
+    "secure": true
+  },
+  "padBox": {
+    "innerWidth": 820,
+    "scrollWidth": 820,
+    "secure": true
+  },
+  "first": {
+    "which": "steady",
+    "state": "Wind I · holding",
+    "witness": true,
+    "diagnostic": "Listen to how the sound moves. The gesture lasts nine seconds."
+  },
+  "second": {
+    "which": "gathering",
+    "state": "Wind II · gathering",
+    "witness": true,
+    "diagnostic": "Listen to how the sound moves. The gesture lasts nine seconds."
+  },
+  "learner": {
+    "which": "learner",
+    "state": "Your wind",
+    "witness": true,
+    "diagnostic": "Listen to how the sound moves. The gesture lasts nine seconds."
+  },
+  "score": "Enter quietly. Gather twice. Disperse.",
+  "stopped": "Silence",
+  "assets": [
+    {
+      "status": 200,
+      "path": "/teatro/learn/two-winds/"
+    },
+    {
+      "status": 200,
+      "path": "/teatro/learn/two-winds/assets/index-BTFJUSpS.js"
+    },
+    {
+      "status": 200,
+      "path": "/teatro/learn/two-winds/assets/Wind01Lesson-CmW69hK1.css"
+    },
+    {
+      "status": 200,
+      "path": "/teatro/learn/two-winds/assets/Wind01Lesson-CFCH-nmf.js"
+    }
+  ],
+  "cssVerified": true,
+  "errors": []
+}
