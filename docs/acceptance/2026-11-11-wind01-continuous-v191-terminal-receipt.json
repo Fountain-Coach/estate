@@ -1,0 +1,18 @@
+{
+  "bbcLoudnessCertified": false,
+  "files": {
+    "teatro/learn/two-winds/assets/Wind01Lesson-BUtfCdTV.js": "850ea2190ab444cbc5f2951611357bf6af3ab2891e7a08478d13fdc9ae05d633",
+    "teatro/learn/two-winds/assets/index-C9imvMgg.js": "642d238d4a6172273eedfec9d6b79284ee8a73b061c2090c064e4ee9414ccf6e",
+    "teatro/learn/two-winds/index.html": "8c478881bf844895c5318c42603a620918dddca5274dc9e5cb0e43ce30770c13"
+  },
+  "httpAndHttpsSHA256Verified": true,
+  "lessonRevision": "4bd180f0cb0f2cfc2cc36bde3facef9162f56eb7",
+  "newRelease": "shared-shell-20261111-v191-wind-continuous-af6f096",
+  "physicalIPhoneOrIPadAccepted": false,
+  "predecessor": "shared-shell-20261111-v190-koken-head-boxers-e65d62d",
+  "preservedUnrelatedRoutes": true,
+  "productionAffected": false,
+  "schema": "fountain.teatro-ear.wind01.continuous.wlan.terminal.v191",
+  "sourceRevision": "af6f0968d55fac872c38e0c29227a82e37846100",
+  "voiceRecordingAdded": false
+}
